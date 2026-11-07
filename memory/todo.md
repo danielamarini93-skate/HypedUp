@@ -3,12 +3,17 @@
 _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're done._
 
 ## Website (redesign + migration — see `website-migration.md`)
-- [ ] Answer the open questions (domain, email, editor, features, brand assets, budget)
+- [x] Domain + email host confirmed (both GoDaddy)
+- [ ] Answer remaining open questions (email type, editor, features, brand assets, budget)
+- [ ] Export a full copy of the GoDaddy DNS records before any change
 - [ ] Choose platform
-- [ ] Inventory current URLs and export blog content from GoDaddy
+- [x] Inventory current URLs and export blog content from GoDaddy (see `current-site.md`, `content/blog-archive/`)
+- [ ] Hypa to confirm the clashing prices (CarPlay, security, plates, remap) — see `current-site.md`
+- [ ] Download blog/site images from `img1.wsimg.com` before cancelling GoDaddy
+- [ ] Decide what happens to the apparel shop (keep, move, drop)
 - [ ] Design + build new site
 - [ ] Migrate with 301s, GA4, Search Console, schema, sitemap
-- [ ] Interim (only if migration is far off): fix "Experties", broken icons, add prices + number plates, click **Publish** to activate GA4
+- [ ] Interim (only if migration is far off): fix broken icons; check GA4 Realtime ("Experties" typo already fixed; homepage already has prices + number plates)
 
 ## SEO / technical
 - [ ] Request indexing for all main service pages in Search Console
@@ -19,7 +24,8 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Run remaining AnswerThePublic searches (list in `seo.md`)
 
 ## Content
-- [ ] Publish ready posts 15–19
+- [x] Dash cam post (15) published
+- [ ] Publish ready posts 16–19
 - [ ] Publish earlier posts 20–22
 - [ ] Write posts 23–34 (see `content.md`) — seasonal ones (27, 28) needed before December
 - [ ] Add real photos to all blog posts

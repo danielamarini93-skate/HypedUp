@@ -2,6 +2,9 @@
 
 _Last updated: 7 Nov 2026 · All prices in GBP. Only use these; anything not listed = "price on enquiry"._
 
+> ⚠️ The live website shows different "from" prices for CarPlay (£195), security (£395), plates (£35)
+> and remapping (£435 / mobile Stage 1 £199). See `current-site.md` — **Hypa to confirm which is right.**
+
 ## Number plates
 | Type | Price |
 |---|---|

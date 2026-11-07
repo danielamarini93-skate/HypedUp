@@ -14,7 +14,8 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 
 - Address: Unit 22, Enterprise Industrial Estate, Bolina Road, London SE16 3LF
 - Phone: 020 3340 0632 · WhatsApp: 07713 735646 · Email: info@hypedup.uk
-- Website: https://hypedup.uk/ (currently GoDaddy Website Builder) · Instagram: @hypedup.ltd
+- Website: https://hypedup.uk/ (GoDaddy Website Builder; domain + email also on GoDaddy)
+- Socials: Instagram + TikTok @hypedup.ltd · LinkedIn /company/hypedupltd
 
 ## Current goal
 
@@ -32,10 +33,12 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 | `memory/content.md` | Blog posts: published, ready, to write; news angles |
 | `memory/marketing.md` | Google Maps ads, Google Business Profile, AI visibility (GEO) |
 | `memory/operations.md` | Customer tracker (Google Sheets), tools, how Hypa wants AI to help |
+| `memory/current-site.md` | Audit of the live GoDaddy site: every URL, tracking IDs, price clashes |
 | `memory/website-migration.md` | Redesign + leaving GoDaddy: what must carry over, open questions |
 | `memory/todo.md` | Every pending item, grouped |
 | `memory/decisions.md` | Log of decisions made (append new ones with a date) |
 | `memory/source/` | The original memory export, kept verbatim for reference |
+| `content/blog-archive/` | Full text of all 15 live blog posts, exported 7 Nov 2026 |
 
 ## Hard rules (always apply)
 

@@ -20,7 +20,9 @@ _Last updated: 7 Nov 2026_
 
 ### Google Analytics
 - GA4 Measurement ID: **G-PZPFNLV5SW**
-- Added in GoDaddy settings, but the site still needs **Publish** clicked to activate
+- Tag found in the live HTML on 7 Nov 2026, so it looks published — confirm data is arriving in GA4 Realtime
+- GTM container: `GTM-M8LSHHLK`
+- Search Console verification token: `fw2dNGYmTQ0Su2Bj7whtf1dZsBVkyQ-RI08cZZ7589s`
 
 ## Search Console findings (October 2026)
 - Top queries: "hyped up limited" (10 clicks), "hyped up" (4), "air suspension installation near me" (1), "car tuning london" (1), "car wrapping" (1)

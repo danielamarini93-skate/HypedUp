@@ -5,7 +5,7 @@ _Last updated: 7 Nov 2026_
 **Schedule:** 2 posts/week (Monday + Thursday), October 2026 → January 2027.
 **Pillars:** (1) Electronics & Security — priority · (2) Styling & Personalisation.
 
-## Published (14)
+## Published (15) — full text in `content/blog-archive/`, URLs in `current-site.md`
 | # | Title | Date |
 |---|---|---|
 | 1 | The Low Life Chose Me: Why Air Suspension Changed Everything | 21 Apr 2026 |
@@ -22,12 +22,12 @@ _Last updated: 7 Nov 2026_
 | 12 | Car Audio Upgrade South London \| Subwoofers \| Hyped Up | 9 Oct 2026 |
 | 13 | Ghost Immobiliser South London: Cost, Fitting and Is It Worth It? | 13 Oct 2026 |
 | 14 | How Much Does A Car Wrap Cost UK? Real Prices Not Marketing | 30 Oct 2026 |
+| 15 | Best Dash Cam 2026: Front & Rear, GPS & Why You Need One | 30 Oct 2026 (updated 3 Nov) |
 
-⚠️ These live on GoDaddy. Their URLs must be recorded and 301-redirected during migration
-(see `website-migration.md`). The full text of these posts is **not** in this repo yet.
+Dates above are from the original memory; GoDaddy's own publish dates differ for some posts.
+Old URLs are `/hyped-up/f/<slug>` and must be 301-redirected (see `current-site.md`).
 
-## Written, ready to publish (5)
-15. Best Dash Cam 2026: Front and Rear GPS Guide | Hyped Up — targets ~5,400/mo, difficulty 14
+## Written, ready to publish (4)
 16. Window Tinting Laws UK: How Dark Can You Go? | Hyped Up — evergreen legal, 300+/mo
 17. Car Alarms Are Dead: What Stops Thieves 2026 | Hyped Up — car alarm (1,400/mo) + theft prevention
 18. Car Tracker UK: S5 vs S7 vs AirTag Explained | Hyped Up — "car tracker" 14,800/mo
@@ -38,7 +38,7 @@ _Last updated: 7 Nov 2026_
 21. Will Your Modification Fail MOT? The Truth About Spoilers, Wraps, Bodykits and More
 22. I've Seen What Bad Tuning Does: Here's Why Your Tuner Choice Actually Matters (original ECU blog)
 
-_Drafts 15–22 exist in other chats/docs — not in this repo yet. Add them to `content/` when available._
+_Drafts 16–22 exist in other chats/docs — not in this repo yet. Add them to `content/` when available._
 
 ## Still to write (priority order)
 23. Ceramic Tint vs Regular Tint (upsell)

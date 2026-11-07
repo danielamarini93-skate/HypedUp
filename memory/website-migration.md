@@ -12,11 +12,12 @@ without losing the SEO work already done.
 - Simple jobs (fixing icons, adding prices) are awkward in the builder
 
 ## Must carry over — migration checklist
-- [ ] **Inventory every current URL** (homepage, ~10 pages in sitemap, all 14 blog posts) before anything changes
+- [x] **Inventory every current URL** → `current-site.md` (11 pages + 15 posts)
 - [ ] **301 redirects** from every old URL to its new URL (old sitemap: `/sitemap.website.xml`)
-- [ ] Export all blog post text + images from GoDaddy (14 published posts)
-- [ ] **Domain / DNS:** find out where hypedup.uk is registered and where DNS is hosted (probably GoDaddy)
-- [ ] **Email (info@hypedup.uk):** check MX records / who hosts the mailbox — must not break when DNS changes
+- [x] Export blog post text → `content/blog-archive/` (images still hosted on GoDaddy's `img1.wsimg.com` — download before cancelling)
+- [ ] Apparel shop (4 products): keep, move to a shop platform, or drop?
+- [ ] **Domain / DNS:** hypedup.uk is registered **and** DNS-hosted at GoDaddy (confirmed 7 Nov 2026). Plan: keep the domain at GoDaddy for now and only change the website records (A/CNAME); a registrar transfer can come later, separately
+- [ ] **Email (info@hypedup.uk):** hosted on **GoDaddy** (confirmed 7 Nov 2026). Before touching DNS, export a copy of every DNS record and **do not change MX, SPF/TXT, DKIM or autodiscover records**. Check whether it's GoDaddy's own email or Microsoft 365 via GoDaddy — if the GoDaddy website plan is cancelled, make sure the email plan is separate and stays active
 - [ ] **Search Console:** re-add the HTML verification tag on the new site, or switch to DNS verification first
 - [ ] **GA4 `G-PZPFNLV5SW`** on every page (still not live on GoDaddy — publish never clicked)
 - [ ] **GTM** container on every page (or move schema into the HTML and retire the GTM workaround)
@@ -26,10 +27,9 @@ without losing the SEO work already done.
 - [ ] Mobile speed check (Core Web Vitals) before and after
 
 ## Fixes from the current homepage (bake into the redesign)
-- "Experties" → "Expertise" in the trust bar
-- Broken icons in "Why Choose Us"
-- Starting prices on every service block (from `pricing.md`)
-- Add Number Plates as a homepage service
+- Broken icons in "Why Choose Us" ("Experties" typo already fixed on live site)
+- Starting prices on every service block — after Hypa resolves the price clashes
+- Number Plates already on the homepage; give it its own page
 
 ## Proposed site structure (draft — to agree with Hypa)
 - Home
@@ -42,8 +42,8 @@ without losing the SEO work already done.
 - Prices page (optional — all "from" prices in one place)
 
 ## Open questions for Hypa
-1. Where is the domain registered and who manages DNS?
-2. Is info@hypedup.uk on GoDaddy email, Microsoft 365, Google Workspace or something else?
+1. ~~Where is the domain registered and who manages DNS?~~ → GoDaddy
+2. ~~Who hosts info@hypedup.uk?~~ → GoDaddy (still to check: GoDaddy Professional Email or Microsoft 365 from GoDaddy?)
 3. Who will edit the site day to day — does Hypa need an easy editor for blog posts, or will Claude publish them via this repo?
 4. Any must-have features: online booking, quote form, WhatsApp chat, price calculator, gallery?
 5. Brand assets: logo files, colours, fonts, photos — where are they?
