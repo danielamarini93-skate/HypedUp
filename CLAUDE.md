@@ -1,0 +1,55 @@
+# Hyped Up — Project Memory
+
+This repo is the home for everything Hyped Up: the new website (replacing GoDaddy) and the
+business/marketing memory that every Claude session should start from.
+
+**Read this file first, then open the relevant file in `memory/` for detail.**
+
+## The business in one paragraph
+
+Hyped Up is a vehicle modification, security and styling workshop in Bermondsey, South London,
+run by **Hypa** (founded 2022, 20+ years experience, McLaren motorsport roots). Services span
+security (Ghost immobiliser, MetaTrak trackers, dash cams), multimedia (CarPlay, cameras),
+audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates and bodywork.
+
+- Address: Unit 22, Enterprise Industrial Estate, Bolina Road, London SE16 3LF
+- Phone: 020 3340 0632 · WhatsApp: 07713 735646 · Email: info@hypedup.uk
+- Website: https://hypedup.uk/ (currently GoDaddy Website Builder) · Instagram: @hypedup.ltd
+
+## Current goal
+
+1. **Redesign the website and move off GoDaddy.** See `memory/website-migration.md`.
+2. Keep the SEO/content engine running (2 blog posts/week, Google Maps ads, GBP).
+
+## Memory map
+
+| File | What's in it |
+|---|---|
+| `memory/business.md` | Services, partner brands, Hypa's background and cars |
+| `memory/pricing.md` | All confirmed prices (use these, never invent prices) |
+| `memory/brand-voice.md` | Writing style guide + competitor-mention rules |
+| `memory/seo.md` | Technical SEO done (GTM, schema, GA4, Search Console) + keyword data |
+| `memory/content.md` | Blog posts: published, ready, to write; news angles |
+| `memory/marketing.md` | Google Maps ads, Google Business Profile, AI visibility (GEO) |
+| `memory/operations.md` | Customer tracker (Google Sheets), tools, how Hypa wants AI to help |
+| `memory/website-migration.md` | Redesign + leaving GoDaddy: what must carry over, open questions |
+| `memory/todo.md` | Every pending item, grouped |
+| `memory/decisions.md` | Log of decisions made (append new ones with a date) |
+| `memory/source/` | The original memory export, kept verbatim for reference |
+
+## Hard rules (always apply)
+
+- **Prices:** only use prices in `memory/pricing.md`. Write them with £. If a price isn't there, say "price on enquiry" or ask.
+- **No dyno testing** — Hyped Up does not offer it. Never mention it.
+- **Full wraps take a minimum of 1 week** (never "3–5 days").
+- **Never name competing installation shops.** Product brands are fine (Ghost, Pandora, Scorpion, MetaTrak, Xtrons, Autostyle, Pioneer, Kenwood, Rockford Fosgate, Air Lift, Prazis).
+- Write in **Hypa's voice** (see `memory/brand-voice.md`): first person, direct, honest, South London, no corporate fluff.
+- Meta titles ≤ 65 characters; meta descriptions 155–160 characters.
+- UK English (colour, tyre, licence, organise).
+- Hypa wants AI as a **personal assistant** (organise, remind, draft) — not full automation.
+
+## Keeping memory up to date
+
+When something changes (a post is published, a price changes, a decision is made, a task is done):
+update the relevant `memory/*.md` file, tick/remove it in `memory/todo.md`, add a dated line to
+`memory/decisions.md` if it was a decision, and bump the "Last updated" date in that file.
