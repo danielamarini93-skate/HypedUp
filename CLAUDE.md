@@ -5,6 +5,12 @@ business/marketing memory that every Claude session should start from.
 
 **Read this file first, then open the relevant file in `memory/` for detail.**
 
+## Who I'm working with
+
+**Dani** is a **UX/UI designer** who leads this project: the website redesign, the brief and the strategy.
+Talk to Dani as a designer: design and UX language is fine and welcome; explain code and infrastructure in plain words.
+Hypa (the owner) gives the final OK on business facts, prices and claims.
+
 ## The business in one paragraph
 
 Hyped Up is a vehicle modification, security and styling workshop in Bermondsey, South London,
@@ -19,7 +25,7 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 
 ## Current goal
 
-1. **Redesign the website and move off GoDaddy.** See `memory/website-migration.md`.
+1. **Redesign the website and move off GoDaddy.** Step 1 now: write the **brief and strategy**, then choose the platform. See `memory/website-migration.md`.
 2. Keep the SEO/content engine running (2 blog posts/week, Google Maps ads, GBP).
 
 ## Memory map

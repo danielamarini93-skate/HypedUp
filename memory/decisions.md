@@ -19,3 +19,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-07 — Audited the live site and saved all 15 blog posts into the repo so nothing depends on GoDaddy for content
 - 2026-11-07 — Reviewed a friend's Astro/Cloudflare concept site; kept out of the repo until Daniela decides whether to use it
 - 2026-11-07 — Friend's concept site will NOT be used or copied into the repo; new site to be built from scratch with a different approach (platform still to choose)
+- 2026-11-07 — Process: brief + strategy first, platform choice after (Dani)
