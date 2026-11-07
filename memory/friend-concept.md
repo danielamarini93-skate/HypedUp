@@ -4,6 +4,11 @@ _Status: **under consideration — not adopted, not in this repo.** Source: two 
 (`2Archive.zip` = config + public files, `1Archive1.zip` = `src/`). Together they form one project, "hypedup-site", concept v2 dated 6 Nov 2026._
 
 ## What it is
+- **Live preview:** https://hypedup-site.srsonino.workers.dev/ (on the friend's Cloudflare account "srsonino"; hidden from Google)
+- Viewed 7 Nov 2026 on desktop + phone: dark "motorsport" look, works well on mobile (sticky WhatsApp/Call bar),
+  quote box on the homepage, services grid with "from" prices, Ghost feature, work gallery, "The technician" section,
+  spec builder with a running guide total. Polished and professional.
+- ⚠️ The workshop reel on the homepage shows a sign reading "We fit insurance approved tracking", which contradicts the site's own rule against that claim
 - **Astro 7** static site, hosted free on **Cloudflare Workers** (static assets), `npm run deploy` via wrangler
 - Built as a surprise for Hypa; a preview link was meant to come with it (Daniela to find it)
 - Pages: home, 7 service pages (security, carplay, audio, wraps, air-suspension, performance, number-plates),
