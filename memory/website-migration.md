@@ -43,13 +43,14 @@ without losing the SEO work already done.
 
 ## Open questions for Hypa
 1. ~~Where is the domain registered and who manages DNS?~~ → GoDaddy
-2. ~~Who hosts info@hypedup.uk?~~ → GoDaddy (still to check: GoDaddy Professional Email or Microsoft 365 from GoDaddy?)
+2. ~~Who hosts info@hypedup.uk?~~ → **Microsoft 365 bought through GoDaddy** (MX points to Outlook; full record list in `friend-concept.md`)
 3. Who will edit the site day to day — does Hypa need an easy editor for blog posts, or will Claude publish them via this repo?
 4. Any must-have features: online booking, quote form, WhatsApp chat, price calculator, gallery?
 5. Brand assets: logo files, colours, fonts, photos — where are they?
 6. Budget for hosting (free/static hosting vs. a paid CMS)?
 
 ## Platform options (to decide — no choice made yet)
+- **Friend's concept site** (Astro on Cloudflare, see `friend-concept.md`) — already ~80% of the static option below: pages, redirects, schema, photos, blog. Missing GA4/GTM and confirmed prices
 - **Static site in this repo** (e.g. Astro) on Netlify / Cloudflare Pages / Vercel — fast, free hosting, full SEO control; blog posts as Markdown, Claude can write + publish via git
 - **WordPress** (managed host) — familiar editor, plugins; more maintenance
 - **Webflow / Framer** — visual editor, paid monthly

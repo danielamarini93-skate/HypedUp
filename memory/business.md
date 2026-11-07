@@ -4,12 +4,14 @@ _Last updated: 7 Nov 2026_
 
 ## Overview
 
-- **Business:** Hyped Up (Hyped Up Ltd — people search "hyped up limited")
+- **Business:** Hyped Up (Hyped Up Limited, company no. 14086991 — people search "hyped up limited")
 - **Owner:** Hypa
 - **Founded:** 2022 · **Experience:** 20+ years · McLaren motorsport roots
 - **Location:** Unit 22, Enterprise Industrial Estate, Bolina Road, London SE16 3LF (Bermondsey, South London)
 - **Phone:** 020 3340 0632 · **WhatsApp:** 07713 735646 · **Email:** info@hypedup.uk
-- **Website:** https://hypedup.uk/ · **Instagram:** @hypedup.ltd
+- **Website:** https://hypedup.uk/ · **Instagram/TikTok:** @hypedup.ltd · **Facebook:** facebook.com/p/Hyped-Up-100086498654920/
+- ⚠️ A second phone number (020 3727 7271) appears on LinkedIn — confirm which is current
+- Hours (unconfirmed, from a directory listing): Mon–Fri 10:00–18:00, Sat 09:00–16:00, Sun closed
 - **Local areas to reference:** Bermondsey, Rotherhithe, Peckham, Camberwell, Old Kent Road, Elephant and Castle
 
 ## Services
@@ -17,7 +19,7 @@ _Last updated: 7 Nov 2026_
 ### Security (content pillar 1 — priority)
 - MetaTrak S5 / S7 GPS trackers (Thatcham approved)
 - Ghost immobiliser — cars **and** motorcycles
-- Scorpion security systems
+- Scorpion security systems; also Datatool trackers, Thinkware dash cams
 - Dash cams — front and rear, hardwired with parking mode
 
 ### Multimedia (pillar 1)
@@ -39,7 +41,7 @@ _Last updated: 7 Nov 2026_
 - Vehicle signage / branding
 
 ### Tuning
-- ECU remapping Stage 1 / 2 / 3 — cars **and** motorcycles
+- ECU remapping Stage 1 / 2 / 3 — cars **and** motorcycles (KESS3 tool; JB4 plug-in modules for BMW)
 - **No dyno testing** (removed from all content)
 - Air suspension — **authorised Air Lift and Prazis dealer**
 

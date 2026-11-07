@@ -34,6 +34,7 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 | `memory/marketing.md` | Google Maps ads, Google Business Profile, AI visibility (GEO) |
 | `memory/operations.md` | Customer tracker (Google Sheets), tools, how Hypa wants AI to help |
 | `memory/current-site.md` | Audit of the live GoDaddy site: every URL, tracking IDs, price clashes |
+| `memory/friend-concept.md` | Review of a friend's Astro/Cloudflare concept site (not adopted yet) + rule clashes |
 | `memory/website-migration.md` | Redesign + leaving GoDaddy: what must carry over, open questions |
 | `memory/todo.md` | Every pending item, grouped |
 | `memory/decisions.md` | Log of decisions made (append new ones with a date) |

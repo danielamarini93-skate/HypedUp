@@ -17,3 +17,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-07 — Started this repo as the single home for Hyped Up memory + the new website — moving off GoDaddy
 - 2026-11-07 — Domain and email confirmed as both on GoDaddy — website move must leave email DNS records untouched
 - 2026-11-07 — Audited the live site and saved all 15 blog posts into the repo so nothing depends on GoDaddy for content
+- 2026-11-07 — Reviewed a friend's Astro/Cloudflare concept site; kept out of the repo until Daniela decides whether to use it
