@@ -1,6 +1,6 @@
 # Friend's Concept Site (reviewed 7 Nov 2026)
 
-_Status: **under consideration — not adopted, not in this repo.** Source: two zips Daniela uploaded
+_Status: **NOT adopted (Daniela, 7 Nov 2026): the new site will be built from scratch with a different approach.** Useful only as a reference (redirect list, DNS records, legal content rules, photos). Source: two zips Daniela uploaded
 (`2Archive.zip` = config + public files, `1Archive1.zip` = `src/`). Together they form one project, "hypedup-site", concept v2 dated 6 Nov 2026._
 
 ## What it is

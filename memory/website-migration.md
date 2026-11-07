@@ -50,7 +50,7 @@ without losing the SEO work already done.
 6. Budget for hosting (free/static hosting vs. a paid CMS)?
 
 ## Platform options (to decide — no choice made yet)
-- **Friend's concept site** (Astro on Cloudflare, see `friend-concept.md`) — already ~80% of the static option below: pages, redirects, schema, photos, blog. Missing GA4/GTM and confirmed prices
+- ~~Friend's concept site~~ — rejected 7 Nov 2026; building from scratch
 - **Static site in this repo** (e.g. Astro) on Netlify / Cloudflare Pages / Vercel — fast, free hosting, full SEO control; blog posts as Markdown, Claude can write + publish via git
 - **WordPress** (managed host) — familiar editor, plugins; more maintenance
 - **Webflow / Framer** — visual editor, paid monthly
