@@ -21,6 +21,11 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 
 - [ ] Get the master price sheet as CSV/Excel from Dani and reconcile `pricing.md`
 
+- [ ] Connect Google Drive in claude.ai so Claude can use the media folders (new session after)
+- [ ] Hypa: is Car Audio Security (Hayes) the supplier, or a competitor?
+- [ ] Endless Customs: get their Instagram to review
+- [ ] Choose a positioning line (options A–D in `docs/design-thinking/strategy.md`)
+
 ## SEO / technical
 - [ ] Request indexing for all main service pages in Search Console
 - [ ] Add products to Google Business Profile (list in `marketing.md`)

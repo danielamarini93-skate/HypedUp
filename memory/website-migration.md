@@ -17,6 +17,11 @@ without losing the SEO work already done.
 - Full ownership of data + analytics, including email data, with an easy performance dashboard
 - Apparel stays, ordered by WhatsApp request (no checkout)
 
+## Media (Dani, 8 Nov 2026)
+- New photos and videos go in Google Drive: [main media folder](https://drive.google.com/drive/folders/1DmgJNspow1OfmMqS4PuOMD8Xxc5wRR31) (Dani is filling it)
+- Existing media: [second folder](https://drive.google.com/drive/folders/1OYh1jKpwcK1jphTmTrnxPrNwotmFOnXO)
+- Claude can't open Drive yet: needs the Google Drive connector (claude.ai/customize/connectors) and a new session
+
 ## Must carry over — migration checklist
 - [x] **Inventory every current URL** → `current-site.md` (11 pages + 15 posts)
 - [ ] **301 redirects** from every old URL to its new URL (old sitemap: `/sitemap.website.xml`)

@@ -27,6 +27,18 @@ US prompts). Contact sheets: `competitors/sheet-d.png` (desktop), `competitors/s
 | **Price visibility** | None on homepage | Full prices (£174–£1,099) | None | None | Merch prices |
 | **Schema** (data) | Locksmith, FAQPage, Organization | Organization | Organization | none found | none found |
 
+## Added 8 Nov 2026 (Dani's list)
+Contact sheet: `competitors/sheet-2.png`.
+
+| Site | Type | Observed | Notes |
+|---|---|---|---|
+| **Polimax Motorsport** ([polimax.co.uk](https://www.polimax.co.uk/)) | Styling: PPF, wraps, tint, dechrome, wheels, exhaust/remap. Two branches: Bethnal Green (E2) and Wimbledon | H1 "Car styling excellence." · "London, since 2004" · dark hero photo · Get a quote · WhatsApp **and** call per branch · reviews section · on-brand cookie banner with Accept/Deny/Customise · 4.4★ from 507 ratings (directory listing) | **The strongest styling competitor.** Professional, established, but styling only (no security/CarPlay focus). Their banner still covers the hero on mobile |
+| **Car Audio Security** ([caraudiosecurity.com](https://www.caraudiosecurity.com/)) | Car audio + security retailer with fitting, Hayes (West London) | E-commerce first: product search, sale banners (Kenwood, JBL CarPlay units £219–£749), "Get a Quote", "Book Installation", finance | ⚠️ Possibly the same "Car Audio Security Shop" the memory lists as Hyped Up's Pioneer/Kenwood supplier. **Confirm with Hypa: partner or competitor?** |
+| **AZ Customs** (az-customs.co.uk) | BMW/Mercedes/VAG coding, CarPlay activation (per Trustpilot profile) | Domain not connected to a site (Wix placeholder); Trustpilot page with no reviews | Not assessable. Shows demand for **car-specific CarPlay/coding** (supports the car-specific pages idea) |
+| **Endless Customs** | Registered Ltd, Catford SE6 (very close to SE16), vehicle customisation | No website found; likely Instagram-only | Ask Dani/Hypa for their Instagram to review |
+
+**What this adds:** Polimax shows the "professional" bar (heritage line, clean service list, quote + WhatsApp per branch). Nobody combines electronics *and* styling at that level of polish: still the gap.
+
 ## Table stakes (what users will expect)
 - Phone and a fast way to ask (WhatsApp/call/form) visible on mobile at all times
 - Clear service list with a page per key service

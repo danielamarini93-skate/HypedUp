@@ -14,6 +14,21 @@ be updated or measured the way the business needs.
 - **Unlike:** single-service fitters and faceless chains that sell a box and leave
 - **Proof:** real builds (photos and video), Google reviews, Hypa's motorsport background, partner brands (Ghost, MetaTrak, Air Lift, Prazis, Xtrons…), honest prices up front
 
+## Positioning line: options (v0.3, after Dani's feedback)
+Dani: "We adapt the car to you" isn't professional enough; the line must **answer what clients want**.
+Clients want: their car **protected**, **upgraded** and **styled**, **done properly**, by someone they can **trust**, with a **clear price**, in **one place**.
+
+| Option | Headline | Supporting line |
+|---|---|---|
+| **A (recommended)** | **Protect it. Upgrade it. Style it.** | South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly. |
+| B | Every upgrade your car needs. One workshop. | Security, CarPlay, audio, wraps, tint, air and more, in Bermondsey. |
+| C | Car electronics and styling, done properly. | From Ghost immobilisers to full wraps: one team, one place, one clear price. |
+| D | Your next upgrade starts here. | South London's one-stop modification workshop, for cars and bikes. |
+
+Why A: three verbs = the three things people come for (security, tech, looks), in the order of priority; the
+supporting line carries the professional claim (one-stop, fitted properly, priced clearly) and the search terms
+(South London, car electronics, security, styling). **Decision: Dani.**
+
 ## Strategic priorities
 1. **Make electronics the front door.** Serves: grow electronics work. Why: highest search demand (car tracker 14,800/mo, Ghost 14,800/mo, front and rear dash cam 4,800/mo) and Hyped Up's priority.
 2. **Show the work, show the person.** Serves: trust + brand. Why: this kind of work is bought on proof. Photos, video, reviews and Hypa himself beat any claim.

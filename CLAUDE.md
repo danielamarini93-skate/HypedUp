@@ -28,8 +28,8 @@ Following Dani's process: `docs/design-thinking/` (brief, strategy, research, co
 `docs/design-build/`, `docs/design-review/`. Business memory stays in `memory/`.
 
 ## Design thinking (stage 1): done 8 Nov 2026
-Outputs in `docs/design-thinking/`: brief, strategy v0.2, audit, competitors, Mobbin, personas, visual direction, summary, concept.
-- **Positioning:** "We adapt the car to you." Electronics first, styling second (two doors)
+Outputs in `docs/design-thinking/`: tech-setup (cookies, forms, reviews, analytics), brief, strategy v0.2, audit, competitors, Mobbin, personas, visual direction, summary, concept.
+- **Positioning:** one-stop modification and styling shop; electronics and styling are starting points. Headline line TBC (options A–D in strategy.md; "We adapt the car to you" rejected)
 - **Look:** "Workshop wall": strict grid + condensed type + hand-drawn marks/stickers, workshop black + Hyped red `#E30513`
 - **Main action:** WhatsApp quote with service and car pre-filled
 - **Research & audit doc (Dani edits here first):** https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg
