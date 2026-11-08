@@ -65,3 +65,19 @@ GoDaddy's inbox for messages that arrive through the website (and any channels c
 - **This inbox disappears when we leave GoDaddy.** Its job moves to: WhatsApp (main), the new form → info@hypedup.uk, phone.
 - **14 hours to reply is slow** for people comparing quotes. The new form email should land in Outlook where Hypa sees it, plus an instant auto-reply ("Got it, we'll reply today; for a faster answer WhatsApp 07713 735646").
 - TBC: which channels feed it (website chat? form? Facebook/Instagram?): the "All Channels" dropdown shows the split.
+
+## GoDaddy Insights (screenshot from Dani, 8 Nov 2026), last 12 months
+| Measure | 12 months | Last 30 days |
+|---|---|---|
+| Site visitors | **6,066** (~505/month) | +545 |
+| Blog post views | 138 | +28 |
+| Social views (Instagram/Facebook via GoDaddy) | **204,546** | +9,129 |
+| Email clicks / Ad clicks | no data | no data |
+
+**Why GoDaddy and GA4 disagree:** GoDaddy counts ~545 visitors in 30 days; GA4 counts ~25–30 a week (~110–130/month).
+GA4 only counts people who **accept cookies** on the GoDaddy banner (many decline), while GoDaddy counts everyone,
+probably including some bots. The real figure is in between, closer to GoDaddy's. **The new site's cookie-free
+analytics will give the true number**, so compare launch figures with care (different counting methods).
+
+**Social reach dwarfs the website:** ~204k social views a year vs ~6k site visitors. Instagram/TikTok is where people
+discover Hyped Up; the website should convert that attention (link in bio → a fast page with builds, prices "from", WhatsApp).

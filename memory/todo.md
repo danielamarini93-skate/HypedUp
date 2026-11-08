@@ -30,7 +30,8 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [x] Search Console baseline saved → `docs/data/baseline-search.md`
 - [x] GA4 baseline saved → `docs/data/baseline-analytics.md`
 - [x] Business Profile baseline saved → `docs/data/baseline-business-profile.md`
-- [ ] Optional: GBP searches breakdown + GoDaddy Insights screenshots
+- [x] GoDaddy Insights saved (in `baseline-analytics.md`)
+- [ ] Optional: GBP searches breakdown
 - [ ] GBP: add a booking / quote link pointing to the WhatsApp quote (bookings = 0 today)
 - [ ] Ask partner brands (Xtrons, Air Lift, Prazis, MetaTrak, Scorpion) for installer-finder listings (Autostyle sends 45 sessions/quarter)
 - [ ] Link Google Ads (Maps campaign) to GA4
