@@ -21,7 +21,7 @@ _Content first · Depth: medium · Approved by Dani 8 Nov 2026 ("start now") · 
 - [x] **4. Mobbin research** → `mobbin-round-2.md` + saved to the "Hyped Up website redesign" collection
   Mobile menu, mega-menu, footer, service listing page, service detail page, gallery, blog list/article.
 
-- [ ] **5. Information architecture** → `sitemap.md` (with the `information-architecture` skill as a tool)
+- [x] **5. Information architecture** → `sitemap.md` (with the `information-architecture` skill as a tool)
   Site map, URL patterns, menu (mobile + desktop), footer contents, redirect mapping from old URLs,
   internal linking rules.
 
