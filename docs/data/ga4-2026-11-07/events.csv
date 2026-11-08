@@ -1,0 +1,18 @@
+# ----------------------------------------
+# Events: Event name
+# Account: HypedUp
+# Property: HypedUp
+# ----------------------------------------
+# 
+# All Users
+# Start date: 20260810
+# End date: 20261107
+Event name,Event count,Total users,Event count per active user,Total revenue
+user_engagement,860,243,3.553719008264463,0
+page_view,828,245,3.3934426229508197,0
+session_start,380,244,1.5702479338842976,0
+first_visit,238,238,1,0
+scroll,184,119,1.5593220338983051,0
+click,50,42,1.1904761904761905,0
+form_start,24,21,1.1428571428571428,0
+form_submit,1,1,1,0

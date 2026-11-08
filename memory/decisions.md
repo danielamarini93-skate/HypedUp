@@ -21,3 +21,19 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-07 — Friend's concept site will NOT be used or copied into the repo; new site to be built from scratch with a different approach (platform still to choose)
 - 2026-11-07 — Process: brief + strategy first, platform choice after (Dani)
 - 2026-11-08 — Dani's way of working lives in the dani-studio repo; this repo holds only Hyped Up facts. Sessions should load both
+- 2026-11-08 — Apparel shop kept, ordered via WhatsApp request instead of PayPal/checkout (Dani)
+- 2026-11-08 — Positioning: electronics and electronic mods first, styling second (Dani)
+- 2026-11-08 — Design thinking stage completed; homepage concept 'workshop wall' proposed (awaiting Dani's review)
+- 2026-11-08 — Research and audit moved into an editable doc for Dani to review before the concept (https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg)
+- 2026-11-08 — Concept v0.2 direction (Dani): minimal craft hero with video and one CTA; bolder palette (graphite + red + signal blue); positioning = one-stop modification shop, electronics and styling are starting points
+- 2026-11-08 — Website shows generic 'from £' prices only; the master price sheet is the source (Dani)
+- 2026-11-08 — Personas confirmed as right (Kemi, Jay, Marco) (Dani)
+- 2026-11-08 — Opening hours confirmed; OK to show Google reviews on the site, ideally automated (Dani)
+- 2026-11-08 — "We adapt the car to you" rejected as not professional enough; positioning must answer what clients want (Dani)
+- 2026-11-08 — Content editing: Claude via GitHub only, no CMS (Dani)
+- 2026-11-08 — Skip downloading old GoDaddy images; Dani puts newer media in Google Drive (Dani)
+- 2026-11-08 — Positioning line = option A: "Protect it. Upgrade it. Style it." + "South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly." (Dani)
+- 2026-11-08 — Hosting = Cloudflare (code site in GitHub, edited by Claude only). Framework chosen at build time (Dani)
+- 2026-11-08 — Media rules agreed: descriptive file names, alt text, compression, ImageObject/VideoObject schema, location in text + schema (not photo GPS), blur customer plates/faces without consent
+- 2026-11-08 — Media privacy: always blur customer number plates; no customer faces on the site (Dani)
+- 2026-11-08 — Design thinking round 2: content first; approve menu + footer, then internal pages, homepage last (Dani)

@@ -1,0 +1,255 @@
+<title>Hyped Up Homepage Concept</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:wght@400;500;600;700&family=Permanent+Marker&display=swap">
+<style>
+/* Layout: "garage at night". Phone: full-bleed video hero, one line, one action; then calm graphite bands.
+   Desktop: text left, vertical reel as a tall framed card right. Single dark look on purpose (workshop). */
+:root{
+  color-scheme: dark;
+  --asphalt:#0a0a0b;   /* page */
+  --tarmac:#131315;    /* band */
+  --graphite:#1d1d20;  /* cards */
+  --concrete:#34343a;  /* lines */
+  --steel:#9a9aa3;     /* secondary text, 6.9:1 on asphalt */
+  --chalk:#efeee9;     /* primary text */
+  --red:#e30513;       /* Hyped red: styling, marks */
+  --red-btn:#c2040f;   /* action fill, white text 5.8:1 */
+  --signal:#5b8cff;    /* new accent: electronics, 6.2:1 on asphalt */
+  --f-display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",sans-serif;
+  --f-body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --f-hand:"Permanent Marker","Segoe Print",cursive;
+}
+html,body{overflow-x:clip}
+body{background:var(--asphalt);color:var(--chalk);font:400 17px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--asphalt)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:.005em;text-wrap:balance;margin:0}
+.label{font:600 .74rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--steel)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;min-height:52px;padding:0 1.4rem;border-radius:2px;background:var(--red-btn);color:#fff;font:700 1rem/1 var(--f-body);text-decoration:none;letter-spacing:.01em}
+.btn:hover{background:var(--red)}
+.btn svg{width:20px;height:20px}
+.link{font-weight:700;text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
+
+/* header: logo + menu only */
+.top{position:absolute;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:30}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:1rem}
+.top img{height:34px;width:auto;display:block}
+.menu{background:none;border:0;color:var(--chalk);font:600 .9rem/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;display:flex;gap:.6rem;align-items:center;cursor:pointer;min-height:44px}
+.menu i{display:grid;gap:5px}.menu i b{display:block;width:22px;height:2px;background:currentColor}
+
+/* hero */
+.hero{position:relative;min-height:min(92svh,820px);display:grid;align-items:end;overflow:hidden;background:var(--asphalt)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.55) 0%,rgba(10,10,11,.05) 30%,rgba(10,10,11,.35) 55%,rgba(10,10,11,.96) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:0 2.4rem;display:grid;gap:1.1rem}
+.hero h1{font-size:clamp(3.6rem,17vw,8.5rem)}
+.hero h1 .any{position:relative;white-space:nowrap}
+.hero h1{padding-bottom:.16em}
+.hero h1 .any svg{position:absolute;left:-2%;bottom:-.14em;width:104%;height:.16em;overflow:visible}
+.hero p{margin:0;max-width:30ch;font-size:1.12rem;color:var(--chalk)}
+.hero .frame{display:none}
+.pause{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:2.6rem;z-index:3;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(239,238,233,.6);background:rgba(10,10,11,.4);color:var(--chalk);cursor:pointer;display:grid;place-items:center}
+.pause svg{width:16px;height:16px}
+
+section{padding-block:4.5rem}
+.head{display:grid;gap:.8rem;margin-bottom:2rem}
+.head h2{font-size:clamp(2.8rem,11vw,5.4rem)}
+.head p{margin:0;color:var(--steel);max-width:46ch}
+
+/* start anywhere */
+.starts{display:grid;gap:1px;background:var(--concrete);border:1px solid var(--concrete)}
+.start{position:relative;display:grid;gap:.7rem;padding:1.6rem 1.3rem 1.4rem;background:var(--tarmac);text-decoration:none;min-height:220px;align-content:end;overflow:hidden}
+.start .bg{position:absolute;inset:0;background:center/cover no-repeat;opacity:.38;filter:grayscale(1) contrast(1.1);transition:opacity .3s,filter .3s}
+.start:hover .bg{opacity:.6;filter:grayscale(0)}
+.start>*:not(.bg){position:relative}
+.start .tag{font:700 .74rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase}
+.start h3{font-size:clamp(2.6rem,10vw,3.8rem)}
+.start p{margin:0;color:var(--chalk);max-width:34ch}
+.start .from{font-weight:600;color:var(--steel);font-size:.95rem;font-variant-numeric:tabular-nums}
+.start .arrow{position:absolute;right:1.2rem;top:1.3rem;font-size:1.6rem;line-height:1}
+.e .tag,.e .arrow{color:var(--signal)} .e h3 span{color:var(--signal)}
+.s .tag,.s .arrow{color:var(--red)}  .s h3 span{color:var(--red)}
+.x{background:var(--chalk);color:var(--asphalt)}
+.x .tag,.x .arrow{color:var(--asphalt)} .x p{color:var(--asphalt)} .x .from{color:#4a4a50}
+.x h3{font-family:var(--f-hand);font-weight:400;text-transform:none;line-height:1;font-size:clamp(2.2rem,8.5vw,3.2rem)}
+
+/* builds */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.8rem;scrollbar-width:thin}
+.rail figure{margin:0;scroll-snap-align:start;display:grid;gap:.6rem}
+.rail img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:2px}
+.rail figcaption{display:flex;justify-content:space-between;gap:1rem;font-size:.95rem}
+.rail figcaption b{font-weight:700}
+.rail figcaption span{color:var(--steel)}
+.rail .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:.45rem;vertical-align:middle}
+
+/* how */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s;border-top:1px solid var(--concrete)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:3.2rem 1fr;gap:1rem;padding-block:1.4rem;border-bottom:1px solid var(--concrete)}
+.steps li::before{content:counter(s,decimal-leading-zero);font:900 1.9rem/1 var(--f-display);color:var(--steel)}
+.steps h3{font-size:1.9rem;margin-bottom:.35rem}
+.steps p{margin:0;color:var(--steel)}
+
+/* review + hypa */
+.quote{display:grid;gap:1rem;max-width:44ch}
+.quote blockquote{margin:0;font:700 clamp(1.6rem,5.8vw,2.3rem)/1.15 var(--f-body);letter-spacing:-.01em}
+.quote small{color:var(--steel);font-weight:600}
+.tbc{font-family:var(--f-hand);color:var(--red);font-size:.95rem}
+.hypa{display:grid;gap:1.6rem}
+.hypa .ph{aspect-ratio:4/5;background:var(--graphite);display:grid;place-items:center;text-align:center;padding:1rem;border-radius:2px}
+.hypa .ph span{font-family:var(--f-hand);color:var(--steel);font-size:1.2rem}
+.hypa p{margin:0;color:var(--steel);max-width:50ch}
+.hypa h2{font-size:clamp(2.6rem,10vw,4.6rem)}
+
+/* visit */
+.visit{background:var(--tarmac);border-top:1px solid var(--concrete)}
+.visit .grid{display:grid;gap:2rem}
+.visit h2{font-size:clamp(3rem,12vw,6rem)}
+.visit dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.2rem;font-variant-numeric:tabular-nums}
+.visit dt{color:var(--steel)} .visit dd{margin:0;font-weight:600}
+.copy{margin-left:.5rem;background:none;border:1px solid var(--concrete);color:var(--chalk);border-radius:2px;font:600 .78rem/1 var(--f-body);padding:.4rem .55rem;cursor:pointer;min-height:30px}
+
+footer{padding-block:2.4rem 6.5rem;color:var(--steel);font-size:.9rem;border-top:1px solid var(--concrete)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between}
+
+/* sticky action: appears once the hero has scrolled away */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:35;padding:.7rem max(20px,env(safe-area-inset-right,0px)) calc(.7rem + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));background:rgba(10,10,11,.94);border-top:1px solid var(--concrete);transform:translateY(110%);transition:transform .25s}
+.bar.on{transform:none}
+.bar .btn{width:100%;justify-content:center}
+
+@media (prefers-reduced-motion:reduce){.bar{transition:none}.start .bg{transition:none}}
+
+@media (min-width:860px){
+  .top{position:relative;top:0}
+  .top .wrap{padding-block:1.4rem}
+  .hero{min-height:auto;align-items:center;padding-block:2.5rem 4.5rem!important}
+  .hero video{display:none}
+  .hero::after{display:none}
+  .hero .wrap{grid-template-columns:7fr 4fr;gap:3rem;align-items:center;padding-block:0}
+  .hero .frame{display:block;position:relative;aspect-ratio:9/16;max-height:640px;justify-self:end;width:100%;max-width:360px;border-radius:2px;overflow:hidden;outline:1px solid var(--concrete);outline-offset:10px}
+  .hero .frame video{display:block}
+  .hero .frame .pause{bottom:1rem;right:1rem}
+  .hero>.pause{display:none}
+  .starts{grid-template-columns:1fr 1fr 1fr}
+  .start{min-height:420px}
+  .rail{grid-auto-columns:30%}
+  .split{display:grid;grid-template-columns:5fr 7fr;gap:4rem;align-items:start}
+  .hypa{grid-template-columns:5fr 7fr;align-items:center}
+  .visit .grid{grid-template-columns:1.2fr 1fr 1fr;align-items:end}
+  .bar{display:none}
+  footer{padding-block:2.4rem}
+}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#top" aria-label="Hyped Up home"><img src="{{img:logo}}" alt="Hyped Up"></a>
+    <button class="menu" type="button" aria-label="Open menu">Menu <i aria-hidden="true"><b></b><b></b></i></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-block:0" aria-labelledby="h1">
+  <video class="bgv" autoplay muted loop playsinline preload="auto" poster="{{img:poster}}" src="{{vid}}" aria-label="Workshop reel: a Subaru and a superbike, a CarPlay screen, a boot build and a wrap in progress"></video>
+  <div class="wrap">
+    <div style="display:grid;gap:1.1rem">
+      <p class="label">Bermondsey · SE16 · Cars &amp; bikes</p>
+      <h1 id="h1">Protect it.<br>Upgrade it.<br><span class="any">Style it.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 60 4, 140 18, 200 9 S 280 6, 297 12" fill="none" stroke="#e30513" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
+      <p>South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly.</p>
+      <div><a class="btn" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20here%27s%20my%20idea%3A%20" target="_blank" rel="noopener">{{wa}}Start your build</a></div>
+    </div>
+    <div class="frame"><video class="fv" autoplay muted loop playsinline preload="auto" poster="{{img:poster}}" src="{{vid}}" aria-label="Workshop reel"></video><button class="pause" type="button" aria-label="Pause video">{{pause}}</button></div>
+  </div>
+  <button class="pause" type="button" aria-label="Pause video">{{pause}}</button>
+</section>
+
+<section aria-labelledby="h-start">
+  <div class="wrap">
+    <div class="head"><p class="label">Start anywhere</p><h2 id="h-start">One workshop. Every upgrade.</h2><p>Most jobs start with security, tech or looks. If it's something else, bring the idea: we plan it with you.</p></div>
+    <div class="starts">
+      <a class="start e" href="#"><div class="bg" style="background-image:url('{{img:carplay}}')"></div><span class="arrow" aria-hidden="true">→</span><span class="tag">Electronics</span><h3>Protect it. <span>Upgrade it.</span></h3><p>Immobilisers, trackers, dash cams, CarPlay screens, custom audio, lighting.</p><span class="from">from £125</span></a>
+      <a class="start s" href="#"><div class="bg" style="background-image:url('{{img:wrap}}')"></div><span class="arrow" aria-hidden="true">→</span><span class="tag">Styling</span><h3><span>Style it.</span></h3><p>Wraps, dechrome, tint, detailing, air suspension, wheels, bodykits.</p><span class="from">from £50</span></a>
+      <a class="start x" href="#"><span class="arrow" aria-hidden="true">→</span><span class="tag">Anything else</span><h3>Got an idea? Bring it.</h3><p>One-offs, show builds, bike projects, taxi and van fit-outs.</p><span class="from">Priced on your build</span></a>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-builds" style="padding-top:0">
+  <div class="wrap">
+    <div class="head" style="grid-template-columns:1fr auto;align-items:end"><h2 id="h-builds">Recent builds</h2><a class="link" href="#">All builds</a></div>
+    <div class="rail" tabindex="0" aria-label="Recent builds, scroll sideways">
+      <figure><img src="{{img:civic}}" alt="Yellow Honda Civic Type R in the workshop" loading="lazy"><figcaption><b>Civic Type R</b><span><i class="dot" style="background:var(--signal)"></i>Multimedia</span></figcaption></figure>
+      <figure><img src="{{img:porsche}}" alt="Black Porsche 911 (964) outside the unit with yellow-tinted headlights" loading="lazy"><figcaption><b>Porsche 911 (964)</b><span><i class="dot" style="background:var(--red)"></i>Light tint</span></figcaption></figure>
+      <figure><img src="{{img:mini}}" alt="Lowered red Mini in front of the workshop mural" loading="lazy"><figcaption><b>Mini F56</b><span><i class="dot" style="background:var(--red)"></i>Air + stance</span></figcaption></figure>
+      <figure><img src="{{img:remap}}" alt="White Mercedes C63 AMG with a Hyped Up plate" loading="lazy"><figcaption><b>Mercedes C63</b><span><i class="dot" style="background:var(--signal)"></i>Remap</span></figcaption></figure>
+      <figure><img src="{{img:dashcam}}" alt="Dash cam fitted behind the mirror of a BMW" loading="lazy"><figcaption><b>BMW</b><span><i class="dot" style="background:var(--signal)"></i>Dash cam</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-how" style="background:var(--tarmac)">
+  <div class="wrap split">
+    <div class="head"><p class="label">How a build works</p><h2 id="h-how">Idea in. Car out.</h2></div>
+    <ol class="steps">
+      <li><div><h3>Send the idea</h3><p>A photo, a screenshot, your reg. On WhatsApp, in two minutes.</p></div></li>
+      <li><div><h3>We plan it together</h3><p>Parts, look, time and a clear price before anything starts.</p></div></li>
+      <li><div><h3>We build it</h3><p>Fitted and tested in the workshop. You see it before you drive it.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section aria-labelledby="h-proof">
+  <div class="wrap hypa">
+    <div class="ph"><span>Hypa in the workshop<br>(Dani's new photo)</span></div>
+    <div style="display:grid;gap:1.2rem">
+      <p class="label">The person who builds it</p>
+      <h2 id="h-proof">Meet Hypa</h2>
+      <p>Motorsport roots at McLaren, now his own workshop in Bermondsey. You talk to the person who does the work. His red Mini on Air Lift is his daily; the 1 Series is on its third boot build.</p>
+      <div class="quote" style="margin-top:1rem;border-top:1px solid var(--concrete);padding-top:1.4rem">
+        <blockquote>A real Google review goes here. Short, in the customer's words.</blockquote>
+        <small>First name · Google · rating TBC</small>
+      </div>
+      <p class="tbc">Bio and review to confirm with Hypa</p>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="visit" aria-labelledby="h-visit">
+  <div class="wrap grid">
+    <div style="display:grid;gap:1.2rem"><h2 id="h-visit">Come by the unit.</h2><div><a class="btn" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20here%27s%20my%20idea%3A%20" target="_blank" rel="noopener">{{wa}}Start your build</a></div></div>
+    <dl>
+      <dt>Find us</dt><dd><span id="addr">Unit 22, Enterprise Industrial Estate, Bolina Road, SE16 3LF</span><button class="copy" data-copy="addr" type="button">Copy</button></dd>
+      <dt>WhatsApp</dt><dd><span id="wa">07713 735646</span><button class="copy" data-copy="wa" type="button">Copy</button></dd>
+      <dt>Phone</dt><dd><span id="ph">020 3340 0632</span></dd>
+    </dl>
+    <dl><dt>Mon–Fri</dt><dd>10:00–18:00</dd><dt>Sat</dt><dd>09:00–16:00</dd><dt>Sun</dt><dd>Closed</dd><dt></dt><dd class="tbc" style="font-weight:400">hours to confirm</dd></dl>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Hyped Up Limited · Instagram &amp; TikTok @hypedup.ltd · <a class="link" href="#">Wear the workshop</a></span><span>Concept v0.3 by Dani · Nov 2026 · "from" prices from the master price list</span></div></footer>
+
+<div class="bar" id="bar" aria-hidden="true"><a class="btn" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20here%27s%20my%20idea%3A%20" target="_blank" rel="noopener" tabindex="-1">{{wa}}Start your build</a></div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vids=[].slice.call(document.querySelectorAll('.hero video'));
+  if(reduce){vids.forEach(function(v){v.removeAttribute('autoplay');v.pause()})}
+  document.querySelectorAll('.pause').forEach(function(b){
+    var ico={pause:b.innerHTML,play:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2l10 6-10 6z" fill="currentColor"/></svg>'};
+    var sync=function(){var p=vids.every(function(v){return v.paused});b.innerHTML=p?ico.play:ico.pause;b.setAttribute('aria-label',p?'Play video':'Pause video')};
+    b.addEventListener('click',function(){var p=vids.every(function(v){return v.paused});vids.forEach(function(v){p?v.play().catch(function(){}):v.pause()});sync()});
+    if(reduce)sync();
+  });
+  var bar=document.getElementById('bar'),hero=document.querySelector('.hero');
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){var off=!e[0].isIntersecting;bar.classList.toggle('on',off);bar.setAttribute('aria-hidden',off?'false':'true');bar.querySelector('a').tabIndex=off?0:-1}).observe(hero)}
+  document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.dataset.copy),old=b.textContent;
+    var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent=old},1400)};
+    var fb=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)};
+    try{navigator.clipboard.writeText(el.textContent).then(ok,fb)}catch(e){fb()}})});
+})();
+</script>

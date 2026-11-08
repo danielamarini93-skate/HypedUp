@@ -5,7 +5,7 @@ _Last updated: 7 Nov 2026_
 ## Google Sheets customer tracker
 - Sheet ID: `1WUUStU4bxqfnuBbrz6TxsuSUzKfVB_bsgGnJSeFPZi8`
 - **Tab 1 (Plates):** ~40 orders, Dec 2025 – Jun 2026 · ~60% 2D printed (£15–35) · ~20% shadow (£80–85)
-- **Tab 2 (All customers):** exists, not yet read properly
+- **Tab 2 (All customers):** exists, not yet read properly. Link Dani shared 8 Nov 2026: https://docs.google.com/spreadsheets/d/1WUUStU4bxqfnuBbrz6TxsuSUzKfVB_bsgGnJSeFPZi8/edit?gid=1643857236 (private: needs the Google Drive connector, or a CSV export)
 - Columns to add: Phone, Email, Repeat Customer?, Other Services?, Referral Source, Follow-up Date
 - Opportunity: cross-sell security (Ghost, trackers, dash cams) to plate customers
 

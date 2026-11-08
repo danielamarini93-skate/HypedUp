@@ -8,8 +8,9 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Export a full copy of the GoDaddy DNS records before any change
 - [x] Friend's concept site: not used (reference only)
 - [ ] Decide on the content-rule clashes (20+ years, Thatcham/insurance claims, tinted lights, shadow plates) — see `friend-concept.md`
-- [ ] Confirm opening hours and which phone number is current
-- [ ] Choose platform
+- [x] Opening hours confirmed
+- [ ] Confirm which phone number is current
+- [x] Platform: Cloudflare (code site in GitHub)
 - [x] Inventory current URLs and export blog content from GoDaddy (see `current-site.md`, `content/blog-archive/`)
 - [ ] Hypa to confirm the clashing prices (CarPlay, security, plates, remap) — see `current-site.md`
 - [ ] Download blog/site images from `img1.wsimg.com` before cancelling GoDaddy
@@ -17,6 +18,23 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Design + build new site
 - [ ] Migrate with 301s, GA4, Search Console, schema, sitemap
 - [ ] Interim (only if migration is far off): fix broken icons; check GA4 Realtime ("Experties" typo already fixed; homepage already has prices + number plates)
+
+- [x] Master price sheet read → `price-list-master.md`
+- [ ] Hypa: which head-unit price table is current; Ghost price (not in sheet)
+
+- [x] Google Drive connected (8 Nov 2026)
+- [ ] Hypa: is Car Audio Security (Hayes) the supplier, or a competitor?
+- [ ] Endless Customs: get their Instagram to review
+- [x] Positioning line: option A
+
+- [x] Search Console baseline saved → `docs/data/baseline-search.md`
+- [x] GA4 baseline saved → `docs/data/baseline-analytics.md`
+- [x] Business Profile baseline saved → `docs/data/baseline-business-profile.md`
+- [x] GoDaddy Insights saved (in `baseline-analytics.md`)
+- [ ] Optional: GBP searches breakdown
+- [ ] GBP: add a booking / quote link pointing to the WhatsApp quote (bookings = 0 today)
+- [ ] Ask partner brands (Xtrons, Air Lift, Prazis, MetaTrak, Scorpion) for installer-finder listings (Autostyle sends 45 sessions/quarter)
+- [ ] Link Google Ads (Maps campaign) to GA4
 
 ## SEO / technical
 - [ ] Request indexing for all main service pages in Search Console
