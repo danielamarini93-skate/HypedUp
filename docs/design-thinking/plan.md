@@ -21,7 +21,7 @@ _Inputs: `intake.md`, `CLAUDE.md`, `memory/`, live site hypedup.uk_
     - **Dashboard:** what it shows, who reads it, how often; built so Claude can report on it too
     - **Platform shortlist** scored against these requirements (decided after the brief, as agreed)
 
-- [ ] **3. Preliminary audit of hypedup.uk** → `audit.md`
+- [x] **3. Preliminary audit of hypedup.uk** → `audit.md`
   UX heuristic review (Claude) + `accessibility-scan` on the homepage + `seo-audit` (medium).
   Top issues ranked by impact, each labelled *observed / data / recommendation*.
 

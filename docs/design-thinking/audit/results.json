@@ -1,0 +1,144 @@
+{
+ "home-mobile": {
+  "lang": "en-GB",
+  "title": "Vehicle Security & Modifications South London | Hyped Up",
+  "desc": "Insurance-approved vehicle security, tinting & modifications in South London. GPS trackers, dash cams, wraps & CarPlay. Bermondsey SE16. Call 020 3340 0632.",
+  "canonical": "https://hypedup.uk/",
+  "h1count": 1,
+  "headings": [
+   "H1: South London's Vehicle Security & Modification Specialists",
+   "H3: ✓ Thatcham Approved ✓ 20+ Years Expertise ✓ Same-Day Service",
+   "H3: ✓ Thatcham Approved ✓ 20+ Years Expertise ✓ Same-Day Service",
+   "H3: ✓ Thatcham Approved ✓ 20+ Years Expertise ✓ Same-Day Service",
+   "H3: ✓ Thatcham Approved ✓ 20+ Years Expertise ✓ Same-Day Service",
+   "H3: ✓ Thatcham Approved ✓ 20+ Years Expertise ✓ Same-Day Service",
+   "H3: ✓ Thatcham Approved ✓ 20+ Years Expertise ✓ Same-Day Service",
+   "H2: Why Choose Hyped Up?",
+   "H4: Insurance Approved",
+   "H4: ",
+   "H4: ",
+   "H4: South London Specialists",
+   "H4: ",
+   "H4: ",
+   "H4: Same-Day Service",
+   "H4: ",
+   "H4: ",
+   "H2: See Our Transformations",
+   "H2: Our Services",
+   "H4: Car Security Installation London - GPS Tracker & Dash Cam fr",
+   "H4: Car Multimedia Upgrade - Apple CarPlay Installation from £19",
+   "H4: Custom Number Plates - While You Wait from £35",
+   "H4: Vehicle Wrapping - PPF - Window Tints from £150",
+   "H4: Car Audio Upgrade - Custom Subwoofer Installers",
+   "H4: ECU Remapping - Performance Tuning from £435"
+  ],
+  "imgs": 5,
+  "noAlt": 0,
+  "emptyAlt": 0,
+  "controls": 38,
+  "noName": 9,
+  "small": 6,
+  "lowC": [
+   {
+    "t": "Follow us on Instagram",
+    "ratio": 3.9,
+    "size": "16px"
+   },
+   {
+    "t": "+44 7713 735646",
+    "ratio": 3.9,
+    "size": "16px"
+   },
+   {
+    "t": "+44 20 3340 0632",
+    "ratio": 3.9,
+    "size": "16px"
+   },
+   {
+    "t": "info@hypedup.uk",
+    "ratio": 3.9,
+    "size": "16px"
+   }
+  ],
+  "checked": 84,
+  "tel": [
+   "tel:020 3340 0632"
+  ],
+  "wa": [
+   "https://wa.me/447713735646?",
+   "https://wa.me/447713735646?text=Hi%20Hyped%20Up,%20I'm%20interested%20in%20a%20quote%20for%20",
+   "https://wa.me/447713735646?text=Hi%20Hyped%20Up,%20I'm%20interested%20in%20learning%20more%20about%20your%20services%20in%20South%20London"
+  ],
+  "ld": [
+   "\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"AutomotiveBusiness\",\n  \"name\""
+  ],
+  "inputs": 0,
+  "unlabelled": 0,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "docH": 8419,
+  "hScroll": false,
+  "loadMs": 13775,
+  "reqs": 59,
+  "kb": 12898
+ },
+ "home-desktop": {
+  "err": "failed"
+ },
+ "security-mobile": {
+  "err": "failed"
+ },
+ "security-desktop": {
+  "lang": "en-GB",
+  "title": "Vehicle Security South London | GPS Tracking & Immobilisers",
+  "desc": "Vehicle security installation South London. Thatcham GPS tracking, Ghost immobilisers & dash cams. Reduce insurance premiums 30%. Bermondsey SE16. Free quote.",
+  "canonical": "https://hypedup.uk/vehicle-security",
+  "h1count": 1,
+  "headings": [
+   "H1: Professional Car Security Installation in London",
+   "H4: GPS Tracker and Immobiliser",
+   "H4: ",
+   "H4: ",
+   "H4: Advanced Vehicle Alarm Systems",
+   "H4: ",
+   "H4: ",
+   "H4: Professional Dash Cam Installers",
+   "H4: ",
+   "H4: ",
+   "H4: Why Choose HypedUp for Car Security?",
+   "H4: Get Your Free Security Consultation",
+   "H2: OUR CUSTOMERS",
+   "H4: This website uses cookies."
+  ],
+  "imgs": 10,
+  "noAlt": 0,
+  "emptyAlt": 0,
+  "controls": 32,
+  "noName": 9,
+  "small": 7,
+  "lowC": [
+   {
+    "t": "020 3340 0632",
+    "ratio": 3.9,
+    "size": "23px"
+   }
+  ],
+  "checked": 58,
+  "tel": [
+   "tel:020 3340 0632"
+  ],
+  "wa": [
+   "https://wa.me/447713735646?"
+  ],
+  "ld": [
+   "\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"AutomotiveBusiness\",\n  \"name\""
+  ],
+  "inputs": 0,
+  "unlabelled": 0,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "docH": 5980,
+  "hScroll": false,
+  "loadMs": 2170,
+  "reqs": 67,
+  "kb": 1439
+ }
+}
