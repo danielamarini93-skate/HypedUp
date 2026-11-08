@@ -45,4 +45,6 @@ Tighten to `p=quarantine` only after the website form's sender is added at build
 |---|---|---|
 | CNAME | `selector1._domainkey` | `selector1-hypedup-uk._domainkey.NETORGFT11101442.k-v1.dkim.mail.microsoft` |
 | CNAME | `selector2._domainkey` | `selector2-hypedup-uk._domainkey.NETORGFT11101442.k-v1.dkim.mail.microsoft` |
-Status: keys created in Microsoft Defender; records to be added in GoDaddy, then signing enabled.
+Status (8 Nov 2026): both CNAMEs live in GoDaddy DNS (checked). Microsoft's Enable switch first returned an error (usually key sync / propagation delay); **retry signing later**.
+
+**DMARC live (checked 8 Nov 2026):** `v=DMARC1; p=none; rua=mailto:info@hypedup.uk; fo=1`
