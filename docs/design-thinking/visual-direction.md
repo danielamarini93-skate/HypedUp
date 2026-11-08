@@ -125,3 +125,8 @@ Decision pending (Dani). Source: `concept/moodboard/`.
 ### Moodboard v3 (8 Nov 2026): Dani's fonts applied
 - A tag: **Decipher** · B spray word: **Aerosoldier Spray** · C accent: **Sedgwick Ave Display** (free). Font test + licences: `concept/assets/SOURCES.md`, `font-test.jpg`.
 - Before launch: buy the commercial licence for whichever paid font is chosen.
+
+### Moodboard v4 feedback (Dani, 8 Nov 2026)
+- **C:** square image corners; **drop orange, red only** as accent; "Style it." marked with a different shape, e.g. just a line.
+- **A:** photo **in colour** with a **very strong vignette**.
+- **B:** accent = **red into orange**, dark and subtle gradient for depth, used on **all accents and CTAs**; spray word in **Graffiti City** (font 02).
