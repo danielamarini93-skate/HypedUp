@@ -44,6 +44,12 @@ A website on free hosting has no mail server, so the form posts to a tiny **form
 - **Alternative:** widget services (Trustindex, Elfsight) are point-and-click, but add a third-party script, cookies and usually their branding on free plans. Not recommended.
 - **More than 5 reviews:** the Google Business Profile API can read all reviews, but needs Google's approval for the business account. Worth applying later.
 
+## 3b. Instagram on the site (Dani asked, 8 Nov 2026)
+- **Live embed widget** (Elfsight, SnapWidget, Instagram's own embed): easy, but adds third-party scripts and cookies (banner needed), slows phones, gives no SEO value, shows every post uncurated, and often carries the widget's branding. Not recommended.
+- **Recommended: a curated "Recent builds" fed from Instagram.** A daily job reads the latest posts through Instagram's official API (needs the account set as Business/Creator, a Meta developer app and a token renewed every ~60 days; Claude handles the renewal job), saves the images to our own site, and shows them as our own fast cards with captions and a link to the post. Optional "hide" list for posts we don't want shown.
+- **Simplest start:** pick 6–9 builds by hand (from the Drive folders) + a "Follow @hypedup.ltd" link; switch to the automatic feed later.
+- Decision: Dani.
+
 ## 4. Analytics: what we track
 | Source | What it tells us | Banner? |
 |---|---|---|
