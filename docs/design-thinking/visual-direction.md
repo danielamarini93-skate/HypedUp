@@ -116,3 +116,8 @@ Decision pending (Dani). Source: `concept/moodboard/`.
 - **B: no fake spray** (code/clip-art spray looks bad). Graffiti energy must come from real things: the spray *font* and real photos.
 - **Try dark mode for A and C.**
 - **Pick the right photo for each style.**
+
+### Moodboard v2 (8 Nov 2026)
+- **A · Street editorial:** dark by default (light toggle); B/W halftone show photo (Mini JCW + person in hoodie); orange Hoax Vandal tag over the photo; issue/meta line; crop marks; numbered Protect/Upgrade/Style columns; barcode.
+- **B · Spray machine:** no fake spray. Real graffiti = the workshop mural photo behind the red Mini; one Rubik Wet Paint word "Style it."; **Big Shoulders + Barlow** (the menu/footer fonts Dani liked); pill buttons with subtle gradient; Protect/Upgrade/Style strip with "from" prices.
+- **C · Gallery gesture:** light by default (dark toggle); SAMS-style thin column header; Instrument Serif headline with one hand-drawn circle around "Style it."; Porsche 964 as a framed print.

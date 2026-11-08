@@ -2,172 +2,207 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Big+Shoulders+Display:wght@800;900&family=IBM+Plex+Mono:wght@400;600&family=Instrument+Serif&family=Rubik+Wet+Paint&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Big+Shoulders+Display:wght@800;900&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Rubik+Wet+Paint&display=swap">
 <style>
 @font-face{font-family:"Hoax Vandal";src:url({{font:hoax}}) format("truetype");font-display:swap}
-/* Layout: a moodboard. Neutral board; each direction is a full-width band in its own committed palette,
-   with references, palette, type and a small Hyped Up mock. Single look per band on purpose. */
+/* Layout: moodboard. Neutral dark board; each direction is a full-width band with references, a large crafted
+   mock in its own palette (A and C switch light/dark), then palette/type and a short read. */
 :root{
   color-scheme: dark;
-  --board:#121111; --ink:#f2eee9; --dim:#a8a19e; --line:#2f2a2a;
+  --board:#111010; --ink:#f2eee9; --dim:#a8a19e; --line:#2c2828;
   --red:#e30513; --orange:#ff6a1c;
   --f-body:"Archivo","Helvetica Neue",Arial,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --f-serif:"Instrument Serif",Georgia,serif;
+  --f-cond:"Big Shoulders Display","Arial Narrow",sans-serif;
+  --f-wet:"Rubik Wet Paint","Arial Black",sans-serif;
+  --f-tag:"Hoax Vandal","Segoe Print",cursive;
+  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 html,body{overflow-x:clip}
 body{background:var(--board);color:var(--ink);font:400 16px/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
 .wrap{max-width:1280px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--orange);outline-offset:2px}
-h1,h2,h3{margin:0;line-height:.92;text-wrap:balance}
-.intro{padding-block:3rem 2rem;display:grid;gap:1rem;max-width:72ch}
-.intro .k{font:600 .75rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
+.k{font:600 .72rem/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase}
+.intro{padding-block:3rem 2rem;display:grid;gap:1rem;max-width:74ch}
+.intro .k{color:var(--dim)}
 .intro h1{font:900 clamp(2.6rem,7vw,4.6rem)/.9 var(--f-body);font-stretch:125%;text-transform:uppercase}
 .intro p{margin:0;color:var(--dim)}
 .principle{border-left:3px solid var(--orange);padding:.2rem 0 .2rem 1rem;color:var(--ink)!important}
 
-.dir{padding-block:3rem 3.5rem}
-.dir-head{display:grid;gap:.5rem;margin-bottom:1.6rem}
-.dir-head .k{font:600 .75rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+.dir{padding-block:3.2rem 3.6rem;border-top:1px solid var(--line)}
+.dir-head{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:end;justify-content:space-between;margin-bottom:1.6rem}
+.dir-head div{display:grid;gap:.5rem;max-width:64ch}
+.dir-head .k{color:var(--orange)}
 .dir-head h2{font:900 clamp(2.4rem,6vw,4rem)/.9 var(--f-body);font-stretch:125%;text-transform:uppercase}
-.dir-head p{margin:0;max-width:62ch}
-.grid{display:grid;gap:1.2rem;grid-template-columns:repeat(12,minmax(0,1fr))}
-.refs{grid-column:span 12;display:grid;gap:.8rem;grid-template-columns:repeat(3,minmax(0,1fr))}
+.dir-head p{margin:0;color:var(--dim)}
+.mode{display:inline-flex;gap:.25rem;padding:.25rem;border:1px solid var(--line);border-radius:999px}
+.mode button{background:none;border:0;color:var(--dim);font:600 .82rem/1 var(--f-body);padding:.55rem .95rem;border-radius:999px;cursor:pointer}
+.mode button[aria-pressed="true"]{background:var(--ink);color:#111}
+.refs{display:grid;gap:.8rem;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:1.4rem}
 .refs figure{margin:0;display:grid;gap:.35rem}
-.refs img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
-.refs figcaption{font:400 .75rem/1.3 var(--f-mono)}
-.mock{grid-column:span 8;position:relative;overflow:hidden;min-height:430px}
-.spec{grid-column:span 4;display:grid;gap:1rem;align-content:start}
-.sw{display:flex;gap:.4rem;flex-wrap:wrap}
-.sw i{width:52px;height:52px;display:grid;align-items:end;font:600 .62rem/1.2 var(--f-mono);font-style:normal;padding:.25rem}
-.typo{display:grid;gap:.5rem}
-.why{grid-column:span 12;display:grid;gap:1rem;grid-template-columns:repeat(3,minmax(0,1fr));font-size:.92rem}
-.why div{display:grid;gap:.3rem;align-content:start}
-.why b{font:600 .72rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
-.why p{margin:0}
-.mk{position:absolute;pointer-events:none;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;background:var(--c)}
+.refs img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:2px}
+.refs figcaption{font:400 .72rem/1.3 var(--f-mono);color:var(--dim)}
+.mock{position:relative;overflow:hidden;border-radius:6px}
+.below{display:grid;gap:1.4rem;grid-template-columns:1.1fr 1fr 1fr;margin-top:1.4rem;font-size:.92rem}
+.below b{display:block;margin-bottom:.35rem;color:var(--dim)}
+.below p{margin:0}
+.sw{display:flex;gap:.35rem;flex-wrap:wrap}
+.sw i{width:48px;height:48px;display:grid;align-items:end;font:600 .6rem/1.2 var(--f-mono);font-style:normal;padding:.25rem;border-radius:2px}
+.mk{position:absolute;pointer-events:none;-webkit-mask:var(--m) center/100% 100% no-repeat;mask:var(--m) center/100% 100% no-repeat;background:var(--c)}
 {{maskvars}}
 
-/* ===== A · Street editorial ===== */
-.A{--bg:#d8d4cd;--fg:#141212;--acc:#ff5a14;--acc2:#e30513;background:var(--bg);color:var(--fg);
-   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
-.A .dir-head .k,.A .refs figcaption{color:#5d5753}
-.A .mock{background:#e9e6e0;border:1px solid #c4bfb7}
-.A .bar{display:flex;align-items:center;gap:1.4rem;padding:.9rem 1.2rem;border-bottom:2px solid var(--fg);font:700 .8rem/1 var(--f-body);text-transform:uppercase;letter-spacing:.04em}
-.A .bar img{height:34px;background:#141212;padding:5px 8px;box-sizing:content-box}
-.A .bar .q{margin-left:auto;background:var(--fg);color:#fff;padding:.6rem .9rem}
-.A .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:1rem;padding:1.2rem}
-.A .hero h3{font:900 3.4rem/.86 var(--f-body);font-stretch:125%;text-transform:uppercase;position:relative}
-.A .tag{position:absolute;z-index:2;font:400 3.6rem/1 "Hoax Vandal",cursive;color:var(--acc);transform:rotate(-9deg);left:6%;bottom:8%;white-space:nowrap;text-shadow:0 0 1px rgba(0,0,0,.2)}
-.A .photo{position:relative;background:center/cover no-repeat;filter:grayscale(1) contrast(1.25);min-height:270px}
-.A .photo::after{content:"";position:absolute;inset:0;background:radial-gradient(#000 0.6px,transparent 0.7px) 0 0/4px 4px;opacity:.25}
-.A .mono{font:400 .72rem/1.35 var(--f-mono)}
-.A .stickers{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.8rem}
-.A .st{font:700 .7rem/1 var(--f-mono);padding:.35rem .45rem;border:1.5px solid var(--fg);text-transform:uppercase}
-.A .st.o{background:var(--acc);border-color:var(--acc);color:#111}
-.A .st.k{background:var(--fg);color:#fff}
-.A .barcode{height:28px;width:110px;background:repeating-linear-gradient(90deg,#141212 0 2px,transparent 2px 4px,#141212 4px 5px,transparent 5px 8px)}
-.A .find{display:inline-block;background:var(--acc);color:#111;font:800 1rem/1 var(--f-body);text-transform:uppercase;padding:.45rem .6rem;transform:rotate(-2deg)}
-.A .cta{background:var(--fg);color:#fff;font:700 .9rem/1 var(--f-body);padding:.85rem 1.1rem;display:inline-block}
+/* ================= A · Street editorial ================= */
+.A .mock{--paper:#dcd8d1;--ink2:#151313;--soft:#5f5955;--acc:#ff5a14;--rule:#151313;background:var(--paper) var(--noise);color:var(--ink2);padding:22px}
+.A .mock.dark{--paper:#151313;--ink2:#eeeae5;--soft:#9c9590;--acc:#ff6a1c;--rule:#eeeae5}
+.A .crop{position:absolute;width:14px;height:14px;border-color:var(--soft);border-style:solid;opacity:.7}
+.A .crop.tl{top:8px;left:8px;border-width:1px 0 0 1px}.A .crop.tr{top:8px;right:8px;border-width:1px 1px 0 0}
+.A .crop.bl{bottom:8px;left:8px;border-width:0 0 1px 1px}.A .crop.br{bottom:8px;right:8px;border-width:0 1px 1px 0}
+.A .top{display:flex;align-items:center;gap:1.6rem;padding-bottom:12px;border-bottom:3px solid var(--rule);font:700 .78rem/1 var(--f-body);text-transform:uppercase;letter-spacing:.06em}
+.A .chip{background:#151313;padding:6px 9px;display:block}
+.A .chip img{height:30px;display:block}
+.A .top nav{display:flex;gap:1.3rem}
+.A .top .q{margin-left:auto;background:var(--ink2);color:var(--paper);padding:.6rem .9rem}
+.A .meta{display:flex;justify-content:space-between;font:500 .68rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);padding:10px 0 18px}
+.A .body{display:grid;grid-template-columns:1.15fr 1fr;gap:26px}
+.A .hl{font:900 clamp(2.6rem,5.6vw,4.6rem)/.84 var(--f-body);font-stretch:125%;text-transform:uppercase;letter-spacing:-.01em}
+.A .hl span{display:block}
+.A .hl .o{color:var(--acc)}
+.A .lead{font:500 .78rem/1.45 var(--f-mono);text-transform:uppercase;max-width:40ch;margin:18px 0 16px;color:var(--ink2)}
+.A .cta{display:inline-flex;gap:.6rem;align-items:center;background:var(--ink2);color:var(--paper);font:800 .9rem/1 var(--f-body);text-transform:uppercase;letter-spacing:.04em;padding:.95rem 1.2rem}
+.A .stk{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.A .stk span{font:600 .66rem/1 var(--f-mono);text-transform:uppercase;padding:6px 7px;border:1.5px solid var(--ink2)}
+.A .stk .f{background:var(--ink2);color:var(--paper)}
+.A .stk .o{background:var(--acc);border-color:var(--acc);color:#111}
+.A figure.ph{margin:0;position:relative}
+.A .img{position:relative;aspect-ratio:4/5;background:center 40%/cover no-repeat;filter:grayscale(1) contrast(1.35) brightness(1.02)}
+.A .img::after{content:"";position:absolute;inset:0;background:radial-gradient(rgba(0,0,0,.55) .7px,transparent .8px) 0 0/3.5px 3.5px;mix-blend-mode:multiply;opacity:.5}
+.A .tag{position:absolute;left:-6%;bottom:12%;font:400 clamp(3rem,6vw,4.6rem)/1 var(--f-tag);color:var(--acc);transform:rotate(-10deg);white-space:nowrap;z-index:2}
+.A figcaption{display:flex;justify-content:space-between;gap:1rem;font:500 .64rem/1.3 var(--f-mono);text-transform:uppercase;color:var(--soft);padding-top:8px}
+.A .cols{display:grid;grid-template-columns:repeat(3,1fr);margin-top:22px;border-top:3px solid var(--rule)}
+.A .cols div{padding:12px 14px 4px 0;display:grid;gap:4px}
+.A .cols div+div{padding-left:14px;border-left:1px solid var(--soft)}
+.A .cols b{font:900 1.3rem/1 var(--f-body);font-stretch:125%;text-transform:uppercase}
+.A .cols em{font:500 .66rem/1 var(--f-mono);color:var(--acc);font-style:normal}
+.A .cols p{margin:0;font:400 .72rem/1.4 var(--f-mono);color:var(--soft)}
+.A .foot{display:flex;align-items:center;gap:1rem;margin-top:18px}
+.A .find{background:var(--acc);color:#111;font:900 .95rem/1 var(--f-body);font-stretch:125%;text-transform:uppercase;padding:.5rem .65rem;transform:rotate(-2deg)}
+.A .foot span{font:500 .68rem/1 var(--f-mono);text-transform:uppercase;color:var(--soft)}
+.A .bc{margin-left:auto;height:30px;width:120px;background:repeating-linear-gradient(90deg,var(--ink2) 0 2px,transparent 2px 3px,var(--ink2) 3px 4px,transparent 4px 7px,var(--ink2) 7px 10px,transparent 10px 12px)}
 
-/* ===== B · Spray machine ===== */
-.B{--bg:#0b0a0a;--fg:#f2eee9;--acc:#ff6a1c;--acc2:#e30513;background:var(--bg);color:var(--fg)}
-.B .dir-head .k,.B .refs figcaption{color:#a8a19e}
-.B .mock{background:#141111;border:1px solid #2f2a2a}
-.B .bar{display:flex;align-items:center;gap:1.5rem;padding:.9rem 1.2rem;font:600 .9rem/1 var(--f-body)}
-.B .bar img{height:40px}
-.B .bar .on{color:var(--acc)}
-.B .bar .q{margin-left:auto;border-radius:999px;padding:.65rem 1rem;background:linear-gradient(100deg,#c2040f,#cf1a0d);color:#fff;font-weight:700}
-.B .hero{position:relative;padding:1.4rem 1.2rem 1.6rem;min-height:340px}
-.B .bgimg{position:absolute;inset:0;background:center/cover no-repeat;opacity:.45}
-.B .bgimg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b0a0a 30%,transparent)}
-.B .hero h3{position:relative;font:900 4.4rem/.84 "Big Shoulders Display",sans-serif;text-transform:uppercase}
-.B .wet{display:block;font:400 4.6rem/1 "Rubik Wet Paint",cursive;color:var(--acc);text-transform:none;margin-top:.1rem}
-.B .hero p{position:relative;max-width:30ch;color:#d6d0cc;margin:.8rem 0 1rem}
-.B .blob{position:relative;display:inline-grid;place-items:center;width:110px;height:110px;color:#111;font:800 .85rem/1 var(--f-body);text-transform:uppercase}
-.B .blob .mk{inset:0}
-.B .blob span{position:relative}
-.B .find{position:relative;display:inline-block;font:800 1.1rem/1 var(--f-body);text-transform:uppercase;padding:.6rem .9rem}
-.B .find .mk{inset:-4px -10px}
+/* ================= B · Spray machine ================= */
+.B .mock{background:#0b0a0a;color:#f2eee9;min-height:560px;font-family:"Barlow","Helvetica Neue",Arial,sans-serif}
+.B .mock .btn,.B .top{font-family:"Barlow","Helvetica Neue",Arial,sans-serif}
+.B .bg{position:absolute;inset:0;background:center 35%/cover no-repeat}
+.B .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,10,10,.94) 0%,rgba(11,10,10,.78) 38%,rgba(11,10,10,.15) 70%,rgba(11,10,10,.35) 100%),linear-gradient(0deg,rgba(11,10,10,.9),transparent 40%)}
+.B .top{position:relative;display:flex;align-items:center;gap:1.8rem;padding:18px 26px;font:600 .95rem/1 var(--f-body)}
+.B .top img{height:46px}
+.B .top nav{display:flex;gap:1.6rem}
+.B .top nav .on{color:#ff8a3c;box-shadow:inset 0 -2px #ff8a3c;padding-bottom:6px}
+.B .top .q{margin-left:auto;border-radius:999px;padding:.75rem 1.15rem;background:linear-gradient(100deg,#c2040f,#cf1a0d);font-weight:700}
+.B .copy{position:relative;padding:34px 26px 26px;max-width:640px}
+.B .k2{font:600 .72rem/1 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:#bdb6b2}
+.B h3{font:900 clamp(3.6rem,8.4vw,6.6rem)/.82 var(--f-cond);text-transform:uppercase;margin-top:14px}
+.B h3 .wet{display:block;font:400 clamp(3.4rem,7.8vw,6.2rem)/1 var(--f-wet);text-transform:none;color:#ff6a1c;margin-top:.05em;letter-spacing:.005em}
+.B .copy p{max-width:36ch;color:#d9d3cf;margin:16px 0 22px;font-size:1.02rem}
+.B .ctas{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.B .btn{display:inline-flex;align-items:center;gap:.55rem;border-radius:999px;padding:.95rem 1.3rem;font:700 .95rem/1 var(--f-body);background:linear-gradient(100deg,#c2040f,#cf1a0d)}
+.B .btn svg{width:18px;height:18px}
+.B .ghost{background:transparent;border:1.5px solid rgba(242,238,233,.7)}
+.B .strip{position:relative;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(242,238,233,.15);margin-top:10px}
+.B .strip div{padding:16px 26px;display:flex;justify-content:space-between;align-items:baseline}
+.B .strip div+div{border-left:1px solid rgba(242,238,233,.15)}
+.B .strip b{font:900 1.5rem/1 var(--f-cond);text-transform:uppercase}
+.B .strip span{color:#ff8a3c;font:600 .8rem/1 var(--f-body)}
 
-/* ===== C · Gallery gesture ===== */
-.C{--bg:#f3f0ea;--fg:#111;--acc:#ff5a14;--acc2:#e30513;background:var(--bg);color:var(--fg)}
-.C .dir-head .k,.C .refs figcaption{color:#6b6460}
-.C .mock{background:#fff;border:1px solid #ddd6cc}
-.C .bar{display:grid;grid-template-columns:auto 1fr 1fr 1fr auto;gap:1.2rem;align-items:start;padding:1rem 1.2rem;border-bottom:1px solid #e5dfd6;font:500 .82rem/1.3 var(--f-body)}
-.C .bar img{height:34px;background:#111;padding:6px 9px;border-radius:8px;box-sizing:content-box}
-.C .bar .q{color:var(--acc2);font-weight:700}
-.C .hero{position:relative;display:grid;grid-template-columns:1.2fr 1fr;gap:1.2rem;padding:1.6rem 1.2rem}
-.C .hero h3{position:relative;font:400 3.9rem/.95 "Instrument Serif",serif;letter-spacing:-.01em}
-.C .hero h3 em{font-style:normal;position:relative;display:inline-block}
-.C .hero h3 em .mk{inset:-30% -22% -26% -16%}
-.C .hero p{font-size:.95rem;color:#3d3835;margin:.8rem 0 1rem;max-width:32ch}
-.C .photo{background:center/cover no-repeat;border-radius:16px;min-height:260px}
-.C .cta{display:inline-block;border:1.5px solid var(--fg);border-radius:999px;padding:.7rem 1.1rem;font:600 .9rem/1 var(--f-body)}
-.C .find{position:relative;display:inline-block;font:400 1.6rem/1 "Instrument Serif",serif;padding:.4rem .8rem}
-.C .find .mk{inset:-14px -22px}
+/* ================= C · Gallery gesture ================= */
+.C .mock{--bg:#f4f1eb;--fg:#121111;--soft:#6c6661;--rule:#dcd5cb;--acc:#ff5a14;--acc2:#d10411;background:var(--bg);color:var(--fg)}
+.C .mock.dark{--bg:#141313;--fg:#efe9e1;--soft:#9d968f;--rule:#2d2a28;--acc:#ff6a1c;--acc2:#ff4636}
+.C .top{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr)) auto;border-bottom:1px solid var(--rule);font:500 .8rem/1.35 var(--f-body)}
+.C .top>*{padding:18px 20px}
+.C .top>*+*{border-left:1px solid var(--rule)}
+.C .chip{background:#121111;border-radius:10px;padding:7px 10px;display:inline-block}
+.C .chip img{height:30px;display:block}
+.C .top .small{color:var(--soft);font-size:.72rem;display:block;margin-bottom:4px;font-family:var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.C .top .q{color:var(--acc2);font-weight:700;align-self:center}
+.C .stage{display:grid;grid-template-columns:1.25fr 1fr;gap:0}
+.C .left{padding:44px 40px 36px;border-right:1px solid var(--rule);display:grid;align-content:space-between;gap:28px}
+.C h3{font:400 clamp(3rem,6.2vw,5.4rem)/.94 var(--f-serif);letter-spacing:-.015em}
+.C h3 em{font-style:italic;position:relative;display:inline-block;padding:0 .08em}
+.C h3 em .mk{left:-14%;right:-12%;top:-22%;bottom:-18%}
+.C .left p{margin:0;color:var(--soft);max-width:36ch;font-size:1rem}
+.C .actions{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
+.C .btn{border:1.5px solid var(--fg);border-radius:999px;padding:.85rem 1.25rem;font:600 .95rem/1 var(--f-body);display:inline-flex;gap:.55rem;align-items:center}
+.C .btn.fill{background:var(--fg);color:var(--bg)}
+.C .btn svg{width:17px;height:17px}
+.C .right{padding:24px;display:grid;gap:12px;align-content:start}
+.C .art{aspect-ratio:4/5;border-radius:18px;background:center 60%/cover no-repeat}
+.C .label{display:flex;justify-content:space-between;font:500 .68rem/1.35 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+.C .row{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
+.C .row div{padding:18px 20px;display:grid;gap:6px}
+.C .row div+div{border-left:1px solid var(--rule)}
+.C .row b{font:400 1.7rem/1 var(--f-serif)}
+.C .row span{color:var(--soft);font-size:.82rem}
+.C .find{position:relative;display:inline-block;font:400 1.5rem/1 var(--f-serif);font-style:italic;padding:.35rem .7rem}
+.C .find .mk{inset:-12px -18px}
 
-.decide{padding-block:3rem 4rem;display:grid;gap:1rem;max-width:72ch}
+.decide{padding-block:3rem 4rem;display:grid;gap:1rem;max-width:72ch;border-top:1px solid var(--line)}
 .decide h2{font:900 2.2rem/.9 var(--f-body);font-stretch:125%;text-transform:uppercase}
 .decide ol{margin:0;padding-left:1.2rem;display:grid;gap:.4rem;color:var(--dim)}
 .decide b{color:var(--ink)}
 
 @media (max-width:900px){
-  .mock,.spec{grid-column:span 12}
-  .refs{grid-template-columns:1fr 1fr}
-  .why{grid-template-columns:1fr}
-  .A .hero,.C .hero{grid-template-columns:1fr}
-  .C .bar{grid-template-columns:auto 1fr auto}.C .bar .hide{display:none}
+  .refs{grid-template-columns:1fr 1fr}.below{grid-template-columns:1fr}
+  .A .body{grid-template-columns:1fr}.A .top nav{display:none}
+  .B .top nav{display:none}.B .strip{grid-template-columns:1fr}.B .strip div+div{border-left:0;border-top:1px solid rgba(242,238,233,.15)}
+  .C .top{grid-template-columns:auto 1fr auto}.C .top .h{display:none}
+  .C .stage{grid-template-columns:1fr}.C .left{border-right:0;border-bottom:1px solid var(--rule);padding:30px 22px}
+  .C .row{grid-template-columns:1fr}.C .row div+div{border-left:0;border-top:1px solid var(--rule)}
 }
-@media (max-width:520px){
-  .refs{grid-template-columns:1fr}
-  .A .hero h3{font-size:2.5rem}.A .tag{font-size:2.4rem}
-  .B .hero h3{font-size:3.2rem}.B .wet{font-size:3.4rem}
-  .C .hero h3{font-size:2.9rem}
-  .A .bar,.B .bar{flex-wrap:wrap;gap:.8rem}
-}
+@media (max-width:520px){ .refs{grid-template-columns:1fr} .A .cols{grid-template-columns:1fr}.A .cols div+div{border-left:0;padding-left:0} }
 </style>
 
 <div class="wrap intro">
-  <span class="k">Design thinking · Round 2 · Visual direction</span>
+  <span class="k">Design thinking · Round 2 · Visual direction · v2</span>
   <h1>Style moodboard</h1>
-  <p>Three ways to bring graffiti into Hyped Up, built from Dani's references. Each band shows the references it draws on, the palette and type, and a small mock of Hyped Up in that style.</p>
-  <p class="principle">What every reference does: <strong>big, bold, clean type carries the message; graffiti is one layer on top</strong> (a tag, a spray word, one brush stroke). Never the font you have to read.</p>
+  <p>Three ways to bring graffiti into Hyped Up, built from Dani's references. Each band: the references, a larger Hyped Up mock in that style (A and C switch between light and dark), then palette, type and a short read.</p>
+  <p class="principle">The rule all references follow: <strong>big, clean type carries the message; graffiti is one real layer on top</strong>, a tag or a spray word set in a proper font, or real graffiti in the photo. No fake spray.</p>
 </div>
 
 <!-- ===================== A ===================== -->
 <section class="dir A" aria-labelledby="ha">
   <div class="wrap">
-    <div class="dir-head"><span class="k">Direction A</span><h2 id="ha">Street editorial</h2><p>A streetwear magazine: grey paper, huge wide type, black-and-white photos with an orange graffiti tag scrawled over them, stickers, barcodes and small mono text. Busy in a designed way.</p></div>
-    <div class="grid">
-      <div class="refs">
-        <figure><img src="{{ref:play1}}" alt="Playlist Edition magazine spread with tags over type" loading="lazy"><figcaption>Playlist Edition #6, <a href="https://www.behance.net/gallery/152239541/Playlist-Edition-6-Magazine-Collection">Behance</a></figcaption></figure>
-        <figure><img src="{{ref:play2}}" alt="Magazine spread with yellow graffiti over a photo" loading="lazy"><figcaption>Playlist Edition #6, <a href="https://www.behance.net/gallery/152239541/Playlist-Edition-6-Magazine-Collection">Behance</a></figcaption></figure>
-        <figure><img src="{{ref:pin}}" alt="Air Max poster with wide type and neon sticker tags" loading="lazy" style="object-fit:contain;background:#ddd"><figcaption>Poster, <a href="https://uk.pinterest.com/pin/581738476912314419/">Pinterest</a></figcaption></figure>
-      </div>
-      <div class="mock">
-        <div class="bar"><img src="{{img:logo}}" alt="Hyped Up"><span>Protect</span><span>Upgrade</span><span>Style</span><span>Builds</span><span>Contact</span><span class="q">Get a quote →</span></div>
-        <div class="hero">
-          <div style="position:relative">
-            <h3>Protect it. Upgrade it. Style it.</h3>
-                        <p class="mono" style="margin:1.2rem 0 .8rem;max-width:34ch">SOUTH LONDON'S ONE-STOP WORKSHOP FOR CAR AND BIKE ELECTRONICS, SECURITY AND STYLING. FITTED PROPERLY, PRICED CLEARLY.</p>
-            <span class="cta">Start your build →</span>
-            <div class="stickers"><span class="st k">Unit 22</span><span class="st o">SE16</span><span class="st">Est. 2022</span><span class="st">Cars + bikes</span></div>
-          </div>
-          <div class="photo" style="background-image:url('{{img:poster}}')"><span class="tag" aria-hidden="true">Hyped Up</span></div>
+    <div class="dir-head">
+      <div><span class="k">Direction A</span><h2 id="ha">Street editorial</h2><p>A car-culture magazine. Wide heavy type, mono captions, black-and-white halftone photos with one orange tag, stickers, crop marks and a barcode. Photo: the red Mini at a show, someone in a hoodie beside it: culture and people.</p></div>
+      <div class="mode" role="group" aria-label="Direction A mode"><button type="button" aria-pressed="false" data-mode="A" data-v="light">Light</button><button type="button" aria-pressed="true" data-mode="A" data-v="dark">Dark</button></div>
+    </div>
+    <div class="refs">
+      <figure><img src="{{ref:play1}}" alt="Playlist Edition magazine spread with tags over type" loading="lazy"><figcaption>Playlist Edition #6 · <a href="https://www.behance.net/gallery/152239541/Playlist-Edition-6-Magazine-Collection">Behance</a></figcaption></figure>
+      <figure><img src="{{ref:play2}}" alt="Magazine spread with yellow graffiti over a photo" loading="lazy"><figcaption>Playlist Edition #6 · <a href="https://www.behance.net/gallery/152239541/Playlist-Edition-6-Magazine-Collection">Behance</a></figcaption></figure>
+      <figure><img src="{{ref:pin}}" alt="Air Max poster with wide type and neon sticker tags" loading="lazy" style="object-fit:contain;background:#ddd"><figcaption>Air Max poster · <a href="https://uk.pinterest.com/pin/581738476912314419/">Pinterest</a></figcaption></figure>
+    </div>
+    <div class="mock dark" id="mockA">
+      <i class="crop tl"></i><i class="crop tr"></i><i class="crop bl"></i><i class="crop br"></i>
+      <div class="top"><span class="chip"><img src="{{img:logo}}" alt="Hyped Up"></span><nav><span>Protect</span><span>Upgrade</span><span>Style</span><span>Builds</span><span>Contact</span></nav><span class="q">Get a quote →</span></div>
+      <div class="meta"><span>Issue 01 · Bermondsey SE16</span><span>Cars · Bikes · Est. 2022</span></div>
+      <div class="body">
+        <div>
+          <h3 class="hl"><span>Protect it.</span><span>Upgrade it.</span><span class="o">Style it.</span></h3>
+          <p class="lead">South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly.</p>
+          <span class="cta">Start your build {{lu:arrow-right}}</span>
+          <div class="stk"><span class="f">Unit 22</span><span class="o">SE16</span><span>Ghost · MetaTrak · Air Lift</span><span>Cars + bikes</span></div>
         </div>
-        <div style="display:flex;align-items:center;gap:1rem;padding:0 1.2rem 1.2rem"><span class="find">Find us</span><span class="mono">UNIT 22 · BOLINA RD · SE16 3LF</span><span class="barcode" style="margin-left:auto"></span></div>
+        <figure class="ph"><div class="img" style="background-image:url('{{img:show}}')"></div><span class="tag" aria-hidden="true">Hyped Up</span><figcaption><span>Fig. 01 · Mini JCW, show season</span><span>@hypedup.ltd</span></figcaption></figure>
       </div>
-      <div class="spec">
-        <div class="sw"><i style="background:#d8d4cd">Paper</i><i style="background:#141212;color:#fff">Ink</i><i style="background:#ff5a14">Orange</i><i style="background:#e30513;color:#fff">Red</i><i style="background:#fff">White</i></div>
-        <div class="typo">
-          <span style="font:900 2.2rem/.9 var(--f-body);font-stretch:125%;text-transform:uppercase">Archivo Expanded</span>
-          <span class="mono">IBM PLEX MONO FOR LABELS AND SMALL PRINT</span>
-          <span style="font:400 2.2rem/1 'Hoax Vandal',cursive;color:#ff5a14">Hoax Vandal tag</span>
-          <span style="font-size:.85rem">Tag font only as an overlay, never for reading.</span>
-        </div>
-      </div>
-      <div class="why"><div><b>Feels like</b><p>A streetwear drop or a car-culture magazine. Creative, a bit rebellious.</p></div><div><b>Good for</b><p>Marco (enthusiasts), builds, shop/apparel, Instagram crossover.</p></div><div><b>Watch out</b><p>Busy pages can make Kemi (security) doubt it's serious: keep service pages calmer.</p></div></div>
+      <div class="cols"><div><em>01</em><b>Protect</b><p>Ghost, trackers, dash cams, PPF</p></div><div><em>02</em><b>Upgrade</b><p>CarPlay, audio, remapping</p></div><div><em>03</em><b>Style</b><p>Wraps, tint, air suspension</p></div></div>
+      <div class="foot"><span class="find">Find us</span><span>Unit 22 · Bolina Rd · SE16 3LF · Mon–Sat</span><i class="bc" aria-hidden="true"></i></div>
+    </div>
+    <div class="below">
+      <div><b class="k">Palette</b><div class="sw"><i style="background:#dcd8d1">Paper</i><i style="background:#151313;color:#fff;outline:1px solid #333">Ink</i><i style="background:#ff5a14">Orange</i><i style="background:#e30513;color:#fff">Red</i></div></div>
+      <div><b class="k">Type</b><p><span style="font:900 1.5rem/1 var(--f-body);font-stretch:125%;text-transform:uppercase">Archivo Expanded</span><br><span style="font:500 .8rem var(--f-mono)">IBM PLEX MONO CAPTIONS</span><br><span style="font:400 1.6rem/1.2 var(--f-tag);color:#ff6a1c">Hoax Vandal tag</span></p></div>
+      <div><b class="k">Read</b><p>Creative and rebellious, like a streetwear drop. Great for builds, shop and social. Keep security pages calmer so Kemi trusts it.</p></div>
     </div>
   </div>
 </section>
@@ -175,32 +210,29 @@ h1,h2,h3{margin:0;line-height:.92;text-wrap:balance}
 <!-- ===================== B ===================== -->
 <section class="dir B" aria-labelledby="hb">
   <div class="wrap">
-    <div class="dir-head"><span class="k" style="color:#ff6a1c">Direction B</span><h2 id="hb">Spray machine</h2><p>Dark and loud. Clean condensed headlines in white, with one spray-paint word in orange that drips. Real workshop photos dimmed behind. A spray-blob for the main action. Closest to the current concept, but done properly.</p></div>
-    <div class="grid">
-      <div class="refs">
-        <figure><img src="{{ref:rage1}}" alt="Rage Machine spray paint font poster" loading="lazy"><figcaption>Rage Machine font, <a href="https://www.behance.net/gallery/216873173/Rage-Machine-Spray-Paint-Font">Behance</a></figcaption></figure>
-        <figure><img src="{{ref:rage2}}" alt="Red poster with white spray lettering" loading="lazy"><figcaption>Rage Machine font, <a href="https://www.behance.net/gallery/216873173/Rage-Machine-Spray-Paint-Font">Behance</a></figcaption></figure>
-        <figure><img src="{{ref:urb1}}" alt="Streetwear site with clean type and one graffiti word" loading="lazy"><figcaption>URBANTH, <a href="https://dribbble.com/shots/27275688-URBANTH-Streetwear-Fashion-Website">Dribbble</a></figcaption></figure>
+    <div class="dir-head">
+      <div><span class="k">Direction B</span><h2 id="hb">Spray machine</h2><p>Dark and loud, no fake spray. The graffiti is real: the workshop mural behind the red Mini, and one word set in a dripping spray-paint font. Clean condensed type (the menu &amp; footer fonts: Big Shoulders + Barlow) and pill buttons do the rest.</p></div>
+    </div>
+    <div class="refs">
+      <figure><img src="{{ref:rage1}}" alt="Rage Machine spray paint font poster" loading="lazy"><figcaption>Rage Machine font · <a href="https://www.behance.net/gallery/216873173/Rage-Machine-Spray-Paint-Font">Behance</a></figcaption></figure>
+      <figure><img src="{{ref:rage2}}" alt="Red poster with white spray lettering" loading="lazy"><figcaption>Rage Machine font · <a href="https://www.behance.net/gallery/216873173/Rage-Machine-Spray-Paint-Font">Behance</a></figcaption></figure>
+      <figure><img src="{{ref:urb1}}" alt="Streetwear site with clean type and one graffiti word" loading="lazy"><figcaption>URBANTH · <a href="https://dribbble.com/shots/27275688-URBANTH-Streetwear-Fashion-Website">Dribbble</a></figcaption></figure>
+    </div>
+    <div class="mock">
+      <div class="bg" style="background-image:url('{{img:mural}}')"></div>
+      <div class="top"><img src="{{img:logo}}" alt="Hyped Up"><nav><span class="on">Protect</span><span>Upgrade</span><span>Style</span><span>Builds</span><span>Contact</span></nav><span class="q">Get a quote</span></div>
+      <div class="copy">
+        <span class="k2">Bermondsey · SE16 · Cars &amp; bikes</span>
+        <h3>Protect it.<br>Upgrade it.<span class="wet">Style it.</span></h3>
+        <p>South London's one-stop workshop for car and bike electronics, security and styling.</p>
+        <div class="ctas"><span class="btn">{{br:whatsapp}}Start your build</span><span class="btn ghost">See the builds</span></div>
       </div>
-      <div class="mock">
-        <div class="bar"><img src="{{img:logo}}" alt="Hyped Up"><span class="on">Protect</span><span>Upgrade</span><span>Style</span><span>Builds</span><span>Contact</span><span class="q">Get a quote</span></div>
-        <div class="hero">
-          <div class="bgimg" style="background-image:url('{{img:poster}}')"></div>
-          <h3>Protect it.<br>Upgrade it.<span class="wet">Style it.</span></h3>
-          <p>South London's one-stop workshop for car and bike electronics, security and styling.</p>
-          <span class="blob"><i class="mk" style="--m:var(--m-splat);--c:#ff6a1c"></i><span>Start<br>build</span></span>
-          <span class="find" style="margin-left:1.5rem"><i class="mk" style="--m:var(--m-spray);--c:#e30513;opacity:.85"></i><span style="position:relative">Find us</span></span>
-        </div>
-      </div>
-      <div class="spec">
-        <div class="sw"><i style="background:#0b0a0a;color:#fff;outline:1px solid #333">Black</i><i style="background:#2a2525;color:#fff">Graphite</i><i style="background:#ff6a1c">Orange</i><i style="background:#e30513;color:#fff">Red</i><i style="background:#f2eee9">Chalk</i></div>
-        <div class="typo">
-          <span style="font:900 2.4rem/.9 'Big Shoulders Display',sans-serif;text-transform:uppercase">Big Shoulders</span>
-          <span style="font:400 2.4rem/1 'Rubik Wet Paint',cursive;color:#ff6a1c">Wet paint</span>
-          <span style="font-size:.85rem">Rubik Wet Paint (free, Google) as the single spray word; Rage Machine would be the paid upgrade.</span>
-        </div>
-      </div>
-      <div class="why"><div><b>Feels like</b><p>Night-time car meet, energy, bold. Very "workshop".</p></div><div><b>Good for</b><p>Hero moments, styling pages, social ads, merch.</p></div><div><b>Watch out</b><p>Easy to overdo: one spray word per screen, maximum.</p></div></div>
+      <div class="strip"><div><b>Protect</b><span>from £125</span></div><div><b>Upgrade</b><span>from £125</span></div><div><b>Style</b><span>from £50</span></div></div>
+    </div>
+    <div class="below">
+      <div><b class="k">Palette</b><div class="sw"><i style="background:#0b0a0a;color:#fff;outline:1px solid #333">Black</i><i style="background:#2a2525;color:#fff">Graphite</i><i style="background:#ff6a1c">Orange</i><i style="background:#c2040f;color:#fff">Red</i><i style="background:#f2eee9">Chalk</i></div></div>
+      <div><b class="k">Type</b><p><span style="font:900 1.7rem/1 var(--f-cond);text-transform:uppercase">Big Shoulders</span><br><span style="font:400 1.8rem/1.1 var(--f-wet);color:#ff6a1c">Wet paint</span><br><span style="font:500 1rem 'Barlow',sans-serif">Barlow for body and buttons</span><br><span style="font-size:.8rem;color:var(--dim)">Same pair as the menu &amp; footer board (Dani's pick). Rubik Wet Paint (free) for one word per screen; Rage Machine as a paid upgrade.</span></p></div>
+      <div><b class="k">Read</b><p>Night-time car meet: bold, energetic, very "workshop". Authentic because the graffiti is Hyped Up's own wall.</p></div>
     </div>
   </div>
 </section>
@@ -208,34 +240,40 @@ h1,h2,h3{margin:0;line-height:.92;text-wrap:balance}
 <!-- ===================== C ===================== -->
 <section class="dir C" aria-labelledby="hc">
   <div class="wrap">
-    <div class="dir-head"><span class="k">Direction C</span><h2 id="hc">Gallery gesture</h2><p>The workshop as an art gallery. Light, calm and premium: lots of space, elegant type, rounded photos, and one big hand-painted brush stroke per screen in red or orange to mark what matters.</p></div>
-    <div class="grid">
-      <div class="refs">
-        <figure><img src="{{ref:sams}}" alt="SAMS event page with a blue brush circle around the date" loading="lazy"><figcaption>SAMS by Cuberto, <a href="https://dribbble.com/shots/5466962-SAMS-Culture-Event-Page">Dribbble</a></figcaption></figure>
-        <figure><img src="{{ref:kelsi}}" alt="Bubble graffiti font in yellow" loading="lazy"><figcaption>Kelsi font, <a href="https://www.behance.net/gallery/135899299/Kelsi-Free-Graffiti-Style-Bubble-Font">Behance</a></figcaption></figure>
-        <figure><img src="{{ref:rage3}}" alt="Gold frame with spray lettering on white" loading="lazy"><figcaption>Rage Machine font, <a href="https://www.behance.net/gallery/216873173/Rage-Machine-Spray-Paint-Font">Behance</a></figcaption></figure>
+    <div class="dir-head">
+      <div><span class="k">Direction C</span><h2 id="hc">Gallery gesture</h2><p>The workshop as an art gallery. A thin column grid, an elegant serif, rounded photos like framed prints, and one hand-painted circle marking what matters. Photo: the classic Porsche 964 at the unit, treated as an art object.</p></div>
+      <div class="mode" role="group" aria-label="Direction C mode"><button type="button" aria-pressed="true" data-mode="C" data-v="light">Light</button><button type="button" aria-pressed="false" data-mode="C" data-v="dark">Dark</button></div>
+    </div>
+    <div class="refs">
+      <figure><img src="{{ref:sams}}" alt="SAMS event page with a blue brush circle around the date" loading="lazy"><figcaption>SAMS by Cuberto · <a href="https://dribbble.com/shots/5466962-SAMS-Culture-Event-Page">Dribbble</a></figcaption></figure>
+      <figure><img src="{{ref:rage3}}" alt="Gold frame with spray lettering on white" loading="lazy"><figcaption>Rage Machine font · <a href="https://www.behance.net/gallery/216873173/Rage-Machine-Spray-Paint-Font">Behance</a></figcaption></figure>
+      <figure><img src="{{ref:kelsi}}" alt="Bubble graffiti font in yellow" loading="lazy"><figcaption>Kelsi font · <a href="https://www.behance.net/gallery/135899299/Kelsi-Free-Graffiti-Style-Bubble-Font">Behance</a></figcaption></figure>
+    </div>
+    <div class="mock" id="mockC">
+      <div class="top">
+        <span><span class="chip"><img src="{{img:logo}}" alt="Hyped Up"></span></span>
+        <span><span class="small">Services</span>Protect · Upgrade · Style</span>
+        <span class="h"><span class="small">Workshop</span>Builds · Contact</span>
+        <span class="h"><span class="small">Unit 22</span>Bolina Rd, London SE16 3LF</span>
+        <span class="q">Get a quote →</span>
       </div>
-      <div class="mock">
-        <div class="bar"><img src="{{img:logo}}" alt="Hyped Up"><span>Protect<br>Upgrade<br>Style</span><span class="hide">Builds<br>Contact</span><span class="hide">Unit 22, Bolina Rd<br>London SE16 3LF</span><span class="q">Get a quote →</span></div>
-        <div class="hero">
-          <div>
-            <h3>Protect it. Upgrade it. <em><i class="mk" style="--m:var(--m-circle);--c:#ff5a14"></i>Style it.</em></h3>
-            <p>South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly.</p>
-            <span class="cta">Start your build →</span>
-          </div>
-          <div class="photo" style="background-image:url('{{img:civic}}')"></div>
+      <div class="stage">
+        <div class="left">
+          <h3>Protect it.<br>Upgrade it.<br><em><i class="mk" style="--m:var(--m-circle);--c:var(--acc)"></i>Style it.</em></h3>
+          <p>South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly.</p>
+          <div class="actions"><span class="btn fill">{{br:whatsapp}}Start your build</span><span class="find"><i class="mk" style="--m:var(--m-circle);--c:var(--acc2)"></i><span style="position:relative">Find us</span></span></div>
         </div>
-        <div style="padding:0 1.2rem 1.2rem;display:flex;gap:1.5rem;align-items:center"><span class="find"><i class="mk" style="--m:var(--m-circle);--c:#e30513"></i><span style="position:relative">Find us</span></span><span style="font-size:.85rem;color:#3d3835">Unit 22 · Mon–Fri 10–18 · Sat 9–16</span></div>
-      </div>
-      <div class="spec">
-        <div class="sw"><i style="background:#f3f0ea;outline:1px solid #ddd">Bone</i><i style="background:#111;color:#fff">Black</i><i style="background:#ff5a14">Orange</i><i style="background:#e30513;color:#fff">Red</i><i style="background:#8f8a84;color:#fff">Stone</i></div>
-        <div class="typo">
-          <span style="font:400 2.6rem/1 'Instrument Serif',serif">Instrument Serif</span>
-          <span style="font:500 1rem/1.4 var(--f-body)">Archivo for body and UI</span>
-          <span style="font-size:.85rem">The brush strokes are real painted marks (public domain), one per screen. A painter friend or the mural artist could supply Hyped Up's own.</span>
+        <div class="right">
+          <div class="art" style="background-image:url('{{img:porsche}}')"></div>
+          <div class="label"><span>Porsche 911 (964)</span><span>Headlight tint · Unit 22</span></div>
         </div>
       </div>
-      <div class="why"><div><b>Feels like</b><p>A gallery for car art. Premium, confident, surprising for the sector.</p></div><div><b>Good for</b><p>Trust with Kemi (security) and higher-value jobs (air, wraps, interiors).</p></div><div><b>Watch out</b><p>Less "street": the graffiti energy has to come from photos and the strokes.</p></div></div>
+      <div class="row"><div><b>Protect</b><span>Ghost, trackers, dash cams, PPF</span></div><div><b>Upgrade</b><span>CarPlay, audio, remapping</span></div><div><b>Style</b><span>Wraps, tint, air suspension</span></div></div>
+    </div>
+    <div class="below">
+      <div><b class="k">Palette</b><div class="sw"><i style="background:#f4f1eb">Bone</i><i style="background:#121111;color:#fff;outline:1px solid #333">Black</i><i style="background:#ff5a14">Orange</i><i style="background:#d10411;color:#fff">Red</i><i style="background:#8f8a84;color:#fff">Stone</i></div></div>
+      <div><b class="k">Type</b><p><span style="font:400 2rem/1 var(--f-serif)">Instrument Serif</span><br><span style="font:500 .95rem var(--f-body)">Archivo for body and UI</span><br><span style="font-size:.8rem;color:var(--dim)">One painted circle per screen. The mural artist could paint Hyped Up's own strokes.</span></p></div>
+      <div><b class="k">Read</b><p>A gallery for car art: premium, calm, surprising for the sector. Builds trust for security and high-value jobs.</p></div>
     </div>
   </div>
 </section>
@@ -243,8 +281,16 @@ h1,h2,h3{margin:0;line-height:.92;text-wrap:balance}
 <div class="wrap decide">
   <h2>To decide</h2>
   <ol>
-    <li><b>Which direction</b> do we develop: A, B or C?</li>
-    <li><b>Mixes are fine</b>, e.g. C's calm layout with A's stickers on builds and shop pages.</li>
-    <li><b>Fonts:</b> free options shown. If you love Rage Machine or Kelsi, we can check their licences for commercial use.</li>
+    <li><b>Which direction</b> do we develop: A, B or C (and light or dark for A and C)?</li>
+    <li><b>Mixes are fine</b>, e.g. C's calm grid with A's stickers and tags on builds and shop pages.</li>
+    <li><b>Fonts:</b> all shown are free for business. Rage Machine or Kelsi possible as paid upgrades.</li>
   </ol>
 </div>
+
+<script>
+document.querySelectorAll('[data-mode]').forEach(function(b){b.addEventListener('click',function(){
+  var g=b.dataset.mode, m=document.getElementById('mock'+g);
+  m.classList.toggle('dark',b.dataset.v==='dark');
+  document.querySelectorAll('[data-mode="'+g+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+});});
+</script>
