@@ -5,6 +5,11 @@ _Last updated: 7 Nov 2026 · All prices in GBP. Only use these; anything not lis
 > ⚠️ The live website shows different "from" prices for CarPlay (£195), security (£395), plates (£35)
 > and remapping (£435 / mobile Stage 1 £199). See `current-site.md` — **Hypa to confirm which is right.**
 
+> **Master price sheet (Dani, 8 Nov 2026):** https://docs.google.com/spreadsheets/d/178kpxQs2mZZ_StmrFoidUlYy8gydcdtV/edit?gid=1630337928
+> Private: Claude couldn't open it (no Google Drive connection in the session). Ask Dani to export it as CSV
+> or Excel and upload it, then reconcile this file against it.
+> **Website rule:** show generic "from £" prices only, never the full sheet.
+
 ## Number plates
 | Type | Price |
 |---|---|

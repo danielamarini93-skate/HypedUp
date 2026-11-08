@@ -18,6 +18,8 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Migrate with 301s, GA4, Search Console, schema, sitemap
 - [ ] Interim (only if migration is far off): fix broken icons; check GA4 Realtime ("Experties" typo already fixed; homepage already has prices + number plates)
 
+- [ ] Get the master price sheet as CSV/Excel from Dani and reconcile `pricing.md`
+
 ## SEO / technical
 - [ ] Request indexing for all main service pages in Search Console
 - [ ] Add products to Google Business Profile (list in `marketing.md`)

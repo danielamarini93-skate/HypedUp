@@ -26,3 +26,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-08 — Design thinking stage completed; homepage concept 'workshop wall' proposed (awaiting Dani's review)
 - 2026-11-08 — Research and audit moved into an editable doc for Dani to review before the concept (https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg)
 - 2026-11-08 — Concept v0.2 direction (Dani): minimal craft hero with video and one CTA; bolder palette (graphite + red + signal blue); positioning = one-stop modification shop, electronics and styling are starting points
+- 2026-11-08 — Website shows generic 'from £' prices only; the master price sheet is the source (Dani)
