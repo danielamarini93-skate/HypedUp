@@ -36,6 +36,8 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Ask partner brands (Xtrons, Air Lift, Prazis, MetaTrak, Scorpion) for installer-finder listings (Autostyle sends 45 sessions/quarter)
 - [ ] Link Google Ads (Maps campaign) to GA4
 
+- [ ] Buy the commercial licence for the chosen graffiti font (Aerosoldier / Decipher: mansgreback.com) before launch
+
 ## SEO / technical
 - [ ] Request indexing for all main service pages in Search Console
 - [ ] Add products to Google Business Profile (list in `marketing.md`)

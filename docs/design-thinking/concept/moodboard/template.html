@@ -2,9 +2,11 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Big+Shoulders+Display:wght@800;900&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Rubik+Wet+Paint&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Big+Shoulders+Display:wght@800;900&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Rubik+Wet+Paint&family=Sedgwick+Ave+Display&display=swap">
 <style>
 @font-face{font-family:"Hoax Vandal";src:url({{font:hoax}}) format("truetype");font-display:swap}
+@font-face{font-family:"Decipher";src:url({{font:decipher}}) format("opentype");font-display:swap}
+@font-face{font-family:"Aerosoldier Spray";src:url({{font:aerospray}}) format("opentype");font-display:swap}
 /* Layout: moodboard. Neutral dark board; each direction is a full-width band with references, a large crafted
    mock in its own palette (A and C switch light/dark), then palette/type and a short read. */
 :root{
@@ -16,7 +18,9 @@
   --f-serif:"Instrument Serif",Georgia,serif;
   --f-cond:"Big Shoulders Display","Arial Narrow",sans-serif;
   --f-wet:"Rubik Wet Paint","Arial Black",sans-serif;
-  --f-tag:"Hoax Vandal","Segoe Print",cursive;
+  --f-tag:"Decipher","Sedgwick Ave Display","Segoe Print",cursive;  /* A: handstyle tag (licence needed) */
+  --f-spray:"Aerosoldier Spray","Rubik Wet Paint",sans-serif; /* B: real spray lettering (licence needed) */
+  --f-sedg:"Sedgwick Ave Display","Segoe Print",cursive;     /* C: free graffiti accent */
   --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 html,body{overflow-x:clip}
@@ -105,7 +109,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 .B .copy{position:relative;padding:34px 26px 26px;max-width:640px}
 .B .k2{font:600 .72rem/1 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:#bdb6b2}
 .B h3{font:900 clamp(3.6rem,8.4vw,6.6rem)/.82 var(--f-cond);text-transform:uppercase;margin-top:14px}
-.B h3 .wet{display:block;font:400 clamp(3.4rem,7.8vw,6.2rem)/1 var(--f-wet);text-transform:none;color:#ff6a1c;margin-top:.05em;letter-spacing:.005em}
+.B h3 .wet{display:block;font:400 clamp(3.6rem,8.4vw,6.8rem)/1.05 var(--f-spray);text-transform:none;color:#ff6a1c;margin-top:.02em;letter-spacing:0;padding-left:.12em}
 .B .copy p{max-width:36ch;color:#d9d3cf;margin:16px 0 22px;font-size:1.02rem}
 .B .ctas{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
 .B .btn{display:inline-flex;align-items:center;gap:.55rem;border-radius:999px;padding:.95rem 1.3rem;font:700 .95rem/1 var(--f-body);background:linear-gradient(100deg,#c2040f,#cf1a0d)}
@@ -145,7 +149,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 .C .row div+div{border-left:1px solid var(--rule)}
 .C .row b{font:400 1.7rem/1 var(--f-serif)}
 .C .row span{color:var(--soft);font-size:.82rem}
-.C .find{position:relative;display:inline-block;font:400 1.5rem/1 var(--f-serif);font-style:italic;padding:.35rem .7rem}
+.C .find{position:relative;display:inline-block;font:400 1.7rem/1 var(--f-sedg);padding:.35rem .8rem}
 .C .find .mk{inset:-12px -18px}
 
 .decide{padding-block:3rem 4rem;display:grid;gap:1rem;max-width:72ch;border-top:1px solid var(--line)}
@@ -201,7 +205,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
     </div>
     <div class="below">
       <div><b class="k">Palette</b><div class="sw"><i style="background:#dcd8d1">Paper</i><i style="background:#151313;color:#fff;outline:1px solid #333">Ink</i><i style="background:#ff5a14">Orange</i><i style="background:#e30513;color:#fff">Red</i></div></div>
-      <div><b class="k">Type</b><p><span style="font:900 1.5rem/1 var(--f-body);font-stretch:125%;text-transform:uppercase">Archivo Expanded</span><br><span style="font:500 .8rem var(--f-mono)">IBM PLEX MONO CAPTIONS</span><br><span style="font:400 1.6rem/1.2 var(--f-tag);color:#ff6a1c">Hoax Vandal tag</span></p></div>
+      <div><b class="k">Type</b><p><span style="font:900 1.5rem/1 var(--f-body);font-stretch:125%;text-transform:uppercase">Archivo Expanded</span><br><span style="font:500 .8rem var(--f-mono)">IBM PLEX MONO CAPTIONS</span><br><span style="font:400 2rem/1.2 var(--f-tag);color:#ff6a1c">Decipher tag</span><br><span style="font-size:.8rem;color:var(--dim)">Decipher (commercial licence needed) · free fallback: Sedgwick Ave Display</span></p></div>
       <div><b class="k">Read</b><p>Creative and rebellious, like a streetwear drop. Great for builds, shop and social. Keep security pages calmer so Kemi trusts it.</p></div>
     </div>
   </div>
@@ -231,7 +235,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
     </div>
     <div class="below">
       <div><b class="k">Palette</b><div class="sw"><i style="background:#0b0a0a;color:#fff;outline:1px solid #333">Black</i><i style="background:#2a2525;color:#fff">Graphite</i><i style="background:#ff6a1c">Orange</i><i style="background:#c2040f;color:#fff">Red</i><i style="background:#f2eee9">Chalk</i></div></div>
-      <div><b class="k">Type</b><p><span style="font:900 1.7rem/1 var(--f-cond);text-transform:uppercase">Big Shoulders</span><br><span style="font:400 1.8rem/1.1 var(--f-wet);color:#ff6a1c">Wet paint</span><br><span style="font:500 1rem 'Barlow',sans-serif">Barlow for body and buttons</span><br><span style="font-size:.8rem;color:var(--dim)">Same pair as the menu &amp; footer board (Dani's pick). Rubik Wet Paint (free) for one word per screen; Rage Machine as a paid upgrade.</span></p></div>
+      <div><b class="k">Type</b><p><span style="font:900 1.7rem/1 var(--f-cond);text-transform:uppercase">Big Shoulders</span><br><span style="font:400 2.2rem/1.1 var(--f-spray);color:#ff6a1c">Spray paint</span><br><span style="font:500 1rem 'Barlow',sans-serif">Barlow for body and buttons</span><br><span style="font-size:.8rem;color:var(--dim)">Same pair as the menu &amp; footer board (Dani's pick). Aerosoldier Spray for one word per screen (commercial licence needed; free fallback: Rubik Wet Paint).</span></p></div>
       <div><b class="k">Read</b><p>Night-time car meet: bold, energetic, very "workshop". Authentic because the graffiti is Hyped Up's own wall.</p></div>
     </div>
   </div>
@@ -272,9 +276,17 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
     </div>
     <div class="below">
       <div><b class="k">Palette</b><div class="sw"><i style="background:#f4f1eb">Bone</i><i style="background:#121111;color:#fff;outline:1px solid #333">Black</i><i style="background:#ff5a14">Orange</i><i style="background:#d10411;color:#fff">Red</i><i style="background:#8f8a84;color:#fff">Stone</i></div></div>
-      <div><b class="k">Type</b><p><span style="font:400 2rem/1 var(--f-serif)">Instrument Serif</span><br><span style="font:500 .95rem var(--f-body)">Archivo for body and UI</span><br><span style="font-size:.8rem;color:var(--dim)">One painted circle per screen. The mural artist could paint Hyped Up's own strokes.</span></p></div>
+      <div><b class="k">Type</b><p><span style="font:400 2rem/1 var(--f-serif)">Instrument Serif</span><br><span style="font:500 .95rem var(--f-body)">Archivo for body and UI</span><br><span style="font:400 1.6rem/1.2 var(--f-sedg);color:#ff5a14">Sedgwick accent</span><br><span style="font-size:.8rem;color:var(--dim)">Sedgwick Ave Display (free) for small graffiti accents like "Find us". One painted circle per screen.</span></p></div>
       <div><b class="k">Read</b><p>A gallery for car art: premium, calm, surprising for the sector. Builds trust for security and high-value jobs.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="dir" aria-labelledby="hf">
+  <div class="wrap">
+    <div class="dir-head"><div><span class="k">Fonts</span><h2 id="hf">Graffiti font test</h2><p>Every font Dani sent, plus the free Sedgwick Ave Display, set in Hyped Up words. Only Sedgwick is free for business use; the rest are personal-use demos and need a commercial licence before launch (the demos also swap numbers for watermarks).</p></div></div>
+    <img src="{{ref:spec}}" alt="Specimen sheet of 14 graffiti font styles with their licences" style="width:100%;border-radius:6px;display:block" loading="lazy">
+    <div class="below"><div><b class="k">Used above</b><p>A: Decipher (tag) · B: Aerosoldier Spray (spray word) · C: Sedgwick Ave Display (accent)</p></div><div><b class="k">Free for business</b><p>Sedgwick Ave Display, Rubik Wet Paint, Hoax Vandal</p></div><div><b class="k">Licence to buy</b><p>Aerosoldier and Decipher: Måns Grebäck (mansgreback.com). Others: links in each font's read-me.</p></div></div>
   </div>
 </section>
 
@@ -283,7 +295,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
   <ol>
     <li><b>Which direction</b> do we develop: A, B or C (and light or dark for A and C)?</li>
     <li><b>Mixes are fine</b>, e.g. C's calm grid with A's stickers and tags on builds and shop pages.</li>
-    <li><b>Fonts:</b> all shown are free for business. Rage Machine or Kelsi possible as paid upgrades.</li>
+    <li><b>Fonts:</b> pick the graffiti font; if it's not Sedgwick, we buy its commercial licence before launch.</li>
   </ol>
 </div>
 

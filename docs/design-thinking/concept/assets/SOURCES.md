@@ -12,3 +12,22 @@ _Collected 8 Nov 2026 for the Hyped Up concepts. Check again before launch._
 
 **Not usable without buying a licence** (personal use only on 1001fonts): Marseloup, VTKS Smash, Bastrad.
 Noun Project icons need a paid licence or attribution (CC BY): not used.
+
+## Graffiti fonts Dani sent (8 Nov 2026), tested in `font-test.jpg`
+**All are personal-use demos: a commercial licence is needed before any of them go on the live site.**
+Font files are kept out of the repo (licence); re-download from the source if needed. The demos of Decipher and
+Aerosoldier replace numbers with "personal use" watermarks: don't set digits in them.
+
+| Font | Designer / source | Licence | Verdict |
+|---|---|---|---|
+| **Aerosoldier** (Regular, Drip, Spray, Basic, Symbols) | Måns Grebäck, mansgreback.com | Personal only, licence for sale | **Best real spray lettering → direction B** |
+| **Decipher** (+ Symbols) | Måns Grebäck, mansgreback.com/fonts/decipher | Personal only, licence for sale | **Best handstyle tag → direction A** |
+| Jraot (Regular, Extrude, Outline, Hollow) | Cikareotype / Sipanji21 (MyFonts) | Personal only | Bold, readable, more logo than tag |
+| Gemstone | Blankids Studio, blankidsfonts.com | Personal only | Bold, readable |
+| Graffiti City | Woodcutter (Etsy) | Personal only | Readable handstyle |
+| Blank River | Colllab Studio | Personal only | Quick tag |
+| Hesorder | Ronny Studio, ronnystudio.com | Personal only | Hard to read |
+| Brick | Sesohq | Personal only | Handwritten, thin |
+| Street Wars | Semuthitam (Creative Market) | Personal only | Too thin |
+| Sister Spray | Imagex | Personal only | Demo missing letters |
+| **Sedgwick Ave Display** | Google Fonts | **Free (SIL OFL)** | Free fallback/accent → direction C |

@@ -19,5 +19,8 @@ s = re.sub(r'\{\{br:([a-z]+)\}\}', lambda m: open(S + '/brands/' + m.group(1) + 
 masks = {'circle': '318600'}
 s = s.replace('{{maskvars}}', ':root{' + ''.join('--m-%s:url("%s");' % (k, d(os.path.join(A, 'paint', v + '.svg'), 'image/svg+xml')) for k, v in masks.items()) + '}')
 s = s.replace('{{font:hoax}}', d(os.path.join(A, 'fonts', 'hoax-vandal.ttf'), 'font/ttf'))
+FZ = S + '/fz/'
+s = s.replace('{{font:decipher}}', d(FZ + 'decipher/Decipher_PERSONAL_USE_ONLY.otf', 'font/otf')).replace('{{font:aerospray}}', d(FZ + 'aerosoldier/AerosoldierSpray_PERSONAL_USE_ONLY.otf', 'font/otf'))
+s = s.replace('{{ref:spec}}', d(FZ + 'spec.jpg', 'image/jpeg'))
 assert '{{' not in s, s[s.index('{{'):s.index('{{') + 30]
 open('index.html', 'w').write(s); print(len(s) // 1024, 'KB')
