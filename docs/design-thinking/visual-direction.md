@@ -73,3 +73,10 @@ checking at small sizes (use bold/large text or a darker red for small text). Ye
 - Palette: graphite scale (asphalt → concrete) + Hyped red + a new **signal blue** that codes electronics (red codes styling, chalk white codes "anything else").
 - Type: industrial condensed display (Big Shoulders) instead of Anton; marker used once per screen at most.
 - Homepage: "start anywhere" (Electronics · Styling · Anything else), builds, how a build works, one review, Hypa, visit. Prices move to service pages.
+
+---
+
+## v0.3 feedback from Dani (8 Nov 2026, on the menu & footer concept)
+- **No blue.** Use shades of grey and shades of red; **add orange**; **gradients are welcome** (red → orange).
+- **More graffiti, more art:** brush strokes, paint splashes, spray-can texture and drips.
+- Applies to every concept from now on (the homepage concept still has signal blue: update it at the homepage step).

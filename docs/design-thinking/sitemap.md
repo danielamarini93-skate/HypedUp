@@ -56,11 +56,11 @@ the name says it.
 | Audience hub | `/<audience>` | `/motorbikes`, `/business` |
 | Blog | `/blog`, `/blog/<slug>` | `/blog/how-much-does-a-car-wrap-cost-uk` |
 | Builds | `/builds` (later `/builds/<slug>`) | |
-| Other | `/about`, `/visit`, `/shop`, `/prices`, `/privacy`, `/cookies`, `/terms` | |
+| Other | `/about`, `/contact`, `/shop`, `/prices`, `/privacy`, `/cookies`, `/terms` | |
 Rules: lowercase, hyphens, no dates, one address per page (no `www` duplicate: `www` redirects to the bare domain).
 
 ## Menu
-**Desktop header:** logo · **Protect ▾ · Upgrade ▾ · Style ▾** · Builds · Visit · [**Get a quote**] (WhatsApp)
+**Desktop header:** logo · **Protect ▾ · Upgrade ▾ · Style ▾** · Builds · Contact · [**Get a quote**] (WhatsApp) _("Visit" renamed "Contact", Dani 8 Nov)_
 - Each ▾ panel: its tier-1 services (name + "from £" + one line), one build photo, a "Not sure? Send us your idea" box,
   and **"All Protect services →"** (the hub, where tier-2 pages live).
 - Blog, About, Shop, Motorbikes and Business live in the footer and on the hubs (keeps the bar to 5 words + 1 button).
@@ -75,10 +75,10 @@ Rules: lowercase, hyphens, no dates, one address per page (no `www` duplicate: `
 | Protect | all Protect pages (tier 1 + 2) |
 | Upgrade | all Upgrade pages |
 | Style | all Style pages |
-| More | Motorbikes · Business & fleet · Builds · Blog · Shop · Prices |
-| Hyped Up | About · Reviews (Google) · Visit · Instagram · TikTok · Facebook · LinkedIn |
+| More | Motorbikes · Business & fleet · Builds · Blog · Shop |
+| Hyped Up | About · Contact · Instagram · TikTok · Facebook · LinkedIn |
 | Find us | Address (copy) · map link · hours · phone · WhatsApp · email |
-Bottom row: © Hyped Up Ltd · company no. 14086991 · Privacy · Cookies · Terms · cookie settings. Base: giant outline "HYPED UP".
+Bottom row: © Hyped Up Ltd · company no. 14086991 · Privacy · Cookies · Terms · cookie settings. Base: giant "HYPED UP" wordmark (decided).
 
 ## Redirects (old → new)
 | Old | New |
@@ -91,7 +91,7 @@ Bottom row: © Hyped Up Ltd · company no. 14086991 · Privacy · Cookies · Ter
 | `/vehicle-remapping-tuning` | `/remapping` |
 | `/air-suspension` | `/air-suspension` |
 | `/hyped-up-apparel` | `/shop` |
-| `/contact-us` | `/visit` |
+| `/contact-us` | `/contact` |
 | `/privacy-policy` | `/privacy` |
 | `/blog` | `/blog` |
 | `/hyped-up/f/<slug>`, `/f/<slug>`, `/blog/f/<slug>` | `/blog/<clean-slug>` (all 15 posts, all three patterns) |
