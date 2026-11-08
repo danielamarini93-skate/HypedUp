@@ -9,7 +9,7 @@ business/marketing memory that every Claude session should start from.
 
 **Dani** is a **UX/UI designer** who leads this project: the website redesign, the brief and the strategy.
 Talk to Dani as a designer: design and UX language is fine and welcome; explain code and infrastructure in plain words.
-Hypa (the owner) gives the final OK on business facts, prices and claims.
+Hyped Up is Dani's partner's company. Hypa (the owner) gives the final OK on business facts, prices and claims.
 
 **How Dani works lives in the `dani-studio` repo** (github.com/danielamarini93-skate/dani-studio):
 Dani's profile, process, design principles, working agreements, skills (`design-thinking`,
@@ -17,6 +17,15 @@ Dani's profile, process, design principles, working agreements, skills (`design-
 Add it to every session alongside this repo. If it isn't loaded, ask Dani to add it before design work.
 Rule of thumb: **anything about Hyped Up goes here; anything about how Dani works goes in dani-studio.**
 Use dani-studio's `templates/brief.md` and `templates/strategy.md` for this project's brief and strategy.
+
+## Design system
+
+TBC: to be created in **Claude Design** during `/design-build`. Link it here once it exists.
+
+## Where outputs go
+
+Following Dani's process: `docs/design-thinking/` (brief, strategy, research, concept),
+`docs/design-build/`, `docs/design-review/`. Business memory stays in `memory/`.
 
 ## The business in one paragraph
 
