@@ -37,7 +37,7 @@ Solid lines = in the menu (tier 1) · dotted = hub + footer (tier 2) or contextu
 ## Pages and tiers
 | Tier | Where it shows | Pages |
 |---|---|---|
-| **1 · Menu** (10) | Header menu panels + hubs + footer | Protect: **Ghost & immobilisers, Car trackers, Dash cams, Paint protection film** · Upgrade: **CarPlay & Android Auto, Car audio, Remapping** · Style: **Car wrapping, Window tinting, Air suspension** |
+| **1 · Menu** (10, approved by Dani 8 Nov) | Header menu panels + hubs + footer | Protect: **Ghost & immobilisers, Car trackers, Dash cams, Paint protection film** · Upgrade: **CarPlay & Android Auto, Car audio, Remapping** · Style: **Car wrapping, Window tinting, Air suspension** |
 | **2 · Hub + footer** (12) | Hub pages ("All Protect services") + footer columns | Taxi cameras (TfL), Detailing & ceramic coating, Reverse cameras & sensors, Ambient lighting & starlights, Chrome delete, Bodykits & exterior parts, Wheel refurb & calipers, Interiors, Number plates, Van signage & livery |
 | **Hubs** (5) | Menu (verbs) + footer | Protect, Upgrade, Style, Motorbikes, Business & fleet |
 | **3 · Contextual** (grows) | Links from related service pages, blog posts and the XML sitemap only | Car-specific (CarPlay for BMW/Mini/Mercedes/Audi/VW…, Ghost for Range Rover/BMW…), comparison and FAQ pages |

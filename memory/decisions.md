@@ -40,3 +40,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-08 — Minimal menu; pages in 3 tiers: menu / hub + footer / contextual only (car-specific, low priority). No orphan pages (Dani)
 - 2026-11-08 — Menu/footer feedback (Dani): footer wordmark "Hyped Up"; "Visit" → "Contact"; desktop menu fully clickable; remove Prices and Google reviews from footer; no blue: greys + reds + orange, gradients OK; more graffiti (brush, paint splash, spray cans)
 - 2026-11-08 — Visual v0.4 (Dani): real graffiti fonts + real splatter/spray assets recoloured; Lucide icons; subtle CTA gradient; keep orange; try rounded corners on images
+- 2026-11-08 — Menu approved: the 10 tier-1 services; Blog only in the footer (Dani)
