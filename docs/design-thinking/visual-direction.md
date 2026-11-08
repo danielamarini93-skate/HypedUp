@@ -59,3 +59,17 @@ checking at small sizes (use bold/large text or a darker red for small text). Ye
 - Exact logo red (sample from the original logo file)
 - Whether yellow is welcome as a small accent
 - Font licences: Google Fonts suggested above are free
+
+---
+
+## v0.2 feedback from Dani (8 Nov 2026), applied in concept v0.2
+- Hero was **too crowded, too many CTAs**. Wanted: **craft, minimal, straight to the point**.
+- **Above the fold must be clear and minimal, with a video.**
+- **Challenge the brand more:** more creativity; allowed to add another accent colour and to play with shades of black and grey.
+- **Message:** Hyped Up is a **full modification and styling shop, one stop for anything you like**. Electronics and styling are **two starting points, not the limit**.
+
+### What changed in response
+- Hero: full-bleed workshop video (silent loop), one headline, one line, **one action**. No stickers, rating or second button above the fold.
+- Palette: graphite scale (asphalt → concrete) + Hyped red + a new **signal blue** that codes electronics (red codes styling, chalk white codes "anything else").
+- Type: industrial condensed display (Big Shoulders) instead of Anton; marker used once per screen at most.
+- Homepage: "start anywhere" (Electronics · Styling · Anything else), builds, how a build works, one review, Hypa, visit. Prices move to service pages.
