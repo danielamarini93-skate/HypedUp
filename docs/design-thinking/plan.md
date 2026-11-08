@@ -25,7 +25,7 @@ _Inputs: `intake.md`, `CLAUDE.md`, `memory/`, live site hypedup.uk_
   UX heuristic review (Claude) + `accessibility-scan` on the homepage + `seo-audit` (medium).
   Top issues ranked by impact, each labelled *observed / data / recommendation*.
 
-- [ ] **4. Competitor analysis** → `competitors.md` (internal only, never named on the site)
+- [x] **4. Competitor analysis** → `competitors.md` (internal only, never named on the site)
   4–5 London/UK installers (security + electronics + styling), plus 2 best-in-class brand-led
   sites from outside the sector (custom motorbike/garage culture, creative studio). Table stakes,
   opportunities, avoid.
