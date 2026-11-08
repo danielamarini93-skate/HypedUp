@@ -4,13 +4,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:wght@400;500;600;700&family=Permanent+Marker&display=swap">
 <style>
-/* Layout: a review board. Frames of the real components (desktop header + open panel, three phone states,
-   footer) on a neutral board, each labelled. Components use the v0.2 workshop tokens. Single dark look. */
+/* Layout: review board of real components (desktop header with clickable panels, three phone states, footer).
+   v0.3 workshop palette: warm greys + reds + orange, red→orange gradient, spray/brush/splash marks drawn
+   procedurally (canvas + SVG roughness filter). Single dark look on purpose. */
 :root{
   color-scheme: dark;
-  --board:#1a1a1d;   /* board behind the frames */
-  --asphalt:#0a0a0b; --tarmac:#131315; --graphite:#1d1d20; --concrete:#34343a;
-  --steel:#9a9aa3; --chalk:#efeee9; --red:#e30513; --red-btn:#c2040f; --signal:#5b8cff;
+  --board:#161414;    /* board behind the frames */
+  --asphalt:#0b0a0a;  /* component background */
+  --tarmac:#151212;   /* panels */
+  --graphite:#211d1d; /* cards */
+  --concrete:#3b3434; /* lines */
+  --steel:#a9a2a0;    /* secondary text, 7:1 on asphalt */
+  --chalk:#f2ede9;    /* primary text */
+  --red:#e30513;      /* logo red: marks and fills */
+  --red-hot:#ff4636;  /* red for text on black (5.6:1) */
+  --orange:#ff8a1f;   /* new accent (8.9:1 on black) */
+  --btn-a:#b8040e; --btn-b:#c8400a; /* button gradient, white text ≥ 4.9:1 */
+  --grad:linear-gradient(100deg,#e30513 0%,#ff4a1c 55%,#ff8a1f 100%);
   --f-display:"Big Shoulders Display","Arial Narrow",sans-serif;
   --f-body:"Barlow","Helvetica Neue",Arial,sans-serif;
   --f-hand:"Permanent Marker","Segoe Print",cursive;
@@ -19,45 +29,51 @@ html,body{overflow-x:clip}
 body{background:var(--board);color:var(--chalk);font:400 16px/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
 .page{max-width:1320px;margin:0 auto;padding:2.5rem max(16px,env(safe-area-inset-right,0px)) 4rem max(16px,env(safe-area-inset-left,0px))}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
 h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;line-height:.9;margin:0;text-wrap:balance}
-.intro{display:grid;gap:.8rem;margin-bottom:2.5rem;max-width:70ch}
-.intro h1{font-size:clamp(2.4rem,7vw,4.2rem)}
-.intro p{margin:0;color:var(--steel)}
+.intro{display:grid;gap:.8rem;margin-bottom:2.5rem;max-width:72ch;position:relative}
+.intro h1{font-size:clamp(2.6rem,7.5vw,4.6rem);position:relative;z-index:1}
+.intro p{margin:0;color:var(--steel);position:relative;z-index:1}
 .label{font:700 .72rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--steel)}
 .frame-title{display:flex;align-items:baseline;gap:.8rem;margin:3rem 0 1rem;flex-wrap:wrap}
 .frame-title h2{font-size:1.9rem}
 .frame-title p{margin:0;color:var(--steel);font-size:.95rem}
-.frame{background:var(--asphalt);border:1px solid var(--concrete);border-radius:4px;overflow:hidden}
+.frame{background:var(--asphalt);border:1px solid var(--concrete);border-radius:4px;overflow:hidden;position:relative}
+canvas.spray{position:absolute;pointer-events:none}
 
-/* ---------- shared bits ---------- */
 .logo{display:block;height:30px;width:auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:0 1.1rem;border-radius:2px;background:var(--red-btn);color:#fff;font:700 .95rem/1 var(--f-body)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:0 1.1rem;border-radius:2px;background:linear-gradient(100deg,var(--btn-a),var(--btn-b));color:#fff;font:700 .95rem/1 var(--f-body);border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.12)}
 .btn svg{width:18px;height:18px}
 .btn-ghost{background:transparent;border:1.5px solid var(--chalk);color:var(--chalk)}
-.from{color:var(--steel);font-size:.85rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.from{color:var(--steel);font-size:.85rem;font-variant-numeric:tabular-nums;white-space:nowrap;font-style:normal}
+.t-protect{color:var(--red-hot)} .t-upgrade{color:var(--orange)}
+.t-style{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* ---------- desktop header ---------- */
 .dh{display:flex;align-items:center;gap:2rem;padding:1rem 1.6rem;border-bottom:1px solid var(--concrete)}
-.dh nav{display:flex;gap:1.6rem;flex:1}
-.dh nav button,.dh nav a{background:none;border:0;color:var(--chalk);font:600 .98rem/1 var(--f-body);letter-spacing:.02em;cursor:pointer;display:flex;align-items:center;gap:.35rem;padding:.5rem 0;border-bottom:2px solid transparent}
-.dh nav .on{border-bottom-color:var(--red)}
-.dh nav svg{width:12px;height:12px}
-.panel{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding:1.8rem 1.6rem 2rem;border-bottom:1px solid var(--concrete);background:var(--tarmac)}
-.panel ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.dh nav{display:flex;gap:1.7rem;flex:1}
+.dh nav button,.dh nav a{position:relative;background:none;border:0;color:var(--chalk);font:600 1rem/1 var(--f-body);cursor:pointer;display:flex;align-items:center;gap:.35rem;padding:.6rem 0}
+.dh nav svg.chev{width:12px;height:12px;transition:transform .2s}
+.dh nav [aria-expanded="true"] svg.chev{transform:rotate(180deg)}
+.dh nav .brush{position:absolute;left:-8%;right:-8%;bottom:-6px;height:12px;opacity:0;transition:opacity .2s}
+.dh nav [aria-expanded="true"] .brush,.dh nav a:hover .brush,.dh nav button:hover .brush{opacity:1}
+.panel{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding:1.8rem 1.6rem 2rem;border-bottom:1px solid var(--concrete);background:var(--tarmac);position:relative;overflow:hidden}
+.panel[hidden]{display:none}
+.panel ul{list-style:none;margin:0;padding:0}
 .panel li a{display:grid;grid-template-columns:1fr auto;gap:.15rem 1rem;padding:.8rem 0;border-bottom:1px solid var(--concrete)}
-.panel li a b{font:900 1.35rem/1 var(--f-display);text-transform:uppercase}
+.panel li a b{font:900 1.4rem/1 var(--f-display);text-transform:uppercase;transition:color .15s}
 .panel li a span{grid-column:1/-1;color:var(--steel);font-size:.9rem}
-.panel li a:hover b{color:var(--signal)}
-.panel .all{display:inline-block;margin-top:1rem;font-weight:700;border-bottom:2px solid var(--red);padding-bottom:2px}
-.panel .ph{border-radius:2px;background:center/cover no-repeat;min-height:220px;position:relative}
-.panel .ph i{position:absolute;left:.7rem;bottom:.7rem;font:600 .8rem/1.2 var(--f-body);font-style:normal;background:rgba(10,10,11,.8);padding:.35rem .5rem}
-.panel .idea{background:var(--chalk);color:var(--asphalt);border-radius:2px;padding:1.2rem;display:grid;gap:.6rem;align-content:start}
-.panel .idea h3{font-family:var(--f-hand);font-weight:400;text-transform:none;font-size:1.6rem;line-height:1.05}
-.panel .idea p{margin:0;font-size:.95rem}
-.panel .idea .btn{justify-self:start}
-.tag{font:700 .7rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.4rem;display:block}
-.t-protect{color:var(--signal)} .t-upgrade{color:var(--signal)} .t-style{color:var(--red)}
+.panel li a:hover b{color:var(--orange)}
+.panel .all{display:inline-block;margin-top:1rem;font-weight:700;padding-bottom:4px;background:var(--grad) bottom/100% 2px no-repeat}
+.tag{font:700 .72rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.4rem;display:inline-block}
+.panel .ph{border-radius:2px;background:center/cover no-repeat;min-height:230px;position:relative;filter:saturate(1.05)}
+.panel .ph i{position:absolute;left:.7rem;bottom:.7rem;font:600 .8rem/1.2 var(--f-body);font-style:normal;background:rgba(11,10,10,.82);padding:.35rem .5rem}
+.idea{position:relative;border-radius:2px;padding:1.3rem;display:grid;gap:.6rem;align-content:start;isolation:isolate}
+.idea canvas{inset:-30px;width:calc(100% + 60px);height:calc(100% + 60px);z-index:-1}
+.idea h3{font-family:var(--f-hand);font-weight:400;text-transform:none;font-size:1.7rem;line-height:1.05;color:#fff}
+.idea p{margin:0;font-size:.95rem;color:#fff}
+.idea .btn{justify-self:start;background:#0b0a0a}
 
 /* ---------- phones ---------- */
 .phones{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));align-items:start}
@@ -68,160 +84,162 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
 .menu-btn{background:none;border:0;color:var(--chalk);font:600 .8rem/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;display:flex;gap:.55rem;align-items:center;cursor:pointer;min-height:44px}
 .menu-btn i{display:grid;gap:5px}.menu-btn i b{display:block;width:20px;height:2px;background:currentColor}
 .closed .hero{position:absolute;inset:0;background:center/cover no-repeat}
-.closed .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.5),rgba(10,10,11,.1) 35%,rgba(10,10,11,.95))}
+.closed .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,10,.5),rgba(11,10,10,.1) 35%,rgba(11,10,10,.95))}
 .closed .hcopy{position:absolute;left:1.1rem;right:1.1rem;bottom:1.4rem;z-index:2;display:grid;gap:.8rem}
 .closed .hcopy h3{font-size:3.3rem}
 .closed .hcopy p{margin:0;font-size:.95rem}
-.sheet{position:absolute;inset:0;background:var(--asphalt);display:flex;flex-direction:column}
+.sheet{position:absolute;inset:0;background:var(--asphalt);display:flex;flex-direction:column;overflow:hidden}
+.sheet>canvas{right:-70px;bottom:40px;width:240px;height:240px;opacity:.35}
 .sheet .mh{border-bottom:1px solid var(--concrete)}
-.big{list-style:none;margin:0;padding:.6rem 1.1rem 0}
+.big{list-style:none;margin:0;padding:.6rem 1.1rem 0;position:relative}
 .big>li{border-bottom:1px solid var(--concrete)}
 .big>li>button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;cursor:pointer}
 .big>li>button b{font:900 2.7rem/1 var(--f-display);text-transform:uppercase}
 .big>li>button span{font-size:1.6rem;line-height:1;color:var(--steel);transition:transform .2s}
-.big>li>button[aria-expanded="true"] span{transform:rotate(90deg);color:var(--chalk)}
-.big>li>button:focus-visible{outline:3px solid var(--signal)}
+.big>li>button[aria-expanded="true"] span{transform:rotate(90deg);color:var(--orange)}
+.big>li>button:focus-visible{outline:3px solid var(--orange)}
 .sub{list-style:none;margin:0 0 .8rem;padding:0}
 .sub a{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;font-weight:600}
-.sub .all a{color:var(--chalk);border-top:1px dashed var(--concrete);margin-top:.2rem;padding-top:.7rem;font-weight:700}
-.small{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;padding:1.1rem;color:var(--steel);font-weight:600;font-size:.95rem}
-.sheet .bottom{margin-top:auto;display:grid;grid-template-columns:2fr 1fr;gap:.6rem;padding:.8rem 1.1rem 1rem;border-top:1px solid var(--concrete)}
-.hours{padding:0 1.1rem .6rem;color:var(--steel);font-size:.85rem}
+.sub .all a{border-top:1px dashed var(--concrete);margin-top:.2rem;padding-top:.7rem;font-weight:700}
+.small{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;padding:1.1rem;color:var(--steel);font-weight:600;font-size:.95rem;position:relative}
+.sheet .bottom{margin-top:auto;display:grid;grid-template-columns:2fr 1fr;gap:.6rem;padding:.8rem 1.1rem 1rem;border-top:1px solid var(--concrete);position:relative}
+.hours{padding:0 1.1rem .6rem;color:var(--steel);font-size:.85rem;position:relative}
 .hours b{color:#4ade80;font-weight:600}
 
 /* ---------- footer ---------- */
 .ft{padding:2.6rem 1.6rem 0;position:relative;overflow:hidden}
-.ft-grid{display:grid;gap:2rem;grid-template-columns:repeat(6,minmax(0,1fr))}
+.ft-grid{display:grid;gap:2rem;grid-template-columns:repeat(6,minmax(0,1fr));position:relative;z-index:1}
 .ft h4{font:700 .72rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;margin:0 0 .9rem}
-.ft ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-size:.92rem;color:#c9c8c2}
-.ft ul a:hover{color:var(--chalk)}
-.findus{position:relative}
-.findus h4{position:relative;display:inline-block;padding:.5rem .9rem;margin-left:-.9rem}
-.findus svg.circle{position:absolute;inset:-4px -10px;width:calc(100% + 20px);height:calc(100% + 8px);pointer-events:none;overflow:visible}
-.findus p{margin:0 0 .5rem;font-size:.92rem;color:#c9c8c2}
+.ft ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-size:.92rem;color:#cdc6c2}
+.ft ul a:hover{color:var(--orange)}
+.findus h4{position:relative;display:inline-block;padding:.55rem .95rem;margin-left:-.95rem}
+.findus svg.circle{position:absolute;inset:-6px -12px;width:calc(100% + 24px);height:calc(100% + 12px);pointer-events:none;overflow:visible}
+.findus p{margin:0 0 .5rem;font-size:.92rem;color:#cdc6c2}
 .findus b{color:var(--chalk)}
 .social{display:flex;gap:.5rem;margin-top:.9rem}
 .social a{width:36px;height:36px;border:1px solid var(--concrete);border-radius:50%;display:grid;place-items:center;font:700 .7rem/1 var(--f-body)}
 .legal{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;justify-content:space-between;padding:1.6rem 0 1.2rem;margin-top:2.4rem;border-top:1px solid var(--concrete);color:var(--steel);font-size:.82rem;position:relative;z-index:1}
-.wordmark{font:900 clamp(5rem,19vw,17rem)/.78 var(--f-display);text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px var(--concrete);letter-spacing:-.01em;white-space:nowrap;margin:0 -0.05em -0.12em;user-select:none}
+.wm{position:relative;display:block;width:100%;height:clamp(110px,17vw,240px)}
+.wm canvas{position:absolute;inset:0;width:100%;height:100%}
 .ft-mobile .ft-grid{grid-template-columns:1fr 1fr;gap:1.6rem}
 .ft-mobile .findus{grid-column:1/-1}
-.ft-mobile .wordmark{font-size:6.2rem}
+.ft-mobile .wm{height:110px}
 
 .notes{margin-top:3rem;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
-.note{background:var(--graphite);border-radius:4px;padding:1.2rem;display:grid;gap:.4rem;align-content:start}
+.note{background:var(--graphite);border-radius:4px;padding:1.2rem;display:grid;gap:.45rem;align-content:start}
 .note h3{font-size:1.3rem}
-.note p,.note li{margin:0;color:#c9c8c2;font-size:.92rem}
+.note p,.note li{margin:0;color:#cdc6c2;font-size:.92rem}
 .note ul{margin:0;padding-left:1.1rem;display:grid;gap:.3rem}
 
-@media (max-width:900px){
-  .dh nav{gap:1rem}.panel{grid-template-columns:1fr}.panel .ph{min-height:160px}
-  .ft-grid{grid-template-columns:1fr 1fr}
-  .desktop-only-note{display:block}
-}
-@media (max-width:640px){ .dh{flex-wrap:wrap;gap:.8rem} .dh nav{order:3;flex-basis:100%;overflow-x:auto} }
-@media (prefers-reduced-motion:reduce){.big>li>button span{transition:none}}
+@media (max-width:900px){ .panel{grid-template-columns:1fr}.panel .ph{min-height:160px} .ft-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:640px){ .dh{flex-wrap:wrap;gap:.8rem} .dh nav{order:3;flex-basis:100%;overflow-x:auto;gap:1.2rem} }
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
 </style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="rough" x="-10%" y="-40%" width="120%" height="180%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#e30513"/><stop offset=".55" stop-color="#ff4a1c"/><stop offset="1" stop-color="#ff8a1f"/></linearGradient>
+  </defs>
+</svg>
 
 <div class="page">
   <header class="intro">
-    <p class="label">Design thinking · Round 2 · Concept A</p>
+    <canvas class="spray" data-spray="title" style="left:-30px;top:-40px;width:520px;height:220px" aria-hidden="true"></canvas>
+    <p class="label">Design thinking · Round 2 · Concept A · v2</p>
     <h1>Menu &amp; footer</h1>
-    <p>Three big doors (Protect, Upgrade, Style) with ten services in the menu. The other twelve live on the hub pages and in the footer, and car-specific pages are linked from inside service pages. One action everywhere: a WhatsApp quote. "From" prices come from the master price list.</p>
+    <p>Three big doors (Protect, Upgrade, Style) with ten services in the menu. The other twelve live on the hub pages and in the footer; car-specific pages are linked from inside service pages. One action everywhere: a WhatsApp quote. v2: no blue, reds and orange with spray, brush and splash marks; the desktop menu is fully clickable; "Contact" replaces "Visit".</p>
   </header>
 
-  <div class="frame-title"><h2>1 · Desktop header</h2><p>Closed bar on every page. Below it, the Protect panel open.</p></div>
+  <div class="frame-title"><h2>1 · Desktop header</h2><p>Click Protect, Upgrade and Style to open each panel. Builds and Contact are plain links.</p></div>
   <div class="frame">
     <div class="dh">
       <img class="logo" src="{{img:logo}}" alt="Hyped Up">
-      <nav aria-label="Main (desktop example)">
-        <button class="on" aria-expanded="true">Protect {{chev}}</button>
-        <button aria-expanded="false">Upgrade {{chev}}</button>
-        <button aria-expanded="false">Style {{chev}}</button>
-        <a href="#">Builds</a>
-        <a href="#">Visit</a>
+      <nav aria-label="Main (desktop example)" data-dnav>
+        <button aria-expanded="true" aria-controls="pn0">Protect {{chev}}{{brush}}</button>
+        <button aria-expanded="false" aria-controls="pn1">Upgrade {{chev}}{{brush}}</button>
+        <button aria-expanded="false" aria-controls="pn2">Style {{chev}}{{brush}}</button>
+        <a href="#builds">Builds{{brush}}</a>
+        <a href="#contact">Contact{{brush}}</a>
       </nav>
-      <a class="btn" href="#">{{wa}}Get a quote</a>
+      <a class="btn" href="#quote">{{wa}}Get a quote</a>
     </div>
-    <div class="panel">
-      <div>
-        <span class="tag t-protect">Protect</span>
-        <ul>
-          <li><a href="#"><b>Ghost &amp; immobilisers</b><em class="from">from £495</em><span>The car won't start without your secret button code</span></a></li>
-          <li><a href="#"><b>Car trackers</b><em class="from">from £395</em><span>Thatcham-category S5 and S7, app alerts, recovery</span></a></li>
-          <li><a href="#"><b>Dash cams</b><em class="from">from £125</em><span>Front, rear and 3-channel, hardwired with parking mode</span></a></li>
-          <li><a href="#"><b>Paint protection film</b><em class="from">price on enquiry</em><span>Clear film against chips and scratches</span></a></li>
-        </ul>
-        <a class="all" href="#">All Protect services →</a>
-      </div>
-      <div class="ph" style="background-image:url('{{img:dashcam}}')"><i>BMW · front + rear dash cam</i></div>
-      <div class="idea"><h3>Not sure what you need?</h3><p>Send your car and what worries you. Hypa replies with options and prices.</p><a class="btn" href="#">{{wa}}Ask on WhatsApp</a></div>
-    </div>
+    {{panels}}
   </div>
 
-  <div class="frame-title"><h2>2 · Phone</h2><p>Closed header, the full-screen menu, and the menu with Upgrade open.</p></div>
+  <div class="frame-title"><h2>2 · Phone</h2><p>Closed header, the full-screen menu (tap the words), and the menu with Upgrade open.</p></div>
   <div class="phones">
     <div class="phone">
       <span class="label">a · Closed</span>
       <div class="screen closed">
         <div class="hero" style="background-image:url('{{img:poster}}')"></div>
         <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Open menu">Menu <i><b></b><b></b></i></button></div>
-        <div class="hcopy"><h3>Protect it.<br>Upgrade it.<br>Style it.</h3><p>South London's one-stop workshop for car and bike electronics, security and styling.</p><div><a class="btn" href="#">{{wa}}Start your build</a></div></div>
+        <div class="hcopy"><h3>Protect it.<br>Upgrade it.<br><span class="t-style">Style it.</span></h3><p>South London's one-stop workshop for car and bike electronics, security and styling.</p><div><a class="btn" href="#quote">{{wa}}Start your build</a></div></div>
       </div>
     </div>
-
     <div class="phone">
-      <span class="label">b · Menu open (try tapping the words)</span>
-      <div class="screen">
-        <div class="sheet" id="m1">
-          <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Close menu">Close ✕</button></div>
-          <ul class="big" data-acc>
-            {{acc}}
-          </ul>
-          <nav class="small" aria-label="More">
-            <a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a><a href="#">Visit</a>
-          </nav>
-          <p class="hours"><b>●</b> Open today 10:00–18:00 · Unit 22, SE16</p>
-          <div class="bottom"><a class="btn" href="#">{{wa}}WhatsApp</a><a class="btn btn-ghost" href="#">Call</a></div>
-        </div>
-      </div>
+      <span class="label">b · Menu open</span>
+      <div class="screen"><div class="sheet">
+        <canvas class="spray" data-spray="splash" aria-hidden="true"></canvas>
+        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Close menu">Close ✕</button></div>
+        <ul class="big" data-acc>{{acc}}</ul>
+        <nav class="small" aria-label="More"><a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a><a href="#">Contact</a></nav>
+        <p class="hours"><b>●</b> Open today 10:00–18:00 · Unit 22, SE16</p>
+        <div class="bottom"><a class="btn" href="#quote">{{wa}}WhatsApp</a><a class="btn btn-ghost" href="#">Call</a></div>
+      </div></div>
     </div>
-
     <div class="phone">
       <span class="label">c · Upgrade opened</span>
-      <div class="screen">
-        <div class="sheet" id="m2">
-          <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Close menu">Close ✕</button></div>
-          <ul class="big" data-acc data-open="1">
-            {{acc}}
-          </ul>
-          <nav class="small" aria-label="More">
-            <a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a><a href="#">Visit</a>
-          </nav>
-          <div class="bottom"><a class="btn" href="#">{{wa}}WhatsApp</a><a class="btn btn-ghost" href="#">Call</a></div>
-        </div>
-      </div>
+      <div class="screen"><div class="sheet">
+        <canvas class="spray" data-spray="splash" aria-hidden="true"></canvas>
+        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Close menu">Close ✕</button></div>
+        <ul class="big" data-acc data-open="1">{{acc}}</ul>
+        <nav class="small" aria-label="More"><a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a><a href="#">Contact</a></nav>
+        <div class="bottom"><a class="btn" href="#quote">{{wa}}WhatsApp</a><a class="btn btn-ghost" href="#">Call</a></div>
+      </div></div>
     </div>
   </div>
 
-  <div class="frame-title"><h2>3 · Footer</h2><p>Every service listed here (this is where tier-2 pages live), plus find us, hours and socials.</p></div>
+  <div class="frame-title"><h2>3 · Footer</h2><p>Every service listed (tier-2 pages live here), find us, hours, socials, and the spray-painted wordmark.</p></div>
   <div class="frame">{{footer}}</div>
 
   <div class="frame-title"><h2>3b · Footer on a phone</h2><p>Same content, two columns, find us first.</p></div>
   <div class="frame" style="max-width:380px">{{footer_m}}</div>
 
   <div class="notes">
-    <div class="note"><h3>Why three doors</h3><p>They mirror the headline "Protect it. Upgrade it. Style it." and match how each persona thinks: Kemi protects, Jay upgrades, Marco styles.</p></div>
-    <div class="note"><h3>What's in the menu</h3><ul><li>Protect: Ghost &amp; immobilisers, Car trackers, Dash cams, PPF</li><li>Upgrade: CarPlay, Car audio, Remapping</li><li>Style: Car wrapping, Window tinting, Air suspension</li></ul></div>
-    <div class="note"><h3>Decisions for Dani</h3><ul><li>Are these the right 10 in the menu?</li><li>Builds and Visit in the top bar; Blog only in the footer?</li><li>Footer wordmark: "HYPED UP" or "SE16"?</li><li>Hand-drawn circle on Find us: keep?</li></ul></div>
+    <div class="note"><h3>What changed in v2</h3><ul><li>Blue removed: warm greys, reds and orange, with a red → orange gradient</li><li>Graffiti marks: spray-paint wordmark with drips, brush underline on the menu, paint splash behind "Not sure?", marker circle on Find us</li><li>All three menu panels open on click</li><li>"Visit" → "Contact"; Prices and Google reviews out of the footer</li></ul></div>
+    <div class="note"><h3>Why Motorbikes and Business, but no "Cars"?</h3><p>Every service page is already about cars, so cars don't need their own page: they're the default. Motorbikes and Business &amp; fleet get hubs because those customers need a different mix (bike wraps, Datatool trackers, bike remaps; fleet trackers, taxi cameras, van signage) and they search for it differently.</p></div>
+    <div class="note"><h3>Still to decide</h3><ul><li>Are these the right 10 services in the menu?</li><li>Blog only in the footer and on service pages: OK?</li></ul></div>
   </div>
 </div>
 
 <script>
-document.querySelectorAll('[data-acc]').forEach(function(list){
-  var btns=[].slice.call(list.querySelectorAll(':scope>li>button'));
-  function set(i){btns.forEach(function(b,j){var open=(j===i)&&b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',open?'true':'false');document.getElementById(b.getAttribute('aria-controls')).hidden=!open;});}
-  btns.forEach(function(b,i){b.addEventListener('click',function(){set(i)})});
-  var o=list.getAttribute('data-open'); if(o!==null) set(+o);
-});
+(function(){
+  /* desktop panels */
+  var nav=document.querySelector('[data-dnav]'); var tabs=[].slice.call(nav.querySelectorAll('button'));
+  tabs.forEach(function(b){b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')!=='true';
+    tabs.forEach(function(t){t.setAttribute('aria-expanded','false');document.getElementById(t.getAttribute('aria-controls')).hidden=true});
+    if(open){b.setAttribute('aria-expanded','true');document.getElementById(b.getAttribute('aria-controls')).hidden=false;paint();}});});
+  /* phone accordions */
+  document.querySelectorAll('[data-acc]').forEach(function(list){
+    var btns=[].slice.call(list.querySelectorAll(':scope>li>button'));
+    function set(i){btns.forEach(function(b,j){var open=(j===i)&&b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',open?'true':'false');document.getElementById(b.getAttribute('aria-controls')).hidden=!open;});}
+    btns.forEach(function(b,i){b.addEventListener('click',function(){set(i)})});
+    var o=list.getAttribute('data-open'); if(o!==null) set(+o);
+  });
+  /* seeded random so the paint looks the same every time */
+  function rng(seed){return function(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}}
+  var COLS=['#e30513','#ff4a1c','#ff8a1f','#b8040e'];
+  function gauss(r){return (r()+r()+r()-1.5)/1.5}
+  function setup(c){var r=c.getBoundingClientRect(),d=Math.min(2,window.devicePixelRatio||1);c.width=Math.max(1,r.width*d);c.height=Math.max(1,r.height*d);var x=c.getContext('2d');x.setTransform(d,0,0,d,0,0);return {x:x,w:r.width,h:r.height}}
+  function spray(x,cx,cy,rad,n,col,r){x.fillStyle=col;for(var i=0;i<n;i++){var a=r()*6.283,d=Math.abs(gauss(r))*rad;var s=r()<.92?r()*1.6+.3:r()*4+1.5;x.globalAlpha=r()*.5+.15;x.beginPath();x.arc(cx+Math.cos(a)*d,cy+Math.sin(a)*d*.8,s,0,6.283);x.fill()}x.globalAlpha=1}
+  function drip(x,px,py,len,w,col){x.fillStyle=col;x.beginPath();x.moveTo(px-w/2,py);x.lineTo(px+w/2,py);x.lineTo(px+w*.35,py+len);x.arc(px,py+len,w*.45,0,3.1416);x.closePath();x.fill()}
+  function paintTitle(c){var o=setup(c),x=o.x,r=rng(11);spray(x,o.w*.42,o.h*.55,o.w*.3,1400,COLS[0],r);spray(x,o.w*.62,o.h*.45,o.w*.18,700,COLS[2],r);x.globalAlpha=.35;for(var i=0;i<4;i++)drip(x,o.w*(.3+r()*.4),o.h*.6,20+r()*40,3,COLS[0]);x.globalAlpha=1}
+  function paintSplash(c){var o=setup(c),x=o.x,r=rng(23),cx=o.w/2,cy=o.h/2;x.fillStyle=COLS[0];x.beginPath();for(var i=0;i<=24;i++){var a=i/24*6.283,rr=o.w*(.22+r()*.12)*(i%3?1:1.35);x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr)}x.closePath();x.globalAlpha=.85;x.fill();for(var j=0;j<26;j++){var a2=r()*6.283,d=o.w*(.3+r()*.2);x.globalAlpha=.8;x.beginPath();x.arc(cx+Math.cos(a2)*d,cy+Math.sin(a2)*d,r()*6+1.5,0,6.283);x.fill()}spray(x,cx,cy,o.w*.45,500,COLS[2],r);x.globalAlpha=1}
+  function paintIdea(c){var o=setup(c),x=o.x,r=rng(5);var g=x.createLinearGradient(0,0,o.w,o.h);g.addColorStop(0,'#c2040f');g.addColorStop(1,'#d9480f');x.fillStyle=g;x.beginPath();var pts=34;for(var i=0;i<=pts;i++){var t=i/pts*6.283,rx=o.w*.42+(r()-.5)*18,ry=o.h*.42+(r()-.5)*18;x.lineTo(o.w/2+Math.cos(t)*rx,o.h/2+Math.sin(t)*ry)}x.closePath();x.fill();for(var k=0;k<5;k++)drip(x,o.w*(.25+r()*.5),o.h*.88,14+r()*30,5,'#c2040f');spray(x,o.w*.8,o.h*.2,40,260,COLS[2],r);}
+  function paintWordmark(c){var o=setup(c),x=o.x,r=rng(41),txt='HYPED UP';var fs=o.h*1.05;x.font='900 '+fs+'px "Big Shoulders Display","Arial Narrow",sans-serif';var tw=x.measureText(txt).width;if(tw>o.w*.98){fs=fs*o.w*.98/tw;x.font='900 '+fs+'px "Big Shoulders Display","Arial Narrow",sans-serif';tw=x.measureText(txt).width}var ox=(o.w-tw)/2,base=o.h*.86;var g=x.createLinearGradient(ox,0,ox+tw,0);g.addColorStop(0,'#e30513');g.addColorStop(.55,'#ff4a1c');g.addColorStop(1,'#ff8a1f');x.globalAlpha=.9;x.fillStyle=g;x.fillText(txt,ox,base);x.globalAlpha=1;for(var i=0;i<14;i++){var px=ox+r()*tw;drip(x,px,base-fs*.05,12+r()*o.h*.18,2+r()*4,r()<.5?'#e30513':'#ff6a1c')}spray(x,ox+tw*.15,base-fs*.6,fs*.5,500,'#e30513',r);spray(x,ox+tw*.85,base-fs*.4,fs*.5,500,'#ff8a1f',r)}
+  function paint(){document.querySelectorAll('canvas[data-spray]').forEach(function(c){if(!c.offsetParent&&c.getClientRects().length===0)return;var k=c.getAttribute('data-spray');({title:paintTitle,splash:paintSplash,idea:paintIdea,wordmark:paintWordmark})[k](c)})}
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(paint);
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(paint,150)});
+})();
 </script>

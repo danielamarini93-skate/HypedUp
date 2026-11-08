@@ -17,14 +17,26 @@ def acc():
         out.append('<li><button aria-expanded="false" aria-controls="%s"><b>%s</b><span>→</span></button><ul class="sub" id="%s" hidden>%s<li class="all"><a href="#">All %s services →</a></li></ul></li>' % (pid, g, pid, rows, g))
     return ''.join(out)
 while '{{acc}}' in s: s = s.replace('{{acc}}', acc(), 1)
+pdata = [
+ ('Protect','t-protect','dashcam.jpg','BMW · front + rear dash cam',[('Ghost &amp; immobilisers','£495','The car won\'t start without your secret button code'),('Car trackers','£395','Thatcham-category S5 and S7, app alerts, recovery'),('Dash cams','£125','Front, rear and 3-channel, hardwired with parking mode'),('Paint protection film','enquiry','Clear film against stone chips and scratches')]),
+ ('Upgrade','t-upgrade','carplay.jpg','Mini · wireless CarPlay screen',[('CarPlay &amp; Android Auto','£170','Wireless CarPlay on a new screen or your factory one'),('Car audio','£125','Speakers, amps, subs, boot builds, sound deadening'),('Remapping','£250','Stage 1 to 3 for cars and bikes, done properly')]),
+ ('Style','t-style','wrap.jpg','London taxi · colour change',[('Car wrapping','£1,500','Full colour changes, roofs, stripes, chameleon'),('Window tinting','£150','Standard, carbon or ceramic film, legal fronts'),('Air suspension','£1,895','Air Lift and Prazis, set up for daily driving')]),
+]
+def panels():
+    out=[]
+    for i,(g,cls,img,cap,items) in enumerate(pdata):
+        rows=''.join('<li><a href="#"><b>%s</b><em class="from">%s</em><span>%s</span></a></li>' % (t, ('from '+p) if p!='enquiry' else 'price on enquiry', dsc) for t,p,dsc in items)
+        out.append('<div class="panel" id="pn%d"%s><div><span class="tag %s">%s</span><ul>%s</ul><a class="all" href="#">All %s services →</a></div><div class="ph" style="background-image:url(\'{{img:%s}}\')"><i>%s</i></div><div class="idea"><canvas class="spray" data-spray="idea" aria-hidden="true"></canvas><h3>Not sure what you need?</h3><p>Send your car and your idea. Hypa replies with options and prices.</p><a class="btn" href="#quote">{{wa}}Ask on WhatsApp</a></div></div>' % (i, '' if i==0 else ' hidden', cls, g, rows, g, img.split('.')[0], cap))
+    return ''.join(out)
+s = s.replace('{{panels}}', panels())
 cols = [
  ('Protect', ['Ghost &amp; immobilisers','Car trackers','Dash cams','Paint protection film','Taxi cameras (TfL)','Detailing &amp; ceramic']),
  ('Upgrade', ['CarPlay &amp; Android Auto','Car audio','Remapping','Reverse cameras &amp; sensors','Ambient lighting &amp; starlights']),
  ('Style',   ['Car wrapping','Window tinting','Air suspension','Chrome delete','Bodykits','Wheel refurb &amp; calipers','Interiors','Number plates','Van signage &amp; livery']),
- ('More',    ['Motorbikes','Business &amp; fleet','Builds','Blog','Shop','Prices']),
- ('Hyped Up',['About','Google reviews','Visit']),
+ ('More',    ['Motorbikes','Business &amp; fleet','Builds','Blog','Shop']),
+ ('Hyped Up',['About','Contact']),
 ]
-circle = '<svg class="circle" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M40 30 C 120 -5, 260 5, 290 70 C 310 140, 230 195, 130 192 C 40 190, 2 140, 8 90 C 12 50, 60 22, 150 18" fill="none" stroke="#e30513" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>'
+circle = '<svg class="circle" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><path d="M40 30 C 120 -5, 260 5, 290 70 C 310 140, 230 195, 130 192 C 40 190, 2 140, 8 90 C 12 50, 60 22, 150 18" fill="none" stroke="url(#g)" stroke-width="3.5" stroke-linecap="round" vector-effect="non-scaling-stroke" filter="url(#rough)"/></svg>'
 def footer(mobile):
     c = ''.join('<div><h4>%s</h4><ul>%s</ul></div>' % (h, ''.join('<li><a href="#">%s</a></li>' % x for x in items)) for h, items in cols)
     find = ('<div class="findus"><h4>%sFind us</h4><p><b>Unit 22, Enterprise Industrial Estate,<br>Bolina Road, London SE16 3LF</b></p>'
@@ -32,10 +44,10 @@ def footer(mobile):
             '<div class="social"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="TikTok">TT</a><a href="#" aria-label="Facebook">FB</a><a href="#" aria-label="LinkedIn">IN</a></div></div>') % circle
     grid = (find + c) if mobile else (c + find)
     return ('<footer class="ft%s"><div class="ft-grid">%s</div><div class="legal"><span>© 2026 Hyped Up Ltd · Company no. 14086991</span>'
-            '<span>Privacy · Cookies · Terms · Cookie settings</span></div><div class="wordmark" aria-hidden="true">Hyped Up</div></footer>') % (' ft-mobile' if mobile else '', grid)
+            '<span>Privacy · Cookies · Terms · Cookie settings</span></div><div class="wm" aria-hidden="true"><canvas class="spray" data-spray="wordmark"></canvas></div></footer>') % (' ft-mobile' if mobile else '', grid)
 s = s.replace('{{footer}}', footer(False)).replace('{{footer_m}}', footer(True))
-s = s.replace('{{img:logo}}', d(I + 'logo-s.png', 'image/png')).replace('{{img:dashcam}}', d(I + 'dashcam.jpg', 'image/jpeg')).replace('{{img:poster}}', d(V + 'poster.jpg', 'image/jpeg'))
+s = s.replace('{{img:logo}}', d(I + 'logo-s.png', 'image/png')).replace('{{img:dashcam}}', d(I + 'dashcam.jpg', 'image/jpeg')).replace('{{img:carplay}}', d(I + 'carplay.jpg', 'image/jpeg')).replace('{{img:wrap}}', d(I + 'wrap.jpg', 'image/jpeg')).replace('{{img:poster}}', d(V + 'poster.jpg', 'image/jpeg'))
 wa = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>'
-s = s.replace('{{wa}}', wa).replace('{{chev}}', '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>')
+s = s.replace('{{wa}}', wa).replace('{{brush}}', '<svg class="brush" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 7 C 25 3, 55 10, 97 5" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" filter="url(#rough)"/></svg>').replace('{{chev}}', '<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>')
 assert '{{' not in s, s[s.index('{{'):s.index('{{')+30]
 open('index.html', 'w').write(s); print(len(s) // 1024, 'KB')
