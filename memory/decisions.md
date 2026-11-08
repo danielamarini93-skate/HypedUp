@@ -32,3 +32,5 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-08 — "We adapt the car to you" rejected as not professional enough; positioning must answer what clients want (Dani)
 - 2026-11-08 — Content editing: Claude via GitHub only, no CMS (Dani)
 - 2026-11-08 — Skip downloading old GoDaddy images; Dani puts newer media in Google Drive (Dani)
+- 2026-11-08 — Positioning line = option A: "Protect it. Upgrade it. Style it." + "South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly." (Dani)
+- 2026-11-08 — Hosting = Cloudflare (code site in GitHub, edited by Claude only). Framework chosen at build time (Dani)

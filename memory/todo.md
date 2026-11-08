@@ -10,7 +10,7 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Decide on the content-rule clashes (20+ years, Thatcham/insurance claims, tinted lights, shadow plates) — see `friend-concept.md`
 - [x] Opening hours confirmed
 - [ ] Confirm which phone number is current
-- [ ] Choose platform
+- [x] Platform: Cloudflare (code site in GitHub)
 - [x] Inventory current URLs and export blog content from GoDaddy (see `current-site.md`, `content/blog-archive/`)
 - [ ] Hypa to confirm the clashing prices (CarPlay, security, plates, remap) — see `current-site.md`
 - [ ] Download blog/site images from `img1.wsimg.com` before cancelling GoDaddy
@@ -25,7 +25,7 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [x] Google Drive connected (8 Nov 2026)
 - [ ] Hypa: is Car Audio Security (Hayes) the supplier, or a competitor?
 - [ ] Endless Customs: get their Instagram to review
-- [ ] Choose a positioning line (options A–D in `docs/design-thinking/strategy.md`)
+- [x] Positioning line: option A
 
 ## SEO / technical
 - [ ] Request indexing for all main service pages in Search Console

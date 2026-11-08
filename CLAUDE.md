@@ -29,7 +29,8 @@ Following Dani's process: `docs/design-thinking/` (brief, strategy, research, co
 
 ## Design thinking (stage 1): done 8 Nov 2026
 Outputs in `docs/design-thinking/`: tech-setup (cookies, forms, reviews, analytics), brief, strategy v0.2, audit, competitors, Mobbin, personas, visual direction, summary, concept.
-- **Positioning:** one-stop modification and styling shop; electronics and styling are starting points. Headline line TBC (options A–D in strategy.md; "We adapt the car to you" rejected)
+- **Positioning line (decided):** "Protect it. Upgrade it. Style it." + "South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly."
+- **Platform (decided):** code site in GitHub, edited only by Claude, hosted on Cloudflare
 - **Look:** "Workshop wall": strict grid + condensed type + hand-drawn marks/stickers, workshop black + Hyped red `#E30513`
 - **Main action:** WhatsApp quote with service and car pre-filled
 - **Research & audit doc (Dani edits here first):** https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg
@@ -50,7 +51,7 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 
 ## Current goal
 
-1. **Redesign the website and move off GoDaddy.** Step 1 now: write the **brief and strategy**, then choose the platform. See `memory/website-migration.md`.
+1. **Redesign the website and move off GoDaddy.** Brief, strategy and platform done; next: concept approval → `/design-build`. See `memory/website-migration.md`.
 2. Keep the SEO/content engine running (2 blog posts/week, Google Maps ads, GBP).
 
 ## Memory map

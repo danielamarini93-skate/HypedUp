@@ -27,7 +27,7 @@ Clients want: their car **protected**, **upgraded** and **styled**, **done prope
 
 Why A: three verbs = the three things people come for (security, tech, looks), in the order of priority; the
 supporting line carries the professional claim (one-stop, fitted properly, priced clearly) and the search terms
-(South London, car electronics, security, styling). **Decision: Dani.**
+(South London, car electronics, security, styling). **Decided 8 Nov 2026: option A (Dani).**
 
 ## Strategic priorities
 1. **Make electronics the front door.** Serves: grow electronics work. Why: highest search demand (car tracker 14,800/mo, Ghost 14,800/mo, front and rear dash cam 4,800/mo) and Hyped Up's priority.

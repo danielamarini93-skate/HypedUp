@@ -6,7 +6,7 @@ Timing key: **Now** = safe to do during design, no build needed · **Design** = 
 ## 1. Decisions
 | # | Item | Proposed timing | Why then | Who |
 |---|---|---|---|---|
-| 1.1 | Platform: code site in GitHub (Next.js or Astro) + host (Cloudflare or Vercel) | **Now** | Shapes how editing, forms and the dashboard work; design doesn't depend on it | Dani (Claude recommends) |
+| 1.1 | ✅ **Decided 8 Nov:** code site in GitHub, hosted on **Cloudflare** (framework picked at build) | Done | Shapes how editing, forms and the dashboard work; design doesn't depend on it | Dani (Claude recommends) |
 | 1.2 | ✅ **Decided 8 Nov:** Claude via GitHub only (no CMS) | Done | Changes the build effort and Hypa's day-to-day | Dani + Hypa |
 | 1.3 | Keep or retire Google Tag Manager | Build | Only matters once tracking is wired | Claude |
 | 1.4 | Email sending service (Resend or Brevo) for the form | Build | Free tiers are similar; pick when wiring the form | Claude |
