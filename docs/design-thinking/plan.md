@@ -34,11 +34,11 @@ _Inputs: `intake.md`, `CLAUDE.md`, `memory/`, live site hypedup.uk_
   Homepage heroes for creative/brand-led sites · service grids · portfolio/gallery and
   before–after · reviews/trust sections · quote/contact flows · small merch shop sections.
 
-- [ ] **6. Proto-personas (3)** → `personas.md`
+- [x] **6. Proto-personas (3)** → `personas.md`
   E.g. the worried owner (security), the tech upgrader (CarPlay/audio/dash cam), the
   enthusiast/stylist (wraps, air, show car). Marked unvalidated, with what to check.
 
-- [ ] **7. Visual direction** → `visual-direction.md`
+- [x] **7. Visual direction** → `visual-direction.md`
   Brand red/black/white + graffiti, art and craft, car + motorbike spirit, workshop energy,
   Hypa's creative and happy personality. Keywords, do/don't, type and texture ideas,
   with accessibility guardrails (contrast, legibility over graffiti).
