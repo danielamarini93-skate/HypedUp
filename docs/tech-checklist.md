@@ -90,6 +90,10 @@ Timing key: **Now** = safe to do during design, no build needed · **Design** = 
 | 9.4 | Watch Search Console and enquiries for 2 weeks | Claude |
 | 9.5 | Keep GoDaddy Website Builder 1 month, then cancel **only** that plan (never the domain or email) | Dani |
 
+## Status 8 Nov 2026
+All "now" items are done except the optional baseline export (todo). **Nothing technical blocks design.**
+During design: page map + URLs (3.1), Instagram start approach (1.5), titles/descriptions (6.1), claims wording before final copy (5.3).
+
 ## Summary: proposed "now" list
 1. Choose the platform and the editing approach (1.1, 1.2)
 2. Default branch on GitHub (2.1)
