@@ -28,7 +28,10 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [x] Positioning line: option A
 
 - [x] Search Console baseline saved → `docs/data/baseline-search.md`
-- [ ] Baseline: Business Profile insights (calls, directions, last 3 months)
+- [x] GA4 baseline saved → `docs/data/baseline-analytics.md`
+- [ ] Baseline: Business Profile insights (calls, directions, searches) + GoDaddy Insights screenshots
+- [ ] Ask partner brands (Xtrons, Air Lift, Prazis, MetaTrak, Scorpion) for installer-finder listings (Autostyle sends 45 sessions/quarter)
+- [ ] Link Google Ads (Maps campaign) to GA4
 
 ## SEO / technical
 - [ ] Request indexing for all main service pages in Search Console
