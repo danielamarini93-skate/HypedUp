@@ -2,325 +2,253 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:wght@400;500;600;700&family=Permanent+Marker&display=swap">
 <style>
-/* Layout: "workshop wall" — strict single-column grid on phone (two columns from 760px),
-   big condensed type, hand-drawn marker layer on top. Deliberately single dark look (workshop at night). */
+/* Layout: "garage at night". Phone: full-bleed video hero, one line, one action; then calm graphite bands.
+   Desktop: text left, vertical reel as a tall framed card right. Single dark look on purpose (workshop). */
 :root{
   color-scheme: dark;
-  --ink:#0f0e0e;        /* workshop black, warm */
-  --ink-2:#1b1919;      /* raised panels */
-  --bone:#f3efe7;       /* text on dark */
-  --muted:#b9b2a7;      /* secondary text on dark (≥7:1 on ink) */
-  --red:#e30513;        /* sampled from the logo */
-  --red-deep:#b0040f;
-  --red-ink:#ff5a4f;    /* lighter red for handwritten notes on black (≥4.5:1) */   /* red for small text and button fill (white text ≥ 4.5:1) */
-  --tape:#efe3b8;       /* masking tape */
-  --line:#2c2929;
-  --f-display:"Anton","Impact","Arial Narrow",sans-serif;
+  --asphalt:#0a0a0b;   /* page */
+  --tarmac:#131315;    /* band */
+  --graphite:#1d1d20;  /* cards */
+  --concrete:#34343a;  /* lines */
+  --steel:#9a9aa3;     /* secondary text, 6.9:1 on asphalt */
+  --chalk:#efeee9;     /* primary text */
+  --red:#e30513;       /* Hyped red: styling, marks */
+  --red-btn:#c2040f;   /* action fill, white text 5.8:1 */
+  --signal:#5b8cff;    /* new accent: electronics, 6.2:1 on asphalt */
+  --f-display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",sans-serif;
   --f-body:"Barlow","Helvetica Neue",Arial,sans-serif;
-  --f-hand:"Permanent Marker","Comic Sans MS","Segoe Print",cursive;
+  --f-hand:"Permanent Marker","Segoe Print",cursive;
 }
 html,body{overflow-x:clip}
-body{background:var(--ink);color:var(--bone);font:400 17px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
-.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body{background:var(--asphalt);color:var(--chalk);font:400 17px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--asphalt)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--tape);outline-offset:3px}
-h1,h2,h3{font-family:var(--f-display);font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.95;text-wrap:balance;margin:0}
-.hand{font-family:var(--f-hand);color:var(--red-ink);text-transform:none;letter-spacing:0}
-.eyebrow{font:700 .78rem/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1.25rem;border-radius:4px;font:700 1rem/1 var(--f-body);text-decoration:none;border:2px solid transparent}
-.btn-wa{background:var(--red-deep);color:#fff}
-.btn-wa:hover{background:var(--red)}
-.btn-ghost{border-color:var(--bone);color:var(--bone)}
-.btn svg{width:20px;height:20px;flex:none}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:.005em;text-wrap:balance;margin:0}
+.label{font:600 .74rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--steel)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;min-height:52px;padding:0 1.4rem;border-radius:2px;background:var(--red-btn);color:#fff;font:700 1rem/1 var(--f-body);text-decoration:none;letter-spacing:.01em}
+.btn:hover{background:var(--red)}
+.btn svg{width:20px;height:20px}
+.link{font-weight:700;text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
 
-/* concept ribbon */
-.ribbon{background:var(--tape);color:var(--ink);font:600 .85rem/1.3 var(--f-body);text-align:center;padding-block:.45rem}
-
-/* header */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(15,14,14,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.6rem}
-.top img{height:38px;width:auto;display:block}
-.top nav{display:none;gap:1.4rem;font-weight:600}
-.top nav a{text-decoration:none}
-.top nav a:hover{color:var(--red)}
-.top .btn{min-height:42px;padding:0 .9rem;font-size:.92rem}
+/* header: logo + menu only */
+.top{position:absolute;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:30}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:1rem}
+.top img{height:34px;width:auto;display:block}
+.menu{background:none;border:0;color:var(--chalk);font:600 .9rem/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;display:flex;gap:.6rem;align-items:center;cursor:pointer;min-height:44px}
+.menu i{display:grid;gap:5px}.menu i b{display:block;width:22px;height:2px;background:currentColor}
 
 /* hero */
-.hero{position:relative;overflow:hidden}
-.hero-img{position:absolute;inset:0;background:center 35%/cover no-repeat;filter:saturate(1.05)}
-.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,14,14,.35) 0%,rgba(15,14,14,.55) 45%,var(--ink) 100%)}
-.hero .wrap{position:relative;padding-block:4.5rem 2.5rem;display:grid;gap:1.1rem}
-.hero h1{font-size:clamp(3.1rem,13vw,7.6rem)}
-.hero h1 .you{position:relative;display:inline-block;color:var(--bone)}
-.hero h1 .you svg{position:absolute;left:-14%;top:-18%;width:128%;height:136%;overflow:visible;pointer-events:none}
-.hero p.lede{font-size:1.15rem;max-width:34ch;margin:0;color:var(--bone)}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;position:relative}
-.arrow-note{display:flex;align-items:flex-end;gap:.3rem;font-size:1.15rem;margin-top:-.2rem}
-.arrow-note svg{width:64px;height:40px}
-.stickers{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
-.sticker{font:700 .78rem/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:.5rem .7rem;border-radius:999px;background:var(--bone);color:var(--ink);transform:rotate(-3deg);box-shadow:2px 2px 0 var(--red)}
-.sticker:nth-child(2){transform:rotate(2deg);background:var(--red-deep);color:#fff;box-shadow:2px 2px 0 var(--bone)}
-.sticker:nth-child(3){transform:rotate(-1deg)}
-.rating{display:flex;align-items:center;gap:.6rem;font-weight:600;color:var(--muted);font-size:.95rem}
-.rating b{color:var(--tape);letter-spacing:.1em}
+.hero{position:relative;min-height:min(92svh,820px);display:grid;align-items:end;overflow:hidden;background:var(--asphalt)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.55) 0%,rgba(10,10,11,.05) 30%,rgba(10,10,11,.35) 55%,rgba(10,10,11,.96) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:0 2.4rem;display:grid;gap:1.1rem}
+.hero h1{font-size:clamp(3.6rem,17vw,8.5rem)}
+.hero h1 .any{position:relative;white-space:nowrap}
+.hero h1 .any svg{position:absolute;left:-2%;bottom:-.2em;width:104%;height:.22em;overflow:visible}
+.hero p{margin:0;max-width:30ch;font-size:1.12rem;color:var(--chalk)}
+.hero .frame{display:none}
+.pause{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:2.6rem;z-index:3;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(239,238,233,.6);background:rgba(10,10,11,.4);color:var(--chalk);cursor:pointer;display:grid;place-items:center}
+.pause svg{width:16px;height:16px}
 
-section{padding-block:3.5rem}
-.sec-head{display:grid;gap:.6rem;margin-bottom:1.6rem}
-.sec-head h2{font-size:clamp(2.4rem,9vw,4.6rem)}
-.sec-head p{margin:0;color:var(--muted);max-width:52ch}
+section{padding-block:4.5rem}
+.head{display:grid;gap:.8rem;margin-bottom:2rem}
+.head h2{font-size:clamp(2.8rem,11vw,5.4rem)}
+.head p{margin:0;color:var(--steel);max-width:46ch}
 
-/* two doors */
-.doors{display:grid;gap:1rem}
-.door{position:relative;display:block;min-height:260px;border-radius:6px;overflow:hidden;text-decoration:none;background:var(--ink-2) center/cover no-repeat}
-.door::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,14,14,0) 25%,rgba(15,14,14,.92) 100%)}
-.door .in{position:absolute;inset:auto 0 0 0;z-index:1;padding:1.2rem;display:grid;gap:.35rem}
-.door h3{font-size:clamp(2.6rem,11vw,4rem)}
-.door p{margin:0;color:var(--bone);font-weight:500}
-.door .go{font-family:var(--f-hand);color:var(--tape);font-size:1.1rem}
-.door:hover h3{color:var(--red)}
+/* start anywhere */
+.starts{display:grid;gap:1px;background:var(--concrete);border:1px solid var(--concrete)}
+.start{position:relative;display:grid;gap:.7rem;padding:1.6rem 1.3rem 1.4rem;background:var(--tarmac);text-decoration:none;min-height:220px;align-content:end;overflow:hidden}
+.start .bg{position:absolute;inset:0;background:center/cover no-repeat;opacity:.38;filter:grayscale(1) contrast(1.1);transition:opacity .3s,filter .3s}
+.start:hover .bg{opacity:.6;filter:grayscale(0)}
+.start>*:not(.bg){position:relative}
+.start .tag{font:700 .74rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase}
+.start h3{font-size:clamp(2.6rem,10vw,3.8rem)}
+.start p{margin:0;color:var(--chalk);max-width:34ch}
+.start .from{font-weight:600;color:var(--steel);font-size:.95rem;font-variant-numeric:tabular-nums}
+.start .arrow{position:absolute;right:1.2rem;top:1.3rem;font-size:1.6rem;line-height:1}
+.e .tag,.e .arrow{color:var(--signal)} .e h3 span{color:var(--signal)}
+.s .tag,.s .arrow{color:var(--red)}  .s h3 span{color:var(--red)}
+.x{background:var(--chalk);color:var(--asphalt)}
+.x .tag,.x .arrow{color:var(--asphalt)} .x p{color:var(--asphalt)} .x .from{color:#4a4a50}
+.x h3{font-family:var(--f-hand);font-weight:400;text-transform:none;line-height:1;font-size:clamp(2.2rem,8.5vw,3.2rem)}
 
-/* services */
-.svc{display:grid;gap:0;border-top:1px solid var(--line)}
-.svc li{list-style:none;display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;align-items:baseline;padding-block:1rem;border-bottom:1px solid var(--line)}
-.svc h3{font-size:1.75rem}
-.svc .price{font:700 1rem/1.2 var(--f-body);color:var(--tape);white-space:nowrap;font-variant-numeric:tabular-nums}
-.svc .price.q{color:var(--muted);font-weight:600}
-.svc p{grid-column:1/-1;margin:0;color:var(--muted);font-size:.98rem}
-.svc{padding:0;margin:0}
-.brands{margin-top:1.2rem;color:var(--muted);font-size:.9rem}
-.brands b{color:var(--bone);font-weight:600}
-.calm{background:var(--ink-2)}
+/* builds */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.8rem;scrollbar-width:thin}
+.rail figure{margin:0;scroll-snap-align:start;display:grid;gap:.6rem}
+.rail img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:2px}
+.rail figcaption{display:flex;justify-content:space-between;gap:1rem;font-size:.95rem}
+.rail figcaption b{font-weight:700}
+.rail figcaption span{color:var(--steel)}
+.rail .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:.45rem;vertical-align:middle}
 
-/* work rail */
-.rail{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;scrollbar-width:thin}
-.rail figure{margin:0;scroll-snap-align:start;position:relative}
-.rail img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block}
-.tapelabel{position:absolute;left:12px;bottom:14px;background:var(--tape);color:var(--ink);font:600 .9rem/1.25 var(--f-body);padding:.4rem .6rem;transform:rotate(-2deg);max-width:85%;box-shadow:0 2px 0 rgba(0,0,0,.35)}
-.tapelabel span{display:block;font-family:var(--f-hand);font-weight:400;font-size:1.05rem}
+/* how */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s;border-top:1px solid var(--concrete)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:3.2rem 1fr;gap:1rem;padding-block:1.4rem;border-bottom:1px solid var(--concrete)}
+.steps li::before{content:counter(s,decimal-leading-zero);font:900 1.9rem/1 var(--f-display);color:var(--steel)}
+.steps h3{font-size:1.9rem;margin-bottom:.35rem}
+.steps p{margin:0;color:var(--steel)}
 
-/* reviews */
-.reviews{display:grid;gap:1rem}
-.review{background:var(--ink-2);border:1px dashed #5a5450;border-radius:6px;padding:1.1rem;display:grid;gap:.5rem}
-.review .stars{color:var(--tape);letter-spacing:.15em}
-.review p{margin:0;color:var(--muted)}
-.review small{font-weight:600;color:var(--bone)}
-.gline{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between;margin-top:1rem;color:var(--muted)}
-
-/* hypa */
-.hypa{display:grid;gap:1.4rem}
-.hypa .ph{aspect-ratio:4/5;border-radius:6px;background:repeating-linear-gradient(135deg,var(--ink-2) 0 14px,#221f1f 14px 28px);display:grid;place-items:center;text-align:center;padding:1rem}
-.hypa .ph span{font-family:var(--f-hand);color:var(--tape);font-size:1.3rem;transform:rotate(-4deg)}
-.hypa blockquote{margin:0;font-family:var(--f-display);text-transform:uppercase;font-size:clamp(2rem,7vw,3.2rem);line-height:1}
-.hypa p{margin:0;color:var(--muted);max-width:56ch}
-.facts{display:flex;flex-wrap:wrap;gap:.5rem}
-.facts span{border:1px solid var(--line);border-radius:999px;padding:.4rem .75rem;font-weight:600;font-size:.9rem}
-
-/* marquee */
-.marquee{background:var(--red);color:var(--ink);overflow:hidden;white-space:nowrap;padding-block:.9rem;transform:rotate(-1.2deg);margin-block:1rem}
-.marquee .track{display:inline-flex;gap:2rem;font-family:var(--f-display);font-size:2rem;text-transform:uppercase;animation:run 26s linear infinite}
-@keyframes run{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.marquee .track{animation:none}.you path{animation:none!important;stroke-dashoffset:0!important}}
-
-/* merch */
-.merch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
-.item{background:var(--ink-2);border-radius:6px;padding:1rem;display:grid;gap:.4rem;align-content:start}
-.item .sw{aspect-ratio:1;border-radius:4px;background:#262323;display:grid;place-items:center;font-family:var(--f-hand);color:var(--muted);text-align:center;padding:.5rem}
-.item h3{font-size:1.35rem}
-.item a{font-weight:700;color:var(--tape);font-size:.92rem}
+/* review + hypa */
+.quote{display:grid;gap:1rem;max-width:44ch}
+.quote blockquote{margin:0;font:700 clamp(1.6rem,5.8vw,2.3rem)/1.15 var(--f-body);letter-spacing:-.01em}
+.quote small{color:var(--steel);font-weight:600}
+.tbc{font-family:var(--f-hand);color:var(--red);font-size:.95rem}
+.hypa{display:grid;gap:1.6rem}
+.hypa .ph{aspect-ratio:4/5;background:var(--graphite);display:grid;place-items:center;text-align:center;padding:1rem;border-radius:2px}
+.hypa .ph span{font-family:var(--f-hand);color:var(--steel);font-size:1.2rem}
+.hypa p{margin:0;color:var(--steel);max-width:50ch}
+.hypa h2{font-size:clamp(2.6rem,10vw,4.6rem)}
 
 /* visit */
-.visit{background:var(--red-deep);color:#fff}
-.visit .sec-head p{color:#fff}
-.visit-grid{display:grid;gap:1.4rem}
-.visit h3{font-size:1.5rem;margin-bottom:.4rem}
-.visit dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.25rem 1rem;font-variant-numeric:tabular-nums}
-.visit dt{font-weight:700}
-.visit dd{margin:0}
-.copyrow{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;font-size:1.1rem;font-weight:600}
-.copy{background:transparent;border:1.5px solid #fff;color:#fff;border-radius:4px;font:600 .8rem/1 var(--f-body);padding:.45rem .6rem;cursor:pointer;min-height:32px}
-.tbc{font-family:var(--f-hand);color:var(--tape);font-size:.95rem}
+.visit{background:var(--tarmac);border-top:1px solid var(--concrete)}
+.visit .grid{display:grid;gap:2rem}
+.visit h2{font-size:clamp(3rem,12vw,6rem)}
+.visit dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.2rem;font-variant-numeric:tabular-nums}
+.visit dt{color:var(--steel)} .visit dd{margin:0;font-weight:600}
+.copy{margin-left:.5rem;background:none;border:1px solid var(--concrete);color:var(--chalk);border-radius:2px;font:600 .78rem/1 var(--f-body);padding:.4rem .55rem;cursor:pointer;min-height:30px}
 
-footer{padding-block:2.5rem 6.5rem;color:var(--muted);font-size:.9rem}
-footer .wrap{display:grid;gap:.6rem}
+footer{padding-block:2.4rem 6.5rem;color:var(--steel);font-size:.9rem;border-top:1px solid var(--concrete)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between}
 
-/* sticky mobile action bar */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:25;background:rgba(15,14,14,.96);border-top:1px solid var(--line);display:grid;grid-template-columns:2fr 1fr;gap:.6rem;padding:.6rem max(16px,env(safe-area-inset-right,0px)) calc(.6rem + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+/* sticky action: appears once the hero has scrolled away */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:35;padding:.7rem max(20px,env(safe-area-inset-right,0px)) calc(.7rem + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));background:rgba(10,10,11,.94);border-top:1px solid var(--concrete);transform:translateY(110%);transition:transform .25s}
+.bar.on{transform:none}
+.bar .btn{width:100%;justify-content:center}
 
-.you path{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.1s .3s ease-out forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}.start .bg{transition:none}}
 
-@media (min-width:760px){
-  .top nav{display:flex}
-  .doors{grid-template-columns:1fr 1fr}
-  .door{min-height:420px}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-  .rail{grid-auto-columns:31%}
-  .reviews{grid-template-columns:repeat(3,1fr)}
+@media (min-width:860px){
+  .top{position:relative;top:0}
+  .top .wrap{padding-block:1.4rem}
+  .hero{min-height:auto;align-items:center;padding-block:2.5rem 4.5rem!important}
+  .hero video{display:none}
+  .hero::after{display:none}
+  .hero .wrap{grid-template-columns:7fr 4fr;gap:3rem;align-items:center;padding-block:0}
+  .hero .frame{display:block;position:relative;aspect-ratio:9/16;max-height:640px;justify-self:end;width:100%;max-width:360px;border-radius:2px;overflow:hidden;outline:1px solid var(--concrete);outline-offset:10px}
+  .hero .frame video{display:block}
+  .hero .frame .pause{bottom:1rem;right:1rem}
+  .hero>.pause{display:none}
+  .starts{grid-template-columns:1fr 1fr 1fr}
+  .start{min-height:420px}
+  .rail{grid-auto-columns:30%}
+  .split{display:grid;grid-template-columns:5fr 7fr;gap:4rem;align-items:start}
   .hypa{grid-template-columns:5fr 7fr;align-items:center}
-  .merch{grid-template-columns:repeat(4,1fr)}
-  .visit-grid{grid-template-columns:repeat(3,1fr)}
+  .visit .grid{grid-template-columns:1.2fr 1fr 1fr;align-items:end}
   .bar{display:none}
-  footer{padding-block:2.5rem}
-  .hero .wrap{padding-block:7rem 4rem}
+  footer{padding-block:2.4rem}
 }
 </style>
-
-<div class="ribbon">Concept v0.1 for Dani · structure and idea only, not the final design · prices from the price list, still to be confirmed by Hypa</div>
 
 <header class="top">
   <div class="wrap">
     <a href="#top" aria-label="Hyped Up home"><img src="{{img:logo}}" alt="Hyped Up"></a>
-    <nav aria-label="Main">
-      <a href="#electronics">Electronics</a><a href="#styling">Styling</a><a href="#work">Work</a><a href="#shop">Shop</a><a href="#visit">Visit</a>
-    </nav>
-    <a class="btn btn-wa" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20I%27d%20like%20a%20quote.%20Car%3A%20" target="_blank" rel="noopener">{{wa}}Quote</a>
+    <button class="menu" type="button" aria-label="Open menu">Menu <i aria-hidden="true"><b></b><b></b></i></button>
   </div>
 </header>
 
 <main id="top">
-<section class="hero" style="padding:0" aria-labelledby="h-hero">
-  <div class="hero-img" style="background-image:url('{{img:workshop}}')" role="img" aria-label="Red Mini in front of the graffiti mural inside the Hyped Up workshop"></div>
+<section class="hero" style="padding-block:0" aria-labelledby="h1">
+  <video class="bgv" autoplay muted loop playsinline preload="auto" poster="{{img:poster}}" src="{{vid}}" aria-label="Workshop reel: a Subaru and a superbike, a CarPlay screen, a boot build and a wrap in progress"></video>
   <div class="wrap">
-    <p class="eyebrow">Bermondsey · SE16 · cars &amp; bikes</p>
-    <h1 id="h-hero">We adapt the car to <span class="you">you.<svg viewBox="0 0 200 120" aria-hidden="true"><path d="M30 70 C 10 30, 120 5, 180 35 C 205 50, 190 100, 120 108 C 60 114, 15 95, 22 62 C 28 40, 70 25, 110 24" fill="none" stroke="#e30513" stroke-width="6" stroke-linecap="round"/></svg></span></h1>
-    <p class="lede">Security, CarPlay, dash cams and custom audio. Then wraps, carbon and air. One workshop, built around what you want.</p>
-    <div class="ctas">
-      <a class="btn btn-wa" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20I%27d%20like%20a%20quote.%20Car%3A%20" target="_blank" rel="noopener">{{wa}}Get a quote on WhatsApp</a>
-      <a class="btn btn-ghost" href="#work">See the work</a>
+    <div style="display:grid;gap:1.1rem">
+      <p class="label">Modification &amp; styling · Bermondsey SE16</p>
+      <h1 id="h1">Your car.<br>Any way<br><span class="any">you want it.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 60 4, 140 18, 200 9 S 280 6, 297 12" fill="none" stroke="#e30513" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
+      <p>One workshop for every mod, cars and bikes. Bring the idea, we build it.</p>
+      <div><a class="btn" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20here%27s%20my%20idea%3A%20" target="_blank" rel="noopener">{{wa}}Start your build</a></div>
     </div>
-    <div class="arrow-note hand" aria-hidden="true"><svg viewBox="0 0 64 40"><path d="M60 36 C 40 34, 18 26, 10 8 M10 8 L 6 20 M10 8 L 22 12" fill="none" stroke="#e30513" stroke-width="3" stroke-linecap="round"/></svg>send your reg, get a price</div>
-    <div class="rating"><b>★★★★★</b> Google reviews · rating TBC</div>
-    <div class="stickers" aria-label="Highlights"><span class="sticker">Est. 2022</span><span class="sticker">Air Lift &amp; Prazis dealer</span><span class="sticker">Cars + bikes</span></div>
+    <div class="frame"><video class="fv" autoplay muted loop playsinline preload="auto" poster="{{img:poster}}" src="{{vid}}" aria-label="Workshop reel"></video><button class="pause" type="button" aria-label="Pause video">{{pause}}</button></div>
   </div>
+  <button class="pause" type="button" aria-label="Pause video">{{pause}}</button>
 </section>
 
-<section aria-labelledby="h-doors">
+<section aria-labelledby="h-start">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Two ways in</p><h2 id="h-doors">What are we doing to <span class="hand">yours?</span></h2></div>
-    <div class="doors">
-      <a class="door" href="#electronics" style="background-image:url('{{img:dashcam}}')"><div class="in"><h3>Electronics</h3><p>Ghost · trackers · dash cams · CarPlay · audio</p><span class="go">protect it, upgrade it →</span></div></a>
-      <a class="door" href="#styling" style="background-image:url('{{img:taxi}}')"><div class="in"><h3>Styling</h3><p>Wraps · carbon interiors · PPF · tint · air · plates</p><span class="go">make it yours →</span></div></a>
+    <div class="head"><p class="label">Start anywhere</p><h2 id="h-start">Two starting points. No limits.</h2><p>Most builds start with tech or looks. Plenty start with something we've never done before. That's the fun part.</p></div>
+    <div class="starts">
+      <a class="start e" href="#"><div class="bg" style="background-image:url('{{img:carplay}}')"></div><span class="arrow" aria-hidden="true">→</span><span class="tag">Electronics</span><h3>Make it <span>smart</span></h3><p>Ghost immobiliser, trackers, dash cams, CarPlay screens, custom audio.</p><span class="from">from £150</span></a>
+      <a class="start s" href="#"><div class="bg" style="background-image:url('{{img:wrap}}')"></div><span class="arrow" aria-hidden="true">→</span><span class="tag">Styling</span><h3>Make it <span>yours</span></h3><p>Wraps, carbon interiors, tint, air suspension, plates, bodykits.</p><span class="from">from £150</span></a>
+      <a class="start x" href="#"><span class="arrow" aria-hidden="true">→</span><span class="tag">Anything else</span><h3>Got an idea? Bring it.</h3><p>One-offs, show builds, bike projects, the thing you saw on Instagram at 2am.</p><span class="from">Priced on your build</span></a>
     </div>
   </div>
 </section>
 
-<section id="electronics" class="calm" aria-labelledby="h-elec">
-  <div class="wrap two">
-    <div class="sec-head"><p class="eyebrow">01 · Electronics first</p><h2 id="h-elec">Protect it. Upgrade it.</h2><p>Keyless theft takes seconds and old screens age a car fast. We fit the tech properly, hide the wiring and test it before you leave.</p></div>
-    <div>
-      <ul class="svc">
-        <li><h3>Ghost immobiliser</h3><span class="price">from £400</span><p>No fob, no light. The car won't start without your PIN. Cars and motorbikes.</p></li>
-        <li><h3>GPS trackers</h3><span class="price q">price on enquiry</span><p>MetaTrak S5 and S7 with app alerts and recovery.</p></li>
-        <li><h3>Dash cams</h3><span class="price">from £250</span><p>Front and rear, hardwired with parking mode. Front only from £150.</p></li>
-        <li><h3>Apple CarPlay</h3><span class="price">from £600</span><p>Wireless CarPlay and Android Auto screens from Xtrons and Autostyle, fitted.</p></li>
-        <li><h3>Custom audio</h3><span class="price">from £200</span><p>Speakers, amps, subs, boot builds and sound deadening.</p></li>
-      </ul>
-      <p class="brands">Brands we fit: <b>Ghost · MetaTrak · Scorpion · Xtrons · Autostyle · Pioneer · Kenwood · Rockford Fosgate</b></p>
-    </div>
-  </div>
-</section>
-
-<section id="styling" aria-labelledby="h-style">
-  <div class="wrap two">
-    <div class="sec-head"><p class="eyebrow">02 · Styling</p><h2 id="h-style">Make it <span class="hand">yours.</span></h2><p>Colour changes, carbon, stance. We take the time a proper job needs: a full wrap takes at least a week.</p></div>
-    <div>
-      <ul class="svc">
-        <li><h3>Wraps &amp; chrome delete</h3><span class="price">from £1,800</span><p>Full colour change on a small car. Panels from £90, chrome delete £250–500.</p></li>
-        <li><h3>Window tint</h3><span class="price">from £150</span><p>Standard, carbon or ceramic rear tint. Legal fronts only.</p></li>
-        <li><h3>Air suspension</h3><span class="price q">price on enquiry</span><p>Authorised Air Lift and Prazis dealer. App-controlled ride height.</p></li>
-        <li><h3>Number plates</h3><span class="price">from £30</span><p>Made while you wait, about 10 minutes. 3D, 4D and show plates.</p></li>
-        <li><h3>Carbon, PPF &amp; more</h3><span class="price q">price on enquiry</span><p>Carbon interiors, paint protection film, ceramic coating, calipers, bodykits.</p></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="work" aria-labelledby="h-work">
+<section aria-labelledby="h-builds" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">03 · From the workshop</p><h2 id="h-work">Fresh off the ramp</h2></div>
-    <div class="rail" tabindex="0" aria-label="Recent work, scroll sideways">
-      <figure><img src="{{img:civic}}" alt="Yellow Honda Civic Type R in the workshop" loading="lazy"><figcaption class="tapelabel">Civic Type R<span>multimedia upgrade</span></figcaption></figure>
-      <figure><img src="{{img:porsche}}" alt="Black Porsche 911 964 outside the unit with yellow-tinted headlights" loading="lazy"><figcaption class="tapelabel">Porsche 911 (964)<span>headlight tint</span></figcaption></figure>
-      <figure><img src="{{img:carplay}}" alt="Mini dashboard with a round Apple CarPlay touchscreen" loading="lazy"><figcaption class="tapelabel">Mini<span>CarPlay screen</span></figcaption></figure>
-      <figure><img src="{{img:remap}}" alt="White Mercedes C63 AMG with a Hyped Up plate" loading="lazy"><figcaption class="tapelabel">Mercedes C63 AMG<span>remap</span></figcaption></figure>
-      <figure><img src="{{img:miniplate}}" alt="Red Mini JCW at a show with a custom plate" loading="lazy"><figcaption class="tapelabel">Mini JCW<span>show plates</span></figcaption></figure>
+    <div class="head" style="grid-template-columns:1fr auto;align-items:end"><h2 id="h-builds">Recent builds</h2><a class="link" href="#">All builds</a></div>
+    <div class="rail" tabindex="0" aria-label="Recent builds, scroll sideways">
+      <figure><img src="{{img:civic}}" alt="Yellow Honda Civic Type R in the workshop" loading="lazy"><figcaption><b>Civic Type R</b><span><i class="dot" style="background:var(--signal)"></i>Multimedia</span></figcaption></figure>
+      <figure><img src="{{img:porsche}}" alt="Black Porsche 911 (964) outside the unit with yellow-tinted headlights" loading="lazy"><figcaption><b>Porsche 911 (964)</b><span><i class="dot" style="background:var(--red)"></i>Light tint</span></figcaption></figure>
+      <figure><img src="{{img:mini}}" alt="Lowered red Mini in front of the workshop mural" loading="lazy"><figcaption><b>Mini F56</b><span><i class="dot" style="background:var(--red)"></i>Air + stance</span></figcaption></figure>
+      <figure><img src="{{img:remap}}" alt="White Mercedes C63 AMG with a Hyped Up plate" loading="lazy"><figcaption><b>Mercedes C63</b><span><i class="dot" style="background:var(--signal)"></i>Remap</span></figcaption></figure>
+      <figure><img src="{{img:dashcam}}" alt="Dash cam fitted behind the mirror of a BMW" loading="lazy"><figcaption><b>BMW</b><span><i class="dot" style="background:var(--signal)"></i>Dash cam</span></figcaption></figure>
     </div>
   </div>
 </section>
 
-<section aria-labelledby="h-rev">
-  <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">04 · Google reviews</p><h2 id="h-rev">Don't take our word</h2></div>
-    <div class="reviews">
-      <article class="review"><span class="stars" aria-hidden="true">★★★★★</span><p>A real Google review goes here, short and in the customer's own words.</p><small>First name · service · date (TBC)</small></article>
-      <article class="review"><span class="stars" aria-hidden="true">★★★★★</span><p>Pulled from the Google Business Profile with permission. Never invented.</p><small>First name · service · date (TBC)</small></article>
-      <article class="review"><span class="stars" aria-hidden="true">★★★★★</span><p>Ideally one per pillar: a security job, a CarPlay job, a wrap.</p><small>First name · service · date (TBC)</small></article>
-    </div>
-    <div class="gline"><span>Rating and review count: TBC</span><a href="#visit">All reviews on Google →</a></div>
+<section aria-labelledby="h-how" style="background:var(--tarmac)">
+  <div class="wrap split">
+    <div class="head"><p class="label">How a build works</p><h2 id="h-how">Idea in. Car out.</h2></div>
+    <ol class="steps">
+      <li><div><h3>Send the idea</h3><p>A photo, a screenshot, your reg. On WhatsApp, in two minutes.</p></div></li>
+      <li><div><h3>We plan it together</h3><p>Parts, look, time and a clear price before anything starts.</p></div></li>
+      <li><div><h3>We build it</h3><p>Fitted and tested in the workshop. You see it before you drive it.</p></div></li>
+    </ol>
   </div>
 </section>
 
-<section class="calm" aria-labelledby="h-hypa">
+<section aria-labelledby="h-proof">
   <div class="wrap hypa">
-    <div class="ph"><span>Photo of Hypa at work<br>(from Dani's new shoot)</span></div>
-    <div style="display:grid;gap:1rem">
-      <p class="eyebrow">05 · Meet Hypa</p>
-      <h2 id="h-hypa" class="sr" style="position:absolute;left:-9999px">Meet Hypa</h2>
-      <blockquote>You talk to the person who fits it.</blockquote>
-      <p>Motorsport roots at McLaren, now his own workshop in Bermondsey. His red F56 Mini on Air Lift is his daily, and the 1 Series is on its third boot build.</p>
-      <div class="facts"><span>McLaren motorsport roots</span><span>Red F56 on Air Lift 3P</span><span>1 Series build in progress</span></div>
-      <p class="tbc">Bio to be confirmed by Hypa</p>
-    </div>
-  </div>
-</section>
-
-<div class="marquee" aria-hidden="true"><div class="track"><span>We adapt the car to you →</span><span>Electronics →</span><span>Style →</span><span>Cars →</span><span>Bikes →</span><span>SE16 →</span><span>We adapt the car to you →</span><span>Electronics →</span><span>Style →</span><span>Cars →</span><span>Bikes →</span><span>SE16 →</span></div></div>
-
-<section id="shop" aria-labelledby="h-shop">
-  <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">06 · Hyped Up apparel</p><h2 id="h-shop">Wear the workshop</h2><p>No checkout: tap, and WhatsApp opens with the item and your size.</p></div>
-    <div class="merch">
-      <div class="item"><div class="sw">photo of the graffiti tee</div><h3>Graffiti tee</h3><a href="https://wa.me/447713735646?text=Hi%2C%20I%27d%20like%20the%20Graffiti%20tee.%20Size%3A%20" target="_blank" rel="noopener">Request on WhatsApp →</a></div>
-      <div class="item"><div class="sw">photo of the logo tee</div><h3>Hyped Up tee</h3><a href="https://wa.me/447713735646?text=Hi%2C%20I%27d%20like%20the%20Hyped%20Up%20tee.%20Size%3A%20" target="_blank" rel="noopener">Request on WhatsApp →</a></div>
-      <div class="item"><div class="sw">photo of the jumper</div><h3>Hyped Up jumper</h3><a href="https://wa.me/447713735646?text=Hi%2C%20I%27d%20like%20the%20Hyped%20Up%20jumper.%20Size%3A%20" target="_blank" rel="noopener">Request on WhatsApp →</a></div>
-      <div class="item"><div class="sw">photo of the keyring</div><h3>The keyring</h3><a href="https://wa.me/447713735646?text=Hi%2C%20I%27d%20like%20the%20keyring." target="_blank" rel="noopener">Request on WhatsApp →</a></div>
+    <div class="ph"><span>Hypa in the workshop<br>(Dani's new photo)</span></div>
+    <div style="display:grid;gap:1.2rem">
+      <p class="label">The person who builds it</p>
+      <h2 id="h-proof">Meet Hypa</h2>
+      <p>Motorsport roots at McLaren, now his own workshop in Bermondsey. You talk to the person who does the work. His red Mini on Air Lift is his daily; the 1 Series is on its third boot build.</p>
+      <div class="quote" style="margin-top:1rem;border-top:1px solid var(--concrete);padding-top:1.4rem">
+        <blockquote>A real Google review goes here. Short, in the customer's words.</blockquote>
+        <small>First name · Google · rating TBC</small>
+      </div>
+      <p class="tbc">Bio and review to confirm with Hypa</p>
     </div>
   </div>
 </section>
 
 <section id="visit" class="visit" aria-labelledby="h-visit">
-  <div class="wrap">
-    <div class="sec-head"><p class="eyebrow" style="color:#fff">07 · Visit</p><h2 id="h-visit">Come to the unit</h2><p>Look for the mural. Parking outside.</p></div>
-    <div class="visit-grid">
-      <div><h3>Find us</h3><div class="copyrow"><span id="addr">Unit 22, Enterprise Industrial Estate, Bolina Road, London SE16 3LF</span></div><button class="copy" data-copy="addr" type="button">Copy address</button></div>
-      <div><h3>Talk to us</h3>
-        <div class="copyrow">WhatsApp <span id="wa">07713 735646</span><button class="copy" data-copy="wa" type="button">Copy</button></div>
-        <div class="copyrow">Phone <span id="ph">020 3340 0632</span><button class="copy" data-copy="ph" type="button">Copy</button></div>
-        <div class="copyrow">Email <span id="em">info@hypedup.uk</span></div>
-      </div>
-      <div><h3>Hours</h3><dl><dt>Mon–Fri</dt><dd>10:00–18:00</dd><dt>Sat</dt><dd>09:00–16:00</dd><dt>Sun</dt><dd>Closed</dd></dl><p class="tbc">Hours not confirmed yet</p></div>
-    </div>
+  <div class="wrap grid">
+    <div style="display:grid;gap:1.2rem"><h2 id="h-visit">Come by the unit.</h2><div><a class="btn" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20here%27s%20my%20idea%3A%20" target="_blank" rel="noopener">{{wa}}Start your build</a></div></div>
+    <dl>
+      <dt>Find us</dt><dd><span id="addr">Unit 22, Enterprise Industrial Estate, Bolina Road, SE16 3LF</span><button class="copy" data-copy="addr" type="button">Copy</button></dd>
+      <dt>WhatsApp</dt><dd><span id="wa">07713 735646</span><button class="copy" data-copy="wa" type="button">Copy</button></dd>
+      <dt>Phone</dt><dd><span id="ph">020 3340 0632</span></dd>
+    </dl>
+    <dl><dt>Mon–Fri</dt><dd>10:00–18:00</dd><dt>Sat</dt><dd>09:00–16:00</dd><dt>Sun</dt><dd>Closed</dd><dt></dt><dd class="tbc" style="font-weight:400">hours to confirm</dd></dl>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap"><span>Hyped Up Limited · Bermondsey, South London · Instagram &amp; TikTok @hypedup.ltd</span><span>Concept by Dani · November 2026</span></div></footer>
+<footer><div class="wrap"><span>Hyped Up Limited · Instagram &amp; TikTok @hypedup.ltd · <a class="link" href="#">Wear the workshop</a></span><span>Concept v0.2 by Dani · Nov 2026 · prices "from", to confirm</span></div></footer>
 
-<div class="bar">
-  <a class="btn btn-wa" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20I%27d%20like%20a%20quote.%20Car%3A%20" target="_blank" rel="noopener">{{wa}}WhatsApp a quote</a>
-  <a class="btn btn-ghost" href="#visit">Call</a>
-</div>
+<div class="bar" id="bar" aria-hidden="true"><a class="btn" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20here%27s%20my%20idea%3A%20" target="_blank" rel="noopener" tabindex="-1">{{wa}}Start your build</a></div>
 
 <script>
-document.querySelectorAll('.copy').forEach(function(b){
-  b.addEventListener('click',function(){
-    var el=document.getElementById(b.dataset.copy); var t=el.textContent; var old=b.textContent;
-    var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent=old},1500)};
-    var fallback=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent=old},1500)};
-    try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vids=[].slice.call(document.querySelectorAll('.hero video'));
+  if(reduce){vids.forEach(function(v){v.removeAttribute('autoplay');v.pause()})}
+  document.querySelectorAll('.pause').forEach(function(b){
+    var ico={pause:b.innerHTML,play:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2l10 6-10 6z" fill="currentColor"/></svg>'};
+    var sync=function(){var p=vids.every(function(v){return v.paused});b.innerHTML=p?ico.play:ico.pause;b.setAttribute('aria-label',p?'Play video':'Pause video')};
+    b.addEventListener('click',function(){var p=vids.every(function(v){return v.paused});vids.forEach(function(v){p?v.play().catch(function(){}):v.pause()});sync()});
+    if(reduce)sync();
   });
-});
+  var bar=document.getElementById('bar'),hero=document.querySelector('.hero');
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){var off=!e[0].isIntersecting;bar.classList.toggle('on',off);bar.setAttribute('aria-hidden',off?'false':'true');bar.querySelector('a').tabIndex=off?0:-1}).observe(hero)}
+  document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.dataset.copy),old=b.textContent;
+    var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent=old},1400)};
+    var fb=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)};
+    try{navigator.clipboard.writeText(el.textContent).then(ok,fb)}catch(e){fb()}})});
+})();
 </script>

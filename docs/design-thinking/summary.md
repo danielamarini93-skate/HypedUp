@@ -43,3 +43,10 @@ Dani's new photos and videos, real reviews, confirmed hours and the final price 
 - Email data meaning and dashboard numbers (strategy TBCs)
 - Photo and video handover from Dani
 - Permission to show Google reviews
+
+## Concept v0.2 (8 Nov 2026, after Dani's feedback)
+- Hero: workshop video, "Your car. Any way you want it.", one line, one action ("Start your build"). Nothing else above the fold.
+- Positioning: one-stop modification and styling shop; electronics and styling are two starting points, plus "Anything else".
+- Palette: graphite scale + Hyped red (styling) + signal blue (electronics); chalk white for "anything else".
+- Prices: generic "from £" only (master sheet still to reconcile).
+- v0.1 kept as `concept/index-v0.1.html`.
