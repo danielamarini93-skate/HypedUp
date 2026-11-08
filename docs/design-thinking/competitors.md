@@ -68,3 +68,21 @@ Contact sheet: `competitors/sheet-2.png`.
 2. Plan service pages, plus car-specific pages for CarPlay and Ghost (strategy v0.2)
 3. Add reviews (Google) high on the homepage; ask Hypa for permission to use them
 4. Consider a community/builds section and a collab story (mural, artists)
+
+## Menus and footers (round 2, 8 Nov 2026)
+Footer screenshots: `competitors/*-footer.png`.
+
+| Site | Top-level menu | Depth | Footer |
+|---|---|---|---|
+| Polimax | About · Services · Trade · Contact + **Get a quote** + WhatsApp/call per branch | 2 levels (Services dropdown) | Menu · Visit us · Opening hours; phone + WhatsApp per branch; back to top |
+| Car Sound Security | Mega-menu by category **and brand** (Security → Alarms → Clifford, Cobra, Pandora…; Safety → Dash cams → brands; TfL cameras…) | 3 levels | Info · Customer service · Legal · Account · payments |
+| Car Keys Solutions | Mega-menu: Key services · Vehicle security · **Makes and models** (BMW, Ford, Mercedes…) · areas · offers · blog | 3 levels | (none detected) |
+| Car Audio Security | Shop categories (Stereo/Screens, Speakers, Amps, Security, Styling, Air suspension, Dash cams) + About, Fitting service, Events, Finance | 2 levels | Shop · Company · Customer service; newsletter; address; legal |
+| Bike Shed | **Shop · Venue · Book table · What's on · Membership** | 1 level | Shop · Experience · Community · Get in touch; address, phone; legal |
+
+**Takeaways**
+- Local service shops with **short menus** (Polimax, Bike Shed) read as more premium than the mega-menu shops.
+- The mega-menu shops get their SEO from **make/model and brand pages**: Car Keys lists makes in the menu; we can
+  get the same benefit with those pages kept **out of the menu** and linked from service pages and the footer.
+- Every footer repeats **contact + hours + address**; the best (Bike Shed) groups links into 3–4 clear columns.
+- Polimax puts **WhatsApp and call in the header**: confirms our one-tap action.

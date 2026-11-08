@@ -37,3 +37,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-08 — Media rules agreed: descriptive file names, alt text, compression, ImageObject/VideoObject schema, location in text + schema (not photo GPS), blur customer plates/faces without consent
 - 2026-11-08 — Media privacy: always blur customer number plates; no customer faces on the site (Dani)
 - 2026-11-08 — Design thinking round 2: content first; approve menu + footer, then internal pages, homepage last (Dani)
+- 2026-11-08 — Minimal menu; pages in 3 tiers: menu / hub + footer / contextual only (car-specific, low priority). No orphan pages (Dani)

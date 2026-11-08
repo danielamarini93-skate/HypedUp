@@ -70,3 +70,15 @@ Five smaller groups of 3–6 pages.
 - **Watch-out:** "Style" holds 9 pages, so inside the menu we split it visually into **Outside** (wrapping,
   chrome delete, tint, bodykits, wheels, plates, signage) and **Inside & stance** (interiors, air suspension).
 - **Check with customers:** do people expect PPF and ceramic under "Protect"? (Test question for the 3–5 chats.)
+
+## Dani's direction (8 Nov 2026): minimal menu, tiered pages
+Keep the menu minimal. Lower-priority service pages and car-specific pages stay **out of the menu** but exist
+for SEO and content.
+
+| Tier | Where it's reachable | Pages |
+|---|---|---|
+| **1. In the menu** | Header menu (under Protect / Upgrade / Style) | Highest demand and priority: Ghost & immobilisers, Car trackers, Dash cams, CarPlay & Android Auto, Car audio, Remapping, Car wrapping, Window tinting, PPF, Air suspension (final list in the sitemap step) |
+| **2. Hub + footer** | Listed on the Protect / Upgrade / Style hub pages and in the footer, not in the menu | Taxi cameras, Reverse cameras & sensors, Lighting, Chrome delete, Bodykits, Wheels, Interiors, Detailing & ceramic, Number plates, Van signage |
+| **3. Contextual only** | Linked from related service pages, blog posts and the sitemap; never in menu or footer | Car-specific pages (CarPlay for BMW / Mini / Mercedes…, Ghost for Range Rover…), area pages if any, FAQs, comparison pages |
+
+Rule: **no orphan pages.** Every tier 3 page gets at least 2–3 links from related pages, so Google finds and ranks it.

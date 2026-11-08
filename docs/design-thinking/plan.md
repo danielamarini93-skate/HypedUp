@@ -14,7 +14,7 @@ _Content first · Depth: medium · Approved by Dani 8 Nov 2026 ("start now") · 
   Group the inventory the way customers think (their words, not workshop jargon). 2–3 candidate groupings,
   compared against the personas and search terms. Output: menu groups and page names.
 
-- [ ] **3. Competitor menus and footers** → added to `competitors.md`
+- [x] **3. Competitor menus and footers** → added to `competitors.md`
   Polimax, Car Audio Security, Car Keys Solutions, Car Sound Security, b:spoke, Bike Shed: items, depth,
   mobile behaviour, footer contents.
 
