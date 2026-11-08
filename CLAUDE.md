@@ -58,7 +58,8 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 | File | What's in it |
 |---|---|
 | `memory/business.md` | Services, partner brands, Hypa's background and cars |
-| `memory/pricing.md` | All confirmed prices (use these, never invent prices) |
+| `memory/price-list-master.md` | **Master price list** from Dani's sheet, with website "from £" prices (wins over pricing.md) |
+| `memory/pricing.md` | Older confirmed prices; plates, remaps, Ghost still from here |
 | `memory/brand-voice.md` | Writing style guide + competitor-mention rules |
 | `memory/seo.md` | Technical SEO done (GTM, schema, GA4, Search Console) + keyword data |
 | `memory/content.md` | Blog posts: published, ready, to write; news angles |
@@ -74,7 +75,7 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 
 ## Hard rules (always apply)
 
-- **Prices:** only use prices in `memory/pricing.md`. Write them with £. If a price isn't there, say "price on enquiry" or ask.
+- **Prices:** only use prices in `memory/price-list-master.md` (then `memory/pricing.md`). On the website show generic "from £" only. Write them with £. If a price isn't there, say "price on enquiry" or ask.
 - **No dyno testing** — Hyped Up does not offer it. Never mention it.
 - **Full wraps take a minimum of 1 week** (never "3–5 days").
 - **Never name competing installation shops.** Product brands are fine (Ghost, Pandora, Scorpion, MetaTrak, Xtrons, Autostyle, Pioneer, Kenwood, Rockford Fosgate, Air Lift, Prazis).

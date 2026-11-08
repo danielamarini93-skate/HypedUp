@@ -19,9 +19,10 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Migrate with 301s, GA4, Search Console, schema, sitemap
 - [ ] Interim (only if migration is far off): fix broken icons; check GA4 Realtime ("Experties" typo already fixed; homepage already has prices + number plates)
 
-- [ ] Get the master price sheet as CSV/Excel from Dani and reconcile `pricing.md`
+- [x] Master price sheet read → `price-list-master.md`
+- [ ] Hypa: which head-unit price table is current; Ghost price (not in sheet)
 
-- [ ] Connect Google Drive in claude.ai so Claude can use the media folders (new session after)
+- [x] Google Drive connected (8 Nov 2026)
 - [ ] Hypa: is Car Audio Security (Hayes) the supplier, or a competitor?
 - [ ] Endless Customs: get their Instagram to review
 - [ ] Choose a positioning line (options A–D in `docs/design-thinking/strategy.md`)

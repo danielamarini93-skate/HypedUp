@@ -6,8 +6,9 @@ _Last updated: 7 Nov 2026 · All prices in GBP. Only use these; anything not lis
 > and remapping (£435 / mobile Stage 1 £199). See `current-site.md` — **Hypa to confirm which is right.**
 
 > **Master price sheet (Dani, 8 Nov 2026):** https://docs.google.com/spreadsheets/d/178kpxQs2mZZ_StmrFoidUlYy8gydcdtV/edit?gid=1630337928
-> Private: Claude couldn't open it (no Google Drive connection in the session). Ask Dani to export it as CSV
-> or Excel and upload it, then reconcile this file against it.
+> **Read on 8 Nov 2026 → summarised in `price-list-master.md`. Where they differ, the master sheet wins.**
+> Big differences vs this file: wraps from £1,500 (not £1,800) · CarPlay interface from £195 (not £600) · dash cam fit from £125 ·
+> trackers from £395 · immobilisers listed are Metablok/Scorpion from £495 (no Ghost) · air suspension from £1,895.
 > **Website rule:** show generic "from £" prices only, never the full sheet.
 
 ## Number plates
