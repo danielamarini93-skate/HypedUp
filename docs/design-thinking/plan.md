@@ -10,7 +10,7 @@ _Content first · Depth: medium · Approved by Dani 8 Nov 2026 ("start now") · 
   search demand (Search Console impressions + keyword data), proof available (photos/video/blog), audience (persona).
   Verdict per item: **own page** · **section on a page** · **mention only**.
 
-- [ ] **2. Card sort (by Claude)** → `card-sort.md`
+- [x] **2. Card sort (by Claude)** → `card-sort.md`
   Group the inventory the way customers think (their words, not workshop jargon). 2–3 candidate groupings,
   compared against the personas and search terms. Output: menu groups and page names.
 
