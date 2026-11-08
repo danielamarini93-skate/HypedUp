@@ -4,7 +4,7 @@ _Content first · Depth: medium · Approved by Dani 8 Nov 2026 ("start now") · 
 
 ## Steps
 
-- [ ] **1. Content inventory** → `content-inventory.md`
+- [x] **1. Content inventory** → `content-inventory.md`
   Every service, product and job from: master price list, `business.md`, the 15 blog posts, the live site,
   and the Drive media uploaded so far (rest added when the upload finishes). For each: what it is, price "from",
   search demand (Search Console impressions + keyword data), proof available (photos/video/blog), audience (persona).
