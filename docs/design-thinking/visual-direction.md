@@ -102,3 +102,11 @@ checking at small sizes (use bold/large text or a darker red for small text). Ye
 - Splash: not good. Brush line: terrible. Graffiti fonts: not legible. "You can do better."
 - Lesson: decorative graffiti built from generic clip-art and display fonts reads cheap. Next step is to agree a
   direction (and references) before building again.
+
+## Style moodboard (8 Nov 2026): https://claude.ai/artifact/3zP6kfZV8cBYNNGFqDimgc
+Built from Dani's references (Rage Machine and Kelsi fonts, Playlist Edition #6 magazine, Air Max poster, SAMS by Cuberto,
+URBANTH). Shared principle: **big clean type carries the message; graffiti is one layer on top**.
+- **A · Street editorial:** grey paper, wide Archivo Expanded, mono labels, B/W photos with an orange tag, stickers, barcodes.
+- **B · Spray machine:** dark, Big Shoulders headlines, one Rubik Wet Paint spray word in orange, spray-blob CTA.
+- **C · Gallery gesture:** light and calm, Instrument Serif, rounded photos, one hand-painted circle/stroke per screen.
+Decision pending (Dani). Source: `concept/moodboard/`.

@@ -1,0 +1,250 @@
+<title>Hyped Up Style Moodboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Big+Shoulders+Display:wght@800;900&family=IBM+Plex+Mono:wght@400;600&family=Instrument+Serif&family=Rubik+Wet+Paint&display=swap">
+<style>
+@font-face{font-family:"Hoax Vandal";src:url({{font:hoax}}) format("truetype");font-display:swap}
+/* Layout: a moodboard. Neutral board; each direction is a full-width band in its own committed palette,
+   with references, palette, type and a small Hyped Up mock. Single look per band on purpose. */
+:root{
+  color-scheme: dark;
+  --board:#121111; --ink:#f2eee9; --dim:#a8a19e; --line:#2f2a2a;
+  --red:#e30513; --orange:#ff6a1c;
+  --f-body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+html,body{overflow-x:clip}
+body{background:var(--board);color:var(--ink);font:400 16px/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+h1,h2,h3{margin:0;line-height:.92;text-wrap:balance}
+.intro{padding-block:3rem 2rem;display:grid;gap:1rem;max-width:72ch}
+.intro .k{font:600 .75rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.intro h1{font:900 clamp(2.6rem,7vw,4.6rem)/.9 var(--f-body);font-stretch:125%;text-transform:uppercase}
+.intro p{margin:0;color:var(--dim)}
+.principle{border-left:3px solid var(--orange);padding:.2rem 0 .2rem 1rem;color:var(--ink)!important}
+
+.dir{padding-block:3rem 3.5rem}
+.dir-head{display:grid;gap:.5rem;margin-bottom:1.6rem}
+.dir-head .k{font:600 .75rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+.dir-head h2{font:900 clamp(2.4rem,6vw,4rem)/.9 var(--f-body);font-stretch:125%;text-transform:uppercase}
+.dir-head p{margin:0;max-width:62ch}
+.grid{display:grid;gap:1.2rem;grid-template-columns:repeat(12,minmax(0,1fr))}
+.refs{grid-column:span 12;display:grid;gap:.8rem;grid-template-columns:repeat(3,minmax(0,1fr))}
+.refs figure{margin:0;display:grid;gap:.35rem}
+.refs img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.refs figcaption{font:400 .75rem/1.3 var(--f-mono)}
+.mock{grid-column:span 8;position:relative;overflow:hidden;min-height:430px}
+.spec{grid-column:span 4;display:grid;gap:1rem;align-content:start}
+.sw{display:flex;gap:.4rem;flex-wrap:wrap}
+.sw i{width:52px;height:52px;display:grid;align-items:end;font:600 .62rem/1.2 var(--f-mono);font-style:normal;padding:.25rem}
+.typo{display:grid;gap:.5rem}
+.why{grid-column:span 12;display:grid;gap:1rem;grid-template-columns:repeat(3,minmax(0,1fr));font-size:.92rem}
+.why div{display:grid;gap:.3rem;align-content:start}
+.why b{font:600 .72rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+.why p{margin:0}
+.mk{position:absolute;pointer-events:none;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;background:var(--c)}
+{{maskvars}}
+
+/* ===== A · Street editorial ===== */
+.A{--bg:#d8d4cd;--fg:#141212;--acc:#ff5a14;--acc2:#e30513;background:var(--bg);color:var(--fg);
+   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.A .dir-head .k,.A .refs figcaption{color:#5d5753}
+.A .mock{background:#e9e6e0;border:1px solid #c4bfb7}
+.A .bar{display:flex;align-items:center;gap:1.4rem;padding:.9rem 1.2rem;border-bottom:2px solid var(--fg);font:700 .8rem/1 var(--f-body);text-transform:uppercase;letter-spacing:.04em}
+.A .bar img{height:34px;background:#141212;padding:5px 8px;box-sizing:content-box}
+.A .bar .q{margin-left:auto;background:var(--fg);color:#fff;padding:.6rem .9rem}
+.A .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:1rem;padding:1.2rem}
+.A .hero h3{font:900 3.4rem/.86 var(--f-body);font-stretch:125%;text-transform:uppercase;position:relative}
+.A .tag{position:absolute;z-index:2;font:400 3.6rem/1 "Hoax Vandal",cursive;color:var(--acc);transform:rotate(-9deg);left:6%;bottom:8%;white-space:nowrap;text-shadow:0 0 1px rgba(0,0,0,.2)}
+.A .photo{position:relative;background:center/cover no-repeat;filter:grayscale(1) contrast(1.25);min-height:270px}
+.A .photo::after{content:"";position:absolute;inset:0;background:radial-gradient(#000 0.6px,transparent 0.7px) 0 0/4px 4px;opacity:.25}
+.A .mono{font:400 .72rem/1.35 var(--f-mono)}
+.A .stickers{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.8rem}
+.A .st{font:700 .7rem/1 var(--f-mono);padding:.35rem .45rem;border:1.5px solid var(--fg);text-transform:uppercase}
+.A .st.o{background:var(--acc);border-color:var(--acc);color:#111}
+.A .st.k{background:var(--fg);color:#fff}
+.A .barcode{height:28px;width:110px;background:repeating-linear-gradient(90deg,#141212 0 2px,transparent 2px 4px,#141212 4px 5px,transparent 5px 8px)}
+.A .find{display:inline-block;background:var(--acc);color:#111;font:800 1rem/1 var(--f-body);text-transform:uppercase;padding:.45rem .6rem;transform:rotate(-2deg)}
+.A .cta{background:var(--fg);color:#fff;font:700 .9rem/1 var(--f-body);padding:.85rem 1.1rem;display:inline-block}
+
+/* ===== B · Spray machine ===== */
+.B{--bg:#0b0a0a;--fg:#f2eee9;--acc:#ff6a1c;--acc2:#e30513;background:var(--bg);color:var(--fg)}
+.B .dir-head .k,.B .refs figcaption{color:#a8a19e}
+.B .mock{background:#141111;border:1px solid #2f2a2a}
+.B .bar{display:flex;align-items:center;gap:1.5rem;padding:.9rem 1.2rem;font:600 .9rem/1 var(--f-body)}
+.B .bar img{height:40px}
+.B .bar .on{color:var(--acc)}
+.B .bar .q{margin-left:auto;border-radius:999px;padding:.65rem 1rem;background:linear-gradient(100deg,#c2040f,#cf1a0d);color:#fff;font-weight:700}
+.B .hero{position:relative;padding:1.4rem 1.2rem 1.6rem;min-height:340px}
+.B .bgimg{position:absolute;inset:0;background:center/cover no-repeat;opacity:.45}
+.B .bgimg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b0a0a 30%,transparent)}
+.B .hero h3{position:relative;font:900 4.4rem/.84 "Big Shoulders Display",sans-serif;text-transform:uppercase}
+.B .wet{display:block;font:400 4.6rem/1 "Rubik Wet Paint",cursive;color:var(--acc);text-transform:none;margin-top:.1rem}
+.B .hero p{position:relative;max-width:30ch;color:#d6d0cc;margin:.8rem 0 1rem}
+.B .blob{position:relative;display:inline-grid;place-items:center;width:110px;height:110px;color:#111;font:800 .85rem/1 var(--f-body);text-transform:uppercase}
+.B .blob .mk{inset:0}
+.B .blob span{position:relative}
+.B .find{position:relative;display:inline-block;font:800 1.1rem/1 var(--f-body);text-transform:uppercase;padding:.6rem .9rem}
+.B .find .mk{inset:-4px -10px}
+
+/* ===== C · Gallery gesture ===== */
+.C{--bg:#f3f0ea;--fg:#111;--acc:#ff5a14;--acc2:#e30513;background:var(--bg);color:var(--fg)}
+.C .dir-head .k,.C .refs figcaption{color:#6b6460}
+.C .mock{background:#fff;border:1px solid #ddd6cc}
+.C .bar{display:grid;grid-template-columns:auto 1fr 1fr 1fr auto;gap:1.2rem;align-items:start;padding:1rem 1.2rem;border-bottom:1px solid #e5dfd6;font:500 .82rem/1.3 var(--f-body)}
+.C .bar img{height:34px;background:#111;padding:6px 9px;border-radius:8px;box-sizing:content-box}
+.C .bar .q{color:var(--acc2);font-weight:700}
+.C .hero{position:relative;display:grid;grid-template-columns:1.2fr 1fr;gap:1.2rem;padding:1.6rem 1.2rem}
+.C .hero h3{position:relative;font:400 3.9rem/.95 "Instrument Serif",serif;letter-spacing:-.01em}
+.C .hero h3 em{font-style:normal;position:relative;display:inline-block}
+.C .hero h3 em .mk{inset:-30% -22% -26% -16%}
+.C .hero p{font-size:.95rem;color:#3d3835;margin:.8rem 0 1rem;max-width:32ch}
+.C .photo{background:center/cover no-repeat;border-radius:16px;min-height:260px}
+.C .cta{display:inline-block;border:1.5px solid var(--fg);border-radius:999px;padding:.7rem 1.1rem;font:600 .9rem/1 var(--f-body)}
+.C .find{position:relative;display:inline-block;font:400 1.6rem/1 "Instrument Serif",serif;padding:.4rem .8rem}
+.C .find .mk{inset:-14px -22px}
+
+.decide{padding-block:3rem 4rem;display:grid;gap:1rem;max-width:72ch}
+.decide h2{font:900 2.2rem/.9 var(--f-body);font-stretch:125%;text-transform:uppercase}
+.decide ol{margin:0;padding-left:1.2rem;display:grid;gap:.4rem;color:var(--dim)}
+.decide b{color:var(--ink)}
+
+@media (max-width:900px){
+  .mock,.spec{grid-column:span 12}
+  .refs{grid-template-columns:1fr 1fr}
+  .why{grid-template-columns:1fr}
+  .A .hero,.C .hero{grid-template-columns:1fr}
+  .C .bar{grid-template-columns:auto 1fr auto}.C .bar .hide{display:none}
+}
+@media (max-width:520px){
+  .refs{grid-template-columns:1fr}
+  .A .hero h3{font-size:2.5rem}.A .tag{font-size:2.4rem}
+  .B .hero h3{font-size:3.2rem}.B .wet{font-size:3.4rem}
+  .C .hero h3{font-size:2.9rem}
+  .A .bar,.B .bar{flex-wrap:wrap;gap:.8rem}
+}
+</style>
+
+<div class="wrap intro">
+  <span class="k">Design thinking · Round 2 · Visual direction</span>
+  <h1>Style moodboard</h1>
+  <p>Three ways to bring graffiti into Hyped Up, built from Dani's references. Each band shows the references it draws on, the palette and type, and a small mock of Hyped Up in that style.</p>
+  <p class="principle">What every reference does: <strong>big, bold, clean type carries the message; graffiti is one layer on top</strong> (a tag, a spray word, one brush stroke). Never the font you have to read.</p>
+</div>
+
+<!-- ===================== A ===================== -->
+<section class="dir A" aria-labelledby="ha">
+  <div class="wrap">
+    <div class="dir-head"><span class="k">Direction A</span><h2 id="ha">Street editorial</h2><p>A streetwear magazine: grey paper, huge wide type, black-and-white photos with an orange graffiti tag scrawled over them, stickers, barcodes and small mono text. Busy in a designed way.</p></div>
+    <div class="grid">
+      <div class="refs">
+        <figure><img src="{{ref:play1}}" alt="Playlist Edition magazine spread with tags over type" loading="lazy"><figcaption>Playlist Edition #6, <a href="https://www.behance.net/gallery/152239541/Playlist-Edition-6-Magazine-Collection">Behance</a></figcaption></figure>
+        <figure><img src="{{ref:play2}}" alt="Magazine spread with yellow graffiti over a photo" loading="lazy"><figcaption>Playlist Edition #6, <a href="https://www.behance.net/gallery/152239541/Playlist-Edition-6-Magazine-Collection">Behance</a></figcaption></figure>
+        <figure><img src="{{ref:pin}}" alt="Air Max poster with wide type and neon sticker tags" loading="lazy" style="object-fit:contain;background:#ddd"><figcaption>Poster, <a href="https://uk.pinterest.com/pin/581738476912314419/">Pinterest</a></figcaption></figure>
+      </div>
+      <div class="mock">
+        <div class="bar"><img src="{{img:logo}}" alt="Hyped Up"><span>Protect</span><span>Upgrade</span><span>Style</span><span>Builds</span><span>Contact</span><span class="q">Get a quote →</span></div>
+        <div class="hero">
+          <div style="position:relative">
+            <h3>Protect it. Upgrade it. Style it.</h3>
+                        <p class="mono" style="margin:1.2rem 0 .8rem;max-width:34ch">SOUTH LONDON'S ONE-STOP WORKSHOP FOR CAR AND BIKE ELECTRONICS, SECURITY AND STYLING. FITTED PROPERLY, PRICED CLEARLY.</p>
+            <span class="cta">Start your build →</span>
+            <div class="stickers"><span class="st k">Unit 22</span><span class="st o">SE16</span><span class="st">Est. 2022</span><span class="st">Cars + bikes</span></div>
+          </div>
+          <div class="photo" style="background-image:url('{{img:poster}}')"><span class="tag" aria-hidden="true">Hyped Up</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;padding:0 1.2rem 1.2rem"><span class="find">Find us</span><span class="mono">UNIT 22 · BOLINA RD · SE16 3LF</span><span class="barcode" style="margin-left:auto"></span></div>
+      </div>
+      <div class="spec">
+        <div class="sw"><i style="background:#d8d4cd">Paper</i><i style="background:#141212;color:#fff">Ink</i><i style="background:#ff5a14">Orange</i><i style="background:#e30513;color:#fff">Red</i><i style="background:#fff">White</i></div>
+        <div class="typo">
+          <span style="font:900 2.2rem/.9 var(--f-body);font-stretch:125%;text-transform:uppercase">Archivo Expanded</span>
+          <span class="mono">IBM PLEX MONO FOR LABELS AND SMALL PRINT</span>
+          <span style="font:400 2.2rem/1 'Hoax Vandal',cursive;color:#ff5a14">Hoax Vandal tag</span>
+          <span style="font-size:.85rem">Tag font only as an overlay, never for reading.</span>
+        </div>
+      </div>
+      <div class="why"><div><b>Feels like</b><p>A streetwear drop or a car-culture magazine. Creative, a bit rebellious.</p></div><div><b>Good for</b><p>Marco (enthusiasts), builds, shop/apparel, Instagram crossover.</p></div><div><b>Watch out</b><p>Busy pages can make Kemi (security) doubt it's serious: keep service pages calmer.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== B ===================== -->
+<section class="dir B" aria-labelledby="hb">
+  <div class="wrap">
+    <div class="dir-head"><span class="k" style="color:#ff6a1c">Direction B</span><h2 id="hb">Spray machine</h2><p>Dark and loud. Clean condensed headlines in white, with one spray-paint word in orange that drips. Real workshop photos dimmed behind. A spray-blob for the main action. Closest to the current concept, but done properly.</p></div>
+    <div class="grid">
+      <div class="refs">
+        <figure><img src="{{ref:rage1}}" alt="Rage Machine spray paint font poster" loading="lazy"><figcaption>Rage Machine font, <a href="https://www.behance.net/gallery/216873173/Rage-Machine-Spray-Paint-Font">Behance</a></figcaption></figure>
+        <figure><img src="{{ref:rage2}}" alt="Red poster with white spray lettering" loading="lazy"><figcaption>Rage Machine font, <a href="https://www.behance.net/gallery/216873173/Rage-Machine-Spray-Paint-Font">Behance</a></figcaption></figure>
+        <figure><img src="{{ref:urb1}}" alt="Streetwear site with clean type and one graffiti word" loading="lazy"><figcaption>URBANTH, <a href="https://dribbble.com/shots/27275688-URBANTH-Streetwear-Fashion-Website">Dribbble</a></figcaption></figure>
+      </div>
+      <div class="mock">
+        <div class="bar"><img src="{{img:logo}}" alt="Hyped Up"><span class="on">Protect</span><span>Upgrade</span><span>Style</span><span>Builds</span><span>Contact</span><span class="q">Get a quote</span></div>
+        <div class="hero">
+          <div class="bgimg" style="background-image:url('{{img:poster}}')"></div>
+          <h3>Protect it.<br>Upgrade it.<span class="wet">Style it.</span></h3>
+          <p>South London's one-stop workshop for car and bike electronics, security and styling.</p>
+          <span class="blob"><i class="mk" style="--m:var(--m-splat);--c:#ff6a1c"></i><span>Start<br>build</span></span>
+          <span class="find" style="margin-left:1.5rem"><i class="mk" style="--m:var(--m-spray);--c:#e30513;opacity:.85"></i><span style="position:relative">Find us</span></span>
+        </div>
+      </div>
+      <div class="spec">
+        <div class="sw"><i style="background:#0b0a0a;color:#fff;outline:1px solid #333">Black</i><i style="background:#2a2525;color:#fff">Graphite</i><i style="background:#ff6a1c">Orange</i><i style="background:#e30513;color:#fff">Red</i><i style="background:#f2eee9">Chalk</i></div>
+        <div class="typo">
+          <span style="font:900 2.4rem/.9 'Big Shoulders Display',sans-serif;text-transform:uppercase">Big Shoulders</span>
+          <span style="font:400 2.4rem/1 'Rubik Wet Paint',cursive;color:#ff6a1c">Wet paint</span>
+          <span style="font-size:.85rem">Rubik Wet Paint (free, Google) as the single spray word; Rage Machine would be the paid upgrade.</span>
+        </div>
+      </div>
+      <div class="why"><div><b>Feels like</b><p>Night-time car meet, energy, bold. Very "workshop".</p></div><div><b>Good for</b><p>Hero moments, styling pages, social ads, merch.</p></div><div><b>Watch out</b><p>Easy to overdo: one spray word per screen, maximum.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== C ===================== -->
+<section class="dir C" aria-labelledby="hc">
+  <div class="wrap">
+    <div class="dir-head"><span class="k">Direction C</span><h2 id="hc">Gallery gesture</h2><p>The workshop as an art gallery. Light, calm and premium: lots of space, elegant type, rounded photos, and one big hand-painted brush stroke per screen in red or orange to mark what matters.</p></div>
+    <div class="grid">
+      <div class="refs">
+        <figure><img src="{{ref:sams}}" alt="SAMS event page with a blue brush circle around the date" loading="lazy"><figcaption>SAMS by Cuberto, <a href="https://dribbble.com/shots/5466962-SAMS-Culture-Event-Page">Dribbble</a></figcaption></figure>
+        <figure><img src="{{ref:kelsi}}" alt="Bubble graffiti font in yellow" loading="lazy"><figcaption>Kelsi font, <a href="https://www.behance.net/gallery/135899299/Kelsi-Free-Graffiti-Style-Bubble-Font">Behance</a></figcaption></figure>
+        <figure><img src="{{ref:rage3}}" alt="Gold frame with spray lettering on white" loading="lazy"><figcaption>Rage Machine font, <a href="https://www.behance.net/gallery/216873173/Rage-Machine-Spray-Paint-Font">Behance</a></figcaption></figure>
+      </div>
+      <div class="mock">
+        <div class="bar"><img src="{{img:logo}}" alt="Hyped Up"><span>Protect<br>Upgrade<br>Style</span><span class="hide">Builds<br>Contact</span><span class="hide">Unit 22, Bolina Rd<br>London SE16 3LF</span><span class="q">Get a quote →</span></div>
+        <div class="hero">
+          <div>
+            <h3>Protect it. Upgrade it. <em><i class="mk" style="--m:var(--m-circle);--c:#ff5a14"></i>Style it.</em></h3>
+            <p>South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly.</p>
+            <span class="cta">Start your build →</span>
+          </div>
+          <div class="photo" style="background-image:url('{{img:civic}}')"></div>
+        </div>
+        <div style="padding:0 1.2rem 1.2rem;display:flex;gap:1.5rem;align-items:center"><span class="find"><i class="mk" style="--m:var(--m-circle);--c:#e30513"></i><span style="position:relative">Find us</span></span><span style="font-size:.85rem;color:#3d3835">Unit 22 · Mon–Fri 10–18 · Sat 9–16</span></div>
+      </div>
+      <div class="spec">
+        <div class="sw"><i style="background:#f3f0ea;outline:1px solid #ddd">Bone</i><i style="background:#111;color:#fff">Black</i><i style="background:#ff5a14">Orange</i><i style="background:#e30513;color:#fff">Red</i><i style="background:#8f8a84;color:#fff">Stone</i></div>
+        <div class="typo">
+          <span style="font:400 2.6rem/1 'Instrument Serif',serif">Instrument Serif</span>
+          <span style="font:500 1rem/1.4 var(--f-body)">Archivo for body and UI</span>
+          <span style="font-size:.85rem">The brush strokes are real painted marks (public domain), one per screen. A painter friend or the mural artist could supply Hyped Up's own.</span>
+        </div>
+      </div>
+      <div class="why"><div><b>Feels like</b><p>A gallery for car art. Premium, confident, surprising for the sector.</p></div><div><b>Good for</b><p>Trust with Kemi (security) and higher-value jobs (air, wraps, interiors).</p></div><div><b>Watch out</b><p>Less "street": the graffiti energy has to come from photos and the strokes.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap decide">
+  <h2>To decide</h2>
+  <ol>
+    <li><b>Which direction</b> do we develop: A, B or C?</li>
+    <li><b>Mixes are fine</b>, e.g. C's calm layout with A's stickers on builds and shop pages.</li>
+    <li><b>Fonts:</b> free options shown. If you love Rage Machine or Kelsi, we can check their licences for commercial use.</li>
+  </ol>
+</div>
