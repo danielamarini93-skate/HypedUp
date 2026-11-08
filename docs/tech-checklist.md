@@ -7,7 +7,7 @@ Timing key: **Now** = safe to do during design, no build needed · **Design** = 
 | # | Item | Proposed timing | Why then | Who |
 |---|---|---|---|---|
 | 1.1 | Platform: code site in GitHub (Next.js or Astro) + host (Cloudflare or Vercel) | **Now** | Shapes how editing, forms and the dashboard work; design doesn't depend on it | Dani (Claude recommends) |
-| 1.2 | How content gets edited: Claude via GitHub only, or also a login editor (CMS) | **Now** | Changes the build effort and Hypa's day-to-day | Dani + Hypa |
+| 1.2 | ✅ **Decided 8 Nov:** Claude via GitHub only (no CMS) | Done | Changes the build effort and Hypa's day-to-day | Dani + Hypa |
 | 1.3 | Keep or retire Google Tag Manager | Build | Only matters once tracking is wired | Claude |
 | 1.4 | Email sending service (Resend or Brevo) for the form | Build | Free tiers are similar; pick when wiring the form | Claude |
 | 1.5 | Instagram: hand-picked builds at launch, automatic feed later? | Design | Affects the builds section layout | Dani |
@@ -15,13 +15,13 @@ Timing key: **Now** = safe to do during design, no build needed · **Design** = 
 ## 2. Accounts and access (quick, safe)
 | # | Item | Proposed timing | Who |
 |---|---|---|---|
-| 2.1 | Make `main` the default branch in GitHub, auto-delete merged branches | **Now** | Dani (2 clicks) |
+| 2.1 | ✅ `main` is the default branch | Done | Dani (2 clicks) |
 | 2.2 | Export the GoDaddy DNS zone file (a copy of every domain record) | **Now** | Dani, Claude guides |
-| 2.3 | Check the Microsoft 365 email plan is separate from the Website Builder plan | **Now** | Dani |
-| 2.4 | Dani added as admin on GA4, Search Console and Google Business Profile | **Now** | Hypa / Dani |
+| 2.3 | ✅ Email plan confirmed separate from Website Builder | Done | Dani |
+| 2.4 | ✅ Dani already admin on GA4, Search Console, Business Profile | Done | Hypa / Dani |
 | 2.5 | Google Business Profile **Place ID** (needed for automatic reviews) | **Now** | Claude finds it |
-| 2.6 | Download every image from the GoDaddy site (blog + pages) before anything is cancelled | **Now** | Claude |
-| 2.7 | Instagram switched to a Business/Creator account | **Now** (free, 1 minute) | Hypa |
+| 2.6 | Old GoDaddy images: skipped (Dani is putting newer media in Drive); blog images pulled at migration while the old site is still live | Build | Claude |
+| 2.7 | ✅ Instagram is already a Creator account (works with the official API) | Done | Hypa |
 | 2.8 | Hosting account (Cloudflare or Vercel) in Hyped Up's name, two-step login | Build | Dani |
 | 2.9 | Google Cloud project + Places API key (reviews) | Build | Dani, Claude guides |
 | 2.10 | Meta developer app + token (Instagram feed) | After launch | Dani, Claude guides |
@@ -53,7 +53,7 @@ Timing key: **Now** = safe to do during design, no build needed · **Design** = 
 |---|---|---|---|
 | 5.1 | Cookie banner (on-brand, Accept/Reject equal) + Google Consent Mode | Build | Claude |
 | 5.2 | Privacy and cookie policy pages | Build | Claude drafts, Hypa approves |
-| 5.3 | Claims wording decided (20+ years, Thatcham, insurance, tinted lights, shadow plates) | **Now / Design** (blocks copy) | Hypa |
+| 5.3 | Claims wording decided (20+ years, Thatcham, insurance, tinted lights, shadow plates) | Before final copy (end of Design) | Hypa |
 
 ## 6. Search and AI visibility
 | # | Item | Proposed timing | Who |
@@ -67,7 +67,7 @@ Timing key: **Now** = safe to do during design, no build needed · **Design** = 
 ## 7. Analytics and dashboard
 | # | Item | Proposed timing | Who |
 |---|---|---|---|
-| 7.1 | Agree the 5 dashboard numbers and who reads them | **Now** | Dani |
+| 7.1 | Agree the 5 dashboard numbers and who reads them | Build | Dani |
 | 7.2 | Cookie-free visitor stats | Build | Claude |
 | 7.3 | GA4 (same ID) after consent + enquiry events (WhatsApp, call, email, form, by service) | Build | Claude |
 | 7.4 | Looker Studio dashboard (GA4 + Search Console + enquiry log) | Launch | Claude |

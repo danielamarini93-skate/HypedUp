@@ -30,3 +30,5 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-08 — Personas confirmed as right (Kemi, Jay, Marco) (Dani)
 - 2026-11-08 — Opening hours confirmed; OK to show Google reviews on the site, ideally automated (Dani)
 - 2026-11-08 — "We adapt the car to you" rejected as not professional enough; positioning must answer what clients want (Dani)
+- 2026-11-08 — Content editing: Claude via GitHub only, no CMS (Dani)
+- 2026-11-08 — Skip downloading old GoDaddy images; Dani puts newer media in Google Drive (Dani)
