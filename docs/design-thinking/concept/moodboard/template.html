@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Hyped Up Style Moodboard</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,7 +123,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 .B .strip span{color:var(--bacc);font:600 .8rem/1 var(--f-body)}
 
 /* ================= C · Gallery gesture ================= */
-.C .mock{--bg:#f4f1eb;--fg:#121111;--soft:#6c6661;--rule:#dcd5cb;--acc:#d10411;--acc2:#d10411;background:var(--bg);color:var(--fg)}
+.C .mock{font-family:Barlow,system-ui,sans-serif;--bg:#f4f1eb;--fg:#121111;--soft:#6c6661;--rule:#dcd5cb;--acc:#d10411;--acc2:#d10411;background:var(--bg);color:var(--fg)}
 .C .mock.dark{--bg:#141313;--fg:#efe9e1;--soft:#9d968f;--rule:#2d2a28;--acc:#ff3b2f;--acc2:#ff3b2f}
 .C .top{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr)) auto;border-bottom:1px solid var(--rule);font:500 .8rem/1.35 var(--f-body)}
 .C .top>*{padding:18px 20px}
@@ -133,12 +134,12 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 .C .top .q{color:var(--acc2);font-weight:700;align-self:center}
 .C .stage{display:grid;grid-template-columns:1.25fr 1fr;gap:0}
 .C .left{padding:44px 40px 36px;border-right:1px solid var(--rule);display:grid;align-content:space-between;gap:28px}
-.C h3{font:400 clamp(3rem,6.2vw,5.4rem)/.94 var(--f-serif);letter-spacing:-.015em}
-.C h3 em{font-style:italic;position:relative;display:inline-block;padding:0 .08em}
-.C h3 em::after{content:"";position:absolute;left:.06em;right:-.1em;bottom:.04em;height:.075em;background:var(--acc);transform:rotate(-1.2deg);transform-origin:left}
+.C h3{font:900 clamp(3.4rem,7.4vw,6.2rem)/.86 var(--f-cond);text-transform:uppercase;letter-spacing:.005em}
+.C h3 em{font-style:normal;position:relative;display:inline-block;padding:0 .04em}
+.C h3 em::after{content:"";position:absolute;left:-.04em;right:-.14em;bottom:-.17em;height:.27em;background:var(--acc);-webkit-mask:var(--m-uline) center/100% 100% no-repeat;mask:var(--m-uline) center/100% 100% no-repeat}
 .C .left p{margin:0;color:var(--soft);max-width:36ch;font-size:1rem}
 .C .actions{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
-.C .btn{border:1.5px solid var(--fg);border-radius:999px;padding:.85rem 1.25rem;font:600 .95rem/1 var(--f-body);display:inline-flex;gap:.55rem;align-items:center}
+.C .btn{border:1.5px solid var(--fg);border-radius:999px;padding:.85rem 1.25rem;font:600 .95rem/1 Barlow,sans-serif;display:inline-flex;gap:.55rem;align-items:center}
 .C .btn.fill{background:var(--fg);color:var(--bg)}
 .C .btn svg{width:17px;height:17px}
 .C .right{padding:24px;display:grid;gap:12px;align-content:start}
@@ -147,10 +148,10 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 .C .row{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
 .C .row div{padding:18px 20px;display:grid;gap:6px}
 .C .row div+div{border-left:1px solid var(--rule)}
-.C .row b{font:400 1.7rem/1 var(--f-serif)}
+.C .row b{font:800 1.6rem/1 var(--f-cond);text-transform:uppercase;letter-spacing:.01em}
 .C .row span{color:var(--soft);font-size:.82rem}
-.C .find{position:relative;display:inline-block;font:400 1.7rem/1 var(--f-sedg);padding:.35rem .8rem}
-.C .find::after{content:"";position:absolute;left:.7rem;right:.6rem;bottom:.05rem;height:3px;background:var(--acc2);transform:rotate(-1.2deg)}
+.C .find{position:relative;display:inline-block;margin-left:.9rem;font:400 1.7rem/1 var(--f-sedg);padding:.35rem .8rem}
+.C .find::after{content:"";position:absolute;inset:-.55rem -.9rem -.45rem -1.1rem;background:var(--acc2);-webkit-mask:var(--m-circle) center/100% 100% no-repeat;mask:var(--m-circle) center/100% 100% no-repeat;pointer-events:none}
 
 .decide{padding-block:3rem 4rem;display:grid;gap:1rem;max-width:72ch;border-top:1px solid var(--line)}
 .decide h2{font:900 2.2rem/.9 var(--f-body);font-stretch:125%;text-transform:uppercase}
@@ -276,7 +277,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
     </div>
     <div class="below">
       <div><b class="k">Palette</b><div class="sw"><i style="background:#f4f1eb">Bone</i><i style="background:#121111;color:#fff;outline:1px solid #333">Black</i><i style="background:#d10411;color:#fff">Red</i><i style="background:#8f8a84;color:#fff">Stone</i></div></div>
-      <div><b class="k">Type</b><p><span style="font:400 2rem/1 var(--f-serif)">Instrument Serif</span><br><span style="font:500 .95rem var(--f-body)">Archivo for body and UI</span><br><span style="font:400 1.6rem/1.2 var(--f-sedg);color:#d10411">Sedgwick accent</span><br><span style="font-size:.8rem;color:var(--dim)">Sedgwick Ave Display (free) for small graffiti accents. Red only; one straight red line marks what matters.</span></p></div>
+      <div><b class="k">Type</b><p><span style="font:900 2rem/1 var(--f-cond);text-transform:uppercase">Big Shoulders</span><br><span style="font:500 .95rem Barlow,sans-serif">Barlow for body and UI</span><br><span style="font:400 1.6rem/1.2 var(--f-sedg);color:#d10411">Sedgwick accent</span><br><span style="font-size:.8rem;color:var(--dim)">Sedgwick Ave Display (free) for small graffiti accents. Red only; hand-drawn marker marks: an underline under "Style it.", a circle around "Find us".</span></p></div>
       <div><b class="k">Read</b><p>A gallery for car art: premium, calm, surprising for the sector. Builds trust for security and high-value jobs.</p></div>
     </div>
   </div>

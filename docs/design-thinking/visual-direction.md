@@ -132,6 +132,12 @@ Decision pending (Dani). Source: `concept/moodboard/`.
 - **B:** accent = **red into orange**, dark and subtle gradient for depth, used on **all accents and CTAs**; spray word in **Graffiti City** (font 02).
 
 ### Moodboard v4 (8 Nov 2026): applied
-- **A:** show photo in full colour with a strong radial vignette; customer plate blurred.
+- **A:** show photo in full colour with a strong radial vignette. Plate left visible (Dani: don't blur it on this photo).
 - **B:** deep red → orange gradient (`#8f1206 → #b0280a → #c4470f` on fills; brighter `#d4280f → #f26f22` on text) used on every accent and CTA; spray word "Style it." in **Graffiti City** (font 02; personal-use demo, needs a commercial licence before launch).
 - **C:** square image corners; red only (`#d10411`, dark mode `#ff3b2f`); "Style it." and "Find us" marked with one straight, slightly tilted red line.
+
+### Moodboard v5 feedback (Dani, 8 Nov 2026), applied
+- **C:** headline less editorial, closer to B: **Big Shoulders** (uppercase, condensed) + **Barlow** body, replacing Instrument Serif.
+- **C marks:** handmade, not geometric: the marker circle back around "Find us" (Openclipart 318600) and a hand-drawn
+  marker underline (quick stroke + return pass) under "Style it." (`concept/assets/paint/hand-underline.svg`, drawn for this project).
+- **A plate:** not blurred on the show photo (Dani's call for this image).
