@@ -39,6 +39,30 @@ Contact sheet: `competitors/sheet-2.png`.
 
 **What this adds:** Polimax shows the "professional" bar (heritage line, clean service list, quote + WhatsApp per branch). Nobody combines electronics *and* styling at that level of polish: still the gap.
 
+## Wrench Studios (added 8 Nov 2026, Dani's pick)
+[wrenchstudios.co.uk](https://wrenchstudios.co.uk/) · Ashford Road, TW15 (west London edge) · WordPress + WPBakery + AIOSEO · screens in the scratchpad only (not committed).
+
+| | Observed |
+|---|---|
+| **Type** | Performance and styling: ECU software (in-house maps), performance parts, maintenance, wraps + tint (incl. headlight/taillight tint), body and paint (manufacturer, insurance and BMW approved), online parts shop, careers |
+| **Positioning** | H1 "WRENCH Studios" + "True one stop shop"; contact page: "The Home of Performance & Styling", "the original true one-stop-shop", "15 years", `#WrenchSauce`, motto "Never confuse movement with action" |
+| **Proof / fame** | Did the cars for **MTV Pimp My Ride UK** (with eBay), its own page; YouTube channel with build films (500 whp Supra, 600 bhp M4, C63 wrapped "Hulk green"); dealer pages for Dinan, Dorch, Dodson; brand logo strip (Silly Rabbit, Carrillo, HCP) |
+| **Menu** | 8 flat items: Home, ECU Software & Calibration, Performance Upgrades, Wrapping & Tinting, Body & Paint, Shop, Careers, Contact Us. Red parallelogram on the active item. Mobile: logo + burger |
+| **Homepage** | Full-width image slider (exhaust on a lift) with name + tagline only, **no CTA above the fold**; 3 intro columns; "Services We Provide" 6 photo tiles (2 have no photo, just grey); team photo banner + "Pimp My Ride" button; long legal disclaimer in red text; footer (Quick links, Services, YouTube subscribe, socials) |
+| **Service pages** | Long text, some generic SEO filler ("engine knock will be eliminated"); good bits: option lists (Vmax, launch control, burbles, gearbox maps), tint shades explained (5–70%), **3-step "Choose a colour → Arrange a day → Collect"**, lifetime guarantee on tint, film brands (3M, Avery, Oracal, Hexis) |
+| **Contact** | Name/email/message form with a maths quiz + reCAPTCHA; phone; email. **No WhatsApp, no quote form by service or car, no prices, no reviews shown, no opening hours on the page** |
+| **Tone** | Confident, a bit "lad culture" (hashtags, YouTube titles in caps), but the site copy itself is corporate and generic: the personality lives on YouTube/Instagram, not the website |
+| **Look** | Black header, Bebas-style condensed caps, one red accent, stock-ish grey section bands, dated template feel (2021 assets, © 2022) |
+| **SEO** (data) | Titles per service, meta description = keyword list, Organization + Breadcrumb schema only (no LocalBusiness, no reviews, no FAQ) |
+
+**What it means for Hyped Up** (recommendations)
+- **Same promise, so say it better:** they also claim "one-stop shop" for performance + styling. Our edge is *electronics + security + styling*, a named person (Hypa) and clear "from £" prices; none of which they show. Keep "one-stop" as a supporting phrase, not the headline.
+- **Fame and films work:** Pimp My Ride and YouTube builds are their strongest trust signal. Equivalent for us: a **Builds** section with short real videos and "featured on / partner of" proof (Air Lift dealer, Ghost installer) near the action, not hidden in the footer.
+- **Do better above the fold:** they have no action in the hero; ours has one clear WhatsApp quote button.
+- **Borrow:** the 3-step "how it works" (choose → drop off → collect), plain explanations of legal limits (tint %, MOT/emissions), lifetime/warranty lines (only if Hypa confirms ours), film/product brand names.
+- **Avoid:** the wall of red legal text (put legal notes inline on the relevant service, calm grey), generic filler copy, empty photo tiles, contact forms with puzzles.
+- **Legal notes we need too** (Hypa to confirm wording): front side windows 70% VLT and windscreen 75%; remaps/exhaust can affect MOT and insurance. Links to the open "tinted lights" clash in `friend-concept.md`.
+
 ## Table stakes (what users will expect)
 - Phone and a fast way to ask (WhatsApp/call/form) visible on mobile at all times
 - Clear service list with a page per key service
