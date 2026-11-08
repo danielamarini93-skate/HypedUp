@@ -53,3 +53,15 @@ _Period: 10 Aug – 7 Nov 2026 (13 weeks) · Exports from Dani, 8 Nov 2026 · Ra
 - Enquiry taps tracked from day one; baseline them in month 1, then grow
 - Form completion from 1 in 24 to at least 1 in 3 starts
 - Visitors from ~19/week to 50+/week within 6 months
+
+## GoDaddy Conversations (screenshot from Dani, 8 Nov 2026)
+GoDaddy's inbox for messages that arrive through the website (and any channels connected to it). **Last 12 months, all channels:**
+| Measure | Value |
+|---|---|
+| Conversations | **73** (~6 a month) |
+| Messages | **130** (~1.8 per conversation) |
+| Average response time | **14.1 hours** |
+
+- **This inbox disappears when we leave GoDaddy.** Its job moves to: WhatsApp (main), the new form → info@hypedup.uk, phone.
+- **14 hours to reply is slow** for people comparing quotes. The new form email should land in Outlook where Hypa sees it, plus an instant auto-reply ("Got it, we'll reply today; for a faster answer WhatsApp 07713 735646").
+- TBC: which channels feed it (website chat? form? Facebook/Instagram?): the "All Channels" dropdown shows the split.
