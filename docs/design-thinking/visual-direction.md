@@ -97,3 +97,8 @@ checking at small sizes (use bold/large text or a darker red for small text). Ye
 - Icons: Lucide; brand logos: Simple Icons.
 - Button gradient: subtle (#c2040f → #cf1a0d). Logo 44 px (phone) / 52 px (desktop).
 - Rounded corners: offered as a toggle for images (14 px). Sources and licences: `concept/assets/SOURCES.md`.
+
+## v0.5 feedback from Dani (8 Nov 2026, menu & footer v3)
+- Splash: not good. Brush line: terrible. Graffiti fonts: not legible. "You can do better."
+- Lesson: decorative graffiti built from generic clip-art and display fonts reads cheap. Next step is to agree a
+  direction (and references) before building again.
