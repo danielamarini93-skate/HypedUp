@@ -2,11 +2,12 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:wght@400;500;600;700&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:wght@400;500;600;700&family=Rubik+Spray+Paint&display=swap">
 <style>
+@font-face{font-family:"Hoax Vandal";src:url({{font:hoax}}) format("truetype");font-display:swap}
 /* Layout: review board of real components (desktop header with clickable panels, three phone states, footer).
    v0.3 workshop palette: warm greys + reds + orange, red→orange gradient, spray/brush/splash marks drawn
-   procedurally (canvas + SVG roughness filter). Single dark look on purpose. */
+   as public-domain SVG masks + graffiti fonts. Single dark look on purpose. */
 :root{
   color-scheme: dark;
   --board:#161414;    /* board behind the frames */
@@ -19,11 +20,13 @@
   --red:#e30513;      /* logo red: marks and fills */
   --red-hot:#ff4636;  /* red for text on black (5.6:1) */
   --orange:#ff8a1f;   /* new accent (8.9:1 on black) */
-  --btn-a:#b8040e; --btn-b:#c8400a; /* button gradient, white text ≥ 4.9:1 */
-  --grad:linear-gradient(100deg,#e30513 0%,#ff4a1c 55%,#ff8a1f 100%);
+  --btn-a:#c2040f; --btn-b:#cf1a0d; /* subtle button gradient, white text ≥ 5.5:1 */
+  --grad:linear-gradient(100deg,#e30513 0%,#ff4a1c 55%,#ff8a1f 100%); /* marks and wordmark only */
   --f-display:"Big Shoulders Display","Arial Narrow",sans-serif;
   --f-body:"Barlow","Helvetica Neue",Arial,sans-serif;
-  --f-hand:"Permanent Marker","Segoe Print",cursive;
+  --f-tag:"Hoax Vandal","Segoe Print",cursive;   /* graffiti tag: short words only */
+  --f-spray:"Rubik Spray Paint","Big Shoulders Display",sans-serif; /* spray wordmark */
+  --radius:0px;  /* toggled to 14px in the rounded variant (images only) */
 }
 html,body{overflow-x:clip}
 body{background:var(--board);color:var(--chalk);font:400 16px/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
@@ -39,13 +42,20 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
 .frame-title h2{font-size:1.9rem}
 .frame-title p{margin:0;color:var(--steel);font-size:.95rem}
 .frame{background:var(--asphalt);border:1px solid var(--concrete);border-radius:4px;overflow:hidden;position:relative}
-canvas.spray{position:absolute;pointer-events:none}
+/* real paint marks: public-domain SVGs used as CSS masks, coloured by background */
+.mk{position:absolute;pointer-events:none;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;background:var(--c,var(--red))}
+{{maskvars}}
 
-.logo{display:block;height:30px;width:auto}
+.logo{display:block;height:44px;width:auto}
+.dh .logo{height:52px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:0 1.1rem;border-radius:2px;background:linear-gradient(100deg,var(--btn-a),var(--btn-b));color:#fff;font:700 .95rem/1 var(--f-body);border:0;cursor:pointer}
 .btn:hover{filter:brightness(1.12)}
 .btn svg{width:18px;height:18px}
 .btn-ghost{background:transparent;border:1.5px solid var(--chalk);color:var(--chalk)}
+.rounded{--radius:14px}
+.toggle{display:inline-flex;gap:.3rem;padding:.25rem;border:1px solid var(--concrete);border-radius:999px;margin-top:.6rem}
+.toggle button{background:none;border:0;color:var(--steel);font:600 .85rem/1 var(--f-body);padding:.5rem .9rem;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--chalk);color:var(--asphalt)}
 .from{color:var(--steel);font-size:.85rem;font-variant-numeric:tabular-nums;white-space:nowrap;font-style:normal}
 .t-protect{color:var(--red-hot)} .t-upgrade{color:var(--orange)}
 .t-style{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -54,10 +64,10 @@ canvas.spray{position:absolute;pointer-events:none}
 .dh{display:flex;align-items:center;gap:2rem;padding:1rem 1.6rem;border-bottom:1px solid var(--concrete)}
 .dh nav{display:flex;gap:1.7rem;flex:1}
 .dh nav button,.dh nav a{position:relative;background:none;border:0;color:var(--chalk);font:600 1rem/1 var(--f-body);cursor:pointer;display:flex;align-items:center;gap:.35rem;padding:.6rem 0}
-.dh nav svg.chev{width:12px;height:12px;transition:transform .2s}
-.dh nav [aria-expanded="true"] svg.chev{transform:rotate(180deg)}
-.dh nav .brush{position:absolute;left:-8%;right:-8%;bottom:-6px;height:12px;opacity:0;transition:opacity .2s}
-.dh nav [aria-expanded="true"] .brush,.dh nav a:hover .brush,.dh nav button:hover .brush{opacity:1}
+.dh nav svg.lucide-chevron-down{width:16px;height:16px;transition:transform .2s}
+.dh nav [aria-expanded="true"] svg.lucide-chevron-down{transform:rotate(180deg)}
+.dh nav .mk{left:-10%;right:-10%;bottom:-8px;height:14px;opacity:0;transition:opacity .2s;--c:var(--orange)}
+.dh nav [aria-expanded="true"] .mk,.dh nav a:hover .mk,.dh nav button:hover .mk{opacity:1}
 .panel{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding:1.8rem 1.6rem 2rem;border-bottom:1px solid var(--concrete);background:var(--tarmac);position:relative;overflow:hidden}
 .panel[hidden]{display:none}
 .panel ul{list-style:none;margin:0;padding:0}
@@ -65,15 +75,16 @@ canvas.spray{position:absolute;pointer-events:none}
 .panel li a b{font:900 1.4rem/1 var(--f-display);text-transform:uppercase;transition:color .15s}
 .panel li a span{grid-column:1/-1;color:var(--steel);font-size:.9rem}
 .panel li a:hover b{color:var(--orange)}
-.panel .all{display:inline-block;margin-top:1rem;font-weight:700;padding-bottom:4px;background:var(--grad) bottom/100% 2px no-repeat}
+.panel .all{position:relative;display:inline-block;margin-top:1rem;font-weight:700;padding-bottom:6px}
+.panel .all .mk{left:-4%;right:-4%;bottom:-4px;height:10px;--c:var(--orange)}
 .tag{font:700 .72rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.4rem;display:inline-block}
-.panel .ph{border-radius:2px;background:center/cover no-repeat;min-height:230px;position:relative;filter:saturate(1.05)}
+.panel .ph{border-radius:var(--radius);background:center/cover no-repeat;min-height:230px;position:relative;filter:saturate(1.05)}
 .panel .ph i{position:absolute;left:.7rem;bottom:.7rem;font:600 .8rem/1.2 var(--f-body);font-style:normal;background:rgba(11,10,10,.82);padding:.35rem .5rem}
-.idea{position:relative;border-radius:2px;padding:1.3rem;display:grid;gap:.6rem;align-content:start;isolation:isolate}
-.idea canvas{inset:-30px;width:calc(100% + 60px);height:calc(100% + 60px);z-index:-1}
-.idea h3{font-family:var(--f-hand);font-weight:400;text-transform:none;font-size:1.7rem;line-height:1.05;color:#fff}
-.idea p{margin:0;font-size:.95rem;color:#fff}
-.idea .btn{justify-self:start;background:#0b0a0a}
+.idea{position:relative;border-radius:var(--radius);padding:1.4rem;display:grid;gap:.7rem;align-content:start;isolation:isolate;background:var(--graphite);border:1px solid var(--concrete);overflow:hidden}
+.idea .mk{right:-46px;top:-40px;width:170px;height:200px;z-index:-1;opacity:.9}
+.idea h3{font-family:var(--f-tag);font-weight:400;text-transform:none;font-size:2rem;line-height:1.05;color:#fff;letter-spacing:.01em}
+.idea p{margin:0;font-size:.95rem;color:#cdc6c2;max-width:30ch}
+.idea .btn{justify-self:start}
 
 /* ---------- phones ---------- */
 .phones{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));align-items:start}
@@ -82,20 +93,22 @@ canvas.spray{position:absolute;pointer-events:none}
 .screen{position:relative;height:700px;background:var(--asphalt);border:1px solid var(--concrete);border-radius:28px;overflow:hidden}
 .mh{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.1rem;position:relative;z-index:2}
 .menu-btn{background:none;border:0;color:var(--chalk);font:600 .8rem/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;display:flex;gap:.55rem;align-items:center;cursor:pointer;min-height:44px}
-.menu-btn i{display:grid;gap:5px}.menu-btn i b{display:block;width:20px;height:2px;background:currentColor}
-.closed .hero{position:absolute;inset:0;background:center/cover no-repeat}
+.menu-btn svg{width:22px;height:22px}
+.lu{width:18px;height:18px;flex:none}
+.closed .hero{position:absolute;inset:8px;border-radius:calc(var(--radius) + 6px);background:center/cover no-repeat;overflow:hidden}
 .closed .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,10,.5),rgba(11,10,10,.1) 35%,rgba(11,10,10,.95))}
 .closed .hcopy{position:absolute;left:1.1rem;right:1.1rem;bottom:1.4rem;z-index:2;display:grid;gap:.8rem}
 .closed .hcopy h3{font-size:3.3rem}
 .closed .hcopy p{margin:0;font-size:.95rem}
 .sheet{position:absolute;inset:0;background:var(--asphalt);display:flex;flex-direction:column;overflow:hidden}
-.sheet>canvas{right:-70px;bottom:40px;width:240px;height:240px;opacity:.35}
+.sheet>.mk{right:-60px;bottom:70px;width:220px;height:260px;opacity:.28}
 .sheet .mh{border-bottom:1px solid var(--concrete)}
 .big{list-style:none;margin:0;padding:.6rem 1.1rem 0;position:relative}
 .big>li{border-bottom:1px solid var(--concrete)}
 .big>li>button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;cursor:pointer}
 .big>li>button b{font:900 2.7rem/1 var(--f-display);text-transform:uppercase}
-.big>li>button span{font-size:1.6rem;line-height:1;color:var(--steel);transition:transform .2s}
+.big>li>button span{display:flex;color:var(--steel);transition:transform .2s}
+.big>li>button span svg{width:26px;height:26px}
 .big>li>button[aria-expanded="true"] span{transform:rotate(90deg);color:var(--orange)}
 .big>li>button:focus-visible{outline:3px solid var(--orange)}
 .sub{list-style:none;margin:0 0 .8rem;padding:0}
@@ -112,18 +125,22 @@ canvas.spray{position:absolute;pointer-events:none}
 .ft h4{font:700 .72rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;margin:0 0 .9rem}
 .ft ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-size:.92rem;color:#cdc6c2}
 .ft ul a:hover{color:var(--orange)}
-.findus h4{position:relative;display:inline-block;padding:.55rem .95rem;margin-left:-.95rem}
-.findus svg.circle{position:absolute;inset:-6px -12px;width:calc(100% + 24px);height:calc(100% + 12px);pointer-events:none;overflow:visible}
+.findus h4{position:relative;display:inline-block;padding:.9rem 1.4rem;margin-left:-1.4rem;font-family:var(--f-tag);font-size:1.8rem;letter-spacing:.02em;text-transform:none;font-weight:400}
+.findus h4 .mk{inset:-10px -22px -6px -16px;--c:var(--orange)}
+.findus h4 .sp{inset:-24px -40px -20px -30px;opacity:.5;--c:var(--red)}
 .findus p{margin:0 0 .5rem;font-size:.92rem;color:#cdc6c2}
 .findus b{color:var(--chalk)}
 .social{display:flex;gap:.5rem;margin-top:.9rem}
-.social a{width:36px;height:36px;border:1px solid var(--concrete);border-radius:50%;display:grid;place-items:center;font:700 .7rem/1 var(--f-body)}
+.social a{width:38px;height:38px;border:1px solid var(--concrete);border-radius:50%;display:grid;place-items:center;color:#cdc6c2}
+.social a:hover{color:var(--orange);border-color:var(--orange)}
 .legal{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;justify-content:space-between;padding:1.6rem 0 1.2rem;margin-top:2.4rem;border-top:1px solid var(--concrete);color:var(--steel);font-size:.82rem;position:relative;z-index:1}
-.wm{position:relative;display:block;width:100%;height:clamp(110px,17vw,240px)}
-.wm canvas{position:absolute;inset:0;width:100%;height:100%}
+.wm{position:relative;display:block;text-align:center;padding-top:.5rem;overflow:hidden}
+.wm b{position:relative;z-index:1;display:block;font:400 clamp(4.5rem,15vw,13rem)/.95 var(--f-spray);background:linear-gradient(100deg,#e30513,#ff6a1c 70%,#ff8a1f);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.wm .drips{left:6%;right:6%;top:72%;height:42%;--c:#c2040f;opacity:.9}
+.wm .sp{left:-5%;right:-5%;top:-10%;bottom:20%;--c:var(--orange);opacity:.25}
 .ft-mobile .ft-grid{grid-template-columns:1fr 1fr;gap:1.6rem}
 .ft-mobile .findus{grid-column:1/-1}
-.ft-mobile .wm{height:110px}
+.ft-mobile .wm b{font-size:4.4rem}
 
 .notes{margin-top:3rem;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
 .note{background:var(--graphite);border-radius:4px;padding:1.2rem;display:grid;gap:.45rem;align-content:start}
@@ -145,10 +162,11 @@ canvas.spray{position:absolute;pointer-events:none}
 
 <div class="page">
   <header class="intro">
-    <canvas class="spray" data-spray="title" style="left:-30px;top:-40px;width:520px;height:220px" aria-hidden="true"></canvas>
-    <p class="label">Design thinking · Round 2 · Concept A · v2</p>
+    <i class="mk" style="--m:var(--m-spray);left:-30px;top:10px;width:520px;height:110px;opacity:.55" aria-hidden="true"></i>
+    <p class="label">Design thinking · Round 2 · Concept A · v3</p>
     <h1>Menu &amp; footer</h1>
-    <p>Three big doors (Protect, Upgrade, Style) with ten services in the menu. The other twelve live on the hub pages and in the footer; car-specific pages are linked from inside service pages. One action everywhere: a WhatsApp quote. v2: no blue, reds and orange with spray, brush and splash marks; the desktop menu is fully clickable; "Contact" replaces "Visit".</p>
+    <p>Three big doors (Protect, Upgrade, Style) with ten services in the menu. The other twelve live on the hub pages and in the footer; car-specific pages are linked from inside service pages. One action everywhere: a WhatsApp quote. v3: real graffiti fonts and paint marks, Lucide icons, a subtler button gradient, a bigger logo, and a rounded-corners option for images.</p>
+    <div class="toggle" role="group" aria-label="Corner style"><button type="button" aria-pressed="true" data-corner="sharp">Sharp corners</button><button type="button" aria-pressed="false" data-corner="rounded">Rounded images</button></div>
   </header>
 
   <div class="frame-title"><h2>1 · Desktop header</h2><p>Click Protect, Upgrade and Style to open each panel. Builds and Contact are plain links.</p></div>
@@ -156,11 +174,11 @@ canvas.spray{position:absolute;pointer-events:none}
     <div class="dh">
       <img class="logo" src="{{img:logo}}" alt="Hyped Up">
       <nav aria-label="Main (desktop example)" data-dnav>
-        <button aria-expanded="true" aria-controls="pn0">Protect {{chev}}{{brush}}</button>
-        <button aria-expanded="false" aria-controls="pn1">Upgrade {{chev}}{{brush}}</button>
-        <button aria-expanded="false" aria-controls="pn2">Style {{chev}}{{brush}}</button>
-        <a href="#builds">Builds{{brush}}</a>
-        <a href="#contact">Contact{{brush}}</a>
+        <button aria-expanded="true" aria-controls="pn0">Protect {{chev}}<i class="mk" style="--m:var(--m-line)" aria-hidden="true"></i></button>
+        <button aria-expanded="false" aria-controls="pn1">Upgrade {{chev}}<i class="mk" style="--m:var(--m-line)" aria-hidden="true"></i></button>
+        <button aria-expanded="false" aria-controls="pn2">Style {{chev}}<i class="mk" style="--m:var(--m-line)" aria-hidden="true"></i></button>
+        <a href="#builds">Builds<i class="mk" style="--m:var(--m-line)" aria-hidden="true"></i></a>
+        <a href="#contact">Contact<i class="mk" style="--m:var(--m-line)" aria-hidden="true"></i></a>
       </nav>
       <a class="btn" href="#quote">{{wa}}Get a quote</a>
     </div>
@@ -173,29 +191,29 @@ canvas.spray{position:absolute;pointer-events:none}
       <span class="label">a · Closed</span>
       <div class="screen closed">
         <div class="hero" style="background-image:url('{{img:poster}}')"></div>
-        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Open menu">Menu <i><b></b><b></b></i></button></div>
+        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Open menu">Menu {{lu:menu}}</button></div>
         <div class="hcopy"><h3>Protect it.<br>Upgrade it.<br><span class="t-style">Style it.</span></h3><p>South London's one-stop workshop for car and bike electronics, security and styling.</p><div><a class="btn" href="#quote">{{wa}}Start your build</a></div></div>
       </div>
     </div>
     <div class="phone">
       <span class="label">b · Menu open</span>
       <div class="screen"><div class="sheet">
-        <canvas class="spray" data-spray="splash" aria-hidden="true"></canvas>
-        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Close menu">Close ✕</button></div>
+        <i class="mk" style="--m:var(--m-splat)" aria-hidden="true"></i>
+        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Close menu">Close {{lu:x}}</button></div>
         <ul class="big" data-acc>{{acc}}</ul>
         <nav class="small" aria-label="More"><a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a><a href="#">Contact</a></nav>
         <p class="hours"><b>●</b> Open today 10:00–18:00 · Unit 22, SE16</p>
-        <div class="bottom"><a class="btn" href="#quote">{{wa}}WhatsApp</a><a class="btn btn-ghost" href="#">Call</a></div>
+        <div class="bottom"><a class="btn" href="#quote">{{wa}}WhatsApp</a><a class="btn btn-ghost" href="#">{{lu:phone}}Call</a></div>
       </div></div>
     </div>
     <div class="phone">
       <span class="label">c · Upgrade opened</span>
       <div class="screen"><div class="sheet">
-        <canvas class="spray" data-spray="splash" aria-hidden="true"></canvas>
-        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Close menu">Close ✕</button></div>
+        <i class="mk" style="--m:var(--m-splat)" aria-hidden="true"></i>
+        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Close menu">Close {{lu:x}}</button></div>
         <ul class="big" data-acc data-open="1">{{acc}}</ul>
         <nav class="small" aria-label="More"><a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a><a href="#">Contact</a></nav>
-        <div class="bottom"><a class="btn" href="#quote">{{wa}}WhatsApp</a><a class="btn btn-ghost" href="#">Call</a></div>
+        <div class="bottom"><a class="btn" href="#quote">{{wa}}WhatsApp</a><a class="btn btn-ghost" href="#">{{lu:phone}}Call</a></div>
       </div></div>
     </div>
   </div>
@@ -207,9 +225,9 @@ canvas.spray{position:absolute;pointer-events:none}
   <div class="frame" style="max-width:380px">{{footer_m}}</div>
 
   <div class="notes">
-    <div class="note"><h3>What changed in v2</h3><ul><li>Blue removed: warm greys, reds and orange, with a red → orange gradient</li><li>Graffiti marks: spray-paint wordmark with drips, brush underline on the menu, paint splash behind "Not sure?", marker circle on Find us</li><li>All three menu panels open on click</li><li>"Visit" → "Contact"; Prices and Google reviews out of the footer</li></ul></div>
+    <div class="note"><h3>What changed in v3</h3><ul><li>Real paint marks (public-domain SVGs from Openclipart) recoloured in red and orange: splat, drips, spray speckle, brush line, marker circle</li><li>Graffiti fonts: Hoax Vandal for tags ("Find us", "Not sure…"), Rubik Spray Paint for the HYPED UP wordmark (both free for commercial use)</li><li>Lucide icons for all UI icons; brand logos (WhatsApp, Instagram, TikTok, Facebook) from Simple Icons, because Lucide has no brand logos</li><li>Subtle button gradient; bigger logo</li><li>Toggle at the top: sharp or rounded image corners</li></ul></div>
     <div class="note"><h3>Why Motorbikes and Business, but no "Cars"?</h3><p>Every service page is already about cars, so cars don't need their own page: they're the default. Motorbikes and Business &amp; fleet get hubs because those customers need a different mix (bike wraps, Datatool trackers, bike remaps; fleet trackers, taxi cameras, van signage) and they search for it differently.</p></div>
-    <div class="note"><h3>Still to decide</h3><ul><li>Are these the right 10 services in the menu?</li><li>Blog only in the footer and on service pages: OK?</li></ul></div>
+    <div class="note"><h3>Approved</h3><ul><li>10 services in the menu</li><li>Blog in the footer only</li><li>Wordmark: HYPED UP</li></ul><h3 style="margin-top:.6rem">To decide</h3><ul><li>Sharp or rounded image corners?</li><li>Fonts for graffiti accents: Hoax Vandal + Rubik Spray Paint OK?</li></ul></div>
   </div>
 </div>
 
@@ -227,19 +245,7 @@ canvas.spray{position:absolute;pointer-events:none}
     btns.forEach(function(b,i){b.addEventListener('click',function(){set(i)})});
     var o=list.getAttribute('data-open'); if(o!==null) set(+o);
   });
-  /* seeded random so the paint looks the same every time */
-  function rng(seed){return function(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}}
-  var COLS=['#e30513','#ff4a1c','#ff8a1f','#b8040e'];
-  function gauss(r){return (r()+r()+r()-1.5)/1.5}
-  function setup(c){var r=c.getBoundingClientRect(),d=Math.min(2,window.devicePixelRatio||1);c.width=Math.max(1,r.width*d);c.height=Math.max(1,r.height*d);var x=c.getContext('2d');x.setTransform(d,0,0,d,0,0);return {x:x,w:r.width,h:r.height}}
-  function spray(x,cx,cy,rad,n,col,r){x.fillStyle=col;for(var i=0;i<n;i++){var a=r()*6.283,d=Math.abs(gauss(r))*rad;var s=r()<.92?r()*1.6+.3:r()*4+1.5;x.globalAlpha=r()*.5+.15;x.beginPath();x.arc(cx+Math.cos(a)*d,cy+Math.sin(a)*d*.8,s,0,6.283);x.fill()}x.globalAlpha=1}
-  function drip(x,px,py,len,w,col){x.fillStyle=col;x.beginPath();x.moveTo(px-w/2,py);x.lineTo(px+w/2,py);x.lineTo(px+w*.35,py+len);x.arc(px,py+len,w*.45,0,3.1416);x.closePath();x.fill()}
-  function paintTitle(c){var o=setup(c),x=o.x,r=rng(11);spray(x,o.w*.42,o.h*.55,o.w*.3,1400,COLS[0],r);spray(x,o.w*.62,o.h*.45,o.w*.18,700,COLS[2],r);x.globalAlpha=.35;for(var i=0;i<4;i++)drip(x,o.w*(.3+r()*.4),o.h*.6,20+r()*40,3,COLS[0]);x.globalAlpha=1}
-  function paintSplash(c){var o=setup(c),x=o.x,r=rng(23),cx=o.w/2,cy=o.h/2;x.fillStyle=COLS[0];x.beginPath();for(var i=0;i<=24;i++){var a=i/24*6.283,rr=o.w*(.22+r()*.12)*(i%3?1:1.35);x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr)}x.closePath();x.globalAlpha=.85;x.fill();for(var j=0;j<26;j++){var a2=r()*6.283,d=o.w*(.3+r()*.2);x.globalAlpha=.8;x.beginPath();x.arc(cx+Math.cos(a2)*d,cy+Math.sin(a2)*d,r()*6+1.5,0,6.283);x.fill()}spray(x,cx,cy,o.w*.45,500,COLS[2],r);x.globalAlpha=1}
-  function paintIdea(c){var o=setup(c),x=o.x,r=rng(5);var g=x.createLinearGradient(0,0,o.w,o.h);g.addColorStop(0,'#c2040f');g.addColorStop(1,'#d9480f');x.fillStyle=g;x.beginPath();var pts=34;for(var i=0;i<=pts;i++){var t=i/pts*6.283,rx=o.w*.42+(r()-.5)*18,ry=o.h*.42+(r()-.5)*18;x.lineTo(o.w/2+Math.cos(t)*rx,o.h/2+Math.sin(t)*ry)}x.closePath();x.fill();for(var k=0;k<5;k++)drip(x,o.w*(.25+r()*.5),o.h*.88,14+r()*30,5,'#c2040f');spray(x,o.w*.8,o.h*.2,40,260,COLS[2],r);}
-  function paintWordmark(c){var o=setup(c),x=o.x,r=rng(41),txt='HYPED UP';var fs=o.h*1.05;x.font='900 '+fs+'px "Big Shoulders Display","Arial Narrow",sans-serif';var tw=x.measureText(txt).width;if(tw>o.w*.98){fs=fs*o.w*.98/tw;x.font='900 '+fs+'px "Big Shoulders Display","Arial Narrow",sans-serif';tw=x.measureText(txt).width}var ox=(o.w-tw)/2,base=o.h*.86;var g=x.createLinearGradient(ox,0,ox+tw,0);g.addColorStop(0,'#e30513');g.addColorStop(.55,'#ff4a1c');g.addColorStop(1,'#ff8a1f');x.globalAlpha=.9;x.fillStyle=g;x.fillText(txt,ox,base);x.globalAlpha=1;for(var i=0;i<14;i++){var px=ox+r()*tw;drip(x,px,base-fs*.05,12+r()*o.h*.18,2+r()*4,r()<.5?'#e30513':'#ff6a1c')}spray(x,ox+tw*.15,base-fs*.6,fs*.5,500,'#e30513',r);spray(x,ox+tw*.85,base-fs*.4,fs*.5,500,'#ff8a1f',r)}
-  function paint(){document.querySelectorAll('canvas[data-spray]').forEach(function(c){if(!c.offsetParent&&c.getClientRects().length===0)return;var k=c.getAttribute('data-spray');({title:paintTitle,splash:paintSplash,idea:paintIdea,wordmark:paintWordmark})[k](c)})}
-  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(paint);
-  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(paint,150)});
+  /* corner toggle */
+  document.querySelectorAll('[data-corner]').forEach(function(b){b.addEventListener('click',function(){document.body.classList.toggle('rounded',b.dataset.corner==='rounded');document.querySelectorAll('[data-corner]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})})});
 })();
 </script>

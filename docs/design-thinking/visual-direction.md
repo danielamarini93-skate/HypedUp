@@ -90,3 +90,10 @@ checking at small sizes (use bold/large text or a darker red for small text). Ye
 - **CTA gradient must be subtle** (premium), not a strong red → orange.
 - **Likes the orange** in the menu.
 - Try a version with **rounded, smooth corners on some elements only (e.g. images)**.
+
+### What v0.4 uses (menu & footer v3)
+- Graffiti fonts: **Hoax Vandal** (tags: "Find us", "Not sure…") and **Rubik Spray Paint** (HYPED UP wordmark). Both free for commercial use.
+- Real paint marks from Openclipart (public domain), recoloured with CSS: splat, drips, speckle, brush line, marker circle.
+- Icons: Lucide; brand logos: Simple Icons.
+- Button gradient: subtle (#c2040f → #cf1a0d). Logo 44 px (phone) / 52 px (desktop).
+- Rounded corners: offered as a toggle for images (14 px). Sources and licences: `concept/assets/SOURCES.md`.
