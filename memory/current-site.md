@@ -41,6 +41,8 @@ Also feeds: `/blog/f.rss`, `/blog/f.atom`, `/blog/f.json`.
 | how-much-does-a-car-wrap-cost-uk-real-prices-not-marketing | How Much Does A Car Wrap Cost UK? |
 | best-dash-cam-2026-front-rear-gps-why-you-need-one | Best Dash Cam 2026: Front & Rear, GPS & Why You Need One |
 
+⚠️ Search Console (8 Nov 2026) shows posts indexed under **three** patterns: `/hyped-up/f/<slug>`, `/f/<slug>` and `/blog/f/<slug>`, plus the homepage at both `www.` and bare domain. Redirect all variants.
+
 ⚠️ Blog posts are **not** in the sitemap — Google only finds them via the blog page. Fix in the new site.
 
 ## Tracking found in the live HTML

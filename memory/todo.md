@@ -27,7 +27,8 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Endless Customs: get their Instagram to review
 - [x] Positioning line: option A
 
-- [ ] Baseline before launch: export Search Console (last 3 months, queries + pages) and Business Profile insights (calls, directions) to Drive
+- [x] Search Console baseline saved → `docs/data/baseline-search.md`
+- [ ] Baseline: Business Profile insights (calls, directions, last 3 months)
 
 ## SEO / technical
 - [ ] Request indexing for all main service pages in Search Console
