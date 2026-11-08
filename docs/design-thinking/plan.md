@@ -1,16 +1,16 @@
 # Design thinking: plan
 
-_Hyped Up website redesign · Stage 1 of 3 · Depth: medium · Status: **waiting for Dani's OK**_
+_Hyped Up website redesign · Stage 1 of 3 · Depth: medium · Status: **approved by Dani 8 Nov 2026, in progress**_
 _Inputs: `intake.md`, `CLAUDE.md`, `memory/`, live site hypedup.uk_
 
 ## Steps
 
-- [ ] **1. Brief** → `brief.md` (dani-studio template)
+- [x] **1. Brief** → `brief.md` (dani-studio template)
   Project summary, business goals with measures, audiences, scope (incl. WhatsApp-request
   shop), constraints (budget, GoDaddy domain + Microsoft 365 email, legal claims), success
   metrics, stakeholders (Dani leads, Hypa signs off facts), milestones. Unknowns = `TBC`.
 
-- [ ] **2. Strategy** → `strategy.md` (dani-studio template + a **technical strategy** section)
+- [x] **2. Strategy** → `strategy.md` (dani-studio template + a **technical strategy** section)
   - UX strategy: problem, positioning (electronics first, styling second, "we adapt the car
     to you"), priorities, what we won't do, experience principles, riskiest assumptions.
   - Technical strategy, joined to the UX goals:
@@ -55,6 +55,10 @@ _Inputs: `intake.md`, `CLAUDE.md`, `memory/`, live site hypedup.uk_
 - Research picks: I've proposed **all four** (audit, competitors, Mobbin, proto-personas).
 - Brand colours = logo red, black and white; no formal brand guidelines exist.
 - Concept uses existing photos for now; your new photos and videos replace them later.
+
+## Answers (8 Nov 2026)
+- Research: all four ✓ · Competitors: Claude proposes ✓ · Mobbin: save picks to a collection ✓
+- Q4–6 (email data, dashboard, photo sharing): not answered yet. Proposals marked TBC in the strategy
 
 ## Questions for Dani
 1. **Research:** OK with all four (steps 3–6), or drop any?
