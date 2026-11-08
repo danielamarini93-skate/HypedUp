@@ -130,3 +130,8 @@ Decision pending (Dani). Source: `concept/moodboard/`.
 - **C:** square image corners; **drop orange, red only** as accent; "Style it." marked with a different shape, e.g. just a line.
 - **A:** photo **in colour** with a **very strong vignette**.
 - **B:** accent = **red into orange**, dark and subtle gradient for depth, used on **all accents and CTAs**; spray word in **Graffiti City** (font 02).
+
+### Moodboard v4 (8 Nov 2026): applied
+- **A:** show photo in full colour with a strong radial vignette; customer plate blurred.
+- **B:** deep red → orange gradient (`#8f1206 → #b0280a → #c4470f` on fills; brighter `#d4280f → #f26f22` on text) used on every accent and CTA; spray word "Style it." in **Graffiti City** (font 02; personal-use demo, needs a commercial licence before launch).
+- **C:** square image corners; red only (`#d10411`, dark mode `#ff3b2f`); "Style it." and "Find us" marked with one straight, slightly tilted red line.
