@@ -30,7 +30,7 @@ _Inputs: `intake.md`, `CLAUDE.md`, `memory/`, live site hypedup.uk_
   sites from outside the sector (custom motorbike/garage culture, creative studio). Table stakes,
   opportunities, avoid.
 
-- [ ] **5. Mobbin research (web)** → `mobbin.md` (+ key screens in `mobbin/`)
+- [x] **5. Mobbin research (web)** → `mobbin.md` (+ key screens in `mobbin/`)
   Homepage heroes for creative/brand-led sites · service grids · portfolio/gallery and
   before–after · reviews/trust sections · quote/contact flows · small merch shop sections.
 
