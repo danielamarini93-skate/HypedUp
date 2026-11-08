@@ -43,7 +43,7 @@ Timing key: **Now** = safe to do during design, no build needed · **Design** = 
 |---|---|---|---|
 | 4.1 | WhatsApp quote links with service + car pre-filled | Build | Claude |
 | 4.2 | Contact form → info@hypedup.uk, spam check (Turnstile), enquiry log | Build | Claude |
-| 4.2b | ✅ DMARC (watch-only) live · DKIM records live, **signing switch still to enable in Microsoft** (retry) | Now | Dani |
+| 4.2b | ✅ DMARC (watch-only) live · ✅ DKIM signing enabled | Done | Dani |
 | 4.3 | Email records in GoDaddy DNS (add SPF include + DKIM for the sending service; Microsoft 365 untouched) | Build | Claude writes, Dani pastes |
 | 4.4 | Automatic Google reviews (daily job, rating + count + latest 5) | Build | Claude |
 | 4.5 | Builds section: hand-picked from Drive at launch | Build | Dani picks, Claude builds |
