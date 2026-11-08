@@ -32,6 +32,7 @@ Outputs in `docs/design-thinking/`: brief, strategy v0.2, audit, competitors, Mo
 - **Positioning:** "We adapt the car to you." Electronics first, styling second (two doors)
 - **Look:** "Workshop wall": strict grid + condensed type + hand-drawn marks/stickers, workshop black + Hyped red `#E30513`
 - **Main action:** WhatsApp quote with service and car pre-filled
+- **Research & audit doc (Dani edits here first):** https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg
 - **Concept:** https://claude.ai/artifact/NdsiSfKjKAG2a1tVQ3VXcX · **Mobbin:** collection "Hyped Up website redesign"
 - **Next:** Dani reviews → platform decision → `/design-build`
 
