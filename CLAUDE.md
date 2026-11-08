@@ -68,6 +68,7 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 | `memory/operations.md` | Customer tracker (Google Sheets), tools, how Hypa wants AI to help |
 | `memory/current-site.md` | Audit of the live GoDaddy site: every URL, tracking IDs, price clashes |
 | `memory/friend-concept.md` | Review of a friend's Astro/Cloudflare concept site (not adopted yet) + rule clashes |
+| `memory/media-guidelines.md` | How photos/videos are renamed, described, compressed, marked up and privacy-checked |
 | `memory/website-migration.md` | Redesign + leaving GoDaddy: what must carry over, open questions |
 | `docs/data/baseline-search.md` | Search Console "before" numbers (Aug–Nov 2026) and targets |
 | `docs/data/baseline-business-profile.md` | Google Business Profile "before" numbers: calls, directions, website clicks |

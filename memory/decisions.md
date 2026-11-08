@@ -34,3 +34,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-08 — Skip downloading old GoDaddy images; Dani puts newer media in Google Drive (Dani)
 - 2026-11-08 — Positioning line = option A: "Protect it. Upgrade it. Style it." + "South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly." (Dani)
 - 2026-11-08 — Hosting = Cloudflare (code site in GitHub, edited by Claude only). Framework chosen at build time (Dani)
+- 2026-11-08 — Media rules agreed: descriptive file names, alt text, compression, ImageObject/VideoObject schema, location in text + schema (not photo GPS), blur customer plates/faces without consent
