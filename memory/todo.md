@@ -8,7 +8,8 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Export a full copy of the GoDaddy DNS records before any change
 - [x] Friend's concept site: not used (reference only)
 - [ ] Decide on the content-rule clashes (20+ years, Thatcham/insurance claims, tinted lights, shadow plates) — see `friend-concept.md`
-- [ ] Confirm opening hours and which phone number is current
+- [x] Opening hours confirmed
+- [ ] Confirm which phone number is current
 - [ ] Choose platform
 - [x] Inventory current URLs and export blog content from GoDaddy (see `current-site.md`, `content/blog-archive/`)
 - [ ] Hypa to confirm the clashing prices (CarPlay, security, plates, remap) — see `current-site.md`

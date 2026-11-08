@@ -27,3 +27,6 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-08 — Research and audit moved into an editable doc for Dani to review before the concept (https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg)
 - 2026-11-08 — Concept v0.2 direction (Dani): minimal craft hero with video and one CTA; bolder palette (graphite + red + signal blue); positioning = one-stop modification shop, electronics and styling are starting points
 - 2026-11-08 — Website shows generic 'from £' prices only; the master price sheet is the source (Dani)
+- 2026-11-08 — Personas confirmed as right (Kemi, Jay, Marco) (Dani)
+- 2026-11-08 — Opening hours confirmed; OK to show Google reviews on the site, ideally automated (Dani)
+- 2026-11-08 — "We adapt the car to you" rejected as not professional enough; positioning must answer what clients want (Dani)

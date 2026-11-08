@@ -11,7 +11,7 @@ _Last updated: 7 Nov 2026_
 - **Phone:** 020 3340 0632 · **WhatsApp:** 07713 735646 · **Email:** info@hypedup.uk
 - **Website:** https://hypedup.uk/ · **Instagram/TikTok:** @hypedup.ltd · **Facebook:** facebook.com/p/Hyped-Up-100086498654920/
 - ⚠️ A second phone number (020 3727 7271) appears on LinkedIn — confirm which is current
-- Hours (unconfirmed, from a directory listing): Mon–Fri 10:00–18:00, Sat 09:00–16:00, Sun closed
+- **Hours (confirmed by Dani, 8 Nov 2026):** Mon–Fri 10:00–18:00, Sat 09:00–16:00, Sun closed
 - **Local areas to reference:** Bermondsey, Rotherhithe, Peckham, Camberwell, Old Kent Road, Elephant and Castle
 
 ## Positioning (Dani, 8 Nov 2026)
