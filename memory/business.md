@@ -14,6 +14,11 @@ _Last updated: 7 Nov 2026_
 - Hours (unconfirmed, from a directory listing): Mon–Fri 10:00–18:00, Sat 09:00–16:00, Sun closed
 - **Local areas to reference:** Bermondsey, Rotherhithe, Peckham, Camberwell, Old Kent Road, Elephant and Castle
 
+## Positioning (Dani, 8 Nov 2026)
+- **Main push: electronics and electronic modifications**: trackers, dash cams, upgraded CarPlay screens, custom audio
+- **Then aesthetics/styling**: wraps, carbon interiors and more
+- Promise: anything the client wants, we adapt the car to their needs and style
+
 ## Services
 
 ### Security (content pillar 1 — priority)
@@ -51,6 +56,8 @@ _Last updated: 7 Nov 2026_
 - Car detailing (listed as a planned GBP product)
 
 ## Hypa — personal details (for blog voice and About page)
+
+- Personality: **very creative and happy**: the brand should feel like him and the workshop (graffiti, art and craft, car + motorbike culture)
 
 - 20+ years in vehicle modifications, McLaren motorsport background
 - Daily: **red F56 Mini on Air Lift 3P** — daily driver for 4+ years and a show car
