@@ -16,10 +16,10 @@ Timing key: **Now** = safe to do during design, no build needed · **Design** = 
 | # | Item | Proposed timing | Who |
 |---|---|---|---|
 | 2.1 | ✅ `main` is the default branch | Done | Dani (2 clicks) |
-| 2.2 | Export the GoDaddy DNS zone file (a copy of every domain record) | **Now** | Dani, Claude guides |
+| 2.2 | ✅ DNS zone exported and reviewed → `memory/dns/` (gaps: no DKIM/DMARC) | Done | Dani, Claude guides |
 | 2.3 | ✅ Email plan confirmed separate from Website Builder | Done | Dani |
 | 2.4 | ✅ Dani already admin on GA4, Search Console, Business Profile | Done | Hypa / Dani |
-| 2.5 | Google Business Profile **Place ID** (needed for automatic reviews) | **Now** | Claude finds it |
+| 2.5 | ✅ Business Profile identifiers saved (`memory/marketing.md`); Place ID looked up with the API key | Build | Claude finds it |
 | 2.6 | Old GoDaddy images: skipped (Dani is putting newer media in Drive); blog images pulled at migration while the old site is still live | Build | Claude |
 | 2.7 | ✅ Instagram is already a Creator account (works with the official API) | Done | Hypa |
 | 2.8 | Hosting account (Cloudflare or Vercel) in Hyped Up's name, two-step login | Build | Dani |
@@ -43,6 +43,7 @@ Timing key: **Now** = safe to do during design, no build needed · **Design** = 
 |---|---|---|---|
 | 4.1 | WhatsApp quote links with service + car pre-filled | Build | Claude |
 | 4.2 | Contact form → info@hypedup.uk, spam check (Turnstile), enquiry log | Build | Claude |
+| 4.2b | Add DKIM (Microsoft 365) and a DMARC monitoring record | Now or Build | Dani, Claude guides |
 | 4.3 | Email records in GoDaddy DNS (add SPF include + DKIM for the sending service; Microsoft 365 untouched) | Build | Claude writes, Dani pastes |
 | 4.4 | Automatic Google reviews (daily job, rating + count + latest 5) | Build | Claude |
 | 4.5 | Builds section: hand-picked from Drive at launch | Build | Dani picks, Claude builds |

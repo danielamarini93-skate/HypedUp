@@ -12,6 +12,8 @@ _Last updated: 7 Nov 2026_
 - Add after 2–3 months if Maps shows results; tightly targeted keywords only
 
 ## Google Business Profile
+- **Listing name on Google:** "Hyped Up - Vehicle Security, Modification, Wrapping and Audio Upgrades London". ⚠️ Google's rules say the name should be the real business name only; extra keywords can get a profile suspended. Consider renaming to "Hyped Up" (services go in categories and description).
+- **Identifiers** (from Dani's Maps link, 8 Nov 2026): CID `1418412616236081700` (hex 0x13ade4f30642a224) · feature ID `0x88ffe5a6daa4430b:0x13ade4f30642a224` · Knowledge Graph ID `/g/11jz1lgmc0` · location 51.487133, -0.052615. The **Places API Place ID** (starts `ChIJ…`) is looked up from these at build time, when the API key exists.
 - Optimise to 100%
 - Weekly posts
 - Target 5–10 reviews from recent customers
