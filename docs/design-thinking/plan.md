@@ -25,7 +25,7 @@ _Content first · Depth: medium · Approved by Dani 8 Nov 2026 ("start now") · 
   Site map, URL patterns, menu (mobile + desktop), footer contents, redirect mapping from old URLs,
   internal linking rules.
 
-- [ ] **6. Concept A: menu + footer** → artifact + `concept/nav/`
+- [~] **6. Concept A: menu + footer** → artifact https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD + `concept/nav/` · **waiting for Dani's approval**
   Mobile menu (closed/open), desktop header, footer. **Stop for Dani's approval.**
 
 - [ ] **7. Concept B: internal page templates** (after 6 is approved) → artifacts + `concept/pages/`

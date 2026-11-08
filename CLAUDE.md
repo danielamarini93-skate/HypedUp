@@ -35,7 +35,7 @@ Outputs in `docs/design-thinking/`: tech-setup (cookies, forms, reviews, analyti
 - **Main action:** WhatsApp quote with service and car pre-filled
 - **Research & audit doc (Dani edits here first):** https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg
 - **Concept:** https://claude.ai/artifact/NdsiSfKjKAG2a1tVQ3VXcX · **Mobbin:** collection "Hyped Up website redesign"
-- **Next:** Dani reviews → platform decision → `/design-build`
+- **Round 2 (content first, in progress):** inventory, card sort, site map in `docs/design-thinking/` · menu & footer concept https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD (awaiting approval) → internal pages → homepage
 
 ## The business in one paragraph
 
