@@ -27,6 +27,14 @@ TBC: to be created in **Claude Design** during `/design-build`. Link it here onc
 Following Dani's process: `docs/design-thinking/` (brief, strategy, research, concept),
 `docs/design-build/`, `docs/design-review/`. Business memory stays in `memory/`.
 
+## Design thinking (stage 1): done 8 Nov 2026
+Outputs in `docs/design-thinking/`: brief, strategy v0.2, audit, competitors, Mobbin, personas, visual direction, summary, concept.
+- **Positioning:** "We adapt the car to you." Electronics first, styling second (two doors)
+- **Look:** "Workshop wall": strict grid + condensed type + hand-drawn marks/stickers, workshop black + Hyped red `#E30513`
+- **Main action:** WhatsApp quote with service and car pre-filled
+- **Concept:** https://claude.ai/artifact/NdsiSfKjKAG2a1tVQ3VXcX · **Mobbin:** collection "Hyped Up website redesign"
+- **Next:** Dani reviews → platform decision → `/design-build`
+
 ## The business in one paragraph
 
 Hyped Up is a vehicle modification, security and styling workshop in Bermondsey, South London,

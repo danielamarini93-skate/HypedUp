@@ -1,6 +1,6 @@
 # Hyped Up: UX strategy
 
-_Version: 0.1 · Date: 2026-11-08 · Based on: brief v0.1 · Research findings folded in at v0.2_
+_Version: 0.2 · Date: 2026-11-08 · Based on: brief v0.1 + research (audit, competitors, Mobbin, personas)_
 
 ## The problem
 Hyped Up does creative, high-skill work, but its website is a generic template. It doesn't
@@ -84,6 +84,14 @@ _How the technology serves the goals above. Proposals; platform decision after D
 | **Framer** | ●●● | ●○○ | ●●○ | ●○○ | Beautiful, fast to design; weak for running from Claude |
 
 Early read: the **code site in GitHub** fits R1, R2, R3 and R6 best, which matches "do everything in Claude". Final call after research.
+
+## What the research added (v0.2)
+- **Personality is the gap:** no competitor in security/electronics feels human or creative (competitors.md) → priority 2 confirmed.
+- **Two doors, electronics first:** three proto-personas split into Electronics (Kemi, Jay) and Styling (Marco) (personas.md).
+- **Car-specific pages** ("CarPlay for BMW/Mini/Mercedes", "Ghost for Range Rover"), borrowed from a competitor pattern: high intent, low local competition → add to priority 4.
+- **Performance is a priority, not polish:** live homepage ~12.9 MB on mobile (audit.md) → page weight budget in the design system.
+- **Google reviews high on the page**, with permission; never invented.
+- **Security pages stay calmer** inside the graffiti brand (riskiest assumption #2).
 
 ## Next steps
 1. Dani reviews this strategy (and answers TBCs: email data, dashboard audience/numbers)

@@ -1,6 +1,6 @@
 # Design thinking: plan
 
-_Hyped Up website redesign · Stage 1 of 3 · Depth: medium · Status: **approved by Dani 8 Nov 2026, in progress**_
+_Hyped Up website redesign · Stage 1 of 3 · Depth: medium · Status: **done 8 Nov 2026, waiting for Dani's review**_
 _Inputs: `intake.md`, `CLAUDE.md`, `memory/`, live site hypedup.uk_
 
 ## Steps
@@ -43,12 +43,12 @@ _Inputs: `intake.md`, `CLAUDE.md`, `memory/`, live site hypedup.uk_
   Hypa's creative and happy personality. Keywords, do/don't, type and texture ideas,
   with accessibility guardrails (contrast, legibility over graffiti).
 
-- [ ] **8. Summary** → `summary.md`: problem, key insights, direction and why, what the concept shows.
+- [x] **8. Summary** → `summary.md`: problem, key insights, direction and why, what the concept shows.
 
-- [ ] **9. Quick HTML concept: homepage, mobile first** → artifact + `concept/index.html`
+- [x] **9. Quick HTML concept: homepage, mobile first** → artifact + `concept/index.html`
   Low-to-mid fidelity: structure, hierarchy, real content, one primary action (WhatsApp quote).
 
-- [ ] **10. Hand over**: check every output against this plan, update `CLAUDE.md`, open **one
+- [x] **10. Hand over**: check every output against this plan, update `CLAUDE.md`, open **one
   pull request** for this stage, ranked next steps (→ review concept → `/design-build`).
 
 ## Assumptions (TBC)
@@ -70,3 +70,8 @@ _Inputs: `intake.md`, `CLAUDE.md`, `memory/`, live site hypedup.uk_
    want to see? (e.g. visitors, enquiries by service, top pages, Google ranking, reviews)
 6. **New photos and videos:** how will you share them (upload here, Google Drive link,
    Instagram)? Not needed until the concept; I'll use existing ones until then.
+
+## Done: notes
+- Concept artifact: https://claude.ai/artifact/NdsiSfKjKAG2a1tVQ3VXcX (source `concept/index.html`, editable `concept/template.html`)
+- Mobbin collection: https://mobbin.com/collections/c6d3c576-1851-462e-bd0e-4df750e1020e/mobile/screens
+- Skipped/limited: AccessLint `accessibility-scan` and `seo-audit` tools blocked by the session's safety check → custom browser checks instead (see audit.md). Sickboyz Customs site didn't load (not assessed).

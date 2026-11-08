@@ -23,3 +23,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-08 — Dani's way of working lives in the dani-studio repo; this repo holds only Hyped Up facts. Sessions should load both
 - 2026-11-08 — Apparel shop kept, ordered via WhatsApp request instead of PayPal/checkout (Dani)
 - 2026-11-08 — Positioning: electronics and electronic mods first, styling second (Dani)
+- 2026-11-08 — Design thinking stage completed; homepage concept 'workshop wall' proposed (awaiting Dani's review)
