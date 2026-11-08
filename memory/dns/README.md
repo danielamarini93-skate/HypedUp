@@ -21,3 +21,21 @@ _Backup exported by Dani from GoDaddy on 8 Nov 2026: `hypedup.uk-zone-2026-11-08
 - **No DKIM** for Microsoft 365 (no `selector1._domainkey` / `selector2._domainkey`). DKIM signs outgoing mail; Gmail/Yahoo increasingly expect it. Turn on in Microsoft 365 Defender → DKIM, then add the 2 CNAMEs it shows.
 - **No DMARC** (`_dmarc` TXT). Start with a monitoring record: `v=DMARC1; p=none; rua=mailto:<a reporting inbox>`. Protects the domain from spoofing and helps deliverability.
 - Both can be done now or at build time (with the form's email setup). Changes are additive; nothing existing changes.
+
+## Fixing the gaps: steps given to Dani (8 Nov 2026)
+**1. DKIM (do first)**
+1. Sign in to Microsoft Defender as the Microsoft 365 admin: https://security.microsoft.com/dkimv2
+   (if GoDaddy manages the Microsoft 365 account and blocks this, GoDaddy support can switch DKIM on).
+2. Click **hypedup.uk** → copy the two CNAME records it shows (selector1 and selector2). Use Microsoft's exact values; don't type them from memory.
+3. GoDaddy → My Products → hypedup.uk → DNS → **Add New Record**, twice:
+   - Type **CNAME**, Name `selector1._domainkey`, Value = Microsoft's selector1 value, TTL 1 hour
+   - Type **CNAME**, Name `selector2._domainkey`, Value = Microsoft's selector2 value, TTL 1 hour
+4. Wait 15–60 minutes, back in Defender switch **Sign messages for this domain with DKIM signatures** to **Enabled**.
+
+**2. DMARC (after DKIM)**
+GoDaddy DNS → Add New Record: Type **TXT**, Name `_dmarc`, Value
+`v=DMARC1; p=none; rua=mailto:info@hypedup.uk; fo=1`, TTL 1 hour.
+`p=none` = watch only, nothing gets blocked. Daily reports arrive at info@ (set an Outlook rule to file them).
+Tighten to `p=quarantine` only after the website form's sender is added at build time and reports look clean.
+
+**Rules:** add only; never edit or delete existing records. Claude checks both records by DNS lookup afterwards.
