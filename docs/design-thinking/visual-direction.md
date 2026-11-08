@@ -110,3 +110,9 @@ URBANTH). Shared principle: **big clean type carries the message; graffiti is on
 - **B · Spray machine:** dark, Big Shoulders headlines, one Rubik Wet Paint spray word in orange, spray-blob CTA.
 - **C · Gallery gesture:** light and calm, Instrument Serif, rounded photos, one hand-painted circle/stroke per screen.
 Decision pending (Dani). Source: `concept/moodboard/`.
+
+### Moodboard feedback (Dani, 8 Nov 2026)
+- References for all 3 are very good; **execution needs more craft**.
+- **B: no fake spray** (code/clip-art spray looks bad). Graffiti energy must come from real things: the spray *font* and real photos.
+- **Try dark mode for A and C.**
+- **Pick the right photo for each style.**
