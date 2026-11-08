@@ -39,3 +39,10 @@ GoDaddy DNS → Add New Record: Type **TXT**, Name `_dmarc`, Value
 Tighten to `p=quarantine` only after the website form's sender is added at build time and reports look clean.
 
 **Rules:** add only; never edit or delete existing records. Claude checks both records by DNS lookup afterwards.
+
+## DKIM values from Microsoft (8 Nov 2026)
+| Type | Name | Value |
+|---|---|---|
+| CNAME | `selector1._domainkey` | `selector1-hypedup-uk._domainkey.NETORGFT11101442.k-v1.dkim.mail.microsoft` |
+| CNAME | `selector2._domainkey` | `selector2-hypedup-uk._domainkey.NETORGFT11101442.k-v1.dkim.mail.microsoft` |
+Status: keys created in Microsoft Defender; records to be added in GoDaddy, then signing enabled.
