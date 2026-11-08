@@ -80,3 +80,13 @@ checking at small sizes (use bold/large text or a darker red for small text). Ye
 - **No blue.** Use shades of grey and shades of red; **add orange**; **gradients are welcome** (red → orange).
 - **More graffiti, more art:** brush strokes, paint splashes, spray-can texture and drips.
 - Applies to every concept from now on (the homepage concept still has signal blue: update it at the homepage step).
+
+## v0.4 feedback from Dani (8 Nov 2026, menu & footer v2)
+- Code-drawn marks aren't good enough: **use real graffiti assets** (PNG/SVG splatters, spray lines), recoloured to the palette.
+- **Real graffiti fonts** for the art layer (references: Marseloup, Hoax Vandal, VTKS Smash, Bastrad; source 1001fonts "spray paint").
+  The footer "HYPED UP" should use one.
+- **Icons: Lucide**, everywhere, for consistency.
+- **More spray circles and spray lines to highlight** key things (e.g. "Find us" in the footer).
+- **CTA gradient must be subtle** (premium), not a strong red → orange.
+- **Likes the orange** in the menu.
+- Try a version with **rounded, smooth corners on some elements only (e.g. images)**.
