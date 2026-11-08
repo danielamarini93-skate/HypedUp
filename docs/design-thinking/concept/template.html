@@ -48,7 +48,8 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
 .hero .wrap{position:relative;z-index:2;width:100%;padding-block:0 2.4rem;display:grid;gap:1.1rem}
 .hero h1{font-size:clamp(3.6rem,17vw,8.5rem)}
 .hero h1 .any{position:relative;white-space:nowrap}
-.hero h1 .any svg{position:absolute;left:-2%;bottom:-.2em;width:104%;height:.22em;overflow:visible}
+.hero h1{padding-bottom:.16em}
+.hero h1 .any svg{position:absolute;left:-2%;bottom:-.14em;width:104%;height:.16em;overflow:visible}
 .hero p{margin:0;max-width:30ch;font-size:1.12rem;color:var(--chalk)}
 .hero .frame{display:none}
 .pause{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:2.6rem;z-index:3;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(239,238,233,.6);background:rgba(10,10,11,.4);color:var(--chalk);cursor:pointer;display:grid;place-items:center}
@@ -155,9 +156,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-be
   <video class="bgv" autoplay muted loop playsinline preload="auto" poster="{{img:poster}}" src="{{vid}}" aria-label="Workshop reel: a Subaru and a superbike, a CarPlay screen, a boot build and a wrap in progress"></video>
   <div class="wrap">
     <div style="display:grid;gap:1.1rem">
-      <p class="label">Modification &amp; styling · Bermondsey SE16</p>
-      <h1 id="h1">Your car.<br>Any way<br><span class="any">you want it.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 60 4, 140 18, 200 9 S 280 6, 297 12" fill="none" stroke="#e30513" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
-      <p>One workshop for every mod, cars and bikes. Bring the idea, we build it.</p>
+      <p class="label">Bermondsey · SE16 · Cars &amp; bikes</p>
+      <h1 id="h1">Protect it.<br>Upgrade it.<br><span class="any">Style it.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 60 4, 140 18, 200 9 S 280 6, 297 12" fill="none" stroke="#e30513" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
+      <p>South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly.</p>
       <div><a class="btn" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20here%27s%20my%20idea%3A%20" target="_blank" rel="noopener">{{wa}}Start your build</a></div>
     </div>
     <div class="frame"><video class="fv" autoplay muted loop playsinline preload="auto" poster="{{img:poster}}" src="{{vid}}" aria-label="Workshop reel"></video><button class="pause" type="button" aria-label="Pause video">{{pause}}</button></div>
@@ -167,11 +168,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-be
 
 <section aria-labelledby="h-start">
   <div class="wrap">
-    <div class="head"><p class="label">Start anywhere</p><h2 id="h-start">Two starting points. No limits.</h2><p>Most builds start with tech or looks. Plenty start with something we've never done before. That's the fun part.</p></div>
+    <div class="head"><p class="label">Start anywhere</p><h2 id="h-start">One workshop. Every upgrade.</h2><p>Most jobs start with security, tech or looks. If it's something else, bring the idea: we plan it with you.</p></div>
     <div class="starts">
-      <a class="start e" href="#"><div class="bg" style="background-image:url('{{img:carplay}}')"></div><span class="arrow" aria-hidden="true">→</span><span class="tag">Electronics</span><h3>Make it <span>smart</span></h3><p>Ghost immobiliser, trackers, dash cams, CarPlay screens, custom audio.</p><span class="from">from £150</span></a>
-      <a class="start s" href="#"><div class="bg" style="background-image:url('{{img:wrap}}')"></div><span class="arrow" aria-hidden="true">→</span><span class="tag">Styling</span><h3>Make it <span>yours</span></h3><p>Wraps, carbon interiors, tint, air suspension, plates, bodykits.</p><span class="from">from £150</span></a>
-      <a class="start x" href="#"><span class="arrow" aria-hidden="true">→</span><span class="tag">Anything else</span><h3>Got an idea? Bring it.</h3><p>One-offs, show builds, bike projects, the thing you saw on Instagram at 2am.</p><span class="from">Priced on your build</span></a>
+      <a class="start e" href="#"><div class="bg" style="background-image:url('{{img:carplay}}')"></div><span class="arrow" aria-hidden="true">→</span><span class="tag">Electronics</span><h3>Protect it. <span>Upgrade it.</span></h3><p>Immobilisers, trackers, dash cams, CarPlay screens, custom audio, lighting.</p><span class="from">from £125</span></a>
+      <a class="start s" href="#"><div class="bg" style="background-image:url('{{img:wrap}}')"></div><span class="arrow" aria-hidden="true">→</span><span class="tag">Styling</span><h3><span>Style it.</span></h3><p>Wraps, dechrome, tint, detailing, air suspension, wheels, bodykits.</p><span class="from">from £50</span></a>
+      <a class="start x" href="#"><span class="arrow" aria-hidden="true">→</span><span class="tag">Anything else</span><h3>Got an idea? Bring it.</h3><p>One-offs, show builds, bike projects, taxi and van fit-outs.</p><span class="from">Priced on your build</span></a>
     </div>
   </div>
 </section>
@@ -229,7 +230,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-be
 </section>
 </main>
 
-<footer><div class="wrap"><span>Hyped Up Limited · Instagram &amp; TikTok @hypedup.ltd · <a class="link" href="#">Wear the workshop</a></span><span>Concept v0.2 by Dani · Nov 2026 · prices "from", to confirm</span></div></footer>
+<footer><div class="wrap"><span>Hyped Up Limited · Instagram &amp; TikTok @hypedup.ltd · <a class="link" href="#">Wear the workshop</a></span><span>Concept v0.3 by Dani · Nov 2026 · "from" prices from the master price list</span></div></footer>
 
 <div class="bar" id="bar" aria-hidden="true"><a class="btn" href="https://wa.me/447713735646?text=Hi%20Hypa%2C%20here%27s%20my%20idea%3A%20" target="_blank" rel="noopener" tabindex="-1">{{wa}}Start your build</a></div>
 

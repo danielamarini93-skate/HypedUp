@@ -50,3 +50,8 @@ Dani's new photos and videos, real reviews, confirmed hours and the final price 
 - Palette: graphite scale + Hyped red (styling) + signal blue (electronics); chalk white for "anything else".
 - Prices: generic "from £" only (master sheet still to reconcile).
 - v0.1 kept as `concept/index-v0.1.html`.
+
+## Concept v0.3 (8 Nov 2026)
+- Hero line = option A: "Protect it. Upgrade it. Style it." + "South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly."
+- Start-anywhere cards follow the verbs: Electronics (Protect it. Upgrade it.) · Styling (Style it.) · Anything else.
+- "From" prices from the master price list: electronics from £125, styling from £50.
