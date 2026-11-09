@@ -181,3 +181,8 @@ Artifact https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv · source `concept/na
 - **Never more than one font in the word at a time** (Dani). Mixed rounds removed; the whole word swaps at once
   (no letter-by-letter wave): serif italic → uppercase → Graffiti City, 3 loops, then rests on Graffiti City.
 - "Style it." sits as close to "Upgrade it." as the other headline lines (line-height .9, small negative top margin), in all three morph fonts (Dani, 9 Nov 2026).
+
+### Accent test: logo red (Dani, 9 Nov 2026), menu v4.5 + moodboard v13
+- Sampled from the logo's "Vehicle modification and styling" band: bright red `#DE0613` → deep crimson `#86010A` (no orange).
+- Fills (buttons): `#de0613 → #b5030f → #86010a`, white text. Text on black (prices, numbers, "Style it."): lighter `#ff4033 → #ef1220 → #de0613` to keep contrast.
+- Both boards now default to **Logo red** with a toggle back to **Red → orange**. Decision pending (Dani).

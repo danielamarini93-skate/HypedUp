@@ -55,7 +55,7 @@ def footer(mobile):
             '<div class="social"><a href="#" aria-label="Instagram">{{br:instagram}}</a><a href="#" aria-label="TikTok">{{br:tiktok}}</a><a href="#" aria-label="Facebook">{{br:facebook}}</a></div></div>')
     grid = (find + c) if mobile else (c + find)
     return ('<footer class="ft%s"><div class="ft-grid">%s</div><div class="legal mono"><span>© 2026 Hyped Up Ltd · Company no. 14086991</span>'
-            '<span>Privacy · Cookies · Terms · Cookie settings</span></div><div class="wm"><svg class="wmsvg" aria-hidden="true" preserveAspectRatio="xMinYMax meet"><defs><linearGradient id="wmg%s" x1="0" x2="1"><stop offset="0" stop-color="#d4280f"/><stop offset=".55" stop-color="#e8501a"/><stop offset="1" stop-color="#f26f22"/></linearGradient></defs><text x="0" y="0" font-size="200" fill="none" stroke="url(#wmg%s)">HYPED UP</text></svg>'
+            '<span>Privacy · Cookies · Terms · Cookie settings</span></div><div class="wm"><svg class="wmsvg" aria-hidden="true" preserveAspectRatio="xMinYMax meet"><defs><linearGradient id="wmg%s" x1="0" x2="1"><stop offset="0" style="stop-color:var(--s1,#d4280f)"/><stop offset=".55" style="stop-color:var(--s2,#e8501a)"/><stop offset="1" style="stop-color:var(--s3,#f26f22)"/></linearGradient></defs><text x="0" y="0" font-size="200" fill="none" stroke="url(#wmg%s)">HYPED UP</text></svg>'
             '<span class="mono">Bermondsey · SE16<br>Cars + bikes · Est. 2022</span></div></footer>') % (' ft-mobile' if mobile else '', grid, 'm' if mobile else 'd', 'm' if mobile else 'd')
 s = s.replace('{{footer}}', footer(False)).replace('{{footer_m}}', footer(True))
 
