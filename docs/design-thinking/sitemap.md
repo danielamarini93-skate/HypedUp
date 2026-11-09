@@ -14,7 +14,6 @@ flowchart TD
   P --> P1[Ghost & immobilisers]
   P --> P2[Car trackers]
   P --> P3[Dash cams]
-  P --> P4[Paint protection film]
   P -.-> P5[Taxi cameras · Detailing & ceramic]
   U --> U1[CarPlay & Android Auto]
   U --> U2[Car audio]
@@ -37,15 +36,14 @@ Solid lines = in the menu (tier 1) · dotted = hub + footer (tier 2) or contextu
 ## Pages and tiers
 | Tier | Where it shows | Pages |
 |---|---|---|
-| **1 · Menu** (10, approved by Dani 8 Nov) | Header menu panels + hubs + footer | Protect: **Ghost & immobilisers, Car trackers, Dash cams, Paint protection film** · Upgrade: **CarPlay & Android Auto, Car audio, Remapping** · Style: **Car wrapping, Window tinting, Air suspension** |
-| **2 · Hub + footer** (12) | Hub pages ("All Protect services") + footer columns | Taxi cameras (TfL), Detailing & ceramic coating, Reverse cameras & sensors, Ambient lighting & starlights, Chrome delete, Bodykits & exterior parts, Wheel refurb & calipers, Interiors, Number plates, Van signage & livery |
+| **1 · Menu** (9: PPF moved out of Protect, Dani 9 Nov) | Header menu panels + hubs + footer | Protect: **Ghost & immobilisers, Car trackers, Dash cams** · Upgrade: **CarPlay & Android Auto, Car audio, Remapping** · Style: **Car wrapping, Window tinting, Air suspension** |
+| **2 · Hub + footer** (13) | Hub pages ("All Protect services") + footer columns | Paint protection film (Style hub + footer, since 9 Nov), Taxi cameras (TfL), Detailing & ceramic coating, Reverse cameras & sensors, Ambient lighting & starlights, Chrome delete, Bodykits & exterior parts, Wheel refurb & calipers, Interiors, Number plates, Van signage & livery |
 | **Hubs** (5) | Menu (verbs) + footer | Protect, Upgrade, Style, Motorbikes, Business & fleet |
 | **3 · Contextual** (grows) | Links from related service pages, blog posts and the XML sitemap only | Car-specific (CarPlay for BMW/Mini/Mercedes/Audi/VW…, Ghost for Range Rover/BMW…), comparison and FAQ pages |
 | **Brand & support** | Menu (Builds, Visit) or footer | Builds, Visit, About, Blog (+ articles), Shop, Prices (TBC), Privacy, Cookies, Terms |
 
 Why these 10 in the menu: the highest search demand (trackers, Ghost, dash cams, wraps, remapping, audio), the most-viewed
-page today (CarPlay), Hyped Up's signature work (air suspension) and the quick earners (tint). PPF sits in Protect because
-the name says it.
+page today (CarPlay), Hyped Up's signature work (air suspension) and the quick earners (tint). PPF was in Protect ("the name says it"); on 9 Nov Dani took it out of Protect: it now sits under Style (hub + footer), out of the menu. TBC: whether it should join the Style menu.
 
 ## URLs
 | Page type | Pattern | Example |

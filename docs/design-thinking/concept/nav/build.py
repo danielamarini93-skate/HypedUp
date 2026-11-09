@@ -8,7 +8,7 @@ s = open('template.html').read()
 price = lambda p, long=False: ('from ' + p) if p != 'enquiry' else ('price on enquiry' if long else 'on enquiry')
 
 menu = [
- ('Protect', [('Ghost &amp; immobilisers','£495'),('Car trackers','£395'),('Dash cams','£125'),('Paint protection film','enquiry')]),
+ ('Protect', [('Ghost &amp; immobilisers','£495'),('Car trackers','£395'),('Dash cams','£125')]),
  ('Upgrade', [('CarPlay &amp; Android Auto','£170'),('Car audio','£125'),('Remapping','£250')]),
  ('Style',   [('Car wrapping','£1,500'),('Window tinting','£150'),('Air suspension','£1,895')]),
 ]
@@ -24,7 +24,7 @@ def acc():
 while '{{acc}}' in s: s = s.replace('{{acc}}', acc(), 1)
 
 pdata = [
- ('Protect','dashcam','BMW · front + rear dash cam',[('Ghost &amp; immobilisers','£495','The car won\'t start without your secret button code'),('Car trackers','£395','Thatcham-category S5 and S7, app alerts, recovery'),('Dash cams','£125','Front, rear and 3-channel, hardwired with parking mode'),('Paint protection film','enquiry','Clear film against stone chips and scratches')]),
+ ('Protect','dashcam','BMW · front + rear dash cam',[('Ghost &amp; immobilisers','£495','The car won\'t start without your secret button code'),('Car trackers','£395','Thatcham-category S5 and S7, app alerts, recovery'),('Dash cams','£125','Front, rear and 3-channel, hardwired with parking mode')]),
  ('Upgrade','carplay','Mini · wireless CarPlay screen',[('CarPlay &amp; Android Auto','£170','Wireless CarPlay on a new screen or your factory one'),('Car audio','£125','Speakers, amps, subs, boot builds, sound deadening'),('Remapping','£250','Stage 1 to 3 for cars and bikes, done properly')]),
  ('Style','wrap','London taxi · colour change',[('Car wrapping','£1,500','Full colour changes, roofs, stripes, chameleon'),('Window tinting','£150','Standard, carbon or ceramic film, legal fronts'),('Air suspension','£1,895','Air Lift and Prazis, set up for daily driving')]),
 ]
@@ -42,9 +42,9 @@ def panels():
 s = s.replace('{{panels}}', panels())
 
 cols = [
- ('01','Protect', ['Ghost &amp; immobilisers','Car trackers','Dash cams','Paint protection film','Taxi cameras (TfL)','Detailing &amp; ceramic']),
+ ('01','Protect', ['Ghost &amp; immobilisers','Car trackers','Dash cams','Taxi cameras (TfL)','Detailing &amp; ceramic']),
  ('02','Upgrade', ['CarPlay &amp; Android Auto','Car audio','Remapping','Reverse cameras &amp; sensors','Ambient lighting &amp; starlights']),
- ('03','Style',   ['Car wrapping','Window tinting','Air suspension','Chrome delete','Bodykits','Wheel refurb &amp; calipers','Interiors','Number plates','Van signage &amp; livery']),
+ ('03','Style',   ['Car wrapping','Window tinting','Air suspension','Paint protection film','Chrome delete','Bodykits','Wheel refurb &amp; calipers','Interiors','Number plates','Van signage &amp; livery']),
  ('','More',      ['Motorbikes','Business &amp; fleet','Builds','Blog','Shop']),
  ('','Hyped Up',  ['About','Contact']),
 ]

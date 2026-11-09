@@ -45,3 +45,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-09 — Site is **dark only** (no light mode). "From £" prices stay in the menu panels and phone menu for now. First round (moodboard D + menu & footer v4) goes to Hypa for his opinion before internal pages (Dani)
 - 2026-11-09 — **No prices in the menu** (too prominent); "from £" prices live on service pages only. Replaces the earlier "prices in the menu for now" (Dani)
 - 2026-11-09 — **Accent = the logo red gradient** (#DE0613 → #86010A, sampled from the logo band; lighter #FF4033 → #DE0613 for text on black). Replaces red → orange (Dani)
+- 2026-11-09 — **PPF removed from Protect** (menu, panel, footer, summaries). Kept as a page under Style (hub + footer only); menu now 9 services. TBC: add PPF to the Style menu or not (Dani)
