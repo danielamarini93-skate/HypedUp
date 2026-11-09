@@ -31,7 +31,7 @@ Following Dani's process: `docs/design-thinking/` (brief, strategy, research, co
 Outputs in `docs/design-thinking/`: tech-setup (cookies, forms, reviews, analytics), brief, strategy v0.2, audit, competitors, Mobbin, personas, visual direction, summary, concept.
 - **Positioning line (decided):** "Protect it. Upgrade it. Style it." + "South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly."
 - **Platform (decided):** code site in GitHub, edited only by Claude, hosted on Cloudflare
-- **Look:** "Workshop wall": strict grid + condensed type + hand-drawn marks/stickers, workshop black + Hyped red `#E30513`
+- **Look (chosen 9 Nov 2026):** moodboard Direction D "Workshop wall": dark (+ light) base, Big Shoulders + Barlow + IBM Plex Mono, one Graffiti City spray word, deep red → orange gradient on every accent and CTA, colour video hero with strong vignette, one hand-drawn mark per screen. Moodboard: https://claude.ai/artifact/3zP6kfZV8cBYNNGFqDimgc
 - **Main action:** WhatsApp quote with service and car pre-filled
 - **Research & audit doc (Dani edits here first):** https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg
 - **Concept:** https://claude.ai/artifact/NdsiSfKjKAG2a1tVQ3VXcX · **Mobbin:** collection "Hyped Up website redesign"

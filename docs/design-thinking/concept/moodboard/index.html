@@ -203,6 +203,15 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
   .D .top{grid-template-columns:auto 1fr auto}.D .top nav,.D .top .where{display:none}
   .D .stage{display:flex;flex-direction:column;gap:18px}.D .stage figure{order:-1}.D .media{aspect-ratio:4/3}.D .meta span+span{display:none}.D h3{font-size:3.4rem}.D h3 .wet{font-size:3.6rem}.D .cols{grid-template-columns:1fr}.D .cols div+div{border-left:0;padding-left:0;border-top:1px solid var(--rule)}
 }
+.D h3 .wet{height:1.12em;white-space:nowrap}
+.D h3 .wet.js{background:none}
+.D h3 .wet .ch{display:inline-block;vertical-align:baseline;padding:0 .06em;margin:0 -.06em;background:var(--gtext) no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent;transition:opacity .18s,transform .18s}
+.D h3 .wet .ch.sw{opacity:0;transform:translateY(.08em)}
+.D .mpause{margin-top:10px;display:inline-flex;gap:.4rem;align-items:center;background:none;border:1px solid var(--rule);color:var(--soft);border-radius:999px;padding:.35rem .7rem;font:600 .64rem/1 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
+.D .mpause svg{width:12px;height:12px}
+.D .mpause .i-r,.D .mpause[aria-pressed="true"] .i-p{display:none}
+.D .mpause[aria-pressed="true"] .i-r{display:inline}
+@media (prefers-reduced-motion:reduce){.D .mpause{display:none}}
 .decide b{color:var(--ink)}
 
 @media (max-width:900px){
@@ -370,7 +379,34 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
       <div class="meta"><span>Bermondsey · SE16</span><span>Cars + bikes · Est. 2022</span></div>
       <div class="stage">
         <div class="copy">
-          <div><h3>Protect it.<br>Upgrade it.<span class="wet">Style it.</span></h3></div>
+          <div><h3>Protect it.<br>Upgrade it.<span class="wet" id="morph" role="text" aria-label="Style it.">Style it.</span></h3><button type="button" class="mpause" id="mpause" aria-pressed="false"><span class="i-p"><svg aria-hidden="true" width="18" height="18"
+  class="lucide lucide-pause"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <rect x="14" y="3" width="5" height="18" rx="1" />
+  <rect x="5" y="3" width="5" height="18" rx="1" />
+</svg></span><span class="i-r"><svg aria-hidden="true" width="18" height="18"
+  class="lucide lucide-play"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+</svg></span><span class="t">Pause</span></button></div>
           <p>South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly.</p>
           <div class="act"><span class="pill"><svg fill="currentColor" width="18" height="18" aria-hidden="true" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WhatsApp</title><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Start your build</span><span class="find">Find us</span><span class="addr">Unit 22 · Bolina Rd<br>London SE16 3LF</span></div>
         </div>
@@ -402,4 +438,42 @@ document.querySelectorAll('[data-mode]').forEach(function(b){b.addEventListener(
   document.querySelectorAll('[data-mode="'+g+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
 });});
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video[autoplay]').forEach(function(v){v.removeAttribute('autoplay');v.pause();v.controls=true})}
+
+/* D: "Style it." font morph. Each letter swaps typeface; whole-word "styles" alternate with mixed rounds; always lands back on Graffiti City. */
+(function(){
+  var el=document.getElementById('morph'), btn=document.getElementById('mpause'); if(!el) return;
+  var F={
+    graffiti:{f:'"Graffiti City"',s:1,w:400},
+    serif:{f:'"Instrument Serif"',s:1.12,w:400,i:1},
+    elegant:{f:'"Instrument Serif"',s:1.12,w:400},
+    cond:{f:'"Big Shoulders Display"',s:1.02,w:900,u:1},
+    wide:{f:'"Archivo"',s:.72,w:900,x:125},
+    mono:{f:'"IBM Plex Mono"',s:.74,w:600},
+    sans:{f:'"Barlow"',s:.86,w:500},
+    hand:{f:'"Sedgwick Ave Display"',s:.98,w:400},
+    drip:{f:'"Rubik Wet Paint"',s:.86,w:400},
+    tag:{f:'"Hoax Vandal"',s:.92,w:400}
+  };
+  var keys=Object.keys(F), txt='Style it.', chars=[];
+  el.textContent='';
+  txt.split('').forEach(function(c){var s=document.createElement('span');s.className='ch';s.setAttribute('aria-hidden','true');s.textContent=c===' '?' ':c;s.dataset.c=c;el.appendChild(s);chars.push(s)});
+  function apply(s,k){var f=F[k];s.style.fontFamily=f.f+',sans-serif';s.style.fontSize=f.s+'em';s.style.fontWeight=f.w;s.style.fontStyle=f.i?'italic':'normal';s.style.fontStretch=f.x?f.x+'%':'normal';s.textContent=(s.dataset.c===' ')?' ':(f.u?s.dataset.c.toUpperCase():s.dataset.c)}
+  el.classList.add('js');
+  function paint(){var W=el.offsetWidth;chars.forEach(function(s){s.style.backgroundSize=(W+40)+'px 100%';s.style.backgroundPosition=(-s.offsetLeft)+'px 0'})}
+  chars.forEach(function(s){apply(s,'graffiti')}); paint(); document.fonts&&document.fonts.ready.then(paint); addEventListener('resize',paint);
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var seq=['mixed','serif','mixed','wide','mixed','mono','cond','mixed','elegant','hand','mixed','graffiti'], i=0, paused=false, t;
+  function round(){
+    if(paused) return;
+    var step=seq[i%seq.length]; i++;
+    chars.forEach(function(s,n){setTimeout(function(){
+      s.classList.add('sw');
+      setTimeout(function(){apply(s, step==='mixed'?keys[(Math.random()*keys.length)|0]:step); s.classList.remove('sw'); paint()},150);
+    }, n*55)});
+    t=setTimeout(round, step==='graffiti'?2600:1500);
+  }
+  t=setTimeout(round,1800);
+  btn.addEventListener('click',function(){paused=!paused;btn.setAttribute('aria-pressed',paused);btn.querySelector('.t').textContent=paused?'Play':'Pause';
+    clearTimeout(t); if(paused){chars.forEach(function(s){apply(s,'graffiti')});paint()} else {t=setTimeout(round,400)}});
+})();
 </script>

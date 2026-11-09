@@ -153,3 +153,12 @@ Decision pending (Dani). Source: `concept/moodboard/`.
 - **New:** the hero media is the real workshop reel (silent loop; poster image; paused with controls when reduced motion is on). On phones the video sits first so it's above the fold.
 - Rules: one spray word + one hand-drawn mark per screen; one primary action (WhatsApp "Start your build").
 - Open: customer plates are visible in the reel (fine for the moodboard; decide before launch).
+
+## Decision (Dani, 9 Nov 2026): **Direction D "Workshop wall"**
+### Idea being tested: "Style it." font morph (moodboard v8)
+- Each letter of "Style it." swaps typeface in a left-to-right wave (55 ms stagger): whole-word rounds (serif italic, wide sans,
+  mono, condensed, elegant serif, hand) alternate with mixed "ransom" rounds, and it always comes back to Graffiti City and holds.
+- The red → orange gradient runs across the whole word whatever the fonts.
+- Accessibility: screen readers hear "Style it." once; a Pause/Play button (WCAG 2.2.2, it loops longer than 5 s);
+  no animation with reduced motion (static Graffiti City).
+- Font licences: the mix uses free fonts (Instrument Serif, Archivo, Plex Mono, Barlow, Big Shoulders, Sedgwick, Rubik Wet Paint, Hoax Vandal) plus Graffiti City (licence to buy).
