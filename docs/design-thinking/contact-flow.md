@@ -1,7 +1,7 @@
 # Contact flow and quote form (draft for approval)
 
 _9 Nov 2026 · From Dani + Hypa's feedback: not everyone should be pushed to WhatsApp; Hypa likes a form that arrives
-by email. Status: **proposal, waiting for Dani's OK** before it is drawn._
+by email. Status: **approved by Dani (photos: yes); drawn in the key pages concept** https://claude.ai/artifact/H2XetEmAA8gnXPLicnvFpt_
 
 ## The flow
 | Where | Action | Goes to |
@@ -18,11 +18,11 @@ Order follows how Hypa quotes: what → which vehicle → details → who → ho
 
 | # | Field | Type | Required | Why Hypa needs it |
 |---|---|---|---|---|
-| 1 | **What do you need?** | Tick boxes: Security (Ghost, trackers, dash cams) · CarPlay & screens · Audio · Wrap or tint · PPF · Air suspension · Remap · Number plates · Something else | at least 1 | Routes the quote; feeds "enquiries by service" |
+| 1 | **What do you need?** | Tick boxes: Security · CarPlay & screens · Audio · Wrap or tint · PPF · Air suspension · Remap · Number plates · Something else | at least 1 | Routes the quote; feeds "enquiries by service" |
 | 2 | **Vehicle** | Text: "Make and model, e.g. BMW M140i" | yes | Parts and price depend on it |
 | 3 | **Reg plate** | Text | optional | Exact spec and year (CarPlay, Ghost, remap) |
 | 4 | **Tell me more** | Text area | optional | Budget, ideas, timing |
-| 5 | **Photos** | Upload, up to 3 (email route only) | optional | Wraps, damage, interiors (TBC: Dani) |
+| 5 | **Photos** | Upload, up to 3 (email route only) | optional | Wraps, damage, interiors (Dani: yes) |
 | 6 | **Name** | Text | yes | |
 | 7 | **Phone** | Tel | yes for WhatsApp, else optional | Call-back, tracker column "Phone" |
 | 8 | **Email** | Email | yes for email | Reply, tracker column "Email" |

@@ -47,3 +47,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-09 — **Accent = the logo red gradient** (#DE0613 → #86010A, sampled from the logo band; lighter #FF4033 → #DE0613 for text on black). Replaces red → orange (Dani)
 - 2026-11-09 — **PPF removed from Protect** (menu, panel, footer, summaries). Kept as a page under Style (hub + footer only); menu now 9 services. TBC: add PPF to the Style menu or not (Dani)
 - 2026-11-09 — **Hypa approved the style** (Direction D, logo red). **Main action changes:** "Contact us" → /contact page with a quote form that sends by email or WhatsApp (customer chooses); on phones a floating WhatsApp button stays. Form spec draft: docs/design-thinking/contact-flow.md (Dani + Hypa)
+- 2026-11-09 — Form allows **photo uploads** (email route). **PPF joins the Style menu** (menu back to 10). Key pages v1 drawn: Contact, Protect hub, Ghost, Builds, Homepage (Dani)

@@ -17,6 +17,8 @@ _Last updated: 9 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Decide what happens to the apparel shop (keep, move, drop)
 - [x] Hypa: reviewed the style (approved 9 Nov)
 - [ ] Hypa: usual reply time for the form thank-you message
+- [ ] Hypa: confirm Ghost price (site shows "from £400", pricing.md), the Builds captions marked TBC, "Built by Hypa" copy, and pick one real Google review
+- [ ] Media: a Ghost fitting photo; blur customer plates in the homepage reel before launch
 - [ ] Design + build new site
 - [ ] Migrate with 301s, GA4, Search Console, schema, sitemap
 - [ ] Interim (only if migration is far off): fix broken icons; check GA4 Realtime ("Experties" typo already fixed; homepage already has prices + number plates)

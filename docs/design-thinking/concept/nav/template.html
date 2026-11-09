@@ -115,7 +115,10 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
 .sub .all a{border-top:1px dashed var(--rule);margin-top:.2rem;padding-top:.7rem;font-weight:700}
 .small{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem;padding:1.1rem;color:var(--soft);font-weight:600;font-size:.95rem}
 .small a:hover{color:var(--fg)}
-.sheet .bottom{margin-top:auto;display:grid;grid-template-columns:2fr 1fr;gap:.6rem;padding:.8rem 1.1rem 1rem;border-top:1px solid var(--rule)}
+.sheet .bottom{margin-top:auto;display:grid;grid-template-columns:1fr auto auto;gap:.6rem;padding:.8rem 1.1rem 1rem;border-top:1px solid var(--rule)}
+.pill.ico{width:48px;padding:0}
+.fab{position:absolute;right:16px;bottom:18px;z-index:5;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+.fab svg{width:28px;height:28px}
 .hours{padding:0 1.1rem .7rem;display:flex;gap:.5rem;align-items:center}
 .hours i{width:7px;height:7px;border-radius:50%;background:#3fbf6a}
 
@@ -177,7 +180,7 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
         <a href="#contact">Contact</a>
       </nav>
       <span class="mono where"><i></i>Open today<br>10:00–18:00</span>
-      <a class="pill" href="#quote">{{br:whatsapp}}Get a quote</a>
+      <a class="pill" href="#contact">Contact us</a>
     </div>
     {{panels}}
   </div>
@@ -189,7 +192,8 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
       <div class="screen closed">
         <div class="mh"><span class="chip"><img src="{{img:logo}}" alt="Hyped Up"></span><button class="menu-btn" aria-label="Open menu">Menu {{lu:menu}}</button></div>
         <div class="media" style="background-image:url('{{img:poster}}')"></div>
-        <div class="hcopy"><h3>Protect it.<br>Upgrade it.<span class="wet g">Style it.</span></h3><p>South London's one-stop workshop for car and bike electronics, security and styling.</p><div><a class="pill" href="#quote">{{br:whatsapp}}Start your build</a></div></div>
+        <div class="hcopy"><h3>Protect it.<br>Upgrade it.<span class="wet g">Style it.</span></h3><p>South London's one-stop workshop for car and bike electronics, security and styling.</p><div><a class="pill" href="#contact">Contact us</a></div></div>
+        <a class="fab" href="#wa" aria-label="WhatsApp Hyped Up">{{br:whatsapp}}</a>
       </div>
     </div>
     <div class="phone">
@@ -199,7 +203,7 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
         <ul class="big" data-acc>{{acc}}</ul>
         <nav class="small" aria-label="More"><a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a><a href="#">Contact</a></nav>
         <p class="hours mono"><i></i>Open today 10:00–18:00 · London SE16</p>
-        <div class="bottom"><a class="pill" href="#quote">{{br:whatsapp}}Get a quote</a><a class="pill ghost" href="#">{{lu:phone}}Call</a></div>
+        <div class="bottom"><a class="pill" href="#contact">Contact us</a><a class="pill ghost ico" href="#wa" aria-label="WhatsApp">{{br:whatsapp}}</a><a class="pill ghost ico" href="#call" aria-label="Call 020 3340 0632">{{lu:phone}}</a></div>
       </div></div>
     </div>
     <div class="phone">
@@ -208,7 +212,7 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
         <div class="mh"><span class="chip"><img src="{{img:logo}}" alt="Hyped Up"></span><button class="menu-btn" aria-label="Close menu">Close {{lu:x}}</button></div>
         <ul class="big" data-acc data-open="1">{{acc}}</ul>
         <nav class="small" aria-label="More"><a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a><a href="#">Contact</a></nav>
-        <div class="bottom"><a class="pill" href="#quote">{{br:whatsapp}}Get a quote</a><a class="pill ghost" href="#">{{lu:phone}}Call</a></div>
+        <div class="bottom"><a class="pill" href="#contact">Contact us</a><a class="pill ghost ico" href="#wa" aria-label="WhatsApp">{{br:whatsapp}}</a><a class="pill ghost ico" href="#call" aria-label="Call 020 3340 0632">{{lu:phone}}</a></div>
       </div></div>
     </div>
   </div>

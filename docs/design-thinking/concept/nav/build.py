@@ -10,7 +10,7 @@ price = lambda p, long=False: ('from ' + p) if p != 'enquiry' else ('price on en
 menu = [
  ('Protect', [('Ghost &amp; immobilisers','£495'),('Car trackers','£395'),('Dash cams','£125')]),
  ('Upgrade', [('CarPlay &amp; Android Auto','£170'),('Car audio','£125'),('Remapping','£250')]),
- ('Style',   [('Car wrapping','£1,500'),('Window tinting','£150'),('Air suspension','£1,895')]),
+ ('Style',   [('Car wrapping','£1,500'),('Paint protection film','enquiry'),('Window tinting','£150'),('Air suspension','£1,895')]),
 ]
 n = [0]
 def acc():
@@ -26,7 +26,7 @@ while '{{acc}}' in s: s = s.replace('{{acc}}', acc(), 1)
 pdata = [
  ('Protect','dashcam','BMW · front + rear dash cam',[('Ghost &amp; immobilisers','£495','The car won\'t start without your secret button code'),('Car trackers','£395','Thatcham-category S5 and S7, app alerts, recovery'),('Dash cams','£125','Front, rear and 3-channel, hardwired with parking mode')]),
  ('Upgrade','carplay','Mini · wireless CarPlay screen',[('CarPlay &amp; Android Auto','£170','Wireless CarPlay on a new screen or your factory one'),('Car audio','£125','Speakers, amps, subs, boot builds, sound deadening'),('Remapping','£250','Stage 1 to 3 for cars and bikes, done properly')]),
- ('Style','wrap','London taxi · colour change',[('Car wrapping','£1,500','Full colour changes, roofs, stripes, chameleon'),('Window tinting','£150','Standard, carbon or ceramic film, legal fronts'),('Air suspension','£1,895','Air Lift and Prazis, set up for daily driving')]),
+ ('Style','wrap','London taxi · colour change',[('Car wrapping','£1,500','Full colour changes, roofs, stripes, chameleon'),('Paint protection film','enquiry','Clear film against stone chips and scratches'),('Window tinting','£150','Standard, carbon or ceramic film, legal fronts'),('Air suspension','£1,895','Air Lift and Prazis, set up for daily driving')]),
 ]
 def panels():
     out = []
@@ -36,7 +36,7 @@ def panels():
                    '<a class="all" href="#">All %s services {{lu:arrow-right}}</a></div>'
                    '<figure><div class="ph" style="background-image:url(\'{{img:%s}}\')"></div><figcaption class="mono"><span>%s</span></figcaption></figure>'
                    '<div class="idea"><h3>Not sure what you need?</h3><p>Send your car and your idea. Hypa replies with options and prices.</p>'
-                   '<a class="pill" href="#quote">Ask on WhatsApp</a></div></div>'
+                   '<a class="pill" href="#contact">Contact us</a></div></div>'
                    % (i, '' if i == 0 else ' hidden', rows, g, img, cap))
     return ''.join(out)
 s = s.replace('{{panels}}', panels())
