@@ -32,10 +32,10 @@ Outputs in `docs/design-thinking/`: tech-setup (cookies, forms, reviews, analyti
 - **Positioning line (decided):** "Protect it. Upgrade it. Style it." + "South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly."
 - **Platform (decided):** code site in GitHub, edited only by Claude, hosted on Cloudflare
 - **Look (chosen 9 Nov 2026):** moodboard Direction D "Workshop wall": **dark only**, Big Shoulders + Barlow + IBM Plex Mono, one Graffiti City spray word, **logo red gradient** (#DE0613 → #86010A, from the logo band) on every accent and CTA, colour video hero with strong vignette, one hand-drawn mark per screen. Moodboard: https://claude.ai/artifact/3zP6kfZV8cBYNNGFqDimgc
-- **Main action:** WhatsApp quote with service and car pre-filled
+- **Main action (changed 9 Nov):** "Contact us" → `/contact` form that sends by email or WhatsApp (customer picks); floating WhatsApp button on phones. Spec: `docs/design-thinking/contact-flow.md`
 - **Research & audit doc (Dani edits here first):** https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg
 - **Concept:** https://claude.ai/artifact/NdsiSfKjKAG2a1tVQ3VXcX · **Mobbin:** collection "Hyped Up website redesign"
-- **Round 2 (content first, in progress):** inventory, card sort, site map in `docs/design-thinking/` · menu & footer concept v4 in Direction D https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv (Dani happy; **with Hypa for review**; v1–v3 at https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD) → internal pages → homepage
+- **Round 2 (content first, in progress):** inventory, card sort, site map in `docs/design-thinking/` · menu & footer concept v4 in Direction D https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv (**approved by Dani + Hypa** 9 Nov; v1–v3 at https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD) → internal pages → homepage
 
 ## The business in one paragraph
 
