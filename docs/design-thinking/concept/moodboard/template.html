@@ -157,6 +157,52 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 .decide{padding-block:3rem 4rem;display:grid;gap:1rem;max-width:72ch;border-top:1px solid var(--line)}
 .decide h2{font:900 2.2rem/.9 var(--f-body);font-stretch:125%;text-transform:uppercase}
 .decide ol{margin:0;padding-left:1.2rem;display:grid;gap:.4rem;color:var(--dim)}
+
+/* ================= D · Workshop wall (best of A + B + C) ================= */
+.D .mock{--bg:#0d0c0c;--fg:#f2eee9;--soft:#a39c97;--rule:rgba(242,238,233,.16);--bgrad:linear-gradient(135deg,#8f1206 0%,#b0280a 55%,#c4470f 100%);--gtext:linear-gradient(100deg,#d4280f 0%,#e8501a 55%,#f26f22 100%);--acc:#ec5a1d;--circle:#ec5a1d;background:var(--bg);color:var(--fg);font-family:Barlow,system-ui,sans-serif;padding:0 22px 18px}
+.D .mock.light{--bg:#ece8e1;--fg:#141212;--soft:#615b57;--rule:rgba(20,18,18,.16);--gtext:linear-gradient(100deg,#a8150a 0%,#c2300c 55%,#cf4a10 100%);--acc:#b8280b;--circle:#c2300c}
+.D .crop{position:absolute;width:14px;height:14px;border-color:var(--soft);border-style:solid;opacity:.55}
+.D .crop.tl{top:8px;left:8px;border-width:1px 0 0 1px}.D .crop.tr{top:8px;right:8px;border-width:1px 1px 0 0}
+.D .crop.bl{bottom:8px;left:8px;border-width:0 0 1px 1px}.D .crop.br{bottom:8px;right:8px;border-width:0 1px 1px 0}
+.D .top{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:1.6rem;padding:18px 0 14px;border-bottom:1px solid var(--rule)}
+.D .chip{background:#121010;border-radius:8px;padding:6px 9px;display:block}
+.D .chip img{height:34px;display:block}
+.D .top nav{display:flex;gap:1.5rem;font:600 .95rem/1 Barlow,sans-serif}
+.D .top nav .on{position:relative}
+.D .top nav .on::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--gtext)}
+.D .top .where{font:500 .68rem/1.35 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--soft);text-align:right}
+.D .pill{display:inline-flex;align-items:center;gap:.55rem;border-radius:999px;background:var(--bgrad);color:#fff;font:700 .95rem/1 Barlow,sans-serif;padding:.8rem 1.15rem;box-shadow:inset 0 1px rgba(255,255,255,.14)}
+.D .pill svg{width:18px;height:18px}
+.D .meta{display:flex;justify-content:space-between;font:500 .68rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);padding:12px 0 6px}
+.D .stage{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch;padding-top:14px}
+.D .copy{display:flex;flex-direction:column;gap:24px;padding:8px 0 4px}
+.D .act{margin-top:auto}
+.D h3{font:900 clamp(3.6rem,8vw,6.8rem)/.84 var(--f-cond);text-transform:uppercase;letter-spacing:.005em}
+.D h3 .wet{display:block;width:fit-content;font:400 clamp(3.8rem,8.4vw,7rem)/1.08 var(--f-spray);text-transform:none;background:var(--gtext);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .06em;margin-top:.06em}
+.D .copy p{margin:0;max-width:38ch;color:var(--soft);font-size:1.05rem;line-height:1.5}
+.D .act{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap}
+.D .act .pill{padding:1rem 1.35rem;font-size:1rem}
+.D .find{position:relative;display:inline-block;font:900 1.35rem/1 var(--f-cond);text-transform:uppercase;letter-spacing:.02em;padding:.45rem .7rem;margin-left:1rem}
+.D .find::after{content:"";position:absolute;inset:-.6rem -1rem -.5rem -1.2rem;background:var(--circle);-webkit-mask:var(--m-circle) center/100% 100% no-repeat;mask:var(--m-circle) center/100% 100% no-repeat;pointer-events:none}
+.D .addr{font:500 .68rem/1.45 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+.D figure{margin:0;display:grid;gap:8px}
+.D .media{position:relative;aspect-ratio:4/5;overflow:hidden;background:#000}
+.D .media video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.08) contrast(1.06)}
+.D .media::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 72% 64% at 50% 45%,rgba(0,0,0,0) 28%,rgba(0,0,0,.6) 62%,rgba(0,0,0,.95) 100%);pointer-events:none}
+.D .media .lbl{position:absolute;z-index:1;left:12px;bottom:12px;display:inline-flex;gap:.45rem;align-items:center;font:600 .66rem/1 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;color:#f2eee9;background:rgba(13,12,12,.55);padding:.45rem .6rem;border-radius:999px}
+.D .media .lbl i{width:7px;height:7px;border-radius:50%;background:#ec5a1d}
+.D figcaption{display:flex;justify-content:space-between;font:500 .64rem/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+.D .cols{display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px;border-top:1px solid var(--fg)}
+.D .cols div{padding:14px 16px 6px 0;display:grid;grid-template-columns:auto 1fr auto;column-gap:.7rem;row-gap:4px;align-items:baseline}
+.D .cols div+div{padding-left:16px;border-left:1px solid var(--rule)}
+.D .cols em,.D .cols .pr{font:600 .7rem/1 var(--f-mono);font-style:normal;background:var(--gtext);-webkit-background-clip:text;background-clip:text;color:transparent}
+.D .cols b{font:900 1.6rem/1 var(--f-cond);text-transform:uppercase}
+.D .cols .pr{font:700 .82rem/1 Barlow,sans-serif}
+.D .cols p{grid-column:2/4;margin:0;font-size:.82rem;color:var(--soft)}
+@media (max-width:900px){
+  .D .top{grid-template-columns:auto 1fr auto}.D .top nav,.D .top .where{display:none}
+  .D .stage{display:flex;flex-direction:column;gap:18px}.D .stage figure{order:-1}.D .media{aspect-ratio:4/3}.D .meta span+span{display:none}.D h3{font-size:3.4rem}.D h3 .wet{font-size:3.6rem}.D .cols{grid-template-columns:1fr}.D .cols div+div{border-left:0;padding-left:0;border-top:1px solid var(--rule)}
+}
 .decide b{color:var(--ink)}
 
 @media (max-width:900px){
@@ -173,7 +219,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 <div class="wrap intro">
   <span class="k">Design thinking · Round 2 · Visual direction · v2</span>
   <h1>Style moodboard</h1>
-  <p>Three ways to bring graffiti into Hyped Up, built from Dani's references. Each band: the references, a larger Hyped Up mock in that style (A and C switch between light and dark), then palette, type and a short read.</p>
+  <p>Three ways to bring graffiti into Hyped Up, built from Dani's references, plus D: the best of all three. Each band: the references, a larger Hyped Up mock in that style (A and C switch between light and dark), then palette, type and a short read.</p>
   <p class="principle">The rule all references follow: <strong>big, clean type carries the message; graffiti is one real layer on top</strong>, a tag or a spray word set in a proper font, or real graffiti in the photo. No fake spray.</p>
 </div>
 
@@ -292,10 +338,44 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
   </div>
 </section>
 
+<!-- ===================== D ===================== -->
+<section class="dir D" aria-labelledby="hd">
+  <div class="wrap">
+    <div class="dir-head">
+      <div><span class="k">Direction D · new</span><h2 id="hd">Workshop wall</h2><p>The best of A, B and C in one. B's dark base, condensed type, spray word and red → orange gradient; A's editorial frame (meta line, numbered columns, crop marks) and colour media with a strong vignette; C's calm split layout, square media and the hand-drawn circle. The hero is the real workshop reel, as Dani asked for video above the fold.</p></div>
+      <div class="mode" role="group" aria-label="Direction D mode"><button type="button" aria-pressed="false" data-mode="D" data-v="light">Light</button><button type="button" aria-pressed="true" data-mode="D" data-v="dark">Dark</button></div>
+    </div>
+    <div class="refs">
+      <figure><img src="{{ref:play1}}" alt="Playlist Edition magazine spread with tags over type" loading="lazy"><figcaption>From A: editorial frame · <a href="https://www.behance.net/gallery/152239541/Playlist-Edition-6-Magazine-Collection">Behance</a></figcaption></figure>
+      <figure><img src="{{ref:rage1}}" alt="Rage Machine spray paint font poster" loading="lazy"><figcaption>From B: one spray word · <a href="https://www.behance.net/gallery/216873173/Rage-Machine-Spray-Paint-Font">Behance</a></figcaption></figure>
+      <figure><img src="{{ref:sams}}" alt="SAMS site with a thin column header and hand-drawn circle" loading="lazy"><figcaption>From C: calm grid, hand mark · <a href="https://dribbble.com/shots/5466962-SAMS-Culture-Event-Page">Dribbble</a></figcaption></figure>
+    </div>
+    <div class="mock" id="mockD">
+      <i class="crop tl"></i><i class="crop tr"></i><i class="crop bl"></i><i class="crop br"></i>
+      <div class="top"><span class="chip"><img src="{{img:logo}}" alt="Hyped Up"></span><nav><span>Protect</span><span>Upgrade</span><span class="on">Style</span><span>Builds</span><span>Contact</span></nav><span class="where">Unit 22 · SE16<br>Mon–Sat</span><span class="pill">Get a quote</span></div>
+      <div class="meta"><span>Bermondsey · SE16</span><span>Cars + bikes · Est. 2022</span></div>
+      <div class="stage">
+        <div class="copy">
+          <div><h3>Protect it.<br>Upgrade it.<span class="wet">Style it.</span></h3></div>
+          <p>South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly.</p>
+          <div class="act"><span class="pill">{{br:whatsapp}}Start your build</span><span class="find">Find us</span><span class="addr">Unit 22 · Bolina Rd<br>London SE16 3LF</span></div>
+        </div>
+        <figure><div class="media"><video src="{{vid:hero}}" poster="{{img:poster}}" autoplay muted loop playsinline aria-label="Short silent reel of work inside the Hyped Up workshop"></video><span class="lbl"><i></i>Inside Unit 22</span></div><figcaption><span>Reel 01 · Silent loop</span><span>@hypedup.ltd</span></figcaption></figure>
+      </div>
+      <div class="cols"><div><em>01</em><b>Protect</b><span class="pr">from £125</span><p>Ghost, trackers, dash cams, PPF</p></div><div><em>02</em><b>Upgrade</b><span class="pr">from £125</span><p>CarPlay, audio, remapping</p></div><div><em>03</em><b>Style</b><span class="pr">from £50</span><p>Wraps, tint, air suspension</p></div></div>
+    </div>
+    <div class="below">
+      <div><b class="k">Palette</b><div class="sw"><i style="background:#0d0c0c;color:#fff;outline:1px solid #333">Black</i><i style="background:#ece8e1">Paper</i><i style="background:linear-gradient(135deg,#8f1206,#b0280a 55%,#c4470f);color:#fff">Red → orange</i><i style="background:#f2eee9">Chalk</i></div></div>
+      <div><b class="k">Type</b><p><span style="font:900 1.7rem/1 var(--f-cond);text-transform:uppercase">Big Shoulders</span><br><span style="font:400 2.2rem/1.1 var(--f-spray);background:linear-gradient(100deg,#d4280f,#f26f22);-webkit-background-clip:text;background-clip:text;color:transparent">Graffiti City</span><br><span style="font:500 1rem Barlow,sans-serif">Barlow body · </span><span style="font:500 .8rem var(--f-mono)">PLEX MONO LABELS</span><br><span style="font-size:.8rem;color:var(--dim)">One spray word and one hand-drawn mark per screen, never more. Gradient on every accent and CTA.</span></p></div>
+      <div><b class="k">Read</b><p>Confident and crafted: the precision of the grid and the energy of the wall. Video shows the real work straight away; one action, one mark, prices one glance below.</p></div>
+    </div>
+  </div>
+</section>
+
 <div class="wrap decide">
   <h2>To decide</h2>
   <ol>
-    <li><b>Which direction</b> do we develop: A, B or C (and light or dark for A and C)?</li>
+    <li><b>Which direction</b> do we develop: A, B, C or the combined D (and light or dark)?</li>
     <li><b>Mixes are fine</b>, e.g. C's calm grid with A's stickers and tags on builds and shop pages.</li>
     <li><b>Fonts:</b> pick the graffiti font; if it's not Sedgwick, we buy its commercial licence before launch.</li>
   </ol>
@@ -304,7 +384,8 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 <script>
 document.querySelectorAll('[data-mode]').forEach(function(b){b.addEventListener('click',function(){
   var g=b.dataset.mode, m=document.getElementById('mock'+g);
-  m.classList.toggle('dark',b.dataset.v==='dark');
+  if(g==='D'){m.classList.toggle('light',b.dataset.v==='light')}else{m.classList.toggle('dark',b.dataset.v==='dark')}
   document.querySelectorAll('[data-mode="'+g+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
 });});
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video[autoplay]').forEach(function(v){v.removeAttribute('autoplay');v.pause();v.controls=true})}
 </script>

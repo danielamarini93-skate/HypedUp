@@ -21,6 +21,7 @@ s = s.replace('{{maskvars}}', ':root{' + ''.join('--m-%s:url("%s");' % (k, d(os.
 s = s.replace('{{font:hoax}}', d(os.path.join(A, 'fonts', 'hoax-vandal.ttf'), 'font/ttf'))
 FZ = S + '/fz/'
 s = s.replace('{{font:decipher}}', d(FZ + 'decipher/Decipher_PERSONAL_USE_ONLY.otf', 'font/otf')).replace('{{font:gcity}}', d(FZ + 'graffiti_city/Graffiti City.otf', 'font/otf'))
+s = s.replace('{{vid:hero}}', d(S + '/vid/hero.mp4', 'video/mp4')).replace('{{img:poster}}', d(S + '/vid/poster.jpg', 'image/jpeg'))
 s = s.replace('{{ref:spec}}', d(FZ + 'spec.jpg', 'image/jpeg'))
 assert '{{' not in s, s[s.index('{{'):s.index('{{') + 30]
 open('index.html', 'w').write(s); print(len(s) // 1024, 'KB')

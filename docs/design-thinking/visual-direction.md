@@ -145,3 +145,11 @@ Decision pending (Dani). Source: `concept/moodboard/`.
 ### Moodboard v6 (Dani, 9 Nov 2026), applied
 - **A** now uses B's red → orange gradient on every accent and CTA: "STYLE IT." (gradient text), Get a quote, Start your build, SE16 chip, "Find us" label, column numbers, the "Hyped Up" tag.
   Light mode uses a deeper gradient for text (`#a8150a → #cf4a10`) so it keeps contrast on the grey paper; fills carry white text.
+
+### Moodboard v7 (Dani, 9 Nov 2026): Direction D "Workshop wall", best of A + B + C
+- **From B:** dark base (+ light toggle), Big Shoulders + Barlow, "Style it." in Graffiti City, red → orange gradient on every accent and CTA, pill buttons.
+- **From A:** editorial frame: meta line, crop marks, numbered 01/02/03 columns (now with "from £" prices), colour media with strong vignette, mono captions.
+- **From C:** calm split layout, square media, hand-drawn marker circle around "Find us".
+- **New:** the hero media is the real workshop reel (silent loop; poster image; paused with controls when reduced motion is on). On phones the video sits first so it's above the fold.
+- Rules: one spray word + one hand-drawn mark per screen; one primary action (WhatsApp "Start your build").
+- Open: customer plates are visible in the reel (fine for the moodboard; decide before launch).
