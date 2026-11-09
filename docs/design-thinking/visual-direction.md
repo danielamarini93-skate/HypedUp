@@ -174,7 +174,7 @@ Artifact https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv · source `concept/na
 - Logo on a dark chip (works in light mode); gradient underline on the open/hovered menu item; mono "Unit 22 · SE16 · Mon–Sat"; gradient pill "Get a quote".
 - Panels: mono "01 Protect" label, Big Shoulders service names, gradient "from £" prices, square photo with vignette + mono caption, "Not sure what you need?" card.
 - Phone: closed = reel poster + headline with Graffiti City "Style it."; menu = numbered 01/02/03 doors, gradient arrow when open, WhatsApp pill + Call.
-- Footer: mono column labels (01–03 in gradient), hand-drawn circle on "Find us", Graffiti City HYPED UP wordmark in gradient. No splats, drips or brush lines.
+- Footer: mono column labels (01–03 in gradient), hand-drawn circle on "Find us", HYPED UP wordmark (v4.3: Big Shoulders 900, **outline only** with a red → orange gradient stroke, sized to fill the width; Dani). No splats, drips or brush lines.
 - Decided (Dani, 9 Nov): **dark only**; prices stay in the menu for now. Next: Hypa reviews this round.
 
 ### Font morph v3 (Dani, 9 Nov 2026)

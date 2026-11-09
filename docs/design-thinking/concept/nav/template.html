@@ -132,13 +132,14 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
 .social a:hover{color:var(--acc);border-color:var(--acc)}
 .legal{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;justify-content:space-between;padding:1.4rem 0 1.1rem;margin-top:2.4rem;border-top:1px solid var(--fg)}
 .wm{display:flex;justify-content:space-between;align-items:end;gap:1rem;padding:.4rem 0 1.2rem;overflow:hidden}
-.wm b{display:block;font:400 clamp(4.2rem,13vw,11.5rem)/1.05 var(--f-spray);white-space:nowrap;padding:0 .04em}
+.wmsvg{display:block;flex:1;min-width:0;width:100%;height:auto;overflow:visible}
+.wmsvg text{font-family:var(--f-display);font-weight:900;letter-spacing:2px;stroke-width:3px;vector-effect:non-scaling-stroke;stroke-linejoin:round}
 .wm .mono{text-align:right;padding-bottom:1.4rem}
 .ft-mobile{padding:2rem 1.1rem 0}
 .ft-mobile .ft-grid{grid-template-columns:1fr 1fr;gap:1.6rem}
 .ft-mobile .findus{grid-column:1/-1}
 .ft-mobile .wm{flex-direction:column;align-items:start}
-.ft-mobile .wm b{font-size:4.6rem}
+.ft-mobile .wmsvg{flex:none}
 .ft-mobile .wm .mono{text-align:left;padding:0}
 
 .notes{margin-top:3rem;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
@@ -158,7 +159,7 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
   <header class="intro">
     <p class="mono">Design thinking · Round 2 · Concept A · v4.2 · Direction D · dark only</p>
     <h1>Menu &amp; footer</h1>
-    <p>The approved menu (three doors: Protect, Upgrade, Style; ten services; Builds and Contact as plain links) redrawn in Direction D "Workshop wall". One action everywhere: a WhatsApp quote. The gradient marks every accent and button; the hand-drawn circle sits on "Find us"; the spray font appears once, in the footer wordmark.</p>
+    <p>The approved menu (three doors: Protect, Upgrade, Style; ten services; Builds and Contact as plain links) redrawn in Direction D "Workshop wall". One action everywhere: a WhatsApp quote. The gradient marks every accent and button; the hand-drawn circle sits on "Find us"; the spray font appears once, in the phone hero.</p>
   </header>
 
   <div class="frame-title"><h2>1 · Desktop header</h2><p>Click Protect, Upgrade and Style to open each panel. Builds and Contact are plain links.</p></div>
@@ -216,7 +217,7 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
   <div class="frame" style="max-width:380px">{{footer_m}}</div>
 
   <div class="notes">
-    <div class="note"><h3>What changed in v4</h3><ul><li>Direction D: dark + light, Big Shoulders + Barlow + Plex Mono labels</li><li>Red → orange gradient on the quote button, open-menu underline, numbers, prices and arrows</li><li>No paint splats, drips or brush lines: the hand-drawn circle on "Find us" is the only mark</li><li>Graffiti City once: the HYPED UP wordmark (and "Style it." in the phone hero)</li><li>Square images with the D vignette and mono captions; logo on a dark chip so it works in light mode</li></ul></div>
+    <div class="note"><h3>What changed in v4</h3><ul><li>Direction D, dark only: Big Shoulders + Barlow + Plex Mono labels</li><li>Red → orange gradient on the quote button, open-menu underline, numbers, prices and arrows</li><li>No paint splats, drips or brush lines: the hand-drawn circle on "Find us" is the only mark</li><li>Graffiti City once: "Style it." in the phone hero. Footer wordmark: HYPED UP in Big Shoulders, outline only, gradient stroke</li><li>Square images with the D vignette and mono captions; logo on a dark chip so it works in light mode</li></ul></div>
     <div class="note"><h3>Unchanged (approved)</h3><ul><li>10 services in the menu, grouped Protect · Upgrade · Style</li><li>Builds and Contact as plain links; Blog in the footer only</li><li>Footer: every service, find us, hours, socials; no prices, no review widget</li><li>Wordmark: HYPED UP</li></ul></div>
     <div class="note"><h3>Decided (Dani, 9 Nov)</h3><ul><li>Dark only: no light mode on the site</li><li>"from £" prices stay in the menu panels and phone menu, for now</li></ul><h3 style="margin-top:.6rem">Next</h3><ul><li>Hypa reviews this first round</li><li>Then internal page templates</li></ul></div>
   </div>
@@ -235,6 +236,9 @@ h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;l
     btns.forEach(function(b,i){b.addEventListener('click',function(){set(i)})});
     var o=list.getAttribute('data-open'); if(o!==null) set(+o);
   });
+  /* footer wordmark: fit the outlined SVG text to its own box */
+  function fitWm(){document.querySelectorAll('.wmsvg').forEach(function(sv){var t=sv.querySelector('text');var b=t.getBBox();var pad=4;sv.setAttribute('viewBox',(b.x-pad)+' '+(b.y-pad)+' '+(b.width+pad*2)+' '+(b.height+pad*2));})}
+  (document.fonts?document.fonts.ready:Promise.resolve()).then(fitWm); fitWm();
   var th=document.getElementById('theme');
   document.querySelectorAll('[data-theme]').forEach(function(b){b.addEventListener('click',function(){th.classList.toggle('light',b.dataset.theme==='light');document.body.style.background=b.dataset.theme==='light'?'#dedad3':'#141212';document.querySelectorAll('[data-theme]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})})});
 })();
