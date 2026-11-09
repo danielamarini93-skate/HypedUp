@@ -44,3 +44,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-09 — Visual style: **Direction D "Workshop wall"** chosen (best of A + B + C: dark + light, Big Shoulders + Barlow + Plex Mono, Graffiti City spray word, red → orange gradient on all accents/CTAs, colour video hero with vignette, hand-drawn circle). Trying a "Style it." font-morph animation (idea, under review) (Dani)
 - 2026-11-09 — Site is **dark only** (no light mode). "From £" prices stay in the menu panels and phone menu for now. First round (moodboard D + menu & footer v4) goes to Hypa for his opinion before internal pages (Dani)
 - 2026-11-09 — **No prices in the menu** (too prominent); "from £" prices live on service pages only. Replaces the earlier "prices in the menu for now" (Dani)
+- 2026-11-09 — **Accent = the logo red gradient** (#DE0613 → #86010A, sampled from the logo band; lighter #FF4033 → #DE0613 for text on black). Replaces red → orange (Dani)

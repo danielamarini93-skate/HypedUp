@@ -185,4 +185,4 @@ Artifact https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv · source `concept/na
 ### Accent test: logo red (Dani, 9 Nov 2026), menu v4.5 + moodboard v13
 - Sampled from the logo's "Vehicle modification and styling" band: bright red `#DE0613` → deep crimson `#86010A` (no orange).
 - Fills (buttons): `#de0613 → #b5030f → #86010a`, white text. Text on black (prices, numbers, "Style it."): lighter `#ff4033 → #ef1220 → #de0613` to keep contrast.
-- Both boards now default to **Logo red** with a toggle back to **Red → orange**. Decision pending (Dani).
+- **Decided (Dani): logo red is the accent.** Toggles removed; menu v4.6, moodboard v14. Orange is retired.
