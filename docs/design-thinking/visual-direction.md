@@ -180,3 +180,4 @@ Artifact https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv · source `concept/na
 ### Font morph v3 (Dani, 9 Nov 2026)
 - **Never more than one font in the word at a time** (Dani). Mixed rounds removed; the whole word swaps at once
   (no letter-by-letter wave): serif italic → uppercase → Graffiti City, 3 loops, then rests on Graffiti City.
+- "Style it." sits as close to "Upgrade it." as the other headline lines (line-height .9, small negative top margin), in all three morph fonts (Dani, 9 Nov 2026).
