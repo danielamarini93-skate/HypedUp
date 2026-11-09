@@ -195,3 +195,4 @@ Every word must help the user or SEO; say each fact once per screen. Applied (me
 - WhatsApp icon only where the label doesn't say WhatsApp ("Get a quote", "Start your build"); "Ask on WhatsApp" has no icon.
   Phone menu bottom: "Get a quote" + "Call" (same name as the header action).
 - Moodboard D hero: meta "Bermondsey, South London · Est. 2022"; Find us shows "Unit 22, Bolina Rd · SE16 3LF" once.
+- (v4.8 / v16) **No 01 / 02 / 03 numbers** anywhere (Dani: they mean nothing to the user). Removed from the phone menu, footer headings and the D service strip; the "Protect" label inside the open Protect panel was also cut (the open tab already says it).

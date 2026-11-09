@@ -18,8 +18,8 @@ def acc():
     for i, (g, items) in enumerate(menu):
         pid = 'p%d_%d' % (n[0], i)
         rows = ''.join('<li><a href="#"><span>%s</span></a></li>' % t for t, p in items)
-        out.append('<li><button aria-expanded="false" aria-controls="%s"><em class="g">0%d</em><b>%s</b><span>{{lu:arrow-right}}</span></button>'
-                   '<ul class="sub" id="%s" hidden>%s<li class="all"><a href="#">All %s services →</a></li></ul></li>' % (pid, i + 1, g, pid, rows, g))
+        out.append('<li><button aria-expanded="false" aria-controls="%s"><b>%s</b><span>{{lu:arrow-right}}</span></button>'
+                   '<ul class="sub" id="%s" hidden>%s<li class="all"><a href="#">All %s services →</a></li></ul></li>' % (pid, g, pid, rows, g))
     return ''.join(out)
 while '{{acc}}' in s: s = s.replace('{{acc}}', acc(), 1)
 
@@ -32,12 +32,12 @@ def panels():
     out = []
     for i, (g, img, cap, items) in enumerate(pdata):
         rows = ''.join('<li><a href="#"><b>%s</b><span>%s</span></a></li>' % (t, dsc) for t, p, dsc in items)
-        out.append('<div class="panel" id="pn%d"%s><div><p class="lab"><em class="g">0%d</em><span class="mono">%s</span></p><ul>%s</ul>'
+        out.append('<div class="panel" id="pn%d"%s><div><ul>%s</ul>'
                    '<a class="all" href="#">All %s services {{lu:arrow-right}}</a></div>'
                    '<figure><div class="ph" style="background-image:url(\'{{img:%s}}\')"></div><figcaption class="mono"><span>%s</span></figcaption></figure>'
                    '<div class="idea"><h3>Not sure what you need?</h3><p>Send your car and your idea. Hypa replies with options and prices.</p>'
                    '<a class="pill" href="#quote">Ask on WhatsApp</a></div></div>'
-                   % (i, '' if i == 0 else ' hidden', i + 1, g, rows, g, img, cap))
+                   % (i, '' if i == 0 else ' hidden', rows, g, img, cap))
     return ''.join(out)
 s = s.replace('{{panels}}', panels())
 
@@ -49,7 +49,7 @@ cols = [
  ('','Hyped Up',  ['About','Contact']),
 ]
 def footer(mobile):
-    c = ''.join('<div><h4 class="mono">%s%s</h4><ul>%s</ul></div>' % (('<em class="g">%s</em>' % num) if num else '', h, ''.join('<li><a href="#">%s</a></li>' % x for x in items)) for num, h, items in cols)
+    c = ''.join('<div><h4 class="mono">%s%s</h4><ul>%s</ul></div>' % ('', h, ''.join('<li><a href="#">%s</a></li>' % x for x in items)) for num, h, items in cols)
     find = ('<div class="findus"><span class="find">Find us</span><p><b>Unit 22, Enterprise Industrial Estate,<br>Bolina Road, London SE16 3LF</b></p>'
             '<p>Mon–Fri 10:00–18:00<br>Sat 09:00–16:00 · Sun closed</p><p>020 3340 0632<br>WhatsApp 07713 735646<br>info@hypedup.uk</p>'
             '<div class="social"><a href="#" aria-label="Instagram">{{br:instagram}}</a><a href="#" aria-label="TikTok">{{br:tiktok}}</a><a href="#" aria-label="Facebook">{{br:facebook}}</a></div></div>')

@@ -196,12 +196,12 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 .D .media .lbl i{width:7px;height:7px;border-radius:50%;background:var(--acc)}
 .D figcaption{display:flex;justify-content:space-between;font:500 .64rem/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
 .D .cols{display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px;border-top:1px solid var(--fg)}
-.D .cols div{padding:14px 16px 6px 0;display:grid;grid-template-columns:auto 1fr auto;column-gap:.7rem;row-gap:4px;align-items:baseline}
+.D .cols div{padding:14px 16px 6px 0;display:grid;grid-template-columns:1fr auto;column-gap:.7rem;row-gap:4px;align-items:baseline}
 .D .cols div+div{padding-left:16px;border-left:1px solid var(--rule)}
 .D .cols em,.D .cols .pr{font:600 .7rem/1 var(--f-mono);font-style:normal;background:var(--gtext);-webkit-background-clip:text;background-clip:text;color:transparent}
 .D .cols b{font:900 1.6rem/1 var(--f-cond);text-transform:uppercase}
 .D .cols .pr{font:700 .82rem/1 Barlow,sans-serif}
-.D .cols p{grid-column:2/4;margin:0;font-size:.82rem;color:var(--soft)}
+.D .cols p{grid-column:1/-1;margin:0;font-size:.82rem;color:var(--soft)}
 @media (max-width:900px){
   .D .top{grid-template-columns:auto 1fr auto}.D .top nav,.D .top .where i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3fbf6a;margin-right:.45rem;vertical-align:1px}
 .D .top .where{display:none}
@@ -350,7 +350,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 <section class="dir D" aria-labelledby="hd">
   <div class="wrap">
     <div class="dir-head">
-      <div><span class="k">Direction D · new</span><h2 id="hd">Workshop wall</h2><p>The best of A, B and C in one. B's dark base, condensed type and spray word; the logo's own red gradient (chosen 9 Nov, replacing red → orange); A's editorial frame (meta line, numbered columns, crop marks) and colour media with a strong vignette; C's calm split layout, square media and the hand-drawn circle. The hero is the real workshop reel, as Dani asked for video above the fold.</p></div>
+      <div><span class="k">Direction D · new</span><h2 id="hd">Workshop wall</h2><p>The best of A, B and C in one. B's dark base, condensed type and spray word; the logo's own red gradient (chosen 9 Nov, replacing red → orange); A's editorial frame (meta line, column grid, crop marks) and colour media with a strong vignette; C's calm split layout, square media and the hand-drawn circle. The hero is the real workshop reel, as Dani asked for video above the fold.</p></div>
       <div class="mode" role="group" aria-label="Direction D mode"><button type="button" aria-pressed="false" data-mode="D" data-v="light">Light</button><button type="button" aria-pressed="true" data-mode="D" data-v="dark">Dark</button></div>
     </div>
     <div class="refs">
@@ -370,7 +370,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
         </div>
         <figure><div class="media"><video src="{{vid:hero}}" poster="{{img:poster}}" autoplay muted loop playsinline aria-label="Short silent reel of work inside the Hyped Up workshop"></video></div><figcaption><span></span><span>@hypedup.ltd</span></figcaption></figure>
       </div>
-      <div class="cols"><div><em>01</em><b>Protect</b><span class="pr">from £125</span><p>Ghost, trackers, dash cams, PPF</p></div><div><em>02</em><b>Upgrade</b><span class="pr">from £125</span><p>CarPlay, audio, remapping</p></div><div><em>03</em><b>Style</b><span class="pr">from £50</span><p>Wraps, tint, air suspension</p></div></div>
+      <div class="cols"><div><b>Protect</b><span class="pr">from £125</span><p>Ghost, trackers, dash cams, PPF</p></div><div><b>Upgrade</b><span class="pr">from £125</span><p>CarPlay, audio, remapping</p></div><div><b>Style</b><span class="pr">from £50</span><p>Wraps, tint, air suspension</p></div></div>
     </div>
     <div class="below">
       <div><b class="k">Palette</b><div class="sw"><i style="background:#0d0c0c;color:#fff;outline:1px solid #333">Black</i><i style="background:#ece8e1">Paper</i><i style="background:linear-gradient(100deg,#de0613,#b5030f 55%,#86010a);color:#fff">Logo red</i><i style="background:#f2eee9">Chalk</i></div></div>
