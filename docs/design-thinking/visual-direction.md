@@ -176,3 +176,7 @@ Artifact https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv · source `concept/na
 - Phone: closed = reel poster + headline with Graffiti City "Style it."; menu = numbered 01/02/03 doors, gradient arrow when open, WhatsApp pill + Call.
 - Footer: mono column labels (01–03 in gradient), hand-drawn circle on "Find us", Graffiti City HYPED UP wordmark in gradient. No splats, drips or brush lines.
 - To decide: prices in the menu or only on service pages; offer light mode on the site or dark only.
+
+### Font morph v3 (Dani, 9 Nov 2026)
+- **Never more than one font in the word at a time** (Dani). Mixed rounds removed; the whole word swaps at once
+  (no letter-by-letter wave): serif italic → uppercase → Graffiti City, 3 loops, then rests on Graffiti City.
