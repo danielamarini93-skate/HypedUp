@@ -141,3 +141,7 @@ Decision pending (Dani). Source: `concept/moodboard/`.
 - **C marks:** handmade, not geometric: the marker circle back around "Find us" (Openclipart 318600) and a hand-drawn
   marker underline (quick stroke + return pass) under "Style it." (`concept/assets/paint/hand-underline.svg`, drawn for this project).
 - **A plate:** not blurred on the show photo (Dani's call for this image).
+
+### Moodboard v6 (Dani, 9 Nov 2026), applied
+- **A** now uses B's red → orange gradient on every accent and CTA: "STYLE IT." (gradient text), Get a quote, Start your build, SE16 chip, "Find us" label, column numbers, the "Hyped Up" tag.
+  Light mode uses a deeper gradient for text (`#a8150a → #cf4a10`) so it keeps contrast on the grey paper; fills carry white text.
