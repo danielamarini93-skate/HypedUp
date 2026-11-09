@@ -162,3 +162,9 @@ Decision pending (Dani). Source: `concept/moodboard/`.
 - Accessibility: screen readers hear "Style it." once; a Pause/Play button (WCAG 2.2.2, it loops longer than 5 s);
   no animation with reduced motion (static Graffiti City).
 - Font licences: the mix uses free fonts (Instrument Serif, Archivo, Plex Mono, Barlow, Big Shoulders, Sedgwick, Rubik Wet Paint, Hoax Vandal) plus Graffiti City (licence to buy).
+
+### Font morph v2 (Dani, 9 Nov 2026), moodboard v9
+- Only three looks: **Graffiti City** (home), **Instrument Serif italic**, **Big Shoulders uppercase**; mixed rounds use only these.
+  Sequence: serif → mixed → caps → mixed → graffiti (hold), looping.
+- **Pause button removed** (Dani). Open: WCAG 2.2.2 needs a way to stop motion that loops > 5 s. Options: stop after 2–3 loops
+  and rest on Graffiti City, or keep looping with a pause control elsewhere. Reduced-motion users already get a static word.
