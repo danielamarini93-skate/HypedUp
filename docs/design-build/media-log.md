@@ -21,3 +21,15 @@ until build._
 | hero.mp4 + poster.jpg | (earlier batch, reel) | Workshop reel | **Customer plates visible: fix before launch** | Home hero |
 
 Still to come: the rest of Dani's Drive upload (new `Media` folder has 5 videos so far).
+
+### Added 9 Nov 2026 (second Drive batch, Media folder; 20 of 100+ reviewed)
+| Web name | What it shows | Privacy | Used on |
+|---|---|---|---|
+| alfa-keys-wheel.jpg | Alfa Romeo wheel buttons, start button, keys | n/a | Ghost hero, Protect (immobilisers) |
+| audi-r8-unit.jpg / audi-r8-carplay.jpg | Audi R8 outside the unit / new CarPlay screen | Show plate | Builds, Protect (alarms) |
+| porsche-macan-unit.jpg | Porsche Macan outside the unit | Show plate | Protect hero, Builds |
+| bentley-unit.jpg | Bentley Flying Spur outside the unit | "HYPED UP" show plate | Builds |
+| mercedes-screen.jpg | Mercedes with a large new screen | n/a | Builds |
+| fiat-500-red.jpg | Red Fiat 500 in the workshop | Show plate | Builds |
+| ford-transit-yellow.jpg | Yellow Transit Custom | **Plate blurred** | Builds |
+| mini-cooper-stripes.jpg, mini-dash-in-progress.jpg | Social graphics with text overlays | n/a | Not used (text baked in) |

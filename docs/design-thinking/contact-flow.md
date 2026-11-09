@@ -13,7 +13,23 @@ by email. Status: **approved by Dani (photos: yes); drawn in the key pages conce
 
 Replaces the earlier rule "main action = WhatsApp quote everywhere". WhatsApp stays one tap away on phones.
 
-## The form (mix of the old site form + the concept form)
+## The form, v2 (short, phone first) · 9 Nov 2026
+Dani: v1 was too long and intimidating on a phone. v2 fits in about one phone screen.
+
+| # | Field | Required | Notes |
+|---|---|---|---|
+| 1 | **What do you need?** chips: Security · Screens & audio · Wrap · PPF or tint · Air suspension · Remap · Plates · Other | pick 1+ | Pre-ticked when opened from a service page |
+| 2 | **Your car** (one field: make, model, year, reg if they have it) | yes | Replaces separate vehicle + reg fields |
+| 3 | **Anything else?** (2 lines) + **Add photos** link | optional | Photos go with the email |
+| 4 | **Send on WhatsApp** · **Send by email** | | WhatsApp needs nothing more (it carries the number) |
+| 5 | Only after "Send by email": **Name** + **Email** (**both required**, clear error text) + Phone (optional) | yes | Dani: "if they send by email, we need email from them" |
+| 6 | Thank-you screen: **How did you find us?** one optional tap | optional | Moved out of the form; feeds "Referral Source" |
+
+- Spam: Cloudflare Turnstile (invisible). Labels above fields, 16 px+, errors in words (WCAG 2.2 AA).
+- Contact page also shows a **real Google Map** (embed of the Business Profile location, dark-styled) + "Get directions" to the profile (CID 1418041190124790308). Live site: load the map **after cookie consent** or on tap, because Google sets cookies.
+
+## The form, v1 (superseded)
+
 Order follows how Hypa quotes: what → which vehicle → details → who → how to reply.
 
 | # | Field | Type | Required | Why Hypa needs it |

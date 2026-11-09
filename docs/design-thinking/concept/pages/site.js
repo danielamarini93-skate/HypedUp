@@ -13,6 +13,23 @@
     });
   });
 
+  /* desktop dropdowns */
+  var dds = $$('.dd>button');
+  dds.forEach(function (b) { b.addEventListener('click', function (e) { e.stopPropagation(); var open = b.getAttribute('aria-expanded') !== 'true';
+    dds.forEach(function (x) { x.setAttribute('aria-expanded', 'false'); document.getElementById(x.getAttribute('aria-controls')).hidden = true; });
+    if (open) { b.setAttribute('aria-expanded', 'true'); document.getElementById(b.getAttribute('aria-controls')).hidden = false; } }); });
+  document.addEventListener('click', function () { dds.forEach(function (x) { x.setAttribute('aria-expanded', 'false'); document.getElementById(x.getAttribute('aria-controls')).hidden = true; }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.body.click(); });
+  /* phone menu doors (accordion) */
+  var doors = $$('.sheet .doors>li>button');
+  doors.forEach(function (b) { b.addEventListener('click', function () { var open = b.getAttribute('aria-expanded') !== 'true';
+    doors.forEach(function (x) { x.setAttribute('aria-expanded', 'false'); document.getElementById(x.getAttribute('aria-controls')).hidden = true; });
+    if (open) { b.setAttribute('aria-expanded', 'true'); document.getElementById(b.getAttribute('aria-controls')).hidden = false; } }); });
+  /* footer columns: open on desktop, collapsed on phones */
+  var mq = matchMedia('(min-width:1000px)');
+  var setCols = function () { $$('.fcol').forEach(function (d) { d.open = mq.matches; }); };
+  setCols(); if (mq.addEventListener) mq.addEventListener('change', setCols);
+
   /* footer wordmark: fit the outlined SVG text to its own box */
   function fitWm() { $$('.wmsvg').forEach(function (sv) { var b = sv.querySelector('text').getBBox(), p = 4; sv.setAttribute('viewBox', (b.x - p) + ' ' + (b.y - p) + ' ' + (b.width + p * 2) + ' ' + (b.height + p * 2)); }); }
   (document.fonts ? document.fonts.ready : Promise.resolve()).then(fitWm); fitWm();
@@ -61,14 +78,27 @@
       var need = $$('input[name="need"]:checked', form).map(function (x) { return x.dataset.label; });
       return 'Hi Hypa, I\'d like a quote.\n' +
         'For: ' + (need.join(', ') || '…') + '\n' +
-        'Vehicle: ' + (val('vehicle') || '…') + (val('reg') ? ' (' + val('reg') + ')' : '') + '\n' +
-        (val('more') ? val('more') + '\n' : '') +
-        'Name: ' + (val('name') || '…');
+        'Car: ' + (val('vehicle') || '…') + '\n' +
+        val('more');
     };
+    var eb = $('#by-email'), box = $('#emailbox');
+    eb.addEventListener('click', function () { box.hidden = false; eb.setAttribute('aria-expanded', 'true'); $('#name').focus(); });
+    var ph = $('#photos');
+    ph.addEventListener('change', function () { var n = ph.files.length; $('#ph-label').textContent = n ? n + (n > 1 ? ' photos added' : ' photo added') : 'Add photos'; });
+    $$('[data-src] button').forEach(function (b) { b.addEventListener('click', function () { $$('[data-src] button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); }); });
     var out = $('#sent'), msg = $('#sent-msg'), prev = $('#sent-preview');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var via = e.submitter && e.submitter.value;
+      if (via === 'email') {
+        var bad = null;
+        [['name', function (v) { return v.length > 1; }], ['email', function (v) { return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v); }]].forEach(function (f) {
+          var el = form.elements[f[0]], ok = f[1](el.value.trim());
+          el.setAttribute('aria-invalid', ok ? 'false' : 'true'); $('#' + f[0] + '-err').hidden = ok;
+          if (!ok && !bad) bad = el;
+        });
+        if (bad) { bad.focus(); return; }
+      }
       out.hidden = false; form.hidden = true;
       if (via === 'whatsapp') {
         msg.textContent = 'WhatsApp would open now with this message written. Nothing is sent until you press send.';

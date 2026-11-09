@@ -45,6 +45,10 @@ Solid lines = in the menu (tier 1) · dotted = hub + footer (tier 2) or contextu
 Why these 10 in the menu: the highest search demand (trackers, Ghost, dash cams, wraps, remapping, audio), the most-viewed
 page today (CarPlay), Hyped Up's signature work (air suspension) and the quick earners (tint). PPF was in Protect ("the name says it"); on 9 Nov Dani took it out of Protect: it now sits in the **Style menu** (decided 9 Nov).
 
+**Navigation rule (Dani, 9 Nov):** keep the menu simple. Protect / Upgrade / Style open straight onto their services; the
+hub pages (`/protect`, `/upgrade`, `/style`) stay for SEO but are linked only from the footer ("All Protect services →"),
+breadcrumbs and in-page links, not from the menu. Footer on phones: collapsible rows (Protect · Upgrade · Style · More).
+
 ## URLs
 | Page type | Pattern | Example |
 |---|---|---|

@@ -18,33 +18,46 @@ def head(title, desc):
     return ('<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             '<title>%s</title><meta name="description" content="%s">%s<link rel="stylesheet" href="site.css"></head><body>' % (title, desc, FONTS))
 
-NAV = [('Protect', 'protect.html', 1), ('Upgrade', '#', 1), ('Style', '#', 1), ('Builds', 'builds.html', 0), ('Contact', 'contact.html', 0)]
+MENU = [('Protect', [('Ghost &amp; immobilisers', 'ghost.html'), ('Car trackers', '#'), ('Dash cams', '#')]),
+        ('Upgrade', [('CarPlay &amp; Android Auto', '#'), ('Car audio', '#'), ('Remapping', '#')]),
+        ('Style', [('Car wrapping', '#'), ('Paint protection film', '#'), ('Window tinting', '#'), ('Air suspension', '#')])]
+HUB = {'Protect': 'protect.html', 'Upgrade': '#', 'Style': '#'}
 def header(cur):
-    links = ''.join('<a href="%s"%s>%s%s</a>' % (h, ' aria-current="page"' if n == cur else '', n, '{{lu:chevron-down}}' if d else '') for n, h, d in NAV)
-    return ('<header class="hd"><div class="wrap"><a class="chip" href="home.html"><img src="img/logo.png" alt="Hyped Up home"></a><nav aria-label="Main">%s</nav>'
+    # Menu groups open straight onto the services (no hub links in the menu: hubs live in the footer, for SEO).
+    groups = ''.join('<div class="dd"><button type="button" aria-expanded="false" aria-controls="dd-%d"%s>%s{{lu:chevron-down}}</button><ul class="ddp" id="dd-%d" hidden>%s</ul></div>'
+                     % (i, ' aria-current="page"' if g == cur else '', g, i, ''.join('<li><a href="%s">%s</a></li>' % (h, t) for t, h in it)) for i, (g, it) in enumerate(MENU))
+    plain = ''.join('<a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if n == cur else '', n) for n, h in [('Builds', 'builds.html'), ('Contact', 'contact.html')])
+    doors = ''.join('<li><button type="button" aria-expanded="false" aria-controls="sd-%d">%s<span>{{lu:chevron-down}}</span></button><ul class="sub" id="sd-%d" hidden>%s</ul></li>'
+                    % (i, g, i, ''.join('<li><a href="%s">%s</a></li>' % (h, t) for t, h in it)) for i, (g, it) in enumerate(MENU))
+    return ('<header class="hd"><div class="wrap"><a class="chip" href="home.html"><img src="img/logo.png" alt="Hyped Up home"></a><nav aria-label="Main" class="mainnav">' + groups + plain + '</nav>'
             '<span class="mono status"><i></i>Open today<br>10:00–18:00</span><a class="pill sm" href="contact.html">Contact us</a>'
             '<button class="menu-btn" data-menu="open" aria-label="Open menu">Menu {{lu:menu}}</button></div></header>'
             '<div class="sheet" id="sheet" hidden><div class="top"><span class="chip"><img src="img/logo.png" alt="Hyped Up"></span><button class="menu-btn" data-menu="close" aria-label="Close menu">Close {{lu:x}}</button></div>'
-            '<ul class="doors"><li><a href="protect.html">Protect {{lu:arrow-right}}</a></li><li><a href="#">Upgrade {{lu:arrow-right}}</a></li><li><a href="#">Style {{lu:arrow-right}}</a></li></ul>'
-            '<nav class="small" aria-label="More"><a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="builds.html">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a></nav>'
-            '<p class="mono hours"><i style="display:inline-block;width:7px;height:7px;border-radius:50%%;background:var(--ok);margin-right:.45rem"></i>Open today 10:00–18:00 · London SE16</p>'
+            '<ul class="doors" data-acc>' + doors + '<li><a href="builds.html">Builds</a></li></ul>'
+            '<nav class="small" aria-label="More"><a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a></nav>'
+            '<p class="mono hours"><i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:.45rem"></i>Open today 10:00–18:00 · London SE16</p>'
             '<div class="bottom"><a class="pill" href="contact.html">Contact us</a><a class="pill ghost ico" href="#wa" aria-label="WhatsApp">{{br:whatsapp}}</a><a class="pill ghost ico" href="tel:+442033400632" aria-label="Call 020 3340 0632">{{lu:phone}}</a></div></div>'
-            '<main id="main">') % links
+            '<main id="main">')
 
-COLS = [('Protect', ['Ghost &amp; immobilisers', 'Car trackers', 'Dash cams', 'Taxi cameras (TfL)', 'Detailing &amp; ceramic']),
+COLS = [('Protect', ['Ghost &amp; immobilisers', 'Car trackers', 'Alarms', 'Dash cams', 'Taxi cameras (TfL)', 'Detailing &amp; ceramic']),
         ('Upgrade', ['CarPlay &amp; Android Auto', 'Car audio', 'Remapping', 'Reverse cameras &amp; sensors', 'Ambient lighting &amp; starlights']),
         ('Style', ['Car wrapping', 'Paint protection film', 'Window tinting', 'Air suspension', 'Chrome delete', 'Bodykits', 'Wheel refurb &amp; calipers', 'Interiors', 'Number plates', 'Van signage &amp; livery']),
-        ('More', ['Motorbikes', 'Business &amp; fleet', 'Builds', 'Blog', 'Shop']),
-        ('Hyped Up', ['About', 'Contact'])]
+        ('More', ['Motorbikes', 'Business &amp; fleet', 'Builds', 'Blog', 'Shop', 'About'])]
 def footer():
-    c = ''.join('<div><h4 class="mono">%s</h4><ul>%s</ul></div>' % (h, ''.join('<li><a href="#">%s</a></li>' % x for x in it)) for h, it in COLS)
-    return ('</main><footer class="ft"><div class="wrap"><div class="ft-grid">%s<div class="findus"><span class="find">Find us</span>'
-            '<p><b>Unit 22, Enterprise Industrial Estate,<br>Bolina Road, London SE16 3LF</b></p><p>Mon–Fri 10:00–18:00<br>Sat 09:00–16:00 · Sun closed</p>'
-            '<p>020 3340 0632<br>WhatsApp 07713 735646<br>info@hypedup.uk</p><div class="social"><a href="#" aria-label="Instagram">{{br:instagram}}</a><a href="#" aria-label="TikTok">{{br:tiktok}}</a><a href="#" aria-label="Facebook">{{br:facebook}}</a></div></div></div>'
+    # Phone: each column is a collapsed row (details); desktop: site.js opens them all.
+    def col(h, it):
+        hub = ('<li class="hub"><a href="%s">All %s services →</a></li>' % (HUB[h], h)) if h in HUB else ''
+        return '<details class="fcol"><summary class="mono">%s{{lu:plus}}</summary><ul>%s%s</ul></details>' % (h, hub, ''.join('<li><a href="#">%s</a></li>' % x for x in it))
+    c = ''.join(col(h, it) for h, it in COLS)
+    return ('</main><footer class="ft"><div class="wrap"><div class="ft-grid"><div class="findus"><span class="find">Find us</span>'
+            '<p><b>Unit 22, Enterprise Industrial Estate, Bolina Road, London SE16 3LF</b></p><p class="mono">Mon–Fri 10–18 · Sat 9–16 · Sun closed</p>'
+            '<div class="social"><a class="ci" href="tel:+442033400632" aria-label="Call 020 3340 0632">{{lu:phone}}</a><a class="ci" href="#wa" aria-label="WhatsApp 07713 735646">{{br:whatsapp}}</a><a class="ci" href="mailto:info@hypedup.uk" aria-label="Email info@hypedup.uk">{{lu:mail}}</a>'
+            '<a href="#" aria-label="Instagram">{{br:instagram}}</a><a href="#" aria-label="TikTok">{{br:tiktok}}</a><a href="#" aria-label="Facebook">{{br:facebook}}</a></div>'
+            '<p class="ftcontact">020 3340 0632 · WhatsApp 07713 735646 · info@hypedup.uk</p></div>' + c + '</div>'
             '<div class="legal mono"><span>© 2026 Hyped Up Ltd · Company no. 14086991</span><span>Privacy · Cookies · Terms · Cookie settings</span></div>'
             '<div class="wm"><svg class="wmsvg" aria-hidden="true" preserveAspectRatio="xMinYMax meet"><defs><linearGradient id="wmg" x1="0" x2="1"><stop offset="0" stop-color="#ff4033"/><stop offset=".6" stop-color="#ef1220"/><stop offset="1" stop-color="#de0613"/></linearGradient></defs>'
             '<text x="0" y="0" font-size="200" fill="none" stroke="url(#wmg)">HYPED UP</text></svg><span class="mono">Est. 2022</span></div></div></footer>'
-            '<a class="fab" href="#wa" aria-label="WhatsApp Hyped Up">{{br:whatsapp}}</a><script src="site.js"></script></body></html>') % c
+            '<a class="fab" href="#wa" aria-label="WhatsApp Hyped Up">{{br:whatsapp}}</a><script src="site.js"></script></body></html>')
 
 def page(name, title, desc, cur, body):
     open(os.path.join(OUT, name), 'w').write(icons(head(title, desc) + header(cur) + body + footer()))
@@ -113,30 +126,93 @@ def build():
 </div></section>
 ''' + band('Got a car in mind?', 'Tell me the car and the idea. I\'ll come back with options and a price.'))
 
-    # ---------- PROTECT HUB ----------
-    page('protect.html', 'Car Security in South London: Ghost, Trackers | Hyped Up', 'Ghost immobilisers, GPS trackers and dash cams fitted in Bermondsey, South London. Stop keyless theft, find the car if it goes, record what happens. From £125.', 'Protect', '''
+    # ---------- PROTECT HUB (v2: full range, layered, SEO questions) ----------
+    groups = [
+        ('immobilisers', 'Immobilisers', 'from £400', 'alfa-keys-wheel.jpg', 'Alfa Romeo steering wheel buttons, start button and keys',
+         'Stop the car starting, even with a cloned key or a relay kit.',
+         [('Ghost II immobiliser', 'PIN on the buttons your car already has. No fob, no LED. Cars and motorbikes.', 'ghost.html'),
+          ('Metablok and Metablok-e', 'CAN bus immobiliser with a key-fob tag; the e version adds app control.', '#'),
+          ('Scorpion X-series', 'Immobiliser that pairs with Scorpion tracking and alarms.', '#')]),
+        ('trackers', 'GPS trackers', 'from £395', 'tracker.jpg', 'MetaTrak tracker card in front of a Mercedes',
+         'See where the car is, get an alert if it moves, help the police recover it.',
+         [('S7 trackers (SmartTrack Trident)', 'Live GPS tracking with 24/7 monitoring and battery backup.', '#'),
+          ('S5 trackers (MetaTrak, Scorpion)', 'Everything S7 does, plus driver recognition: it knows if the car moves without your tag.', '#'),
+          ('Motorbike trackers (Datatool S5)', 'Compact unit hidden under the seat or tail.', '#')]),
+        ('alarms', 'Alarms', 'price on enquiry', 'audi-r8-unit.jpg', 'Black Audi R8 outside the Hyped Up unit',
+         'Make noise and send an alert the moment someone tries.',
+         [('Scorpion alarms', 'Shock, tilt and glass-break sensors, app arm and disarm, tamper alerts.', '#'),
+          ('Motorbike alarms', 'Loud siren with motion and shock sensors, built for bikes.', '#')]),
+        ('dashcams', 'Dash cams', 'from £125', 'dashcam.jpg', 'Dash cam fitted behind a BMW mirror',
+         'Record the road, and the car while it is parked.',
+         [('Front, front + rear, or 3-channel', 'Hardwired with parking mode and battery protection, wiring hidden.', '#'),
+          ('FineVu and Thinkware', 'Supplied and fitted, or I fit the one you already have.', '#')]),
+        ('taxi', 'Taxi cameras (TfL)', 'from £395', 'wrap.jpg', 'London taxi in the workshop',
+         'TfL-approved camera systems for licensed taxis and private hire.',
+         [('2-channel TfL cameras', 'Approved systems for black cabs and PHVs, fitted and tested.', '#')]),
+    ]
+    jump = ''.join('<a href="#%s">%s</a>' % (k, n) for k, n, *_ in groups)
+    def grp(k, n, price, img, alt, line, items):
+        rows = ''.join('<li><a href="%s"><b>%s</b><span>%s</span>{{lu:arrow-right}}</a></li>' % (h, t, d) for t, d, h in items)
+        return ('<article class="pgroup" id="%s"><figure><div class="media vig"><img src="img/%s" alt="%s" loading="lazy"></div></figure>'
+                '<div class="pbody"><div class="phead"><h3>%s</h3><span class="from g">%s</span></div><p class="lead">%s</p><ul class="plist">%s</ul></div></article>'
+                % (k, img, alt, n, price, line, rows))
+    page('protect.html', 'Car Security South London: Ghost, Trackers, Alarms | Hyped Up', 'Car and motorbike security fitted in Bermondsey: Ghost immobilisers, S5 and S7 trackers, alarms, dash cams and TfL taxi cameras. Clear "from" prices.', 'Protect', '''
 <section class="hero flip"><div class="wrap"><div class="grid">
   <div class="copy">
     <h1>Protect it.</h1>
-    <p class="lead">Keyless cars are stolen with relay kits every week in South London. I fit the kit that stops it: an immobiliser so it won't start, a tracker so it can be found, a dash cam so it's on record.</p>
+    <p class="lead">Keyless cars and bikes get taken in South London every week, with relay kits, cloned keys and OBD hacks. I fit the security that stops them, finds them, and puts it all on record. Cars, vans and motorbikes.</p>
     <div class="act"><a class="pill" href="contact.html?service=security">Contact us</a><a class="link" href="#compare">Which one do I need? {{lu:arrow-down}}</a></div>
   </div>
-  <figure><div class="media vig"><img src="img/tracker.jpg" alt="MetaTrak tracker card in front of a Mercedes in the workshop"></div></figure>
-</div></div></section>
+  <figure><div class="media vig"><img src="img/porsche-macan-unit.jpg" alt="Black Porsche Macan outside the Hyped Up unit"></div></figure>
+</div>
+<nav class="chips jump" aria-label="On this page" style="margin-top:28px">''' + jump + '''<a href="#bikes">Motorbikes</a></nav>
+</div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><h2>Security services</h2></div>
-  <div class="cards">''' + card('mini-jcw-street.jpg', 'Ghost &amp; immobilisers', 'The car won\'t start without your PIN, entered on buttons it already has.', 'from £400', 'ghost.html', True)
-         + card('tracker.jpg', 'Car trackers', 'Live location and alerts, with S5 and S7 options.', 'from £395')
-         + card('dashcam.jpg', 'Dash cams', 'Front, rear or 3-channel, hardwired with parking mode.', 'from £125') + '''</div>
+  <div class="sec-head"><h2>Layer it</h2><p>One system does one job. Thieves get past one layer; they rarely get past three.</p></div>
+  <ol class="steps steps4">
+    <li><span class="mono">Stop it</span><h3>Immobiliser</h3><p>No PIN, no start. Beats relay attacks and cloned keys.</p></li>
+    <li><span class="mono">Warn them</span><h3>Alarm</h3><p>Tilt, shock and glass-break sensors, with an alert on your phone.</p></li>
+    <li><span class="mono">Find it</span><h3>Tracker</h3><p>Live location and 24/7 monitoring if it goes anyway.</p></li>
+    <li><span class="mono">Prove it</span><h3>Dash cam</h3><p>Footage of the road, and of the car while it's parked.</p></li>
+  </ol>
+</div></section>
+<section class="sec"><div class="wrap" style="display:grid;gap:56px">
+  <div class="sec-head" style="margin-bottom:0"><h2>Everything I fit</h2></div>
+''' + ''.join(grp(*g) for g in groups) + '''
 </div></section>
 <section class="sec" id="compare"><div class="wrap">
-  <div class="sec-head"><h2>Which one do I need?</h2><p>They do different jobs. Fit one, or layer them.</p></div>
-  <table class="compare"><thead><tr><th>Service</th><th>What it does</th><th>When it helps</th><th>Price</th></tr></thead><tbody>
-    <tr><td><b>Ghost immobiliser</b></td><td>Stops the engine starting without your PIN, even with your key</td><td>Before: relay attacks and cloned keys</td><td><span class="from g">from £400</span></td></tr>
-    <tr><td><b>Tracker</b></td><td>Shows where the car is and alerts you if it moves</td><td>After: finding and recovering the car</td><td><span class="from g">from £395</span></td></tr>
-    <tr><td><b>Dash cam</b></td><td>Records the road, and the car while it's parked</td><td>Evidence: crashes, scams, damage</td><td><span class="from g">from £125</span></td></tr>
+  <div class="sec-head"><h2>Which one do I need?</h2><p>Start with how your car would be stolen. Most keyless cars need an immobiliser first.</p></div>
+  <table class="compare"><thead><tr><th>Type</th><th>What it does</th><th>Best for</th><th>Price</th></tr></thead><tbody>
+    <tr><td><b>Ghost immobiliser</b></td><td>Engine won't start without your PIN</td><td>Keyless cars, relay and cloned-key theft</td><td><span class="from g">from £400</span></td></tr>
+    <tr><td><b>Metablok / Scorpion immobiliser</b></td><td>Blocks starting unless your tag or app says so</td><td>Owners who prefer a tag to a PIN</td><td><span class="from g">from £495</span></td></tr>
+    <tr><td><b>S7 tracker</b></td><td>Live GPS, 24/7 monitoring, battery backup</td><td>Recovery if the car is taken</td><td><span class="from g">from £395</span></td></tr>
+    <tr><td><b>S5 tracker</b></td><td>S7 plus driver recognition tag</td><td>High-value cars; insurer asks for S5 <span class="tbc">(TBC)</span></td><td><span class="from g">from £395</span></td></tr>
+    <tr><td><b>Alarm</b></td><td>Siren and phone alert on tilt, shock or glass-break</td><td>Street parking, smash-and-grab</td><td><span class="from g">on enquiry</span></td></tr>
+    <tr><td><b>Dash cam</b></td><td>Records driving and parked events</td><td>Crashes, cash-for-crash, damage</td><td><span class="from g">from £125</span></td></tr>
   </tbody></table>
-  <div style="margin-top:28px;display:grid;gap:12px"><span class="mono">Also under Protect</span><div class="chips"><a href="#">Taxi cameras (TfL)</a><a href="#">Detailing &amp; ceramic</a></div></div>
+  <p class="note" style="margin-top:12px">Some trackers have a monthly subscription for monitoring. I'll tell you which, and how much, before you book.</p>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="sec-head"><div style="display:grid;gap:10px"><span class="mono">Trackers explained</span><h2>S5 or S7?</h2></div><p>Both are approved tracking categories with live GPS, 24/7 monitoring and battery backup. The difference is driver recognition.</p></div>
+  <div class="vs">
+    <div><h3>S7</h3><p>Tracks the car and alerts the monitoring centre if it's moved or the battery is cut.</p><span class="from g">from £395</span></div>
+    <div><h3>S5</h3><p>All of S7, plus a small tag you carry. If the car moves without it, an alert goes out straight away.</p><span class="from g">from £395</span></div>
+  </div>
+  <p class="note" style="margin-top:14px">Some insurers ask for a specific category: send me your policy wording and I'll match it. <span class="tbc">(Insurance wording TBC: Hypa)</span></p>
+</div></section>
+<section class="sec" id="bikes"><div class="wrap">
+  <div class="sec-head"><div style="display:grid;gap:10px"><span class="mono">Motorbikes</span><h2>Bikes get lifted into vans</h2></div><p>A bike can be gone in a minute without starting it, so bikes need tracking as well as an immobiliser.</p></div>
+  <div class="chips"><a href="ghost.html">Ghost for motorbikes</a><a href="#">Datatool S5 tracker</a><a href="#">Bike alarms</a><a href="#">All motorbike work</a></div>
+</div></section>
+<section class="sec"><div class="wrap" style="max-width:900px">
+  <div class="sec-head"><h2>Questions</h2></div>
+  <div class="faq">
+    <details open><summary>Can thieves bypass a Ghost immobiliser?{{lu:plus}}</summary><p>It has no fob to clone and no signal to relay, and it isn't reached through the OBD port, so the usual tools don't work. Nothing is unbeatable, which is why I recommend pairing it with a tracker.</p></details>
+    <details><summary>Ghost, Metablok or Scorpion: which immobiliser?{{lu:plus}}</summary><p>Ghost uses a PIN on your own buttons; Metablok and Scorpion use a tag or app. All three stop the car starting. Tell me how you use the car and I'll recommend one.</p></details>
+    <details><summary>Do I need a tracker if I have an immobiliser?{{lu:plus}}</summary><p>An immobiliser stops it being driven away; a tracker finds it if it's towed or lifted. For high-value cars and bikes, I'd fit both.</p></details>
+    <details><summary>Is there a monthly fee?{{lu:plus}}</summary><p>Trackers with 24/7 monitoring have a subscription. Immobilisers, alarms and dash cams don't. You'll know the full cost before you book.</p></details>
+    <details><summary>My car alarm keeps going off. Can you fix it?{{lu:plus}}</summary><p>Usually it's a badly set sensor or a weak battery. I can check it, or replace it with an alarm that sends an alert to your phone instead. <span class="tbc">(TBC: Hypa offers this)</span></p></details>
+  </div>
 </div></section>
 ''' + band('Not sure what your car needs?', 'Send me the make and model. I\'ll tell you what\'s worth fitting and what it costs.', 'security'))
 
@@ -151,7 +227,7 @@ def build():
       <div class="price"><b class="g">from £400</b><span class="mono">fitted · exact price depends on the car <span class="tbc">(TBC: Hypa)</span></span></div>
       <div class="act"><a class="pill" href="contact.html?service=security">Contact us</a></div>
     </div>
-    <figure><div class="media vig"><img src="img/mini-jcw-street.jpg" alt="Red Mini JCW parked on a London street"></div><figcaption class="mono tbc">Photo TBC: a Ghost fitting shot</figcaption></figure>
+    <figure><div class="media vig"><img src="img/alfa-keys-wheel.jpg" alt="Alfa Romeo steering wheel buttons, start button and keys"></div></figure>
   </div>
 </div></section>
 <section class="sec"><div class="wrap">
@@ -192,7 +268,14 @@ def build():
 
     # ---------- BUILDS ----------
     items = [
+        ('audi-r8-unit.jpg', 'Audi R8', 'Work <span class="tbc">TBC</span>', 'upgrade', 'Black Audi R8 outside the Hyped Up unit'),
         ('abarth-pink-wrap.jpg', 'Abarth 595', 'Pink wrap, gold wheels', 'style', 'Pink Abarth 595 with gold wheels'),
+        ('audi-r8-carplay.jpg', 'Audi R8', 'New CarPlay screen', 'upgrade', 'Audi R8 dashboard with a new CarPlay screen'),
+        ('porsche-macan-unit.jpg', 'Porsche Macan', 'Work <span class="tbc">TBC</span>', 'style', 'Black Porsche Macan outside the Hyped Up unit'),
+        ('bentley-unit.jpg', 'Bentley Flying Spur', 'Work <span class="tbc">TBC</span>', 'style', 'Bentley outside the Hyped Up unit'),
+        ('mercedes-screen.jpg', 'Mercedes', 'Screen upgrade', 'upgrade', 'Mercedes dashboard with a large new screen'),
+        ('fiat-500-red.jpg', 'Fiat 500', 'Work <span class="tbc">TBC</span>', 'upgrade', 'Red Fiat 500 inside the workshop'),
+        ('ford-transit-yellow.jpg', 'Ford Transit Custom', 'Work <span class="tbc">TBC</span>', 'style', 'Yellow Ford Transit Custom van in the workshop'),
         ('mini-jcw-low.jpg', 'Mini JCW', 'Air suspension', 'style', 'Red Mini JCW sitting low on air suspension'),
         ('abarth-ambient.jpg', 'Abarth 595', 'Ambient lighting', 'upgrade', 'Abarth interior with purple ambient lighting'),
         ('volvo-xc90-satin.jpg', 'Volvo XC90', 'Satin finish, gold details <span class="tbc">TBC</span>', 'style', 'Satin grey Volvo XC90 with gold wheel details'),
@@ -201,9 +284,7 @@ def build():
         ('carplay.jpg', 'Mini', 'Wireless CarPlay screen', 'upgrade', 'Mini dashboard with a new CarPlay screen'),
         ('tracker.jpg', 'Mercedes', 'MetaTrak tracker', 'protect', 'MetaTrak tracker card in front of a Mercedes'),
         ('dashcam.jpg', 'BMW', 'Front and rear dash cam', 'protect', 'Dash cam fitted behind a BMW mirror'),
-        ('abarth-ambient-door.jpg', 'Abarth 595', 'Ambient lighting, door view', 'upgrade', 'Abarth with door open showing ambient lighting'),
         ('civic.jpg', 'Honda Civic Type R', 'Work <span class="tbc">TBC</span>', 'upgrade', 'Yellow Honda Civic Type R in the workshop'),
-        ('transit-custom.jpg', 'Ford Transit Custom', 'Work <span class="tbc">TBC</span>', 'style', 'Grey Ford Transit Custom van'),
     ]
     figs = ''.join('<figure data-tags="%s"><div class="media vig"><img src="img/%s" alt="%s" loading="lazy"></div><figcaption><b>%s</b><span class="mono">%s</span></figcaption></figure>' % (t, i, a, n, w) for i, n, w, t, a in items)
     page('builds.html', 'Builds: Wraps, Air Suspension, Audio & More | Hyped Up', 'Real cars and bikes from the Hyped Up workshop in Bermondsey: wraps, air suspension, CarPlay, audio, ambient lighting and security installs. See the work, then get a quote.', 'Builds', '''
@@ -224,40 +305,36 @@ def build():
 ''' + band('Want yours on this wall?', 'Tell me the car and the idea. I\'ll come back with options and a price.'))
 
     # ---------- CONTACT ----------
-    needs = [('security', 'Security'), ('carplay', 'CarPlay &amp; screens'), ('audio', 'Audio'), ('wrap', 'Wrap or tint'), ('ppf', 'PPF'), ('air', 'Air suspension'), ('remap', 'Remap'), ('plates', 'Number plates'), ('other', 'Something else')]
+    needs = [('security', 'Security'), ('screens', 'Screens &amp; audio'), ('wrap', 'Wrap'), ('ppf', 'PPF or tint'), ('air', 'Air suspension'), ('remap', 'Remap'), ('plates', 'Plates'), ('other', 'Other')]
     ticks = ''.join('<label><input type="checkbox" name="need" value="%s" data-label="%s"><span>{{lu:check}}%s</span></label>' % (v, l.replace('&amp;', '&'), l) for v, l in needs)
-    page('contact.html', 'Contact Hyped Up: Get a Quote | Bermondsey, London', 'Get a quote from Hyped Up in Bermondsey, South London: tell us the car and the job, add photos, and choose a reply by email or WhatsApp. Open Mon–Sat.', 'Contact', '''
+    srcs = ['Google', 'Google Maps', 'Instagram', 'TikTok', 'A friend', 'Been before']
+    MAPQ = 'Hyped%20Up%2C%20Unit%2022%2C%20Enterprise%20Industrial%20Estate%2C%20Bolina%20Road%2C%20London%20SE16%203LF'
+    page('contact.html', 'Contact Hyped Up: Get a Quote | Bermondsey, London', 'Get a quote from Hyped Up in Bermondsey, South London. Pick the job, tell us the car, add photos if you like, and send it by WhatsApp or email. Open Mon–Sat.', 'Contact', '''
 <div class="wrap contact">
-  <div style="display:grid;gap:28px">
-    <div style="display:grid;gap:16px"><h1>Contact us</h1><p class="lead">Tell me what you're after. I'll come back with options and a straight price.</p></div>
+  <div style="display:grid;gap:24px;align-content:start">
+    <div style="display:grid;gap:12px"><h1>Contact us</h1><p class="lead">Tell me what you're after. I'll come back with options and a straight price.</p></div>
     <form class="form" id="quote" novalidate>
-      <fieldset class="fs"><legend>What do you need? <span>Pick one or more</span></legend><div class="tick">''' + ticks + '''</div></fieldset>
-      <div class="row2">
-        <div class="field"><label for="vehicle">Vehicle</label><input id="vehicle" name="vehicle" placeholder="Make and model, e.g. BMW M140i" autocomplete="off" required></div>
-        <div class="field"><label for="reg">Reg plate <span>(optional)</span></label><input id="reg" name="reg" autocomplete="off"><p class="hint">Helps me check the exact spec. Only used for your quote.</p></div>
+      <fieldset class="fs"><legend>What do you need?</legend><div class="tick">''' + ticks + '''</div></fieldset>
+      <div class="field"><label for="vehicle">Your car</label><input id="vehicle" name="vehicle" placeholder="e.g. BMW 1 Series 2019, reg if you have it" autocomplete="off" required></div>
+      <div class="field"><label for="more">Anything else? <span>(optional)</span></label><textarea id="more" name="more" rows="2" placeholder="Ideas, budget, timing"></textarea>
+        <label class="addph">{{lu:camera}}<span id="ph-label">Add photos</span><input type="file" accept="image/*" multiple id="photos"></label></div>
+      <div class="send"><button class="pill ghost" type="submit" value="whatsapp">{{br:whatsapp}}Send on WhatsApp</button><button class="pill" type="button" id="by-email" aria-expanded="false" aria-controls="emailbox">{{lu:mail}}Send by email</button></div>
+      <div class="emailbox" id="emailbox" hidden>
+        <div class="row2"><div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required aria-describedby="name-err"><p class="err" id="name-err" hidden>Add your name so I know who to reply to.</p></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err"><p class="err" id="email-err" hidden>I need your email to reply, e.g. name@example.com</p></div></div>
+        <div class="field"><label for="phone">Phone <span>(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        <button class="pill" type="submit" value="email">Send</button>
       </div>
-      <div class="field"><label for="more">Tell me more <span>(optional)</span></label><textarea id="more" name="more" placeholder="Ideas, budget, timing"></textarea></div>
-      <div class="field"><span class="mono" style="margin-bottom:10px">Photos <span style="text-transform:none;letter-spacing:0;font-family:var(--f-body)">(optional, up to 3)</span></span>
-        <label class="drop">{{lu:image-plus}}<span>Add photos of the car or the idea. They come with the email.</span><input type="file" accept="image/*" multiple></label></div>
-      <div class="row2">
-        <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="src">How did you find us? <span>(optional)</span></label><select id="src" name="src"><option value="">Choose one</option><option>Google search</option><option>Google Maps</option><option>Instagram</option><option>TikTok</option><option>Friend or family</option><option>I've been before</option><option>Other</option></select></div>
-      </div>
-      <div class="row2">
-        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"><p class="hint">Needed for WhatsApp.</p></div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"><p class="hint">Needed for a reply by email.</p></div>
-      </div>
-      <div style="display:grid;gap:12px">
-        <div class="send"><button class="pill" type="submit" value="email">{{lu:mail}}Send by email</button><button class="pill ghost" type="submit" value="whatsapp">{{br:whatsapp}}Send on WhatsApp</button></div>
-        <p class="note">WhatsApp opens with your message written. Nothing is sent until you press send. By sending, you agree to our <a href="#" style="text-decoration:underline">privacy policy</a>.</p>
-      </div>
+      <p class="note">WhatsApp opens with your message written; nothing is sent until you press send. <a href="#" style="text-decoration:underline">Privacy</a></p>
     </form>
-    <div class="done" id="sent" tabindex="-1" hidden><h3>Thanks</h3><p id="sent-msg"></p><div class="preview" id="sent-preview" hidden></div><button class="pill ghost sm" id="sent-back" type="button" style="justify-self:start">Back to the form</button></div>
+    <div class="done" id="sent" tabindex="-1" hidden><h3>Thanks</h3><p id="sent-msg"></p><div class="preview" id="sent-preview" hidden></div>
+      <div style="display:grid;gap:10px;margin-top:8px"><span class="mono">How did you find us? <span style="text-transform:none;letter-spacing:0">(optional, one tap)</span></span><div class="chips" data-src>''' + ''.join('<button type="button" aria-pressed="false">%s</button>' % x for x in srcs) + '''</div></div>
+      <button class="link" id="sent-back" type="button" style="background:none;border:0;color:inherit;padding:0;cursor:pointer;justify-self:start;margin-top:6px">Back to the form {{lu:arrow-right}}</button></div>
   </div>
   <aside class="aside">
     <div><span class="find">Find us</span></div>
     <p><b>Unit 22, Enterprise Industrial Estate,<br>Bolina Road, London SE16 3LF</b></p>
-    <div class="mapcard"><img src="img/porsche.jpg" alt="The Hyped Up unit entrance with a Porsche 911 outside"><a class="pill sm" href="#">{{lu:map-pin}}Get directions</a></div>
+    <div class="map"><iframe src="https://maps.google.com/maps?q=''' + MAPQ + '''&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Hyped Up on Bolina Road, London SE16 3LF"></iframe></div>
+    <a class="pill sm" style="justify-self:start" href="https://maps.google.com/?cid=1418041190124790308" target="_blank" rel="noopener">{{lu:map-pin}}Get directions</a>
     <table class="compare" style="max-width:360px"><tbody><tr><td>Mon–Fri</td><td>10:00–18:00</td></tr><tr><td>Saturday</td><td>09:00–16:00</td></tr><tr><td>Sunday</td><td>Closed</td></tr></tbody></table>
     <p>Call <a href="tel:+442033400632"><b>020 3340 0632</b></a><br>WhatsApp <a href="#wa"><b>07713 735646</b></a><br>Email <a href="mailto:info@hypedup.uk"><b>info@hypedup.uk</b></a></p>
   </aside>
@@ -266,11 +343,11 @@ def build():
 
     # ---------- BOARD ----------
     pages = [
-        ('contact', 'Contact', 'contact.html?service=security', ['Opened from a Protect page, so <b>Security</b> is already ticked (try the URL without it too).', 'Two ways to send: <b>email</b> (shows the thank-you) or <b>WhatsApp</b> (shows the message it would open with).', 'Field order follows how Hypa quotes: what → vehicle → details → photos → who → reply.', 'Phone: WhatsApp button floats on every page; the menu has Contact us + WhatsApp + Call.'], ['Reply time in the thank-you (Hypa)', 'Map: a photo of the unit + "Get directions" (no Google Maps embed = no cookies)']),
-        ('protect', 'Protect (hub)', 'protect.html', ['Hero with no video (video stays on the homepage).', 'Three service cards with "from £", then a plain comparison: what each does and when it helps.', 'Tier-2 services as chips: Taxi cameras, Detailing.'], ['Ghost photo (none in Drive yet)', '"Keyless cars are stolen… every week" wording (Hypa)']),
+        ('contact', 'Contact', 'contact.html?service=security', ['<b>Short form v2:</b> pick the job, write the car, optional note + photos, then send. That\'s it on a phone.', '<b>Send on WhatsApp</b> needs nothing else (WhatsApp knows the number). <b>Send by email</b> opens name + email (both <b>required</b>, with a clear message if missing; phone optional).', '"How did you find us?" moved to the thank-you screen as one optional tap.', 'Opened from a Protect page, so <b>Security</b> is pre-ticked.', '<b>Real Google Map</b> with Get directions to the Business Profile.'], ['Reply time in the thank-you (Hypa)', 'Live site: load the map only after cookie consent (Google sets cookies)']),
+        ('protect', 'Protect (hub)', 'protect.html', ['<b>v2, full range:</b> immobilisers (Ghost, Metablok, Scorpion), S7 / S5 / bike trackers, alarms, dash cams, TfL taxi cameras, motorbikes.', '"Layer it": stop it · warn them · find it · prove it.', 'Bigger "Which one do I need?" table, an S5 vs S7 explainer and an FAQ built from real search questions (seo.md).', 'Jump links under the hero so the long page stays easy on a phone.'], ['Insurance / Thatcham wording (S5 vs S7)', 'Alarm repair offer and alarm price', 'A bike install photo (bike section is text-only for now)']),
         ('ghost', 'Ghost immobiliser', 'ghost.html', ['The service-page template: breadcrumb, H1 with the search term, price block, one action.', 'How it works in 3 steps, what\'s included, links to car-specific pages, FAQ (becomes FAQ schema), pair-with cards.', 'All facts from Hypa\'s own Ghost blog post.'], ['Ghost price: "from £400" (pricing.md; not in the master sheet)', 'Warranty and insurer paperwork wording']),
-        ('builds', 'Builds', 'builds.html', ['Featured build (our own Mini), then a filterable grid: All / Protect / Upgrade / Style.', 'Media from Drive; customer plates blurred, no faces.'], ['Captions marked TBC (Volvo, Civic, Transit)', 'More builds once the Drive upload is finished']),
-        ('home', 'Homepage', 'home.html', ['Direction D hero with the reel and the "Style it." morph (3 loops).', 'Service strip → recent builds → how a job works → the workshop → one review → contact band.', 'Every button says "Contact us"; on phones WhatsApp floats.'], ['A real Google review (Hypa picks)', '"Built by Hypa" copy (Hypa approves)', 'Step three timing wording']),
+        ('builds', 'Builds', 'builds.html', ['Featured build (our own Mini), then a filterable grid: All / Protect / Upgrade / Style.', 'New from your Drive upload: Audi R8 (outside + CarPlay), Porsche Macan, Bentley, Mercedes screen, Fiat 500, yellow Transit.', 'Customer plates blurred, no faces.'], ['Captions marked TBC: what work was done on the R8, Macan, Bentley, Fiat, Transits, Volvo, Civic (Hypa)', 'More builds as the Drive upload continues']),
+        ('home', 'Homepage', 'home.html', ['Direction D hero with the reel and the "Style it." morph (3 loops).', 'Service strip → recent builds → how a job works → the workshop → one review → contact band.', 'Every button says "Contact us"; on phones WhatsApp floats.', '<b>Menu v3 (all pages):</b> Protect / Upgrade / Style open straight onto their services; the hub pages are only in the footer ("All Protect services →") for SEO.', '<b>Footer v3:</b> on phones the columns fold into Protect / Upgrade / Style / More rows; contact as icon buttons.'], ['A real Google review (Hypa picks)', '"Built by Hypa" copy (Hypa approves)', 'Step three timing wording']),
     ]
     tabs = ''.join('<button type="button" role="tab" aria-selected="%s" data-p="%s">%s</button>' % ('true' if i == 0 else 'false', k, n) for i, (k, n, u, a, b) in enumerate(pages))
     panels = ''.join(
