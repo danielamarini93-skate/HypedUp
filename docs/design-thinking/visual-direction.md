@@ -175,7 +175,7 @@ Artifact https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv · source `concept/na
 - Panels: mono "01 Protect" label, Big Shoulders service names, gradient "from £" prices, square photo with vignette + mono caption, "Not sure what you need?" card.
 - Phone: closed = reel poster + headline with Graffiti City "Style it."; menu = numbered 01/02/03 doors, gradient arrow when open, WhatsApp pill + Call.
 - Footer: mono column labels (01–03 in gradient), hand-drawn circle on "Find us", Graffiti City HYPED UP wordmark in gradient. No splats, drips or brush lines.
-- To decide: prices in the menu or only on service pages; offer light mode on the site or dark only.
+- Decided (Dani, 9 Nov): **dark only**; prices stay in the menu for now. Next: Hypa reviews this round.
 
 ### Font morph v3 (Dani, 9 Nov 2026)
 - **Never more than one font in the word at a time** (Dani). Mixed rounds removed; the whole word swaps at once

@@ -42,3 +42,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-08 — Visual v0.4 (Dani): real graffiti fonts + real splatter/spray assets recoloured; Lucide icons; subtle CTA gradient; keep orange; try rounded corners on images
 - 2026-11-08 — Menu approved: the 10 tier-1 services; Blog only in the footer (Dani)
 - 2026-11-09 — Visual style: **Direction D "Workshop wall"** chosen (best of A + B + C: dark + light, Big Shoulders + Barlow + Plex Mono, Graffiti City spray word, red → orange gradient on all accents/CTAs, colour video hero with vignette, hand-drawn circle). Trying a "Style it." font-morph animation (idea, under review) (Dani)
+- 2026-11-09 — Site is **dark only** (no light mode). "From £" prices stay in the menu panels and phone menu for now. First round (moodboard D + menu & footer v4) goes to Hypa for his opinion before internal pages (Dani)

@@ -31,11 +31,11 @@ Following Dani's process: `docs/design-thinking/` (brief, strategy, research, co
 Outputs in `docs/design-thinking/`: tech-setup (cookies, forms, reviews, analytics), brief, strategy v0.2, audit, competitors, Mobbin, personas, visual direction, summary, concept.
 - **Positioning line (decided):** "Protect it. Upgrade it. Style it." + "South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly."
 - **Platform (decided):** code site in GitHub, edited only by Claude, hosted on Cloudflare
-- **Look (chosen 9 Nov 2026):** moodboard Direction D "Workshop wall": dark (+ light) base, Big Shoulders + Barlow + IBM Plex Mono, one Graffiti City spray word, deep red → orange gradient on every accent and CTA, colour video hero with strong vignette, one hand-drawn mark per screen. Moodboard: https://claude.ai/artifact/3zP6kfZV8cBYNNGFqDimgc
+- **Look (chosen 9 Nov 2026):** moodboard Direction D "Workshop wall": **dark only**, Big Shoulders + Barlow + IBM Plex Mono, one Graffiti City spray word, deep red → orange gradient on every accent and CTA, colour video hero with strong vignette, one hand-drawn mark per screen. Moodboard: https://claude.ai/artifact/3zP6kfZV8cBYNNGFqDimgc
 - **Main action:** WhatsApp quote with service and car pre-filled
 - **Research & audit doc (Dani edits here first):** https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg
 - **Concept:** https://claude.ai/artifact/NdsiSfKjKAG2a1tVQ3VXcX · **Mobbin:** collection "Hyped Up website redesign"
-- **Round 2 (content first, in progress):** inventory, card sort, site map in `docs/design-thinking/` · menu & footer concept v4 in Direction D https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv (awaiting approval; v1–v3 at https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD) → internal pages → homepage
+- **Round 2 (content first, in progress):** inventory, card sort, site map in `docs/design-thinking/` · menu & footer concept v4 in Direction D https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv (Dani happy; **with Hypa for review**; v1–v3 at https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD) → internal pages → homepage
 
 ## The business in one paragraph
 
