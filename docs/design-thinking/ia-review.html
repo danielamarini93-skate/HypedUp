@@ -1,0 +1,229 @@
+<title>Hyped Up Site Map v2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a review document in Direction D (dark only): one reading column, wide tables scroll inside their own box. */
+:root{
+  color-scheme:dark;
+  --bg:#0d0c0c; --panel:#161414; --card:#1c1919; --rule:rgba(242,238,233,.14); --rule2:rgba(242,238,233,.3);
+  --fg:#f2eee9; --soft:#a39c97; --body2:#d3ccc7; --red:#ff3b2f; --tbc:#e6b84a; --ok:#3fbf6a;
+  --red-text:linear-gradient(100deg,#ff4033 0%,#ef1220 60%,#de0613 100%);
+  --f-display:"Big Shoulders Display","Arial Narrow",sans-serif; --f-body:"Barlow","Helvetica Neue",Arial,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+.page{max-width:1120px;margin:0 auto;padding-block:40px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:64px}
+h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;line-height:.9;margin:0;text-wrap:balance}
+h1{font-size:clamp(3rem,9vw,5.6rem)} h2{font-size:clamp(2rem,5vw,3rem)} h3{font-size:1.4rem;line-height:1}
+p{margin:0} a{color:inherit}
+.mono{font:500 .72rem/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.g{background:var(--red-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.1rem;color:var(--body2);max-width:62ch}
+.tbc{color:var(--tbc)}
+section{display:grid;gap:20px;min-width:0}
+.sh{display:grid;gap:10px;border-top:1px solid var(--fg);padding-top:18px}
+.sh p{color:var(--soft);max-width:70ch}
+.grid2{display:grid;gap:16px}@media(min-width:760px){.grid2{grid-template-columns:1fr 1fr}}
+.grid3{display:grid;gap:16px}@media(min-width:760px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.box{border:1px solid var(--rule2);padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.box ul,.box ol{margin:0;padding-left:1.1rem;display:grid;gap:4px;color:var(--body2)}
+.decisions li b{color:var(--fg)}
+.scroll{overflow-x:auto;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.92rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font:600 .7rem/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);background:var(--panel);position:sticky;top:0}
+td b{font-weight:700}
+.y{color:var(--ok);font-weight:700}.n{color:var(--red);font-weight:700}.m{color:var(--tbc);font-weight:700}
+.win td{background:rgba(222,6,19,.08)}
+/* site map */
+.tree{display:grid;gap:16px}@media(min-width:900px){.tree{grid-template-columns:repeat(3,1fr)}}
+.col{border:1px solid var(--rule2);display:grid;align-content:start}
+.col>header{padding:14px 16px;border-bottom:1px solid var(--fg);display:grid;gap:4px}
+.col>header h3{font-size:1.9rem}
+.col ul{list-style:none;margin:0;padding:8px 16px 14px;display:grid;gap:2px}
+.col li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--rule);font-size:.95rem}
+.col li:last-child{border-bottom:0}
+.col li code{font:500 .72rem/1.6 var(--f-mono);color:var(--soft);white-space:nowrap}
+.col li.menu{font-weight:700}
+.col li.menu::before{content:"";width:8px;height:8px;border-radius:50%;background:#de0613;flex:none;margin-top:7px;margin-right:-4px}
+.col li.t3{color:var(--soft);font-size:.88rem;padding-left:14px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.88rem;color:var(--soft)}
+.legend span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#de0613;margin-right:6px}
+.legend span.l2::before{background:var(--fg)}.legend span.l3::before{background:var(--soft)}
+.others{display:grid;gap:12px}@media(min-width:760px){.others{grid-template-columns:repeat(4,1fr)}}
+.chip{border:1px solid var(--rule2);padding:12px 14px;display:grid;gap:4px}
+.chip b{font-family:var(--f-display);font-size:1.25rem;text-transform:uppercase}
+.chip code{font:500 .72rem/1.4 var(--f-mono);color:var(--soft)}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.92rem}
+.flow span{border:1px solid var(--rule2);padding:4px 10px;border-radius:999px}
+.flow i{font-style:normal;color:var(--red)}
+ol.blocks{margin:0;padding-left:1.4rem;display:grid;gap:6px;color:var(--body2)}
+ol.blocks b{color:var(--fg)}
+.ask li{padding-left:2px}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+</style>
+
+<main class="page">
+<header style="display:grid;gap:16px">
+  <span class="mono">Design thinking · Round 2 · Step 6b · Content strategy + IA · 9 Nov 2026</span>
+  <h1>Site map <span class="g">v2</span></h1>
+  <p class="lead">Everything to agree before any more copy goes into pages: the full service list, menu labels (tested), who lands where, one search term per page, the site map, what each page type contains, and what Hypa needs to confirm. Source files are in <code>docs/design-thinking/</code>.</p>
+</header>
+
+<section>
+  <div class="sh"><span class="mono">At a glance</span><h2>The decisions in this proposal</h2></div>
+  <div class="grid2">
+    <div class="box"><h3>Proposed (please confirm)</h3><ul class="decisions">
+      <li><b>Menu labels: Security · Upgrades · Styling</b> (tested below); the homepage line stays "Protect it. Upgrade it. Style it."</li>
+      <li><b>36 pages at launch</b>: 21 services, 3 group hubs, 2 audience hubs (Motorbikes, Business &amp; fleet), Builds, Contact, Prices, About, Blog, Shop, legal.</li>
+      <li><b>New pages:</b> Car alarms, Prices.</li>
+      <li><b>Hub URLs follow the labels:</b> /security, /upgrades, /styling.</li>
+      <li><b>Car-specific pages</b> only when a make has 2+ real jobs (start: CarPlay BMW/Mini/Mercedes/Audi, Car audio BMW).</li>
+    </ul></div>
+    <div class="box"><h3>Already decided (Dani)</h3><ul>
+      <li>Menu stays simple; hubs only in the footer, breadcrumbs and in-page links.</li>
+      <li><b>Hub pages list every service in their footer column</b> (one shared list).</li>
+      <li>Main action: Contact us → /contact (WhatsApp or email); floating WhatsApp on phones.</li>
+      <li>No area pages · no prices in the menu · dark only.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="mono">Step 1 · Label test</span><h2>Protect / Upgrade / Style, or plainer words?</h2>
+  <p>Desk test: the words people actually type into Google (Search Console, 3 months) and 10 real tasks walked through each option. To confirm with a 5-minute tree test with 5–8 customers.</p></div>
+  <div class="scroll"><table>
+    <thead><tr><th>Task: "where would you click first?"</th><th>A · Protect / Upgrade / Style</th><th>D · Security / Upgrades / Styling</th><th>E · Security / Tech &amp; audio / Performance / Styling</th></tr></thead>
+    <tbody>
+      <tr><td>I want a Ghost immobiliser</td><td class="y">Protect</td><td class="y">Security</td><td class="y">Security</td></tr>
+      <tr><td>My car alarm keeps going off</td><td class="y">Protect</td><td class="y">Security</td><td class="y">Security</td></tr>
+      <tr><td>Paint protection film for my new car</td><td class="n">Protect (it's in Style)</td><td class="m">Styling</td><td class="m">Styling</td></tr>
+      <tr><td>CarPlay for my 2016 Mini</td><td class="y">Upgrade</td><td class="y">Upgrades</td><td class="y">Tech &amp; audio</td></tr>
+      <tr><td>Remap my Golf</td><td class="m">Upgrade</td><td class="y">Upgrades</td><td class="y">Performance</td></tr>
+      <tr><td>Air suspension</td><td class="m">Style</td><td class="m">Styling</td><td class="y">Performance</td></tr>
+      <tr><td>Starlight headliner</td><td class="m">Upgrade or Style?</td><td class="y">Upgrades</td><td class="y">Tech &amp; audio</td></tr>
+      <tr><td>Wrap my car matte black</td><td class="y">Style</td><td class="y">Styling</td><td class="y">Styling</td></tr>
+      <tr><td>Same-day number plates</td><td class="m">Style</td><td class="m">Styling</td><td class="m">Styling</td></tr>
+      <tr><td>Dash cam for my taxi</td><td class="y">Protect</td><td class="y">Security</td><td class="y">Security</td></tr>
+      <tr class="win"><td><b>Clear first clicks</b></td><td><b>5 / 10</b></td><td><b>7 / 10 · 3 groups</b></td><td><b>7 / 10 · 4 groups</b></td></tr>
+    </tbody></table></div>
+  <div class="grid3">
+    <div class="box"><span class="mono">"security" in searches</span><h3>217 impressions</h3><p class="mono" style="text-transform:none;letter-spacing:0">"car security london" 159 · "greater london" 58. "Protect" never appears.</p></div>
+    <div class="box"><span class="mono">"upgrade(s)" in searches</span><h3>1,000+ impressions</h3><p class="mono" style="text-transform:none;letter-spacing:0">"audio upgrades" in 12 towns, "car audio upgrade" 94, "BMW speaker upgrades" ×6.</p></div>
+    <div class="box"><span class="mono">Recommendation</span><h3 class="g">D: Security · Upgrades · Styling</h3><p class="mono" style="text-transform:none;letter-spacing:0">As clear as E with one fewer group; "Protect" also pulls paint-protection searches into the wrong place.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="mono">Step 2 · Site map</span><h2>36 pages at launch</h2><p>Each column is a hub page and a footer column: the same list, so they never differ.</p></div>
+  <div class="legend"><span>In the menu (10)</span><span class="l2">Hub + footer</span><span class="l3">Car-specific (linked from the service page)</span></div>
+  <div class="tree">
+    <div class="col"><header><span class="mono">/security</span><h3>Security</h3></header><ul>
+      <li class="menu">Ghost immobiliser <code>/ghost-immobiliser</code></li><li class="t3">Ghost for Range Rover, BMW… <code>/ghost-immobiliser/&lt;make&gt;</code></li>
+      <li class="menu">Car trackers <code>/car-trackers</code></li><li class="menu">Dash cams <code>/dash-cams</code></li>
+      <li>Car alarms <span class="tbc">new</span> <code>/car-alarms</code></li><li>Taxi cameras (TfL) <code>/taxi-cameras</code></li></ul></div>
+    <div class="col"><header><span class="mono">/upgrades</span><h3>Upgrades</h3></header><ul>
+      <li class="menu">CarPlay &amp; Android Auto <code>/carplay</code></li><li class="t3">CarPlay for BMW, Mini, Mercedes, Audi <code>/carplay/&lt;make&gt;</code></li>
+      <li class="menu">Car audio <code>/car-audio</code></li><li class="t3">Car audio for BMW <code>/car-audio/bmw</code></li>
+      <li class="menu">Remapping <code>/remapping</code></li>
+      <li>Reverse cameras &amp; sensors <code>/reverse-cameras</code></li><li>Ambient lighting &amp; starlights <code>/ambient-lighting</code></li></ul></div>
+    <div class="col"><header><span class="mono">/styling</span><h3>Styling</h3></header><ul>
+      <li class="menu">Car wrapping <code>/car-wrapping</code></li><li class="menu">Paint protection film <code>/paint-protection-film</code></li>
+      <li class="menu">Window tinting <code>/window-tinting</code></li><li class="menu">Air suspension <code>/air-suspension</code></li>
+      <li>Chrome delete <code>/chrome-delete</code></li><li>Bodykits <code>/bodykits</code></li><li>Wheel refurb &amp; calipers <code>/wheel-refurb</code></li>
+      <li>Interiors <code>/interiors</code></li><li>Detailing &amp; ceramic <code>/detailing</code></li><li>Number plates <code>/number-plates</code></li><li>Van signage &amp; livery <code>/van-signage</code></li></ul></div>
+  </div>
+  <div class="others">
+    <div class="chip"><b>Builds</b><code>/builds · menu</code></div><div class="chip"><b>Contact</b><code>/contact · menu</code></div>
+    <div class="chip"><b>Motorbikes</b><code>/motorbikes · footer</code></div><div class="chip"><b>Business &amp; fleet</b><code>/business · footer</code></div>
+    <div class="chip"><b>Prices <span class="tbc" style="font-size:.8rem">new</span></b><code>/prices · footer</code></div><div class="chip"><b>About</b><code>/about · footer</code></div>
+    <div class="chip"><b>Blog</b><code>/blog · footer</code></div><div class="chip"><b>Shop</b><code>/shop · footer</code></div>
+  </div>
+  <div class="grid2">
+    <div class="box"><h3>Menu</h3><ul><li><b>Desktop:</b> Security ▾ · Upgrades ▾ · Styling ▾ · Builds · Contact · open status · [Contact us]</li><li><b>Phone:</b> the three groups open their menu services · Builds · small links (Motorbikes, Business, Prices, Blog, About, Shop) · Contact us + WhatsApp + Call · floating WhatsApp</li><li>Depth: 3 levels max (group → service → car-specific); car-specific never in the menu.</li></ul></div>
+    <div class="box"><h3>Footer</h3><ul><li>Four columns: Security · Upgrades · Styling (each starts "All … services →") · More</li><li>Find us (address, hours, phone, WhatsApp, email, socials), legal row, HYPED UP wordmark</li><li>Phone: columns fold into rows</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="mono">Step 3 · User tasks</span><h2>Who lands where</h2><p>Service pages are the real front doors: Google, ChatGPT and partner sites land there. Every path ends on Contact with the service carried over.</p></div>
+  <div class="scroll"><table>
+    <thead><tr><th>Task</th><th>Who</th><th>Arrives from</th><th>Path to Contact us</th></tr></thead><tbody>
+    <tr><td>Is it open, where is it?</td><td>everyone</td><td>Google Maps (400 direction requests in 6 months)</td><td>Header status → Contact → Get directions</td></tr>
+    <tr><td>Stop my keyless car being stolen</td><td>Kemi</td><td>Google "ghost immobiliser london"</td><td>Ghost immobiliser → Contact (Security pre-ticked)</td></tr>
+    <tr><td>CarPlay in my 2016 Mini</td><td>Jay</td><td>Google, Autostyle (45 visits)</td><td>CarPlay → CarPlay for Mini → Contact</td></tr>
+    <tr><td>Better sound in my BMW</td><td>Jay</td><td>Google "bmw speaker upgrades"</td><td>Car audio → Car audio for BMW → Contact</td></tr>
+    <tr><td>Remap: price, is it safe?</td><td>Marco</td><td>Google "car remapping london"</td><td>Remapping → Contact</td></tr>
+    <tr><td>Wrap cost</td><td>Marco</td><td>Google, Instagram</td><td>Car wrapping → Builds → Contact</td></tr>
+    <tr><td>Show me your work</td><td>Marco</td><td>Instagram / TikTok (204k views a year)</td><td>Builds → build → service → Contact</td></tr>
+    <tr><td>How much is everything?</td><td>everyone</td><td>Google "how much…", ChatGPT (32 visits)</td><td>Prices → service → Contact</td></tr>
+    </tbody></table></div>
+  <div class="flow"><span>Search / AI / partner</span><i>→</i><span>Service page</span><i>→</i><span>Contact us (?service=)</span><i>→</i><span>WhatsApp or email</span></div>
+</section>
+
+<section>
+  <div class="sh"><span class="mono">Step 4 · Keyword map</span><h2>One search term per page</h2><p>No two pages chase the same term. Towns are covered by the business schema, an "Areas we cover" line on Contact and natural mentions; no area pages.</p></div>
+  <div class="scroll"><table>
+    <thead><tr><th>Page</th><th>Main term</th><th>Evidence</th></tr></thead><tbody>
+    <tr><td>Security hub</td><td>car security London</td><td>159 + 58 impressions, position 25</td></tr>
+    <tr><td>Ghost immobiliser</td><td>ghost immobiliser London</td><td>14,800/mo; "cost" 1,900; "near me" 1,300</td></tr>
+    <tr><td>Car trackers</td><td>car tracker fitting London</td><td>"car tracker uk" 18,100/mo; "car tracker london" pos 41</td></tr>
+    <tr><td>Dash cams</td><td>dash cam installation London</td><td>"front and rear dash cam" 4,800/mo</td></tr>
+    <tr><td>Car alarms</td><td>car alarm fitting London</td><td>1,400/mo (mostly "keeps going off"); "car alarm london" 55</td></tr>
+    <tr><td>CarPlay</td><td>Apple CarPlay installation London</td><td>most-viewed page today; ~145 impressions</td></tr>
+    <tr><td>Car audio</td><td>car audio upgrade London</td><td>"sound system installation" 159; "audio upgrades" in 12 towns</td></tr>
+    <tr><td>Remapping</td><td>car remapping London</td><td>900+ impressions across 9 variants, position 20–36</td></tr>
+    <tr><td>Car wrapping</td><td>car wrapping London</td><td>"car wrap cost" 4,700/mo</td></tr>
+    <tr><td>Paint protection film</td><td>paint protection film London</td><td>"PPF cost" 301/mo; "tinted ppf" 73</td></tr>
+    <tr><td>Air suspension</td><td>air suspension installation London</td><td>air page 318 impressions, position 12</td></tr>
+    <tr><td colspan="3" class="mono" style="text-transform:none;letter-spacing:0">Full map for all 36 pages + car-specific pages: <code>keyword-map.md</code></td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <div class="sh"><span class="mono">Step 5 · Content model</span><h2>What every page contains</h2><p>The rule book for writing. Every page: Hypa's voice, each fact once, "from £" only, one action.</p></div>
+  <div class="grid2">
+    <div class="box"><span class="mono">21 pages · the front doors</span><h3>Service page</h3><ol class="blocks">
+      <li><b>Hero:</b> H1 in search words, 1–2 line answer, from £, Contact us, real photo</li>
+      <li><b>Options:</b> 2–4 choices (S5/S7, Stage 1–3, 1–3 channel…)</li><li><b>How it works:</b> 3 steps</li>
+      <li><b>Proof:</b> builds for this service, a review, partner logos</li><li><b>Price detail:</b> what changes the price, timings</li>
+      <li><b>Good to know:</b> legal note only where needed</li><li><b>FAQ:</b> 4–6 real search questions</li>
+      <li><b>Your car</b> (car-specific links) · <b>Related</b> services + guides · Contact band</li></ol></div>
+    <div class="box"><span class="mono">3 pages · browse + SEO</span><h3>Group hub</h3><ol class="blocks">
+      <li><b>Hero:</b> what the group covers</li><li><b>Every service in the group</b>, same list and order as the footer, with from £</li>
+      <li><b>Which one do I need?</b> comparison</li><li><b>Explainer</b> (Security: S5 or S7? · Upgrades: will CarPlay fit my car? · Styling: wrap, PPF or ceramic?)</li>
+      <li><b>Proof</b> · <b>FAQ</b> · Contact band</li></ol></div>
+    <div class="box"><h3>Home</h3><ol class="blocks"><li>Hero + video + Contact us</li><li>The three groups</li><li>Recent builds</li><li>How a job works</li><li>Reviews, Hypa, partners</li><li>Visit · Contact band</li></ol></div>
+    <div class="box"><h3>Other templates</h3><ul><li><b>Car-specific:</b> publish only with 2+ real jobs on that make</li><li><b>Builds:</b> filter by group; build page when a job has 4+ photos</li><li><b>Prices:</b> one table per group, from £ + link</li><li><b>About:</b> Hypa's story, every claim confirmed</li><li><b>Blog:</b> question title, answer in 2 lines, links its service</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="mono">Step 6 · Content plan</span><h2>Launch waves and what Hypa must confirm</h2></div>
+  <div class="grid3">
+    <div class="box"><span class="mono">Wave 1 · launch</span><h3>Menu + redirect targets</h3><p style="color:var(--body2)">Home, Contact, Builds, 10 menu services, 3 hubs, Prices, About, Blog (15 posts), legal.</p></div>
+    <div class="box"><span class="mono">Wave 2 · within 4 weeks</span><h3>Footer pages</h3><p style="color:var(--body2)">11 more services, Motorbikes, Business &amp; fleet, Shop.</p></div>
+    <div class="box"><span class="mono">Wave 3 · ongoing</span><h3>Grows with real jobs</h3><p style="color:var(--body2)">Car-specific pages, build pages, new blog posts.</p></div>
+  </div>
+  <div class="box ask"><h3>One list to send Hypa</h3><ol>
+    <li><b>Prices:</b> Ghost · alarms · PPF · remapping (Stage 1–3, bikes) · boot builds · number plates · which CarPlay table is current.</li>
+    <li><b>Claims:</b> 20+ years · McLaren · "authorised Air Lift and Prazis dealer" · tracker and Ghost insurance wording · warranty.</li>
+    <li><b>Legal:</b> light tints and chameleon screens · plate types for the road · remaps and MOT / insurance.</li>
+    <li><b>Builds:</b> the work done on the R8, Macan, Bentley, Fiat 500, both Transits, Volvo XC90, Civic Type R.</li>
+    <li><b>Operations:</b> reply time · parking / access · towns customers come from.</li>
+    <li><b>Reviews:</b> 3–5 Google reviews he's proud of.</li>
+    <li><b>Photos:</b> a portrait · Ghost / keypad · tracker install · PPF · tint · a bike · a remap in progress.</li>
+  </ol></div>
+</section>
+
+<section>
+  <div class="sh"><span class="mono">Your call</span><h2>To decide</h2></div>
+  <div class="box"><ol>
+    <li>Menu labels: <b>Security · Upgrades · Styling</b>? And shall I build the 5-minute tree test for Hypa to send to 5–8 customers?</li>
+    <li>Add the <b>Prices</b> and <b>Car alarms</b> pages?</li>
+    <li>Keep <b>Motorbikes</b> and <b>Business &amp; fleet</b> as footer hubs?</li>
+    <li>Anything in the price sheet Hypa no longer wants to promote, or anything missing (key programming, OBD port protection)?</li>
+    <li>Then: rewrite the key pages from this content model.</li>
+  </ol></div>
+</section>
+</main>

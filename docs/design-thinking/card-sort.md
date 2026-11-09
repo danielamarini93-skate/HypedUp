@@ -82,3 +82,53 @@ for SEO and content.
 | **3. Contextual only** | Linked from related service pages, blog posts and the sitemap; never in menu or footer | Car-specific pages (CarPlay for BMW / Mini / Mercedes…, Ghost for Range Rover…), area pages if any, FAQs, comparison pages |
 
 Rule: **no orphan pages.** Every tier 3 page gets at least 2–3 links from related pages, so Google finds and ranks it.
+
+---
+
+## Label test v2 (9 Nov 2026): Protect / Upgrade / Style vs plainer labels
+_Dani asked to test the labels. This is a **desk test** (search language + task walk-through against the full inventory v2);
+a 5-minute **tree test with 5–8 real customers** is set up at the end to confirm it._
+
+### Candidates
+| | A (current) | D (plain nouns) | E (four groups) |
+|---|---|---|---|
+| Groups | Protect · Upgrade · Style | **Security · Upgrades · Styling** | Security · Tech & audio · Performance · Styling |
+
+### 1. What words do customers use? (Search Console, 7 Aug–6 Nov 2026, impressions)
+| Word in the query | Examples | Impressions | Fits |
+|---|---|---|---|
+| **security** | "car security london" 159, "car security greater london" 58 | 217 | D, E ("Protect" never appears) |
+| **upgrade(s)** | "audio upgrades …" ×12 areas, "car audio upgrade" 94, "bmw speaker upgrades …" ×6 | 1,000+ | A, D |
+| **tuning / remap** | "car tuning london" 56, "car remapping london" 175 … | 900+ | D (inside Upgrades), E (Performance) |
+| **style / styling** | none · "car customisation london" 49, "car modification london" 22 | ~70 | D "Styling", A "Style" (weak either way) |
+| "protect" | "paint protection south london" 24 (PPF, not security) | 24 | ⚠️ misleads A: "protect" pulls PPF people into the wrong group |
+
+### 2. Task walk-through: "Where would you click first?"
+| Task (from `user-journeys.md`) | A | D | E |
+|---|---|---|---|
+| "I want a Ghost immobiliser" | Protect ✅ | Security ✅ | Security ✅ |
+| "My car alarm keeps going off" | Protect ✅ | Security ✅ | Security ✅ |
+| "Paint protection film for my new car" | Protect ❌ (it's in Style) | Styling ⚠️ | Styling ⚠️ |
+| "CarPlay for my 2016 Mini" | Upgrade ✅ | Upgrades ✅ | Tech & audio ✅ |
+| "Remap my Golf" | Upgrade ⚠️ | Upgrades ✅ | Performance ✅ |
+| "Air suspension" | Style ⚠️ | Styling ⚠️ | Performance ✅ / Styling ⚠️ |
+| "Starlight headliner" | Upgrade ⚠️ / Style ⚠️ | Upgrades ✅ | Tech & audio ✅ |
+| "Wrap my car matte black" | Style ✅ | Styling ✅ | Styling ✅ |
+| "Same-day number plates" | Style ⚠️ | Styling ⚠️ | Styling ⚠️ |
+| "Dash cam for my taxi" | Protect ✅ | Security ✅ | Security ✅ |
+| **Clear first clicks (✅ of 10)** | **5** | **7** | **7** |
+| Menu length on a phone | 3 | 3 | 4 (longer) |
+
+### Result and recommendation
+- **D: Security · Upgrades · Styling.** Same clarity as E with one fewer group; uses the words people actually search
+  ("security", "upgrades"); keeps the brand line, because the homepage headline still says **"Protect it. Upgrade it. Style it."**
+  (the line is the brand voice; the menu is the signpost).
+- A's main problem: "Protect" isn't a word customers use for security, and it attracts paint-protection searches.
+- Watch-outs for D: plates and air suspension are still "maybe" under Styling → solved by the phone menu showing the
+  service list under each group, and by search-friendly page names.
+- **Hub URLs follow the labels:** `/security`, `/upgrades`, `/styling` (redirect `/vehicle-security` → `/security`).
+
+### Confirm with real customers (tree test, 5 minutes, 5–8 people)
+Show only the menu labels and the service lists, ask "Where would you look to…" for 8 tasks (Ghost, alarm fault, PPF,
+CarPlay, remap, starlights, plates, air suspension). Pass mark: 80% first-click right per task. Hypa can send the link
+to recent customers on WhatsApp. (Tool ready to build once the IA is approved.)

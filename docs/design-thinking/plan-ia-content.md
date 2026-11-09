@@ -2,7 +2,7 @@
 
 _9 Nov 2026 · Dani: "more strategy and content before writing the copy into pages; sitemap and IA before build, some basic
 things are missing". The key pages concept (https://claude.ai/artifact/H2XetEmAA8gnXPLicnvFpt) is **paused** as a
-visual reference; copy on it is placeholder until this is done. Status: **plan, waiting for Dani's answers.**_
+visual reference; copy on it is placeholder until this is done. Status: **steps 1–8 done 9 Nov; review artifact https://claude.ai/artifact/CpSzprgerDKy2dcvTUvTwr — waiting for Dani's review.** Answers: test the labels; no area pages; review all together._
 
 ## What's missing today (gap check)
 | Gap | Why it matters |

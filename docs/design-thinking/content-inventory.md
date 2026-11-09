@@ -1,92 +1,76 @@
-# Content inventory
+# Content inventory v2: every service, page and piece of content
 
-_Round 2, step 1 · 8 Nov 2026 · Sources: master price list (`memory/price-list-master.md`), `memory/pricing.md`,
-`memory/business.md`, 2023 "Website content" doc (Drive), live site, 15 blog posts + 7 drafts (`memory/content.md`),
-Search Console baseline (`docs/data/baseline-search.md`), keyword research (`memory/seo.md`).
-Media: Drive upload in progress (5 videos so far + older folders "High res cars", "Unit 22", "BDG van", "Pics", "Video");
-media will be mapped to services when the upload is complete._
+_9 Nov 2026 · Replaces v1 (8 Nov, in git history). Sources: master price sheet (`memory/price-list-master.md`), `memory/pricing.md`,
+`memory/business.md`, the 15 blog posts (`content/blog-archive/`), Search Console 7 Aug–6 Nov 2026 (`docs/data/search-console-2026-11-08/`),
+keyword research (`memory/seo.md`), Drive media reviewed so far (`docs/design-build/media-log.md`)._
 
-**Demand key:** keyword = monthly searches (UK, from earlier research) · GSC = impressions in Google for Hyped Up, Aug–Nov 2026 (position).
-**Verdict:** **Page** = its own page · **Section** = a block on another page · **Mention** = a line or FAQ.
+**Columns:** **From** = website "from £" (master sheet wins; "TBC" = Hypa to confirm) · **Demand** = UK monthly searches (keyword tool) and/or
+**GSC** = times Hyped Up was shown in Google in 3 months (position) · **Proof** = photos/posts we have · **Tier** = 1 menu · 2 hub + footer ·
+3 contextual (linked from related pages only) · S = section on another page · M = mention / FAQ only.
 
-## 1. Security
-| # | Service | From | Demand | Proof today | Persona | Verdict |
-|---|---|---|---|---|---|---|
-| 1 | **Immobilisers** (Ghost II, Metablok, Scorpion X) | £495 (Metablok/Scorpion); Ghost TBC (old list £400) | "ghost immobiliser" 14,800 · "ghost immobiliser cost" 1,900 · GSC "immobilisers greater london" 66 (pos 23) | Ghost blog post | Kemi | **Page** (Ghost as the hero product on it) |
-| 2 | **GPS trackers** (MetaTrak S5/S7, Scorpion S5, SmartTrack S7, Datatool for bikes) | £395 (+ subscription) | "car tracker uk" 18,100 · "car tracker" 14,800 · GSC "car tracker london" 70 (pos 41) | Tracker draft post (S5 vs S7 vs AirTag) | Kemi | **Page** |
-| 3 | **Dash cams** (1–3 channel, parking mode, FineVu, mirror cams) | £125 fitted | "front and rear dash cam" 4,800 · "best dash cam 2026" 274 | Dash cam blog post | Kemi, Jay | **Page** |
-| 4 | **TfL-approved taxi CCTV** (2SeeTV, ACSS, HikVision) | £395 | GSC "vehicle cctv london" 82 (pos 39) | Purple taxi photo | Taxi drivers | **Page** (business) |
-| 5 | Alarms and OBD port protection (Cobra, Scorpion) | on enquiry | "car alarm" 1,400 (mostly frustrated owners) | "Car alarms are dead" draft | Kemi | **Section** on Immobilisers |
-| 6 | Security packages (immobiliser + tracker + dash cam) | on enquiry | "ghost immobiliser and tracker" 170 | | Kemi | **Section** on a Security hub |
+## Security (group label: see `card-sort.md`, recommended "Security")
+| # | Service | Includes | From | Demand | Proof | Persona | Tier |
+|---|---|---|---|---|---|---|---|
+| 1 | **Ghost immobiliser** | Ghost II, cars + motorbikes | £400 **TBC** (pricing.md; not in sheet) | 14,800/mo · cost 1,900 · near me 1,300 · GSC "immobilisers greater london" 66 (23), "immobiliser fitting london" 24 | Blog post; Alfa keys/wheel photo | Kemi | **1** |
+| 2 | Other immobilisers | Metablok, Metablok-e, Scorpion X-series | £495 | "ghost vs pandora/scorpion" 10–20 | none | Kemi | S on #1 |
+| 3 | **Car trackers** | S7 (SmartTrack Trident), S5 (MetaTrak VTS, Scorpion), monitoring subscription | £395 (+ monthly) | 14,800 · "car tracker uk" 18,100 · GSC "car tracker london" 70 (41), "car trackers london" 25, "tracking device fitting east london" 24 | Blog section; MetaTrak photo | Kemi, fleet | **1** |
+| 4 | **Car alarms** | Scorpion alarms (tilt, shock, glass-break, app), alarm faults | **TBC** (not in sheet) | "car alarm" 1,400 (mostly "keeps going off") · GSC "car alarm london" 55 | Blog section | Kemi | **2** |
+| 5 | **Dash cams** | 1, 2, 3-channel, parking mode, hardwire existing; FineVu, Thinkware | £125 | "front and rear dash cam" 4,800 · "best dash cam 2026" 274 | Blog post; BMW dash cam photo | Kemi, Jay, taxi | **1** |
+| 6 | **Taxi cameras (TfL)** | 2SeeTV, HikVision, ACSS | £395 | GSC "vehicle cctv london" 82 (39) | Purple taxi photo | Taxi/PHV | **2** |
+| 7 | Security packages | immobiliser + tracker (+ dash cam) | on enquiry | "ghost immobiliser and tracker" 170 | | Kemi | S on hub |
+| 8 | Motorbike security | Ghost, Datatool S5 tracker, bike alarms | £395 tracker | (bike theft) | none (need photo) | bikers | S on Motorbikes |
 
-## 2. Car tech and multimedia
-| # | Service | From | Demand | Proof today | Persona | Verdict |
-|---|---|---|---|---|---|---|
-| 7 | **Apple CarPlay / Android Auto** (Xtrons and Autostyle screens, interface modules, Pioneer/Kenwood double DIN) | £170 | Most-viewed service page on the site (107 views) · GSC "android/apple car play greater london" ~145 (pos 17–33) · "apple carplay retrofit" 113 | CarPlay blog post, Mini and Abarth photos | Jay | **Page** + **car-specific pages** later (BMW, Mini, Mercedes, Audi…) |
-| 8 | **Reversing cameras and parking sensors** (incl. vans, trucks, mirror monitors) | cams £125 · sensors £295 | GSC "apple carplay and reverse camera installation near me" | | Jay, fleet | **Page** |
-| 9 | Head units (non-CarPlay), DAB | £170 | | | Jay | **Section** on CarPlay |
+## Upgrades: tech, audio, lighting, performance (recommended label "Upgrades")
+| # | Service | Includes | From | Demand | Proof | Persona | Tier |
+|---|---|---|---|---|---|---|---|
+| 9 | **CarPlay & Android Auto** | Xtrons/Autostyle screens, interface on factory screen, Pioneer/Kenwood double DIN, DAB | £170 (two tables in sheet: **TBC**) | Most-viewed service page (107) · GSC "android car play greater london" 78 (17), "apple car play greater london" 67 (33), area variants · "apple carplay retrofit" 113 | Blog post; Mini, Audi R8, Mercedes, Abarth screens | Jay | **1** |
+| 10 | **Reverse cameras & parking sensors** | cameras £125, sensors £295 (rear) / £350 (front) | £125 | GSC "carplay and reverse camera installation near me" | none yet | Jay, vans | **2** |
+| 11 | **Car audio** | speakers, amps, subs, line drivers (Rockford Fosgate) | £125 | GSC "sound system installation" 159, "car audio upgrade" 94, "audio upgrades <area>" 25–79 ×12 areas, "bmw speaker upgrades" 21–56 ×6, "subwoofer installation" 25 | Blog post; boot build photo | Jay, Marco | **1** |
+| 12 | Sound deadening | per door / full floor | £145 | | | Jay | S on #11 |
+| 13 | Custom boot builds | enclosures, Alcantara, LED | £2,500 **TBC** (old list) | GSC "custom sound system" 31, "custom audio system" 35 | Boot build photo | Marco | S on #11 |
+| 14 | **Ambient lighting & starlights** | ambient £445, starlights £795, door shadow lights £160, under-car £380 | £160 | (not researched) | Abarth ambient photos | Marco, Jay | **2** |
+| 15 | **Remapping** | Stage 1–3, cars + bikes, KESS3, JB4; **no dyno** | Stage 1 £250 **TBC** (not in sheet; live site says £435 / mobile £199) | GSC "car remapping london" 175 (24), "remapping london" 161 (20), "ecu remapping london" 132 (22) + 6 variants | 2 blog posts; Merc photo | Marco | **1** |
+| 16 | Performance parts | intakes, exhausts, RaceChip, quick shifters | on enquiry | GSC "car tuning london" 56 (12) | | Marco | S on #15 |
 
-## 3. Audio and lighting
-| # | Service | From | Demand | Proof today | Persona | Verdict |
-|---|---|---|---|---|---|---|
-| 10 | **Car audio** (speakers, amps, subs, line drivers; Rockford Fosgate) | £125 | Audio page: 2,502 impressions (pos 29) · GSC "sound system installation" 159, "car audio upgrade" 94, local "audio upgrades Sidcup/Orpington/Purley…" 58–79 each | Audio blog post, boot build and amp photos | Jay, Marco | **Page** |
-| 11 | Custom boot builds | £2,500 (old list) | | Boot build photos | Marco | **Section** on Audio (showcase) |
-| 12 | Sound deadening | £145 per door | | Door deadening photo | Jay | **Section** on Audio |
-| 13 | **Ambient lighting, starlights, under-car and door lights** | £160 | (not researched yet) | 2023 doc + live site | Marco, Jay | **Page** |
+## Styling: outside, inside, stance, care (recommended label "Styling")
+| # | Service | Includes | From | Demand | Proof | Persona | Tier |
+|---|---|---|---|---|---|---|---|
+| 17 | **Car wrapping** | full, partial, roof, stripes, chameleon, door shuts; panels from £90 | £1,500 | "car wrap cost" 4,700 · "full vehicle wrap price" 740 | 2 blog posts; pink Abarth, purple taxi | Marco | **1** |
+| 18 | **Paint protection film (PPF)** | full front, full car, tinted PPF | **TBC** (not in sheet) | "paint protection film cost" 301 · GSC "tinted ppf" 73, "paint protection south london" 24 | Blog section | new-car owners | **1** |
+| 19 | **Window tinting** | dyed, carbon, ceramic; legal fronts; sunstrip £45 | £150 | "car window tint laws" 102 | Draft post | everyone | **1** |
+| 20 | **Air suspension** | Air Lift 3P/3H, Prazis; authorised dealer; coilovers (S) | £1,895 | GSC air page 318 (12), "air suspension specialist" 29 | 2 posts; Hypa's Mini (own car) | Marco | **1** |
+| 21 | Chrome delete | trims, badges, antenna | £50 | trending | | Marco | **2** |
+| 22 | Bodykits & exterior parts | spoilers £85, splitters £145, wide arch £485 | £85 | GSC "maxton design fitting near me" | | Marco | **2** |
+| 23 | Wheel refurb & calipers | refurb, diamond cut, caliper paint £480 | £120 | | Volvo gold wheel | everyone | **2** |
+| 24 | Interiors | carbon, Alcantara, wheels, seats | on enquiry | | none yet | Marco | **2** |
+| 25 | Detailing & ceramic coating | paint correction L1–3, ceramic £250 | £250 | "ppf vs ceramic coating" 60, "clear bra vs ceramic" 110 | Blog post | everyone | **2** |
+| 26 | Number plates | standard, 3D gel, 4D, show, magnetic; same day | £30 **TBC** (live site £35) | GSC "same day number plates london" | 2 blog posts; ~40 orders in tracker | quick job | **2** |
+| 27 | Van signage & livery | sign writing, part wraps for vans | on enquiry | (planned post) | BDG van folder | business | **2** |
+| 28 | Motorbike wraps | moped £900, naked £1,100, super sport £1,400 | £900 | | none yet | bikers | S on Motorbikes |
+| 29 | Headlight / tail-light tint, chameleon windscreen | | sunstrip £45 · chameleon £195 | | Porsche 964 yellow lights | Marco | **M** only (⚠️ legality wording: Hypa) |
 
-## 4. Performance
-| # | Service | From | Demand | Proof today | Persona | Verdict |
-|---|---|---|---|---|---|---|
-| 14 | **ECU remapping** Stage 1–3, cars and bikes (KESS3; JB4 plug-in; mobile Stage 1). **No dyno.** | Stage 1 £250–400 (old list; not in master sheet → TBC) | GSC remap queries ~570 impressions (pos 20–30): "car remapping london" 175, "remapping london" 161, "ecu remapping london" 132 | 2 remap posts + draft | Marco | **Page** |
-| 15 | Performance parts (intakes, exhausts, RaceChip, quick shifters) | on enquiry | | Mini engine bay photo | Marco | **Section** on Remapping |
+## Audience hubs
+| # | Hub | Gathers | Demand | Tier |
+|---|---|---|---|---|
+| 30 | **Motorbikes** | bike Ghost, Datatool tracker, bike alarms, bike wraps, bike remaps | (bike theft content) | 2 (footer + "More" in phone menu) |
+| 31 | **Business & fleet** | fleet trackers, TfL taxi cameras, van cameras/sensors, van signage | "car tracker fleet" 880 · GSC "vehicle cctv london" 82 | 2 |
 
-## 5. Styling: exterior
-| # | Service | From | Demand | Proof today | Persona | Verdict |
-|---|---|---|---|---|---|---|
-| 16 | **Vehicle wraps** (full colour change, partial, roof, bonnet, race stripes, chameleon, door shuts) | £1,500 full · panels £90 | "car wrap cost" 4,700 · "full vehicle wrap price" 740 · GSC "car wrapping near me" | 2 wrap posts, Abarth pink, AMG stripe | Marco | **Page** |
-| 17 | **Dechrome / chrome delete** | £50 | trending (no volume yet) | Planned post | Marco | **Page** (small) |
-| 18 | **Paint protection film (PPF)** | TBC (not in sheet) | "paint protection film cost" 301 · "ppf vs ceramic coating" 60 | Wrap/PPF post | Marco, new-car owners | **Page** |
-| 19 | **Window tint** (standard, carbon, ceramic; legal fronts) | £150 | "car window tint laws" 102 · GSC "tinted windows" | Tint laws draft post | everyone | **Page** |
-| 20 | Headlight / rear light tint, chameleon windscreen, sunstrips | £45 sunstrip · chameleon from £195 | | Porsche 964 yellow lights | Marco | **Mention** (⚠️ legality TBC with Hypa: claims rule) |
-| 21 | **Bodykits and exterior parts** (splitters, skirts, diffusers, spoilers, wide arch) | £85 | GSC "maxton design fitting near me" | Air/bodykit post | Marco | **Page** |
-| 22 | **Wheels and calipers** (refurb, diamond cut, powder coat, split rim, weld/buckle, caliper paint) | £120 single wheel · £360 set | | | Marco, everyone | **Page** |
-| 23 | **Number plates** (standard, 3D gel, 4D, show, magnetic, shadow) | £30 (old list) | GSC "same day number plates london" · ~40 orders in the tracker | 2 plates posts | quick job | **Page** |
-| 24 | **Vehicle signage and livery** (vans, sign writing) | on enquiry | (planned blog) | "BDG van" folder, beauty-parlour van | Business | **Page** |
-
-## 6. Styling: interior and care
-| # | Service | From | Demand | Proof today | Persona | Verdict |
-|---|---|---|---|---|---|---|
-| 25 | **Interiors** (carbon trim, Alcantara, steering wheels, seats) | on enquiry | (not researched yet) | 2023 doc; Dani mentioned carbon interiors | Marco | **Page** |
-| 26 | **Detailing, paint correction, ceramic coating** | £550 detail · ceramic £250 | "ppf vs ceramic coating" 60 · "clear bra vs ceramic" 110 | Ceramic blog post | everyone | **Page** |
-
-## 7. Suspension
-| # | Service | From | Demand | Proof today | Persona | Verdict |
-|---|---|---|---|---|---|---|
-| 27 | **Air suspension** (Air Lift Performance 3P/3H, Prazis; authorised dealer) | £1,895 install | "air suspension installation near me" trending up · GSC air page 318 impressions (pos 12) | 2 posts, Hypa's red Mini on Air Lift | Marco | **Page** |
-| 28 | Coilovers and lowering springs (static) | on enquiry | | | Marco | **Section** on Air suspension |
-
-## 8. Audiences that cut across services
-| # | Hub | What it gathers | Verdict |
+## Brand, trust and support
+| # | Content | Status | Tier |
 |---|---|---|---|
-| 29 | **Motorbikes** | Bike wraps (from £900), Datatool trackers, immobilisers, remaps | **Page** (hub) |
-| 30 | **Business, fleet and taxi** | Trackers, TfL CCTV, van cameras/sensors, signage and livery | **Page** (hub) |
+| 32 | **Builds** (gallery, later one page per build) | ~30 usable photos so far; Drive upload continuing | 1 (menu) |
+| 33 | **Contact** (form v2, real map, hours, phone, WhatsApp, email) | drawn | 1 (menu) |
+| 34 | **About** (Hypa's story, the workshop, the Mini, dealer status) | facts in memory; copy TBC with Hypa | 2 (footer) |
+| 35 | **Prices** ("from £" for every service, one page) | data ready; several TBC | 2 (footer) — recommended **yes** |
+| 36 | **Blog** (15 posts + 7 drafts; categories) | live | 2 (footer) |
+| 37 | **Shop** (apparel via WhatsApp request; tees £20, jumper £40, keyring £10) | decided: keep (8 Nov) | 2 (footer) |
+| 38 | Reviews (Google) | Business Profile 5.0 (47 reviews on Maps) | S on home, service pages, contact |
+| 39 | Partner brands (Air Lift, Prazis, Ghost, MetaTrak, Scorpion, Xtrons, Autostyle, Pioneer, Kenwood, Rockford Fosgate, FineVu, Thinkware) | logos needed | S |
+| 40 | Legal notes (tint law, remaps and MOT/insurance, plate rules) | wording TBC with Hypa | S on the service pages |
+| 41 | Privacy, cookies, terms | Drive "Privacy & Cookies" folder | footer |
 
-## 9. Brand and support content
-| # | Content | Source | Verdict |
-|---|---|---|---|
-| 31 | Builds / work gallery | Drive "High res cars", Instagram, Media upload | **Page** |
-| 32 | About Hypa and the workshop (McLaren roots, red Mini, 1 Series, Unit 22 mural) | memory, Drive "Unit 22" | **Page** |
-| 33 | Visit / contact (map, hours, parking, WhatsApp, phone, email, form) | memory | **Page** |
-| 34 | Blog: 15 published + 7 drafts (security, legal, wraps, remaps, audio, plates…) | `content/blog-archive/` | **Page** (list + articles) |
-| 35 | Apparel (tees, jumper, keyring; WhatsApp request) | live site | **Page** |
-| 36 | Prices ("from £" for every service) | master price list | **Page?** (Dani decides at step 7) |
-| 37 | Reviews (Google, automated) | Business Profile | **Section** (home + service pages) |
-| 38 | Partner brands (Air Lift, Prazis, Xtrons, Autostyle, MetaTrak, Scorpion, Ghost, Pioneer, Kenwood, Rockford Fosgate, FineVu) | memory | **Section** |
-| 39 | Privacy, cookies, terms | Drive "Privacy & Cookies" folder | **Page** (footer) |
-
-## Summary
-- **About 26 service pages** (rows marked Page in sections 1–7), **2 audience hubs** (Motorbikes, Business), **7 brand/support pages**.
-- **Strongest demand:** trackers, Ghost/immobilisers, wraps, dash cams, remapping (London), audio, CarPlay.
-- **Thin proof today** (needs photos/posts): lighting, interiors, bodykits, wheels, signage, PPF.
-- **Prices missing** from the master sheet: Ghost, PPF, remaps, plates, boot builds (old list or "on enquiry" until Hypa confirms).
-- **Claims to check with Hypa:** light tints / chameleon windscreens (legality), "authorised dealer" wording, plate types for road use.
+## Totals and gaps
+- **Pages:** 1 home · 3 group hubs · 10 tier-1 services · 11 tier-2 services · 2 audience hubs · Builds · Contact · About · Prices · Blog · Shop · 3 legal ≈ **36 pages** at launch, plus car-specific pages over time.
+- **Prices to confirm (Hypa):** Ghost, alarms, PPF, remapping, boot builds, number plates, CarPlay (two tables).
+- **Proof gaps (photos):** alarms, reverse cameras, interiors, bodykits, PPF, tint, motorbikes, signage, Hypa himself.
+- **Claims to confirm:** 20+ years, "Thatcham"/insurer wording, authorised dealer wording, light tints, plate types for road use.

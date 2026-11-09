@@ -28,7 +28,7 @@ _Content first · Depth: medium · Approved by Dani 8 Nov 2026 ("start now") · 
 - [~] **6. Concept A: menu + footer** → v4 (Direction D) https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv (v1–v3: https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD) + `concept/nav/` · menu + IA approved; **style chosen: Direction D "Workshop wall"** (moodboard https://claude.ai/artifact/3zP6kfZV8cBYNNGFqDimgc); menu + footer redone in D (v4.4, dark only, no prices in the menu); **Hypa reviewing**, then step 7
   Mobile menu (closed/open), desktop header, footer. **Stop for Dani's approval.**
 
-- [ ] **6b. Content strategy + site map v2 + IA** (added 9 Nov, Dani): plan in `plan-ia-content.md`, before more page building
+- [~] **6b. Content strategy + site map v2 + IA** (added 9 Nov, Dani): done, review artifact https://claude.ai/artifact/CpSzprgerDKy2dcvTUvTwr — awaiting Dani
 - [~] **7. Concept B: internal page templates** · key pages v1 https://claude.ai/artifact/H2XetEmAA8gnXPLicnvFpt (Contact, Protect hub, Ghost, Builds + homepage; source `concept/pages/`) — **paused** until 6b; visual reference only (after 6 is approved) → artifacts + `concept/pages/`
   Service category · service detail · car-specific (one example) · builds gallery · blog list + article ·
   about · visit/contact · apparel · prices. **Stop for approval.**
