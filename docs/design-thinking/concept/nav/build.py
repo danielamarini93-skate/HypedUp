@@ -34,9 +34,9 @@ def panels():
         rows = ''.join('<li><a href="#"><b>%s</b><span>%s</span></a></li>' % (t, dsc) for t, p, dsc in items)
         out.append('<div class="panel" id="pn%d"%s><div><p class="lab"><em class="g">0%d</em><span class="mono">%s</span></p><ul>%s</ul>'
                    '<a class="all" href="#">All %s services {{lu:arrow-right}}</a></div>'
-                   '<figure><div class="ph" style="background-image:url(\'{{img:%s}}\')"></div><figcaption class="mono"><span>%s</span><span>Unit 22</span></figcaption></figure>'
-                   '<div class="idea"><span class="mono">Not on the list?</span><h3>Not sure what you need?</h3><p>Send your car and your idea. Hypa replies with options and prices.</p>'
-                   '<a class="pill" href="#quote">{{br:whatsapp}}Ask on WhatsApp</a></div></div>'
+                   '<figure><div class="ph" style="background-image:url(\'{{img:%s}}\')"></div><figcaption class="mono"><span>%s</span></figcaption></figure>'
+                   '<div class="idea"><h3>Not sure what you need?</h3><p>Send your car and your idea. Hypa replies with options and prices.</p>'
+                   '<a class="pill" href="#quote">Ask on WhatsApp</a></div></div>'
                    % (i, '' if i == 0 else ' hidden', i + 1, g, rows, g, img, cap))
     return ''.join(out)
 s = s.replace('{{panels}}', panels())
@@ -56,7 +56,7 @@ def footer(mobile):
     grid = (find + c) if mobile else (c + find)
     return ('<footer class="ft%s"><div class="ft-grid">%s</div><div class="legal mono"><span>© 2026 Hyped Up Ltd · Company no. 14086991</span>'
             '<span>Privacy · Cookies · Terms · Cookie settings</span></div><div class="wm"><svg class="wmsvg" aria-hidden="true" preserveAspectRatio="xMinYMax meet"><defs><linearGradient id="wmg%s" x1="0" x2="1"><stop offset="0" style="stop-color:var(--s1,#d4280f)"/><stop offset=".55" style="stop-color:var(--s2,#e8501a)"/><stop offset="1" style="stop-color:var(--s3,#f26f22)"/></linearGradient></defs><text x="0" y="0" font-size="200" fill="none" stroke="url(#wmg%s)">HYPED UP</text></svg>'
-            '<span class="mono">Bermondsey · SE16<br>Cars + bikes · Est. 2022</span></div></footer>') % (' ft-mobile' if mobile else '', grid, 'm' if mobile else 'd', 'm' if mobile else 'd')
+            '<span class="mono">Est. 2022</span></div></footer>') % (' ft-mobile' if mobile else '', grid, 'm' if mobile else 'd', 'm' if mobile else 'd')
 s = s.replace('{{footer}}', footer(False)).replace('{{footer_m}}', footer(True))
 
 for k in ['logo', 'dashcam', 'carplay', 'wrap']:

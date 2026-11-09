@@ -172,6 +172,7 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 .D .top nav{display:flex;gap:1.5rem;font:600 .95rem/1 Barlow,sans-serif}
 .D .top nav .on{position:relative}
 .D .top nav .on::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--gtext)}
+.D .top .where i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3fbf6a;margin-right:.45rem;vertical-align:1px}
 .D .top .where{font:500 .68rem/1.35 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--soft);text-align:right}
 .D .pill{display:inline-flex;align-items:center;gap:.55rem;border-radius:999px;background:var(--bgrad);color:#fff;font:700 .95rem/1 Barlow,sans-serif;padding:.8rem 1.15rem;box-shadow:inset 0 1px rgba(255,255,255,.14)}
 .D .pill svg{width:18px;height:18px}
@@ -202,7 +203,8 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
 .D .cols .pr{font:700 .82rem/1 Barlow,sans-serif}
 .D .cols p{grid-column:2/4;margin:0;font-size:.82rem;color:var(--soft)}
 @media (max-width:900px){
-  .D .top{grid-template-columns:auto 1fr auto}.D .top nav,.D .top .where{display:none}
+  .D .top{grid-template-columns:auto 1fr auto}.D .top nav,.D .top .where i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3fbf6a;margin-right:.45rem;vertical-align:1px}
+.D .top .where{display:none}
   .D .stage{display:flex;flex-direction:column;gap:18px}.D .stage figure{order:-1}.D .media{aspect-ratio:4/3}.D .meta span+span{display:none}.D h3{font-size:3.4rem}.D h3 .wet{font-size:3.6rem}.D .cols{grid-template-columns:1fr}.D .cols div+div{border-left:0;padding-left:0;border-top:1px solid var(--rule)}
 }
 .D h3 .wet{height:.95em;white-space:nowrap}
@@ -358,15 +360,15 @@ h1,h2,h3,h4{margin:0;line-height:.92;text-wrap:balance;font-weight:inherit}
     </div>
     <div class="mock lr" id="mockD">
       <i class="crop tl"></i><i class="crop tr"></i><i class="crop bl"></i><i class="crop br"></i>
-      <div class="top"><span class="chip"><img src="{{img:logo}}" alt="Hyped Up"></span><nav><span>Protect</span><span>Upgrade</span><span class="on">Style</span><span>Builds</span><span>Contact</span></nav><span class="where">Unit 22 · SE16<br>Mon–Sat</span><span class="pill">Get a quote</span></div>
-      <div class="meta"><span>Bermondsey · SE16</span><span>Cars + bikes · Est. 2022</span></div>
+      <div class="top"><span class="chip"><img src="{{img:logo}}" alt="Hyped Up"></span><nav><span>Protect</span><span>Upgrade</span><span class="on">Style</span><span>Builds</span><span>Contact</span></nav><span class="where"><i></i>Open today<br>10:00–18:00</span><span class="pill">Get a quote</span></div>
+      <div class="meta"><span>Bermondsey, South London</span><span>Est. 2022</span></div>
       <div class="stage">
         <div class="copy">
           <div><h3>Protect it.<br>Upgrade it.<span class="wet" id="morph" role="text" aria-label="Style it.">Style it.</span></h3></div>
           <p>South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly.</p>
-          <div class="act"><span class="pill">{{br:whatsapp}}Start your build</span><span class="find">Find us</span><span class="addr">Unit 22 · Bolina Rd<br>London SE16 3LF</span></div>
+          <div class="act"><span class="pill">{{br:whatsapp}}Start your build</span><span class="find">Find us</span><span class="addr">Unit 22, Bolina Rd<br>SE16 3LF</span></div>
         </div>
-        <figure><div class="media"><video src="{{vid:hero}}" poster="{{img:poster}}" autoplay muted loop playsinline aria-label="Short silent reel of work inside the Hyped Up workshop"></video><span class="lbl"><i></i>Inside Unit 22</span></div><figcaption><span>Reel 01 · Silent loop</span><span>@hypedup.ltd</span></figcaption></figure>
+        <figure><div class="media"><video src="{{vid:hero}}" poster="{{img:poster}}" autoplay muted loop playsinline aria-label="Short silent reel of work inside the Hyped Up workshop"></video></div><figcaption><span></span><span>@hypedup.ltd</span></figcaption></figure>
       </div>
       <div class="cols"><div><em>01</em><b>Protect</b><span class="pr">from £125</span><p>Ghost, trackers, dash cams, PPF</p></div><div><em>02</em><b>Upgrade</b><span class="pr">from £125</span><p>CarPlay, audio, remapping</p></div><div><em>03</em><b>Style</b><span class="pr">from £50</span><p>Wraps, tint, air suspension</p></div></div>
     </div>

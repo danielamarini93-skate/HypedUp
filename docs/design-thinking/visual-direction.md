@@ -171,7 +171,7 @@ Decision pending (Dani). Source: `concept/moodboard/`.
 
 ## Menu & footer v4 in Direction D (9 Nov 2026)
 Artifact https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv · source `concept/nav/` (v3 kept as `template-v3.html`, `index-v3.html`, `build-v3.py`).
-- Logo on a dark chip (works in light mode); gradient underline on the open/hovered menu item; mono "Unit 22 · SE16 · Mon–Sat"; gradient pill "Get a quote".
+- Logo on a dark chip (works in light mode); gradient underline on the open/hovered menu item; "Open today 10:00–18:00" status (v4.7); gradient pill "Get a quote".
 - Panels: mono "01 Protect" label, Big Shoulders service names (no prices since v4.4), square photo with vignette + mono caption, "Not sure what you need?" card.
 - Phone: closed = reel poster + headline with Graffiti City "Style it."; menu = numbered 01/02/03 doors, gradient arrow when open, WhatsApp pill + Call.
 - Footer: mono column labels (01–03 in gradient), hand-drawn circle on "Find us", HYPED UP wordmark (v4.3: Big Shoulders 900, **outline only** with a red → orange gradient stroke, sized to fill the width; Dani). No splats, drips or brush lines.
@@ -186,3 +186,12 @@ Artifact https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv · source `concept/na
 - Sampled from the logo's "Vehicle modification and styling" band: bright red `#DE0613` → deep crimson `#86010A` (no orange).
 - Fills (buttons): `#de0613 → #b5030f → #86010a`, white text. Text on black (prices, numbers, "Style it."): lighter `#ff4033 → #ef1220 → #de0613` to keep contrast.
 - **Decided (Dani): logo red is the accent.** Toggles removed; menu v4.6, moodboard v14. Orange is retired.
+
+### Copy rule (Dani, 9 Nov 2026): no repetition, no filler
+Every word must help the user or SEO; say each fact once per screen. Applied (menu v4.7, moodboard v15):
+- Header: "Unit 22 · SE16 · Mon–Sat" → green dot **"Open today 10:00–18:00"** (location lives in Find us / footer).
+- Phone menu: "Open today 10:00–18:00 · **London SE16**".
+- Removed: "Inside Unit 22" video labels, "Reel 01 · Silent loop", "Unit 22" photo captions, the "Not on the list?" label, "Bermondsey · SE16 / Cars + bikes" next to the footer wordmark (now just "Est. 2022").
+- WhatsApp icon only where the label doesn't say WhatsApp ("Get a quote", "Start your build"); "Ask on WhatsApp" has no icon.
+  Phone menu bottom: "Get a quote" + "Call" (same name as the header action).
+- Moodboard D hero: meta "Bermondsey, South London · Est. 2022"; Find us shows "Unit 22, Bolina Rd · SE16 3LF" once.
