@@ -1,251 +1,242 @@
+<meta charset="utf-8">
 <title>Hyped Up Menu & Footer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:wght@400;500;600;700&family=Rubik+Spray+Paint&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Instrument+Serif:ital@1&display=swap">
 <style>
-@font-face{font-family:"Hoax Vandal";src:url({{font:hoax}}) format("truetype");font-display:swap}
-/* Layout: review board of real components (desktop header with clickable panels, three phone states, footer).
-   v0.3 workshop palette: warm greys + reds + orange, red→orange gradient, spray/brush/splash marks drawn
-   as public-domain SVG masks + graffiti fonts. Single dark look on purpose. */
+@font-face{font-family:"Graffiti City";src:url({{font:gcity}}) format("opentype");font-display:swap}
+/* v4: Direction D "Workshop wall" (chosen 9 Nov 2026). Dark by default with a light toggle.
+   Big Shoulders (display) + Barlow (body) + IBM Plex Mono (labels); one Graffiti City spray word per screen;
+   deep red → orange gradient on every accent and CTA; one hand-drawn mark per screen (marker circle on "Find us"). */
 :root{
-  color-scheme: dark;
-  --board:#161414;    /* board behind the frames */
-  --asphalt:#0b0a0a;  /* component background */
-  --tarmac:#151212;   /* panels */
-  --graphite:#211d1d; /* cards */
-  --concrete:#3b3434; /* lines */
-  --steel:#a9a2a0;    /* secondary text, 7:1 on asphalt */
-  --chalk:#f2ede9;    /* primary text */
-  --red:#e30513;      /* logo red: marks and fills */
-  --red-hot:#ff4636;  /* red for text on black (5.6:1) */
-  --orange:#ff8a1f;   /* new accent (8.9:1 on black) */
-  --btn-a:#c2040f; --btn-b:#cf1a0d; /* subtle button gradient, white text ≥ 5.5:1 */
-  --grad:linear-gradient(100deg,#e30513 0%,#ff4a1c 55%,#ff8a1f 100%); /* marks and wordmark only */
   --f-display:"Big Shoulders Display","Arial Narrow",sans-serif;
   --f-body:"Barlow","Helvetica Neue",Arial,sans-serif;
-  --f-tag:"Hoax Vandal","Segoe Print",cursive;   /* graffiti tag: short words only */
-  --f-spray:"Rubik Spray Paint","Big Shoulders Display",sans-serif; /* spray wordmark */
-  --radius:0px;  /* toggled to 14px in the rounded variant (images only) */
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --f-spray:"Graffiti City","Big Shoulders Display",sans-serif;
+  --bgrad:linear-gradient(135deg,#8f1206 0%,#b0280a 55%,#c4470f 100%);   /* fills: buttons, chips (white text) */
 }
-html,body{overflow-x:clip}
-body{background:var(--board);color:var(--chalk);font:400 16px/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
+/* theme tokens live on .theme so the board can flip dark/light */
+.theme{--board:#141212;--bg:#0d0c0c;--panel:#141212;--card:#1c1919;--rule:rgba(242,238,233,.14);--fg:#f2eee9;--soft:#a39c97;--body2:#d3ccc7;
+  --gtext:linear-gradient(100deg,#d4280f 0%,#e8501a 55%,#f26f22 100%);--acc:#ec5a1d;--circle:#ec5a1d;--chip:#121010;color-scheme:dark}
+.theme.light{--board:#dedad3;--bg:#ece8e1;--panel:#e4dfd7;--card:#f4f1eb;--rule:rgba(20,18,18,.14);--fg:#141212;--soft:#615b57;--body2:#3a3532;
+  --gtext:linear-gradient(100deg,#a8150a 0%,#c2300c 55%,#cf4a10 100%);--acc:#b8280b;--circle:#c2300c;color-scheme:light}
+html,body{overflow-x:clip;margin:0}
+body{background:#141212}
+.theme{background:var(--board);color:var(--fg);font:400 16px/1.5 var(--f-body);-webkit-font-smoothing:antialiased;min-height:100vh}
 .page{max-width:1320px;margin:0 auto;padding:2.5rem max(16px,env(safe-area-inset-right,0px)) 4rem max(16px,env(safe-area-inset-left,0px))}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 h1,h2,h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;line-height:.9;margin:0;text-wrap:balance}
-.intro{display:grid;gap:.8rem;margin-bottom:2.5rem;max-width:72ch;position:relative}
-.intro h1{font-size:clamp(2.6rem,7.5vw,4.6rem);position:relative;z-index:1}
-.intro p{margin:0;color:var(--steel);position:relative;z-index:1}
-.label{font:700 .72rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--steel)}
+.mono{font:500 .7rem/1.35 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.g{background:var(--gtext);-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro{display:grid;gap:.8rem;margin-bottom:2.5rem;max-width:74ch}
+.intro h1{font-size:clamp(2.8rem,7.5vw,5rem)}
+.intro p{margin:0;color:var(--soft)}
+.toggle{display:inline-flex;gap:.3rem;padding:.25rem;border:1px solid var(--rule);border-radius:999px;justify-self:start}
+.toggle button{background:none;border:0;color:var(--soft);font:600 .85rem/1 var(--f-body);padding:.55rem .95rem;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
 .frame-title{display:flex;align-items:baseline;gap:.8rem;margin:3rem 0 1rem;flex-wrap:wrap}
 .frame-title h2{font-size:1.9rem}
-.frame-title p{margin:0;color:var(--steel);font-size:.95rem}
-.frame{background:var(--asphalt);border:1px solid var(--concrete);border-radius:4px;overflow:hidden;position:relative}
-/* real paint marks: public-domain SVGs used as CSS masks, coloured by background */
-.mk{position:absolute;pointer-events:none;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;background:var(--c,var(--red))}
-{{maskvars}}
+.frame-title p{margin:0;color:var(--soft);font-size:.95rem}
+.frame{background:var(--bg);border:1px solid var(--rule);border-radius:4px;overflow:hidden;position:relative}
 
-.logo{display:block;height:44px;width:auto}
-.dh .logo{height:52px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:0 1.1rem;border-radius:2px;background:linear-gradient(100deg,var(--btn-a),var(--btn-b));color:#fff;font:700 .95rem/1 var(--f-body);border:0;cursor:pointer}
-.btn:hover{filter:brightness(1.12)}
-.btn svg{width:18px;height:18px}
-.btn-ghost{background:transparent;border:1.5px solid var(--chalk);color:var(--chalk)}
-.rounded{--radius:14px}
-.toggle{display:inline-flex;gap:.3rem;padding:.25rem;border:1px solid var(--concrete);border-radius:999px;margin-top:.6rem}
-.toggle button{background:none;border:0;color:var(--steel);font:600 .85rem/1 var(--f-body);padding:.5rem .9rem;border-radius:999px;cursor:pointer}
-.toggle button[aria-pressed="true"]{background:var(--chalk);color:var(--asphalt)}
-.from{color:var(--steel);font-size:.85rem;font-variant-numeric:tabular-nums;white-space:nowrap;font-style:normal}
-.t-protect{color:var(--red-hot)} .t-upgrade{color:var(--orange)}
-.t-style{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chip{background:var(--chip,#121010);border-radius:8px;padding:6px 9px;display:inline-block;line-height:0}
+.chip img{height:32px;width:auto}
+.dh .chip img{height:40px}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:0 1.15rem;border-radius:999px;background:var(--bgrad);color:#fff;font:700 .95rem/1 var(--f-body);border:0;cursor:pointer;box-shadow:inset 0 1px rgba(255,255,255,.14);white-space:nowrap}
+.pill:hover{filter:brightness(1.1)}
+.pill svg{width:18px;height:18px}
+.pill.ghost{background:transparent;border:1.5px solid var(--fg);color:var(--fg);box-shadow:none}
+.lu{width:18px;height:18px;flex:none}
+.from{font:700 .85rem/1 var(--f-body);font-variant-numeric:tabular-nums;white-space:nowrap;font-style:normal}
 
 /* ---------- desktop header ---------- */
-.dh{display:flex;align-items:center;gap:2rem;padding:1rem 1.6rem;border-bottom:1px solid var(--concrete)}
-.dh nav{display:flex;gap:1.7rem;flex:1}
-.dh nav button,.dh nav a{position:relative;background:none;border:0;color:var(--chalk);font:600 1rem/1 var(--f-body);cursor:pointer;display:flex;align-items:center;gap:.35rem;padding:.6rem 0}
-.dh nav svg.lucide-chevron-down{width:16px;height:16px;transition:transform .2s}
-.dh nav [aria-expanded="true"] svg.lucide-chevron-down{transform:rotate(180deg)}
-.dh nav .mk{left:-10%;right:-10%;bottom:-8px;height:14px;opacity:0;transition:opacity .2s;--c:var(--orange)}
-.dh nav [aria-expanded="true"] .mk,.dh nav a:hover .mk,.dh nav button:hover .mk{opacity:1}
-.panel{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding:1.8rem 1.6rem 2rem;border-bottom:1px solid var(--concrete);background:var(--tarmac);position:relative;overflow:hidden}
+.dh{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:2rem;padding:1rem 1.6rem;border-bottom:1px solid var(--rule)}
+.dh nav{display:flex;gap:1.8rem}
+.dh nav button,.dh nav a{position:relative;background:none;border:0;color:var(--fg);font:600 1rem/1 var(--f-body);cursor:pointer;display:flex;align-items:center;gap:.35rem;padding:.7rem 0}
+.dh nav svg.lucide-chevron-down{width:16px;height:16px;transition:transform .2s;color:var(--soft)}
+.dh nav [aria-expanded="true"] svg.lucide-chevron-down{transform:rotate(180deg);color:var(--acc)}
+.dh nav button::after,.dh nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gtext);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+.dh nav [aria-expanded="true"]::after,.dh nav a:hover::after,.dh nav button:hover::after{transform:scaleX(1)}
+.dh .where{text-align:right}
+.panel{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding:1.6rem 1.6rem 1.8rem;border-bottom:1px solid var(--rule);background:var(--panel)}
 .panel[hidden]{display:none}
 .panel ul{list-style:none;margin:0;padding:0}
-.panel li a{display:grid;grid-template-columns:1fr auto;gap:.15rem 1rem;padding:.8rem 0;border-bottom:1px solid var(--concrete)}
-.panel li a b{font:900 1.4rem/1 var(--f-display);text-transform:uppercase;transition:color .15s}
-.panel li a span{grid-column:1/-1;color:var(--steel);font-size:.9rem}
-.panel li a:hover b{color:var(--orange)}
-.panel .all{position:relative;display:inline-block;margin-top:1rem;font-weight:700;padding-bottom:6px}
-.panel .all .mk{left:-4%;right:-4%;bottom:-4px;height:10px;--c:var(--orange)}
-.tag{font:700 .72rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.4rem;display:inline-block}
-.panel .ph{border-radius:var(--radius);background:center/cover no-repeat;min-height:230px;position:relative;filter:saturate(1.05)}
-.panel .ph i{position:absolute;left:.7rem;bottom:.7rem;font:600 .8rem/1.2 var(--f-body);font-style:normal;background:rgba(11,10,10,.82);padding:.35rem .5rem}
-.idea{position:relative;border-radius:var(--radius);padding:1.4rem;display:grid;gap:.7rem;align-content:start;isolation:isolate;background:var(--graphite);border:1px solid var(--concrete);overflow:hidden}
-.idea .mk{right:-46px;top:-40px;width:170px;height:200px;z-index:-1;opacity:.9}
-.idea h3{font-family:var(--f-tag);font-weight:400;text-transform:none;font-size:2rem;line-height:1.05;color:#fff;letter-spacing:.01em}
-.idea p{margin:0;font-size:.95rem;color:#cdc6c2;max-width:30ch}
-.idea .btn{justify-self:start}
+.panel .lab{display:flex;gap:.6rem;align-items:baseline;margin-bottom:.3rem}
+.panel .lab em{font:600 .72rem/1 var(--f-mono);font-style:normal}
+.panel li a{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;padding:.8rem 0;border-bottom:1px solid var(--rule)}
+.panel li a b{font:900 1.45rem/1 var(--f-display);text-transform:uppercase;transition:color .15s}
+.panel li a span{grid-column:1/-1;color:var(--soft);font-size:.9rem}
+.panel li a:hover b{color:var(--acc)}
+.panel .all{display:inline-flex;gap:.4rem;align-items:center;margin-top:1rem;font-weight:700}
+.panel .all svg{width:16px;height:16px;color:var(--acc)}
+.panel figure{margin:0;display:grid;gap:6px;align-content:start}
+.panel .ph{position:relative;aspect-ratio:4/3.4;background:center/cover no-repeat}
+.panel .ph::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 75% 68% at 50% 45%,rgba(0,0,0,0) 35%,rgba(0,0,0,.55) 72%,rgba(0,0,0,.88) 100%)}
+.panel figcaption{display:flex;justify-content:space-between;gap:.5rem}
+.idea{background:var(--card);border:1px solid var(--rule);padding:1.4rem;display:grid;gap:.8rem;align-content:start}
+.idea h3{font-size:2rem;line-height:.95}
+.idea p{margin:0;font-size:.95rem;color:var(--body2);max-width:30ch}
+.idea .pill{justify-self:start}
 
 /* ---------- phones ---------- */
 .phones{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));align-items:start}
 .phone{max-width:360px;width:100%;justify-self:center}
-.phone .label{display:block;margin-bottom:.6rem}
-.screen{position:relative;height:700px;background:var(--asphalt);border:1px solid var(--concrete);border-radius:28px;overflow:hidden}
+.phone>.mono{display:block;margin-bottom:.6rem}
+.screen{position:relative;height:720px;background:var(--bg);border:1px solid var(--rule);border-radius:28px;overflow:hidden}
 .mh{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.1rem;position:relative;z-index:2}
-.menu-btn{background:none;border:0;color:var(--chalk);font:600 .8rem/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;display:flex;gap:.55rem;align-items:center;cursor:pointer;min-height:44px}
+.menu-btn{background:none;border:0;color:var(--fg);font:600 .72rem/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;display:flex;gap:.55rem;align-items:center;cursor:pointer;min-height:44px}
 .menu-btn svg{width:22px;height:22px}
-.lu{width:18px;height:18px;flex:none}
-.closed .hero{position:absolute;inset:8px;border-radius:calc(var(--radius) + 6px);background:center/cover no-repeat;overflow:hidden}
-.closed .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,10,.5),rgba(11,10,10,.1) 35%,rgba(11,10,10,.95))}
-.closed .hcopy{position:absolute;left:1.1rem;right:1.1rem;bottom:1.4rem;z-index:2;display:grid;gap:.8rem}
-.closed .hcopy h3{font-size:3.3rem}
-.closed .hcopy p{margin:0;font-size:.95rem}
-.sheet{position:absolute;inset:0;background:var(--asphalt);display:flex;flex-direction:column;overflow:hidden}
-.sheet>.mk{right:-60px;bottom:70px;width:220px;height:260px;opacity:.28}
-.sheet .mh{border-bottom:1px solid var(--concrete)}
-.big{list-style:none;margin:0;padding:.6rem 1.1rem 0;position:relative}
-.big>li{border-bottom:1px solid var(--concrete)}
-.big>li>button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;cursor:pointer}
-.big>li>button b{font:900 2.7rem/1 var(--f-display);text-transform:uppercase}
-.big>li>button span{display:flex;color:var(--steel);transition:transform .2s}
-.big>li>button span svg{width:26px;height:26px}
-.big>li>button[aria-expanded="true"] span{transform:rotate(90deg);color:var(--orange)}
-.big>li>button:focus-visible{outline:3px solid var(--orange)}
-.sub{list-style:none;margin:0 0 .8rem;padding:0}
+.closed .media{position:relative;margin:0 1.1rem;aspect-ratio:4/3.2;background:center/cover no-repeat}
+.closed .media::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 75% 66% at 50% 45%,rgba(0,0,0,0) 30%,rgba(0,0,0,.55) 66%,rgba(0,0,0,.92) 100%)}
+.closed .media .lbl{position:absolute;z-index:1;left:10px;bottom:10px;display:inline-flex;gap:.4rem;align-items:center;font:600 .62rem/1 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;color:#f2eee9;background:rgba(13,12,12,.55);padding:.4rem .55rem;border-radius:999px}
+.closed .media .lbl i{width:7px;height:7px;border-radius:50%;background:#ec5a1d}
+.closed .hcopy{padding:1.1rem;display:grid;gap:.9rem}
+.closed .hcopy h3{font-size:3.2rem;line-height:.86}
+.closed .hcopy h3 .wet{display:block;width:fit-content;font:400 3.4rem/1.1 var(--f-spray);text-transform:none;padding:0 .06em}
+.closed .hcopy p{margin:0;font-size:.98rem;color:var(--body2)}
+.sheet{position:absolute;inset:0;background:var(--bg);display:flex;flex-direction:column;overflow:hidden}
+.sheet .mh{border-bottom:1px solid var(--rule)}
+.big{list-style:none;margin:0;padding:.4rem 1.1rem 0}
+.big>li{border-bottom:1px solid var(--rule)}
+.big>li>button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:auto 1fr auto;gap:.7rem;align-items:baseline;padding:.75rem 0;cursor:pointer}
+.big>li>button em{font:600 .7rem/1 var(--f-mono);font-style:normal}
+.big>li>button b{font:900 2.8rem/1 var(--f-display);text-transform:uppercase}
+.big>li>button span{display:flex;align-self:center;color:var(--soft);transition:transform .2s}
+.big>li>button span svg{width:24px;height:24px}
+.big>li>button[aria-expanded="true"] span{transform:rotate(90deg);color:var(--acc)}
+.big>li>button:focus-visible{outline:3px solid var(--acc)}
+.sub{list-style:none;margin:0 0 .8rem;padding:0 0 0 1.65rem}
 .sub a{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;font-weight:600}
-.sub .all a{border-top:1px dashed var(--concrete);margin-top:.2rem;padding-top:.7rem;font-weight:700}
-.small{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;padding:1.1rem;color:var(--steel);font-weight:600;font-size:.95rem;position:relative}
-.sheet .bottom{margin-top:auto;display:grid;grid-template-columns:2fr 1fr;gap:.6rem;padding:.8rem 1.1rem 1rem;border-top:1px solid var(--concrete);position:relative}
-.hours{padding:0 1.1rem .6rem;color:var(--steel);font-size:.85rem;position:relative}
-.hours b{color:#4ade80;font-weight:600}
+.sub .all a{border-top:1px dashed var(--rule);margin-top:.2rem;padding-top:.7rem;font-weight:700}
+.small{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem;padding:1.1rem;color:var(--soft);font-weight:600;font-size:.95rem}
+.small a:hover{color:var(--fg)}
+.sheet .bottom{margin-top:auto;display:grid;grid-template-columns:2fr 1fr;gap:.6rem;padding:.8rem 1.1rem 1rem;border-top:1px solid var(--rule)}
+.hours{padding:0 1.1rem .7rem;display:flex;gap:.5rem;align-items:center}
+.hours i{width:7px;height:7px;border-radius:50%;background:#3fbf6a}
 
 /* ---------- footer ---------- */
 .ft{padding:2.6rem 1.6rem 0;position:relative;overflow:hidden}
-.ft-grid{display:grid;gap:2rem;grid-template-columns:repeat(6,minmax(0,1fr));position:relative;z-index:1}
-.ft h4{font:700 .72rem/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;margin:0 0 .9rem}
-.ft ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-size:.92rem;color:#cdc6c2}
-.ft ul a:hover{color:var(--orange)}
-.findus h4{position:relative;display:inline-block;padding:.9rem 1.4rem;margin-left:-1.4rem;font-family:var(--f-tag);font-size:1.8rem;letter-spacing:.02em;text-transform:none;font-weight:400}
-.findus h4 .mk{inset:-10px -22px -6px -16px;--c:var(--orange)}
-.findus h4 .sp{inset:-24px -40px -20px -30px;opacity:.5;--c:var(--red)}
-.findus p{margin:0 0 .5rem;font-size:.92rem;color:#cdc6c2}
-.findus b{color:var(--chalk)}
-.social{display:flex;gap:.5rem;margin-top:.9rem}
-.social a{width:38px;height:38px;border:1px solid var(--concrete);border-radius:50%;display:grid;place-items:center;color:#cdc6c2}
-.social a:hover{color:var(--orange);border-color:var(--orange)}
-.legal{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;justify-content:space-between;padding:1.6rem 0 1.2rem;margin-top:2.4rem;border-top:1px solid var(--concrete);color:var(--steel);font-size:.82rem;position:relative;z-index:1}
-.wm{position:relative;display:block;text-align:center;padding-top:.5rem;overflow:hidden}
-.wm b{position:relative;z-index:1;display:block;font:400 clamp(4.5rem,15vw,13rem)/.95 var(--f-spray);background:linear-gradient(100deg,#e30513,#ff6a1c 70%,#ff8a1f);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
-.wm .drips{left:6%;right:6%;top:72%;height:42%;--c:#c2040f;opacity:.9}
-.wm .sp{left:-5%;right:-5%;top:-10%;bottom:20%;--c:var(--orange);opacity:.25}
+.ft-grid{display:grid;gap:2rem;grid-template-columns:repeat(5,minmax(0,1fr)) 1.35fr}
+.ft h4{margin:0 0 .9rem;display:flex;gap:.5rem;align-items:baseline}
+.ft h4 em{font-style:normal;font-weight:600}
+.ft ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-size:.92rem;color:var(--body2)}
+.ft ul a:hover{color:var(--acc)}
+.findus .find{position:relative;display:inline-block;font:900 1.9rem/1 var(--f-display);text-transform:uppercase;padding:.5rem .8rem;margin:0 0 1rem .6rem}
+.findus .find::after{content:"";position:absolute;inset:-.55rem -1rem -.45rem -1.2rem;background:var(--circle);-webkit-mask:var(--m-circle) center/100% 100% no-repeat;mask:var(--m-circle) center/100% 100% no-repeat;pointer-events:none}
+.findus p{margin:0 0 .6rem;font-size:.92rem;color:var(--body2)}
+.findus b{color:var(--fg);font-weight:600}
+.social{display:flex;gap:.5rem;margin-top:1rem}
+.social a{width:40px;height:40px;border:1px solid var(--rule);border-radius:50%;display:grid;place-items:center;color:var(--body2)}
+.social a:hover{color:var(--acc);border-color:var(--acc)}
+.legal{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;justify-content:space-between;padding:1.4rem 0 1.1rem;margin-top:2.4rem;border-top:1px solid var(--fg)}
+.wm{display:flex;justify-content:space-between;align-items:end;gap:1rem;padding:.4rem 0 1.2rem;overflow:hidden}
+.wm b{display:block;font:400 clamp(4.2rem,13vw,11.5rem)/1.05 var(--f-spray);white-space:nowrap;padding:0 .04em}
+.wm .mono{text-align:right;padding-bottom:1.4rem}
+.ft-mobile{padding:2rem 1.1rem 0}
 .ft-mobile .ft-grid{grid-template-columns:1fr 1fr;gap:1.6rem}
 .ft-mobile .findus{grid-column:1/-1}
-.ft-mobile .wm b{font-size:4.4rem}
+.ft-mobile .wm{flex-direction:column;align-items:start}
+.ft-mobile .wm b{font-size:4.6rem}
+.ft-mobile .wm .mono{text-align:left;padding:0}
 
 .notes{margin-top:3rem;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
-.note{background:var(--graphite);border-radius:4px;padding:1.2rem;display:grid;gap:.45rem;align-content:start}
-.note h3{font-size:1.3rem}
-.note p,.note li{margin:0;color:#cdc6c2;font-size:.92rem}
+.note{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:1.2rem;display:grid;gap:.5rem;align-content:start}
+.note h3{font-size:1.35rem}
+.note p,.note li{margin:0;color:var(--body2);font-size:.92rem}
 .note ul{margin:0;padding-left:1.1rem;display:grid;gap:.3rem}
 
-@media (max-width:900px){ .panel{grid-template-columns:1fr}.panel .ph{min-height:160px} .ft-grid{grid-template-columns:1fr 1fr} }
-@media (max-width:640px){ .dh{flex-wrap:wrap;gap:.8rem} .dh nav{order:3;flex-basis:100%;overflow-x:auto;gap:1.2rem} }
+@media (max-width:1000px){ .panel{grid-template-columns:1fr 1fr}.panel .idea{grid-column:1/-1} .ft-grid{grid-template-columns:1fr 1fr 1fr} .dh .where{display:none}.dh{grid-template-columns:auto 1fr auto} }
+@media (max-width:700px){ .panel{grid-template-columns:1fr} .dh{grid-template-columns:auto auto;justify-content:space-between} .dh nav{order:3;grid-column:1/-1;overflow-x:auto;gap:1.2rem} .ft-grid{grid-template-columns:1fr 1fr} .wm{flex-direction:column;align-items:start} }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+{{maskvars}}
 </style>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <filter id="rough" x="-10%" y="-40%" width="120%" height="180%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
-    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#e30513"/><stop offset=".55" stop-color="#ff4a1c"/><stop offset="1" stop-color="#ff8a1f"/></linearGradient>
-  </defs>
-</svg>
-
+<div class="theme" id="theme">
 <div class="page">
   <header class="intro">
-    <i class="mk" style="--m:var(--m-spray);left:-30px;top:10px;width:520px;height:110px;opacity:.55" aria-hidden="true"></i>
-    <p class="label">Design thinking · Round 2 · Concept A · v3</p>
+    <p class="mono">Design thinking · Round 2 · Concept A · v4 · Direction D</p>
     <h1>Menu &amp; footer</h1>
-    <p>Three big doors (Protect, Upgrade, Style) with ten services in the menu. The other twelve live on the hub pages and in the footer; car-specific pages are linked from inside service pages. One action everywhere: a WhatsApp quote. v3: real graffiti fonts and paint marks, Lucide icons, a subtler button gradient, a bigger logo, and a rounded-corners option for images.</p>
-    <div class="toggle" role="group" aria-label="Corner style"><button type="button" aria-pressed="true" data-corner="sharp">Sharp corners</button><button type="button" aria-pressed="false" data-corner="rounded">Rounded images</button></div>
+    <p>The approved menu (three doors: Protect, Upgrade, Style; ten services; Builds and Contact as plain links) redrawn in Direction D "Workshop wall". One action everywhere: a WhatsApp quote. The gradient marks every accent and button; the hand-drawn circle sits on "Find us"; the spray font appears once, in the footer wordmark.</p>
+    <div class="toggle" role="group" aria-label="Colour mode"><button type="button" aria-pressed="true" data-theme="dark">Dark</button><button type="button" aria-pressed="false" data-theme="light">Light</button></div>
   </header>
 
   <div class="frame-title"><h2>1 · Desktop header</h2><p>Click Protect, Upgrade and Style to open each panel. Builds and Contact are plain links.</p></div>
   <div class="frame">
     <div class="dh">
-      <img class="logo" src="{{img:logo}}" alt="Hyped Up">
+      <a class="chip" href="#" aria-label="Hyped Up home"><img src="{{img:logo}}" alt="Hyped Up"></a>
       <nav aria-label="Main (desktop example)" data-dnav>
-        <button aria-expanded="true" aria-controls="pn0">Protect {{chev}}<i class="mk" style="--m:var(--m-line)" aria-hidden="true"></i></button>
-        <button aria-expanded="false" aria-controls="pn1">Upgrade {{chev}}<i class="mk" style="--m:var(--m-line)" aria-hidden="true"></i></button>
-        <button aria-expanded="false" aria-controls="pn2">Style {{chev}}<i class="mk" style="--m:var(--m-line)" aria-hidden="true"></i></button>
-        <a href="#builds">Builds<i class="mk" style="--m:var(--m-line)" aria-hidden="true"></i></a>
-        <a href="#contact">Contact<i class="mk" style="--m:var(--m-line)" aria-hidden="true"></i></a>
+        <button aria-expanded="true" aria-controls="pn0">Protect {{lu:chevron-down}}</button>
+        <button aria-expanded="false" aria-controls="pn1">Upgrade {{lu:chevron-down}}</button>
+        <button aria-expanded="false" aria-controls="pn2">Style {{lu:chevron-down}}</button>
+        <a href="#builds">Builds</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a class="btn" href="#quote">{{wa}}Get a quote</a>
+      <span class="mono where">Unit 22 · SE16<br>Mon–Sat</span>
+      <a class="pill" href="#quote">{{br:whatsapp}}Get a quote</a>
     </div>
     {{panels}}
   </div>
 
-  <div class="frame-title"><h2>2 · Phone</h2><p>Closed header, the full-screen menu (tap the words), and the menu with Upgrade open.</p></div>
+  <div class="frame-title"><h2>2 · Phone</h2><p>Closed header over the hero, the full-screen menu (tap the words), and the menu with Upgrade open.</p></div>
   <div class="phones">
     <div class="phone">
-      <span class="label">a · Closed</span>
+      <span class="mono">a · Closed</span>
       <div class="screen closed">
-        <div class="hero" style="background-image:url('{{img:poster}}')"></div>
-        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Open menu">Menu {{lu:menu}}</button></div>
-        <div class="hcopy"><h3>Protect it.<br>Upgrade it.<br><span class="t-style">Style it.</span></h3><p>South London's one-stop workshop for car and bike electronics, security and styling.</p><div><a class="btn" href="#quote">{{wa}}Start your build</a></div></div>
+        <div class="mh"><span class="chip"><img src="{{img:logo}}" alt="Hyped Up"></span><button class="menu-btn" aria-label="Open menu">Menu {{lu:menu}}</button></div>
+        <div class="media" style="background-image:url('{{img:poster}}')"><span class="lbl"><i></i>Inside Unit 22</span></div>
+        <div class="hcopy"><h3>Protect it.<br>Upgrade it.<span class="wet g">Style it.</span></h3><p>South London's one-stop workshop for car and bike electronics, security and styling.</p><div><a class="pill" href="#quote">{{br:whatsapp}}Start your build</a></div></div>
       </div>
     </div>
     <div class="phone">
-      <span class="label">b · Menu open</span>
+      <span class="mono">b · Menu open</span>
       <div class="screen"><div class="sheet">
-        <i class="mk" style="--m:var(--m-splat)" aria-hidden="true"></i>
-        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Close menu">Close {{lu:x}}</button></div>
+        <div class="mh"><span class="chip"><img src="{{img:logo}}" alt="Hyped Up"></span><button class="menu-btn" aria-label="Close menu">Close {{lu:x}}</button></div>
         <ul class="big" data-acc>{{acc}}</ul>
         <nav class="small" aria-label="More"><a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a><a href="#">Contact</a></nav>
-        <p class="hours"><b>●</b> Open today 10:00–18:00 · Unit 22, SE16</p>
-        <div class="bottom"><a class="btn" href="#quote">{{wa}}WhatsApp</a><a class="btn btn-ghost" href="#">{{lu:phone}}Call</a></div>
+        <p class="hours mono"><i></i>Open today 10:00–18:00 · Unit 22, SE16</p>
+        <div class="bottom"><a class="pill" href="#quote">{{br:whatsapp}}WhatsApp</a><a class="pill ghost" href="#">{{lu:phone}}Call</a></div>
       </div></div>
     </div>
     <div class="phone">
-      <span class="label">c · Upgrade opened</span>
+      <span class="mono">c · Upgrade opened</span>
       <div class="screen"><div class="sheet">
-        <i class="mk" style="--m:var(--m-splat)" aria-hidden="true"></i>
-        <div class="mh"><img class="logo" src="{{img:logo}}" alt="Hyped Up"><button class="menu-btn" aria-label="Close menu">Close {{lu:x}}</button></div>
+        <div class="mh"><span class="chip"><img src="{{img:logo}}" alt="Hyped Up"></span><button class="menu-btn" aria-label="Close menu">Close {{lu:x}}</button></div>
         <ul class="big" data-acc data-open="1">{{acc}}</ul>
         <nav class="small" aria-label="More"><a href="#">Motorbikes</a><a href="#">Business &amp; fleet</a><a href="#">Builds</a><a href="#">Blog</a><a href="#">About</a><a href="#">Shop</a><a href="#">Contact</a></nav>
-        <div class="bottom"><a class="btn" href="#quote">{{wa}}WhatsApp</a><a class="btn btn-ghost" href="#">{{lu:phone}}Call</a></div>
+        <div class="bottom"><a class="pill" href="#quote">{{br:whatsapp}}WhatsApp</a><a class="pill ghost" href="#">{{lu:phone}}Call</a></div>
       </div></div>
     </div>
   </div>
 
-  <div class="frame-title"><h2>3 · Footer</h2><p>Every service listed (tier-2 pages live here), find us, hours, socials, and the spray-painted wordmark.</p></div>
+  <div class="frame-title"><h2>3 · Footer</h2><p>Every service listed (tier-2 pages live here), find us, hours, socials, and the spray wordmark.</p></div>
   <div class="frame">{{footer}}</div>
 
   <div class="frame-title"><h2>3b · Footer on a phone</h2><p>Same content, two columns, find us first.</p></div>
   <div class="frame" style="max-width:380px">{{footer_m}}</div>
 
   <div class="notes">
-    <div class="note"><h3>What changed in v3</h3><ul><li>Real paint marks (public-domain SVGs from Openclipart) recoloured in red and orange: splat, drips, spray speckle, brush line, marker circle</li><li>Graffiti fonts: Hoax Vandal for tags ("Find us", "Not sure…"), Rubik Spray Paint for the HYPED UP wordmark (both free for commercial use)</li><li>Lucide icons for all UI icons; brand logos (WhatsApp, Instagram, TikTok, Facebook) from Simple Icons, because Lucide has no brand logos</li><li>Subtle button gradient; bigger logo</li><li>Toggle at the top: sharp or rounded image corners</li></ul></div>
-    <div class="note"><h3>Why Motorbikes and Business, but no "Cars"?</h3><p>Every service page is already about cars, so cars don't need their own page: they're the default. Motorbikes and Business &amp; fleet get hubs because those customers need a different mix (bike wraps, Datatool trackers, bike remaps; fleet trackers, taxi cameras, van signage) and they search for it differently.</p></div>
-    <div class="note"><h3>Approved</h3><ul><li>10 services in the menu</li><li>Blog in the footer only</li><li>Wordmark: HYPED UP</li></ul><h3 style="margin-top:.6rem">To decide</h3><ul><li>Sharp or rounded image corners?</li><li>Fonts for graffiti accents: Hoax Vandal + Rubik Spray Paint OK?</li></ul></div>
+    <div class="note"><h3>What changed in v4</h3><ul><li>Direction D: dark + light, Big Shoulders + Barlow + Plex Mono labels</li><li>Red → orange gradient on the quote button, open-menu underline, numbers, prices and arrows</li><li>No paint splats, drips or brush lines: the hand-drawn circle on "Find us" is the only mark</li><li>Graffiti City once: the HYPED UP wordmark (and "Style it." in the phone hero)</li><li>Square images with the D vignette and mono captions; logo on a dark chip so it works in light mode</li></ul></div>
+    <div class="note"><h3>Unchanged (approved)</h3><ul><li>10 services in the menu, grouped Protect · Upgrade · Style</li><li>Builds and Contact as plain links; Blog in the footer only</li><li>Footer: every service, find us, hours, socials; no prices, no review widget</li><li>Wordmark: HYPED UP</li></ul></div>
+    <div class="note"><h3>To decide</h3><ul><li>Show "from £" prices in the desktop panels and phone menu (as now), or only on service pages?</li><li>Light mode: offer it on the site (follow the phone's setting), or dark only?</li></ul></div>
   </div>
+</div>
 </div>
 
 <script>
 (function(){
-  /* desktop panels */
   var nav=document.querySelector('[data-dnav]'); var tabs=[].slice.call(nav.querySelectorAll('button'));
   tabs.forEach(function(b){b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')!=='true';
     tabs.forEach(function(t){t.setAttribute('aria-expanded','false');document.getElementById(t.getAttribute('aria-controls')).hidden=true});
-    if(open){b.setAttribute('aria-expanded','true');document.getElementById(b.getAttribute('aria-controls')).hidden=false;paint();}});});
-  /* phone accordions */
+    if(open){b.setAttribute('aria-expanded','true');document.getElementById(b.getAttribute('aria-controls')).hidden=false;}});});
   document.querySelectorAll('[data-acc]').forEach(function(list){
     var btns=[].slice.call(list.querySelectorAll(':scope>li>button'));
     function set(i){btns.forEach(function(b,j){var open=(j===i)&&b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',open?'true':'false');document.getElementById(b.getAttribute('aria-controls')).hidden=!open;});}
     btns.forEach(function(b,i){b.addEventListener('click',function(){set(i)})});
     var o=list.getAttribute('data-open'); if(o!==null) set(+o);
   });
-  /* corner toggle */
-  document.querySelectorAll('[data-corner]').forEach(function(b){b.addEventListener('click',function(){document.body.classList.toggle('rounded',b.dataset.corner==='rounded');document.querySelectorAll('[data-corner]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})})});
+  var th=document.getElementById('theme');
+  document.querySelectorAll('[data-theme]').forEach(function(b){b.addEventListener('click',function(){th.classList.toggle('light',b.dataset.theme==='light');document.body.style.background=b.dataset.theme==='light'?'#dedad3':'#141212';document.querySelectorAll('[data-theme]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})})});
 })();
 </script>

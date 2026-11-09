@@ -166,5 +166,13 @@ Decision pending (Dani). Source: `concept/moodboard/`.
 ### Font morph v2 (Dani, 9 Nov 2026), moodboard v9
 - Only three looks: **Graffiti City** (home), **Instrument Serif italic**, **Big Shoulders uppercase**; mixed rounds use only these.
   Sequence: serif → mixed → caps → mixed → graffiti (hold), looping.
-- **Pause button removed** (Dani). Open: WCAG 2.2.2 needs a way to stop motion that loops > 5 s. Options: stop after 2–3 loops
+- **Pause button removed** (Dani). Resolved: plays 3 loops then rests on Graffiti City (option 1, Dani). Was: WCAG 2.2.2 needs a way to stop motion that loops > 5 s. Options: stop after 2–3 loops
   and rest on Graffiti City, or keep looping with a pause control elsewhere. Reduced-motion users already get a static word.
+
+## Menu & footer v4 in Direction D (9 Nov 2026)
+Artifact https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv · source `concept/nav/` (v3 kept as `template-v3.html`, `index-v3.html`, `build-v3.py`).
+- Logo on a dark chip (works in light mode); gradient underline on the open/hovered menu item; mono "Unit 22 · SE16 · Mon–Sat"; gradient pill "Get a quote".
+- Panels: mono "01 Protect" label, Big Shoulders service names, gradient "from £" prices, square photo with vignette + mono caption, "Not sure what you need?" card.
+- Phone: closed = reel poster + headline with Graffiti City "Style it."; menu = numbered 01/02/03 doors, gradient arrow when open, WhatsApp pill + Call.
+- Footer: mono column labels (01–03 in gradient), hand-drawn circle on "Find us", Graffiti City HYPED UP wordmark in gradient. No splats, drips or brush lines.
+- To decide: prices in the menu or only on service pages; offer light mode on the site or dark only.

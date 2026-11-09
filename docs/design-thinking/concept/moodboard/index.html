@@ -424,6 +424,7 @@ if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelecto
   chars.forEach(function(s){apply(s,'graffiti')}); paint(); document.fonts&&document.fonts.ready.then(paint); addEventListener('resize',paint);
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var seq=['serif','mixed','caps','mixed','graffiti'], i=0, paused=false, t;
+  var loops=3;
   function round(){
     if(paused) return;
     var step=seq[i%seq.length]; i++;
@@ -431,6 +432,7 @@ if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelecto
       s.classList.add('sw');
       setTimeout(function(){apply(s, step==='mixed'?keys[(Math.random()*keys.length)|0]:step); s.classList.remove('sw'); paint()},150);
     }, n*55)});
+    if(i>=seq.length*loops) return; /* WCAG 2.2.2: stops after 3 loops, resting on Graffiti City */
     t=setTimeout(round, step==='graffiti'?2600:1500);
   }
   t=setTimeout(round,1800);
