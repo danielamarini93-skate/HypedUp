@@ -15,7 +15,7 @@ _Last updated: 9 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Hypa to confirm the clashing prices (CarPlay, security, plates, remap) — see `current-site.md`
 - [ ] Download blog/site images from `img1.wsimg.com` before cancelling GoDaddy
 - [ ] Decide what happens to the apparel shop (keep, move, drop)
-- [ ] Hypa: review the moodboard (Direction D) + menu & footer v4.2 and give his opinion
+- [ ] Hypa: review the moodboard (Direction D) + menu & footer v4.4 and give his opinion
 - [ ] Design + build new site
 - [ ] Migrate with 301s, GA4, Search Console, schema, sitemap
 - [ ] Interim (only if migration is far off): fix broken icons; check GA4 Realtime ("Experties" typo already fixed; homepage already has prices + number plates)

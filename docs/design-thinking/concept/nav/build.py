@@ -17,7 +17,7 @@ def acc():
     n[0] += 1; out = []
     for i, (g, items) in enumerate(menu):
         pid = 'p%d_%d' % (n[0], i)
-        rows = ''.join('<li><a href="#"><span>%s</span><span class="from g">%s</span></a></li>' % (t, price(p)) for t, p in items)
+        rows = ''.join('<li><a href="#"><span>%s</span></a></li>' % t for t, p in items)
         out.append('<li><button aria-expanded="false" aria-controls="%s"><em class="g">0%d</em><b>%s</b><span>{{lu:arrow-right}}</span></button>'
                    '<ul class="sub" id="%s" hidden>%s<li class="all"><a href="#">All %s services →</a></li></ul></li>' % (pid, i + 1, g, pid, rows, g))
     return ''.join(out)
@@ -31,7 +31,7 @@ pdata = [
 def panels():
     out = []
     for i, (g, img, cap, items) in enumerate(pdata):
-        rows = ''.join('<li><a href="#"><b>%s</b><em class="from g">%s</em><span>%s</span></a></li>' % (t, price(p, True), dsc) for t, p, dsc in items)
+        rows = ''.join('<li><a href="#"><b>%s</b><span>%s</span></a></li>' % (t, dsc) for t, p, dsc in items)
         out.append('<div class="panel" id="pn%d"%s><div><p class="lab"><em class="g">0%d</em><span class="mono">%s</span></p><ul>%s</ul>'
                    '<a class="all" href="#">All %s services {{lu:arrow-right}}</a></div>'
                    '<figure><div class="ph" style="background-image:url(\'{{img:%s}}\')"></div><figcaption class="mono"><span>%s</span><span>Unit 22</span></figcaption></figure>'

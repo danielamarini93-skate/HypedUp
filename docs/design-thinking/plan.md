@@ -25,7 +25,7 @@ _Content first · Depth: medium · Approved by Dani 8 Nov 2026 ("start now") · 
   Site map, URL patterns, menu (mobile + desktop), footer contents, redirect mapping from old URLs,
   internal linking rules.
 
-- [~] **6. Concept A: menu + footer** → v4 (Direction D) https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv (v1–v3: https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD) + `concept/nav/` · menu + IA approved; **style chosen: Direction D "Workshop wall"** (moodboard https://claude.ai/artifact/3zP6kfZV8cBYNNGFqDimgc); menu + footer redone in D (v4.2, dark only, prices kept); **Hypa reviewing**, then step 7
+- [~] **6. Concept A: menu + footer** → v4 (Direction D) https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv (v1–v3: https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD) + `concept/nav/` · menu + IA approved; **style chosen: Direction D "Workshop wall"** (moodboard https://claude.ai/artifact/3zP6kfZV8cBYNNGFqDimgc); menu + footer redone in D (v4.4, dark only, no prices in the menu); **Hypa reviewing**, then step 7
   Mobile menu (closed/open), desktop header, footer. **Stop for Dani's approval.**
 
 - [ ] **7. Concept B: internal page templates** (after 6 is approved) → artifacts + `concept/pages/`
