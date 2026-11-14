@@ -27,6 +27,8 @@ _Last updated: 7 Nov 2026_
 - ❌ **Never** name a competing installation shop
 
 ## Factual guardrails
+- **Bespoke, always:** every job is made to order; say "I listen first" and "made for your car", never imply off-the-shelf work (Dani, 14 Nov 2026)
+- **Only number plates are "while you wait"**; never promise same-day or in-a-day for anything else
 - No dyno testing — never mention it
 - Full wraps: minimum 1 week
 - Prices only from `pricing.md`

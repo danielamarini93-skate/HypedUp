@@ -111,7 +111,7 @@ svc('carplay', group='upgrades', name='CarPlay & Android Auto', short='CarPlay &
     price_note='From £170 for a double DIN head unit; interfaces for factory screens cost more. <span class="tbc">(Which price table is current: Hypa)</span>',
     options=[('New screen', 'Xtrons or Autostyle screens made for your car, or Pioneer and Kenwood double DIN.'), ('Keep your factory screen', 'A CarPlay interface behind the dash: looks standard, works wireless.'),
              ('Add a reverse camera', 'Goes straight into the new screen.')],
-    steps=[('Send me your car and year', 'I check what fits and keeps your controls.'), ('Fitted in a day', 'Screen or interface, wired and set up.'), ('Paired with your phone', 'Shown working before you leave.')],
+    steps=[('Send me your car and year', 'I check what fits and keeps your controls.'), ('Fitted', 'Screen or interface, wired and set up.'), ('Paired with your phone', 'Shown working before you leave.')],
     faq=[('Will CarPlay work in my car?', 'Most cars from about 2008 can have it, either with a new screen or an interface on the factory one. Send me the make, model and year.'),
          ('Will my steering wheel controls still work?', 'Yes, I keep them working.'), ('Wireless or wired?', 'Wireless on most setups.'),
          ('Do you do Android Auto too?', 'Yes, the same screens do both.')],
@@ -219,9 +219,9 @@ svc('window-tinting', group='styling', name='Window tinting', short='Window tint
     lead='Privacy, less heat and less glare, with film that won\'t turn purple. Rear windows any shade; fronts kept legal.',
     price_note='Rear windows from £150 · full car from £180 · sunstrip £45.',
     options=[('Dyed', 'Good-looking privacy at the lowest price.'), ('Carbon', 'Won\'t fade, cuts more heat.'), ('Ceramic', 'Best heat and glare rejection.'), ('Sunstrip', 'Top of the windscreen.')],
-    steps=[('Pick the shade', 'I show you samples on the car.'), ('Fitted dust-free', 'Usually the same day.'), ('Leave it to cure', 'Windows up for a few days.')],
+    steps=[('Pick the shade', 'I show you samples on the car.'), ('Fitted dust-free', ''), ('Leave it to cure', 'Windows up for a few days.')],
     good='UK law: the windscreen must let through at least 75% of light and the front side windows at least 70%. Rear windows can be any shade.',
-    faq=[('Is window tint legal in the UK?', 'Rear windows, any shade. Windscreen 75% and front side windows 70% light minimum.'), ('How long does tinting take?', 'Usually the same day.'),
+    faq=[('Is window tint legal in the UK?', 'Rear windows, any shade. Windscreen 75% and front side windows 70% light minimum.'), ('How long does tinting take?', 'It depends on the car and the windows; I\'ll tell you when I quote.'),
          ('Can you tint headlights?', 'Ask me first: light tints can make a car illegal on the road. <span class="tbc">(Policy TBC: Hypa)</span>')],
     related=['paint-protection-film', 'car-wrapping', 'chrome-delete'], blog=[])
 
@@ -259,7 +259,7 @@ svc('chrome-delete', group='styling', name='Chrome delete', short='Chrome delete
     lead='Swap the chrome for gloss or satin black: window trims, grilles, badges. Fully reversible.',
     price_note='Antenna from £50 · window trims from £160.',
     options=[('Window trims', 'The biggest change for the money.'), ('Grilles and badges', 'Front and rear.')],
-    steps=[('Pick the finish', 'Gloss or satin black.'), ('Wrapped', 'Usually the same day.'), ('Collect', '')],
+    steps=[('Pick the finish', 'Gloss or satin black.'), ('Wrapped', ''), ('Collect', '')],
     faq=[('Is a chrome delete reversible?', 'Yes, the wrap peels off.')],
     related=['car-wrapping', 'window-tinting', 'bodykits'], blog=[])
 
@@ -377,7 +377,7 @@ DESCS = {
  'business': 'For London businesses, taxis and fleets: trackers, TfL-approved taxi cameras, van reverse cameras and sensors, and van signage, fitted in Bermondsey, SE16.',
  'car-alarms': 'Car alarms fitted and fixed in Bermondsey, South London: Scorpion alarms with tilt, shock and glass-break sensors and phone alerts. Alarm keeps going off? Ask.',
  'car-trackers': 'GPS car trackers fitted in Bermondsey, South London, from £395: S7 and S5 trackers with 24/7 monitoring and battery backup, plus trackers made for motorbikes.',
- 'chrome-delete': 'Chrome delete in Bermondsey, South London, from £50: window trims, grilles, badges and antennas wrapped in gloss or satin black. Fully reversible, same day.',
+ 'chrome-delete': 'Chrome delete in Bermondsey, South London, from £50: window trims, grilles, badges and antennas wrapped in gloss or satin black. Fully reversible, your way.',
  'coilovers': 'Coilovers and lowering springs fitted in Bermondsey, South London, with a full alignment: a lower stance and sharper handling for your car without going to air.',
  'detailing': 'Ceramic coating and paint correction in Bermondsey, South London, from £250: swirls and scratches removed, the deep gloss brought back and the paint sealed.',
  'ghost-immobiliser': 'Ghost immobiliser fitted in Bermondsey, South London, from £400. A PIN on your car\'s own buttons stops relay theft and cloned keys. For cars and motorbikes.',
@@ -397,4 +397,33 @@ DESCS = {
  'van-signage': 'Van signage, livery and part wraps in Bermondsey, South London: your logo, phone number and colours on the road, designed with you, printed and fitted to last.',
  'wheel-refurb': 'Alloy wheel refurbishment and caliper painting in Bermondsey, South London, from £120 a wheel: kerb damage repaired, wheels in new colours, calipers painted.',
  'window-tinting': 'Window tinting in Bermondsey, South London, from £150: dyed, carbon or ceramic film for privacy and less heat, with the front side windows kept within UK law.',
+}
+
+# "How it works" (14 Nov, Dani): every job is bespoke. Step 1 = I listen; step 2 = a plan and price made for your car;
+# step 3 = built to the plan and checked with you. Nothing is "while you wait" except number plates.
+LISTEN = 'Tell me what you want'
+STEPS = {
+ 'ghost-immobiliser': [(LISTEN, 'Your car, where it\'s parked and how you use it. I listen first.'), ('Your plan and price', 'Ghost, Metablok or Scorpion: I recommend what suits you, with a clear price.'), ('Fitted and checked with you', 'PIN set up together and the car tested before you drive away.')],
+ 'car-trackers': [(LISTEN, 'The car, what your insurer asks for, how you want alerts.'), ('Your plan and price', 'S7, S5 or bike tracker, plus the monthly cost, before you book.'), ('Fitted and checked with you', 'Hidden where a thief won\'t look; app set up with you.')],
+ 'dash-cams': [(LISTEN, 'How you drive, what you want recorded, any camera you already own.'), ('Your plan and price', '1, 2 or 3 cameras, parking mode, supplied or yours.'), ('Fitted and checked with you', 'Wiring hidden in the trims; app and footage shown to you.')],
+ 'car-alarms': [(LISTEN, 'A new alarm, or one that keeps going off? Tell me where you park.'), ('Your plan and price', 'The right sensors for your car and street.'), ('Fitted and checked with you', 'Sensitivity set and phone alerts tested together.')],
+ 'taxi-cameras': [(LISTEN, 'Your vehicle, licence type and working hours.'), ('Your plan and price', 'The approved system that fits your licence.'), ('Fitted and checked with you', 'Cameras, recorder and signage tested before you go back to work.')],
+ 'carplay': [(LISTEN, 'Your car, its year and how you use your phone in it.'), ('Your plan and price', 'New screen or factory screen, keeping your steering controls.'), ('Fitted and checked with you', 'Paired with your phone and shown working before you leave.')],
+ 'car-audio': [(LISTEN, 'What you listen to, how loud, and your budget.'), ('Your plan and price', 'Speakers, amps, subs or a full build, designed around your car.'), ('Built and tuned with you', 'Set up and played together until it sounds right.')],
+ 'remapping': [(LISTEN, 'Your car, how you drive it and what you want from it.'), ('Health check and plan', 'I read the ECU and check the car before anything is changed.'), ('Mapped and tested with you', 'Written for your car and checked on the road together.')],
+ 'reverse-cameras': [(LISTEN, 'Your car or van, its screen, where you struggle to park.'), ('Your plan and price', 'Camera, sensors or both, colour-matched.'), ('Fitted and checked with you', 'Guidelines and beeps set up with you.')],
+ 'ambient-lighting': [(LISTEN, 'The colours, the mood, the look you have in mind.'), ('Your design and price', 'Zones, colours and effects planned around your interior.'), ('Fitted and set up with you', 'No visible wires; controls shown on your phone.')],
+ 'performance-parts': [(LISTEN, 'Sound, power or both, and how road-legal it has to stay.'), ('Your plan and price', 'Parts matched to your car and your map.'), ('Fitted and checked with you', 'Fit, leaks and sound checked together.')],
+ 'car-wrapping': [(LISTEN, 'The colour, the finish, the look you want. Bring photos.'), ('Your design and price', 'Samples on your car, a clear price and a date. A full wrap takes at least a week.'), ('Checked with you, panel by panel', 'We go round the car together before you drive away.')],
+ 'paint-protection-film': [(LISTEN, 'How you use the car and how much you want covered.'), ('Your plan and price', 'Front end or full car, clear, satin or tinted.'), ('Fitted and checked with you', 'Paint prepared first, edges checked together.')],
+ 'window-tinting': [(LISTEN, 'How dark, how much heat you want to cut, which windows.'), ('Your shade and price', 'Samples on your car; fronts kept legal.'), ('Fitted and checked with you', 'Then windows up for a few days while it cures.')],
+ 'air-suspension': [(LISTEN, 'How low, how you drive day to day, shows or not.'), ('Your kit and price', 'Air Lift or Prazis, matched to your car and your life.'), ('Fitted and set up with you', 'Aligned, presets set, and shown how to live with it.')],
+ 'coilovers': [(LISTEN, 'How low and how you drive.'), ('Your plan and price', 'Coilovers or springs, with alignment.'), ('Fitted and checked with you', 'Ride height and handling checked on the road.')],
+ 'chrome-delete': [(LISTEN, 'Which chrome goes, and gloss or satin.'), ('Your plan and price', 'Trims, grilles, badges: as much or as little as you like.'), ('Wrapped and checked with you', 'Every edge checked together.')],
+ 'bodykits': [(LISTEN, 'The look, the parts you have or want.'), ('Your plan and price', 'Parts sourced or yours, test-fitted first.'), ('Fitted and checked with you', 'Straight, secure and checked together.')],
+ 'wheel-refurb': [(LISTEN, 'The damage, the colour, the finish you want.'), ('Your plan and price', 'Repair, colour and calipers planned together.'), ('Fitted and checked with you', 'Balanced, back on the car and inspected with you.')],
+ 'interiors': [(LISTEN, 'Your idea for the inside. Photos help.'), ('Your design and price', 'Materials and finishes chosen with you.'), ('Fitted and checked with you', 'Every detail checked before you drive away.')],
+ 'detailing': [(LISTEN, 'How the paint looks now and how you want it.'), ('Your plan and price', 'Correction level and coating chosen for your paint.'), ('Finished and checked with you', 'Inspected together in good light.')],
+ 'number-plates': [(LISTEN, 'Standard, 3D, 4D or show plates.'), ('Bring your documents', 'Your V5C and photo ID, as the law requires.'), ('Made while you wait', 'Plates are the one job I do on the spot.')],
+ 'van-signage': [(LISTEN, 'Your logo, your colours, what the van needs to say.'), ('Your design and price', 'A proof to approve before anything is printed.'), ('Fitted and checked with you', 'Checked together before it goes on the road.')],
 }

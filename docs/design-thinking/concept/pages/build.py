@@ -4,7 +4,7 @@
 # Previous version (5 key pages): build-v3.py
 import os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-from content import GROUPS, MENU, S as SV, HUBS, TBC, DESCS
+from content import GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS
 import html as _html
 S = '/tmp/claude-0/-home-user/545d0e01-e697-5941-a49a-d293a211030b/scratchpad'
 OUT = S + '/pages-out'
@@ -110,7 +110,7 @@ def service_page(slug):
                       % (i, i, '' if i == 0 else ' hidden', t.split(' (')[0], d or 'Tell me what you\'re after and I\'ll quote it for your car.', chip)
                       for i, (t, d) in enumerate(v['options']))
     opts = '<div class="picker" data-picker><div class="ptabs" role="tablist" aria-label="%s options">%s</div><div class="ppanels">%s</div></div>' % (v['name'], ptabs, ppanels)
-    steps = ''.join('<li><span class="dot" aria-hidden="true"></span><span class="mono">%s</span><h3>%s</h3>%s</li>' % (('Step one', 'Step two', 'Step three')[i], t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(v['steps']))
+    steps = ''.join('<li><span class="dot" aria-hidden="true"></span><span class="mono">%s</span><h3>%s</h3>%s</li>' % (('Step one', 'Step two', 'Step three')[i], t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(STEPS.get(slug, v['steps'])))
     proof = [i for i in SVC_BUILDS.get(slug, []) if BUILDS[i][0] != v['img']]
     proof_html = (builds_strip([(BUILDS[i][0], BUILDS[i][1], BUILDS[i][2], BUILDS[i][4]) for i in proof]) if proof else
                   '<div class="need-row"><span class="mono">Builds for this service: photos needed (Drive upload)</span></div>')
@@ -132,7 +132,7 @@ def service_page(slug):
   </div>
 </div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Pick your setup</h2></div>%(opts)s</div></section>
-<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><h2>How it works</h2><ol class="timeline">%(steps)s</ol></div></section>
+<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How it works</h2><p class="lead">Every job is made to order. I listen to what you want, plan it around your car, and do my best to get it exactly right.</p></div><ol class="timeline">%(steps)s</ol></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent work</h2><a class="link" href="builds.html">All builds {{lu:arrow-right}}</a></div>%(proof)s</div></section>
 <section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%(good)s%(faq)s%(makes)s%(blog)s</div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Related</h2><a class="link" href="%(gh)s">All %(gn)s services {{lu:arrow-right}}</a></div><div class="cards">%(rel)s</div></div></section>
@@ -170,9 +170,9 @@ def build():
     strip = ''.join('<a href="%s"><b>%s</b><span class="from g">%s</span><p>%s</p></a>' % (h(g), n, p, t) for (g, n, _), p, t in zip(GROUPS, ['from £125', 'from £125', 'from £30'],
             ['Ghost, trackers, alarms, dash cams', 'CarPlay, audio, remaps, lighting', 'Wraps, PPF, tint, air, wheels, plates']))
     recent = builds_strip([(BUILDS[i][0], BUILDS[i][1], BUILDS[i][2], BUILDS[i][4]) for i in (2, 1, 0)])
-    how = '''<ol class="steps"><li><span class="mono">Step one</span><h3>Tell me what you want</h3><p>Pick the job and write the car on the contact page, or WhatsApp me. Photos help.</p></li>
-<li><span class="mono">Step two</span><h3>Get a straight price</h3><p>I come back with options, a price and how long it takes. You pick a date.</p></li>
-<li><span class="mono">Step three</span><h3>Drop it off, drive it home</h3><p>Small jobs are often done while you wait; a full wrap takes at least a week. <span class="tbc">(TBC: Hypa)</span></p></li></ol>'''
+    how = '''<ol class="steps"><li><span class="mono">Step one</span><h3>Tell me what you want</h3><p>Your car, your idea, how you use it. I listen first. Photos help.</p></li>
+<li><span class="mono">Step two</span><h3>Your plan and price</h3><p>Options built around you, a clear price and how long it takes. You pick a date.</p></li>
+<li><span class="mono">Step three</span><h3>Made for your car</h3><p>Done to the plan we agreed, and checked with you before you drive away.</p></li></ol>'''
     about = '''<div class="split"><figure>%s</figure><div style="display:grid;gap:18px;justify-items:start"><span class="mono">The workshop</span><h2>Built by Hypa</h2>
 <p class="lead">I started Hyped Up in 2022 to do this work properly: the right parts, fitted neatly, and a straight price before anything starts. My own Mini has run on air every day for over four years. <span class="tbc">(Copy: Hypa to approve)</span></p>
 <a class="link" href="about.html">About Hyped Up {{lu:arrow-right}}</a></div></div>''' % media('workshop.jpg', "Hyped Up's red Mini in front of the graffiti mural inside the workshop")
@@ -194,7 +194,7 @@ def build():
   <div class="strip" style="margin-top:32px">''' + strip + '''</div>
 </div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent builds</h2><a class="link" href="builds.html">See all builds {{lu:arrow-right}}</a></div>''' + recent + '''</div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>How a job works</h2></div>''' + how + '''</div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>How a job works</h2><p>Every job is bespoke: I listen to what you want and do my best to make it exactly that.</p></div>''' + how + '''</div></section>
 <section class="sec"><div class="wrap">''' + about + '''</div></section>
 <section class="sec"><div class="wrap">''' + review + '''</div></section>
 ''' + band('Got a car in mind?', 'Tell me the car and the idea. I\'ll come back with options and a price.'), 'Home A · brand-led', 'Homepage (A/B test)')
@@ -216,7 +216,7 @@ def build():
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent builds</h2><a class="link" href="builds.html">See all builds {{lu:arrow-right}}</a></div>''' + recent + '''</div></section>
 <section class="sec"><div class="wrap split"><figure><div class="media vig"><video src="img/hero.mp4" poster="img/poster.jpg" muted loop playsinline controls aria-label="Short silent reel of work inside the Hyped Up workshop"></video></div></figure>
 <div style="display:grid;gap:18px;justify-items:start"><span class="mono">Inside the workshop</span><h2>Protect it. Upgrade it. <span class="g">Style it.</span></h2><p class="lead">One workshop for the lot, from a Ghost immobiliser to a full colour change.</p></div></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>How a job works</h2></div>''' + how + '''</div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>How a job works</h2><p>Every job is bespoke: I listen to what you want and do my best to make it exactly that.</p></div>''' + how + '''</div></section>
 <section class="sec"><div class="wrap">''' + review + '''</div></section>
 ''' + band('Got a car in mind?', 'Tell me the car and the idea. I\'ll come back with options and a price.'), 'Home B · task-led', 'Homepage (A/B test)')
 

@@ -84,6 +84,8 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 - **Prices:** only use prices in `memory/price-list-master.md` (then `memory/pricing.md`). On the website show generic "from £" only. Write them with £. If a price isn't there, say "price on enquiry" or ask.
 - **No dyno testing** — Hyped Up does not offer it. Never mention it.
 - **Full wraps take a minimum of 1 week** (never "3–5 days").
+- **Only number plates are "while you wait".** Never promise same-day for anything else.
+- **Every job is bespoke:** copy says Hypa listens first and builds it around the customer's car.
 - **Never name competing installation shops.** Product brands are fine (Ghost, Pandora, Scorpion, MetaTrak, Xtrons, Autostyle, Pioneer, Kenwood, Rockford Fosgate, Air Lift, Prazis).
 - Write in **Hypa's voice** (see `memory/brand-voice.md`): first person, direct, honest, South London, no corporate fluff.
 - Meta titles ≤ 65 characters; meta descriptions 155–160 characters.
