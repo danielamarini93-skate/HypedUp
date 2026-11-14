@@ -39,6 +39,17 @@
     $$('[data-blogcat]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
     $$('.postlist li').forEach(function (li) { li.hidden = !(c === 'All' || li.dataset.cat === c); }); }); });
 
+  /* service pages: "Pick your setup" tabs (click + arrow keys) */
+  $$('[data-picker]').forEach(function (pk) {
+    var tabs = $$('[role=tab]', pk);
+    function sel(t, focus) { tabs.forEach(function (x) { var on = x === t; x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !on; }); if (focus) t.focus(); t.scrollIntoView({block: 'nearest', inline: 'nearest'}); }
+    tabs.forEach(function (t, i) { t.addEventListener('click', function () { sel(t); });
+      t.addEventListener('keydown', function (e) { var k = e.key, n = null;
+        if (k === 'ArrowRight' || k === 'ArrowDown') n = tabs[(i + 1) % tabs.length]; if (k === 'ArrowLeft' || k === 'ArrowUp') n = tabs[(i - 1 + tabs.length) % tabs.length];
+        if (n) { e.preventDefault(); sel(n, true); } }); });
+  });
+
   /* footer wordmark: fit the outlined SVG text to its own box */
   function fitWm() { $$('.wmsvg').forEach(function (sv) { var b = sv.querySelector('text').getBBox(), p = 4; sv.setAttribute('viewBox', (b.x - p) + ' ' + (b.y - p) + ' ' + (b.width + p * 2) + ' ' + (b.height + p * 2)); }); }
   (document.fonts ? document.fonts.ready : Promise.resolve()).then(fitWm); fitWm();

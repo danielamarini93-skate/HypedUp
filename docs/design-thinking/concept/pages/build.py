@@ -103,8 +103,14 @@ SVC_BUILDS = {'car-wrapping': [0 + 1, 11, 14], 'air-suspension': [2], 'car-track
 
 def service_page(slug):
     v = SV[slug]; g = v['group']; chip = CHIP[slug]
-    opts = ''.join('<div class="opt"><h3>%s</h3>%s</div>' % (t, ('<p>%s</p>' % d) if d else '') for t, d in v['options'])
-    steps = ''.join('<li><span class="mono">%s</span><h3>%s</h3><p>%s</p></li>' % (('Step one', 'Step two', 'Step three')[i], t, d) for i, (t, d) in enumerate(v['steps']))
+    ptabs = ''.join('<button type="button" role="tab" id="pt-%d" aria-selected="%s" aria-controls="pp-%d"%s><span>%s</span>{{lu:arrow-right}}</button>'
+                    % (i, 'true' if i == 0 else 'false', i, '' if i == 0 else ' tabindex="-1"', t) for i, (t, d) in enumerate(v['options']))
+    ppanels = ''.join('<div class="ppanel" role="tabpanel" id="pp-%d" aria-labelledby="pt-%d"%s><span class="ghostword" aria-hidden="true">%s</span><div class="pcopy"><p class="lead">%s</p>'
+                      '<a class="link" href="contact.html?service=%s">Ask about this {{lu:arrow-right}}</a></div></div>'
+                      % (i, i, '' if i == 0 else ' hidden', t.split(' (')[0], d or 'Tell me what you\'re after and I\'ll quote it for your car.', chip)
+                      for i, (t, d) in enumerate(v['options']))
+    opts = '<div class="picker" data-picker><div class="ptabs" role="tablist" aria-label="%s options">%s</div><div class="ppanels">%s</div></div>' % (v['name'], ptabs, ppanels)
+    steps = ''.join('<li><span class="dot" aria-hidden="true"></span><span class="mono">%s</span><h3>%s</h3>%s</li>' % (('Step one', 'Step two', 'Step three')[i], t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(v['steps']))
     proof = [i for i in SVC_BUILDS.get(slug, []) if BUILDS[i][0] != v['img']]
     proof_html = (builds_strip([(BUILDS[i][0], BUILDS[i][1], BUILDS[i][2], BUILDS[i][4]) for i in proof]) if proof else
                   '<div class="need-row"><span class="mono">Builds for this service: photos needed (Drive upload)</span></div>')
@@ -125,8 +131,8 @@ def service_page(slug):
     <figure>%(media)s</figure>
   </div>
 </div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>Options</h2></div><div class="opts">%(opts)s</div></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>How it works</h2></div><ol class="steps">%(steps)s</ol></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>Pick your setup</h2></div>%(opts)s</div></section>
+<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><h2>How it works</h2><ol class="timeline">%(steps)s</ol></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent work</h2><a class="link" href="builds.html">All builds {{lu:arrow-right}}</a></div>%(proof)s</div></section>
 <section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%(good)s%(faq)s%(makes)s%(blog)s</div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Related</h2><a class="link" href="%(gh)s">All %(gn)s services {{lu:arrow-right}}</a></div><div class="cards">%(rel)s</div></div></section>

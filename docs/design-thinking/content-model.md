@@ -10,8 +10,8 @@ screen, "from £" only, one primary action (**Contact us**), dark only. Meta tit
 |---|---|---|---|
 | 1 | Breadcrumb | Home › Group › Service | |
 | 2 | **Hero** | H1 = the service in search words (e.g. "Ghost immobiliser") · 1–2 line answer · **from £** + what's included in that price · **Contact us** (`?service=`) · one real photo | H1 matches keyword-map primary; price from `price-list-master.md` |
-| 3 | **What you get / options** | 2–4 options (e.g. S7 vs S5; 1/2/3-channel; Stage 1/2/3; full/partial wrap) with one line each | from the price sheet and Hypa's blog |
-| 4 | **How it works** | 3 steps, plain words | |
+| 3 | **Pick your setup** (layout v5, 14 Nov) | 2–4 options as a picker: one option shown at a time (tabs on desktop list / swipe chips on phone), a short line + "Ask about this"; the option name is not repeated in the panel | from the price sheet and Hypa's blog |
+| 4 | **How it works** (layout v5) | 3 steps on a red timeline over a dark workshop photo; vertical on phones | |
 | 5 | **Proof** | 3–6 builds for this service + 1 Google review mentioning it + partner logo(s) | builds filtered by service |
 | 6 | **Price detail** | "from £" per option · what changes the price · subscriptions if any · how long it takes | never exact quotes; wraps min 1 week |
 | 7 | **Good to know** (legal) | only where needed: tint law, remaps and MOT/insurance, plates for road use, TfL rules | calm, 2–3 lines, Hypa approves wording |
