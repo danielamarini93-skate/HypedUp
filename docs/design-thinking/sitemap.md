@@ -1,6 +1,6 @@
 # Information architecture v2: site map, navigation, hierarchy, flows, URLs
 
-_9 Nov 2026 · Replaces v1 (8 Nov, in git history). Built with the `information-architecture` skill template from
+_9 Nov 2026, **approved by Dani 14 Nov** (labels, site map, content model; no Prices page; homepage A/B test; 2 services added from research) · Replaces v1 (8 Nov, in git history). Built with the `information-architecture` skill template from
 `content-inventory.md` (v2), `card-sort.md` (label test v2), `user-journeys.md`, `keyword-map.md` and Dani's rules.
 **For review with Dani (all together).**_
 
@@ -34,7 +34,8 @@ _9 Nov 2026 · Replaces v1 (8 Nov, in git history). Built with the `information-
       - CarPlay for BMW / Mini / Mercedes / Audi `/carplay/<make>` *(tier 3)*
     - Car audio `/car-audio` **[menu]** (sound deadening, boot builds as sections)
       - Car audio for BMW `/car-audio/bmw` *(tier 3)*
-    - Remapping `/remapping` **[menu]** (bike remaps, performance parts as sections)
+    - Remapping `/remapping` **[menu]** (bike remaps as a section)
+    - Exhausts & performance parts `/performance-parts` *(added 14 Nov)*
     - Reverse cameras & sensors `/reverse-cameras`
     - Ambient lighting & starlights `/ambient-lighting`
   - **Styling** hub `/styling`
@@ -42,6 +43,7 @@ _9 Nov 2026 · Replaces v1 (8 Nov, in git history). Built with the `information-
     - Paint protection film `/paint-protection-film` **[menu]**
     - Window tinting `/window-tinting` **[menu]**
     - Air suspension `/air-suspension` **[menu]**
+    - Coilovers & lowering springs `/coilovers` *(added 14 Nov)*
     - Chrome delete `/chrome-delete`
     - Bodykits `/bodykits`
     - Wheel refurb & calipers `/wheel-refurb`
@@ -54,13 +56,12 @@ _9 Nov 2026 · Replaces v1 (8 Nov, in git history). Built with the `information-
   - Builds `/builds` **[menu]**
     - Build `/builds/<slug>` *(later)*
   - Contact `/contact` **[menu]**
-  - Prices `/prices`
   - About `/about`
   - Blog `/blog` · categories `/blog/<category>` · post `/blog/<slug>`
   - Shop `/shop`
   - Privacy `/privacy` · Cookies `/cookies` · Terms `/terms`
 
-**Counts:** 10 menu services · 11 more services · 3 group hubs · 2 audience hubs · 6 brand/support · 3 legal = **36 pages at launch**, then car-specific pages and builds.
+**Counts:** 10 menu services · 13 more services · 3 group hubs · 2 audience hubs · 5 brand/support (Builds, Contact, About, Blog, Shop) · 3 legal = **36 pages at launch** (no Prices page, Dani 14 Nov; homepage in two versions for the A/B test), then car-specific pages and builds.
 
 ```mermaid
 flowchart TD
@@ -108,10 +109,11 @@ Red outline = in the menu.
 | All Security services → | All Upgrades → | All Styling → | Motorbikes |
 | Ghost immobiliser | CarPlay & Android Auto | Car wrapping | Business & fleet |
 | Car trackers | Car audio | Paint protection film | Builds |
-| Dash cams | Remapping | Window tinting | Prices |
-| Car alarms | Reverse cameras & sensors | Air suspension | Blog |
-| Taxi cameras (TfL) | Ambient lighting & starlights | Chrome delete | About |
-| | | Bodykits | Shop |
+| Dash cams | Remapping | Window tinting | Blog |
+| Car alarms | Reverse cameras & sensors | Air suspension | About |
+| Taxi cameras (TfL) | Ambient lighting & starlights | Chrome delete | |
+| | Exhausts & performance parts | Coilovers & lowering | Shop |
+| | | Bodykits | |
 | | | Wheel refurb & calipers | |
 | | | Interiors | |
 | | | Detailing & ceramic | |

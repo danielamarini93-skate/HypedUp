@@ -30,6 +30,15 @@
   var setCols = function () { $$('.fcol').forEach(function (d) { d.open = mq.matches; }); };
   setCols(); if (mq.addEventListener) mq.addEventListener('change', setCols);
 
+  /* homepage B: service finder tabs */
+  var ft = $$('[data-ftab]');
+  ft.forEach(function (b) { b.addEventListener('click', function () { ft.forEach(function (x) { x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+    $$('[data-fpanel]').forEach(function (p) { p.hidden = p.dataset.fpanel !== b.dataset.ftab; }); }); });
+  /* blog category filter */
+  $$('[data-blogcat]').forEach(function (b) { b.addEventListener('click', function () { var c = b.dataset.blogcat;
+    $$('[data-blogcat]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    $$('.postlist li').forEach(function (li) { li.hidden = !(c === 'All' || li.dataset.cat === c); }); }); });
+
   /* footer wordmark: fit the outlined SVG text to its own box */
   function fitWm() { $$('.wmsvg').forEach(function (sv) { var b = sv.querySelector('text').getBBox(), p = 4; sv.setAttribute('viewBox', (b.x - p) + ' ' + (b.y - p) + ' ' + (b.width + p * 2) + ' ' + (b.height + p * 2)); }); }
   (document.fonts ? document.fonts.ready : Promise.resolve()).then(fitWm); fitWm();

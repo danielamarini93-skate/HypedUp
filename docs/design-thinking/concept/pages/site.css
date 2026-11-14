@@ -331,3 +331,38 @@ figcaption{margin-top:8px}
 .err{color:#ff6b5e;font-size:.88rem;margin-top:6px}
 .err[hidden]{display:none}
 .field input[aria-invalid="true"]{border-bottom-color:#ff6b5e}
+
+/* site concept v4 (IA v2) */
+.opts{display:grid;gap:16px}
+.opts{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.opt{border:1px solid var(--rule2);padding:20px;display:grid;gap:10px;align-content:start}
+.opt h3{font-size:1.5rem}
+.opt p{color:var(--body2);font-size:.95rem}
+.need{display:grid;place-items:center;background:repeating-linear-gradient(135deg,#151313 0 14px,#1a1717 14px 28px);border:1px dashed var(--rule2);text-align:center;padding:16px}
+.need-row{border:1px dashed var(--rule2);padding:28px;text-align:center}
+.good{border-left:3px solid var(--acc);padding:4px 0 4px 16px;display:grid;gap:6px}
+.good p{color:var(--body2)}
+.scrollx{overflow-x:auto}
+.scrollx .compare{min-width:640px}
+.vsbox{display:grid;gap:12px;border:1px solid var(--rule2);padding:24px}
+.hubcards .card .media{aspect-ratio:16/10}
+@media (min-width:1100px){.hubcards{grid-template-columns:repeat(4,1fr)}}
+.finder{display:grid;gap:14px;border:1px solid var(--rule2);padding:16px;background:var(--panel)}
+.ftabs{display:flex;gap:6px;flex-wrap:wrap}
+.ftabs button{background:none;border:1px solid var(--rule2);color:var(--fg);border-radius:999px;padding:.55rem 1rem;font:700 1rem/1 var(--f-body);cursor:pointer;min-height:44px}
+.ftabs button[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.fpanel{display:grid;gap:0}
+@media (min-width:760px){.fpanel{grid-template-columns:repeat(3,1fr);column-gap:24px}}
+.fpanel[hidden]{display:none}
+.fpanel a{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule)}
+.fpanel a b{font-weight:700}
+.fpanel a:hover b{color:var(--acc)}
+.postlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--fg)}
+.postlist li{display:grid;gap:8px;padding:18px 0;border-bottom:1px solid var(--rule)}
+@media (min-width:760px){.postlist li{grid-template-columns:1fr auto;align-items:center}}
+.postlist li[hidden]{display:none}
+.postlist li>a:first-child{display:grid;gap:4px}
+.postlist b{font:900 1.5rem/1 var(--f-display);text-transform:uppercase}
+.brandchip{border:1px solid var(--rule2);border-radius:999px;padding:.5rem .9rem;font-weight:600}
+.hero .copy h1{overflow-wrap:anywhere}
+.narrow{max-width:900px;display:grid;gap:28px}

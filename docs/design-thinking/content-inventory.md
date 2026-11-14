@@ -30,7 +30,7 @@ keyword research (`memory/seo.md`), Drive media reviewed so far (`docs/design-bu
 | 13 | Custom boot builds | enclosures, Alcantara, LED | £2,500 **TBC** (old list) | GSC "custom sound system" 31, "custom audio system" 35 | Boot build photo | Marco | S on #11 |
 | 14 | **Ambient lighting & starlights** | ambient £445, starlights £795, door shadow lights £160, under-car £380 | £160 | (not researched) | Abarth ambient photos | Marco, Jay | **2** |
 | 15 | **Remapping** | Stage 1–3, cars + bikes, KESS3, JB4; **no dyno** | Stage 1 £250 **TBC** (not in sheet; live site says £435 / mobile £199) | GSC "car remapping london" 175 (24), "remapping london" 161 (20), "ecu remapping london" 132 (22) + 6 variants | 2 blog posts; Merc photo | Marco | **1** |
-| 16 | Performance parts | intakes, exhausts, RaceChip, quick shifters | on enquiry | GSC "car tuning london" 56 (12) | | Marco | S on #15 |
+| 16 | **Exhausts & performance parts** | exhausts, intakes, RaceChip, quick shifters; road-legal only | on enquiry | GSC "car tuning" family 270+ ("car tuning london" 56 pos 12, "east london" 67, "uk" 74) | Mini engine bay | Marco | **2** (added 14 Nov) |
 
 ## Styling: outside, inside, stance, care (recommended label "Styling")
 | # | Service | Includes | From | Demand | Proof | Persona | Tier |
@@ -38,7 +38,8 @@ keyword research (`memory/seo.md`), Drive media reviewed so far (`docs/design-bu
 | 17 | **Car wrapping** | full, partial, roof, stripes, chameleon, door shuts; panels from £90 | £1,500 | "car wrap cost" 4,700 · "full vehicle wrap price" 740 | 2 blog posts; pink Abarth, purple taxi | Marco | **1** |
 | 18 | **Paint protection film (PPF)** | full front, full car, tinted PPF | **TBC** (not in sheet) | "paint protection film cost" 301 · GSC "tinted ppf" 73, "paint protection south london" 24 | Blog section | new-car owners | **1** |
 | 19 | **Window tinting** | dyed, carbon, ceramic; legal fronts; sunstrip £45 | £150 | "car window tint laws" 102 | Draft post | everyone | **1** |
-| 20 | **Air suspension** | Air Lift 3P/3H, Prazis; authorised dealer; coilovers (S) | £1,895 | GSC air page 318 (12), "air suspension specialist" 29 | 2 posts; Hypa's Mini (own car) | Marco | **1** |
+| 20 | **Air suspension** | Air Lift 3P/3H, Prazis; authorised dealer | £1,895 | GSC air page 318 (12), "air suspension specialist" 29 | 2 posts; Hypa's Mini (own car) | Marco | **1** |
+| 20b | **Coilovers & lowering springs** | fixed-height drop, alignment | on enquiry | covered in 2 air/stance posts | none | Marco | **2** (added 14 Nov) |
 | 21 | Chrome delete | trims, badges, antenna | £50 | trending | | Marco | **2** |
 | 22 | Bodykits & exterior parts | spoilers £85, splitters £145, wide arch £485 | £85 | GSC "maxton design fitting near me" | | Marco | **2** |
 | 23 | Wheel refurb & calipers | refurb, diamond cut, caliper paint £480 | £120 | | Volvo gold wheel | everyone | **2** |
@@ -61,13 +62,17 @@ keyword research (`memory/seo.md`), Drive media reviewed so far (`docs/design-bu
 | 32 | **Builds** (gallery, later one page per build) | ~30 usable photos so far; Drive upload continuing | 1 (menu) |
 | 33 | **Contact** (form v2, real map, hours, phone, WhatsApp, email) | drawn | 1 (menu) |
 | 34 | **About** (Hypa's story, the workshop, the Mini, dealer status) | facts in memory; copy TBC with Hypa | 2 (footer) |
-| 35 | **Prices** ("from £" for every service, one page) | data ready; several TBC | 2 (footer) — recommended **yes** |
+| 35 | ~~Prices page~~ | **No** (Dani, 14 Nov): "from £" on each page | — |
 | 36 | **Blog** (15 posts + 7 drafts; categories) | live | 2 (footer) |
 | 37 | **Shop** (apparel via WhatsApp request; tees £20, jumper £40, keyring £10) | decided: keep (8 Nov) | 2 (footer) |
 | 38 | Reviews (Google) | Business Profile 5.0 (47 reviews on Maps) | S on home, service pages, contact |
 | 39 | Partner brands (Air Lift, Prazis, Ghost, MetaTrak, Scorpion, Xtrons, Autostyle, Pioneer, Kenwood, Rockford Fosgate, FineVu, Thinkware) | logos needed | S |
 | 40 | Legal notes (tint law, remaps and MOT/insurance, plate rules) | wording TBC with Hypa | S on the service pages |
 | 41 | Privacy, cookies, terms | Drive "Privacy & Cookies" folder | footer |
+
+## To ask Hypa (from research)
+- OBD port protection (in his security post): offered as a service? (shown as a TBC section on the Ghost page)
+- Catalytic converter protection: 251 searches/mo; offered?
 
 ## Totals and gaps
 - **Pages:** 1 home · 3 group hubs · 10 tier-1 services · 11 tier-2 services · 2 audience hubs · Builds · Contact · About · Prices · Blog · Shop · 3 legal ≈ **36 pages** at launch, plus car-specific pages over time.

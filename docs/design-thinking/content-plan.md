@@ -1,13 +1,13 @@
 # Content plan: who writes what, what Hypa confirms, photos per page, launch order
 
-_9 Nov 2026 · Claude drafts all copy in Hypa's voice from the sources below; Hypa confirms facts and prices; Dani approves.
+_9 Nov 2026 · **All pages drafted 14 Nov** in the site concept (`concept/pages/content.py`) · Claude drafts all copy in Hypa's voice from the sources below; Hypa confirms facts and prices; Dani approves.
 Status key: ✅ ready · 🟡 draft possible now, facts TBC · 🔴 blocked (needs Hypa or photos)._
 
 ## Launch waves
 | Wave | Pages | Why first |
 |---|---|---|
-| **1 (launch)** | Home · Contact · Builds · 10 menu services · 3 group hubs · Prices · About · Blog (15 migrated posts) · legal | Everything in the menu + every redirect target |
-| **2 (within 4 weeks)** | 11 more services · Motorbikes · Business & fleet · Shop | Footer pages, smaller demand |
+| **1 (launch)** | Home (A + B) · Contact · Builds · 10 menu services · 3 group hubs · About · Blog (15 migrated posts) · legal | Everything in the menu + every redirect target |
+| **2 (within 4 weeks)** | 13 more services · Motorbikes · Business & fleet · Shop | Footer pages, smaller demand |
 | **3 (ongoing)** | Car-specific pages (CarPlay BMW/Mini/Mercedes/Audi, Car audio BMW, Ghost Range Rover) · build pages · new posts | Needs real jobs per make |
 
 ## Wave 1 pages
@@ -27,7 +27,6 @@ Status key: ✅ ready · 🟡 draft possible now, facts TBC · 🔴 blocked (nee
 | Window tinting | tint laws draft | 🟡 | legal fronts wording · light-tint policy | none | tint job |
 | Air suspension | 2 air posts | 🟡 | "authorised Air Lift and Prazis dealer" wording | Hypa's Mini (own car) | install shots |
 | Security / Upgrades / Styling hubs | built from the service pages | 🟡 | — | from services | — |
-| Prices | price sheet | 🔴 | all TBC prices above + alarms | — | — |
 | About | business.md | 🔴 | 20+ years · McLaren roots · story in his words | mural, own Mini | **Hypa portrait** |
 | Blog (15 posts) | blog archive | 🟡 | DVLA post facts (pos 8.7, keep) · remove dyno mentions | blog images on GoDaddy (download before cancelling) | — |
 

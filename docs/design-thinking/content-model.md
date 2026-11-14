@@ -67,7 +67,7 @@ Hero (one line) → featured build → filter (All · Security · Upgrades · St
 Form v2 (`contact-flow.md`) → Find us (address, real map, Get directions) → hours → phone/WhatsApp/email → "Areas we cover" line (towns, for local SEO; no area pages).
 
 ## 8. Prices
-One table per group: service · from £ · what it includes · link to the page. Note: "from" prices; your exact price depends on the car; Contact us.
+**No Prices page** (Dani, 14 Nov): "from £" lives on each service page, the hubs and the homepage strip.
 
 ## 9. About
 Hypa's story (how he started, his own cars, the Unit 22 mural) → how we work (fitted properly, priced clearly) → dealer/partner status → reviews → visit.

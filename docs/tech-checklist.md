@@ -105,3 +105,7 @@ During design: page map + URLs (3.1), Instagram start approach (1.5), titles/des
 7. Claims wording and the dashboard numbers (5.3, 7.1)
 
 Everything else waits until the concept is approved.
+
+
+## Added 14 Nov 2026
+- Homepage A/B test: Cloudflare 50/50 split by first-party cookie, GA4 custom dimension `home_variant`, search engines always get A (see `docs/design-thinking/homepage-ab-test.md`). Timing: launch.
