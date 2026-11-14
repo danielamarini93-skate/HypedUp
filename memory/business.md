@@ -59,7 +59,7 @@ _Last updated: 7 Nov 2026_
 
 - Personality: **very creative and happy**: the brand should feel like him and the workshop (graffiti, art and craft, car + motorbike culture)
 
-- 20+ years in vehicle modifications, McLaren motorsport background
+- 20+ years in vehicle modifications: since the early 2000s, starting with his first car, a Vauxhall Astra; ~10 years ago went to work at McLaren (passion became his job); opened Hyped Up in 2022. Full story + signature projects: `memory/story-and-projects.md`
 - Daily: **red F56 Mini on Air Lift 3P** — daily driver for 4+ years and a show car
 - Building: **BMW 1 Series** show build (ongoing, on its 3rd boot rebuild, going Air Lift)
 - Previous: **R53 Mini "Lil Punisher"** (grey) — had an incident, sold, funded the red F56

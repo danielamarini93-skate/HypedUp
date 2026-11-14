@@ -59,6 +59,7 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 | File | What's in it |
 |---|---|
 | `memory/business.md` | Services, partner brands, Hypa's background and cars |
+| `memory/story-and-projects.md` | **Hypa's story (Astra → McLaren → Hyped Up) and signature projects** for storytelling |
 | `memory/price-list-master.md` | **Master price list** from Dani's sheet, with website "from £" prices (wins over pricing.md) |
 | `memory/pricing.md` | Older confirmed prices; plates, remaps, Ghost still from here |
 | `memory/brand-voice.md` | Writing style guide + competitor-mention rules |
