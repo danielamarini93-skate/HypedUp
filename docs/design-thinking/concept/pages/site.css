@@ -408,3 +408,44 @@ figcaption{margin-top:8px}
   .timeline li{padding-left:0;padding-top:44px}
 }
 .flowhead{display:grid;gap:14px;max-width:60ch}
+
+/* v7: handmade marks + photos in the background */
+.hmark{-webkit-mask:var(--m) center/100% 100% no-repeat;mask:var(--m) center/100% 100% no-repeat;background:#ef1220}
+/* timeline: hand-drawn line + marker circles */
+.timeline::before{background:#ef1220;-webkit-mask:url(img/hand-line-v.svg) center/100% 100% no-repeat;mask:url(img/hand-line-v.svg) center/100% 100% no-repeat;width:18px;left:2px}
+.timeline .dot{border:0;background:#ef1220;-webkit-mask:url(img/circle.svg) center/100% 100% no-repeat;mask:url(img/circle.svg) center/100% 100% no-repeat;width:34px;height:24px;left:-6px;top:-2px}
+@media (min-width:760px){
+  .timeline::before{-webkit-mask-image:url(img/hand-line.svg);mask-image:url(img/hand-line.svg);left:0;right:0;top:4px;width:auto;height:16px}
+  .timeline .dot{left:-8px;top:0}
+}
+/* picker: hand underline under the selected option instead of a bar */
+.ptabs button span{position:relative}
+@media (min-width:900px){
+  .ptabs button[aria-selected="true"]{padding-left:0}
+  .ptabs button[aria-selected="true"]::before{display:none}
+  .ptabs button[aria-selected="true"] span::after{content:"";position:absolute;left:-4px;right:-10px;bottom:-12px;height:14px;background:#ef1220;-webkit-mask:url(img/hand-underline.svg) center/100% 100% no-repeat;mask:url(img/hand-underline.svg) center/100% 100% no-repeat}
+}
+.ppanel{background:linear-gradient(90deg,rgba(13,12,12,.96) 0%,rgba(13,12,12,.82) 55%,rgba(13,12,12,.55) 100%),var(--pbg) center/cover no-repeat,var(--panel)}
+.ppanel .ghostword{-webkit-text-stroke:1.5px rgba(239,18,32,.45)}
+/* closing band: mural photo behind + hand-drawn arrow to the button */
+.band{position:relative;overflow:hidden;background:var(--bg)}
+.bandbg{position:absolute;inset:0;background:url(img/workshop.jpg) center 40%/cover no-repeat;opacity:.28;filter:grayscale(.35)}
+.bandbg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(13,12,12,.75) 55%,rgba(13,12,12,.45) 100%)}
+.band .wrap{position:relative}
+.bandcta{display:flex;align-items:center;gap:6px}
+.harrow{display:block;width:120px;height:48px;background:#ef1220;-webkit-mask:url(img/hand-arrow.svg) center/100% 100% no-repeat;mask:url(img/hand-arrow.svg) center/100% 100% no-repeat;transform:translateY(-10px)}
+@media (max-width:759px){.harrow{width:84px;height:34px}}
+/* hubs: faded photo behind the comparison */
+.cmpsec{position:relative;overflow:hidden}
+.cmpsec .cmpbg{position:absolute;inset:0;background:var(--cbg) center/cover no-repeat;opacity:.16;filter:grayscale(.4)}
+.cmpsec .cmpbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(13,12,12,.4) 50%,var(--bg))}
+.cmpsec .wrap{position:relative}
+/* v7b: bolder hand line + bigger marker circles on the timeline */
+.timeline::before{width:24px;left:6px}
+.timeline .dot{width:46px;height:32px;left:-5px;top:-6px}
+.timeline li{padding-left:52px}
+@media (min-width:760px){
+  .timeline::before{height:22px;top:6px;width:auto;left:0}
+  .timeline .dot{left:-10px;top:0}
+  .timeline li{padding-left:0;padding-top:52px}
+}

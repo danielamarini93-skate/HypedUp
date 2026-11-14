@@ -196,3 +196,10 @@ Every word must help the user or SEO; say each fact once per screen. Applied (me
   Phone menu bottom: "Get a quote" + "Call" (same name as the header action).
 - Moodboard D hero: meta "Bermondsey, South London · Est. 2022"; Find us shows "Unit 22, Bolina Rd · SE16 3LF" once.
 - (v4.8 / v16) **No 01 / 02 / 03 numbers** anywhere (Dani: they mean nothing to the user). Removed from the phone menu, footer headings and the D service strip; the "Protect" label inside the open Protect panel was also cut (the open tab already says it).
+
+## Graphic elements rule (Dani, 14 Nov 2026)
+- **More graphic elements and photos in backgrounds**, but every line or mark is **graffiti or handmade**: marker circle, hand underline,
+  hand arrow, hand-drawn timeline line. Never geometric/code-drawn lines, bars or dots.
+- Applied in the site concept v7: timeline = hand line + marker circles over a faded workshop photo; selected option = hand underline;
+  option panel = faded service photo; closing band = faded mural + hand arrow to "Contact us"; hub comparison = faded hub photo.
+- Photos in backgrounds stay dark and faded (text must stay readable, WCAG AA).

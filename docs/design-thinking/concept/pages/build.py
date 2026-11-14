@@ -67,7 +67,7 @@ def media(img, alt, need='', cls='media vig', lazy=True):
         return '<div class="%s"><img src="img/%s" alt="%s"%s></div>' % (cls, img, alt, ' loading="lazy"' if lazy else '')
     return '<div class="%s need"><span class="mono">Photo needed: %s</span></div>' % (cls.replace(' vig', ''), need)
 def band(title, line, chip=''):
-    return ('<section class="band"><div class="wrap"><div><h2>%s</h2><p class="lead" style="margin-top:14px">%s</p></div><a class="pill" href="contact.html%s">Contact us</a></div></section>'
+    return ('<section class="band"><div class="bandbg" aria-hidden="true"></div><div class="wrap"><div><h2>%s</h2><p class="lead" style="margin-top:14px">%s</p></div><div class="bandcta"><i class="harrow" aria-hidden="true"></i><a class="pill" href="contact.html%s">Contact us</a></div></div></section>'
             % (title, line, ('?service=' + chip) if chip else ''))
 def scard(s):
     v = SV[s]
@@ -105,9 +105,10 @@ def service_page(slug):
     v = SV[slug]; g = v['group']; chip = CHIP[slug]
     ptabs = ''.join('<button type="button" role="tab" id="pt-%d" aria-selected="%s" aria-controls="pp-%d"%s><span>%s</span>{{lu:arrow-right}}</button>'
                     % (i, 'true' if i == 0 else 'false', i, '' if i == 0 else ' tabindex="-1"', t) for i, (t, d) in enumerate(v['options']))
-    ppanels = ''.join('<div class="ppanel" role="tabpanel" id="pp-%d" aria-labelledby="pt-%d"%s><span class="ghostword" aria-hidden="true">%s</span><div class="pcopy"><p class="lead">%s</p>'
+    pbg = v['img'] or 'poster.jpg'
+    ppanels = ''.join('<div class="ppanel" role="tabpanel" id="pp-%d" aria-labelledby="pt-%d"%s style="--pbg:url(img/%s)"><span class="ghostword" aria-hidden="true">%s</span><div class="pcopy"><p class="lead">%s</p>'
                       '<a class="link" href="contact.html?service=%s">Ask about this {{lu:arrow-right}}</a></div></div>'
-                      % (i, i, '' if i == 0 else ' hidden', t.split(' (')[0], d or 'Tell me what you\'re after and I\'ll quote it for your car.', chip)
+                      % (i, i, '' if i == 0 else ' hidden', pbg, t.split(' (')[0], d or 'Tell me what you\'re after and I\'ll quote it for your car.', chip)
                       for i, (t, d) in enumerate(v['options']))
     opts = '<div class="picker" data-picker><div class="ptabs" role="tablist" aria-label="%s options">%s</div><div class="ppanels">%s</div></div>' % (v['name'], ptabs, ppanels)
     steps = ''.join('<li><span class="dot" aria-hidden="true"></span><span class="mono">%s</span><h3>%s</h3>%s</li>' % (('Step one', 'Step two', 'Step three')[i], t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(STEPS.get(slug, v['steps'])))
@@ -152,10 +153,10 @@ def hub_page(g, name, slugs):
 </div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>All %(name)s services</h2><p>%(n)d services, the same list as the footer.</p></div><div class="cards hubcards">%(cards)s</div></div></section>
 %(layers)s
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>Which one do I need?</h2></div>
+<section class="sec cmpsec" style="--cbg:url(img/%(img)s)"><div class="cmpbg" aria-hidden="true"></div><div class="wrap"><div class="sec-head"><h2>Which one do I need?</h2></div>
   <div class="scrollx"><table class="compare"><thead><tr><th>Service</th><th>What it does</th><th>Best for</th><th>Price</th></tr></thead><tbody>%(rows)s</tbody></table></div></div></section>
 <section class="sec"><div class="wrap"><div class="narrow"><div class="vsbox"><span class="mono">Explained</span><h2>%(et)s</h2><p class="lead">%(eb)s</p></div>%(faq)s</div></div></section>
-''' % dict(h1=d['h1'], lead=d['lead'], media=media(d['img'], d['alt'], lazy=False), name=name, n=len(slugs), cards=''.join(scard(s) for s in slugs), layers=layers, rows=rows,
+''' % dict(img=d['img'], h1=d['h1'], lead=d['lead'], media=media(d['img'], d['alt'], lazy=False), name=name, n=len(slugs), cards=''.join(scard(s) for s in slugs), layers=layers, rows=rows,
            et=d['explainer'][0], eb=d['explainer'][1], faq=faq(d['faq'], False))
     page(h(g), d['title'], d['desc'], g, body + band('Not sure what your car needs?', 'Send me the make and model. I\'ll tell you what\'s worth doing and what it costs.'), name + ' (hub)', 'Hubs')
 
@@ -164,15 +165,16 @@ def build():
     os.makedirs(OUT + '/img'); os.makedirs(OUT + '/fonts')
     for f in os.listdir(S + '/pimg'): shutil.copy(S + '/pimg/' + f, OUT + '/img/' + f)
     shutil.copy(os.path.join(HERE, '..', 'assets', 'paint', '318600.svg'), OUT + '/img/circle.svg')
+    for m in ['hand-arrow', 'hand-line', 'hand-line-v', 'hand-underline']: shutil.copy(os.path.join(HERE, '..', 'assets', 'paint', m + '.svg'), OUT + '/img/' + m + '.svg')
     shutil.copy(S + '/fz/graffiti_city/Graffiti City.otf', OUT + '/fonts/graffiti-city.otf')
     for f in ['site.css', 'site.js']: shutil.copy(os.path.join(HERE, f), OUT + '/' + f)
 
     strip = ''.join('<a href="%s"><b>%s</b><span class="from g">%s</span><p>%s</p></a>' % (h(g), n, p, t) for (g, n, _), p, t in zip(GROUPS, ['from £125', 'from £125', 'from £30'],
             ['Ghost, trackers, alarms, dash cams', 'CarPlay, audio, remaps, lighting', 'Wraps, PPF, tint, air, wheels, plates']))
     recent = builds_strip([(BUILDS[i][0], BUILDS[i][1], BUILDS[i][2], BUILDS[i][4]) for i in (2, 1, 0)])
-    how = '''<ol class="steps"><li><span class="mono">Step one</span><h3>Tell me what you want</h3><p>Your car, your idea, how you use it. I listen first. Photos help.</p></li>
-<li><span class="mono">Step two</span><h3>Your plan and price</h3><p>Options built around you, a clear price and how long it takes. You pick a date.</p></li>
-<li><span class="mono">Step three</span><h3>Made for your car</h3><p>Done to the plan we agreed, and checked with you before you drive away.</p></li></ol>'''
+    how = '''<ol class="timeline"><li><span class="dot" aria-hidden="true"></span><span class="mono">Step one</span><h3>Tell me what you want</h3><p>Your car, your idea, how you use it. I listen first. Photos help.</p></li>
+<li><span class="dot" aria-hidden="true"></span><span class="mono">Step two</span><h3>Your plan and price</h3><p>Options built around you, a clear price and how long it takes. You pick a date.</p></li>
+<li><span class="dot" aria-hidden="true"></span><span class="mono">Step three</span><h3>Made for your car</h3><p>Done to the plan we agreed, and checked with you before you drive away.</p></li></ol>'''
     about = '''<div class="split"><figure>%s</figure><div style="display:grid;gap:18px;justify-items:start"><span class="mono">The workshop</span><h2>Built by Hypa</h2>
 <p class="lead">I started Hyped Up in 2022 to do this work properly: the right parts, fitted neatly, and a straight price before anything starts. My own Mini has run on air every day for over four years. <span class="tbc">(Copy: Hypa to approve)</span></p>
 <a class="link" href="about.html">About Hyped Up {{lu:arrow-right}}</a></div></div>''' % media('workshop.jpg', "Hyped Up's red Mini in front of the graffiti mural inside the workshop")
@@ -194,7 +196,7 @@ def build():
   <div class="strip" style="margin-top:32px">''' + strip + '''</div>
 </div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent builds</h2><a class="link" href="builds.html">See all builds {{lu:arrow-right}}</a></div>''' + recent + '''</div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>How a job works</h2><p>Every job is bespoke: I listen to what you want and do my best to make it exactly that.</p></div>''' + how + '''</div></section>
+<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How a job works</h2><p class="lead">Every job is bespoke: I listen to what you want and do my best to make it exactly that.</p></div>''' + how + '''</div></section>
 <section class="sec"><div class="wrap">''' + about + '''</div></section>
 <section class="sec"><div class="wrap">''' + review + '''</div></section>
 ''' + band('Got a car in mind?', 'Tell me the car and the idea. I\'ll come back with options and a price.'), 'Home A · brand-led', 'Homepage (A/B test)')
@@ -216,7 +218,7 @@ def build():
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent builds</h2><a class="link" href="builds.html">See all builds {{lu:arrow-right}}</a></div>''' + recent + '''</div></section>
 <section class="sec"><div class="wrap split"><figure><div class="media vig"><video src="img/hero.mp4" poster="img/poster.jpg" muted loop playsinline controls aria-label="Short silent reel of work inside the Hyped Up workshop"></video></div></figure>
 <div style="display:grid;gap:18px;justify-items:start"><span class="mono">Inside the workshop</span><h2>Protect it. Upgrade it. <span class="g">Style it.</span></h2><p class="lead">One workshop for the lot, from a Ghost immobiliser to a full colour change.</p></div></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>How a job works</h2><p>Every job is bespoke: I listen to what you want and do my best to make it exactly that.</p></div>''' + how + '''</div></section>
+<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How a job works</h2><p class="lead">Every job is bespoke: I listen to what you want and do my best to make it exactly that.</p></div>''' + how + '''</div></section>
 <section class="sec"><div class="wrap">''' + review + '''</div></section>
 ''' + band('Got a car in mind?', 'Tell me the car and the idea. I\'ll come back with options and a price.'), 'Home B · task-led', 'Homepage (A/B test)')
 

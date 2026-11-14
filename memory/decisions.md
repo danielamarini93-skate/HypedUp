@@ -55,3 +55,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-14 — Service pages: "Options" and "How it works" redesigned (Dani: too much text in lists) → "Pick your setup" picker (one option at a time) + timeline over a workshop photo
 - 2026-11-14 — **Nothing is "while you wait" except number plates** (Dani). Removed same-day / in-a-day claims from CarPlay, tint, chrome delete and the homepage.
 - 2026-11-14 — **Every job is bespoke** (Dani): "How it works" on every service page and the homepage = 1 Tell me what you want (I listen first) · 2 Your plan and price (made for your car) · 3 Fitted/made and checked with you; intro line "Every job is made to order…".
+- 2026-11-14 — **More graphic elements and background photos; every mark graffiti or handmade** (Dani): hand-drawn timeline line + marker circles, hand underline on the selected option, hand arrow to the Contact us button, faded photos behind sections
