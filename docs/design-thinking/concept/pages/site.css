@@ -89,7 +89,7 @@ figcaption{margin-top:8px}
 .hero{padding:28px 0 40px}
 .hero .grid{display:grid;gap:24px}
 .hero .copy{display:flex;flex-direction:column;gap:22px}
-.hero .wet{display:block;width:fit-content;font:400 clamp(3.2rem,9vw,6.6rem)/.9 var(--f-spray);text-transform:none;padding:0 .06em;margin-top:-.04em;white-space:nowrap}
+.hero .wet{display:block;width:fit-content;font:400 clamp(3.2rem,9vw,6.6rem)/.9 var(--f-spray);text-transform:none;padding:0 .06em;margin-top:-.04em;white-space:nowrap;background:var(--red-text);-webkit-background-clip:text;background-clip:text;color:transparent}  /* static, Graffiti City only (no morph, Dani 16 Nov) */
 .hero .wet .ch{display:inline-block;padding:0 .06em;margin:0 -.06em;background:var(--red-text) no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent;transition:opacity .18s}
 .hero .wet.js{background:none}
 .hero .wet .ch.sw{opacity:0}

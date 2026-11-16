@@ -187,7 +187,7 @@ def build():
   <div class="mono" style="display:flex;justify-content:space-between;margin-bottom:18px"><span>Bermondsey, South London</span><span>Est. 2022</span></div>
   <div class="grid">
     <div class="copy">
-      <h1>Protect it.<br>Upgrade it.<span class="wet" id="morph" role="text" aria-label="Style it.">Style it.</span></h1>
+      <h1>Protect it.<br>Upgrade it.<span class="wet">Style it.</span></h1>
       <p class="lead">South London's one-stop workshop for car and bike security, upgrades and styling. Fitted properly, priced clearly.</p>
       <div class="act"><a class="pill" href="contact.html">Contact us</a><span class="find">Find us</span><span class="mono">Unit 22, Bolina Rd<br>SE16 3LF</span></div>
     </div>

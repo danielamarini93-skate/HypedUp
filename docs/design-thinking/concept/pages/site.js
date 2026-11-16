@@ -1,4 +1,4 @@
-/* Hyped Up key pages concept: menu sheet, "Style it." morph, builds filter, quote form, footer wordmark. */
+/* Hyped Up key pages concept: menu sheet, builds filter, quote form, footer wordmark. */
 (function () {
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
@@ -54,30 +54,6 @@
   function fitWm() { $$('.wmsvg').forEach(function (sv) { var b = sv.querySelector('text').getBBox(), p = 4; sv.setAttribute('viewBox', (b.x - p) + ' ' + (b.y - p) + ' ' + (b.width + p * 2) + ' ' + (b.height + p * 2)); }); }
   (document.fonts ? document.fonts.ready : Promise.resolve()).then(fitWm); fitWm();
 
-  /* "Style it." morph: one font at a time, 3 loops, rests on Graffiti City; static with reduced motion */
-  var el = $('#morph');
-  if (el) {
-    var F = { graffiti: ['"Graffiti City"', 1, 400, 0, 0], serif: ['"Instrument Serif"', 1.12, 400, 1, 0], caps: ['"Big Shoulders Display"', 1.02, 900, 0, 1] };
-    var chars = [];
-    el.textContent = '';
-    'Style it.'.split('').forEach(function (c) { var s = document.createElement('span'); s.className = 'ch'; s.setAttribute('aria-hidden', 'true'); s.dataset.c = c; el.appendChild(s); chars.push(s); });
-    el.classList.add('js');
-    var apply = function (s, k) { var f = F[k]; s.style.fontFamily = f[0] + ',sans-serif'; s.style.fontSize = f[1] + 'em'; s.style.fontWeight = f[2]; s.style.fontStyle = f[3] ? 'italic' : 'normal'; var c = s.dataset.c; s.textContent = c === ' ' ? ' ' : (f[4] ? c.toUpperCase() : c); };
-    var paint = function () { var W = el.offsetWidth; chars.forEach(function (s) { s.style.backgroundSize = (W + 40) + 'px 100%'; s.style.backgroundPosition = (-s.offsetLeft) + 'px 0'; }); };
-    chars.forEach(function (s) { apply(s, 'graffiti'); }); paint();
-    if (document.fonts) document.fonts.ready.then(paint);
-    addEventListener('resize', paint);
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var seq = ['serif', 'caps', 'graffiti'], i = 0;
-      var round = function () {
-        var step = seq[i % seq.length]; i++;
-        chars.forEach(function (s) { s.classList.add('sw'); });
-        setTimeout(function () { chars.forEach(function (s) { apply(s, step); s.classList.remove('sw'); }); paint(); }, 160);
-        if (i < seq.length * 3) setTimeout(round, step === 'graffiti' ? 2600 : 1500);
-      };
-      setTimeout(round, 1800);
-    }
-  }
 
   /* builds filter */
   $$('[data-filter]').forEach(function (b) {
