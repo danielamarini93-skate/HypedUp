@@ -66,3 +66,5 @@ _Last updated: 14 Nov 2026 · Tick items off (`[x]`) or remove them as they're d
 - [ ] Add Repeat Customer? and Referral Source (+ Phone, Email, Other Services?, Follow-up Date) columns to the tracker
 - [ ] Read Tab 2 of the Google Sheet properly
 - [ ] Build a customer tracking dashboard in Sheets
+- [ ] Hypa/Dani: pick one of the best Google reviews, paste it word for word in `docs/design-thinking/concept/pages/content.py` (REVIEWS), and swap it every 2–3 months (add a new line with the start date). Confirm the rating and count (5.0 / 47 on 9 Nov). Live build: pull it automatically from Google if possible.
+- [ ] Hypa: OK the trust bar claims ("20+ yrs modifying cars", "McLaren: where Hypa learned the craft").

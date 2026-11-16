@@ -67,8 +67,9 @@
   /* quote form */
   var form = $('#quote');
   if (form) {
-    var svc = new URLSearchParams(location.search).get('service');
-    if (svc) { var box = form.querySelector('input[value="' + svc + '"]'); if (box) box.checked = true; }
+    var qs = new URLSearchParams(location.search);
+    qs.getAll('service').join(',').split(',').forEach(function (v) { var x = v && form.querySelector('input[name="need"][value="' + v + '"]'); if (x) x.checked = true; });
+    if (qs.get('car') && form.elements.vehicle) form.elements.vehicle.value = qs.get('car');
     var val = function (n) { var e = form.elements[n]; return e ? e.value.trim() : ''; };
     var text = function () {
       var need = $$('input[name="need"]:checked', form).map(function (x) { return x.dataset.label; });

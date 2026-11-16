@@ -427,3 +427,13 @@ STEPS = {
  'number-plates': [(LISTEN, 'Standard, 3D, 4D or show plates.'), ('Bring your documents', 'Your V5C and photo ID, as the law requires.'), ('Made while you wait', 'Plates are the one job I do on the spot.')],
  'van-signage': [(LISTEN, 'Your logo, your colours, what the van needs to say.'), ('Your design and price', 'A proof to approve before anything is printed.'), ('Fitted and checked with you', 'Checked together before it goes on the road.')],
 }
+
+# ---------- Google review on the homepage (rotates every 2–3 months) ----------
+# Hypa/Dani pick one of the best real 5-star Google reviews and paste it here word for word with the reviewer's
+# first name. The build shows the newest entry whose 'from' date has started. Add a new one every 2–3 months.
+# Never write or edit a review: copy it exactly from Google.
+GOOGLE_REVIEWS_URL = 'https://www.google.com/maps?cid=1418041190124790308'
+GOOGLE_RATING = ('5.0', '47')  # Maps, 9 Nov 2026: update when it changes
+REVIEWS = [
+    {'from': '2026-11-01', 'text': '', 'name': '', 'service': ''},  # TBC: Hypa picks the first one
+]

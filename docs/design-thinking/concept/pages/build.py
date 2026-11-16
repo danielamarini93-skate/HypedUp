@@ -4,7 +4,7 @@
 # Previous version (5 key pages): build-v3.py
 import os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-from content import GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS
+from content import GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL
 import html as _html
 S = '/tmp/claude-0/-home-user/545d0e01-e697-5941-a49a-d293a211030b/scratchpad'
 OUT = S + '/pages-out'
@@ -67,7 +67,7 @@ def media(img, alt, need='', cls='media vig', lazy=True):
         return '<div class="%s"><img src="img/%s" alt="%s"%s></div>' % (cls, img, alt, ' loading="lazy"' if lazy else '')
     return '<div class="%s need"><span class="mono">Photo needed: %s</span></div>' % (cls.replace(' vig', ''), need)
 def band(title, line, chip=''):
-    return ('<section class="band"><div class="bandbg" aria-hidden="true"></div><div class="wrap"><div><h2>%s</h2><p class="lead" style="margin-top:14px">%s</p></div><div class="bandcta"><i class="harrow" aria-hidden="true"></i><a class="pill" href="contact.html%s">Contact us</a></div></div></section>'
+    return ('<section class="band"><div class="bandbg" aria-hidden="true"></div><div class="wrap"><div><h2>%s</h2><p class="lead" style="margin-top:14px">%s</p></div><div class="bandcta"><a class="pill" href="contact.html%s">Contact us</a></div></div></section>'
             % (title, line, ('?service=' + chip) if chip else ''))
 def scard(s):
     v = SV[s]
@@ -111,7 +111,7 @@ def service_page(slug):
                       % (i, i, '' if i == 0 else ' hidden', pbg, t.split(' (')[0], d or 'Tell me what you\'re after and I\'ll quote it for your car.', chip)
                       for i, (t, d) in enumerate(v['options']))
     opts = '<div class="picker" data-picker><div class="ptabs" role="tablist" aria-label="%s options">%s</div><div class="ppanels">%s</div></div>' % (v['name'], ptabs, ppanels)
-    steps = ''.join('<li><span class="dot" aria-hidden="true"></span><span class="mono">%s</span><h3>%s</h3>%s</li>' % (('Step one', 'Step two', 'Step three')[i], t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(STEPS.get(slug, v['steps'])))
+    steps = ''.join('<li><h3>%s</h3>%s</li>' % (t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(STEPS.get(slug, v['steps'])))
     proof = [i for i in SVC_BUILDS.get(slug, []) if BUILDS[i][0] != v['img']]
     proof_html = (builds_strip([(BUILDS[i][0], BUILDS[i][1], BUILDS[i][2], BUILDS[i][4]) for i in proof]) if proof else
                   '<div class="need-row"><span class="mono">Builds for this service: photos needed (Drive upload)</span></div>')
@@ -165,21 +165,52 @@ def build():
     os.makedirs(OUT + '/img'); os.makedirs(OUT + '/fonts')
     for f in os.listdir(S + '/pimg'): shutil.copy(S + '/pimg/' + f, OUT + '/img/' + f)
     shutil.copy(os.path.join(HERE, '..', 'assets', 'paint', '318600.svg'), OUT + '/img/circle.svg')
-    for m in ['hand-arrow', 'hand-line', 'hand-line-v', 'hand-underline']: shutil.copy(os.path.join(HERE, '..', 'assets', 'paint', m + '.svg'), OUT + '/img/' + m + '.svg')
+    for m in ['hand-underline']: shutil.copy(os.path.join(HERE, '..', 'assets', 'paint', m + '.svg'), OUT + '/img/' + m + '.svg')
     shutil.copy(S + '/fz/graffiti_city/Graffiti City.otf', OUT + '/fonts/graffiti-city.otf')
     for f in ['site.css', 'site.js']: shutil.copy(os.path.join(HERE, f), OUT + '/' + f)
 
-    strip = ''.join('<a href="%s"><b>%s</b><span class="from g">%s</span><p>%s</p></a>' % (h(g), n, p, t) for (g, n, _), p, t in zip(GROUPS, ['from £125', 'from £125', 'from £30'],
+    strip = ''.join('<a href="%s"><b>%s</b><p>%s</p></a>' % (h(g), n, t) for (g, n, _), t in zip(GROUPS,
             ['Ghost, trackers, alarms, dash cams', 'CarPlay, audio, remaps, lighting', 'Wraps, PPF, tint, air, wheels, plates']))
-    recent = builds_strip([(BUILDS[i][0], BUILDS[i][1], BUILDS[i][2], BUILDS[i][4]) for i in (2, 1, 0)])
-    how = '''<ol class="timeline"><li><span class="dot" aria-hidden="true"></span><span class="mono">Step one</span><h3>Tell me what you want</h3><p>Your car, your idea, how you use it. I listen first. Photos help.</p></li>
-<li><span class="dot" aria-hidden="true"></span><span class="mono">Step two</span><h3>Your plan and price</h3><p>Options built around you, a clear price and how long it takes. You pick a date.</p></li>
-<li><span class="dot" aria-hidden="true"></span><span class="mono">Step three</span><h3>Made for your car</h3><p>Done to the plan we agreed, and checked with you before you drive away.</p></li></ol>'''
-    about = '''<div class="split"><figure>%s</figure><div style="display:grid;gap:18px;justify-items:start"><span class="mono">The workshop</span><h2>Built by Hypa</h2>
-<p class="lead">I started Hyped Up in 2022 to do this work properly: the right parts, fitted neatly, and a straight price before anything starts. My own Mini has run on air every day for over four years. <span class="tbc">(Copy: Hypa to approve)</span></p>
-<a class="link" href="about.html">About Hyped Up {{lu:arrow-right}}</a></div></div>''' % media('workshop.jpg', "Hyped Up's red Mini in front of the graffiti mural inside the workshop")
-    review = '''<div style="display:grid;gap:14px;max-width:820px"><span class="mono">Google reviews · 5.0 from 47 reviews <span class="tbc">(Maps, 9 Nov)</span></span>
-<p style="font:900 clamp(1.8rem,4vw,2.6rem)/1.05 var(--f-display);text-transform:uppercase" class="tbc">[A real review, picked by Hypa]</p><span class="mono">Customer first name · Service</span></div>'''
+    # Builds first: the four signature stories
+    feat = [('a4-deadening-boot.jpg', 'Audi A4', 'The silent performer', 'Stripped to the shell and soundproofed, with air suspension that makes no noise inside.', 'The boot of a black Audi A4 lined with silver sound-deadening sheets'),
+            ('bdg-van-beacons.jpg', 'BDG Security van', 'Ready for work', 'Roof beacon bar and full livery for a friend\'s security business.', 'BDG Security van with a roof beacon bar and navy and gold livery, mural behind'),
+            ('bmw-e88-fibreglass.jpg', 'BMW 1 Series E88', 'Our next build', 'Custom fibreglass boot enclosure in progress. Wrap and bodykit next.', 'Fibreglass boot enclosure mould wrapped in yellow tape on the workbench'),
+            ('mini-opening-night.jpg', 'Red Mini JCW', 'Our flagship', 'On air every day, the boot rebuilt three times. A new build each season.', 'Hyped Up\'s red Mini JCW and an R6 inside the workshop')]
+    recent = '<div class="bfeat">' + ''.join('<a class="bcard%s" href="builds.html">%s<div class="bcap"><span class="mono">%s</span><h3>%s</h3><p>%s</p></div></a>'
+             % (' big' if i == 0 else '', media(img, alt, cls='media'), car, t, l) for i, (img, car, t, l, alt) in enumerate(feat)) + '</div>'
+    # Highlight services: four big tiles, photo-led, no prices
+    hl = [('ghost-immobiliser', 'Ghost immobiliser', 'Your car won\'t start without your code. No key fob for thieves to clone.', 'alfa-keys-wheel.jpg', 'Alfa Romeo steering wheel and keys'),
+          ('carplay', 'CarPlay & screens', 'Big, clean screens that look factory, with wireless CarPlay and reverse cameras.', 'r8-pioneer-screen.jpg', 'Audi R8 dashboard with a new Pioneer CarPlay screen'),
+          ('car-wrapping', 'Wraps & graphics', 'Colour changes, camo, stripes, logos. Designed with you, fitted by hand.', 'subaru-camo-wrap.jpg', 'Subaru with grey camo graphics under the workshop mural'),
+          ('air-suspension', 'Air suspension', 'Low when you park, up for speed bumps. Tank and compressor placed so you never hear them.', 'mini-jcw-low.jpg', 'Red Mini JCW sitting low on air suspension')]
+    highlights = '<div class="hl">' + ''.join('<a class="hltile" href="%s">%s<div class="hlcap"><h3>%s</h3><p>%s</p><span class="link">Find out more {{lu:arrow-right}}</span></div></a>' % (h(s), media(img, alt, cls='media'), n, l)
+                 for s, n, l, img, alt in hl) + '</div>'
+    # Why Hyped Up: trust bar + four reasons with graffiti numerals
+    trust = '<ul class="trustbar"><li><b>%s ★</b><span>%s Google reviews</span></li><li><b>20+ yrs</b><span>modifying cars</span></li><li><b>McLaren</b><span>where Hypa learned the craft</span></li><li><b>SE16</b><span>our own workshop, Unit 22</span></li></ul>' % GOOGLE_RATING
+    reasons = [('I listen first', 'Every job starts with your car and your idea. Nothing is off the shelf: it\'s built around you.'),
+               ('Any car, no limits', 'A city runabout or a supercar, a van or a bike. If you can imagine it, I\'ll find a way.'),
+               ('Done properly', 'The right parts, wiring you\'ll never see, and the standards I learned at McLaren.'),
+               ('A straight price', 'You know what it costs and how long it takes before anything starts.')]
+    why = ('<div class="whyhead"><span class="mono">Why Hyped Up</span><h2>Passion you can <span class="wetw">see</span></h2></div>' + trust +
+           '<ol class="reasons">' + ''.join('<li><span class="gnum" aria-hidden="true">%d</span><h3>%s</h3><p>%s</p></li>' % (i + 1, t, d) for i, (t, d) in enumerate(reasons)) + '</ol>')
+    # Google review: newest entry whose start date has passed (rotate every 2–3 months in content.py)
+    import datetime
+    today = datetime.date.today().isoformat()
+    rv = [r for r in REVIEWS if r['from'] <= today][-1]
+    stars = '<span class="stars" aria-label="5 out of 5 stars">★★★★★</span>'
+    if rv['text']:
+        quote = '<blockquote class="rvq"><p>%s</p><footer class="mono">%s · %s · Google</footer></blockquote>' % (rv['text'], rv['name'], rv['service'])
+    else:
+        quote = '<blockquote class="rvq tbc"><p>[One of the best Google reviews, copied word for word]</p><footer class="mono">First name · Service · Google</footer></blockquote>'
+    review = ('<div class="review"><div class="rvhead">%s<span class="mono">%s on Google · %s reviews</span></div>%s'
+              '<a class="pill ghost" href="%s" target="_blank" rel="noopener">Read all reviews on Google {{lu:arrow-up-right}}</a></div>') % (stars, GOOGLE_RATING[0], GOOGLE_RATING[1], quote, GOOGLE_REVIEWS_URL)
+    # Form preview: pick what you're after + the car, then continue on the contact page
+    picks = [('security', 'Security'), ('screens', 'Screens &amp; audio'), ('remap', 'Remap'), ('wrap', 'Wrap, PPF, tint'), ('air', 'Air &amp; suspension'), ('plates', 'Plates'), ('other', 'Something custom')]
+    startform = ('<section class="startsec"><div class="bandbg" aria-hidden="true"></div><div class="wrap"><div class="starthead"><span class="mono">Start here</span><h2>What are we <span class="wetw">building?</span></h2></div>'
+                 '<form class="startform" action="contact.html" method="get" id="startform"><fieldset class="fs"><legend>What are you after?</legend><div class="tick">'
+                 + ''.join('<label><input type="checkbox" name="service" value="%s"><span>{{lu:check}}%s</span></label>' % (v, l) for v, l in picks) +
+                 '</div></fieldset><div class="startrow"><div class="field"><label for="s-car">Your car</label><input id="s-car" name="car" placeholder="e.g. Audi A4 2017" autocomplete="off"></div>'
+                 '<button class="pill" type="submit">Continue {{lu:arrow-right}}</button></div></form></div></section>')
 
     # ---------- HOME A: brand-led (Direction D hero) ----------
     page('home-a.html', 'Car Security, Upgrades & Styling in London | Hyped Up', 'Ghost immobilisers, trackers, CarPlay, car audio, remaps, wraps, PPF, tint and air suspension, fitted properly in Bermondsey, South London. Clear "from" prices.', '', '''
@@ -195,11 +226,11 @@ def build():
   </div>
   <div class="strip" style="margin-top:32px">''' + strip + '''</div>
 </div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent builds</h2><a class="link" href="builds.html">See all builds {{lu:arrow-right}}</a></div>''' + recent + '''</div></section>
-<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How a job works</h2><p class="lead">Every job is bespoke: I listen to what you want and do my best to make it exactly that.</p></div>''' + how + '''</div></section>
-<section class="sec"><div class="wrap">''' + about + '''</div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>Builds</h2><a class="link" href="builds.html">See all builds {{lu:arrow-right}}</a></div>''' + recent + '''</div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>What we're known for</h2><a class="link" href="styling.html">All services {{lu:arrow-right}}</a></div>''' + highlights + '''</div></section>
+<section class="whysec"><div class="whybg" aria-hidden="true"></div><div class="wrap">''' + why + '''</div></section>
 <section class="sec"><div class="wrap">''' + review + '''</div></section>
-''' + band('Got a car in mind?', 'Tell me the car and the idea. I\'ll come back with options and a price.'), 'Home A · brand-led', 'Homepage (A/B test)')
+''' + startform, 'Home A · brand-led', 'Homepage (A/B test)')
 
     # ---------- HOME B: task-led (service finder first) ----------
     tabs = ''.join('<button type="button" role="tab" aria-selected="%s" data-ftab="%s">%s</button>' % ('true' if i == 0 else 'false', g, n) for i, (g, n, _) in enumerate(GROUPS))
@@ -215,12 +246,12 @@ def build():
   <div class="finder"><div class="ftabs" role="tablist" aria-label="Service groups">''' + tabs + '</div>' + panels + '''</div>
   <div class="act"><a class="pill" href="contact.html">Contact us</a><a class="link" href="builds.html">See the work {{lu:arrow-right}}</a></div>
 </div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent builds</h2><a class="link" href="builds.html">See all builds {{lu:arrow-right}}</a></div>''' + recent + '''</div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>Builds</h2><a class="link" href="builds.html">See all builds {{lu:arrow-right}}</a></div>''' + recent + '''</div></section>
 <section class="sec"><div class="wrap split"><figure><div class="media vig"><video src="img/hero.mp4" poster="img/poster.jpg" muted loop playsinline controls aria-label="Short silent reel of work inside the Hyped Up workshop"></video></div></figure>
 <div style="display:grid;gap:18px;justify-items:start"><span class="mono">Inside the workshop</span><h2>Protect it. Upgrade it. <span class="g">Style it.</span></h2><p class="lead">One workshop for the lot, from a Ghost immobiliser to a full colour change.</p></div></div></section>
-<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How a job works</h2><p class="lead">Every job is bespoke: I listen to what you want and do my best to make it exactly that.</p></div>''' + how + '''</div></section>
+<section class="whysec"><div class="whybg" aria-hidden="true"></div><div class="wrap">''' + why + '''</div></section>
 <section class="sec"><div class="wrap">''' + review + '''</div></section>
-''' + band('Got a car in mind?', 'Tell me the car and the idea. I\'ll come back with options and a price.'), 'Home B · task-led', 'Homepage (A/B test)')
+''' + startform, 'Home B · task-led', 'Homepage (A/B test)')
 
     for g, n, sl in GROUPS: hub_page(g, n, sl)
     for g, n, sl in GROUPS:
