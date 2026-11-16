@@ -34,3 +34,5 @@ _Agreed 8 Nov 2026. Source media: Dani's Google Drive folders (see `website-migr
 ## Tracking
 - A media log (`docs/design-build/media-log.md`, created when media is first used): original Drive file → new name,
   alt text, page used on, privacy check done.
+
+- **Plate blur (16 Nov 2026, Dani):** blur only the plate itself, following its outline (perspective included), soft 1 px edge; never a big box over the car. Hypa can appear in photos; customers still not.

@@ -59,3 +59,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - 2026-11-14 — **Content direction change (Dani):** storytelling over price lists; prices low-key; focus on quality, passion, "no limits / anything can happen"; signature projects (Audi A4 silent performer, van roof beacons, red Mini, BMW 1 Series convertible, charity barber motorbike speakers); visible gradient, graffiti/handmade, more photos and video; less text-heavy
 
 - **16 Nov 2026:** Keep the label **Builds** (not "Projects"): Dani prefers it. WhatsApp floating button in the **logo red gradient** with the WhatsApp icon (not WhatsApp green). Round 3 storytelling plan (`docs/design-thinking/plan-storytelling.md`) approved with these changes.
+- **16 Nov 2026:** Hypa's face can be shown on the site. Number plates are blurred neatly, plate only (not a box over the car).

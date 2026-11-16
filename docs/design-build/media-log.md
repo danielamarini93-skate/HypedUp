@@ -50,17 +50,17 @@ Contact sheet: `docs/design-build/media-round3-contact-sheet.jpg`. Not used: car
 | bmw-e88-dash-stripped.jpg | IMG_0675 | Own BMW E88: dash stripped | Background plate blurred | Builds: E88 |
 | bmw-e88-screen.jpg | IMG_0685 | E88: new screen + reverse camera | n/a | Builds: E88, CarPlay, reverse cams |
 | bmw-e88-boot.jpg | IMG_0682 | E88 convertible, boot open, wiring | n/a | Builds: E88 |
-| bmw-e88-fibreglass.jpg | IMG_1750 | E88 fibreglass boot enclosure mould | Passer-by + car in background blurred | Builds: E88, custom builds |
+| bmw-e88-fibreglass.jpg | IMG_1750 | E88 fibreglass boot enclosure mould | Background plate blurred | Builds: E88, custom builds |
 | bmw-e88-interior.jpg | IMG_0669 | E88 cabin, Hyped Up keyring | n/a | Builds: E88 |
 | mini-carplay-before.jpg / -after.jpg | Drive 091ceec8 / 9ca4b721 | Mini dash before / after CarPlay (text baked in) | n/a | CarPlay before/after slider |
-| mini-opening-night.jpg | IMG_4843 | Red Mini + R6 inside the unit | Own car; **person's face small: check** | About / Home |
+| mini-opening-night.jpg | IMG_4843 | Red Mini + R6 inside the unit | Own car; Hypa (OK to show) | About / Home |
 | unit-r6.jpg | IMG_5320 | R6 at the unit entrance under the sign | n/a | Contact, Motorbikes |
 | helmet.jpg | IMG_8808 | Helmet with iridium visor, mural | n/a | Motorbikes |
 | calipers-m.jpg | IMG_5422 | Calipers painted red | n/a | Wheel refurb & calipers |
 | bmw-ambient-blue.jpg | IMG_5564 | BMW ambient lighting, blue | n/a | Ambient lighting |
 | skyline-r34.jpg | IMG_6343 | Skyline R34, bonnet up | **Plate blurred** | Performance, Builds |
 | subaru-camo-wrap.jpg | IMG_0277 | Subaru camo graphics, mural above | n/a | Wrapping, Builds |
-| subaru-wrap-fitting.jpg | IMG_0242 | Subaru graphics going on | **Face visible: check (Hypa?)** | Wrapping |
+| subaru-wrap-fitting.jpg | IMG_0242 | Subaru graphics going on | Hypa (OK to show) | Wrapping |
 | workshop-floor.jpg | IMG_0307 | Unit wide: mural, Subaru, R6 | Plate blurred; people small | Home / About background |
 | r8-mural-pioneer.jpg | Drive c3989623 | R8 + Pioneer box, mural | Show plate | CarPlay, Builds |
 | merc-dashcam.jpg | Drive e0883a6d | E-Class + Thinkware dash cam | Show plate | Dash cams |
@@ -69,3 +69,5 @@ Contact sheet: `docs/design-build/media-round3-contact-sheet.jpg`. Not used: car
 | mini-r56-fitting.jpg | IMG_9034 | Mini convertible, screen being fitted | Plate through window blurred | CarPlay |
 | hyped-sticker.jpg | IMG_8407 | Hyped Up sticker on gloss black, graffiti wall | n/a | Texture / footer |
 | minibus-signage.jpg | IMG_5733 | Charity minibus lettering | Back of person only | Van signage |
+
+**16 Nov 2026 (Dani):** Hypa's face can be shown everywhere. Plate blur is now **plate-only**: it follows the plate's own outline with a soft 1 px edge, and the car around it stays sharp. Check crops: `docs/design-build/media-round3-plate-blur-check.jpg`.
