@@ -33,3 +33,39 @@ Still to come: the rest of Dani's Drive upload (new `Media` folder has 5 videos 
 | fiat-500-red.jpg | Red Fiat 500 in the workshop | Show plate | Builds |
 | ford-transit-yellow.jpg | Yellow Transit Custom | **Plate blurred** | Builds |
 | mini-cooper-stripes.jpg, mini-dash-in-progress.jpg | Social graphics with text overlays | n/a | Not used (text baked in) |
+
+### Added 16 Nov 2026 (Round 3, storytelling: 31 photos)
+Contact sheet: `docs/design-build/media-round3-contact-sheet.jpg`. Not used: car/bike meet photos (faces + plates), vans with other garages' names (competitor rule).
+
+| Web name | Original (Drive) | What it shows | Privacy | Used on |
+|---|---|---|---|---|
+| a4-grille.jpg | IMG_9873 | Audi A4 (black), front grille | **Plate blurred** | Builds: A4 story |
+| a4-deadening-floor.jpg | IMG_1607 | A4 rear floor stripped and deadened | n/a | Builds: A4, soundproofing |
+| a4-deadening-sheets.jpg | IMG_1606 | Deadening sheets in hand, A4 interior behind | n/a | Soundproofing |
+| a4-deadening-boot.jpg | IMG_1608 | A4 boot fully deadened | n/a | Builds: A4 |
+| a4-air-strut.jpg | IMG_3017 | Prazis air strut, arch deadened (A4) | n/a | Builds: A4, air suspension |
+| bdg-van-beacons.jpg | IMG_9577 | BDG Security van: roof beacon bar, bonnet livery | Show plate | Builds: BDG, beacons, business |
+| bdg-van-rear.jpg | IMG_9578 | BDG van rear, mural behind | Show plate | Builds: BDG, van signage |
+| bdg-van-fitting.jpg | IMG_9566 | BDG lettering being fitted | Back of person only | Van signage |
+| bmw-e88-dash-stripped.jpg | IMG_0675 | Own BMW E88: dash stripped | Background plate blurred | Builds: E88 |
+| bmw-e88-screen.jpg | IMG_0685 | E88: new screen + reverse camera | n/a | Builds: E88, CarPlay, reverse cams |
+| bmw-e88-boot.jpg | IMG_0682 | E88 convertible, boot open, wiring | n/a | Builds: E88 |
+| bmw-e88-fibreglass.jpg | IMG_1750 | E88 fibreglass boot enclosure mould | Passer-by + car in background blurred | Builds: E88, custom builds |
+| bmw-e88-interior.jpg | IMG_0669 | E88 cabin, Hyped Up keyring | n/a | Builds: E88 |
+| mini-carplay-before.jpg / -after.jpg | Drive 091ceec8 / 9ca4b721 | Mini dash before / after CarPlay (text baked in) | n/a | CarPlay before/after slider |
+| mini-opening-night.jpg | IMG_4843 | Red Mini + R6 inside the unit | Own car; **person's face small: check** | About / Home |
+| unit-r6.jpg | IMG_5320 | R6 at the unit entrance under the sign | n/a | Contact, Motorbikes |
+| helmet.jpg | IMG_8808 | Helmet with iridium visor, mural | n/a | Motorbikes |
+| calipers-m.jpg | IMG_5422 | Calipers painted red | n/a | Wheel refurb & calipers |
+| bmw-ambient-blue.jpg | IMG_5564 | BMW ambient lighting, blue | n/a | Ambient lighting |
+| skyline-r34.jpg | IMG_6343 | Skyline R34, bonnet up | **Plate blurred** | Performance, Builds |
+| subaru-camo-wrap.jpg | IMG_0277 | Subaru camo graphics, mural above | n/a | Wrapping, Builds |
+| subaru-wrap-fitting.jpg | IMG_0242 | Subaru graphics going on | **Face visible: check (Hypa?)** | Wrapping |
+| workshop-floor.jpg | IMG_0307 | Unit wide: mural, Subaru, R6 | Plate blurred; people small | Home / About background |
+| r8-mural-pioneer.jpg | Drive c3989623 | R8 + Pioneer box, mural | Show plate | CarPlay, Builds |
+| merc-dashcam.jpg | Drive e0883a6d | E-Class + Thinkware dash cam | Show plate | Dash cams |
+| r8-pioneer-screen.jpg | Drive 57a2f6ce | R8 Pioneer screen fitted | n/a | CarPlay |
+| alfa-headliner.jpg | IMG_9149 | Alfa Stelvio black headliner | n/a | Interiors |
+| mini-r56-fitting.jpg | IMG_9034 | Mini convertible, screen being fitted | Plate through window blurred | CarPlay |
+| hyped-sticker.jpg | IMG_8407 | Hyped Up sticker on gloss black, graffiti wall | n/a | Texture / footer |
+| minibus-signage.jpg | IMG_5733 | Charity minibus lettering | Back of person only | Van signage |
