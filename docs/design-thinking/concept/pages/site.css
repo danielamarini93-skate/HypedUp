@@ -1,6 +1,6 @@
 /* Hyped Up key pages concept · Direction D "Workshop wall" · dark only · logo-red accent.
    Shared by every page. Tokens first, then components, then page sections. Mobile first. */
-@font-face{font-family:"Graffiti City";src:url(fonts/graffiti-city.otf) format("opentype");font-display:swap}
+@font-face{font-family:"Graffiti City";src:url(fonts/graffiti-city.woff2) format("woff2"),url(fonts/graffiti-city.otf) format("opentype");font-display:block}  /* woff2 subset 79 KB, preloaded; block = never flash the plain fallback */
 :root{
   color-scheme:dark;
   --bg:#0d0c0c; --panel:#141212; --card:#1a1717; --rule:rgba(242,238,233,.14); --rule2:rgba(242,238,233,.28);

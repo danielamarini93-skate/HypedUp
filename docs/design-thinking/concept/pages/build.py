@@ -23,7 +23,7 @@ def head(title, desc, name=''):
     desc = DESCS.get(name[:-5], desc)
     title, desc = _html.escape(_html.unescape(title)), _html.escape(_html.unescape(desc))
     return ('<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            '<title>%s</title><meta name="description" content="%s">%s<link rel="stylesheet" href="site.css"></head><body>' % (title, desc, FONTS))
+            '<title>%s</title><meta name="description" content="%s">%s<link rel="preload" href="fonts/graffiti-city.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="site.css"></head><body>' % (title, desc, FONTS))
 
 def header(cur):
     groups = ''.join('<div class="dd"><button type="button" aria-expanded="false" aria-controls="dd-%s"%s>%s{{lu:chevron-down}}</button><ul class="ddp" id="dd-%s" hidden>%s</ul></div>'
@@ -167,6 +167,7 @@ def build():
     shutil.copy(os.path.join(HERE, '..', 'assets', 'paint', '318600.svg'), OUT + '/img/circle.svg')
     for m in ['hand-underline']: shutil.copy(os.path.join(HERE, '..', 'assets', 'paint', m + '.svg'), OUT + '/img/' + m + '.svg')
     shutil.copy(S + '/fz/graffiti_city/Graffiti City.otf', OUT + '/fonts/graffiti-city.otf')
+    shutil.copy(os.path.join(HERE, '..', 'assets', 'fonts', 'graffiti-city.woff2'), OUT + '/fonts/graffiti-city.woff2')
     for f in ['site.css', 'site.js']: shutil.copy(os.path.join(HERE, f), OUT + '/' + f)
 
     strip = ''.join('<a href="%s"><b>%s</b><p>%s</p></a>' % (h(g), n, t) for (g, n, _), t in zip(GROUPS,
