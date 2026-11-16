@@ -1,6 +1,8 @@
 # Plan: Round 3, storytelling rewrite (draft for Dani's OK)
 
-_14 Nov 2026. Responds to Dani's feedback: too much price and keyword copy, too editorial and text-heavy, not enough photos,
+_14 Nov 2026 · **Approved 16 Nov** with changes: keep the label "Builds"; WhatsApp button in red; Audi = A4 black; fibreglass mould = BMW E88; van = BDG; barber speakers WIP (no photos)._
+
+_ Responds to Dani's feedback: too much price and keyword copy, too editorial and text-heavy, not enough photos,
 graffiti/handmade marks or visible gradient. The site map and IA v2 stay as they are. What changes is how the content is told._
 
 ## What changes
@@ -19,8 +21,8 @@ graffiti/handmade marks or visible gradient. The site map and IA v2 stay as they
 - **About** becomes a full story page: Astra → McLaren → Hyped Up, then "what I believe" (listen first, any car, no limits,
   done properly).
 
-### 2. Projects (the 5 signature builds)
-Builds becomes **Projects**. Each project gets its own story card on the Projects page, with *what they wanted → what I did →
+### 2. Builds: the 5 signature projects
+Builds keeps its name (Dani, 16 Nov). Each project gets its own story card on the Builds page, with *what they wanted → what I did →
 the result*. Every story gets a photo strip and a handwritten note. The projects are also linked from the matching service
 pages.
 | Project | Services it proves | Photos found so far |
