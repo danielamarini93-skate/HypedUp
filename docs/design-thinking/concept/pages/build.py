@@ -174,7 +174,7 @@ def build():
             ['Ghost, trackers, alarms, dash cams', 'CarPlay, audio, remaps, lighting', 'Wraps, PPF, tint, air, wheels, plates']))
     # Builds first: the four signature stories
     feat = [('porsche.jpg', 'Classic Porsche 911', 'Old shape, new colour', 'Air-cooled icon, wrapped. Prep is the job: clean edges, no lifting, no shortcuts.', 'Classic Porsche 911 in dark blue with yellow headlights outside the Hyped Up unit'),
-            ('r6-grass.jpg', 'Yamaha R6', 'Two wheels, same standards', 'Bikes get the full treatment: trackers, alarms, audio and graphics.', 'Black Yamaha R6 with yellow and orange R6 graphics, shot low on a sunny day'),
+            ('alfa-stelvio-pink.jpg', 'Alfa Romeo Stelvio Quadrifoglio', '', 'Matte pink wrap, white wheels, yellow calipers. Nobody forgets this one.', 'Matte pink Alfa Romeo Stelvio Quadrifoglio with white wheels and yellow brake calipers outside the Hyped Up unit'),
             ('civic.jpg', 'Honda Civic Type R', 'Loud on purpose', 'Bright yellow, big wing, zero subtlety. Exactly how the owner wanted it.', 'Yellow Honda Civic Type R with the bonnet up inside the workshop'),
             ('bentley-unit.jpg', 'Bentley Flying Spur', 'Two-tone', 'Silver over black: the classic coachbuilt look on a Flying Spur.', 'Two-tone silver and black Bentley Flying Spur outside the Hyped Up unit')]
     recent = '<div class="bfeat">' + ''.join('<a class="bcard%s" href="builds.html">%s<div class="bcap"><h3>%s</h3><p>%s</p></div></a>'
@@ -265,7 +265,7 @@ def build():
                 '<section class="sec"><div class="wrap"><div class="sec-head"><h2>What we fit</h2></div><div class="cards">%s</div></div></section>') % (h1, lead, media(img, alt, 'a bike in the workshop', lazy=False), rows)
         page(file, title, desc, '', body + band('What do you ride or drive?', 'Send us the make and model. We\'ll tell you what\'s worth fitting, and what isn\'t.'), label, 'Audience hubs')
     audience('motorbikes.html', 'Motorbike Security, Wraps & Remaps in London | Hyped Up', 'Motorbike security, trackers, wraps and remaps in Bermondsey, South London: Ghost for bikes, Datatool S5 trackers, bike alarms and wraps from £900.',
-             'Motorbikes', 'A bike can be lifted into a van in under a minute, so an immobiliser alone isn\'t enough: it needs a tracker too. We also wrap and remap bikes.', None, '',
+             'Motorbikes', 'A bike can be lifted into a van in under a minute, so an immobiliser alone isn\'t enough: it needs a tracker too. We also wrap and remap bikes.', 'r6-grass.jpg', 'Black Yamaha R6 with yellow and orange graphics, shot low on a sunny day',
              [('Ghost for motorbikes', 'PIN on the bike\'s own buttons.', 'from £400', 'ghost-immobiliser.html', None, 'a bike Ghost fit'), ('Datatool S5 tracker', 'Hidden under the seat, monitored 24/7.', 'from £395', 'car-trackers.html', None, 'a bike tracker'),
               ('Bike alarms', 'Siren with motion and shock sensors.', 'on enquiry', 'car-alarms.html', None, 'a bike alarm'), ('Motorbike wraps', 'Mopeds, nakeds and super sports.', 'from £900', 'car-wrapping.html', None, 'a bike wrap'),
               ('Bike remaps', 'More response, done safely.', 'on enquiry', 'remapping.html', None, 'a bike remap')], 'Motorbikes')
