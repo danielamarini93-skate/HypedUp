@@ -173,12 +173,12 @@ def build():
     strip = ''.join('<a href="%s"><b>%s</b><p>%s</p></a>' % (h(g), n, t) for (g, n, _), t in zip(GROUPS,
             ['Ghost, trackers, alarms, dash cams', 'CarPlay, audio, remaps, lighting', 'Wraps, PPF, tint, air, wheels, plates']))
     # Builds first: the four signature stories
-    feat = [('porsche.jpg', 'Porsche 911, classic', 'Old shape, new colour', 'Air-cooled icon, wrapped. Prep is the job: clean edges, no lifting, no shortcuts.', 'Classic Porsche 911 in dark blue with yellow headlights outside the Hyped Up unit'),
+    feat = [('porsche.jpg', 'Classic Porsche 911', 'Old shape, new colour', 'Air-cooled icon, wrapped. Prep is the job: clean edges, no lifting, no shortcuts.', 'Classic Porsche 911 in dark blue with yellow headlights outside the Hyped Up unit'),
             ('r6-grass.jpg', 'Yamaha R6', 'Two wheels, same standards', 'Bikes get the full treatment: trackers, alarms, audio and graphics.', 'Black Yamaha R6 with yellow and orange R6 graphics, shot low on a sunny day'),
             ('civic.jpg', 'Honda Civic Type R', 'Loud on purpose', 'Bright yellow, big wing, zero subtlety. Exactly how the owner wanted it.', 'Yellow Honda Civic Type R with the bonnet up inside the workshop'),
             ('bentley-unit.jpg', 'Bentley Flying Spur', 'Two-tone', 'Silver over black: the classic coachbuilt look on a Flying Spur.', 'Two-tone silver and black Bentley Flying Spur outside the Hyped Up unit')]
-    recent = '<div class="bfeat">' + ''.join('<a class="bcard%s" href="builds.html">%s<div class="bcap"><span class="mono">%s</span><h3>%s</h3><p>%s</p></div></a>'
-             % (' big' if i == 0 else '', media(img, alt, cls='media'), car, t, l) for i, (img, car, t, l, alt) in enumerate(feat)) + '</div>'
+    recent = '<div class="bfeat">' + ''.join('<a class="bcard%s" href="builds.html">%s<div class="bcap"><h3>%s</h3><p>%s</p></div></a>'
+             % (' big' if i == 0 else '', media(img, alt, cls='media'), car, l) for i, (img, car, t, l, alt) in enumerate(feat)) + '</div>'
     # Highlight services: four big tiles, photo-led, no prices
     hl = [('security', 'Trackers & immobilisers', 'Ghost immobiliser: no code, no start, even with your key. MetaTrak tracker: you see where it is, from your phone.', 'alfa-keys-wheel.jpg', 'Alfa Romeo steering wheel with a MetaTrak tag on the keys'),
           ('carplay', 'CarPlay & screens', 'Wireless CarPlay and Android Auto on screens that look factory. Reverse cameras wired in clean.', 'r8-pioneer-screen.jpg', 'Audi R8 dashboard with a new Pioneer CarPlay screen'),
@@ -228,7 +228,7 @@ def build():
   <div class="strip" style="margin-top:32px">''' + strip + '''</div>
 </div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Builds</h2><a class="link" href="builds.html">See all builds {{lu:arrow-right}}</a></div>''' + recent + '''</div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>What we're known for</h2><a class="link" href="styling.html">All services {{lu:arrow-right}}</a></div>''' + highlights + '''</div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>Our services</h2><a class="link" href="styling.html">All services {{lu:arrow-right}}</a></div>''' + highlights + '''</div></section>
 <section class="whysec"><div class="whybg" aria-hidden="true"></div><div class="wrap">''' + why + '''</div></section>
 <section class="sec"><div class="wrap">''' + review + '''</div></section>
 ''' + startform, 'Home A · brand-led', 'Homepage (A/B test)')
