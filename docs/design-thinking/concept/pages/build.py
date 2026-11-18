@@ -220,7 +220,7 @@ def build():
   <div class="grid">
     <div class="copy">
       <h1>Protect it.<br>Upgrade it.<span class="wet">Style it.</span></h1>
-      <p class="lead">Security, screens, audio, wraps and air ride for cars and bikes. Built in Bermondsey by people who mod their own.</p>
+      <p class="lead">Security, screens, audio, wraps and air ride for cars and bikes. Built in London by Hypa, modding cars since the early 2000s.</p>
       <div class="act"><a class="pill" href="contact.html">Contact us</a><span class="mono">Unit 22, Bolina Rd<br>SE16 3LF</span></div>
     </div>
     <figure><div class="media vig"><video src="img/hero.mp4" poster="img/poster.jpg" autoplay muted loop playsinline aria-label="Short silent reel of work inside the Hyped Up workshop"></video></div><figcaption class="mono" style="text-align:right">@hypedup.ltd</figcaption></figure>
@@ -242,7 +242,7 @@ def build():
   <div class="copy" style="max-width:900px">
     <span class="mono">Bermondsey, South London · 5.0 on Google <span class="tbc">(47 reviews, Maps)</span></span>
     <h1>Car and bike security, upgrades and <span class="wetw">styling</span></h1>
-    <p class="lead">Trackers, screens, audio, wraps and air ride, built at Unit 22 by people who mod their own. Pick a category.</p>
+    <p class="lead">Security, screens, audio, wraps and air ride. Built in London by Hypa, modding cars since the early 2000s. Pick a category.</p>
   </div>
   <div class="finder"><div class="ftabs" role="tablist" aria-label="Service groups">''' + tabs + '</div>' + panels + '''</div>
   <div class="act"><a class="pill" href="contact.html">Contact us</a><a class="link" href="builds.html">See the work {{lu:arrow-right}}</a></div>

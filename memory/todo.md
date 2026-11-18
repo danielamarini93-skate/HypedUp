@@ -69,3 +69,4 @@ _Last updated: 14 Nov 2026 · Tick items off (`[x]`) or remove them as they're d
 - [ ] Hypa/Dani: pick one of the best Google reviews, paste it word for word in `docs/design-thinking/concept/pages/content.py` (REVIEWS), and swap it every 2–3 months (add a new line with the start date). Confirm the rating and count (5.0 / 47 on 9 Nov). Live build: pull it automatically from Google if possible.
 - [ ] Hypa: OK the trust bar claims ("20+ yrs modifying cars", "McLaren: where Hypa learned the craft").
 - [ ] Hypa: captions for the homepage builds: what was done on the classic 911 (full wrap? colour?), the yellow Civic Type R, the two-tone Bentley (wrap or paint?). Is the pink car an Abarth 595 or an Alfa? Higher-res photos of the 911 and Civic (current ones 540 px).
+- [ ] Hypa: exact year he started modding (Dani suggested 2002; memory says early 2000s, first Astra) for the hero line.
