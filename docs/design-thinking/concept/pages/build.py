@@ -180,7 +180,7 @@ def build():
     recent = '<div class="bfeat">' + ''.join('<a class="bcard%s" href="builds.html">%s<div class="bcap"><span class="mono">%s</span><h3>%s</h3><p>%s</p></div></a>'
              % (' big' if i == 0 else '', media(img, alt, cls='media'), car, t, l) for i, (img, car, t, l, alt) in enumerate(feat)) + '</div>'
     # Highlight services: four big tiles, photo-led, no prices
-    hl = [('ghost-immobiliser', 'Ghost immobiliser', 'Your car won\'t start without your code. No key fob for thieves to clone.', 'alfa-keys-wheel.jpg', 'Alfa Romeo steering wheel and keys'),
+    hl = [('security', 'Trackers & immobilisers', 'Ghost immobiliser: it won\'t start without your code. MetaTrak tracker: if it moves, you know where it is.', 'alfa-keys-wheel.jpg', 'Alfa Romeo steering wheel, start button and keys'),
           ('carplay', 'CarPlay & screens', 'Big, clean screens that look factory, with wireless CarPlay and reverse cameras.', 'r8-pioneer-screen.jpg', 'Audi R8 dashboard with a new Pioneer CarPlay screen'),
           ('car-wrapping', 'Wraps & graphics', 'Colour changes, camo, stripes, logos. Designed with you, fitted by hand.', 'subaru-camo-wrap.jpg', 'Subaru with grey camo graphics under the workshop mural'),
           ('air-suspension', 'Air suspension', 'Low when you park, up for speed bumps. Tank and compressor placed so you never hear them.', 'mini-jcw-low.jpg', 'Red Mini JCW sitting low on air suspension')]
