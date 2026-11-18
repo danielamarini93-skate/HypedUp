@@ -173,10 +173,10 @@ def build():
     strip = ''.join('<a href="%s"><b>%s</b><p>%s</p></a>' % (h(g), n, t) for (g, n, _), t in zip(GROUPS,
             ['Ghost, trackers, alarms, dash cams', 'CarPlay, audio, remaps, lighting', 'Wraps, PPF, tint, air, wheels, plates']))
     # Builds first: the four signature stories
-    feat = [('a4-deadening-boot.jpg', 'Audi A4', 'The silent performer', 'Stripped to the shell and soundproofed, with air suspension that makes no noise inside.', 'The boot of a black Audi A4 lined with silver sound-deadening sheets'),
-            ('bdg-van-beacons.jpg', 'BDG Security van', 'Ready for work', 'Roof beacon bar and full livery for a friend\'s security business.', 'BDG Security van with a roof beacon bar and navy and gold livery, mural behind'),
-            ('bmw-e88-fibreglass.jpg', 'BMW 1 Series E88', 'Our next build', 'Custom fibreglass boot enclosure in progress. Wrap and bodykit next.', 'Fibreglass boot enclosure mould wrapped in yellow tape on the workbench'),
-            ('mini-opening-night.jpg', 'Red Mini JCW', 'Our flagship', 'On air every day, the boot rebuilt three times. A new build each season.', 'Hyped Up\'s red Mini JCW and an R6 inside the workshop')]
+    feat = [('porsche.jpg', 'Classic Porsche 911', 'Old shape, new colour', 'A classic 911, wrapped by hand panel by panel.', 'Classic Porsche 911 in dark blue with yellow headlights outside the Hyped Up unit'),
+            ('abarth-pink-wrap.jpg', 'Abarth 595', 'Pink all over', 'Full pink wrap with gold wheels. Nobody misses it.', 'Pink Abarth 595 with gold wheels'),
+            ('civic.jpg', 'Honda Civic Type R', 'Yellow and loud', 'A bright yellow Type R in the workshop.', 'Yellow Honda Civic Type R with the bonnet up inside the workshop'),
+            ('bentley-unit.jpg', 'Bentley Flying Spur', 'Two-tone', 'Silver over black: a bicolour finish on a Flying Spur.', 'Two-tone silver and black Bentley Flying Spur outside the Hyped Up unit')]
     recent = '<div class="bfeat">' + ''.join('<a class="bcard%s" href="builds.html">%s<div class="bcap"><span class="mono">%s</span><h3>%s</h3><p>%s</p></div></a>'
              % (' big' if i == 0 else '', media(img, alt, cls='media'), car, t, l) for i, (img, car, t, l, alt) in enumerate(feat)) + '</div>'
     # Highlight services: four big tiles, photo-led, no prices

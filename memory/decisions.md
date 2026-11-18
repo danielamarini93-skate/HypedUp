@@ -65,3 +65,4 @@ Append new decisions at the bottom: `- YYYY-MM-DD — decision — why`.
 - **16 Nov 2026 (Dani):** Graffiti City used as decoration: step and reason numbers (1 2 3) and one spray word per heading. Hand-drawn **arrow and long lines removed**; only the hand-drawn **circle and underline** stay. WhatsApp floating button now the logo red gradient.
 - **18 Nov 2026 (Dani):** Home B hero gets the graffiti word ("styling" in Graffiti City, red gradient) and the workshop mural photo faded behind it.
 - **18 Nov 2026 (Dani):** Home A hero: "Find us" circle label removed; only the address sits next to Contact us.
+- **18 Nov 2026 (Dani):** Homepage Builds = 4 cool cars: wrapped classic Porsche 911, pink car (Abarth 595 photo: Dani said "Alfa", to confirm), yellow Civic Type R, two-tone Bentley Flying Spur. The A4/BDG/E88/Mini stories move to the Builds page.
