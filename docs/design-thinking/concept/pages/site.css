@@ -519,3 +519,5 @@ figcaption{margin-top:8px}
 .herobg::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,var(--bg) 0%,rgba(13,12,12,.85) 40%,rgba(13,12,12,.25) 100%),linear-gradient(180deg,rgba(13,12,12,0) 55%,var(--bg) 100%)}
 .herob h1 .wetw{font-size:1.18em;line-height:.8;display:inline-block}
 @media (max-width:759px){.herobg::after{background:linear-gradient(180deg,rgba(13,12,12,.6) 0%,rgba(13,12,12,.85) 55%,var(--bg) 100%)}}
+.rvfull summary{cursor:pointer;font-weight:600;color:var(--body2)}.rvfull p{margin:10px 0 0;color:var(--body2);max-width:70ch}
+.bfeat .bcard:nth-child(2) .media img{object-position:center 62%}

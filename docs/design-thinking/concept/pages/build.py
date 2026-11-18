@@ -173,26 +173,26 @@ def build():
     strip = ''.join('<a href="%s"><b>%s</b><p>%s</p></a>' % (h(g), n, t) for (g, n, _), t in zip(GROUPS,
             ['Ghost, trackers, alarms, dash cams', 'CarPlay, audio, remaps, lighting', 'Wraps, PPF, tint, air, wheels, plates']))
     # Builds first: the four signature stories
-    feat = [('porsche.jpg', 'Classic Porsche 911', 'Old shape, new colour', 'A classic 911, wrapped by hand panel by panel.', 'Classic Porsche 911 in dark blue with yellow headlights outside the Hyped Up unit'),
-            ('abarth-pink-wrap.jpg', 'Abarth 595', 'Pink all over', 'Full pink wrap with gold wheels. Nobody misses it.', 'Pink Abarth 595 with gold wheels'),
-            ('civic.jpg', 'Honda Civic Type R', 'Yellow and loud', 'A bright yellow Type R in the workshop.', 'Yellow Honda Civic Type R with the bonnet up inside the workshop'),
-            ('bentley-unit.jpg', 'Bentley Flying Spur', 'Two-tone', 'Silver over black: a bicolour finish on a Flying Spur.', 'Two-tone silver and black Bentley Flying Spur outside the Hyped Up unit')]
+    feat = [('porsche.jpg', 'Porsche 911, classic', 'Old shape, new colour', 'Air-cooled icon, wrapped. Prep is the job: clean edges, no lifting, no shortcuts.', 'Classic Porsche 911 in dark blue with yellow headlights outside the Hyped Up unit'),
+            ('r6-grass.jpg', 'Yamaha R6', 'Two wheels, same standards', 'Bikes get the full treatment: trackers, alarms, audio and graphics.', 'Black Yamaha R6 with yellow and orange R6 graphics, shot low on a sunny day'),
+            ('civic.jpg', 'Honda Civic Type R', 'Loud on purpose', 'Bright yellow, big wing, zero subtlety. Exactly how the owner wanted it.', 'Yellow Honda Civic Type R with the bonnet up inside the workshop'),
+            ('bentley-unit.jpg', 'Bentley Flying Spur', 'Two-tone', 'Silver over black: the classic coachbuilt look on a Flying Spur.', 'Two-tone silver and black Bentley Flying Spur outside the Hyped Up unit')]
     recent = '<div class="bfeat">' + ''.join('<a class="bcard%s" href="builds.html">%s<div class="bcap"><span class="mono">%s</span><h3>%s</h3><p>%s</p></div></a>'
              % (' big' if i == 0 else '', media(img, alt, cls='media'), car, t, l) for i, (img, car, t, l, alt) in enumerate(feat)) + '</div>'
     # Highlight services: four big tiles, photo-led, no prices
-    hl = [('security', 'Trackers & immobilisers', 'Ghost immobiliser: it won\'t start without your code. MetaTrak tracker: if it moves, you know where it is.', 'alfa-keys-wheel.jpg', 'Alfa Romeo steering wheel, start button and keys'),
-          ('carplay', 'CarPlay & screens', 'Big, clean screens that look factory, with wireless CarPlay and reverse cameras.', 'r8-pioneer-screen.jpg', 'Audi R8 dashboard with a new Pioneer CarPlay screen'),
-          ('car-wrapping', 'Wraps & graphics', 'Colour changes, camo, stripes, logos. Designed with you, fitted by hand.', 'subaru-camo-wrap.jpg', 'Subaru with grey camo graphics under the workshop mural'),
-          ('air-suspension', 'Air suspension', 'Low when you park, up for speed bumps. Tank and compressor placed so you never hear them.', 'mini-jcw-low.jpg', 'Red Mini JCW sitting low on air suspension')]
+    hl = [('security', 'Trackers & immobilisers', 'Ghost immobiliser: no code, no start, even with your key. MetaTrak tracker: you see where it is, from your phone.', 'alfa-keys-wheel.jpg', 'Alfa Romeo steering wheel with a MetaTrak tag on the keys'),
+          ('carplay', 'CarPlay & screens', 'Wireless CarPlay and Android Auto on screens that look factory. Reverse cameras wired in clean.', 'r8-pioneer-screen.jpg', 'Audi R8 dashboard with a new Pioneer CarPlay screen'),
+          ('car-wrapping', 'Wraps & graphics', 'Colour changes, camo, stripes, logos. A full wrap takes at least a week, because the prep is the job.', 'subaru-camo-wrap.jpg', 'Subaru with grey camo graphics under the workshop mural'),
+          ('air-suspension', 'Air suspension', 'Air Lift and Prazis. Slammed when parked, up for speed bumps, tank and compressor where you never hear them.', 'mini-jcw-low.jpg', 'Red Mini JCW sitting low on air suspension')]
     highlights = '<div class="hl">' + ''.join('<a class="hltile" href="%s">%s<div class="hlcap"><h3>%s</h3><p>%s</p><span class="link">Find out more {{lu:arrow-right}}</span></div></a>' % (h(s), media(img, alt, cls='media'), n, l)
                  for s, n, l, img, alt in hl) + '</div>'
     # Why Hyped Up: trust bar + four reasons with graffiti numerals
     trust = '<ul class="trustbar"><li><b>%s ★</b><span>%s Google reviews</span></li><li><b>20+ yrs</b><span>modifying cars</span></li><li><b>McLaren</b><span>where Hypa learned the craft</span></li><li><b>SE16</b><span>our own workshop, Unit 22</span></li></ul>' % GOOGLE_RATING
-    reasons = [('I listen first', 'Every job starts with your car and your idea. Nothing is off the shelf: it\'s built around you.'),
-               ('Any car, no limits', 'A city runabout or a supercar, a van or a bike. If you can imagine it, I\'ll find a way.'),
-               ('Done properly', 'The right parts, wiring you\'ll never see, and the standards I learned at McLaren.'),
-               ('A straight price', 'You know what it costs and how long it takes before anything starts.')]
-    why = ('<div class="whyhead"><span class="mono">Why Hyped Up</span><h2>Passion you can <span class="wetw">see</span></h2></div>' + trust +
+    reasons = [('We listen first', 'Tell us the car and the idea. We build the plan around it, not around a package.'),
+               ('Any car, any bike', 'First cars, supercars, vans, R6s. If it moves, we can mod it.'),
+               ('McLaren standards', 'Hypa learned the trade at McLaren. Wiring loomed and hidden, trims back on clean, everything tested.'),
+               ('Straight answers', 'The price, the timeline and the honest pros and cons, before a single panel comes off.')]
+    why = ('<div class="whyhead"><span class="mono">Why Hyped Up</span><h2>Built by people who <span class="wetw">build</span></h2></div>' + trust +
            '<ol class="reasons">' + ''.join('<li><span class="gnum" aria-hidden="true">%d</span><h3>%s</h3><p>%s</p></li>' % (i + 1, t, d) for i, (t, d) in enumerate(reasons)) + '</ol>')
     # Google review: newest entry whose start date has passed (rotate every 2–3 months in content.py)
     import datetime
@@ -200,7 +200,7 @@ def build():
     rv = [r for r in REVIEWS if r['from'] <= today][-1]
     stars = '<span class="stars" aria-label="5 out of 5 stars">★★★★★</span>'
     if rv['text']:
-        quote = '<blockquote class="rvq"><p>%s</p><footer class="mono">%s · %s · Google</footer></blockquote>' % (rv['text'], rv['name'], rv['service'])
+        quote = '<blockquote class="rvq"><p>%s</p><footer class="mono">%s · %s · Google review</footer></blockquote><details class="rvfull"><summary>Read the full review</summary><p>%s</p></details>' % (rv['text'], rv['name'], rv['service'], rv['full'])
     else:
         quote = '<blockquote class="rvq tbc"><p>[One of the best Google reviews, copied word for word]</p><footer class="mono">First name · Service · Google</footer></blockquote>'
     review = ('<div class="review"><div class="rvhead">%s<span class="mono">%s on Google · %s reviews</span></div>%s'
@@ -220,7 +220,7 @@ def build():
   <div class="grid">
     <div class="copy">
       <h1>Protect it.<br>Upgrade it.<span class="wet">Style it.</span></h1>
-      <p class="lead">South London's one-stop workshop for car and bike security, upgrades and styling. Fitted properly, priced clearly.</p>
+      <p class="lead">Security, screens, audio, wraps and air ride for cars and bikes. Built in Bermondsey by people who mod their own.</p>
       <div class="act"><a class="pill" href="contact.html">Contact us</a><span class="mono">Unit 22, Bolina Rd<br>SE16 3LF</span></div>
     </div>
     <figure><div class="media vig"><video src="img/hero.mp4" poster="img/poster.jpg" autoplay muted loop playsinline aria-label="Short silent reel of work inside the Hyped Up workshop"></video></div><figcaption class="mono" style="text-align:right">@hypedup.ltd</figcaption></figure>
@@ -242,7 +242,7 @@ def build():
   <div class="copy" style="max-width:900px">
     <span class="mono">Bermondsey, South London · 5.0 on Google <span class="tbc">(47 reviews, Maps)</span></span>
     <h1>Car and bike security, upgrades and <span class="wetw">styling</span></h1>
-    <p class="lead">Fitted properly, priced clearly, by Hypa and the team at Unit 22. Pick what you need.</p>
+    <p class="lead">Trackers, screens, audio, wraps and air ride, built at Unit 22 by people who mod their own. Pick a category.</p>
   </div>
   <div class="finder"><div class="ftabs" role="tablist" aria-label="Service groups">''' + tabs + '</div>' + panels + '''</div>
   <div class="act"><a class="pill" href="contact.html">Contact us</a><a class="link" href="builds.html">See the work {{lu:arrow-right}}</a></div>

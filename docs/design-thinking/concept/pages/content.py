@@ -435,5 +435,7 @@ STEPS = {
 GOOGLE_REVIEWS_URL = 'https://www.google.com/maps?cid=1418041190124790308'
 GOOGLE_RATING = ('5.0', '47')  # Maps, 9 Nov 2026: update when it changes
 REVIEWS = [
-    {'from': '2026-11-01', 'text': '', 'name': '', 'service': ''},  # TBC: Hypa picks the first one
+    {'from': '2026-11-01', 'name': 'Win Win', 'service': 'Bodykit fitting', 'source': 'Google, about 3 months before 18 Nov 2026',
+     'full': "Last week I had my front splitter, front grille, side skirts, rear diffuser and rear spoiler installed at Hyped Up Ltd. The service here is extremely professional, with great attention paid to every tiny detail for vehicle modification. Every body panel fits seamlessly, all gaps are neatly aligned, and the final finish is flawless. No rushed work at all, and I was kept informed of every step during installation. I am thoroughly delighted with how my car looks after the job, and completely satisfied with the craftsmanship. I would highly recommend this shop for premium bodykit fitting.",
+     'text': 'Every body panel fits seamlessly, all gaps are neatly aligned, and the final finish is flawless. No rushed work at all.'},
 ]
