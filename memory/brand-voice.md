@@ -51,7 +51,7 @@ we're not improvising, and it doesn't read like AI wrote it.
    tank and compressor placement, wiring loomed and hidden, prep before film). Only facts from `memory/` or Hypa; never invent specs.
 3. **Short sentences. Plain words.** Explain jargon in five words or fewer when a first-timer might not know it.
 4. **Assertive, not salesy.** State it; no "we strive to", "high-quality solutions", "one-stop shop", "fitted properly, priced clearly".
-5. **Talk to "you", speak as "we"** (the workshop). Use "I" only for Hypa's own story and quotes (About, builds he narrates). _TBC Dani._
+5. **Talk to "you", speak as "we"** (the workshop). Use "I" only for Hypa's own story and quotes (About, builds he narrates). FAQ questions stay in the customer's voice ("Can I…?"). _Confirmed by Dani 18 Nov._
 6. **Inclusive range:** any car or bike, cheap or expensive. Name real examples (first cars, vans, R6s, supercars).
 7. **SEO without stuffing:** the service + place keyword once in the H1/lead and once in body ("car wrapping in Bermondsey"), then write for people.
 8. **Honest trade-offs** build trust: say when something isn't worth it, or what it can't do.

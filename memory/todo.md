@@ -70,3 +70,4 @@ _Last updated: 14 Nov 2026 · Tick items off (`[x]`) or remove them as they're d
 - [ ] Hypa: OK the trust bar claims ("20+ yrs modifying cars", "McLaren: where Hypa learned the craft").
 - [ ] Hypa: captions for the homepage builds: what was done on the classic 911 (full wrap? colour?), the yellow Civic Type R, the two-tone Bentley (wrap or paint?). Is the pink car an Abarth 595 or an Alfa? Higher-res photos of the 911 and Civic (current ones 540 px).
 - [ ] Hypa: exact year he started modding (Dani suggested 2002; memory says early 2000s, first Astra) for the hero line.
+- [ ] Hypa: approve the About story wording (Astra, McLaren "every wire, every gap, every bolt", Unit 22) and the new service leads (e.g. Ghost "works through your car's own CAN bus").

@@ -108,7 +108,7 @@ def service_page(slug):
     pbg = v['img'] or 'poster.jpg'
     ppanels = ''.join('<div class="ppanel" role="tabpanel" id="pp-%d" aria-labelledby="pt-%d"%s style="--pbg:url(img/%s)"><span class="ghostword" aria-hidden="true">%s</span><div class="pcopy"><p class="lead">%s</p>'
                       '<a class="link" href="contact.html?service=%s">Ask about this {{lu:arrow-right}}</a></div></div>'
-                      % (i, i, '' if i == 0 else ' hidden', pbg, t.split(' (')[0], d or 'Tell me what you\'re after and I\'ll quote it for your car.', chip)
+                      % (i, i, '' if i == 0 else ' hidden', pbg, t.split(' (')[0], d or 'Tell us what you\'re after and we\'ll quote it for your car.', chip)
                       for i, (t, d) in enumerate(v['options']))
     opts = '<div class="picker" data-picker><div class="ptabs" role="tablist" aria-label="%s options">%s</div><div class="ppanels">%s</div></div>' % (v['name'], ptabs, ppanels)
     steps = ''.join('<li><h3>%s</h3>%s</li>' % (t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(STEPS.get(slug, v['steps'])))
@@ -126,20 +126,20 @@ def service_page(slug):
     <div class="copy">
       <h1>%(name)s</h1>
       <p class="lead">%(lead)s</p>
-      <div class="price"><b class="g">%(price)s</b><span class="mono">%(note)s</span></div>
-      <div class="act"><a class="pill" href="contact.html?service=%(chip)s">Contact us</a></div>
+      <div class="act"><a class="pill" href="contact.html?service=%(chip)s">Contact us</a><span class="ptag">%(price)s</span></div>
+      <p class="pnote">%(note)s</p>
     </div>
     <figure>%(media)s</figure>
   </div>
 </div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Pick your setup</h2></div>%(opts)s</div></section>
-<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How it works</h2><p class="lead">Every job is made to order. I listen to what you want, plan it around your car, and do my best to get it exactly right.</p></div><ol class="timeline">%(steps)s</ol></div></section>
+<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How it works</h2><p class="lead">Every job is made to order. We listen first, plan it around your car, and only start once you're happy with the plan.</p></div><ol class="timeline">%(steps)s</ol></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent work</h2><a class="link" href="builds.html">All builds {{lu:arrow-right}}</a></div>%(proof)s</div></section>
 <section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%(good)s%(faq)s%(makes)s%(blog)s</div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Related</h2><a class="link" href="%(gh)s">All %(gn)s services {{lu:arrow-right}}</a></div><div class="cards">%(rel)s</div></div></section>
 ''' % dict(gh=h(g), gn=GNAME[g], name=v['name'], lead=v['lead'], price=v['price'], note=v['price_note'], chip=chip, media=media(v['img'], v['alt'], v.get('need', ''), lazy=False),
            opts=opts, steps=steps, proof=proof_html, good=good, faq=faq(v['faq']) if v['faq'] else '', makes=makes, blog=blog, rel=rel)
-    page(h(slug), v['title'], v['desc'], g, body + band('Want a price for your car?', 'Send me the make and model. I\'ll come back with options and a straight price.', chip), v['name'], GNAME[g])
+    page(h(slug), v['title'], v['desc'], g, body + band('Want a price for your car?', 'Send us the make and model. We\'ll come back with options and a straight price.', chip), v['name'], GNAME[g])
 
 def hub_page(g, name, slugs):
     d = HUBS[g]
@@ -158,7 +158,7 @@ def hub_page(g, name, slugs):
 <section class="sec"><div class="wrap"><div class="narrow"><div class="vsbox"><span class="mono">Explained</span><h2>%(et)s</h2><p class="lead">%(eb)s</p></div>%(faq)s</div></div></section>
 ''' % dict(img=d['img'], h1=d['h1'], lead=d['lead'], media=media(d['img'], d['alt'], lazy=False), name=name, n=len(slugs), cards=''.join(scard(s) for s in slugs), layers=layers, rows=rows,
            et=d['explainer'][0], eb=d['explainer'][1], faq=faq(d['faq'], False))
-    page(h(g), d['title'], d['desc'], g, body + band('Not sure what your car needs?', 'Send me the make and model. I\'ll tell you what\'s worth doing and what it costs.'), name + ' (hub)', 'Hubs')
+    page(h(g), d['title'], d['desc'], g, body + band('Not sure what your car needs?', 'Send us the make and model. We\'ll tell you what\'s worth doing and what it costs.'), name + ' (hub)', 'Hubs')
 
 def build():
     if os.path.exists(OUT): shutil.rmtree(OUT)
@@ -262,15 +262,15 @@ def build():
     def audience(file, title, desc, h1, lead, img, alt, items, label):
         rows = ''.join('<a class="card" href="%s">%s<div class="row"><h3>%s</h3><span class="from g">%s</span></div><p>%s</p></a>' % (u, media(i, '', nd), t, p, d) for t, d, p, u, i, nd in items)
         body = ('<section class="hero flip"><div class="wrap"><div class="grid"><div class="copy"><h1>%s</h1><p class="lead">%s</p><div class="act"><a class="pill" href="contact.html">Contact us</a></div></div><figure>%s</figure></div></div></section>'
-                '<section class="sec"><div class="wrap"><div class="sec-head"><h2>What I do for you</h2></div><div class="cards">%s</div></div></section>') % (h1, lead, media(img, alt, 'a bike in the workshop', lazy=False), rows)
-        page(file, title, desc, '', body + band('Tell me what you ride or drive', 'I\'ll tell you what\'s worth fitting and what it costs.'), label, 'Audience hubs')
+                '<section class="sec"><div class="wrap"><div class="sec-head"><h2>What we fit</h2></div><div class="cards">%s</div></div></section>') % (h1, lead, media(img, alt, 'a bike in the workshop', lazy=False), rows)
+        page(file, title, desc, '', body + band('What do you ride or drive?', 'Send us the make and model. We\'ll tell you what\'s worth fitting, and what isn\'t.'), label, 'Audience hubs')
     audience('motorbikes.html', 'Motorbike Security, Wraps & Remaps in London | Hyped Up', 'Motorbike security, trackers, wraps and remaps in Bermondsey, South London: Ghost for bikes, Datatool S5 trackers, bike alarms and wraps from £900.',
-             'Motorbikes', 'Bikes get lifted into vans in a minute, so they need tracking as well as an immobiliser. I also wrap and remap them.', None, '',
+             'Motorbikes', 'A bike can be lifted into a van in under a minute, so an immobiliser alone isn\'t enough: it needs a tracker too. We also wrap and remap bikes.', None, '',
              [('Ghost for motorbikes', 'PIN on the bike\'s own buttons.', 'from £400', 'ghost-immobiliser.html', None, 'a bike Ghost fit'), ('Datatool S5 tracker', 'Hidden under the seat, monitored 24/7.', 'from £395', 'car-trackers.html', None, 'a bike tracker'),
               ('Bike alarms', 'Siren with motion and shock sensors.', 'on enquiry', 'car-alarms.html', None, 'a bike alarm'), ('Motorbike wraps', 'Mopeds, nakeds and super sports.', 'from £900', 'car-wrapping.html', None, 'a bike wrap'),
               ('Bike remaps', 'More response, done safely.', 'on enquiry', 'remapping.html', None, 'a bike remap')], 'Motorbikes')
     audience('business.html', 'Fleet Tracking, Taxi Cameras & Van Signage London | Hyped Up', 'For London businesses, taxis and fleets: trackers, TfL-approved taxi cameras, van reverse cameras and sensors, and van signage, fitted in Bermondsey.',
-             'Business &amp; fleet', 'Trackers, cameras and signage for taxis, vans and company cars, fitted around your working day.', 'ford-transit-yellow.jpg', 'Yellow Ford Transit Custom van in the workshop',
+             'Business &amp; fleet', 'Trackers, TfL-approved cameras and signage for taxis, vans and company cars. Booked around your working day, so the vehicle earns while it waits.', 'ford-transit-yellow.jpg', 'Yellow Ford Transit Custom van in the workshop',
              [('Fleet trackers', 'Know where every vehicle is.', 'from £395', 'car-trackers.html', 'tracker.jpg', ''), ('TfL taxi cameras', 'Approved systems for cabs and PHVs.', 'from £395', 'taxi-cameras.html', 'wrap.jpg', ''),
               ('Van cameras and sensors', 'Reverse cameras and parking sensors.', 'from £125', 'reverse-cameras.html', None, 'a van camera'), ('Van signage and livery', 'Your logo on the road.', 'on enquiry', 'van-signage.html', 'ford-transit-yellow.jpg', ''),
               ('Dash cams', 'Front, rear and 3-channel for drivers.', 'from £125', 'dash-cams.html', 'dashcam.jpg', '')], 'Business & fleet')
@@ -279,14 +279,14 @@ def build():
     figs = ''.join('<figure data-tags="%s"><div class="media vig"><img src="img/%s" alt="%s" loading="lazy"></div><figcaption><b>%s</b><span class="mono">%s</span></figcaption></figure>' % (t, i, a, n, w) for i, n, w, t, a in BUILDS)
     page('builds.html', 'Builds: Wraps, Air Suspension, CarPlay & More | Hyped Up', 'Real cars and bikes from the Hyped Up workshop in Bermondsey: wraps, air suspension, CarPlay, audio, lighting and security installs. See the work, then contact us.', 'Builds', '''
 <section class="hero"><div class="wrap" style="display:grid;gap:22px">
-  <h1>Builds</h1><p class="lead">Real work from the workshop: security, upgrades and styling.</p>
+  <h1>Builds</h1><p class="lead">Real cars and bikes from Unit 22, from first cars to supercars. Filter by what you're into.</p>
   <div class="feature" style="margin-top:12px"><figure>''' + media('workshop.jpg', "Hyped Up's red Mini JCW in front of the workshop mural", lazy=False) + '''</figure>
     <div style="display:grid;gap:12px;justify-items:start"><span class="mono">Our own car</span><h2>Mini JCW</h2><p class="lead">Air Lift 3P, wheels and styling, daily driven for over four years. <span class="tbc">(Spec TBC: Hypa)</span></p></div></div>
 </div></section>
 <section class="sec" style="padding-top:40px"><div class="wrap">
   <div class="chips" role="group" aria-label="Filter builds" style="margin-bottom:28px"><button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="security" aria-pressed="false">Security</button><button type="button" data-filter="upgrades" aria-pressed="false">Upgrades</button><button type="button" data-filter="styling" aria-pressed="false">Styling</button></div>
   <div class="gal">''' + figs + '''</div>
-</div></section>''' + band('Want yours on this wall?', 'Tell me the car and the idea. I\'ll come back with options and a price.'), 'Builds', 'Brand & support')
+</div></section>''' + band('Want yours on this wall?', 'Send us the car and the idea. We\'ll come back with options and a straight price.'), 'Builds', 'Brand & support')
 
     # ---------- CONTACT ----------
     needs = [('security', 'Security'), ('screens', 'Screens &amp; audio'), ('remap', 'Remap &amp; tuning'), ('wrap', 'Wrap'), ('ppf', 'PPF or tint'), ('air', 'Air &amp; coilovers'), ('plates', 'Plates'), ('other', 'Other')]
@@ -296,7 +296,7 @@ def build():
     page('contact.html', 'Contact Hyped Up: Bermondsey Workshop, London SE16', 'Contact Hyped Up in Bermondsey, South London. Pick the job, tell us the car, add photos if you like, and send it by WhatsApp or email. Open Monday to Saturday.', 'Contact', '''
 <div class="wrap contact">
   <div style="display:grid;gap:24px;align-content:start">
-    <div style="display:grid;gap:12px"><h1>Contact us</h1><p class="lead">Tell me what you're after. I'll come back with options and a straight price.</p></div>
+    <div style="display:grid;gap:12px"><h1>Contact us</h1><p class="lead">Tell us the car and what you're after. Photos help. We'll come back with options and a straight price.</p></div>
     <form class="form" id="quote" novalidate>
       <fieldset class="fs"><legend>What do you need?</legend><div class="tick">''' + ticks + '''</div></fieldset>
       <div class="field"><label for="vehicle">Your car</label><input id="vehicle" name="vehicle" placeholder="e.g. BMW 1 Series 2019, reg if you have it" autocomplete="off" required></div>
@@ -304,7 +304,7 @@ def build():
         <label class="addph">{{lu:camera}}<span id="ph-label">Add photos</span><input type="file" accept="image/*" multiple id="photos"></label></div>
       <div class="send"><button class="pill ghost" type="submit" value="whatsapp">{{br:whatsapp}}Send on WhatsApp</button><button class="pill" type="button" id="by-email" aria-expanded="false" aria-controls="emailbox">{{lu:mail}}Send by email</button></div>
       <div class="emailbox" id="emailbox" hidden>
-        <div class="row2"><div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required aria-describedby="name-err"><p class="err" id="name-err" hidden>Add your name so I know who to reply to.</p></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err"><p class="err" id="email-err" hidden>I need your email to reply, e.g. name@example.com</p></div></div>
+        <div class="row2"><div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required aria-describedby="name-err"><p class="err" id="name-err" hidden>Add your name so we know who to reply to.</p></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err"><p class="err" id="email-err" hidden>We need your email to reply, e.g. name@example.com</p></div></div>
         <div class="field"><label for="phone">Phone <span>(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
         <button class="pill" type="submit" value="email">Send</button>
       </div>
@@ -327,20 +327,20 @@ def build():
 ''', 'Contact', 'Brand & support')
 
     # ---------- ABOUT ----------
-    page('about.html', 'About Hyped Up: Hypa and the Bermondsey Workshop', 'Hyped Up is Hypa\'s vehicle security, upgrades and styling workshop at Unit 22, Bolina Road, Bermondsey: real parts, fitted properly, priced clearly since 2022.', '', '''
+    page('about.html', 'About Hyped Up: Hypa, McLaren and the Bermondsey Workshop', 'Hypa has modified cars since his first Astra in the early 2000s, worked at McLaren, then opened Hyped Up at Unit 22, Bolina Road, Bermondsey, SE16, in 2022.', '', '''
 <section class="hero flip"><div class="wrap"><div class="grid">
-  <div class="copy"><h1>About Hyped Up</h1><p class="lead">I'm Hypa. I started Hyped Up in 2022 to do car and bike work properly: the right parts, fitted neatly, and a straight price before anything starts.</p></div>
-  <figure>''' + media('workshop.jpg', "Hyped Up's red Mini in front of the workshop mural", lazy=False) + '''</figure>
+  <div class="copy"><h1>About Hyped Up</h1><p class="lead">I'm Hypa. I've been modding cars since the early 2000s, I learned the trade at McLaren, and in 2022 I opened Hyped Up in Bermondsey. Any car, any bike, any idea: I'll find a way to build it.</p></div>
+  <figure>''' + media('mini-opening-night.jpg', "Hyped Up's red Mini JCW and an R6 inside the workshop", lazy=False) + '''</figure>
 </div></div></section>
-<section class="sec"><div class="wrap split"><div style="display:grid;gap:16px"><h2>Why I do this</h2>
-<p class="lead">I got into air suspension after seeing a bagged GTR at Silverstone. My red F56 Mini has run on Air Lift 3P every day for over four years, and the BMW 1 Series show build is on its third boot rebuild. Before that there was the R53 Mini, "Lil Punisher".</p>
-<p class="lead">That's the standard I hold customer cars to. <span class="tbc">(20+ years and McLaren motorsport background: Hypa to confirm before use)</span></p></div>
-<figure>''' + media('mini-jcw-low.jpg', 'Hypa\'s red Mini JCW sitting low on Air Lift') + '''</figure></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>How I work</h2></div><div class="opts">
-<div class="opt"><h3>Fitted properly</h3><p>Wiring hidden, trims back as they were, everything tested before you leave.</p></div>
-<div class="opt"><h3>Priced clearly</h3><p>A "from" price on every page, and your exact price before I start.</p></div>
-<div class="opt"><h3>Honest advice</h3><p>If something isn't worth it on your car, or isn't road legal, I'll say so.</p></div></div></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>Brands I fit</h2><p class="tbc">Partner and dealer wording TBC: Hypa</p></div>
+<section class="sec"><div class="wrap"><ol class="story">
+<li><span class="gnum" aria-hidden="true">1</span><span class="mono">Early 2000s</span><h2>The first Astra</h2><p class="lead">My first car was a Vauxhall Astra. That's where the modding started, and it never stopped.</p></li>
+<li><span class="gnum" aria-hidden="true">2</span><span class="mono">About 10 years ago</span><h2>McLaren</h2><p class="lead">The passion became the job. Working at McLaren taught me what "done properly" really means: every wire, every gap, every bolt.</p></li>
+<li><span class="gnum" aria-hidden="true">3</span><span class="mono">2022</span><h2>Unit 22, SE16</h2><p class="lead">I opened Hyped Up to build cars the way I build my own. My red Mini has run on Air Lift 3P every day for over four years, with a new boot build each season. The BMW 1 Series convertible is next.</p></li>
+</ol></div></section>
+<section class="sec"><div class="wrap split"><div style="display:grid;gap:16px"><h2>What I believe</h2>
+<p class="lead">Expensive or not, your car deserves the same care. I listen first, tell you straight what's worth doing, and build it around you. If something isn't road legal or isn't worth the money on your car, I'll say so.</p></div>
+<figure>''' + media('workshop-floor.jpg', 'The Hyped Up workshop with the graffiti mural, a Subaru and an R6') + '''</figure></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>Brands we fit</h2><p class="tbc">Partner and dealer wording TBC: Hypa</p></div>
 <div class="chips">''' + ''.join('<span class="brandchip">%s</span>' % b for b in ['Ghost', 'MetaTrak', 'Scorpion', 'Air Lift', 'Prazis', 'Xtrons', 'Autostyle', 'Pioneer', 'Kenwood', 'Rockford Fosgate', 'FineVu', 'Thinkware']) + '''</div></div></section>
 ''' + band('Come and see the workshop', 'Unit 22, Bolina Road, SE16. Open Monday to Saturday.'), 'About', 'Brand & support')
 
@@ -356,14 +356,14 @@ def build():
     cats = ['All', 'Security', 'Upgrades', 'Styling', 'Law & guides']
     lis = ''.join('<li data-cat="%s"><a href="#"><span class="mono">%s</span><b>%s</b></a><a class="link" href="%s">%s {{lu:arrow-right}}</a></li>' % (c, c, t, h(s), SV[s]['short']) for c, t, s in posts)
     page('blog.html', 'Blog: Car Security, Upgrades & Styling Guides | Hyped Up', 'Straight answers from Hypa\'s Bermondsey workshop: Ghost immobilisers, trackers, dash cams, CarPlay, remaps, wraps, air suspension and the law on car mods.', '', '''
-<section class="hero"><div class="wrap" style="display:grid;gap:20px"><h1>Blog</h1><p class="lead">Straight answers from the workshop. Every guide links to the service it's about.</p>
+<section class="hero"><div class="wrap" style="display:grid;gap:20px"><h1>Blog</h1><p class="lead">Straight answers from the workshop: what it costs, what's legal, what's worth it. Every guide links to the service it's about.</p>
 <div class="chips" role="group" aria-label="Filter posts">''' + ''.join('<button type="button" data-blogcat="%s" aria-pressed="%s">%s</button>' % (c, 'true' if c == 'All' else 'false', c.replace('&', '&amp;')) for c in cats) + '''</div></div></section>
 <section class="sec" style="padding-top:24px"><div class="wrap"><ul class="postlist">''' + lis + '''</ul></div></section>''', 'Blog', 'Brand & support')
 
     # ---------- SHOP ----------
     prods = [('Graffiti T-shirt', '£20'), ('Hyped Up T-shirt', '£20'), ('Hyped Up jumper', '£40'), ('The keyring', '£10')]
     page('shop.html', 'Hyped Up Apparel: Tees, Jumpers & Keyrings', 'Hyped Up apparel from the Bermondsey workshop: graffiti tees, Hyped Up jumpers and keyrings. Order on WhatsApp and collect at Unit 22 or ask about delivery.', '', '''
-<section class="hero"><div class="wrap" style="display:grid;gap:20px"><h1>Shop</h1><p class="lead">Workshop gear. Order on WhatsApp, collect at Unit 22. <span class="tbc">(Delivery: Hypa)</span></p></div></section>
+<section class="hero"><div class="wrap" style="display:grid;gap:20px"><h1>Shop</h1><p class="lead">Wear the workshop. Order on WhatsApp, collect at Unit 22. <span class="tbc">(Delivery: Hypa)</span></p></div></section>
 <section class="sec" style="padding-top:24px"><div class="wrap"><div class="cards">''' + ''.join('<div class="card">%s<div class="row"><h3>%s</h3><span class="from g">%s</span></div><a class="pill ghost sm" href="#wa">{{br:whatsapp}}Order on WhatsApp</a></div>' % (media(None, '', 'product photo'), n, p) for n, p in prods) + '''</div></div></section>''', 'Shop', 'Brand & support')
 
     # ---------- BOARD ----------

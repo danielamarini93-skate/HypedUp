@@ -521,3 +521,13 @@ figcaption{margin-top:8px}
 @media (max-width:759px){.herobg::after{background:linear-gradient(180deg,rgba(13,12,12,.6) 0%,rgba(13,12,12,.85) 55%,var(--bg) 100%)}}
 .rvfull summary{cursor:pointer;font-weight:600;color:var(--body2)}.rvfull p{margin:10px 0 0;color:var(--body2);max-width:70ch}
 .bfeat .bcard:nth-child(2) .media img{object-position:center 62%}
+
+/* About: Hypa's story in three beats */
+.story{list-style:none;margin:0;padding:0;display:grid;gap:40px}
+@media (min-width:900px){.story{grid-template-columns:repeat(3,1fr);gap:40px}}
+.story li{display:grid;gap:10px;align-content:start}
+.story h2{font-size:clamp(2rem,4vw,2.8rem)}
+
+/* Prices low-key (Dani 14 Nov, plan Round 3): small tag next to the button, note in small text */
+.act .ptag{font:600 .95rem/1 var(--f-body);color:var(--body2);border:1px solid var(--rule2);border-radius:999px;padding:.55rem .9rem}
+.hero .pnote{font-size:.85rem;color:var(--soft);max-width:52ch;margin:0}
