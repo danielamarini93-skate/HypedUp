@@ -221,7 +221,7 @@ def build():
     <div class="copy">
       <h1>Protect it.<br>Upgrade it.<span class="wet">Style it.</span></h1>
       <p class="lead">South London's one-stop workshop for car and bike security, upgrades and styling. Fitted properly, priced clearly.</p>
-      <div class="act"><a class="pill" href="contact.html">Contact us</a><span class="find">Find us</span><span class="mono">Unit 22, Bolina Rd<br>SE16 3LF</span></div>
+      <div class="act"><a class="pill" href="contact.html">Contact us</a><span class="mono">Unit 22, Bolina Rd<br>SE16 3LF</span></div>
     </div>
     <figure><div class="media vig"><video src="img/hero.mp4" poster="img/poster.jpg" autoplay muted loop playsinline aria-label="Short silent reel of work inside the Hyped Up workshop"></video></div><figcaption class="mono" style="text-align:right">@hypedup.ltd</figcaption></figure>
   </div>
