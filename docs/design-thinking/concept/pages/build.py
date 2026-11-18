@@ -238,10 +238,10 @@ def build():
     panels = ''.join('<div class="fpanel" data-fpanel="%s"%s>%s</div>' % (g, '' if i == 0 else ' hidden', ''.join('<a href="%s"><b>%s</b><span class="from g">%s</span></a>' % (h(s), SV[s]['short'], SV[s]['price']) for s in sl))
                      for i, (g, n, sl) in enumerate(GROUPS))
     page('home-b.html', 'Car Security, Upgrades & Styling in London | Hyped Up', 'Ghost immobilisers, trackers, CarPlay, car audio, remaps, wraps, PPF, tint and air suspension, fitted properly in Bermondsey, South London. Clear "from" prices.', '', '''
-<section class="hero"><div class="wrap" style="display:grid;gap:26px">
+<section class="hero herob"><div class="herobg" aria-hidden="true"></div><div class="wrap" style="display:grid;gap:26px">
   <div class="copy" style="max-width:900px">
     <span class="mono">Bermondsey, South London · 5.0 on Google <span class="tbc">(47 reviews, Maps)</span></span>
-    <h1>Car and bike security, upgrades and styling</h1>
+    <h1>Car and bike security, upgrades and <span class="wetw">styling</span></h1>
     <p class="lead">Fitted properly, priced clearly, by Hypa and the team at Unit 22. Pick what you need.</p>
   </div>
   <div class="finder"><div class="ftabs" role="tablist" aria-label="Service groups">''' + tabs + '</div>' + panels + '''</div>

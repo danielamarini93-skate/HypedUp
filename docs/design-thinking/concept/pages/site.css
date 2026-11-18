@@ -511,3 +511,11 @@ figcaption{margin-top:8px}
 .startform{display:grid;gap:18px;max-width:900px}
 .startrow{display:grid;gap:14px;align-items:end}
 @media (min-width:760px){.startrow{grid-template-columns:1fr auto}}
+
+/* Home B hero: faded workshop photo behind + one graffiti word (Dani 18 Nov) */
+.herob{position:relative;overflow:hidden}
+.herob .wrap{position:relative}
+.herobg{position:absolute;inset:0;background:url(img/workshop-floor.jpg) left 22%/cover no-repeat;opacity:.5;filter:grayscale(.15);transform:scaleX(-1)}
+.herobg::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,var(--bg) 0%,rgba(13,12,12,.85) 40%,rgba(13,12,12,.25) 100%),linear-gradient(180deg,rgba(13,12,12,0) 55%,var(--bg) 100%)}
+.herob h1 .wetw{font-size:1.18em;line-height:.8;display:inline-block}
+@media (max-width:759px){.herobg::after{background:linear-gradient(180deg,rgba(13,12,12,.6) 0%,rgba(13,12,12,.85) 55%,var(--bg) 100%)}}
