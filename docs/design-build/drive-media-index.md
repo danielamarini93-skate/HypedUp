@@ -21,7 +21,7 @@ graphics wrap · Yamaha R6 - motorbike
 
 ## Progress
 - Photos in Media: ~360 (JPEG + HEIC + PNG); videos: 120.
-- Media holds ~345 photos (JPEG/HEIC/PNG) + 120 videos. Sorted and renamed so far: **119** (18 Nov); remaining ~226.
+- Media holds ~345 photos (JPEG/HEIC/PNG) + 120 videos. Sorted and renamed so far: **133** (18 Nov); remaining ~212.
 - Working files (resume from here): `drive-sort/moved.txt` (done IDs), `drive-sort/todo.json` (still to sort), `drive-sort/folders.json` (folder IDs).
 - New build folders added: Bentley Bentayga, BMW F20 Android screen, Motorbike MetaTrak, Aston Martin DB classic tracker, Porsche Macan GTS, Mercedes X-Class, Rear dash cam installs, Alfa Giulia QV tint, Vauxhall Corsa tint.
 - File-name flags: `(plate visible - blur for web)`, `(part plate visible - crop for web)`, `(VIN visible - crop for web)`, `(faces and plates)`.
