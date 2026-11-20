@@ -109,4 +109,19 @@
     var back = $('#sent-back');
     if (back) back.addEventListener('click', function () { out.hidden = true; form.hidden = false; });
   }
+  /* video loops: play only on screen, pause button, respect reduced motion */
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vids = $$('.media video');
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { var v = e.target; if (v.dataset.user === 'paused') return; if (e.isIntersecting) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } else v.pause(); });
+  }, { threshold: 0.25 }) : null;
+  vids.forEach(function (v) {
+    var b = v.parentNode.querySelector('.vpause');
+    var sync = function () { if (!b) return; b.setAttribute('aria-label', v.paused ? 'Play video' : 'Pause video'); b.classList.toggle('is-paused', v.paused); };
+    if (rm) { v.removeAttribute('autoplay'); v.pause(); v.dataset.user = 'paused'; }
+    else if (io) io.observe(v);
+    v.addEventListener('play', sync); v.addEventListener('pause', sync); sync();
+    if (b) b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation();
+      if (v.paused) { v.dataset.user = ''; v.play(); } else { v.dataset.user = 'paused'; v.pause(); } });
+  });
 })();

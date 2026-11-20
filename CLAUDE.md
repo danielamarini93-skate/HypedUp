@@ -36,6 +36,7 @@ Outputs in `docs/design-thinking/`: tech-setup (cookies, forms, reviews, analyti
 - **Research & audit doc (Dani edits here first):** https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg
 - **Concept:** https://claude.ai/artifact/NdsiSfKjKAG2a1tVQ3VXcX · **Mobbin:** collection "Hyped Up website redesign"
 - **Round 2 (content first, in progress):** inventory, card sort, site map in `docs/design-thinking/` · menu & footer concept v4 in Direction D https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv (**approved by Dani + Hypa** 9 Nov; v1–v3 at https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD) → **content strategy + IA v2** https://claude.ai/artifact/CpSzprgerDKy2dcvTUvTwr (**approved 14 Nov**: labels Security · Upgrades · Styling, no Prices page) → **full site concept v4** (all pages from the content model, homepage A/B): https://claude.ai/artifact/H2XetEmAA8gnXPLicnvFpt · copy source `docs/design-thinking/concept/pages/content.py` (awaiting Dani + Hypa's facts)
+- **Site concept v5 (20 Nov, real media):** https://claude.ai/artifact/Dy6NkZo1FRKuMtSNn7U4HF · Drive footage reviewed and cut into 25 silent loops, Hypa in half the media, new Community page (Ruff Ryders UK meets). Plan: `docs/design-thinking/plan-media-v5.md`; review: `docs/design-build/drive-sort/video-review.md`
 
 ## The business in one paragraph
 

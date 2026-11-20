@@ -71,3 +71,9 @@ _Last updated: 14 Nov 2026 · Tick items off (`[x]`) or remove them as they're d
 - [ ] Hypa: captions for the homepage builds: what was done on the classic 911 (full wrap? colour?), the yellow Civic Type R, the two-tone Bentley (wrap or paint?). Is the pink car an Abarth 595 or an Alfa? Higher-res photos of the 911 and Civic (current ones 540 px).
 - [ ] Hypa: exact year he started modding (Dani suggested 2002; memory says early 2000s, first Astra) for the hero line.
 - [ ] Hypa: approve the About story wording (Astra, McLaren "every wire, every gap, every bolt", Unit 22) and the new service leads (e.g. Ghost "works through your car's own CAN bus").
+
+## Site concept v5 (20 Nov 2026)
+- [ ] Dani reviews v5 (https://claude.ai/artifact/Dy6NkZo1FRKuMtSNn7U4HF)
+- [ ] Hypa asks Ruff Ryders UK for OK to show members (Community page), plus meet dates and club wording
+- [ ] Share or export the 173 videos over 10 MB (couldn't be downloaded here), for a second pick
+- [ ] Decide if 25% video across all placements is enough (every key page has video), or add loops to cards

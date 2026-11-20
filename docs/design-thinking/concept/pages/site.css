@@ -531,3 +531,19 @@ figcaption{margin-top:8px}
 /* Prices low-key (Dani 14 Nov, plan Round 3): small tag next to the button, note in small text */
 .act .ptag{font:600 .95rem/1 var(--f-body);color:var(--body2);border:1px solid var(--rule2);border-radius:999px;padding:.55rem .9rem}
 .hero .pnote{font-size:.85rem;color:var(--soft);max-width:52ch;margin:0}
+
+/* v5: video loops in media frames */
+.media.vid video{width:100%;height:100%;object-fit:cover}
+.vpause{position:absolute;right:10px;bottom:10px;z-index:3;width:36px;height:36px;border-radius:50%;border:1px solid rgba(242,238,233,.35);background:rgba(13,12,12,.6);color:#f2eee9;display:grid;place-items:center;cursor:pointer;padding:0}
+.vpause svg{width:16px;height:16px}.vpause .i-play{display:none}.vpause.is-paused .i-play{display:block}.vpause.is-paused .i-pause{display:none}
+.vpause:focus-visible{outline:3px solid #ff3b2f;outline-offset:2px}
+.commsec{position:relative;padding:72px 0;border-top:1px solid rgba(242,238,233,.14);border-bottom:1px solid rgba(242,238,233,.14)}
+.commsec .wrap{display:grid;gap:28px}
+@media(min-width:1000px){.commsec .wrap{grid-template-columns:1fr 1fr;align-items:center}}
+.commsec .pair{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}.commsec .pair .media{aspect-ratio:4/5}
+.stories{display:grid;gap:56px}.story2{display:grid;gap:22px;align-items:center}
+@media(min-width:1000px){.story2{grid-template-columns:1fr 1fr}.story2:nth-child(even) figure{order:2}}
+.story2 .media{aspect-ratio:1/1}
+.cgal{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:1000px){.cgal{grid-template-columns:repeat(3,1fr)}}
+.cgal .media{aspect-ratio:4/5}.cgal figcaption{font-size:.85rem;opacity:.75;margin-top:6px}

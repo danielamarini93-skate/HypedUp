@@ -71,3 +71,19 @@ Contact sheet: `docs/design-build/media-round3-contact-sheet.jpg`. Not used: car
 | minibus-signage.jpg | IMG_5733 | Charity minibus lettering | Back of person only | Van signage |
 
 **16 Nov 2026 (Dani):** Hypa's face can be shown everywhere. Plate blur is now **plate-only**: it follows the plate's own outline with a soft 1 px edge, and the car around it stays sharp. Check crops: `docs/design-build/media-round3-plate-blur-check.jpg`.
+
+### Added 20 Nov 2026 (v5: real footage, Hypa at work)
+Video review: `drive-sort/video-review.md` (142 clips under the 10 MB connector limit; 173 larger clips not reviewed).
+Loops (silent, 720×720, H.264, under 1 MB each, poster = same name .jpg): hyped-up-workshop-reel, unit-22-meet-ruff-ryders,
+window-tint-hypa-fitting, evoque-satin-wrap, audi-s4-air-struts-hypa, carplay-screen-fitting-hypa, boot-build-audio-hypa,
+starlight-headliner, dash-cam-mirror, van-reverse-camera, van-lettering-hypa, m1000rr-tracker, ppf-headlights (plate cut out),
+lexus-splitter-fitting, volvo-wheel-detail, hypa-in-the-workshop, porsche-911-outside-unit, audi-a4-soundproofing-build,
+bmw-e88-build, bdg-van-livery, audi-r8-carplay-reel, mini-stripes-reel, bentayga-reel, hypa-engine-bay, e88-grille-black.
+Clip numbers per loop: `media-scripts/mkloops.py`.
+
+New photos (EXIF rotation applied, metadata stripped): carplay-saab-wiring-hypa, mini-convertible-hypa-screen (dealer text cropped),
+mt07-tail-tidy-hypa (**plate blurred**), van-lettering-heat-gun-hypa (client name cropped), rear-tint-hypa-mural (**plate cropped**),
+e88-boot-speaker-pods-hypa, hypa-carbon-streetfighter, bike-snow-foam-unit-22, subaru-camo-fitting-hypa, workshop-aisle-hypa,
+meet-entrance-hypa-ruff-ryders (cab plate cropped), meet-unit-22-crowd, meet-hayabusa-ruff-ryders (**faces: club OK TBC**),
+meet-mini-sub-boot, s4-air-struts-hypa, cx5-tint-hypa, giulia-tint-hypa, e88-grilles-hypa (own car), a4-roof-deadening-hypa,
+porsche-911-hypa-mini, mt07-red-mini. Skipped: child on a bike, Transit carrying another garage's livery, meet close-ups.

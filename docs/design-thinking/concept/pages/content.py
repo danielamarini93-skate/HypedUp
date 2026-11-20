@@ -439,3 +439,62 @@ REVIEWS = [
      'full': "Last week I had my front splitter, front grille, side skirts, rear diffuser and rear spoiler installed at Hyped Up Ltd. The service here is extremely professional, with great attention paid to every tiny detail for vehicle modification. Every body panel fits seamlessly, all gaps are neatly aligned, and the final finish is flawless. No rushed work at all, and I was kept informed of every step during installation. I am thoroughly delighted with how my car looks after the job, and completely satisfied with the craftsmanship. I would highly recommend this shop for premium bodykit fitting.",
      'text': 'Every body panel fits seamlessly, all gaps are neatly aligned, and the final finish is flawless. No rushed work at all.'},
 ]
+
+# ---------- v5 media (20 Nov 2026, Dani): Hypa in over half the media, about 50/50 video and photo ----------
+# vid = silent square loop shown in the service hero; img = photo used for cards, picker backgrounds and proof.
+# Clips and photos come from the Drive review (docs/design-build/drive-sort/video-review.md, media-log.md).
+MEDIA_V5 = {
+    'car-trackers': dict(vid='m1000rr-tracker.mp4', valt='BMW M1000RR in the workshop before a Scorpion tracker fit'),
+    'dash-cams': dict(vid='dash-cam-mirror.mp4', valt='Mirror dash cam with live front and rear view, fitted in the workshop'),
+    'carplay': dict(vid='carplay-screen-fitting-hypa.mp4', valt='Hypa fitting a new screen, the wiring loom on the bench, then wireless CarPlay working in a Mercedes',
+                    img='carplay-saab-wiring-hypa.jpg', alt='Hypa wiring a double DIN CarPlay screen into a Saab 9-5'),
+    'car-audio': dict(vid='boot-build-audio-hypa.mp4', valt='Hypa building a custom boot, sound deadening going on a door, a subwoofer grille close up',
+                      img='e88-boot-speaker-pods-hypa.jpg', alt='Hypa wiring a BMW 1 Series boot with custom speaker pods in the boot lid'),
+    'reverse-cameras': dict(vid='van-reverse-camera.mp4', valt='Brake-light reverse camera fitted on a van roof',
+                            img='bmw-e88-screen.jpg', alt='New screen showing the reverse camera in a BMW 1 Series'),
+    'ambient-lighting': dict(vid='starlight-headliner.mp4', valt='Hypa and the team threading starlight fibres, then the finished starlight headliner in an Alfa Romeo Stelvio'),
+    'car-wrapping': dict(vid='evoque-satin-wrap.mp4', valt='Range Rover Evoque being wrapped in satin chameleon film inside the workshop',
+                         img='subaru-camo-fitting-hypa.jpg', alt='Camo graphics going onto a Subaru Impreza, Hypa behind the car'),
+    'paint-protection-film': dict(vid='ppf-headlights.mp4', valt='Mercedes X-Class headlight with protection film, outside the unit',
+                                  img='ppf-headlights.jpg', alt='Mercedes X-Class headlight protected with clear film'),
+    'window-tinting': dict(vid='window-tint-hypa-fitting.mp4', valt='Hypa tinting the rear windows of a white Corsa, then a black hatchback',
+                           img='rear-tint-hypa-mural.jpg', alt='Hypa fitting rear window tint under the workshop mural'),
+    'air-suspension': dict(vid='audi-s4-air-struts-hypa.mp4', valt='Hypa fitting air struts to a grey Audi S4 on the workshop floor',
+                           img='s4-air-struts-hypa.jpg', alt='Black Audi on a Hyped Up show plate with new air struts boxed in front, Hypa at the bonnet'),
+    'bodykits': dict(vid='lexus-splitter-fitting.mp4', valt='Front splitter being fitted to a Lexus in the workshop',
+                     img='e88-grilles-hypa.jpg', alt='Hypa fitting gloss black kidney grilles to a BMW 1 Series'),
+    'wheel-refurb': dict(vid='volvo-wheel-detail.mp4', valt='Volvo XC90 wheel with a yellow pinstripe on the rim'),
+    'interiors': dict(img='a4-roof-deadening-hypa.jpg', alt='Hypa lying inside an Audi A4 Avant, sound deadening the roof'),
+    'detailing': dict(img='bike-snow-foam-unit-22.jpg', alt='Hypa snow-foaming two motorbikes outside Unit 22'),
+    'number-plates': dict(img='mt07-tail-tidy-hypa.jpg', alt='Hypa fitting a tail tidy and plate to a Yamaha MT-07, the plates price board behind'),
+    'van-signage': dict(vid='van-lettering-hypa.mp4', valt='Hypa lettering a BDG Security van, the vinyl plotter cutting, a logo going on with the heat gun',
+                        img='van-lettering-heat-gun-hypa.jpg', alt='Hypa setting van vinyl with a heat gun under the workshop mural'),
+}
+for _k, _v in MEDIA_V5.items(): S[_k].update(_v)
+HUBS['security'].update(vid='dash-cam-mirror.mp4', valt='Mirror dash cam with live front and rear view')
+HUBS['upgrades'].update(vid='carplay-screen-fitting-hypa.mp4', valt='Hypa fitting a new CarPlay screen')
+HUBS['styling'].update(vid='evoque-satin-wrap.mp4', valt='Range Rover Evoque being wrapped in satin chameleon film')
+# Files with Hypa in shot: counted by the build for the "Hypa in over half the media" rule.
+HYPA_MEDIA = {'hyped-up-workshop-reel.mp4', 'window-tint-hypa-fitting.mp4', 'audi-s4-air-struts-hypa.mp4', 'carplay-screen-fitting-hypa.mp4',
+              'boot-build-audio-hypa.mp4', 'starlight-headliner.mp4', 'van-lettering-hypa.mp4', 'hypa-in-the-workshop.mp4',
+              'audi-a4-soundproofing-build.mp4', 'bmw-e88-build.mp4', 'bdg-van-livery.mp4', 'subaru-wrap-fitting.jpg', 'mini-opening-night.jpg',
+              'bike-snow-foam-unit-22.jpg', 'bdg-van-fitting.jpg'}
+# v5 tuning (media count: more video, more Hypa, without a second loop on any screen)
+S['ghost-immobiliser'].update(vid='hypa-in-the-workshop.mp4', valt='Hypa in the driver seat of a customer car, then at the bench', img='hypa-in-the-workshop.jpg', alt='Hypa working in the driver seat of a customer car')
+S['remapping'].update(vid='hypa-engine-bay.mp4', valt='Gloved hands in a BMW engine bay, then Hypa at the bench')
+S['taxi-cameras'].update(vid='dash-cam-mirror.mp4', valt='Mirror dash cam with live front and rear view')
+S['chrome-delete'].update(vid='e88-grille-black.mp4', valt='Gloss black kidney grilles on a BMW 1 Series', img='e88-grilles-hypa.jpg', alt='Hypa fitting gloss black kidney grilles to a BMW 1 Series')
+S['coilovers'].update(img='s4-air-struts-hypa.jpg', alt='New struts boxed in front of a black Audi, Hypa at the bonnet')
+S['interiors'].update(vid='starlight-headliner.mp4', valt='Starlight fibres being threaded, then the finished headliner lit up')
+S['car-alarms'].update(vid='m1000rr-tracker.mp4', valt='BMW M1000RR in the workshop before a Scorpion alarm and tracker fit')
+S['ambient-lighting'].update(img='starlight-headliner.jpg', alt='Hypa and the team threading starlight fibres into a headliner')
+HYPA_MEDIA |= {'starlight-headliner.jpg', 'hypa-in-the-workshop.jpg'}
+# "Recent work" leads with a build story loop (far below the hero, so still one moving piece per screen)
+PROOF_REEL = {'car-audio': ('audi-a4-soundproofing-build.mp4', 'Audi A4 Avant', 'Deadening, air and audio', 'Hypa deadening an Audi A4, a boot trim refitted'),
+              'carplay': ('audi-r8-carplay-reel.mp4', 'Audi R8', 'New CarPlay screen', 'Audi R8 CarPlay screen, then the car outside the unit'),
+              'car-wrapping': ('mini-stripes-reel.mp4', 'Mini (own)', 'Stripes', 'Red Mini with black bonnet stripes'),
+              'air-suspension': ('audi-a4-soundproofing-build.mp4', 'Audi A4 Avant', 'Air ride and a quiet cabin', 'Hypa working on an Audi A4 Avant'),
+              'van-signage': ('bdg-van-livery.mp4', 'BDG Security van', 'Livery', 'Hypa fitting BDG Security lettering to a van'),
+              'bodykits': ('bmw-e88-build.mp4', 'BMW 1 Series (own)', 'Fibreglass boot, new screen', 'Hypa building the BMW 1 Series'),
+              'reverse-cameras': ('bmw-e88-build.mp4', 'BMW 1 Series (own)', 'Screen and reverse camera', 'Hypa building the BMW 1 Series'),
+              'ambient-lighting': ('alfa-headliner.jpg', 'Alfa Romeo Stelvio', 'Black headliner', 'Alfa Romeo Stelvio black headliner')}
