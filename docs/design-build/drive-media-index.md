@@ -7,8 +7,11 @@ _Web copies and privacy edits: see `media-log.md`._
 ## Status
 - **Photos: done.** 400 files moved and renamed (JPEG, PNG and 30 HEICs). The Media root has no photos left.
 - **HEIC originals** (iPhone format, 30) sit in the HEIC folder with their original names. Each has a JPEG copy already filed by build.
-- **Videos: not sorted yet.** 261 files (~4 GB) are still in the Media root. They can't be previewed from here, so none
-  have been opened. See "Videos" below for the likely match by sequence number.
+- **Videos: moved and renamed.** All 261 files (~4 GB) are in Videos/ by group, and each has an SEO-style name with the
+  "(video - watch before web)" flag. Nothing has been watched, so each name is a best guess from the photo numbers.
+- **Probable exact copies (same byte size, not moved):** `vauxhall-combo-signage_05` and `_06`; `bdg-security-van-livery_09`
+  and `_10`; `unsorted-check-before-web_45` and `_46`; `_52` and `_53`; `_79` and `_80`. Check by eye, then move the extra
+  copy to "Duplicates (safe to review)".
 - **Working files:** `drive-sort/moved.txt` (done IDs), `drive-sort/folders.json` (72 folder IDs),
   `drive-sort/videos.json` (all 261 videos with IDs and sizes).
 
@@ -76,6 +79,11 @@ these are the best guess from the photos either side. Folders are named by group
 | S - Audi A4 | Audi A4 | 1 |
 | T - Reels (hero loop candidates) | Edited reels (.mp4, video-output) | 27 |
 | U - Unsorted, check before web use | Not matched to a range | 86 |
+
+**Renamed (20 Nov 2026):** `drive-sort/video_renames.json` holds the old and new name for every video, and
+`drive-sort/video_renamed.txt` lists all 261 IDs as done. Names follow `group-slug_NN (video - watch before web) IMG-NNNN.ext`.
+Reels in T are named `hyped-up-reel_NN.ext` with no flag. Some IMG numbers repeat inside a group (for example IMG-9337 ×3 in
+Vauxhall and IMG-1804 ×3 in U). They may be separate clips or copies. Check by eye before web use.
 
 **Next for videos:** the 86 in U need checking by eye. Start with the 27 reels in T, since those are the short edited clips
 best suited to hero loops. The ranges in the table came from the photos, so check each group before use.
