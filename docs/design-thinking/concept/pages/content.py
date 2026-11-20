@@ -502,7 +502,7 @@ PROOF_REEL = {'car-audio': ('audi-a4-soundproofing-build.mp4', 'Audi A4 Avant', 
 # Hypa-at-work stays in the hero loops, About, Builds and Community. Hypa share is not forced on service cards.
 _FINISHED = {
     'ghost-immobiliser': ('alfa-keys-wheel.jpg', 'Alfa Romeo steering wheel, start button and keys with a MetaTrak tag'),
-    'carplay': ('r8-pioneer-screen.jpg', 'Audi R8 dashboard with a new Pioneer CarPlay screen switched on'),
+    'carplay': ('audi-r8-carplay.jpg', 'Audi R8 dashboard with a new screen showing the map and apps'),
     'car-audio': ('boot-build.jpg', 'Finished custom boot with a red and black subwoofer enclosure'),
     'car-wrapping': ('subaru-camo-wrap.jpg', 'Subaru with finished grey camo graphics under the workshop mural'),
     'window-tinting': ('tint-corsa-finished.jpg', 'White Vauxhall Corsa with finished rear window tint on a Hyped Up show plate'),
@@ -520,7 +520,7 @@ for _k, (_i, _a) in _FINISHED.items(): S[_k].update(img=_i, alt=_a)
 # CSS object-position "x% y%" per image; frames crop with object-fit:cover. Default for anything not listed: 50% 45%.
 FOCUS = {
     'mini-jcw-low.jpg': '50% 33%', 'mini-jcw-street.jpg': '50% 46%', 'alfa-keys-wheel.jpg': '35% 55%', 'r8-pioneer-screen.jpg': '50% 40%',
-    'audi-r8-carplay.jpg': '50% 40%', 'subaru-camo-wrap.jpg': '50% 55%', 'porsche.jpg': '50% 62%', 'civic.jpg': '50% 52%', 'wrap.jpg': '50% 60%',
+    'audi-r8-carplay.jpg': '50% 52%', 'subaru-camo-wrap.jpg': '50% 55%', 'porsche.jpg': '50% 62%', 'civic.jpg': '50% 52%', 'wrap.jpg': '50% 60%',
     'volvo-xc90-satin.jpg': '50% 55%', 'abarth-pink-wrap.jpg': '50% 62%', 'alfa-stelvio-pink.jpg': '50% 72%', 'bentley-unit.jpg': '50% 60%',
     'audi-r8-unit.jpg': '50% 60%', 'porsche-macan-unit.jpg': '50% 60%', 'tracker.jpg': '30% 62%', 'dashcam.jpg': '50% 28%',
     'merc-dashcam.jpg': '40% 65%', 'bmw-e88-screen.jpg': '65% 25%', 'mercedes-screen.jpg': '50% 22%', 'carplay.jpg': '50% 40%',
