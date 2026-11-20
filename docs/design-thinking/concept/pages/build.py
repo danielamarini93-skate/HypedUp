@@ -194,10 +194,10 @@ def build():
     recent = '<div class="bfeat">' + ''.join('<a class="bcard%s" href="builds.html">%s<div class="bcap"><h3>%s</h3><p>%s</p></div></a>'
              % (' big' if i == 0 else '', media(img, alt, cls='media'), car, l) for i, (img, car, t, l, alt) in enumerate(feat)) + '</div>'
     # Highlight services: four big tiles, photo-led, no prices
-    hl = [('security', 'Trackers & immobilisers', 'Ghost immobiliser: no code, no start, even with your key. MetaTrak tracker: you see where it is, from your phone.', 'hypa-in-the-workshop.jpg', 'Hypa working in the driver seat of a customer car'),
-          ('carplay', 'CarPlay & screens', 'Wireless CarPlay and Android Auto on screens that look factory. Reverse cameras wired in clean.', 'carplay-saab-wiring-hypa.jpg', 'Hypa wiring a double DIN CarPlay screen into a Saab 9-5'),
-          ('car-wrapping', 'Wraps & graphics', 'Colour changes, camo, stripes, logos. A full wrap takes at least a week, because the prep is the job.', 'subaru-camo-fitting-hypa.jpg', 'Camo graphics going onto a Subaru Impreza, Hypa behind the car'),
-          ('air-suspension', 'Air suspension', 'Air Lift and Prazis. Slammed when parked, up for speed bumps, tank and compressor where you never hear them.', 's4-air-struts-hypa.jpg', 'Black Audi with new air struts boxed in front, Hypa at the bonnet')]
+    hl = [('security', 'Trackers & immobilisers', 'Ghost immobiliser: no code, no start, even with your key. MetaTrak tracker: you see where it is, from your phone.', 'alfa-keys-wheel.jpg', 'Alfa Romeo start button and keys with a MetaTrak tag'),
+          ('carplay', 'CarPlay & screens', 'Wireless CarPlay and Android Auto on screens that look factory. Reverse cameras wired in clean.', 'r8-pioneer-screen.jpg', 'Audi R8 dashboard with a new Pioneer CarPlay screen switched on'),
+          ('car-wrapping', 'Wraps & graphics', 'Colour changes, camo, stripes, logos. A full wrap takes at least a week, because the prep is the job.', 'subaru-camo-wrap.jpg', 'Subaru with finished grey camo graphics under the workshop mural'),
+          ('air-suspension', 'Air suspension', 'Air Lift and Prazis. Slammed when parked, up for speed bumps, tank and compressor where you never hear them.', 'mini-jcw-low.jpg', 'Red Mini JCW sitting low on air suspension')]
     highlights = '<div class="hl">' + ''.join('<a class="hltile" href="%s">%s<div class="hlcap"><h3>%s</h3><p>%s</p><span class="link">Find out more {{lu:arrow-right}}</span></div></a>' % (h(s), media(img, alt, cls='media'), n, l)
                  for s, n, l, img, alt in hl) + '</div>'
     # Why Hyped Up: trust bar + four reasons with graffiti numerals

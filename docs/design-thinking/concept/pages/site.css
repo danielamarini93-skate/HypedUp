@@ -547,3 +547,7 @@ figcaption{margin-top:8px}
 .cgal{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
 @media(min-width:1000px){.cgal{grid-template-columns:repeat(3,1fr)}}
 .cgal .media{aspect-ratio:4/5}.cgal figcaption{font-size:.85rem;opacity:.75;margin-top:6px}
+
+/* v5.1: less red in "Why Hyped Up": stats in white, graffiti numerals muted; the spray word stays the one red accent */
+.trustbar b{background:none;color:var(--fg)}
+.gnum{background:none;color:rgba(242,238,233,.32)}

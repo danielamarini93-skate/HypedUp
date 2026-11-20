@@ -498,3 +498,20 @@ PROOF_REEL = {'car-audio': ('audi-a4-soundproofing-build.mp4', 'Audi A4 Avant', 
               'bodykits': ('bmw-e88-build.mp4', 'BMW 1 Series (own)', 'Fibreglass boot, new screen', 'Hypa building the BMW 1 Series'),
               'reverse-cameras': ('bmw-e88-build.mp4', 'BMW 1 Series (own)', 'Screen and reverse camera', 'Hypa building the BMW 1 Series'),
               'ambient-lighting': ('alfa-headliner.jpg', 'Alfa Romeo Stelvio', 'Black headliner', 'Alfa Romeo Stelvio black headliner')}
+# v5.1 (20 Nov, Dani): service images show the finished product, crisp and close (no work-in-progress).
+# Hypa-at-work stays in the hero loops, About, Builds and Community. Hypa share is not forced on service cards.
+_FINISHED = {
+    'ghost-immobiliser': ('alfa-keys-wheel.jpg', 'Alfa Romeo steering wheel, start button and keys with a MetaTrak tag'),
+    'carplay': ('r8-pioneer-screen.jpg', 'Audi R8 dashboard with a new Pioneer CarPlay screen switched on'),
+    'car-audio': ('boot-build.jpg', 'Finished custom boot with a red and black subwoofer enclosure'),
+    'car-wrapping': ('subaru-camo-wrap.jpg', 'Subaru with finished grey camo graphics under the workshop mural'),
+    'window-tinting': ('tint-corsa-finished.jpg', 'White Vauxhall Corsa with finished rear window tint on a Hyped Up show plate'),
+    'air-suspension': ('mini-jcw-low.jpg', 'Red Mini JCW sitting low on air suspension'),
+    'ambient-lighting': ('bmw-ambient-blue.jpg', 'BMW interior lit with blue ambient lighting'),
+    'interiors': ('alfa-headliner.jpg', 'Alfa Romeo Stelvio with a finished black headliner'),
+    'bodykits': ('e88-grille-black.jpg', 'Gloss black kidney grilles fitted to a BMW 1 Series'),
+    'chrome-delete': ('e88-grille-black.jpg', 'Gloss black kidney grilles fitted to a BMW 1 Series'),
+    'number-plates': ('porsche.jpg', 'Porsche 911 outside the unit with a Hyped Up show plate'),
+    'van-signage': ('bdg-van-beacons.jpg', 'BDG Security van with finished livery and a roof beacon bar'),
+}
+for _k, (_i, _a) in _FINISHED.items(): S[_k].update(img=_i, alt=_a)
