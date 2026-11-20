@@ -66,7 +66,7 @@ these are the best guess from the photos either side. Folders are named by group
 | F - BMW E88 rear and Ford Focus ST | Mixed | 5 |
 | G - Audi S4 air suspension | Audi S4 | 11 |
 | H - BMW E88 boot audio and BMW M1000RR | BMW E88 / M1000RR | 11 |
-| I - London taxi purple wrap | London taxi | 5 |
+| I - Audi audio and soundproofing (name was wrong; model TBC) | Audi, audio and soundproofing | 5 |
 | J - Mini JCW and R6 opening night | Mini JCW (own) | 1 |
 | K - Hyped Up sticker and workshop | Workshop | 8 |
 | L - Ford Transit graphics | Ford Transit | 2 |
