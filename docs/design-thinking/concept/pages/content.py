@@ -515,3 +515,22 @@ _FINISHED = {
     'van-signage': ('bdg-van-beacons.jpg', 'BDG Security van with finished livery and a roof beacon bar'),
 }
 for _k, (_i, _a) in _FINISHED.items(): S[_k].update(img=_i, alt=_a)
+
+# ---------- Focal points (20 Nov, Dani): crops always centre on the subject ----------
+# CSS object-position "x% y%" per image; frames crop with object-fit:cover. Default for anything not listed: 50% 45%.
+FOCUS = {
+    'mini-jcw-low.jpg': '50% 33%', 'mini-jcw-street.jpg': '50% 46%', 'alfa-keys-wheel.jpg': '35% 55%', 'r8-pioneer-screen.jpg': '50% 40%',
+    'audi-r8-carplay.jpg': '50% 40%', 'subaru-camo-wrap.jpg': '50% 55%', 'porsche.jpg': '50% 62%', 'civic.jpg': '50% 52%', 'wrap.jpg': '50% 60%',
+    'volvo-xc90-satin.jpg': '50% 55%', 'abarth-pink-wrap.jpg': '50% 62%', 'alfa-stelvio-pink.jpg': '50% 72%', 'bentley-unit.jpg': '50% 60%',
+    'audi-r8-unit.jpg': '50% 60%', 'porsche-macan-unit.jpg': '50% 60%', 'tracker.jpg': '30% 62%', 'dashcam.jpg': '50% 28%',
+    'merc-dashcam.jpg': '40% 65%', 'bmw-e88-screen.jpg': '65% 25%', 'mercedes-screen.jpg': '50% 22%', 'carplay.jpg': '50% 40%',
+    'calipers-m.jpg': '50% 55%', 'tint-corsa-finished.jpg': '50% 62%', 'rear-tint-hypa-mural.jpg': '50% 60%', 's4-air-struts-hypa.jpg': '50% 58%',
+    'carplay-saab-wiring-hypa.jpg': '35% 40%', 'e88-boot-speaker-pods-hypa.jpg': '45% 40%', 'subaru-camo-fitting-hypa.jpg': '45% 45%',
+    'mt07-tail-tidy-hypa.jpg': '55% 55%', 'van-lettering-heat-gun-hypa.jpg': '40% 40%', 'hypa-carbon-streetfighter.jpg': '50% 55%',
+    'bike-snow-foam-unit-22.jpg': '50% 58%', 'helmet.jpg': '50% 45%', 'r6-grass.jpg': '50% 55%', 'workshop.jpg': '50% 55%',
+    'mini-opening-night.jpg': '50% 55%', 'remap.jpg': '50% 50%', 'boot-build.jpg': '50% 50%', 'abarth-ambient.jpg': '50% 50%',
+    'bdg-van-beacons.jpg': '50% 50%', 'mini-jcw-show.jpg': '50% 50%', 'skyline-r34.jpg': '50% 50%', 'alfa-headliner.jpg': '50% 40%',
+    'meet-entrance-hypa-ruff-ryders.jpg': '50% 55%', 'meet-unit-22-crowd.jpg': '50% 60%', 'meet-hayabusa-ruff-ryders.jpg': '50% 50%',
+    'meet-mini-sub-boot.jpg': '50% 62%', 'mt07-red-mini.jpg': '50% 55%', 'giulia-tint-hypa.jpg': '50% 55%', 'cx5-tint-hypa.jpg': '50% 45%',
+    'e88-grilles-hypa.jpg': '55% 45%', 'ford-transit-yellow.jpg': '50% 55%', 'workshop-floor.jpg': '50% 45%',
+}

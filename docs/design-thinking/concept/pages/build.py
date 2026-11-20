@@ -4,7 +4,7 @@
 # Previous version (5 key pages): build-v3.py
 import os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-from content import PROOF_REEL, GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL, HYPA_MEDIA
+from content import FOCUS, PROOF_REEL, GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL, HYPA_MEDIA
 import html as _html
 S = '/tmp/claude-0/-home-user/545d0e01-e697-5941-a49a-d293a211030b/scratchpad'
 OUT = S + '/pages-out'
@@ -68,7 +68,7 @@ def media(img, alt, need='', cls='media vig', lazy=True):
                 '<button class="vpause" type="button" aria-label="Pause video"><span class="i-pause">{{lu:pause}}</span><span class="i-play">{{lu:play}}</span></button></div>'
                 % (cls, img, img[:-4] + '.jpg', 'metadata' if lazy else 'auto', alt))
     if img:
-        return '<div class="%s"><img src="img/%s" alt="%s"%s></div>' % (cls, img, alt, ' loading="lazy"' if lazy else '')
+        return '<div class="%s"><img src="img/%s" alt="%s" style="object-position:%s"%s></div>' % (cls, img, alt, FOCUS.get(img, '50% 45%'), ' loading="lazy"' if lazy else '')
     return '<div class="%s need"><span class="mono">Photo needed: %s</span></div>' % (cls.replace(' vig', ''), need)
 def band(title, line, chip=''):
     return ('<section class="band"><div class="bandbg" aria-hidden="true"></div><div class="wrap"><div><h2>%s</h2><p class="lead" style="margin-top:14px">%s</p></div><div class="bandcta"><a class="pill" href="contact.html%s">Contact us</a></div></div></section>'

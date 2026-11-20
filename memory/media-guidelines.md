@@ -44,3 +44,4 @@ _Agreed 8 Nov 2026. Source media: Dani's Google Drive folders (see `website-migr
 - **Montages:** short clips can be merged into one loop (cuts or quick crossfades, no music needed for silent loops). Done with ffmpeg; HyperFrames for anything with titles or motion graphics.
 - **Community** (car and bike meets, Ruff Ryders UK) is part of the story, but meet footage has crowds: use wide or back-of-crowd shots, blur readable customer plates, and get the club's OK before launch.
 - Count the mix with the media manifest before each publish (see `docs/design-build/media-log.md`).
+- **Focal point on every image (20 Nov 2026, Dani):** set where the subject is (`FOCUS` in `concept/pages/content.py`), so every crop keeps the main information centred. Cars: show the whole car, little floor.
