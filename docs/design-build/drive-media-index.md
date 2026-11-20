@@ -70,7 +70,7 @@ these are the best guess from the photos either side. Folders are named by group
 | J - Mini JCW and R6 opening night | Mini JCW (own) | 1 |
 | K - Hyped Up sticker and workshop | Workshop | 8 |
 | L - Ford Transit graphics | Ford Transit | 2 |
-| M - Nexx helmet decals | Nexx helmet | 10 |
+| M - Nexx helmet decals (name wrong: see note) | Range Rover Evoque, chameleon tint | 10 |
 | N - Mini convertible screen | Mini convertible | 1 |
 | O - Alfa Stelvio starlight headliner | Alfa Stelvio | 24 |
 | P - Vauxhall Combo signage | Vauxhall Combo | 9 |
@@ -84,6 +84,11 @@ these are the best guess from the photos either side. Folders are named by group
 `drive-sort/video_renamed.txt` lists all 261 IDs as done. Names follow `group-slug_NN (video - watch before web) IMG-NNNN.ext`.
 Reels in T are named `hyped-up-reel_NN.ext` with no flag. Some IMG numbers repeat inside a group (for example IMG-9337 ×3 in
 Vauxhall and IMG-1804 ×3 in U). They may be separate clips or copies. Check by eye before web use.
+
+**Correction (20 Nov 2026):** group M is a Range Rover Evoque chameleon tint job, not Nexx helmet decals. Dani confirmed
+this from the Drive thumbnails. Clips 05–10 are renamed `range-rover-evoque-chameleon-tint_NN`. Clips 01–04 still carry the
+old `nexx-helmet-decals_` name and are not checked; they may be the same job. The Nexx helmet build folder in the photo index
+may need the same check.
 
 **Next for videos:** the 86 in U need checking by eye. Start with the 27 reels in T, since those are the short edited clips
 best suited to hero loops. The ranges in the table came from the photos, so check each group before use.
