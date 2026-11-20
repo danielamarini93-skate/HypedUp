@@ -243,7 +243,7 @@ def build():
       <p class="lead">Security, screens, audio, wraps and air ride for cars and bikes. Built in London by Hypa, modding cars since the early 2000s.</p>
       <div class="act"><a class="pill" href="contact.html">Contact us</a><span class="mono">Unit 22, Bolina Rd<br>SE16 3LF</span></div>
     </div>
-    <figure>''' + media('hyped-up-workshop-reel.mp4', 'Hypa at work: tinting, fitting air struts, a screen and a boot build, then a starlight headliner, a wrap and a classic 911 outside the unit', lazy=False) + '''<figcaption class="mono" style="text-align:right">@hypedup.ltd</figcaption></figure>
+    <figure>''' + media('hyped-up-workshop-reel.mp4', 'Hypa at work between finished builds: tinting, a classic 911, air struts, an Audi R8, a new screen, an R1 riding out, a boot build, a Bentley Bentayga, a starlight headliner, a Mercedes, an Evoque wrap, a BMW M1000RR, a striped Mini and the BMW 1 Series', lazy=False) + '''<figcaption class="mono" style="text-align:right">@hypedup.ltd</figcaption></figure>
   </div>
   <div class="strip" style="margin-top:32px">''' + strip + '''</div>
 </div></section>
@@ -269,7 +269,7 @@ def build():
   <div class="act"><a class="pill" href="contact.html">Contact us</a><a class="link" href="builds.html">See the work {{lu:arrow-right}}</a></div>
 </div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Builds</h2><a class="link" href="builds.html">See all builds {{lu:arrow-right}}</a></div>''' + recent + '''</div></section>
-<section class="sec"><div class="wrap split"><figure>''' + media('hyped-up-workshop-reel.mp4', 'Hypa at work: tinting, fitting air struts, a screen and a boot build, then a starlight headliner, a wrap and a classic 911 outside the unit', lazy=False) + '''</figure>
+<section class="sec"><div class="wrap split"><figure>''' + media('hyped-up-workshop-reel.mp4', 'Hypa at work between finished builds: tinting, a classic 911, air struts, an Audi R8, a new screen, an R1 riding out, a boot build, a Bentley Bentayga, a starlight headliner, a Mercedes, an Evoque wrap, a BMW M1000RR, a striped Mini and the BMW 1 Series', lazy=False) + '''</figure>
 <div style="display:grid;gap:18px;justify-items:start"><span class="mono">Inside the workshop</span><h2>Protect it. Upgrade it. <span class="g">Style it.</span></h2><p class="lead">One workshop for the lot, from a Ghost immobiliser to a full colour change.</p></div></div></section>
 <section class="whysec"><div class="whybg" aria-hidden="true"></div><div class="wrap">''' + why + '''</div></section>
 ''' + comm + '''
