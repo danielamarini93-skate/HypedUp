@@ -49,31 +49,34 @@ side, not opened · `(check model)` / `car-tbc` = needs Hypa to confirm.
 - Which Subaru is the blue Impreza with the air tank and sub (filed with the camo Subaru).
 - Car model for the "car-tbc" shots in To check (boot spoiler, Mercedes sub enclosure, carbon door handle, Vauxhall tint).
 
-## Videos (261, not moved)
-Matched only by the photo numbers either side, nothing watched. Treat as a starting point:
+## Videos (261, all moved into Videos/ by group)
+Each video was moved into a group folder under Videos/ by the IMG number ranges in the table below. Nothing was watched, so
+these are the best guess from the photos either side. Folders are named by group letter.
 
-| Video numbers | Likely build |
-|---|---|
-| IMG_0245–0311 | Subaru camo graphics / workshop floor |
-| IMG_0670–0686 | BMW 1 Series E88 (dash, screen, boot) |
-| IMG_1736–1756 | BMW E88 fibreglass enclosure |
-| IMG_1575–1608 | Audi A4 soundproofing |
-| IMG_2659–2677 | KTM Duke / Mercedes C-Class coupe / Yamaha MT-07 decals |
-| IMG_2738–2750 | BMW E88 rear / Ford Focus ST |
-| IMG_2931–2969, 3015–3016 | Audi S4 air suspension |
-| IMG_3138–3177 | BMW E88 boot audio / BMW M1000RR |
-| IMG_3485–3489 | London taxi purple wrap |
-| IMG_4845 | Mini JCW + R6 (opening night) |
-| IMG_8382–8406 | Hyped Up sticker / workshop |
-| IMG_8461–8462 | Ford Transit van graphics |
-| IMG_8811–8851 | Nexx helmet decals |
-| IMG_9033 | Mini convertible screen |
-| IMG_9145–9183 | Alfa Stelvio starlight headliner |
-| IMG_9334–9349 | Vauxhall Combo signage |
-| IMG_9568–9582 | BDG van livery |
-| IMG_9728–9735 | Mazda 3 MPS boot build |
-| IMG_9874 | Audi A4 |
-| 27 `.mp4` / `video-output` files | Edited reels, short (0.4–31 MB); best for hero loops |
+| Folder | Likely build | Files |
+|---|---|---|
+| A - Subaru camo and workshop floor | Subaru camo graphics | 8 |
+| B - BMW E88 dash, screen and boot | BMW 1 Series E88 (own) | 9 |
+| C - BMW E88 fibreglass enclosure | BMW 1 Series E88 mould | 9 |
+| D - Audi A4 soundproofing | Audi A4 | 15 |
+| E - KTM, Mercedes and Yamaha decals | Decal work | 3 |
+| F - BMW E88 rear and Ford Focus ST | Mixed | 5 |
+| G - Audi S4 air suspension | Audi S4 | 11 |
+| H - BMW E88 boot audio and BMW M1000RR | BMW E88 / M1000RR | 11 |
+| I - London taxi purple wrap | London taxi | 5 |
+| J - Mini JCW and R6 opening night | Mini JCW (own) | 1 |
+| K - Hyped Up sticker and workshop | Workshop | 8 |
+| L - Ford Transit graphics | Ford Transit | 2 |
+| M - Nexx helmet decals | Nexx helmet | 10 |
+| N - Mini convertible screen | Mini convertible | 1 |
+| O - Alfa Stelvio starlight headliner | Alfa Stelvio | 24 |
+| P - Vauxhall Combo signage | Vauxhall Combo | 9 |
+| Q - BDG van livery | BDG Security van | 10 |
+| R - Mazda 3 boot build | Mazda 3 MPS | 6 |
+| S - Audi A4 | Audi A4 | 1 |
+| T - Reels (hero loop candidates) | Edited reels (.mp4, video-output) | 27 |
+| U - Unsorted, check before web use | Not matched to a range | 86 |
 
-Next step for videos: Dani picks the reels to check first (frame grabs need the files on a computer),
-or I move all 261 into **Videos/** by these groups. Moving them one by one takes about 260 Drive actions.
+**Next for videos:** the 86 in U need checking by eye. Start with the 27 reels in T, since those are the short edited clips
+best suited to hero loops. The ranges in the table came from the photos, so check each group before use.
+The video IDs and folder IDs are in `drive-sort/video_moves.json` and `drive-sort/video_folders.json`.
