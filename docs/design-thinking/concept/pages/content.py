@@ -519,6 +519,7 @@ for _k, (_i, _a) in _FINISHED.items(): S[_k].update(img=_i, alt=_a)
 # ---------- Focal points (20 Nov, Dani): crops always centre on the subject ----------
 # CSS object-position "x% y%" per image; frames crop with object-fit:cover. Default for anything not listed: 50% 45%.
 FOCUS = {
+    'metatrak-mercedes-e-class-leaflet.jpg': '50% 54%', 'metatrak-audi-s4-wheel.jpg': '50% 40%',
     'mini-jcw-low.jpg': '50% 33%', 'mini-jcw-street.jpg': '50% 46%', 'alfa-keys-wheel.jpg': '35% 55%', 'r8-pioneer-screen.jpg': '50% 40%',
     'audi-r8-carplay.jpg': '50% 52%', 'subaru-camo-wrap.jpg': '50% 55%', 'porsche.jpg': '50% 62%', 'civic.jpg': '50% 52%', 'wrap.jpg': '50% 60%',
     'volvo-xc90-satin.jpg': '50% 55%', 'abarth-pink-wrap.jpg': '50% 62%', 'alfa-stelvio-pink.jpg': '50% 72%', 'bentley-unit.jpg': '50% 60%',
@@ -534,3 +535,4 @@ FOCUS = {
     'meet-mini-sub-boot.jpg': '50% 62%', 'mt07-red-mini.jpg': '50% 55%', 'giulia-tint-hypa.jpg': '50% 55%', 'cx5-tint-hypa.jpg': '50% 45%',
     'e88-grilles-hypa.jpg': '55% 45%', 'ford-transit-yellow.jpg': '50% 55%', 'workshop-floor.jpg': '50% 45%',
 }
+S['car-trackers'].update(img='metatrak-mercedes-e-class-leaflet.jpg', alt='MetaTrak leaflet, key and tracker tag held up in front of a black Mercedes E-Class on a Hyped Up plate')

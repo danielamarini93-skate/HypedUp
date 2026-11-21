@@ -187,14 +187,14 @@ def build():
     strip = ''.join('<a href="%s"><b>%s</b><span class="sarr" aria-hidden="true">{{lu:arrow-right}}</span><p>%s</p></a>' % (h(g), n, t) for (g, n, _), t in zip(GROUPS,
             ['Ghost, trackers, alarms, dash cams', 'CarPlay, audio, remaps, lighting', 'Wraps, PPF, tint, air, wheels, plates']))
     # Builds first: the four signature stories
-    feat = [('porsche-911-outside-unit.mp4', 'Classic Porsche 911', 'Old shape, new colour', 'Air-cooled icon, wrapped. Prep is the job: clean edges, no lifting, no shortcuts.', 'Classic Porsche 911 in dark blue with yellow headlights outside the Hyped Up unit'),
+    feat = [('porsche.jpg', 'Classic Porsche 911', 'Old shape, new colour', 'Air-cooled icon, wrapped. Prep is the job: clean edges, no lifting, no shortcuts.', 'Classic Porsche 911 in dark blue with yellow headlights outside the Hyped Up unit'),
             ('alfa-stelvio-pink.jpg', 'Alfa Romeo Stelvio Quadrifoglio', '', 'Matte pink wrap, white wheels, yellow calipers. Nobody forgets this one.', 'Matte pink Alfa Romeo Stelvio Quadrifoglio with white wheels and yellow brake calipers outside the Hyped Up unit'),
             ('civic.jpg', 'Honda Civic Type R', 'Loud on purpose', 'Bright yellow, big wing, zero subtlety. Exactly how the owner wanted it.', 'Yellow Honda Civic Type R with the bonnet up inside the workshop'),
             ('bentley-unit.jpg', 'Bentley Flying Spur', 'Two-tone', 'Silver over black: the classic coachbuilt look on a Flying Spur.', 'Two-tone silver and black Bentley Flying Spur outside the Hyped Up unit')]
     recent = '<div class="bfeat">' + ''.join('<a class="bcard%s" href="builds.html">%s<div class="bcap"><h3>%s</h3><p>%s</p></div></a>'
              % (' big' if i == 0 else '', media(img, alt, cls='media'), car, l) for i, (img, car, t, l, alt) in enumerate(feat)) + '</div>'
     # Highlight services: four big tiles, photo-led, no prices
-    hl = [('security', 'Trackers & immobilisers', 'Ghost immobiliser: no code, no start, even with your key. MetaTrak tracker: you see where it is, from your phone.', 'alfa-keys-wheel.jpg', 'Alfa Romeo start button and keys with a MetaTrak tag'),
+    hl = [('security', 'Trackers & immobilisers', 'Ghost immobiliser: no code, no start, even with your key. MetaTrak tracker: you see where it is, from your phone.', 'metatrak-mercedes-e-class-leaflet.jpg', 'MetaTrak leaflet, key and tracker tag held up in front of a black Mercedes E-Class on a Hyped Up plate'),
           ('carplay', 'CarPlay & screens', 'Wireless CarPlay and Android Auto on screens that look factory. Reverse cameras wired in clean.', 'audi-r8-carplay.jpg', 'Audi R8 dashboard with a new screen showing the map and apps'),
           ('car-wrapping', 'Wraps & graphics', 'Colour changes, camo, stripes, logos. A full wrap takes at least a week, because the prep is the job.', 'subaru-camo-wrap.jpg', 'Subaru with finished grey camo graphics under the workshop mural'),
           ('air-suspension', 'Air suspension', 'Air Lift and Prazis. Slammed when parked, up for speed bumps, tank and compressor where you never hear them.', 'mini-jcw-low.jpg', 'Red Mini JCW sitting low on air suspension')]
@@ -305,9 +305,9 @@ def build():
                ('bdg-van-livery.mp4', 'BDG Security van', 'Livery that works', 'Cut on our own plotter, fitted in the unit: lettering, logo and the details a security firm needs customers to read from across the road.', 'Hypa fitting BDG Security lettering to a van, the finished rear door')]
     storyhtml = '<div class="stories">' + ''.join('<article class="story2"><figure>%s</figure><div style="display:grid;gap:12px;justify-items:start"><span class="mono">%s</span><h2>%s</h2><p class="lead">%s</p><a class="link" href="contact.html">Build something like this {{lu:arrow-right}}</a></div></article>'
                   % (media(v, a), car, t, l) for v, car, t, l, a in stories) + '</div>'
-    reels = [('mini-stripes-reel.mp4', 'Mini (own)', 'Stripes', 'styling', 'Red Mini with black bonnet stripes'), ('audi-r8-carplay-reel.mp4', 'Audi R8', 'New CarPlay screen', 'upgrades', 'Audi R8 CarPlay screen, then the car outside the unit'),
-             ('bentayga-reel.mp4', 'Bentley Bentayga', 'Outside the unit', 'styling', 'Black Bentley Bentayga outside the unit'), ('porsche-911-outside-unit.mp4', 'Porsche 911', 'Wrap detail', 'styling', 'Classic Porsche 911 outside the unit'),
-             ('m1000rr-tracker.mp4', 'BMW M1000RR', 'Scorpion tracker', 'security', 'BMW M1000RR in the workshop'), ('lexus-splitter-fitting.mp4', 'Lexus', 'Front splitter', 'styling', 'Front splitter being fitted to a Lexus')]
+    reels = [('lexus-splitter-fitting.mp4', 'Lexus', 'Front splitter', 'styling', 'Front splitter being fitted to a Lexus'),
+             ('e88-grille-black.mp4', 'BMW 1 Series (own)', 'Gloss black grilles', 'styling', 'Gloss black kidney grilles on a BMW 1 Series'),
+             ('ppf-headlights.mp4', 'Mercedes X-Class', 'Headlight protection film', 'styling', 'Mercedes X-Class headlight with protection film')]
     wall = []
     for k, b in enumerate([b for b in BUILDS if 'TBC' not in b[2]]):
         wall.append(b)
