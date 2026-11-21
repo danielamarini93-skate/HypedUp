@@ -354,12 +354,12 @@ def build():
   </div>
   <aside class="aside">
     <div><span class="find">Find us</span></div>
-    <figure>''' + media('bike-snow-foam-unit-22.jpg', 'Hypa snow-foaming two motorbikes outside the Unit 22 entrance and sign') + '''</figure>
     <p><b>Unit 22, Enterprise Industrial Estate,<br>Bolina Road, London SE16 3LF</b></p>
-    <div class="map"><iframe src="https://maps.google.com/maps?q=''' + MAPQ + '''&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Hyped Up on Bolina Road, London SE16 3LF"></iframe></div>
-    <a class="pill sm" style="justify-self:start" href="https://maps.google.com/?cid=1418041190124790308" target="_blank" rel="noopener">{{lu:map-pin}}Get directions</a>
     <table class="compare" style="max-width:360px"><tbody><tr><td>Mon–Fri</td><td>10:00–18:00</td></tr><tr><td>Saturday</td><td>09:00–16:00</td></tr><tr><td>Sunday</td><td>Closed</td></tr></tbody></table>
     <p>Call <a href="tel:+442033400632"><b>020 3340 0632</b></a><br>WhatsApp <a href="#wa"><b>07713 735646</b></a><br>Email <a href="mailto:info@hypedup.uk"><b>info@hypedup.uk</b></a></p>
+    <a class="pill sm" style="justify-self:start" href="https://maps.google.com/?cid=1418041190124790308" target="_blank" rel="noopener">{{lu:map-pin}}Get directions</a>
+    <div class="map"><iframe src="https://maps.google.com/maps?q=''' + MAPQ + '''&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Hyped Up on Bolina Road, London SE16 3LF"></iframe></div>
+    <figure>''' + media('rear-tint-hypa-mural.jpg', 'Hypa in his Hyped Up gilet fitting rear window tint under the workshop mural') + '''</figure>
     <p class="note">Customers come from across South and East London: Bermondsey, Rotherhithe, Peckham, Lewisham, Greenwich, Croydon, Bromley and beyond. <span class="tbc">(Areas TBC: Hypa)</span></p>
   </aside>
 </div>
