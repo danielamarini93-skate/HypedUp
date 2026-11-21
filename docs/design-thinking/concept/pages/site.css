@@ -631,3 +631,49 @@ figcaption{margin-top:8px}
 .strip a:hover .sarr,.strip a:focus-visible .sarr{background:var(--fg);border-color:var(--fg);color:var(--bg)}
 .link:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
 .chips a:hover,.chips button:hover{background:rgba(242,238,233,.08)}
+
+/* topic explainers v5.6 (21 Nov) */
+.exsec{border-top:1px solid var(--rule)}
+.exsec .sec-head.stack .mono{color:var(--soft)}
+/* map + law: real photo, brush circles, numbered legend */
+.exmap{display:grid;gap:28px;align-items:start}
+@media (min-width:1000px){.exmap{grid-template-columns:1.25fr 1fr;gap:48px}}
+.exfig{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--panel)}
+.exfig img{width:100%;height:100%;object-fit:cover;display:block}
+.exfig::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.45));pointer-events:none}
+.pin{position:absolute;z-index:1;width:74px;height:54px;transform:translate(-50%,-50%);display:grid;place-items:center}
+.pin::before{content:"";position:absolute;inset:0;background:#e30613;-webkit-mask:url(img/circle.svg) center/100% 100% no-repeat;mask:url(img/circle.svg) center/100% 100% no-repeat}
+.pin b{position:relative;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--bg);color:var(--fg);font:900 1rem/1 var(--f-display)}
+.legend{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--fg)}
+.legend li{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.pnum{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--fg);font:900 1rem/1 var(--f-display)}
+.legend b{font:900 1.35rem/1 var(--f-display);text-transform:uppercase;color:var(--fg)}
+.legend p{margin:6px 0 0;color:var(--body2);font-size:.95rem}
+.legend p.law{font:900 1.6rem/1 var(--f-display);text-transform:uppercase;color:var(--fg);margin-top:8px}
+.exside{display:grid;gap:18px}
+.exnotes{margin:0;padding-left:1.1rem;display:grid;gap:8px;color:var(--body2);font-size:.95rem}
+.src{margin:0;text-transform:none;letter-spacing:0}
+.src a{text-decoration:underline;text-underline-offset:3px}
+/* story: three cards with icons */
+.exstory{list-style:none;margin:0;padding:0;display:grid;gap:16px;counter-reset:s}
+@media (min-width:900px){.exstory{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.exstory li{display:grid;gap:12px;align-content:start;border:1px solid var(--rule2);background:var(--panel);padding:24px}
+.exstory li:last-child{border-color:var(--fg)}
+.exstory h3{font-size:clamp(1.6rem,2.4vw,2rem)}
+.exstory p{margin:0;color:var(--body2)}
+.exnote{margin:20px 0 0;color:var(--body2);max-width:70ch}
+/* steps: numbered stages with Graffiti numerals */
+.exsteps{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--fg)}
+.exsteps li{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.exsteps .gnum{font-size:2.6rem;line-height:1}
+.exsteps h3{font-size:clamp(1.5rem,2.2vw,1.9rem)}
+.exsteps p{margin:6px 0 0;color:var(--body2)}
+.exsplit{display:grid;gap:28px;align-items:start}
+.exsplit .media{aspect-ratio:4/5}
+@media (min-width:1000px){.exsplit{grid-template-columns:.9fr 1.1fr;gap:56px}}
+/* ladder: a staircase, each step higher */
+.exladder{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.exladder li{display:grid;gap:10px;align-content:start;border:1px solid var(--rule2);background:var(--panel);padding:22px;position:relative}
+.exladder h3{font-size:clamp(1.5rem,2.2vw,1.9rem)}
+.exladder p{margin:0;color:var(--body2)}
+@media (min-width:900px){.exladder{grid-template-columns:repeat(4,minmax(0,1fr));align-items:end}.exladder li{min-height:calc(190px + var(--i) * 56px);border-top:3px solid var(--fg)}}

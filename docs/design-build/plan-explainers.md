@@ -1,6 +1,6 @@
 # Plan: one explainer per page
 
-21 Nov 2026 · Design build · **Status: waiting for Dani's OK**
+21 Nov 2026 · Design build · **Status: approved 21 Nov. First batch of 6 in progress.**
 
 ## Why
 
@@ -67,6 +67,21 @@ Motorbikes and Business already got theirs this morning (layers, who we fit for,
 3. Add them to the concept + canvas, phone first. One explainer per page, placed right after "What we offer".
 4. Tick, commit, publish, then show Dani.
 
-## Questions for Dani
+## Dani's answers (21 Nov)
 
-See the chat.
+- **First batch of 6**, one of each kind: Styling hub, Ghost, Car trackers, Window tinting, Car wrapping, Car audio. Review, then the other 20.
+- **Diagrams = real photo + brush circles** with short labels. No code-drawn lines.
+- **Dani will send AnswerThePublic exports** (tint, wrap, Ghost, tracker, audio, PPF/ceramic). Build now with reachable data; fold the exports in when they arrive.
+- **Unconfirmed facts: keep it general**, list the details for Hypa on the review board.
+
+## Progress
+
+- **21 Nov: first batch built** on the concept and the canvas, placed right after "What we offer" (services) and after the service cards (hub):
+  - Styling hub: **What goes where** (map: R8 photo, 6 brush circles, numbered legend with links)
+  - Ghost: **How keyless cars get taken, and where Ghost stops it** (story: 3 cards with icons)
+  - Car trackers: **What happens when your car is stolen** (steps)
+  - Window tinting: **How dark can you go?** (law: Macan photo, 3 circles, legal figures, GOV.UK source)
+  - Car wrapping: **A full wrap, step by step** (steps + Hypa fitting photo)
+  - Car audio: **The upgrade ladder** (ladder: staircase on desktop)
+- For Hypa (hidden from pages, on the review board): tracker recovery wording, wrap stages and timing.
+- Next: Dani's review → the other 20 pages → explainer types into the design system as one component.

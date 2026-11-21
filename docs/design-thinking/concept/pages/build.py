@@ -4,7 +4,7 @@
 # Previous version (5 key pages): build-v3.py
 import os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-from content import OFFER, OFFER_INTRO, POOL, FOCUS, PROOF_REEL, GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL, HYPA_MEDIA
+from content import EXPLAINERS, OFFER, OFFER_INTRO, POOL, FOCUS, PROOF_REEL, GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL, HYPA_MEDIA
 import html as _html
 S = '/tmp/claude-0/-home-user/545d0e01-e697-5941-a49a-d293a211030b/scratchpad'
 OUT = S + '/pages-out'
@@ -128,6 +128,34 @@ BUILDS = [
 SVC_BUILDS = {'car-wrapping': [0 + 1, 11, 14], 'air-suspension': [2], 'car-trackers': [3], 'ambient-lighting': [4], 'carplay': [0, 12, 10], 'car-audio': [7],
               'dash-cams': [8], 'ghost-immobiliser': [13, 3], 'taxi-cameras': [11], 'van-signage': [16], 'wheel-refurb': [14]}
 
+def explainer(key):
+    e = EXPLAINERS.get(key)
+    if not e: return ''
+    t = e['type']
+    head = '<div class="sec-head stack"><span class="mono">%s</span><h2>%s</h2><p class="lead">%s</p></div>' % (e['eyebrow'], e['title'], e['intro'])
+    tbc = ('<p class="tbc">%s</p>' % e['tbc']) if e.get('tbc') else ''
+    if t in ('map', 'law'):
+        pins = ''.join('<span class="pin" style="left:%d%%;top:%d%%" aria-hidden="true"><b>%d</b></span>' % (m[0], m[1], i + 1) for i, m in enumerate(e['marks']))
+        if t == 'map':
+            legend = ''.join('<li><span class="pnum" aria-hidden="true">%d</span><div><a href="%s"><b>%s</b></a><p>%s</p></div></li>' % (i + 1, m[4], m[2], m[3]) for i, m in enumerate(e['marks']))
+        else:
+            legend = ''.join('<li><span class="pnum" aria-hidden="true">%d</span><div><b>%s</b><p class="law">%s</p></div></li>' % (i + 1, m[2], m[3]) for i, m in enumerate(e['marks']))
+        notes = ''.join('<li>%s</li>' % n for n in e.get('notes', []))
+        src = ('<p class="src mono">Source: <a href="%s" target="_blank" rel="noopener">%s</a></p>' % (e['source'][1], e['source'][0])) if e.get('source') else ''
+        body = ('<div class="exmap"><figure class="exfig"><img src="img/%s" alt="%s" loading="lazy">%s</figure><div class="exside"><ol class="legend">%s</ol>%s%s</div></div>'
+                % (e['img'], e['alt'], pins, legend, ('<ul class="exnotes">%s</ul>' % notes) if notes else '', src))
+    elif t == 'story':
+        body = ('<ol class="exstory">%s</ol>' % ''.join('<li><span class="lic">{{lu:%s}}</span><span class="mono">Step %d</span><h3>%s</h3><p>%s</p></li>' % (ic, i + 1, ti, d) for i, (ic, ti, d) in enumerate(e['items']))
+                + ('<p class="exnote">%s</p>' % e['note'] if e.get('note') else ''))
+    elif t == 'steps':
+        steps = '<ol class="exsteps">%s</ol>' % ''.join('<li><span class="gnum" aria-hidden="true">%d</span><div><h3>%s</h3><p>%s</p></div></li>' % (i + 1, ti, d) for i, (ti, d) in enumerate(e['items']))
+        body = ('<div class="exsplit"><figure>%s</figure>%s</div>' % (media(e['img'], e['alt']), steps)) if e.get('img') else steps
+    elif t == 'ladder':
+        body = '<ol class="exladder">%s</ol>' % ''.join('<li style="--i:%d"><span class="mono">Step %d</span><h3>%s</h3><p>%s</p></li>' % (i, i + 1, ti, d) for i, (ti, d) in enumerate(e['items']))
+    else:
+        body = ''
+    return '<section class="sec exsec"><div class="wrap">%s%s%s</div></section>' % (head, body, tbc)
+
 def service_page(slug):
     v = SV[slug]; g = v['group']; chip = CHIP[slug]
     offer = OFFER.get(slug) or [(t, d, '', '') for t, d in v['options']]
@@ -167,11 +195,12 @@ def service_page(slug):
   </div>
 </div></section>
 <section class="sec"><div class="wrap"><div class="sec-head stack"><h2>What we offer</h2><p class="lead">%(ointro)s</p></div>%(opts)s</div></section>
+%(explain)s
 <section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How it works</h2><p class="lead">Every job is made to order. We listen first, plan it around your car, and only start once you're happy with the plan.</p></div><ol class="timeline">%(steps)s</ol></div></section>
 %(proof)s
 <section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%(good)s%(faq)s%(makes)s%(blog)s</div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Related</h2><a class="link" href="%(gh)s">All %(gn)s services {{lu:arrow-right}}</a></div><div class="cards">%(rel)s</div></div></section>
-''' % dict(ointro=OFFER_INTRO.get(slug, ''), gh=h(g), gn=GNAME[g], name=v['name'], lead=v['lead'], price=v['price'], note=v['price_note'], chip=chip, media=media(v.get('vid') or v['img'], v.get('valt') or v['alt'], v.get('need', ''), lazy=False),
+''' % dict(explain=explainer(slug), ointro=OFFER_INTRO.get(slug, ''), gh=h(g), gn=GNAME[g], name=v['name'], lead=v['lead'], price=v['price'], note=v['price_note'], chip=chip, media=media(v.get('vid') or v['img'], v.get('valt') or v['alt'], v.get('need', ''), lazy=False),
            opts=opts, steps=steps, proof=('<section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent work</h2><a class="link" href="builds.html">All builds {{lu:arrow-right}}</a></div>%s</div></section>' % proof_html) if proof_html else '', good=good, faq=faq(v['faq']) if v['faq'] else '', makes=makes, blog=blog, rel=rel)
     page(h(slug), v['title'], v['desc'], g, body + band('Want a price for your car?', 'Send us the make and model. We\'ll come back with options and a straight price.', chip), v['name'], GNAME[g])
 
@@ -187,10 +216,11 @@ def hub_page(g, name, slugs):
 </div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>All %(name)s services</h2></div><div class="cards hubcards">%(cards)s</div></div></section>
 %(layers)s
+%(explain)s
 <section class="sec cmpsec" style="--cbg:url(img/%(img)s)"><div class="cmpbg" aria-hidden="true"></div><div class="wrap"><div class="sec-head"><h2>Which one do I need?</h2></div>
   <div class="scrollx"><table class="compare"><thead><tr><th>Service</th><th>What it does</th><th>Best for</th><th>Price</th></tr></thead><tbody>%(rows)s</tbody></table></div></div></section>
 <section class="sec"><div class="wrap"><div class="narrow"><div class="vsbox"><span class="mono">Explained</span><h2>%(et)s</h2><p class="lead">%(eb)s</p></div>%(faq)s</div></div></section>
-''' % dict(img=d['img'], h1=d['h1'], lead=d['lead'], media=media(d.get('vid') or d['img'], d.get('valt') or d['alt'], lazy=False), name=name, n=len(slugs), cards=''.join(scard(s) for s in slugs), layers=layers, rows=rows,
+''' % dict(explain=explainer(g), img=d['img'], h1=d['h1'], lead=d['lead'], media=media(d.get('vid') or d['img'], d.get('valt') or d['alt'], lazy=False), name=name, n=len(slugs), cards=''.join(scard(s) for s in slugs), layers=layers, rows=rows,
            et=d['explainer'][0], eb=d['explainer'][1], faq=faq(d['faq'], False))
     page(h(g), d['title'], d['desc'], g, body + band('Not sure what your car needs?', 'Send us the make and model. We\'ll tell you what\'s worth doing and what it costs.'), name + ' (hub)', 'Hubs')
 
