@@ -4,7 +4,7 @@
 # Previous version (5 key pages): build-v3.py
 import os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-from content import FOCUS, PROOF_REEL, GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL, HYPA_MEDIA
+from content import POOL, FOCUS, PROOF_REEL, GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL, HYPA_MEDIA
 import html as _html
 S = '/tmp/claude-0/-home-user/545d0e01-e697-5941-a49a-d293a211030b/scratchpad'
 OUT = S + '/pages-out'
@@ -58,9 +58,17 @@ def footer():
             '<a class="fab" href="#wa" aria-label="WhatsApp Hyped Up">{{br:whatsapp}}</a><script src="site.js"></script></body></html>')
 
 PAGES = []  # (file, label, section) for the review board
+TBC_FOUND = []  # review notes removed from customer pages, listed on the review board instead
+def strip_notes(name, html_):
+    def keep(m):
+        t = re.sub(r'<[^>]+>', '', m.group(0)).strip(' ()')
+        TBC_FOUND.append('%s: %s' % (name[:-5], t)); return ''
+    html_ = re.sub(r'\s*<span class="tbc">.*?</span>', keep, html_)
+    html_ = re.sub(r'<p class="tbc">.*?</p>', keep, html_)
+    return html_
 def page(name, title, desc, cur, body, label, section):
     PAGES.append((name, label, section))
-    open(os.path.join(OUT, name), 'w').write(icons(head(title, desc, name) + header(cur) + body + footer()))
+    open(os.path.join(OUT, name), 'w').write(icons(strip_notes(name, head(title, desc, name) + header(cur) + body + footer())))
 
 def media(img, alt, need='', cls='media vig', lazy=True):
     if img and img.endswith('.mp4'):
@@ -73,10 +81,16 @@ def media(img, alt, need='', cls='media vig', lazy=True):
 def band(title, line, chip=''):
     return ('<section class="band"><div class="bandbg" aria-hidden="true"></div><div class="wrap"><div><h2>%s</h2><p class="lead" style="margin-top:14px">%s</p></div><div class="bandcta"><a class="pill" href="contact.html%s">Contact us</a></div></div></section>'
             % (title, line, ('?service=' + chip) if chip else ''))
-def scard(s):
-    v = SV[s]
+_ROT = {}
+def scard(s, rotate=False, avoid=()):
+    # rotate=True (Related rows): show another real example of this service, never one already on the page
+    v = SV[s]; img, alt = v['img'], v['alt']
+    if rotate and img in avoid and not POOL.get(s): pass
+    if rotate and (POOL.get(s) or img in avoid):
+        opts = [o for o in [(v['img'], v['alt'])] + POOL.get(s, []) if o[0] not in avoid] or POOL.get(s) or [(img, alt)]
+        k = _ROT.get(s, 0); _ROT[s] = k + 1; img, alt = opts[k % len(opts)]
     return ('<a class="card" href="%s">%s<div class="row"><h3>%s</h3><span class="from g">%s</span></div><p>%s</p></a>'
-            % (h(s), media(v['img'], v['alt'], v.get('need', '')), v['name'], v['price'], v['line']))
+            % (h(s), media(img, alt, v.get('need', '')), v['name'], v['price'], v['line']))
 def faq(items, first_open=True):
     return '<div class="faq">' + ''.join('<details%s><summary>%s{{lu:plus}}</summary><p>%s</p></details>' % (' open' if i == 0 and first_open else '', q, a) for i, (q, a) in enumerate(items)) + '</div>'
 def builds_strip(items):
@@ -125,12 +139,14 @@ def service_page(slug):
                       for i, (t, d) in enumerate(v['options']))
     opts = '<div class="picker" data-picker><div class="ptabs" role="tablist" aria-label="%s options">%s</div><div class="ppanels">%s</div></div>' % (v['name'], ptabs, ppanels)
     steps = ''.join('<li><h3>%s</h3>%s</li>' % (t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(STEPS.get(slug, v['steps'])))
-    proof = [i for i in SVC_BUILDS.get(slug, []) if BUILDS[i][0] != v['img']]
+    proof = [i for i in SVC_BUILDS.get(slug, []) if BUILDS[i][0] != v['img'] and 'TBC' not in BUILDS[i][2]]
     pitems = ([PROOF_REEL[slug]] if slug in PROOF_REEL else []) + [(BUILDS[i][0], BUILDS[i][1], BUILDS[i][2], BUILDS[i][4]) for i in proof]
-    proof_html = (builds_strip(pitems[:3]) if pitems else
-                  '<div class="need-row"><span class="mono">Builds for this service: photos needed (Drive upload)</span></div>')
+    proof_html = builds_strip(pitems[:3]) if pitems else ''
     makes = ('<div style="display:grid;gap:12px"><span class="mono">%s for your car</span><div class="chips">%s</div></div>' % (v['name'], ''.join('<a href="%s">%s</a>' % (u, m) for m, u in v['makes']))) if v.get('makes') else ''
-    rel = ''.join(scard(s) for s in v['related'])
+    used = {v['img'], v.get('vid')} | {x[0] for x in pitems}
+    rel = ''
+    for s_ in v['related']:
+        card = scard(s_, True, used); rel += card; used |= set(re.findall(r'img/([^"]+\.(?:jpg|mp4))', card))
     blog = ('<div style="display:grid;gap:12px"><span class="mono">Guides</span><div class="chips">%s</div></div>' % ''.join('<a href="%s">%s</a>' % (u, t) for t, u in v['blog'])) if v.get('blog') else ''
     good = ('<div class="good"><span class="mono">Good to know</span><p>%s</p></div>' % v['good']) if v.get('good') else ''
     body = '''
@@ -148,11 +164,11 @@ def service_page(slug):
 </div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Pick your setup</h2></div>%(opts)s</div></section>
 <section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How it works</h2><p class="lead">Every job is made to order. We listen first, plan it around your car, and only start once you're happy with the plan.</p></div><ol class="timeline">%(steps)s</ol></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent work</h2><a class="link" href="builds.html">All builds {{lu:arrow-right}}</a></div>%(proof)s</div></section>
+%(proof)s
 <section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%(good)s%(faq)s%(makes)s%(blog)s</div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Related</h2><a class="link" href="%(gh)s">All %(gn)s services {{lu:arrow-right}}</a></div><div class="cards">%(rel)s</div></div></section>
 ''' % dict(gh=h(g), gn=GNAME[g], name=v['name'], lead=v['lead'], price=v['price'], note=v['price_note'], chip=chip, media=media(v.get('vid') or v['img'], v.get('valt') or v['alt'], v.get('need', ''), lazy=False),
-           opts=opts, steps=steps, proof=proof_html, good=good, faq=faq(v['faq']) if v['faq'] else '', makes=makes, blog=blog, rel=rel)
+           opts=opts, steps=steps, proof=('<section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent work</h2><a class="link" href="builds.html">All builds {{lu:arrow-right}}</a></div>%s</div></section>' % proof_html) if proof_html else '', good=good, faq=faq(v['faq']) if v['faq'] else '', makes=makes, blog=blog, rel=rel)
     page(h(slug), v['title'], v['desc'], g, body + band('Want a price for your car?', 'Send us the make and model. We\'ll come back with options and a straight price.', chip), v['name'], GNAME[g])
 
 def hub_page(g, name, slugs):
@@ -165,7 +181,7 @@ def hub_page(g, name, slugs):
   <div class="copy"><h1>%(h1)s</h1><p class="lead">%(lead)s</p><div class="act"><a class="pill" href="contact.html">Contact us</a></div></div>
   <figure>%(media)s</figure>
 </div></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>All %(name)s services</h2><p>%(n)d services, the same list as the footer.</p></div><div class="cards hubcards">%(cards)s</div></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>All %(name)s services</h2></div><div class="cards hubcards">%(cards)s</div></div></section>
 %(layers)s
 <section class="sec cmpsec" style="--cbg:url(img/%(img)s)"><div class="cmpbg" aria-hidden="true"></div><div class="wrap"><div class="sec-head"><h2>Which one do I need?</h2></div>
   <div class="scrollx"><table class="compare"><thead><tr><th>Service</th><th>What it does</th><th>Best for</th><th>Price</th></tr></thead><tbody>%(rows)s</tbody></table></div></div></section>
@@ -289,8 +305,8 @@ def build():
     audience('motorbikes.html', 'Motorbike Security, Wraps & Remaps in London | Hyped Up', 'Motorbike security, trackers, wraps and remaps in Bermondsey, South London: Ghost for bikes, Datatool S5 trackers, bike alarms and wraps from £900.',
              'Motorbikes', 'A bike can be lifted into a van in under a minute, so an immobiliser alone isn\'t enough: it needs a tracker too. We also wrap and remap bikes.', 'r6-grass.jpg', 'Black Yamaha R6 with yellow and orange graphics, shot low on a sunny day',
              [('Ghost for motorbikes', 'PIN on the bike\'s own buttons.', 'from £400', 'ghost-immobiliser.html', 'mt07-tail-tidy-hypa.jpg', ''), ('Trackers for bikes', 'Scorpion and Datatool S5, hidden and monitored 24/7.', 'from £395', 'car-trackers.html', 'm1000rr-tracker.jpg', ''),
-              ('Bike alarms', 'Siren with motion and shock sensors.', 'on enquiry', 'car-alarms.html', None, 'a bike alarm'), ('Motorbike wraps', 'Mopeds, nakeds and super sports.', 'from £900', 'car-wrapping.html', 'helmet.jpg', ''),
-              ('Bike remaps', 'More response, done safely.', 'on enquiry', 'remapping.html', None, 'a bike remap')], 'Motorbikes', comm)
+              ('Bike alarms', 'Siren with motion and shock sensors.', 'on enquiry', 'car-alarms.html', 'unit-r6.jpg', ''), ('Motorbike wraps', 'Mopeds, nakeds and super sports.', 'from £900', 'car-wrapping.html', 'helmet.jpg', ''),
+              ('Bike remaps', 'More response, done safely.', 'on enquiry', 'remapping.html', 'hypa-carbon-streetfighter.jpg', '')], 'Motorbikes', comm)
     audience('business.html', 'Fleet Tracking, Taxi Cameras & Van Signage London | Hyped Up', 'For London businesses, taxis and fleets: trackers, TfL-approved taxi cameras, van reverse cameras and sensors, and van signage, fitted in Bermondsey.',
              'Business &amp; fleet', 'Trackers, TfL-approved cameras and signage for taxis, vans and company cars. Booked around your working day, so the vehicle earns while it waits.', 'van-lettering-hypa.mp4', 'Hypa lettering a BDG Security van, the plotter cutting vinyl, a logo going on with the heat gun',
              [('Fleet trackers', 'Know where every vehicle is.', 'from £395', 'car-trackers.html', 'tracker.jpg', ''), ('TfL taxi cameras', 'Approved systems for cabs and PHVs.', 'from £395', 'taxi-cameras.html', 'wrap.jpg', ''),
@@ -404,7 +420,7 @@ def build():
     prods = [('Graffiti T-shirt', '£20'), ('Hyped Up T-shirt', '£20'), ('Hyped Up jumper', '£40'), ('The keyring', '£10')]
     page('shop.html', 'Hyped Up Apparel: Tees, Jumpers & Keyrings', 'Hyped Up apparel from the Bermondsey workshop: graffiti tees, Hyped Up jumpers and keyrings. Order on WhatsApp and collect at Unit 22 or ask about delivery.', '', '''
 <section class="hero"><div class="wrap" style="display:grid;gap:20px"><h1>Shop</h1><p class="lead">Wear the workshop. Order on WhatsApp, collect at Unit 22. <span class="tbc">(Delivery: Hypa)</span></p></div></section>
-<section class="sec" style="padding-top:24px"><div class="wrap"><div class="cards">''' + ''.join('<div class="card">%s<div class="row"><h3>%s</h3><span class="from g">%s</span></div><a class="pill ghost sm" href="#wa">{{br:whatsapp}}Order on WhatsApp</a></div>' % (media(None, '', 'product photo'), n, p) for n, p in prods) + '''</div></div></section>''', 'Shop', 'Brand & support')
+<section class="sec" style="padding-top:24px"><div class="wrap"><div class="cards">''' + ''.join('<div class="card"><div class="row"><h3>%s</h3><span class="from g">%s</span></div><a class="pill ghost sm" href="#wa">{{br:whatsapp}}Order on WhatsApp</a></div>' % (n, p) for n, p in prods) + '''</div></div></section>''', 'Shop', 'Brand & support')
 
 
     # ---------- COMMUNITY (v5) ----------
@@ -472,7 +488,7 @@ details ul{margin:10px 0 0;padding-left:1.1rem;color:#e6b84a;font-size:.92rem}
 <div class="bar"><span class="mono" id="cur"></span><a class="pill" id="open" href="#" target="_blank" rel="noopener">Open full page</a></div>
 <div class="frames"><div class="fdesk"><span class="mono">Desktop · 1280</span><div class="scaler"><iframe id="fd" title="Page at desktop width"></iframe></div></div>
 <div class="fphone"><span class="mono">Phone · 390</span><iframe id="fp" title="Page at phone width"></iframe></div></div>
-<details><summary>Still to confirm with Hypa (''' + str(len(TBC)) + ''')</summary><ul>''' + ''.join('<li>%s</li>' % t for t in TBC) + '''</ul></details>
+<details><summary>Still to confirm with Hypa (''' + str(len(TBC) + len(TBC_FOUND)) + ''', hidden from customer pages)</summary><ul>''' + ''.join('<li>%s</li>' % t for t in TBC + TBC_FOUND) + '''</ul></details>
 <p class="mono" style="text-transform:none;letter-spacing:0">The contact map is a live Google Maps embed: the artifact viewer may block it; it works on the real site (after cookie consent).</p>
 </div>
 <script>

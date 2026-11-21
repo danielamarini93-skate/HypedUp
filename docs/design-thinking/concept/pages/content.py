@@ -536,3 +536,97 @@ FOCUS = {
     'e88-grilles-hypa.jpg': '55% 45%', 'ford-transit-yellow.jpg': '50% 55%', 'workshop-floor.jpg': '50% 45%',
 }
 S['car-trackers'].update(img='metatrak-mercedes-e-class-leaflet.jpg', alt='MetaTrak leaflet, key and tracker tag held up in front of a black Mercedes E-Class on a Hyped Up plate')
+# ---------- v5.3 (21 Nov, Dani): fewer repeats ----------
+# A service's main image stays on its own page and its hub card (so you know where you are).
+# "Related" rows rotate through other real examples from POOL, so the same service shows a different job on each page.
+S['ghost-immobiliser'].update(img='ghost-start-button-wheel.jpg', alt='Alfa Romeo start button and stitched steering wheel')
+S['chrome-delete'].update(img='e88-grilles-hypa.jpg', alt='Hypa fitting gloss black kidney grilles to a BMW 1 Series')
+FOCUS.update({'ghost-start-button-wheel.jpg': '35% 25%', 'metatrak-audi-s4-wheel.jpg': '50% 62%', 'mercedes-screen.jpg': '50% 22%',
+              'abarth-ambient-door.jpg': '50% 50%', 'bdg-van-rear.jpg': '50% 55%', 'minibus-signage.jpg': '50% 50%', 'lexus-splitter-fitting.jpg': '50% 50%'})
+POOL = {
+    'ghost-immobiliser': [('hypa-in-the-workshop.jpg', 'Hypa working in the driver seat of a customer car')],
+    'car-trackers': [('metatrak-audi-s4-wheel.jpg', 'MetaTrak tag on the keys and the leaflet behind an Audi S4 steering wheel'), ('alfa-keys-wheel.jpg', 'MetaTrak tag on the keys of an Alfa Romeo'), ('m1000rr-tracker.jpg', 'BMW M1000RR in for a Scorpion tracker')],
+    'dash-cams': [('merc-dashcam.jpg', 'Thinkware dash cam box in front of a white Mercedes E-Class'), ('dash-cam-mirror.jpg', 'Mirror dash cam with front and rear view')],
+    'car-alarms': [('m1000rr-tracker.jpg', 'BMW M1000RR in the workshop')],
+    'taxi-cameras': [('dash-cam-mirror.jpg', 'Mirror dash cam with front and rear view')],
+    'carplay': [('mercedes-screen.jpg', 'Mercedes with a large new widescreen'), ('carplay.jpg', 'Mini with a new round CarPlay screen'), ('r8-pioneer-screen.jpg', 'Audi R8 Pioneer screen')],
+    'car-audio': [('e88-boot-speaker-pods-hypa.jpg', 'Hypa wiring custom speaker pods in a BMW 1 Series boot'), ('meet-mini-sub-boot.jpg', 'Mini with a red custom subwoofer boot')],
+    'remapping': [('hypa-engine-bay.jpg', 'Hands in a BMW engine bay')],
+    'reverse-cameras': [('mercedes-screen.jpg', 'Mercedes widescreen showing the reverse camera guidelines'), ('van-reverse-camera.jpg', 'Brake-light reverse camera on a van roof')],
+    'ambient-lighting': [('abarth-ambient.jpg', 'Abarth interior lit purple'), ('abarth-ambient-door.jpg', 'Abarth door open with ambient lighting')],
+    'performance-parts': [('skyline-r34.jpg', 'Nissan Skyline R34 with the bonnet up')],
+    'car-wrapping': [('alfa-stelvio-pink.jpg', 'Matte pink Alfa Romeo Stelvio with white wheels'), ('wrap.jpg', 'London taxi wrapped purple'), ('volvo-xc90-satin.jpg', 'Satin Volvo XC90 with gold wheel details')],
+    'window-tinting': [('giulia-tint-hypa.jpg', 'Alfa Romeo Giulia being tinted'), ('rear-tint-hypa-mural.jpg', 'Hypa fitting rear tint under the mural')],
+    'air-suspension': [('mini-jcw-street.jpg', 'Red Mini JCW low on air, on the street'), ('s4-air-struts-hypa.jpg', 'New air struts in front of a black Audi')],
+    'bodykits': [('lexus-splitter-fitting.jpg', 'Front splitter going onto a Lexus')],
+    'chrome-delete': [('e88-grille-black.jpg', 'Gloss black kidney grilles on a BMW 1 Series')],
+    'wheel-refurb': [('calipers-m.jpg', 'Brake calipers painted red'), ('volvo-wheel-detail.jpg', 'Volvo wheel with a yellow pinstripe')],
+    'interiors': [('a4-roof-deadening-hypa.jpg', 'Hypa deadening an Audi A4 roof'), ('starlight-headliner.jpg', 'Starlight fibres being threaded')],
+    'number-plates': [('mt07-tail-tidy-hypa.jpg', 'Hypa fitting a plate to a Yamaha MT-07'), ('mini-jcw-show.jpg', 'Red Mini on a Hyped Up show plate')],
+    'van-signage': [('bdg-van-rear.jpg', 'BDG Security van rear doors'), ('minibus-signage.jpg', 'Charity minibus lettering'), ('van-lettering-heat-gun-hypa.jpg', 'Hypa setting van vinyl with a heat gun')],
+}
+# ---------- v5.4 (21 Nov, Dani): more FAQs, deeper answers (hubs 5, every service at least 4) ----------
+# Facts only from this file, memory/ and UK law. No new prices, no time promises except plates (while you wait) and wraps (1 week minimum).
+HUBS['security']['faq'] = [
+    ('What security does a keyless car need?', 'Keyless cars are the ones thieves target with relay kits: they boost the signal from your key inside the house and drive off in seconds. Start with an immobiliser such as Ghost, so the car won\'t start without your PIN even if the key signal is copied. Add a monitored tracker on anything high value, so if it does go, it can be found. A dash cam with parking mode and an alarm with phone alerts are the next layers.'),
+    ('Ghost or a tracker: which should I fit first?', 'If you can only do one, fit the immobiliser: it stops the car being driven away. A tracker doesn\'t stop the theft, it helps get the car back, and many insurers ask for one on prestige cars. Most of our customers end up with both, because together they cover the two ways a car gets taken: driven off, or lifted onto a truck.'),
+    ('Do you fit security to motorbikes?', 'Yes. A bike can be lifted into a van in under a minute, so an immobiliser alone isn\'t enough. We fit Ghost to bikes, compact S5 trackers hidden under the seat or in the tail, and alarms with motion and shock sensors. See Motorbikes for what we fit and the bikes we\'ve done.'),
+    ('Do I need to tell my insurer?', 'Yes, tell them what you\'ve fitted. Some insurers ask for a specific tracker category or an approved immobiliser before they\'ll cover a car, and some take it into account in the price. We give you the paperwork after fitting, so you have the details to hand.'),
+    ('How much does car security cost?', 'Ghost immobilisers start from £400, monitored trackers from £395 plus the monthly monitoring subscription, and dash cams from £125 fitted. The exact price depends on the car and what you want to protect against. Tell us the make, model and year and we\'ll come back with a straight price for the setup we\'d actually recommend.'),
+]
+HUBS['upgrades']['faq'] = [
+    ('Can you do several upgrades at once?', 'Yes, and it usually makes sense. A screen, a reverse camera and new speakers all mean taking the same trim off, so doing them together saves labour and means the car is only apart once. Tell us everything you want and we\'ll plan it as one job, with one price.'),
+    ('Will I keep my steering wheel controls and factory features?', 'Yes. With a new screen or a CarPlay interface we keep your steering wheel controls working, and with audio we can keep the factory head unit if you like the look. If a feature can\'t be kept on your car, we tell you before we start, not after.'),
+    ('Can my car keep a factory look?', 'Often, yes. A CarPlay interface sits behind the original screen so the dash looks standard, amps and subs can be hidden in the boot floor, and ambient lighting is wired into the existing trim. If you want it loud and visible instead, we build that too.'),
+    ('Does a remap affect my insurance or warranty?', 'A remap is a modification, so tell your insurer. We read the ECU and check the car is healthy before anything is changed, and map it for the hardware it actually has, so the engine isn\'t pushed past what it can take. If your car is still under a manufacturer warranty, ask them first.'),
+    ('Do you supply the parts, or can I bring my own?', 'Both. We supply brands we trust, such as Pioneer, Kenwood, Xtrons, Autostyle and Rockford Fosgate. If you\'ve already bought a screen, camera or dash cam, we can fit it: we\'ll check it suits your car first.'),
+]
+HUBS['styling']['faq'] = [
+    ('How long does a full wrap take?', 'At least a week. Panels, handles and lights come off, every surface is cleaned and prepped, and the film is laid and tucked edge by edge. Rushing the prep is what makes wraps lift and peel, so we don\'t. Smaller jobs like a roof, mirrors or chrome delete are quicker: we\'ll give you the timing when we quote.'),
+    ('Wrap, PPF or paint: what\'s the difference?', 'A wrap changes the colour or finish and comes off later if you want the original back. Paint protection film is clear and protects the paint you already have from stone chips and scratches. A respray is permanent. Many customers combine them: PPF on the front end, wrap or tint on the rest.'),
+    ('Is window tint legal?', 'Rear side windows and the rear screen can go as dark as you like. UK law says the front side windows must let at least 70% of light through and the windscreen at least 75%, so we won\'t black out the fronts. We\'ll show you the shades that keep you legal.'),
+    ('Will a wrap damage my paint?', 'On healthy factory paint, a good-quality film comes off cleanly when you want it removed. Resprayed panels, chips and peeling lacquer are a different story, so we check the paint before we start and tell you straight if there\'s a risk.'),
+    ('How do I look after a wrap or PPF?', 'Hand wash, keep a pressure washer away from the edges, and avoid automatic brush washes. We go through the aftercare with you when you collect the car. A ceramic coating on top makes washing easier and helps the finish stay clean.'),
+]
+_MORE = {
+    'car-alarms': [('Can an alarm alert my phone?', 'Yes. Modern Scorpion alarms send tamper alerts to an app, and you can arm and disarm from your phone. That matters more than the siren, because on a busy street a siren on its own gets ignored.')],
+    'taxi-cameras': [('Why does my taxi need an approved camera?', 'TfL sets the rules for cameras in licensed taxis and private hire vehicles. Only approved systems meet them, so fitting a general dash cam inside the cab isn\'t the same thing. We\'ll confirm the right system for your licence before you book.'),
+                     ('Can you fit a camera to a black cab and a PHV?', 'Yes, both. We fit approved 2-channel systems from 2SeeTV and HikVision, and ACSS as an alternative. Tell us the vehicle and the licence type and we\'ll match the system.')],
+    'car-audio': [('Why deaden the doors before new speakers?', 'A door is a thin metal box that rattles and leaks sound. Deadening it first makes even a modest speaker sound tighter and louder, and cuts road noise too. It\'s the upgrade people notice most for the money.')],
+    'reverse-cameras': [('Can a reverse camera go into my factory screen?', 'On many cars, yes, using an interface; on others it goes into a new screen. Tell us the car and year and we\'ll say which.'),
+                        ('Do you fit cameras to vans?', 'Yes. Brake-light cameras and mirror monitors are the usual setup for vans, wired in neatly so they work every time you select reverse.')],
+    'ambient-lighting': [('What\'s a starlight headliner?', 'Hundreds of fibre optic points threaded one by one through the roof lining, so with the lights off the roof looks like a night sky. It\'s detailed, slow work: see the Alfa Romeo Stelvio in Builds.'),
+                         ('Can I change the colours?', 'With most ambient kits, yes: colours and brightness change from a phone app or the car\'s controls, depending on the kit.')],
+    'performance-parts': [('Will an exhaust make my car fail its MOT?', 'It can if it\'s too loud or the emissions parts are removed. We\'ll tell you straight what\'s road legal on your car and what isn\'t before you buy anything.'),
+                          ('Do I need a remap with new parts?', 'Sometimes. Intakes and exhausts on their own make a small difference; on many turbo cars a map is what unlocks the gain. We\'ll tell you what\'s worth doing on your car.')],
+    'paint-protection-film': [('What does PPF protect against?', 'Stone chips, scratches, bird droppings and the small marks that build up on the front of a car. The film is clear, so the paint looks the same, just protected.'),
+                              ('Front end only, or the whole car?', 'Most people start with the high-impact areas: bumper, bonnet, wings and mirrors. Full-car PPF is an option for new and high-value cars. We\'ll quote both so you can choose.')],
+    'window-tinting': [('Can you tint the front windows?', 'Only within the law: the front side windows must let at least 70% of light through and the windscreen 75%. Rear windows can go darker. We\'ll show you shades that keep you legal.')],
+    'air-suspension': [('Can I still drive over speed bumps?', 'Yes. That\'s the point of air: low when parked, raised at the press of a button for speed bumps, ramps and driveways. We set the system up and show you how it works before you leave.')],
+    'coilovers': [('Coilovers or lowering springs?', 'Springs are the simpler, cheaper way to drop the car a fixed amount. Coilovers let you set the height, and on many kits the damping, so you can tune the stance and the ride.'),
+                  ('Will lowering affect the ride?', 'A little, and that\'s the trade-off. A good kit set up properly rides well day to day. We\'ll help you pick a drop that suits the roads you drive.'),
+                  ('Does it need a wheel alignment afterwards?', 'Yes, lowering changes the geometry, so the car needs an alignment after fitting. We\'ll explain this when we quote.')],
+    'chrome-delete': [('What is a chrome delete?', 'The chrome trim around windows, grilles and badges is covered in gloss or satin black film, for a cleaner, darker look.'),
+                      ('Is it permanent?', 'No. The film can be removed later and the original chrome is underneath, which makes it a good choice on leased or newer cars.'),
+                      ('Can you do grilles and badges too?', 'Yes. Grilles can be wrapped or swapped for gloss black parts, like the kidney grilles on our own BMW 1 Series.')],
+    'bodykits': [('Do you supply the parts?', 'We can source them, or fit parts you\'ve bought. We check the fit first, because cheap kits often need work to line up.'),
+                 ('Can you fit splitters, spoilers and diffusers?', 'Yes, from a front splitter like the Lexus in Builds to full kits. We line them up properly so the gaps are even and nothing rattles.'),
+                 ('Will parts need painting?', 'Some come finished in gloss black, some need painting to match. We\'ll tell you which when we quote.')],
+    'wheel-refurb': [('What does a wheel refurb fix?', 'Kerb damage, scuffs and tired finishes. Wheels can go back to the original look or a new colour.'),
+                     ('Can you paint the calipers?', 'Yes, calipers can be painted in a colour to match or contrast, like the red set in Builds.'),
+                     ('What is AlloyGator?', 'A rim protector fitted between the tyre and the wheel edge, so kerbs hit the guard instead of the alloy. A good idea on new wheels.')],
+    'interiors': [('What can you do inside a car?', 'Headliners, starlight roofs, ambient lighting, sound deadening and trim upgrades. Tell us the look and we\'ll say what\'s possible.'),
+                  ('Can you redo my headliner?', 'Yes, from re-covering a sagging lining to a full starlight roof like the Alfa Romeo Stelvio in Builds.'),
+                  ('Can you make my car quieter?', 'Yes. Sound deadening on the floor, doors and roof cuts road noise noticeably: see the Audi A4 in Builds.'),
+                  ('Is my car off the road for long?', 'It depends on the job. We\'ll give you the timing with the quote.')],
+    'detailing': [('What\'s ceramic coating?', 'A hard, glossy layer bonded to the paint that repels water and dirt, so the car stays cleaner and is easier to wash.'),
+                  ('Can you coat a wrap or PPF?', 'Yes, coatings work on film as well as paint and make it easier to look after.'),
+                  ('Do you detail motorbikes?', 'Yes. Bikes get a proper wash and detail too, before a ride out or after a long winter.')],
+    'number-plates': [('Are your plates road legal?', 'Yes, road-legal plates need proof of identity and entitlement to the registration, and we\'ll tell you what to bring.'),
+                      ('What are 3D and 4D plates?', '3D gel plates have raised, domed lettering; 4D plates have laser-cut raised letters for a sharper look.')],
+    'van-signage': [('Do you design the signage too?', 'Bring your logo and we\'ll lay it out to suit the van, or tell us what you need and we\'ll help with the layout.'),
+                    ('Do you cut the vinyl yourselves?', 'Yes, lettering and logos are cut on our own plotter in the unit, then fitted by hand.'),
+                    ('Can you do a whole fleet?', 'Yes. Send us the vans and the design and we\'ll plan the fitting around your working day.'),
+                    ('Can you fit beacons and lights?', 'Yes, like the roof beacon bar on the BDG Security van in Builds.')],
+}
+for _k, _v in _MORE.items(): S[_k]['faq'] = list(S[_k]['faq']) + _v
