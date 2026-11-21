@@ -43,7 +43,7 @@ HEAD = '''<!doctype html>
 <style>
 @font-face{font-family:"Graffiti City";src:url(%s) format("woff2");font-display:block}
 body{margin:0;background:#0d0c0c}
-a{color:#f2eee9}a:hover{color:#ff3b2f}
+a{color:#f2eee9}a:hover{color:#f2eee9}
 %s
 </style>
 </helmet>

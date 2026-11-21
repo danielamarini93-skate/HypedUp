@@ -618,3 +618,16 @@ figcaption{margin-top:8px}
 .who li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--rule)}
 .who li a{font-weight:600;color:var(--fg)}
 @media (min-width:1000px){.cards.four{grid-template-columns:repeat(4,minmax(0,1fr))}.timeline.t4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* hover v2 (Dani, 21 Nov): no red on hover. Hover = bone (off-white) + underline; red stays for buttons and "you are here" only */
+.hd nav a::after,.dd>button::after{background:var(--fg)}
+.hd nav a[aria-current="page"]::after,.dd>button[aria-current="page"]::after{background:var(--red-text)}
+.dd>button[aria-expanded="true"] svg{color:var(--fg)}
+.ft ul a:hover,.ddp a:hover{color:var(--fg);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.ddp a:hover{background:var(--card)}
+.social a:hover{color:var(--fg);border-color:var(--fg)}
+.plist a:hover svg{color:var(--fg)}
+.fpanel a:hover b,.postgrid .post:hover b,.card:hover h3,.hltile:hover h3,.bcard:hover h3{color:var(--fg);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+.strip a:hover .sarr,.strip a:focus-visible .sarr{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.link:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.chips a:hover,.chips button:hover{background:rgba(242,238,233,.08)}

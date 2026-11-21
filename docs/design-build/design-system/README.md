@@ -99,6 +99,7 @@ The **Paper** theme exists only for print on white (invoices, a printed price li
 - **Photos:** real Hyped Up work in full colour, high contrast, with a strong radial vignette; square corners. Faded photos can sit behind sections (dark enough for AA text).
 - **Icons:** Lucide, 2px stroke. Brand icons (WhatsApp, Instagram, TikTok) from Simple Icons.
 - **Buttons are pills** in the red fill gradient; photos and panels are square.
+- **Hover is never red** (Dani, 21 Nov 2026): links, menu items, card titles and icons turn `ink` (bone) with an underline. Red stays on the pill buttons, the "you are here" marker in the menu and the focus ring.
 - **Print and social can also use the heritage patterns:** the slanted red band from the logo (−1.5°), the tilted red services panel (−2.5°), the huge ghosted UP arrow in `hu-charcoal`.
 
 ## 7. Photos and video
