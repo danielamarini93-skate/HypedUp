@@ -28,7 +28,7 @@ def head(title, desc, name=''):
 def header(cur):
     groups = ''.join('<div class="dd"><button type="button" aria-expanded="false" aria-controls="dd-%s"%s>%s{{lu:chevron-down}}</button><ul class="ddp" id="dd-%s" hidden>%s</ul></div>'
                      % (g, ' aria-current="page"' if g == cur else '', GNAME[g], g, ''.join('<li><a href="%s">%s</a></li>' % (h(s), SV[s]['short']) for s in MENU[g])) for g, _, _ in GROUPS)
-    plain = ''.join('<a href="%s"%s>%s</a>' % (u, ' aria-current="page"' if n == cur else '', n) for n, u in [('Builds', 'builds.html'), ('Contact', 'contact.html')])
+    plain = ''.join('<a href="%s"%s>%s</a>' % (u, ' aria-current="page"' if n == cur else '', n) for n, u in [('Builds', 'builds.html')])
     doors = ''.join('<li><button type="button" aria-expanded="false" aria-controls="sd-%s">%s<span>{{lu:chevron-down}}</span></button><ul class="sub" id="sd-%s" hidden>%s</ul></li>'
                     % (g, GNAME[g], g, ''.join('<li><a href="%s">%s</a></li>' % (h(s), SV[s]['short']) for s in MENU[g])) for g, _, _ in GROUPS)
     return ('<header class="hd"><div class="wrap"><a class="chip" href="home-a.html"><img src="img/logo.png" alt="Hyped Up home"></a><nav aria-label="Main" class="mainnav">' + groups + plain + '</nav>'
@@ -43,9 +43,9 @@ def header(cur):
 
 def footer():
     def col(g, name, slugs):
-        return ('<details class="fcol"><summary class="mono">%s{{lu:plus}}</summary><ul><li class="hub"><a href="%s">All %s services →</a></li>%s</ul></details>'
+        return ('<div class="fcol"><h2 class="mono">%s</h2><ul><li class="hub"><a href="%s">All %s</a></li>%s</ul></div>'
                 % (name, h(g), name, ''.join('<li><a href="%s">%s</a></li>' % (h(s), SV[s]['short']) for s in slugs)))
-    more = '<details class="fcol"><summary class="mono">More{{lu:plus}}</summary><ul>%s</ul></details>' % ''.join(
+    more = '<div class="fcol"><h2 class="mono">More</h2><ul>%s</ul></div>' % ''.join(
         '<li><a href="%s">%s</a></li>' % (u, n) for n, u in [('Community', 'community.html'), ('Motorbikes', 'motorbikes.html'), ('Business &amp; fleet', 'business.html'), ('Builds', 'builds.html'), ('Blog', 'blog.html'), ('About', 'about.html'), ('Shop', 'shop.html')])
     return ('</main><footer class="ft"><div class="wrap"><div class="ft-grid"><div class="findus"><span class="find">Find us</span>'
             '<p><b>Unit 22, Enterprise Industrial Estate, Bolina Road, London SE16 3LF</b></p><p class="mono">Mon–Fri 10–18 · Sat 9–16 · Sun closed</p>'
@@ -53,7 +53,7 @@ def footer():
             '<a href="#" aria-label="Instagram">{{br:instagram}}</a><a href="#" aria-label="TikTok">{{br:tiktok}}</a><a href="#" aria-label="Facebook">{{br:facebook}}</a></div>'
             '<p class="ftcontact">020 3340 0632 · WhatsApp 07713 735646 · info@hypedup.uk</p></div>' + ''.join(col(*g) for g in GROUPS) + more + '</div>'
             '<div class="legal mono"><span>© 2026 Hyped Up Ltd · Company no. 14086991</span><span>Privacy · Cookies · Terms · Cookie settings</span></div>'
-            '<div class="wm"><svg class="wmsvg" aria-hidden="true" preserveAspectRatio="xMinYMax meet"><defs><linearGradient id="wmg" x1="0" x2="1"><stop offset="0" stop-color="#ff4033"/><stop offset=".6" stop-color="#ef1220"/><stop offset="1" stop-color="#de0613"/></linearGradient></defs>'
+            '<div class="wm"><svg class="wmsvg" aria-hidden="true" viewBox="-4 -201 724 247" preserveAspectRatio="xMinYMax meet"><defs><linearGradient id="wmg" x1="0" x2="1"><stop offset="0" stop-color="#ff4033"/><stop offset=".6" stop-color="#ef1220"/><stop offset="1" stop-color="#de0613"/></linearGradient></defs>'
             '<text x="0" y="0" font-size="200" fill="none" stroke="url(#wmg)">HYPED UP</text></svg><span class="mono">Est. 2022</span></div></div></footer>'
             '<a class="fab" href="#wa" aria-label="WhatsApp Hyped Up">{{br:whatsapp}}</a><script src="site.js"></script></body></html>')
 
@@ -194,6 +194,82 @@ def hub_page(g, name, slugs):
            et=d['explainer'][0], eb=d['explainer'][1], faq=faq(d['faq'], False))
     page(h(g), d['title'], d['desc'], g, body + band('Not sure what your car needs?', 'Send us the make and model. We\'ll tell you what\'s worth doing and what it costs.'), name + ' (hub)', 'Hubs')
 
+def audience_pages(comm):
+    # ---------- MOTORBIKES (v2, 21 Nov): security in layers, then styling, real bike prices, the club ----------
+    layers = [('lock', 'Immobilise', 'Ghost for motorbikes', 'A PIN on the bike\'s own switchgear. No PIN, no start, even with the key. Nothing to see, no fob to clone.', 'from £400', 'ghost-immobiliser.html'),
+              ('radar', 'Track', 'Datatool S5 bike tracker', 'Small, hidden in the tail or under the seat, watched 24/7. If the bike is lifted into a van, the monitoring centre follows it.', 'from £395', 'car-trackers.html'),
+              ('siren', 'Alarm', 'Bike alarm', 'A loud siren with motion and shock sensors. It puts thieves off before they start, and tells the street something is wrong.', 'on enquiry', 'car-alarms.html')]
+    layer_html = '<ol class="layers">' + ''.join('<li><span class="lic">{{lu:%s}}</span><span class="mono">%d · %s</span><h3>%s</h3><p>%s</p><div class="row"><span class="from g">%s</span><a class="link" href="%s">How it works {{lu:arrow-right}}</a></div></li>'
+                                              % (ic, i + 1, step, t, d, p, u) for i, (ic, step, t, d, p, u) in enumerate(layers)) + '</ol>'
+    style_cards = [('Motorbike wraps', 'New colour or graphics on the tank, fairings and panels, and the paint underneath stays protected.', 'from £900', 'car-wrapping.html', 'helmet.jpg', 'Matte red helmet wrapped at Hyped Up'),
+                   ('Tail tidies and parts', 'Tail tidies, levers and bolt-on parts, fitted and wired so the indicators and plate light still work.', 'on enquiry', 'performance-parts.html', 'mt07-tail-tidy-hypa.jpg', 'Hypa fitting a tail tidy to a Yamaha MT-07'),
+                   ('Bike remaps', 'Smoother throttle and more response, set up for how you ride. Quick shifters too.', 'on enquiry', 'remapping.html', 'hypa-carbon-streetfighter.jpg', 'Hypa on a carbon streetfighter outside Unit 22'),
+                   ('Custom audio', 'Speakers built into a top box or fairing, wired to the bike\'s power. Yes, really.', 'on enquiry', 'car-audio.html', 'unit-r6.jpg', 'Yamaha R6 inside the workshop')]
+    cards = ''.join('<a class="card" href="%s">%s<div class="row"><h3>%s</h3><span class="from g">%s</span></div><p>%s</p></a>' % (u, media(i, a), t, p, d) for t, d, p, u, i, a in style_cards)
+    wraps = ('<table class="compare"><thead><tr><th>Bike</th><th>Wrap from</th><th>Good for</th></tr></thead><tbody>'
+             '<tr><td><b>Moped</b></td><td>£900</td><td>Delivery riders and city scooters: a fresh colour or your logo</td></tr>'
+             '<tr><td><b>Street and naked</b></td><td>£1,100</td><td>MT-07s, Z900s and the like: tank and panels</td></tr>'
+             '<tr><td><b>Super sport</b></td><td>£1,400</td><td>R6s, R1s, Fireblades: full fairings, the most panels</td></tr></tbody></table>')
+    bike_faq = [('What security does my bike need?', 'For most bikes in London: an immobiliser so it can\'t be ridden away, and a tracker because a bike can be lifted into a van. An alarm adds noise on top. Tell us where you park and we\'ll say what\'s worth it.'),
+                ('Can you fit a Ghost to a motorbike?', 'Yes. We fit Ghost to bikes as well as cars. The PIN goes in on the bike\'s own buttons, so there\'s nothing extra on the bars.'),
+                ('Do you work on mopeds and scooters?', 'Yes. Moped wraps start from £900, and we fit trackers and alarms to scooters too.'),
+                ('Can I ride in for a chat first?', 'Yes. Come to Unit 22 Monday to Saturday, or send photos on WhatsApp first so we can tell you what\'s possible.')]
+    body = ('<section class="hero flip"><div class="wrap"><div class="grid"><div class="copy"><span class="mono">Motorbikes</span><h1>Bike security, wraps and <span class="wetw">mods</span></h1>'
+            '<p class="lead">Hypa rides too. We protect bikes the way thieves actually take them, then make them look and ride like yours: wraps, parts, remaps, even audio.</p>'
+            '<div class="act"><a class="pill" href="contact.html?service=security">Contact us</a><a class="link" href="#bike-security">Protect my bike {{lu:arrow-right}}</a></div></div>'
+            '<figure>%s</figure></div></div></section>'
+            '<section class="sec" id="bike-security"><div class="wrap"><div class="sec-head stack"><h2>Protect it in layers</h2><p class="lead">A bike can be lifted into a van in under a minute, so one lock isn\'t enough. Each layer stops a different kind of theft.</p></div>%s</div></section>'
+            '<section class="sec"><div class="wrap split"><figure>%s</figure><div style="display:grid;gap:16px;justify-items:start"><span class="mono">Fitted in Unit 22</span><h2>Hidden where thieves don\'t look</h2>'
+            '<p class="lead">Every unit is wired into the bike\'s own loom, out of sight, and tested before you ride away. Your insurer gets the paperwork, you get the app.</p></div></div></section>'
+            '<section class="sec"><div class="wrap"><div class="sec-head"><h2>Make it yours</h2><a class="link" href="builds.html">See the work {{lu:arrow-right}}</a></div><div class="cards four">%s</div></div></section>'
+            '<section class="sec"><div class="wrap split" style="align-items:start"><div style="display:grid;gap:16px"><h2>Bike wrap prices</h2><p class="lead">Every bike is quoted on photos first. These are starting prices for a full wrap.</p></div>%s</div></section>'
+            ) % (media('m1000rr-tracker.mp4', 'BMW M1000RR in the workshop, close on the fairing and the M badge', lazy=False), layer_html,
+                 media('mt07-red-mini.jpg', 'Yamaha MT-07 beside the red Mini JCW at Unit 22'), cards, wraps)
+    body += comm + ('<section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%s</div></div></section>' % faq(bike_faq))
+    page('motorbikes.html', 'Motorbike Security, Wraps & Remaps in London | Hyped Up', 'Motorbike security, trackers, wraps and remaps in Bermondsey, South London: Ghost for bikes, Datatool S5 trackers from £395, bike alarms and wraps from £900.',
+         '', body + band('What do you ride?', 'Send us the bike and where you park it. We\'ll tell you what\'s worth fitting, and what isn\'t.'), 'Motorbikes', 'Audience hubs')
+
+    # ---------- BUSINESS & FLEET (v2, 21 Nov): three customer types, what we fit for each, a real van, prices ----------
+    who = [('car-taxi-front', 'Taxi and private hire', 'TfL-approved cameras for black cabs and PHVs, and 3-channel dash cams that film the cabin as well as the road.',
+            [('TfL taxi cameras', 'from £395', 'taxi-cameras.html'), ('3-channel dash cams', 'from £125', 'dash-cams.html')]),
+           ('truck', 'Vans and trades', 'Your name on the side, a camera on the back and roof beacons for site work. Fitted so the van is back out earning fast.',
+            [('Van signage and livery', 'on enquiry', 'van-signage.html'), ('Reverse cameras and sensors', 'from £125', 'reverse-cameras.html')]),
+           ('key-round', 'Company cars and fleets', 'Trackers with 24/7 monitoring on every vehicle, and dash cams to settle claims quickly.',
+            [('Fleet trackers', 'from £395', 'car-trackers.html'), ('Dash cams', 'from £125', 'dash-cams.html')])]
+    who_html = '<div class="who">' + ''.join('<article><span class="lic">{{lu:%s}}</span><h3>%s</h3><p>%s</p><ul>%s</ul></article>' % (ic, t, d, ''.join('<li><a href="%s">%s</a><span class="from g">%s</span></li>' % (u, n, p) for n, p, u in items))
+                                         for ic, t, d, items in who) + '</div>'
+    steps = [('Send the list', 'Vehicles, models and what each one needs. One message, on WhatsApp or email.'),
+             ('One quote', 'A clear price per vehicle and for the lot, before anything is booked.'),
+             ('Booked around you', 'Vehicles come in when it suits your rota, so the business keeps moving.'),
+             ('Fitted and tested', 'Every system tested before it leaves, with the paperwork your insurer asks for.')]
+    steps_html = '<ol class="timeline t4">' + ''.join('<li><h3>%s</h3><p>%s</p></li>' % (t, d) for t, d in steps) + '</ol>'
+    prices = ('<table class="compare"><thead><tr><th>Job</th><th>From</th><th>Notes</th></tr></thead><tbody>'
+              '<tr><td><b>TfL taxi cameras</b></td><td>£395</td><td>2SeeTV or HikVision 2-channel. ACSS EC2 from £495. Your own system fitted from £225.</td></tr>'
+              '<tr><td><b>Trackers</b></td><td>£395</td><td>SmartTrack Trident S7, plus £13.49 a month monitoring. S5 trackers also available.</td></tr>'
+              '<tr><td><b>Van wraps</b></td><td>£3,800</td><td>Full wrap. Lettering and part wraps quoted on your design.</td></tr>'
+              '<tr><td><b>Dash cams</b></td><td>£125</td><td>Front, front and rear, or 3-channel, hardwired.</td></tr>'
+              '<tr><td><b>Reverse cameras</b></td><td>£125</td><td>Camera, mirror monitor or screen, plus parking sensors.</td></tr></tbody></table>')
+    biz_faq = [('Are your taxi cameras TfL approved?', 'We fit approved systems: 2SeeTV, HikVision 2-channel and ACSS EC2. Already bought one? We\'ll install it.'),
+               ('Can you quote for several vehicles?', 'Yes. Send the list with makes, models and what each needs, and we\'ll come back with one quote.'),
+               ('Is there a monthly fee for trackers?', 'Monitored trackers have one. The S7 we fit is £13.49 a month. We\'ll confirm the figure before you book.'),
+               ('How long is a van off the road?', 'It depends on the job: lettering is quicker than a full wrap, which takes at least a week. We\'ll give you the time with the quote and book it around your rota.')]
+    body = ('<section class="hero flip"><div class="wrap"><div class="grid"><div class="copy"><span class="mono">Business &amp; fleet</span><h1>Kit for vehicles that <span class="wetw">work</span></h1>'
+            '<p class="lead">Taxis, vans and company cars: cameras, trackers and signage, fitted in Bermondsey and booked around your working day.</p>'
+            '<div class="act"><a class="pill" href="contact.html">Contact us</a><a class="link" href="#biz-prices">See prices {{lu:arrow-right}}</a></div></div>'
+            '<figure>%s</figure></div></div></section>'
+            '<section class="sec"><div class="wrap"><div class="sec-head stack"><h2>Who we fit for</h2><p class="lead">Pick what you run. Each line goes to the full service page.</p></div>%s</div></section>'
+            '<section class="sec"><div class="wrap"><article class="story2"><figure>%s</figure><div style="display:grid;gap:12px;justify-items:start"><span class="mono">Work we\'ve done</span><h2>BDG Security van</h2>'
+            '<p class="lead">Lettering cut on our own plotter, the logo set with a heat gun, and roof beacons wired in for site work. Readable from across the road, safe on site.</p>'
+            '<a class="link" href="van-signage.html">Van signage {{lu:arrow-right}}</a></div></article></div></section>'
+            '<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How it works for business</h2></div>%s</div></section>'
+            '<section class="sec" id="biz-prices"><div class="wrap split" style="align-items:start"><div style="display:grid;gap:16px"><h2>Prices</h2><p class="lead">Starting prices per vehicle. The exact figure depends on the vehicle and the kit.</p></div>%s</div></section>'
+            '<section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%s</div></div></section>'
+            ) % (media('van-lettering-hypa.mp4', 'Hypa lettering a BDG Security van, the plotter cutting vinyl, a logo going on with the heat gun', lazy=False), who_html,
+                 media('bdg-van-beacons.jpg', 'BDG Security van with roof beacons fitted at Hyped Up'), steps_html, prices, faq(biz_faq))
+    page('business.html', 'Fleet Tracking, Taxi Cameras & Van Signage London | Hyped Up', 'For London taxis, vans and fleets: TfL-approved taxi cameras from £395, trackers, van reverse cameras and sensors, and van signage, fitted in Bermondsey.',
+         '', body + band('Running more than one vehicle?', 'Send us the list. We\'ll come back with one clear quote and dates that fit your rota.'), 'Business & fleet', 'Audience hubs')
+
+
 def build():
     if os.path.exists(OUT): shutil.rmtree(OUT)
     os.makedirs(OUT + '/img'); os.makedirs(OUT + '/fonts')
@@ -306,16 +382,7 @@ def build():
         body = ('<section class="hero flip"><div class="wrap"><div class="grid"><div class="copy"><h1>%s</h1><p class="lead">%s</p><div class="act"><a class="pill" href="contact.html">Contact us</a></div></div><figure>%s</figure></div></div></section>'
                 '<section class="sec"><div class="wrap"><div class="sec-head"><h2>What we fit</h2></div><div class="cards">%s</div></div></section>') % (h1, lead, media(img, alt, 'a bike in the workshop', lazy=False), rows)
         page(file, title, desc, '', body + extra + band('What do you ride or drive?', 'Send us the make and model. We\'ll tell you what\'s worth fitting, and what isn\'t.'), label, 'Audience hubs')
-    audience('motorbikes.html', 'Motorbike Security, Wraps & Remaps in London | Hyped Up', 'Motorbike security, trackers, wraps and remaps in Bermondsey, South London: Ghost for bikes, Datatool S5 trackers, bike alarms and wraps from £900.',
-             'Motorbikes', 'A bike can be lifted into a van in under a minute, so an immobiliser alone isn\'t enough: it needs a tracker too. We also wrap and remap bikes.', 'r6-grass.jpg', 'Black Yamaha R6 with yellow and orange graphics, shot low on a sunny day',
-             [('Ghost for motorbikes', 'PIN on the bike\'s own buttons.', 'from £400', 'ghost-immobiliser.html', 'mt07-tail-tidy-hypa.jpg', ''), ('Trackers for bikes', 'Scorpion and Datatool S5, hidden and monitored 24/7.', 'from £395', 'car-trackers.html', 'm1000rr-tracker.jpg', ''),
-              ('Bike alarms', 'Siren with motion and shock sensors.', 'on enquiry', 'car-alarms.html', 'unit-r6.jpg', ''), ('Motorbike wraps', 'Mopeds, nakeds and super sports.', 'from £900', 'car-wrapping.html', 'helmet.jpg', ''),
-              ('Bike remaps', 'More response, done safely.', 'on enquiry', 'remapping.html', 'hypa-carbon-streetfighter.jpg', '')], 'Motorbikes', comm)
-    audience('business.html', 'Fleet Tracking, Taxi Cameras & Van Signage London | Hyped Up', 'For London businesses, taxis and fleets: trackers, TfL-approved taxi cameras, van reverse cameras and sensors, and van signage, fitted in Bermondsey.',
-             'Business &amp; fleet', 'Trackers, TfL-approved cameras and signage for taxis, vans and company cars. Booked around your working day, so the vehicle earns while it waits.', 'van-lettering-hypa.mp4', 'Hypa lettering a BDG Security van, the plotter cutting vinyl, a logo going on with the heat gun',
-             [('Fleet trackers', 'Know where every vehicle is.', 'from £395', 'car-trackers.html', 'tracker.jpg', ''), ('TfL taxi cameras', 'Approved systems for cabs and PHVs.', 'from £395', 'taxi-cameras.html', 'wrap.jpg', ''),
-              ('Van cameras and sensors', 'Reverse cameras and parking sensors.', 'from £125', 'reverse-cameras.html', 'van-reverse-camera.jpg', ''), ('Van signage and livery', 'Your logo on the road.', 'on enquiry', 'van-signage.html', 'van-lettering-heat-gun-hypa.jpg', ''),
-              ('Dash cams', 'Front, rear and 3-channel for drivers.', 'from £125', 'dash-cams.html', 'dashcam.jpg', '')], 'Business & fleet')
+    audience_pages(comm)
 
     # ---------- BUILDS ----------
     stories = [('audi-a4-soundproofing-build.mp4', 'Audi A4 Avant', 'The silent performer', 'Floor, doors, roof and boot deadened by hand, then air ride and a proper sound system. Quieter than new, lower than stock.', 'Hypa at the boot of a black Audi A4, deadening sheets going on a door, a boot trim refitted'),
@@ -355,6 +422,7 @@ def build():
 <div class="wrap contact">
   <div style="display:grid;gap:24px;align-content:start">
     <div style="display:grid;gap:12px"><h1>Contact us</h1><p class="lead">Tell us the car and what you're after. Photos help. We'll come back with options and a straight price.</p></div>
+    <div class="map m-only"><iframe src="https://maps.google.com/maps?q=''' + MAPQ + '''&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade" title="Map showing Hyped Up on Bolina Road, London SE16 3LF"></iframe></div>
     <form class="form" id="quote" novalidate>
       <fieldset class="fs"><legend>What do you need?</legend><div class="tick">''' + ticks + '''</div></fieldset>
       <div class="field"><label for="vehicle">Your car</label><input id="vehicle" name="vehicle" placeholder="e.g. BMW 1 Series 2019, reg if you have it" autocomplete="off" required></div>
@@ -373,12 +441,12 @@ def build():
       <button class="link" id="sent-back" type="button" style="background:none;border:0;color:inherit;padding:0;cursor:pointer;justify-self:start;margin-top:6px">Back to the form {{lu:arrow-right}}</button></div>
   </div>
   <aside class="aside">
+    <div class="map d-only"><iframe src="https://maps.google.com/maps?q=''' + MAPQ + '''&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade" title="Map showing Hyped Up on Bolina Road, London SE16 3LF"></iframe></div>
     <div><span class="find">Find us</span></div>
     <p><b>Unit 22, Enterprise Industrial Estate,<br>Bolina Road, London SE16 3LF</b></p>
     <table class="compare" style="max-width:360px"><tbody><tr><td>Mon–Fri</td><td>10:00–18:00</td></tr><tr><td>Saturday</td><td>09:00–16:00</td></tr><tr><td>Sunday</td><td>Closed</td></tr></tbody></table>
     <p>Call <a href="tel:+442033400632"><b>020 3340 0632</b></a><br>WhatsApp <a href="#wa"><b>07713 735646</b></a><br>Email <a href="mailto:info@hypedup.uk"><b>info@hypedup.uk</b></a></p>
     <a class="pill sm" style="justify-self:start" href="https://maps.google.com/?cid=1418041190124790308" target="_blank" rel="noopener">{{lu:map-pin}}Get directions</a>
-    <div class="map"><iframe src="https://maps.google.com/maps?q=''' + MAPQ + '''&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Hyped Up on Bolina Road, London SE16 3LF"></iframe></div>
     <figure>''' + media('rear-tint-hypa-mural.jpg', 'Hypa in his Hyped Up gilet fitting rear window tint under the workshop mural') + '''</figure>
     <p class="note">Customers come from across South and East London: Bermondsey, Rotherhithe, Peckham, Lewisham, Greenwich, Croydon, Bromley and beyond. <span class="tbc">(Areas TBC: Hypa)</span></p>
   </aside>
@@ -414,17 +482,22 @@ def build():
              ('Styling', 'The low life chose me: why air suspension changed everything', 'air-suspension'), ('Styling', 'Your custom number plate in 10 minutes', 'number-plates'),
              ('Law & guides', 'The legal reality of car mods in the UK: what the DVLA actually cares about', 'performance-parts')]
     cats = ['All', 'Security', 'Upgrades', 'Styling', 'Law & guides']
-    lis = ''.join('<li data-cat="%s"><a href="#"><span class="mono">%s</span><b>%s</b></a><a class="link" href="%s">%s {{lu:arrow-right}}</a></li>' % (c, c, t, h(s), SV[s]['short']) for c, t, s in posts)
+    thumbs = ['ghost-immobiliser-south-london-cost-fitt', 'why-every-london-car-owner-needs-securit', 'best-dash-cam-2026-front-rear-gps-why-yo', 'number-plate-cloning-is-surging-how-to-p',
+              'apple-carplay-installation-south-london', 'car-audio-upgrade-premium-sound-with-sub', 'ecu-remapping-boost-power-efficiency-saf', 'car-tuning-in-london-how-to-pick-a-safe',
+              'how-much-does-a-car-wrap-cost-uk-real-pr', 'vehicle-wrapping-ppf-window-tints-dechro', 'car-detailing-paint-correction-ceramic-c', 'air-suspension-bodykit-fitting-perfect-y',
+              'the-low-life-chose-me-why-air-suspension', 'custom-number-plates-in-london-same-day', 'the-legal-reality-of-car-mods-in-the-uk']
+    lis = ''.join('<li data-cat="%s"><a class="post" href="#"><img class="thumb" src="img/blog-%s.jpg" alt="" loading="lazy"><span class="mono">%s</span><b>%s</b><span class="link">Read the post {{lu:arrow-right}}</span></a></li>'
+                  % (c, th, c, t) for (c, t, s), th in zip(posts, thumbs))
     page('blog.html', 'Blog: Car Security, Upgrades & Styling Guides | Hyped Up', 'Straight answers from Hypa\'s Bermondsey workshop: Ghost immobilisers, trackers, dash cams, CarPlay, remaps, wraps, air suspension and the law on car mods.', '', '''
 <section class="hero"><div class="wrap" style="display:grid;gap:20px"><h1>Blog</h1><p class="lead">Straight answers from the workshop: what it costs, what's legal, what's worth it. Every guide links to the service it's about.</p>
 <div class="chips" role="group" aria-label="Filter posts">''' + ''.join('<button type="button" data-blogcat="%s" aria-pressed="%s">%s</button>' % (c, 'true' if c == 'All' else 'false', c.replace('&', '&amp;')) for c in cats) + '''</div></div></section>
-<section class="sec" style="padding-top:24px"><div class="wrap"><ul class="postlist">''' + lis + '''</ul></div></section>''', 'Blog', 'Brand & support')
+<section class="sec" style="padding-top:24px"><div class="wrap"><ul class="postgrid">''' + lis + '''</ul></div></section>''', 'Blog', 'Brand & support')
 
     # ---------- SHOP ----------
     prods = [('Graffiti T-shirt', '£20'), ('Hyped Up T-shirt', '£20'), ('Hyped Up jumper', '£40'), ('The keyring', '£10')]
     page('shop.html', 'Hyped Up Apparel: Tees, Jumpers & Keyrings', 'Hyped Up apparel from the Bermondsey workshop: graffiti tees, Hyped Up jumpers and keyrings. Order on WhatsApp and collect at Unit 22 or ask about delivery.', '', '''
 <section class="hero"><div class="wrap" style="display:grid;gap:20px"><h1>Shop</h1><p class="lead">Wear the workshop. Order on WhatsApp, collect at Unit 22. <span class="tbc">(Delivery: Hypa)</span></p></div></section>
-<section class="sec" style="padding-top:24px"><div class="wrap"><div class="cards">''' + ''.join('<div class="card"><div class="row"><h3>%s</h3><span class="from g">%s</span></div><a class="pill ghost sm" href="#wa">{{br:whatsapp}}Order on WhatsApp</a></div>' % (n, p) for n, p in prods) + '''</div></div></section>''', 'Shop', 'Brand & support')
+<section class="sec" style="padding-top:24px"><div class="wrap"><div class="cards four">''' + ''.join('<div class="card prod"><div class="ph" role="img" aria-label="%s photo coming soon">{{lu:shirt}}<span class="mono">Photo coming soon</span></div><div class="row"><h3>%s</h3><span class="from g">%s</span></div><a class="pill ghost sm" href="#wa">{{br:whatsapp}}Order on WhatsApp</a></div>' % (n, n, p) for n, p in prods) + '''</div></div></section>''', 'Shop', 'Brand & support')
 
 
     # ---------- COMMUNITY (v5) ----------

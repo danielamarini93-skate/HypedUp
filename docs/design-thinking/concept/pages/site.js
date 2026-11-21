@@ -27,8 +27,8 @@
     if (open) { b.setAttribute('aria-expanded', 'true'); document.getElementById(b.getAttribute('aria-controls')).hidden = false; } }); });
   /* footer columns: open on desktop, collapsed on phones */
   var mq = matchMedia('(min-width:1000px)');
-  var setCols = function () { $$('.fcol').forEach(function (d) { d.open = mq.matches; }); };
-  setCols(); if (mq.addEventListener) mq.addEventListener('change', setCols);
+
+  // footer columns are plain lists now (no accordion)
 
   /* homepage B: service finder tabs */
   var ft = $$('[data-ftab]');
@@ -37,7 +37,7 @@
   /* blog category filter */
   $$('[data-blogcat]').forEach(function (b) { b.addEventListener('click', function () { var c = b.dataset.blogcat;
     $$('[data-blogcat]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-    $$('.postlist li').forEach(function (li) { li.hidden = !(c === 'All' || li.dataset.cat === c); }); }); });
+    $$('.postgrid li').forEach(function (li) { li.hidden = !(c === 'All' || li.dataset.cat === c); }); }); });
 
   /* service pages: "Pick your setup" tabs (click + arrow keys) */
   $$('[data-picker]').forEach(function (pk) {

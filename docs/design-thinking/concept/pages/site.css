@@ -568,3 +568,53 @@ figcaption{margin-top:8px}
 .pfacts dd{margin:0;color:var(--fg)}
 .ppanel{min-height:300px}
 .pfacts div{align-content:start}
+
+/* design build round 1 (21 Nov) */
+/* footer: plain columns, no accordion */
+.fcol{border:0}
+.fcol h2{margin:0 0 .9rem;font:500 .72rem/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.fcol ul{padding:0}
+.ft-grid{grid-template-columns:1fr 1fr;gap:28px 20px}
+.ft .findus{grid-column:1/-1}
+@media (min-width:1000px){.ft-grid{grid-template-columns:1.35fr repeat(4,minmax(0,1fr));gap:28px}.ft .findus{grid-column:auto}}
+/* homepage hero: the CTA sits under the lead, always above the fold */
+.hero.home .act{margin-top:0}
+.hero.home .copy{justify-content:center}
+@media (min-width:1000px){.hero.home .media{aspect-ratio:auto;height:min(560px,calc(100vh - 260px))}.hero.home .grid{align-items:center}}
+@media (max-width:999px){.hero.home .media{aspect-ratio:16/9}.hero.home{padding-top:16px}.hero.home .copy{gap:16px}}
+/* contact: map first */
+.map iframe,.map .mapph{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map.m-only{aspect-ratio:16/9}
+@media (min-width:1000px){.map.m-only{display:none}}
+@media (max-width:999px){.map.d-only{display:none}}
+.mapph{display:grid;place-items:center;align-content:center;gap:10px;background:#1a1717 radial-gradient(circle at 50% 45%,rgba(239,18,32,.14),transparent 60%);color:var(--body2);text-align:center}
+.mapph svg{width:34px;height:34px;color:var(--acc)}
+/* blog: thumbnail cards */
+.postgrid{list-style:none;margin:0;padding:0;display:grid;gap:28px 24px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.postgrid li[hidden]{display:none}
+.postgrid .post{display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--fg)}
+.postgrid .thumb{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border:1px solid var(--rule)}
+.postgrid b{font:900 1.35rem/1.05 var(--f-display);text-transform:uppercase}
+.postgrid .post:hover b{color:var(--acc)}
+/* shop: photo placeholder */
+.prod .ph{aspect-ratio:1/1;display:grid;place-items:center;align-content:center;gap:10px;border:1px dashed rgba(242,238,233,.28);background:#1a1717;color:var(--soft)}
+.prod .ph svg{width:40px;height:40px}
+/* motorbikes: security layers */
+.layers{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+@media (min-width:900px){.layers{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.layers li{display:grid;gap:12px;align-content:start;border:1px solid var(--rule2);background:var(--panel);padding:24px}
+.layers h3{font-size:clamp(1.6rem,2.4vw,2rem)}
+.layers p{margin:0;color:var(--body2)}
+.layers .row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px}
+.lic{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--red-fill);color:#fff}
+.lic svg{width:24px;height:24px}
+/* business: who we fit for */
+.who{display:grid;gap:16px}
+@media (min-width:900px){.who{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.who article{display:grid;gap:12px;align-content:start;border:1px solid var(--rule2);background:var(--panel);padding:24px}
+.who h3{font-size:clamp(1.6rem,2.4vw,2rem)}
+.who p{margin:0;color:var(--body2)}
+.who ul{list-style:none;margin:6px 0 0;padding:0;display:grid}
+.who li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--rule)}
+.who li a{font-weight:600;color:var(--fg)}
+@media (min-width:1000px){.cards.four{grid-template-columns:repeat(4,minmax(0,1fr))}.timeline.t4{grid-template-columns:repeat(4,minmax(0,1fr))}}

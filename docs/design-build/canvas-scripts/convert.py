@@ -81,6 +81,9 @@ def convert(slug):
         for k in ('loading', 'decoding', 'srcset', 'sizes', 'fetchpriority'):
             if i.has_attr(k): del i[k]
     for s in body.find_all('source'): s.decompose()
+    for fr in body.find_all('iframe'):
+        ph = BeautifulSoup('<div class="mapph" role="img" aria-label="Google Map of Hyped Up, Bolina Road, London SE16 3LF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><span class="mono">Live Google Map</span><b>Unit 22, Bolina Road, SE16 3LF</b></div>', 'html.parser')
+        fr.replace_with(ph)
     for a in body.find_all('a', href=True):
         h = a['href']
         m = re.match(r'^([a-z0-9-]+)\.html(\?.*)?(#.*)?$', h)
