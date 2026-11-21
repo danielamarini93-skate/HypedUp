@@ -4,7 +4,7 @@
 # Previous version (5 key pages): build-v3.py
 import os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-from content import EXPLAINERS, OFFER, OFFER_INTRO, POOL, FOCUS, PROOF_REEL, GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL, HYPA_MEDIA
+from content import EXPLAINERS, OFFER2, OFFER, OFFER_INTRO, POOL, FOCUS, PROOF_REEL, GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL, HYPA_MEDIA
 import html as _html
 S = '/tmp/claude-0/-home-user/545d0e01-e697-5941-a49a-d293a211030b/scratchpad'
 OUT = S + '/pages-out'
@@ -160,16 +160,15 @@ def explainer(key):
 
 def service_page(slug):
     v = SV[slug]; g = v['group']; chip = CHIP[slug]
-    offer = OFFER.get(slug) or [(t, d, '', '') for t, d in v['options']]
+    offer = OFFER2.get(slug) or [(t, d, '', '') for t, d in v['options']]
     ptabs = ''.join('<button type="button" role="tab" id="pt-%d" aria-selected="%s" aria-controls="pp-%d"%s><span>%s</span>{{lu:arrow-right}}</button>'
                     % (i, 'true' if i == 0 else 'false', i, '' if i == 0 else ' tabindex="-1"', o[0]) for i, o in enumerate(offer))
-    pbg = v['img'] or 'poster.jpg'
     def _pp(i, o):
-        t, what, why, who = o
-        dl = ''.join('<div><dt class="mono">%s</dt><dd>%s</dd></div>' % (k, x) for k, x in (('Why choose it', why), ('Best for', who)) if x)
-        return ('<div class="ppanel" role="tabpanel" id="pp-%d" aria-labelledby="pt-%d"%s style="--pbg:url(img/%s)"><span class="ghostword" aria-hidden="true">%s</span><div class="pcopy">'
-                '<p class="lead">%s</p>%s<a class="link" href="contact.html?service=%s">Ask about this {{lu:arrow-right}}</a></div></div>'
-                % (i, i, '' if i == 0 else ' hidden', pbg, t, what, ('<dl class="pfacts">%s</dl>' % dl) if dl else '', chip))
+        t, line, best, price = o
+        meta = ''.join(x for x in [('<p class="pbest"><span class="mono">Best for</span>%s</p>' % best) if best else '', ('<p class="pprice from g">%s</p>' % price) if price else ''])
+        return ('<div class="ppanel clean" role="tabpanel" id="pp-%d" aria-labelledby="pt-%d"%s><p class="pline">%s</p>%s'
+                '<a class="link" href="contact.html?service=%s">Ask about this {{lu:arrow-right}}</a></div>'
+                % (i, i, '' if i == 0 else ' hidden', line, ('<div class="pmeta">%s</div>' % meta) if meta else '', chip))
     ppanels = ''.join(_pp(i, o) for i, o in enumerate(offer))
     opts = '<div class="picker" data-picker><div class="ptabs" role="tablist" aria-label="%s options">%s</div><div class="ppanels">%s</div></div>' % (v['name'], ptabs, ppanels)
     steps = ''.join('<li><h3>%s</h3>%s</li>' % (t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(STEPS.get(slug, v['steps'])))

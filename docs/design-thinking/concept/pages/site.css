@@ -687,3 +687,15 @@ figcaption{margin-top:8px}
 .gloss dd{margin:0;color:var(--body2)}
 .byline{margin:6px 0 0;text-transform:none;letter-spacing:.02em}
 .gloss dl div{align-content:start}
+
+/* What we offer v3 (Dani 21 Nov): left menu stays; right panel = name, one clear line, best for, price, one link */
+.ppanel.clean{display:grid;align-content:start;gap:22px;min-height:0;padding:36px;background:var(--panel)}
+.ppanel.clean h3{font-size:clamp(2.2rem,4vw,3.4rem);line-height:.92}
+.ppanel.clean .pline{margin:0;font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.45;color:var(--fg);max-width:34ch}
+.ppanel.clean .pmeta{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline;padding-top:18px;border-top:1px solid var(--rule2)}
+.ppanel.clean .pbest{margin:0;display:grid;gap:4px;color:var(--body2)}
+.ppanel.clean .pbest .mono{color:var(--soft)}
+.ppanel.clean .pprice{margin:0;font-size:1.25rem}
+@media (max-width:899px){.ppanel.clean{padding:24px}}
+.ppanel.clean[hidden]{display:none}
+@media (min-width:900px){.picker .ptabs button[aria-selected="true"]{color:var(--fg)}.ppanel.clean{border-left:1px solid var(--rule2)}}
