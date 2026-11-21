@@ -1,6 +1,6 @@
 # To-Do
 
-_Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're done._
+_Last updated: 14 Nov 2026 · Tick items off (`[x]`) or remove them as they're done._
 
 ## Website (redesign + migration — see `website-migration.md`)
 - [x] Domain + email host confirmed (both GoDaddy)
@@ -15,6 +15,12 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Hypa to confirm the clashing prices (CarPlay, security, plates, remap) — see `current-site.md`
 - [ ] Download blog/site images from `img1.wsimg.com` before cancelling GoDaddy
 - [ ] Decide what happens to the apparel shop (keep, move, drop)
+- [x] Hypa: reviewed the style (approved 9 Nov)
+- [ ] Hypa: usual reply time for the form thank-you message
+- [ ] Hypa: confirm Ghost price (site shows "from £400", pricing.md), the Builds captions marked TBC, "Built by Hypa" copy, and pick one real Google review
+- [ ] Media: blur customer plates in the homepage reel before launch; a bike install photo; keep reviewing the Drive Media folder (100+ files, 20 reviewed)
+- [ ] Hypa: OBD port protection and catalytic converter protection: offered?
+- [ ] Hypa: what work was done on the R8, Macan, Bentley, Fiat 500, Transits, Volvo, Civic (Builds captions); insurance/Thatcham wording for S5 vs S7; alarm price and alarm-repair offer
 - [ ] Design + build new site
 - [ ] Migrate with 301s, GA4, Search Console, schema, sitemap
 - [ ] Interim (only if migration is far off): fix broken icons; check GA4 Realtime ("Experties" typo already fixed; homepage already has prices + number plates)
@@ -35,6 +41,8 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] GBP: add a booking / quote link pointing to the WhatsApp quote (bookings = 0 today)
 - [ ] Ask partner brands (Xtrons, Air Lift, Prazis, MetaTrak, Scorpion) for installer-finder listings (Autostyle sends 45 sessions/quarter)
 - [ ] Link Google Ads (Maps campaign) to GA4
+
+- [ ] Buy the commercial licence for the chosen graffiti font (Aerosoldier / Decipher: mansgreback.com) before launch
 
 ## SEO / technical
 - [ ] Request indexing for all main service pages in Search Console
@@ -58,3 +66,14 @@ _Last updated: 7 Nov 2026 · Tick items off (`[x]`) or remove them as they're do
 - [ ] Add Repeat Customer? and Referral Source (+ Phone, Email, Other Services?, Follow-up Date) columns to the tracker
 - [ ] Read Tab 2 of the Google Sheet properly
 - [ ] Build a customer tracking dashboard in Sheets
+- [ ] Hypa/Dani: pick one of the best Google reviews, paste it word for word in `docs/design-thinking/concept/pages/content.py` (REVIEWS), and swap it every 2–3 months (add a new line with the start date). Confirm the rating and count (5.0 / 47 on 9 Nov). Live build: pull it automatically from Google if possible.
+- [ ] Hypa: OK the trust bar claims ("20+ yrs modifying cars", "McLaren: where Hypa learned the craft").
+- [ ] Hypa: captions for the homepage builds: what was done on the classic 911 (full wrap? colour?), the yellow Civic Type R, the two-tone Bentley (wrap or paint?). Is the pink car an Abarth 595 or an Alfa? Higher-res photos of the 911 and Civic (current ones 540 px).
+- [ ] Hypa: exact year he started modding (Dani suggested 2002; memory says early 2000s, first Astra) for the hero line.
+- [ ] Hypa: approve the About story wording (Astra, McLaren "every wire, every gap, every bolt", Unit 22) and the new service leads (e.g. Ghost "works through your car's own CAN bus").
+
+## Site concept v5 (20 Nov 2026)
+- [ ] Dani reviews v5 (https://claude.ai/artifact/Dy6NkZo1FRKuMtSNn7U4HF)
+- [ ] Hypa asks Ruff Ryders UK for OK to show members (Community page), plus meet dates and club wording
+- [ ] Share or export the 173 videos over 10 MB (couldn't be downloaded here), for a second pick
+- [ ] Decide if 25% video across all placements is enough (every key page has video), or add loops to cards

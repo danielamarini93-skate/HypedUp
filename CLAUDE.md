@@ -31,11 +31,12 @@ Following Dani's process: `docs/design-thinking/` (brief, strategy, research, co
 Outputs in `docs/design-thinking/`: tech-setup (cookies, forms, reviews, analytics), brief, strategy v0.2, audit, competitors, Mobbin, personas, visual direction, summary, concept.
 - **Positioning line (decided):** "Protect it. Upgrade it. Style it." + "South London's one-stop workshop for car and bike electronics, security and styling. Fitted properly, priced clearly."
 - **Platform (decided):** code site in GitHub, edited only by Claude, hosted on Cloudflare
-- **Look:** "Workshop wall": strict grid + condensed type + hand-drawn marks/stickers, workshop black + Hyped red `#E30513`
-- **Main action:** WhatsApp quote with service and car pre-filled
+- **Look (chosen 9 Nov 2026):** moodboard Direction D "Workshop wall": **dark only**, Big Shoulders + Barlow + IBM Plex Mono, one Graffiti City spray word, **logo red gradient** (#DE0613 → #86010A, from the logo band) on every accent and CTA, colour video hero with strong vignette, one hand-drawn mark per screen. Moodboard: https://claude.ai/artifact/3zP6kfZV8cBYNNGFqDimgc
+- **Main action (changed 9 Nov):** "Contact us" → `/contact` form that sends by email or WhatsApp (customer picks); floating WhatsApp button on phones. Spec: `docs/design-thinking/contact-flow.md`
 - **Research & audit doc (Dani edits here first):** https://claude.ai/artifact/1u8jZjGD9RU1c2pFWeULLg
 - **Concept:** https://claude.ai/artifact/NdsiSfKjKAG2a1tVQ3VXcX · **Mobbin:** collection "Hyped Up website redesign"
-- **Next:** Dani reviews → platform decision → `/design-build`
+- **Round 2 (content first, in progress):** inventory, card sort, site map in `docs/design-thinking/` · menu & footer concept v4 in Direction D https://claude.ai/artifact/Q3yajo9qaeWZHEJkUZYUZv (**approved by Dani + Hypa** 9 Nov; v1–v3 at https://claude.ai/artifact/1HC2w5jTziCVzpu6W8ddfD) → **content strategy + IA v2** https://claude.ai/artifact/CpSzprgerDKy2dcvTUvTwr (**approved 14 Nov**: labels Security · Upgrades · Styling, no Prices page) → **full site concept v4** (all pages from the content model, homepage A/B): https://claude.ai/artifact/H2XetEmAA8gnXPLicnvFpt · copy source `docs/design-thinking/concept/pages/content.py` (awaiting Dani + Hypa's facts)
+- **Site concept v5 (20 Nov, real media):** https://claude.ai/artifact/Dy6NkZo1FRKuMtSNn7U4HF · Drive footage reviewed and cut into 25 silent loops, Hypa in half the media, new Community page (Ruff Ryders UK meets). Plan: `docs/design-thinking/plan-media-v5.md`; review: `docs/design-build/drive-sort/video-review.md`
 
 ## The business in one paragraph
 
@@ -59,6 +60,7 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 | File | What's in it |
 |---|---|
 | `memory/business.md` | Services, partner brands, Hypa's background and cars |
+| `memory/story-and-projects.md` | **Hypa's story (Astra → McLaren → Hyped Up) and signature projects** for storytelling |
 | `memory/price-list-master.md` | **Master price list** from Dani's sheet, with website "from £" prices (wins over pricing.md) |
 | `memory/pricing.md` | Older confirmed prices; plates, remaps, Ghost still from here |
 | `memory/brand-voice.md` | Writing style guide + competitor-mention rules |
@@ -84,6 +86,8 @@ audio, wrapping/PPF/tint, ECU remapping, air suspension, custom number plates an
 - **Prices:** only use prices in `memory/price-list-master.md` (then `memory/pricing.md`). On the website show generic "from £" only. Write them with £. If a price isn't there, say "price on enquiry" or ask.
 - **No dyno testing** — Hyped Up does not offer it. Never mention it.
 - **Full wraps take a minimum of 1 week** (never "3–5 days").
+- **Only number plates are "while you wait".** Never promise same-day for anything else.
+- **Every job is bespoke:** copy says Hypa listens first and builds it around the customer's car.
 - **Never name competing installation shops.** Product brands are fine (Ghost, Pandora, Scorpion, MetaTrak, Xtrons, Autostyle, Pioneer, Kenwood, Rockford Fosgate, Air Lift, Prazis).
 - Write in **Hypa's voice** (see `memory/brand-voice.md`): first person, direct, honest, South London, no corporate fluff.
 - Meta titles ≤ 65 characters; meta descriptions 155–160 characters.

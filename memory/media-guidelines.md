@@ -34,3 +34,14 @@ _Agreed 8 Nov 2026. Source media: Dani's Google Drive folders (see `website-migr
 ## Tracking
 - A media log (`docs/design-build/media-log.md`, created when media is first used): original Drive file → new name,
   alt text, page used on, privacy check done.
+
+- **Plate blur (16 Nov 2026, Dani):** blur only the plate itself, following its outline (perspective included), soft 1 px edge; never a big box over the car. Hypa can appear in photos; customers still not.
+
+## Site-wide media mix (20 Nov 2026, Dani)
+- **Hypa in more than 50% of the story media** (heroes, About, Builds, Community). He is the brand: show his hands and face at work.
+- **Service images = finished product** (20 Nov, Dani): crisp, high quality, close on the product (tracker tag, low car, working screen, finished wrap). No work in progress on service cards and tiles; Hypa not required there.
+- **About 50/50 video and photo.** Every page gets video, without overloading: one hero or feature loop per page is usually enough, photos for the rest.
+- **Montages:** short clips can be merged into one loop (cuts or quick crossfades, no music needed for silent loops). Done with ffmpeg; HyperFrames for anything with titles or motion graphics.
+- **Community** (car and bike meets, Ruff Ryders UK) is part of the story, but meet footage has crowds: use wide or back-of-crowd shots, blur readable customer plates, and get the club's OK before launch.
+- Count the mix with the media manifest before each publish (see `docs/design-build/media-log.md`).
+- **Focal point on every image (20 Nov 2026, Dani):** set where the subject is (`FOCUS` in `concept/pages/content.py`), so every crop keeps the main information centred. Cars: show the whole car, little floor.
