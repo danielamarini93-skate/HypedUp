@@ -197,13 +197,12 @@ def service_page(slug):
 </div></section>
 <section class="sec"><div class="wrap"><div class="sec-head stack"><h2>What we offer</h2><p class="lead">%(ointro)s</p></div>%(opts)s</div></section>
 %(explain)s
-<section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How it works</h2><p class="lead">Every job is made to order. We listen first, plan it around your car, and only start once you're happy with the plan.</p></div><ol class="timeline">%(steps)s</ol></div></section>
 %(proof)s
 <section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%(byline)s%(good)s%(faq)s%(makes)s%(blog)s</div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Related</h2><a class="link" href="%(gh)s">All %(gn)s services {{lu:arrow-right}}</a></div><div class="cards">%(rel)s</div></div></section>
 ''' % dict(byline=('<p class="byline mono">%s</p>' % v['byline']) if v.get('byline') else '', explain=explainer(slug), ointro=OFFER_INTRO.get(slug, ''), gh=h(g), gn=GNAME[g], name=v['name'], lead=v['lead'], price=v['price'], note=v['price_note'], chip=chip, media=media(v.get('vid') or v['img'], v.get('valt') or v['alt'], v.get('need', ''), lazy=False),
            opts=opts, steps=steps, proof=('<section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent work</h2><a class="link" href="builds.html">All builds {{lu:arrow-right}}</a></div>%s</div></section>' % proof_html) if proof_html else '', good=good, faq=faq(v['faq']) if v['faq'] else '', makes=makes, blog=blog, rel=rel)
-    page(h(slug), v['title'], v['desc'], g, body + band('Want a price for your car?', 'Send us the make and model. We\'ll come back with options and a straight price.', chip), v['name'], GNAME[g])
+    page(h(slug), v['title'], v['desc'], g, body + band('Want a price for your car?', 'Send us the make and model. We listen first, plan it around your car, and only start when you\'re happy with the plan and the price.', chip), v['name'], GNAME[g])
 
 def hub_page(g, name, slugs):
     d = HUBS[g]
