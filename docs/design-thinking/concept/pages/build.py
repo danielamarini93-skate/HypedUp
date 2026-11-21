@@ -214,7 +214,7 @@ def build():
     rv = [r for r in REVIEWS if r['from'] <= today][-1]
     stars = '<span class="stars" aria-label="5 out of 5 stars">★★★★★</span>'
     if rv['text']:
-        quote = '<blockquote class="rvq"><p>%s</p><footer class="mono">%s · %s · Google review</footer></blockquote>' % (rv['text'], rv['name'], rv['service'])
+        quote = '<blockquote class="rvq"><p>%s</p></blockquote>' % rv['text']
     else:
         quote = '<blockquote class="rvq tbc"><p>[One of the best Google reviews, copied word for word]</p><footer class="mono">First name · Service · Google</footer></blockquote>'
     review = ('<div class="review"><div class="rvhead">%s<span class="mono">%s on Google · %s reviews</span></div>%s'
