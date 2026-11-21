@@ -184,7 +184,7 @@ def build():
     shutil.copy(os.path.join(HERE, '..', 'assets', 'fonts', 'graffiti-city.woff2'), OUT + '/fonts/graffiti-city.woff2')
     for f in ['site.css', 'site.js']: shutil.copy(os.path.join(HERE, f), OUT + '/' + f)
 
-    strip = ''.join('<a href="%s"><b>%s</b><p>%s</p></a>' % (h(g), n, t) for (g, n, _), t in zip(GROUPS,
+    strip = ''.join('<a href="%s"><b>%s</b><span class="sarr" aria-hidden="true">{{lu:arrow-right}}</span><p>%s</p></a>' % (h(g), n, t) for (g, n, _), t in zip(GROUPS,
             ['Ghost, trackers, alarms, dash cams', 'CarPlay, audio, remaps, lighting', 'Wraps, PPF, tint, air, wheels, plates']))
     # Builds first: the four signature stories
     feat = [('porsche-911-outside-unit.mp4', 'Classic Porsche 911', 'Old shape, new colour', 'Air-cooled icon, wrapped. Prep is the job: clean edges, no lifting, no shortcuts.', 'Classic Porsche 911 in dark blue with yellow headlights outside the Hyped Up unit'),

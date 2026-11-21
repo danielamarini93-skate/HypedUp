@@ -551,3 +551,10 @@ figcaption{margin-top:8px}
 /* v5.1: less red in "Why Hyped Up": stats in white, graffiti numerals muted; the spray word stays the one red accent */
 .trustbar b{background:none;color:var(--fg)}
 .gnum{background:none;color:rgba(242,238,233,.32)}
+
+/* v5.2: category strip reads as links: red arrow beside each title, nudges and brightens on hover */
+.strip a{align-items:center;transition:background .2s}
+.strip .sarr{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(242,238,233,.25);color:#ff4033;transition:transform .2s,background .2s,border-color .2s}
+.strip .sarr svg{width:18px;height:18px}
+.strip a:hover .sarr,.strip a:focus-visible .sarr{transform:translateX(4px);background:linear-gradient(100deg,#de0613,#86010a);border-color:transparent;color:#fff}
+.strip a:hover b{color:#fff}
