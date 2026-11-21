@@ -152,6 +152,15 @@ def explainer(key):
         body = ('<div class="exsplit"><figure>%s</figure>%s</div>' % (media(e['img'], e['alt']), steps)) if e.get('img') else steps
     elif t == 'ladder':
         body = '<ol class="exladder">%s</ol>' % ''.join('<li style="--i:%d"><span class="mono">Step %d</span><h3>%s</h3><p>%s</p>%s</li>' % (i, i + 1, it[0], it[1], ('<span class="from g">%s</span>' % it[2]) if len(it) > 2 else '') for i, it in enumerate(e['items']))
+    elif t == 'compare':
+        def cell(c):
+            return ('<a href="%s">%s {{lu:arrow-right}}</a>' % (c[1], c[0])) if isinstance(c, tuple) else c
+        head_row = ''.join('<th scope="col">%s</th>' % c for c in e['cols'])
+        rows = ''.join('<tr><th scope="row">%s</th>%s</tr>' % (cell(r[0]), ''.join('<td data-label="%s">%s</td>' % (e['cols'][j + 1], cell(c)) for j, c in enumerate(r[1:]))) for r in e['rows'])
+        body = '<div class="scrollx"><table class="extable"><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (head_row, rows)
+    elif t == 'checks':
+        src = ('<p class="src mono">Source: <a href="%s" target="_blank" rel="noopener">%s</a></p>' % (e['source'][1], e['source'][0])) if e.get('source') else ''
+        body = '<ul class="exchecks">%s</ul>%s' % (''.join('<li><span class="tick" aria-hidden="true">{{lu:check}}</span><span>%s</span></li>' % x for x in e['items']), src)
     else:
         body = ''
     if e.get('glossary'):
@@ -172,11 +181,12 @@ def service_page(slug):
     ppanels = ''.join(_pp(i, o) for i, o in enumerate(offer))
     opts = '<div class="picker" data-picker><div class="ptabs" role="tablist" aria-label="%s options">%s</div><div class="ppanels">%s</div></div>' % (v['name'], ptabs, ppanels)
     steps = ''.join('<li><h3>%s</h3>%s</li>' % (t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(STEPS.get(slug, v['steps'])))
-    proof = [i for i in SVC_BUILDS.get(slug, []) if BUILDS[i][0] != v['img'] and 'TBC' not in BUILDS[i][2]]
+    _hero = {v['img'].rsplit('.', 1)[0], (v.get('vid') or '').rsplit('.', 1)[0]}
+    proof = [i for i in SVC_BUILDS.get(slug, []) if BUILDS[i][0].rsplit('.', 1)[0] not in _hero and 'TBC' not in BUILDS[i][2]]
     pitems = ([PROOF_REEL[slug]] if slug in PROOF_REEL else []) + [(BUILDS[i][0], BUILDS[i][1], BUILDS[i][2], BUILDS[i][4]) for i in proof]
     proof_html = builds_strip(pitems[:3]) if pitems else ''
     makes = ('<div style="display:grid;gap:12px"><span class="mono">%s for your car</span><div class="chips">%s</div></div>' % (v['name'], ''.join('<a href="%s">%s</a>' % (u, m) for m, u in v['makes']))) if v.get('makes') else ''
-    used = {v['img'], v.get('vid')} | {x[0] for x in pitems}
+    used = {v['img'], v.get('vid'), (v.get('vid') or '').replace('.mp4', '.jpg')} | {x[0] for x in pitems} | {x[0].replace('.mp4', '.jpg') for x in pitems} | {EXPLAINERS.get(slug, {}).get('img')}
     rel = ''
     for s_ in v['related']:
         card = scard(s_, True, used); rel += card; used |= set(re.findall(r'img/([^"]+\.(?:jpg|mp4))', card))
