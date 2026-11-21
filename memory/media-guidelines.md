@@ -4,7 +4,7 @@ _Agreed 8 Nov 2026. Source media: Dani's Google Drive folders (see `website-migr
 
 ## For every image
 1. **Pick and check:** sharp, well lit, shows Hyped Up's own work. No stock, no other shops' work.
-2. **Privacy check (decided by Dani, 8 Nov 2026):** always **blur customers' number plates**. **No customer faces**: skip or crop photos where a customer's face shows. Hypa and the team, Hyped Up's own cars (red Mini, 1 Series) and show plates are fine.
+2. **Privacy check (decided by Dani, 8 Nov 2026):** always **blur customers' number plates**. **On hold (Dani, 21 Nov 2026): don't blur plates for now, until Dani says otherwise; check before launch.** **No customer faces**: skip or crop photos where a customer's face shows. Hypa and the team, Hyped Up's own cars (red Mini, 1 Series) and show plates are fine.
 3. **Rename** to describe what it shows, lowercase with hyphens:
    `<car-or-bike>-<service>-<detail>-<area>.webp`, e.g. `bmw-3-series-wireless-carplay-install-bermondsey.webp`.
    No "IMG_4532", no keyword stuffing, max ~6 words.

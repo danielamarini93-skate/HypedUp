@@ -151,9 +151,11 @@ def explainer(key):
         steps = '<ol class="exsteps">%s</ol>' % ''.join('<li><span class="gnum" aria-hidden="true">%d</span><div><h3>%s</h3><p>%s</p></div></li>' % (i + 1, ti, d) for i, (ti, d) in enumerate(e['items']))
         body = ('<div class="exsplit"><figure>%s</figure>%s</div>' % (media(e['img'], e['alt']), steps)) if e.get('img') else steps
     elif t == 'ladder':
-        body = '<ol class="exladder">%s</ol>' % ''.join('<li style="--i:%d"><span class="mono">Step %d</span><h3>%s</h3><p>%s</p></li>' % (i, i + 1, ti, d) for i, (ti, d) in enumerate(e['items']))
+        body = '<ol class="exladder">%s</ol>' % ''.join('<li style="--i:%d"><span class="mono">Step %d</span><h3>%s</h3><p>%s</p>%s</li>' % (i, i + 1, it[0], it[1], ('<span class="from g">%s</span>' % it[2]) if len(it) > 2 else '') for i, it in enumerate(e['items']))
     else:
         body = ''
+    if e.get('glossary'):
+        body += ('<div class="gloss"><h3>%s</h3><dl>%s</dl></div>' % (e.get('glossary_title', 'The jargon, explained'), ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % g for g in e['glossary'])))
     return '<section class="sec exsec"><div class="wrap">%s%s%s</div></section>' % (head, body, tbc)
 
 def service_page(slug):
@@ -198,9 +200,9 @@ def service_page(slug):
 %(explain)s
 <section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How it works</h2><p class="lead">Every job is made to order. We listen first, plan it around your car, and only start once you're happy with the plan.</p></div><ol class="timeline">%(steps)s</ol></div></section>
 %(proof)s
-<section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%(good)s%(faq)s%(makes)s%(blog)s</div></div></section>
+<section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%(byline)s%(good)s%(faq)s%(makes)s%(blog)s</div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Related</h2><a class="link" href="%(gh)s">All %(gn)s services {{lu:arrow-right}}</a></div><div class="cards">%(rel)s</div></div></section>
-''' % dict(explain=explainer(slug), ointro=OFFER_INTRO.get(slug, ''), gh=h(g), gn=GNAME[g], name=v['name'], lead=v['lead'], price=v['price'], note=v['price_note'], chip=chip, media=media(v.get('vid') or v['img'], v.get('valt') or v['alt'], v.get('need', ''), lazy=False),
+''' % dict(byline=('<p class="byline mono">%s</p>' % v['byline']) if v.get('byline') else '', explain=explainer(slug), ointro=OFFER_INTRO.get(slug, ''), gh=h(g), gn=GNAME[g], name=v['name'], lead=v['lead'], price=v['price'], note=v['price_note'], chip=chip, media=media(v.get('vid') or v['img'], v.get('valt') or v['alt'], v.get('need', ''), lazy=False),
            opts=opts, steps=steps, proof=('<section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent work</h2><a class="link" href="builds.html">All builds {{lu:arrow-right}}</a></div>%s</div></section>' % proof_html) if proof_html else '', good=good, faq=faq(v['faq']) if v['faq'] else '', makes=makes, blog=blog, rel=rel)
     page(h(slug), v['title'], v['desc'], g, body + band('Want a price for your car?', 'Send us the make and model. We\'ll come back with options and a straight price.', chip), v['name'], GNAME[g])
 

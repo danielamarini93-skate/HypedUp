@@ -677,3 +677,13 @@ figcaption{margin-top:8px}
 .exladder h3{font-size:clamp(1.5rem,2.2vw,1.9rem)}
 .exladder p{margin:0;color:var(--body2)}
 @media (min-width:900px){.exladder{grid-template-columns:repeat(4,minmax(0,1fr));align-items:end}.exladder li{min-height:calc(190px + var(--i) * 56px);border-top:3px solid var(--fg)}}
+.exladder .from{margin-top:auto;font-size:1rem}
+.gloss{margin-top:40px;display:grid;gap:16px}
+.gloss h3{font-size:clamp(1.6rem,2.4vw,2rem)}
+.gloss dl{margin:0;display:grid;gap:0;border-top:1px solid var(--fg)}
+@media (min-width:900px){.gloss dl{grid-template-columns:1fr 1fr;column-gap:40px}}
+.gloss dl div{display:grid;gap:6px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.gloss dt{font:900 1.3rem/1 var(--f-display);text-transform:uppercase;color:var(--fg)}
+.gloss dd{margin:0;color:var(--body2)}
+.byline{margin:6px 0 0;text-transform:none;letter-spacing:.02em}
+.gloss dl div{align-content:start}

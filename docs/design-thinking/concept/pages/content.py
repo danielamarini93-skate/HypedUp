@@ -823,3 +823,29 @@ EXPLAINERS = {
                   ('Amp and subwoofer', 'Bass you can feel, without distortion. Rockford Fosgate.'),
                   ('Custom boot build', 'Enclosures, Alcantara and LED, built for shows.')]},
 }
+
+# v5.7 (21 Nov): car audio rewritten from the AnswerThePublic export (docs/data/answerthepublic/car-audio-2026-11-21.csv)
+# and GEO rules: answer first, "X is..." definitions, question FAQs, prices on the ladder, author + date line.
+S['car-audio'].update(
+    title='Car Audio Fitting in London: Speakers, Amps & Subs | Hyped Up',
+    desc='Car audio fitting in Bermondsey, South London: door speakers from £125, amp and sub from £225, sound deadening and boot builds. Keep your factory screen too.',
+    lead='Car audio fitting means new speakers, amps, subwoofers and sound deadening, so your car sounds clearer and louder without rattles. We build it in steps or all at once, and you can keep your factory screen.',
+    faq=[('How can I make my car audio sound better?', 'Start with the doors: new speakers and sound deadening. A good speaker in a rattling door is wasted money; deaden the door and even a modest speaker sounds tighter and louder, with less road noise. Then add an amp and sub if you want more.'),
+         ('Can I upgrade without changing the head unit?', 'Yes. We keep your factory screen and add an amp that takes the factory signal, or a line driver. Your steering wheel controls keep working.'),
+         ('Do I need a subwoofer?', 'Not always. Good door speakers and deadening give clean, punchy sound on their own. A sub adds the low bass you feel rather than hear, so it\'s worth it if you like bass-heavy music.'),
+         ('Will an amp drain my battery?', 'Not when it\'s wired properly: the amp switches on and off with the car, on its own fused power cable. Big systems may need a bigger battery, and we\'ll tell you before we fit it.'),
+         ('Can you fit CarPlay and a reverse camera at the same time?', 'Yes. A new screen with CarPlay and Android Auto, a reverse camera and the speakers can all go in on the same visit. See CarPlay and Android Auto.'),
+         ('How much is a full system?', 'Door speakers start from £125, a mono amp and sub from £225 and sound deadening from £145 a door. A custom boot build is quoted per car: send us the car and what you listen to.')],
+    byline='Answers from Hypa, modding cars since the early 2000s · Updated November 2026')
+EXPLAINERS['car-audio'] = {'type': 'ladder', 'eyebrow': 'Build it in steps', 'title': 'How to upgrade your car audio',
+    'intro': 'You don\'t have to do it all at once. Start at the bottom, where the difference is biggest for the money, and add the next step when you\'re ready.',
+    'items': [('Speakers', 'Clearer sound and detail you couldn\'t hear before. The cheapest big upgrade.', 'from £125'),
+              ('Sound deadening', 'A quieter cabin, tighter bass and no rattles from the speakers you just fitted.', 'from £145 a door'),
+              ('Amp and subwoofer', 'Bass you can feel, without distortion. Rockford Fosgate.', 'from £225'),
+              ('Custom boot build', 'Enclosures, Alcantara and LED, built for shows.', 'quoted per car')],
+    'glossary_title': 'The jargon, explained',
+    'glossary': [('DSP', 'A digital sound processor is a small box that tunes the sound to your car\'s cabin. It sets the timing, EQ and crossover for each speaker, so the music sounds like it\'s in front of you, not coming from the door by your leg.'),
+                 ('Crossover', 'A crossover splits the music so each speaker only plays the notes it\'s built for: bass to the sub, mids to the doors, highs to the tweeters.'),
+                 ('Active or passive', 'Passive: one amp channel feeds a pair of speakers and a small crossover splits the sound. Active: every speaker gets its own amp channel and the DSP does the splitting, for more control.'),
+                 ('Capacitor', 'A capacitor stores a little power for big bass hits. On most systems it isn\'t needed: good wiring and a healthy battery matter more.')],
+    'tbc': 'Does Hyped Up do car audio repairs and fault-finding? ("car audio repair" 590 searches/mo, "car audio not working" 260): Hypa'}
