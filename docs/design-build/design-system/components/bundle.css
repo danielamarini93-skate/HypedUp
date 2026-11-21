@@ -1,5 +1,7 @@
 /* Hyped Up v2 component styles (merged brand). Uses tokens.css custom properties. */
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Mono:wght@500&display=swap");
+/* Graffiti City loaded straight from the asset store so the spray word never falls back to a plain font */
+@font-face{font-family:"Graffiti City";src:url(/_blob/e4d2f14bd995202fb7dac7392d780b82) format("woff2");font-weight:400;font-style:normal;font-display:block}
 :root{--hu-fill:linear-gradient(100deg,var(--red-3) 0%,var(--red-4) 55%,var(--red-5) 100%);--hu-text:linear-gradient(100deg,var(--red-1) 0%,var(--red-2) 60%,var(--red-3) 100%)}
 .hu-body{background:var(--surface);color:var(--ink);font:400 16px/1.55 var(--font-body);-webkit-font-smoothing:antialiased}
 .hu-mono{font:500 12px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted)}
