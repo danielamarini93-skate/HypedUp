@@ -20,7 +20,9 @@ Use dani-studio's `templates/brief.md` and `templates/strategy.md` for this proj
 
 ## Design system
 
-TBC: to be created in **Claude Design** during `/design-build`. Link it here once it exists.
+**Hyped Up Brand** in Claude Design: https://claude.ai/artifact/JRh26Xr17rGo7XrjZ1virr (tokens, logos, fonts, brand book, 17 components incl. 11 website ones added 21 Nov). Copy of its README + components in `docs/design-build/design-system/`.
+
+**Design file (design build):** https://claude.ai/artifact/5cJ4xZwusEATjcqwoi8boT: all 36 pages, desktop + phone, clickable. Plan: `docs/design-build/plan.md`.
 
 ## Where outputs go
 

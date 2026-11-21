@@ -20,24 +20,26 @@ Stage 2 of Dani's process. Started 21 Nov 2026. **Status: approved 21 Nov; build
 | Security photo rule | **The MetaTrak leaflet and tag are fine** (product branding, no install location). Still never show a unit's fitting location, wiring or inside panels: the M1000RR tracker fitting video and the Ghost start-button crop get checked against this. Note the exception in the design system. |
 | Done means | **Screens + developer handoff** |
 
-## 1. Design system first (Claude Design)
+## 1. Design system (Claude Design): done 21 Nov
+
+11 website components added to Hyped Up Brand (Header, Footer, Hero, Card, OfferPicker, Timeline, FAQ, Review, CommunityBand, PriceTable, ContactForm). WhatsApp button and category strip already existed (Button, ServiceList); video controls live in Hero.
 
 The system has print-led components (Button, ContactBlock, HandMarks, ServiceList, SlantBanner, SprayHeading). The website needs these too, proposed as additions to the system, not one-offs:
 
-- [ ] Header (logo chip, Security · Upgrades · Styling menus, Open today status, Contact us pill) and phone menu
-- [ ] Footer (service lists, contact, outlined HYPED UP wordmark, slogan)
-- [ ] Floating WhatsApp button (phone)
-- [ ] Hero: video and photo versions, breadcrumb, "from £" tag
-- [ ] Category strip with arrows
-- [ ] Service card and build card (with focal point and video)
-- [ ] "What we offer" picker (tabs + what / why / best for)
-- [ ] How it works timeline
-- [ ] FAQ accordion + Explained box + Good to know
-- [ ] Review block (one Google CTA)
-- [ ] Community band and story cards
-- [ ] Contact form with states: empty, filled, error, sending, sent (email or WhatsApp choice)
-- [ ] Video controls (pause button, poster, reduced motion)
-- [ ] Add the security-photo exception and any new tokens (spacing and layout widths) to the README
+- [x] Header (logo chip, Security · Upgrades · Styling menus, Open today status, Contact us pill) and phone menu
+- [x] Footer (service lists, contact, outlined HYPED UP wordmark, slogan)
+- [x] Floating WhatsApp button (phone)
+- [x] Hero: video and photo versions, breadcrumb, "from £" tag
+- [x] Category strip with arrows
+- [x] Service card and build card (with focal point and video)
+- [x] "What we offer" picker (tabs + what / why / best for)
+- [x] How it works timeline
+- [x] FAQ accordion + Explained box + Good to know
+- [x] Review block (one Google CTA)
+- [x] Community band and story cards
+- [x] Contact form with states: empty, filled, error, sending, sent (email or WhatsApp choice)
+- [x] Video controls (pause button, poster, reduced motion)
+- [x] Add the security-photo exception and any new tokens (spacing and layout widths) to the README
 
 ## 2. Pages (phone, then desktop)
 

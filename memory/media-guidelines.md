@@ -45,3 +45,6 @@ _Agreed 8 Nov 2026. Source media: Dani's Google Drive folders (see `website-migr
 - **Community** (car and bike meets, Ruff Ryders UK) is part of the story, but meet footage has crowds: use wide or back-of-crowd shots, blur readable customer plates, and get the club's OK before launch.
 - Count the mix with the media manifest before each publish (see `docs/design-build/media-log.md`).
 - **Focal point on every image (20 Nov 2026, Dani):** set where the subject is (`FOCUS` in `concept/pages/content.py`), so every crop keeps the main information centred. Cars: show the whole car, little floor.
+
+## Security installs (added 21 Nov 2026)
+Ghost, Meta/Scorpion and Datatool units and installs are never photographed or filmed: not the unit, where it's fitted, the wiring or inside panels. Exception (Dani, 21 Nov): product branding held by the customer is fine, e.g. the MetaTrak leaflet, a tracker tag or a fob in front of the car. Same rule in the Hyped Up Brand design system README §7.
