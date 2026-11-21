@@ -630,3 +630,146 @@ _MORE = {
                     ('Can you fit beacons and lights?', 'Yes, like the roof beacon bar on the BDG Security van in Builds.')],
 }
 for _k, _v in _MORE.items(): S[_k]['faq'] = list(S[_k]['faq']) + _v
+
+# ---------------- v5.5: "What we offer" (replaces "Pick your setup") ----------------
+# Each option: (name, what it is, why choose it, who it's for). Facts only from memory/ and the copy above.
+OFFER_INTRO = {
+    'ghost-immobiliser': 'Four ways to stop your car starting without you. Each one does it differently.',
+    'car-trackers': 'Three types of tracker. All of them are hidden, wired in and watched 24/7.',
+    'dash-cams': 'Four set-ups, from one camera to full cover while you\'re parked.',
+    'car-alarms': 'Alarms for cars and bikes, plus a fix for alarms that keep going off.',
+    'taxi-cameras': 'Approved camera systems for black cabs and private hire, or we fit the one you bought.',
+    'carplay': 'Three ways to get CarPlay and Android Auto, depending on the screen you have now.',
+    'car-audio': 'Four upgrades. Start with one or build the full system in stages.',
+    'remapping': 'Four levels of remap, from software only to full builds and bikes.',
+    'reverse-cameras': 'Cameras and sensors, for front, rear and work vehicles.',
+    'ambient-lighting': 'Four lighting upgrades, inside and out.',
+    'performance-parts': 'Parts that add sound, response and power. They often go with a remap.',
+    'car-wrapping': 'Full colour changes, smaller details and bikes.',
+    'paint-protection-film': 'Clear film that takes the chips so your paint doesn\'t.',
+    'window-tinting': 'Three tint films and a sunstrip. All of them are fitted inside the glass.',
+    'air-suspension': 'Air kits from the brands we trust, plus the boot build to show it off.',
+    'coilovers': 'Two ways to lower your car.',
+    'chrome-delete': 'Shiny trim turned black, one area at a time or the whole car.',
+    'bodykits': 'Exterior parts that change the car\'s shape.',
+    'wheel-refurb': 'Wheels repaired, recoloured, and calipers to match.',
+    'interiors': 'Inside upgrades you notice every time you get in.',
+    'detailing': 'Paint brought back, then protected.',
+    'number-plates': 'Road-legal plates in three styles, plus show plates.',
+    'van-signage': 'From a logo on the door to a full wrap.',
+}
+OFFER = {
+    'ghost-immobiliser': [
+        ('Ghost II', 'A hidden immobiliser that needs a PIN entered on buttons your car already has: steering wheel, windows or doors.', 'No fob to clone, no signal to relay, no box or LED for a thief to find.', 'Keyless cars at risk of relay theft, and motorbikes.'),
+        ('Metablok and Metablok-e', 'An immobiliser that works with a tag in your pocket instead of a PIN. The e version adds app control. From £495.', 'Nothing to remember: the car starts when the tag is with you.', 'Drivers who\'d rather not enter a PIN every time, or who share the car.'),
+        ('Scorpion X-series', 'An immobiliser built to work with Scorpion trackers and alarms. From £495.', 'One system for blocking the start, tracking and the alarm.', 'Drivers who want full security from one brand.'),
+        ('OBD port protection', 'A lock on the diagnostic port under the dash. <span class="tbc">(TBC: Hypa)</span>', 'Thieves plug into that port to code a new key. This stops them.', 'Cars targeted by key-programming theft, usually fitted alongside an immobiliser.')],
+    'car-trackers': [
+        ('S7 trackers', 'A GPS tracker (SmartTrack Trident) with a 24/7 monitoring centre and battery backup.', 'You get an alert if the car moves or the battery is cut, and the centre helps the police get it back.', 'Most cars, and drivers whose insurer asks for a monitored tracker.'),
+        ('S5 trackers', 'Everything S7 does (MetaTrak, Scorpion), plus a driver tag you carry.', 'If the car moves without the tag, the alert goes out straight away, even with your key.', 'High-value cars and anyone worried about cloned keys.'),
+        ('Motorbike trackers', 'A small Datatool S5 unit hidden under the seat or in the tail.', 'Bikes can be lifted into a van in seconds. This tells you where it went.', 'Riders who park on the street or leave the bike overnight.')],
+    'dash-cams': [
+        ('Front', 'One camera on the windscreen, recording the road ahead, wired in neatly.', 'Evidence of what happened in front of you, without wires hanging down.', 'Everyday drivers who want simple cover at the lowest price.'),
+        ('Front and rear', 'A second camera on the back window, recording both ways at once.', 'Covers the most common claims: being hit from behind and cash-for-crash.', 'Commuters and anyone driving in London traffic.'),
+        ('3-channel', 'Front, rear and a third camera filming inside the car.', 'A record of what happens in the cabin as well as on the road.', 'Taxi, private hire and delivery drivers.'),
+        ('Parking mode', 'The camera wakes and records when the car is knocked while parked. Battery protection is included.', 'Catches bumps and break-ins when you\'re not there, without flattening the battery.', 'Drivers who park on the street or in shared car parks.')],
+    'car-alarms': [
+        ('Scorpion alarms', 'A car alarm with shock, tilt and glass-break sensors, armed and disarmed from your phone.', 'You get a tamper alert on your phone, not just a siren in the street.', 'Cars without a factory alarm, or with one that does too little.'),
+        ('Motorbike alarms', 'A loud siren with motion and shock sensors, hidden on the bike.', 'Puts thieves off before the bike is moved or lifted.', 'Riders who park on the street, often paired with a tracker.'),
+        ('Alarm repair', 'We find out why your alarm keeps going off and fix or replace it. <span class="tbc">(TBC: Hypa)</span>', 'It\'s usually a sensor set too sensitive or a weak battery. Neighbours stop complaining.', 'Anyone whose alarm goes off for no reason.')],
+    'taxi-cameras': [
+        ('2SeeTV and HikVision 2-channel', 'Approved two-camera systems for licensed vehicles.', 'Meets the licensing rules and protects you and your passengers.', 'Black cab and private hire (PHV) drivers.'),
+        ('ACSS EC2', 'Another approved system, fitted the same careful way.', 'A second approved option if it suits your vehicle better.', 'Drivers comparing approved systems.'),
+        ('Install only', 'You bring an approved system, we fit and test it.', 'You keep the kit you chose and get a tidy, working install.', 'Drivers who\'ve already bought their cameras.')],
+    'carplay': [
+        ('New screen', 'A screen made for your car (Xtrons or Autostyle), or a Pioneer or Kenwood double DIN.', 'A bigger, modern screen with CarPlay and Android Auto built in.', 'Older cars with a small screen, or no screen at all.'),
+        ('Keep your factory screen', 'A CarPlay interface fitted behind the dash, working through the screen you already have.', 'Looks exactly like standard, and works wireless.', 'Drivers who like their dash as it is and just want the apps.'),
+        ('Add a reverse camera', 'A rear camera wired straight into the new screen.', 'Easier parking, fitted in the same visit.', 'Anyone upgrading their screen.')],
+    'car-audio': [
+        ('Speakers', 'New speakers in the doors, fitted properly.', 'Clearer sound, and the cheapest big upgrade you can make.', 'Anyone whose factory sound is flat or muddy.'),
+        ('Amps and subwoofers', 'Rockford Fosgate amplifiers and subs, wired and tuned.', 'Bass you can feel, without rattles.', 'Drivers who want real volume and depth.'),
+        ('Sound deadening', 'Damping material in the doors, or across the whole floor.', 'A quieter cabin and tighter bass from the speakers you have.', 'Daily drivers and anyone adding a sub.'),
+        ('Custom boot builds', 'Enclosures with Alcantara and LED, built for your boot.', 'A system that looks as good as it sounds.', 'Show cars and builds that get the boot open at meets.')],
+    'remapping': [
+        ('Stage 1', 'A software remap of the engine\'s settings, no new parts.', 'More power and a smoother pull from the car you already have.', 'Standard cars, and the best first step.'),
+        ('Stage 2', 'A remap matched to supporting parts like an intake and exhaust.', 'Gets the most from those parts, safely.', 'Cars that already have, or are getting, upgraded parts.'),
+        ('Stage 3', 'A remap for bigger hardware changes, quoted per build.', 'Tuned around the whole build, not a file off the shelf.', 'Serious builds with major parts fitted.'),
+        ('Motorbike remaps', 'The same careful remapping, for bikes.', 'Better response and a smoother ride.', 'Riders who want more from their bike.')],
+    'reverse-cameras': [
+        ('Reverse camera', 'A rear camera shown on a CarPlay screen, your factory screen or a mirror monitor.', 'See what\'s behind you, not just hear it.', 'Anyone parking in tight streets, especially with bigger cars.'),
+        ('Rear parking sensors', 'Colour-matched sensors in the rear bumper that beep as you get close.', 'Fewer scrapes, and they blend into the paint.', 'Cars without factory sensors.'),
+        ('Front parking sensors', 'Sensors in the front bumper.', 'Stops nose-first knocks on bollards and walls.', 'Drivers parking in tight London spaces.'),
+        ('Vans and work vehicles', 'Cameras and sensors for vans and fleets.', 'Safer reversing and fewer repair bills.', 'Trades, delivery drivers and fleet managers.')],
+    'ambient-lighting': [
+        ('Ambient lighting', 'Light strips in the dash and doors, colour set from your phone.', 'Changes the feel of the car every time you drive at night.', 'Anyone who wants a premium feel inside.'),
+        ('Starlight headliner', 'Hundreds of fibre-optic stars set into the roof lining.', 'The look of a luxury car in your own.', 'Drivers who want the biggest wow inside.'),
+        ('Door shadow lights', 'Lights under the doors that show your logo on the ground.', 'A detail people notice when you get out.', 'Owners who love the small touches.'),
+        ('Under-car lighting', 'Lights under the car.', 'Makes the car stand out at shows.', 'Show cars.')],
+    'performance-parts': [
+        ('Exhausts', 'Cat-back systems and tips, within noise limits.', 'A better sound and look, and more flow.', 'Drivers who want the car to sound like it should.'),
+        ('Intakes', 'Air intakes that help the engine breathe.', 'Part of a Stage 2 set-up.', 'Cars going beyond a Stage 1 remap.'),
+        ('Bolt-on modules', 'Plug-in modules such as RaceChip.', 'More power without a full remap.', 'Drivers who want an easy, reversible gain.'),
+        ('Quick shifters', 'Clutchless up-shifts for motorbikes.', 'Faster, smoother gear changes.', 'Riders who want sharper response.')],
+    'car-wrapping': [
+        ('Full colour change', 'The whole car wrapped in a new colour: gloss, satin, matte or chameleon. It takes at least a week.', 'A new look without a respray, and the paint underneath stays protected.', 'Owners who want a change but want to keep the original paint.'),
+        ('Partial wraps', 'Roof, bonnet, mirrors or race stripes.', 'A big change for less money and less time.', 'Drivers who want contrast or a sporty touch.'),
+        ('Door shuts', 'The edges inside the doors wrapped too.', 'Opens the door and still looks like paint.', 'Full colour changes that need to look factory.'),
+        ('Motorbike wraps', 'Tank, fairings and panels wrapped. From £900.', 'A new colour and protection for the bodywork.', 'Riders who want their bike to stand out.')],
+    'paint-protection-film': [
+        ('Front end', 'Clear film on the bonnet, bumper, wings and mirrors.', 'That\'s where stone chips happen. The film takes them, not the paint.', 'New and newer cars, and anyone doing motorway miles.'),
+        ('Full car', 'Every painted panel covered.', 'The whole car protected from chips and scratches.', 'High-value cars and owners keeping the car for years.'),
+        ('Tinted PPF', 'Protection film with a colour.', 'A colour change and protection in one.', 'Owners who want a new shade and full protection.'),
+        ('Satin PPF', 'Film that turns gloss paint satin.', 'A satin finish that also protects.', 'Drivers who like the satin look.')],
+    'window-tinting': [
+        ('Dyed', 'A dyed film for privacy at the lowest price.', 'Darker windows and a cleaner look for less.', 'Drivers on a budget.'),
+        ('Carbon', 'A carbon film that won\'t fade and cuts more heat.', 'Keeps its colour and keeps the car cooler.', 'Daily drivers who want it to last.'),
+        ('Ceramic', 'The top film for heat and glare rejection.', 'The coolest cabin and the least glare.', 'Long drives, families and anyone who wants the best.'),
+        ('Sunstrip', 'A dark band across the top of the windscreen.', 'Cuts glare from a low sun.', 'Any car, often with a rear tint.')],
+    'air-suspension': [
+        ('Air Lift Performance 3P / 3H', 'Air suspension with height presets on your phone. 3H adds height sensors.', 'Low at a show, raised for speed bumps, at the touch of a button.', 'Show cars and daily drivers who want both looks and comfort.'),
+        ('Prazis', 'Quality air kits that fit many cars.', 'Adjustable height for a wide range of cars.', 'Drivers whose car isn\'t covered by other kits.'),
+        ('Boot builds', 'The air tanks and compressors fitted in the boot, on show or hidden.', 'Either part of the build or out of the way.', 'Show cars, or anyone who needs the boot space.')],
+    'coilovers': [
+        ('Coilovers', 'Suspension with adjustable height and damping.', 'Set the drop and the ride the way you want it.', 'Drivers who want a lower car and sharper handling.'),
+        ('Lowering springs', 'Shorter springs for a fixed drop.', 'A simple, cheaper way to lower the car.', 'Drivers who want the look without adjusting it.')],
+    'chrome-delete': [
+        ('Window trims', 'The chrome around the windows wrapped black.', 'The biggest change for the money.', 'Anyone who wants a darker, sportier look.'),
+        ('Grilles and badges', 'Front and rear grilles and badges, blacked out.', 'Finishes the look from the front and back.', 'Drivers going for a full black-out.')],
+    'bodykits': [
+        ('Spoilers and splitters', 'Rear spoilers and front splitters, fitted and lined up.', 'A sharper, lower look.', 'Drivers who want an aggressive stance.'),
+        ('Side skirts and diffusers', 'Skirts along the sides and a diffuser at the back.', 'Makes the car look lower and wider.', 'Builds getting the full exterior treatment.'),
+        ('Wide arch kits', 'Wider arches fitted to the body.', 'Room for wider wheels and a bold stance.', 'Show builds.')],
+    'wheel-refurb': [
+        ('Refurb', 'Kerb damage and corrosion repaired and refinished.', 'Wheels that look new again.', 'Anyone with scuffed or tired wheels.'),
+        ('Colour change', 'Wheels refinished in any colour.', 'A big change to the car\'s look.', 'Drivers restyling their car.'),
+        ('Caliper painting', 'Brake calipers painted in a heat-resistant finish.', 'A pop of colour behind the wheels.', 'Owners finishing off a build.')],
+    'interiors': [
+        ('Carbon trims', 'Carbon fibre trims for the dash and doors.', 'A sporty, premium finish inside.', 'Drivers who want the inside to match the outside.'),
+        ('Alcantara', 'Alcantara on the headliner, trims or wheel.', 'Soft grip and a luxury feel.', 'Anyone upgrading the cabin.'),
+        ('Steering wheels', 'Retrimmed or upgraded steering wheels.', 'The part you touch most, made better.', 'Drivers who want a sportier feel.'),
+        ('Seats', 'Seats retrimmed or upgraded.', 'Comfort and a fresh look.', 'Worn interiors and full builds.')],
+    'detailing': [
+        ('Paint correction', 'Swirls and light scratches polished out, in three levels.', 'Brings back gloss and depth.', 'Cars with dull or swirled paint.'),
+        ('Ceramic coating', 'A coating bonded to the paint.', 'Easier cleaning and gloss that lasts.', 'Owners who want the shine to stay.')],
+    'number-plates': [
+        ('Standard', 'Road-legal printed plates, made while you wait.', 'A quick, legal replacement.', 'Anyone with a damaged or missing plate.'),
+        ('3D gel', 'Raised gel letters on a road-legal plate.', 'More depth and a premium look.', 'Drivers who want a step up from standard.'),
+        ('4D laser-cut', 'Laser-cut raised letters.', 'Sharp, bold characters that stand out.', 'Drivers who want the boldest road-legal plate.'),
+        ('Show plates', 'Custom plates for shows only, not the road.', 'Your own design for display.', 'Show cars and meets.')],
+    'van-signage': [
+        ('Lettering and logos', 'Your name, logo and number cut in vinyl.', 'Turns the van into an advert wherever it parks.', 'Small businesses and trades.'),
+        ('Part wraps', 'Printed graphics on part of the van.', 'Big impact for less than a full wrap.', 'Businesses that want to be seen.'),
+        ('Full livery', 'The whole van wrapped in your design.', 'Maximum branding and the paint underneath is protected.', 'Fleets and growing businesses.')],
+}
+
+# v5.5: guide chips link to the live blog posts (new site will move them to /blog/<slug> with redirects)
+_BLOG_SLUG = {'Ghost immobiliser:': 'ghost-immobiliser-south-london-cost-fitting-is-it-worth-it', 'Why every London': 'why-every-london-car-owner-needs-security-right-now',
+    'Best dash cam': 'best-dash-cam-2026-front-rear-gps-why-you-need-one', 'Apple CarPlay': 'apple-carplay-installation-south-london-hyped-up',
+    'Car audio upgrade': 'car-audio-upgrade-premium-sound-with-subwoofers-lighting', 'ECU remapping': 'ecu-remapping-boost-power-efficiency-safely',
+    'Car tuning in London': 'car-tuning-in-london-how-to-pick-a-safe-tuner', 'The legal reality': 'the-legal-reality-of-car-mods-in-the-uk-what-dvla-actually-cares',
+    'How much does a car wrap': 'how-much-does-a-car-wrap-cost-uk-real-prices-not-marketing', 'Wrapping, PPF': 'vehicle-wrapping-ppf-window-tints-dechroming-signage',
+    'The low life': 'the-low-life-chose-me-why-air-suspension-changed-everything', 'Air suspension and bodykit': 'air-suspension-bodykit-fitting-perfect-your-stance',
+    'Car detailing': 'car-detailing-paint-correction-ceramic-coating', 'Custom number plates': 'custom-number-plates-in-london-same-day-service-styles',
+    'Number plate cloning': 'number-plate-cloning-is-surging-how-to-protect-yourself'}
+for _v in S.values():
+    _v['blog'] = [(t, next(('https://hypedup.uk/hyped-up/f/' + sl for k, sl in _BLOG_SLUG.items() if t.startswith(k)), u)) for t, u in _v.get('blog', [])]

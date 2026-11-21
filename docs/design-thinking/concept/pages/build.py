@@ -4,7 +4,7 @@
 # Previous version (5 key pages): build-v3.py
 import os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-from content import POOL, FOCUS, PROOF_REEL, GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL, HYPA_MEDIA
+from content import OFFER, OFFER_INTRO, POOL, FOCUS, PROOF_REEL, GROUPS, MENU, S as SV, HUBS, TBC, DESCS, STEPS, REVIEWS, GOOGLE_RATING, GOOGLE_REVIEWS_URL, HYPA_MEDIA
 import html as _html
 S = '/tmp/claude-0/-home-user/545d0e01-e697-5941-a49a-d293a211030b/scratchpad'
 OUT = S + '/pages-out'
@@ -130,13 +130,17 @@ SVC_BUILDS = {'car-wrapping': [0 + 1, 11, 14], 'air-suspension': [2], 'car-track
 
 def service_page(slug):
     v = SV[slug]; g = v['group']; chip = CHIP[slug]
+    offer = OFFER.get(slug) or [(t, d, '', '') for t, d in v['options']]
     ptabs = ''.join('<button type="button" role="tab" id="pt-%d" aria-selected="%s" aria-controls="pp-%d"%s><span>%s</span>{{lu:arrow-right}}</button>'
-                    % (i, 'true' if i == 0 else 'false', i, '' if i == 0 else ' tabindex="-1"', t) for i, (t, d) in enumerate(v['options']))
+                    % (i, 'true' if i == 0 else 'false', i, '' if i == 0 else ' tabindex="-1"', o[0]) for i, o in enumerate(offer))
     pbg = v['img'] or 'poster.jpg'
-    ppanels = ''.join('<div class="ppanel" role="tabpanel" id="pp-%d" aria-labelledby="pt-%d"%s style="--pbg:url(img/%s)"><span class="ghostword" aria-hidden="true">%s</span><div class="pcopy"><p class="lead">%s</p>'
-                      '<a class="link" href="contact.html?service=%s">Ask about this {{lu:arrow-right}}</a></div></div>'
-                      % (i, i, '' if i == 0 else ' hidden', pbg, t.split(' (')[0], d or 'Tell us what you\'re after and we\'ll quote it for your car.', chip)
-                      for i, (t, d) in enumerate(v['options']))
+    def _pp(i, o):
+        t, what, why, who = o
+        dl = ''.join('<div><dt class="mono">%s</dt><dd>%s</dd></div>' % (k, x) for k, x in (('Why choose it', why), ('Best for', who)) if x)
+        return ('<div class="ppanel" role="tabpanel" id="pp-%d" aria-labelledby="pt-%d"%s style="--pbg:url(img/%s)"><span class="ghostword" aria-hidden="true">%s</span><div class="pcopy">'
+                '<p class="lead">%s</p>%s<a class="link" href="contact.html?service=%s">Ask about this {{lu:arrow-right}}</a></div></div>'
+                % (i, i, '' if i == 0 else ' hidden', pbg, t, what, ('<dl class="pfacts">%s</dl>' % dl) if dl else '', chip))
+    ppanels = ''.join(_pp(i, o) for i, o in enumerate(offer))
     opts = '<div class="picker" data-picker><div class="ptabs" role="tablist" aria-label="%s options">%s</div><div class="ppanels">%s</div></div>' % (v['name'], ptabs, ppanels)
     steps = ''.join('<li><h3>%s</h3>%s</li>' % (t, ('<p>%s</p>' % d) if d else '') for i, (t, d) in enumerate(STEPS.get(slug, v['steps'])))
     proof = [i for i in SVC_BUILDS.get(slug, []) if BUILDS[i][0] != v['img'] and 'TBC' not in BUILDS[i][2]]
@@ -147,7 +151,7 @@ def service_page(slug):
     rel = ''
     for s_ in v['related']:
         card = scard(s_, True, used); rel += card; used |= set(re.findall(r'img/([^"]+\.(?:jpg|mp4))', card))
-    blog = ('<div style="display:grid;gap:12px"><span class="mono">Guides</span><div class="chips">%s</div></div>' % ''.join('<a href="%s">%s</a>' % (u, t) for t, u in v['blog'])) if v.get('blog') else ''
+    blog = ('<div style="display:grid;gap:12px"><span class="mono">Guides</span><div class="chips">%s</div></div>' % ''.join('<a href="%s"%s>%s</a>' % (u, ' target="_blank" rel="noopener"' if u.startswith('http') else '', t) for t, u in v['blog'])) if v.get('blog') else ''
     good = ('<div class="good"><span class="mono">Good to know</span><p>%s</p></div>' % v['good']) if v.get('good') else ''
     body = '''
 <section class="hero flip"><div class="wrap">
@@ -162,12 +166,12 @@ def service_page(slug):
     <figure>%(media)s</figure>
   </div>
 </div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>Pick your setup</h2></div>%(opts)s</div></section>
+<section class="sec"><div class="wrap"><div class="sec-head stack"><h2>What we offer</h2><p class="lead">%(ointro)s</p></div>%(opts)s</div></section>
 <section class="flowsec"><div class="flowbg" aria-hidden="true"></div><div class="wrap"><div class="flowhead"><h2>How it works</h2><p class="lead">Every job is made to order. We listen first, plan it around your car, and only start once you're happy with the plan.</p></div><ol class="timeline">%(steps)s</ol></div></section>
 %(proof)s
 <section class="sec"><div class="wrap"><div class="narrow"><div class="sec-head" style="margin-bottom:0"><h2>Questions</h2></div>%(good)s%(faq)s%(makes)s%(blog)s</div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>Related</h2><a class="link" href="%(gh)s">All %(gn)s services {{lu:arrow-right}}</a></div><div class="cards">%(rel)s</div></div></section>
-''' % dict(gh=h(g), gn=GNAME[g], name=v['name'], lead=v['lead'], price=v['price'], note=v['price_note'], chip=chip, media=media(v.get('vid') or v['img'], v.get('valt') or v['alt'], v.get('need', ''), lazy=False),
+''' % dict(ointro=OFFER_INTRO.get(slug, ''), gh=h(g), gn=GNAME[g], name=v['name'], lead=v['lead'], price=v['price'], note=v['price_note'], chip=chip, media=media(v.get('vid') or v['img'], v.get('valt') or v['alt'], v.get('need', ''), lazy=False),
            opts=opts, steps=steps, proof=('<section class="sec"><div class="wrap"><div class="sec-head"><h2>Recent work</h2><a class="link" href="builds.html">All builds {{lu:arrow-right}}</a></div>%s</div></section>' % proof_html) if proof_html else '', good=good, faq=faq(v['faq']) if v['faq'] else '', makes=makes, blog=blog, rel=rel)
     page(h(slug), v['title'], v['desc'], g, body + band('Want a price for your car?', 'Send us the make and model. We\'ll come back with options and a straight price.', chip), v['name'], GNAME[g])
 
