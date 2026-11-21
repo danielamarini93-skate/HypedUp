@@ -1,6 +1,8 @@
 # Design build plan: Hyped Up website
 
-Stage 2 of Dani's process. Started 21 Nov 2026. **Status: waiting for Dani's OK.**
+Stage 2 of Dani's process. Started 21 Nov 2026. **Status: approved 21 Nov; building.**
+
+**Claude Design file:** https://claude.ai/artifact/5cJ4xZwusEATjcqwoi8boT
 
 ## Inputs
 
@@ -41,16 +43,16 @@ The system has print-led components (Button, ContactBlock, HandMarks, ServiceLis
 
 Built in this order, so each template is set before it is repeated:
 
-- [ ] Home A (brand-led) and Home B (task-led)
-- [ ] Hubs: Security, Upgrades, Styling
-- [ ] Security services: Ghost immobiliser, Car trackers, Dash cams, Car alarms, Taxi cameras
-- [ ] Upgrades services: CarPlay, Car audio, Remapping, Reverse cameras, Ambient lighting, Exhausts & performance parts
-- [ ] Styling services: Car wrapping, PPF, Window tinting, Air suspension, Coilovers, Chrome delete, Bodykits, Wheel refurb, Interiors, Detailing, Number plates, Van signage
-- [ ] Audience: Motorbikes, Business & fleet
-- [ ] Brand and support: Builds, Contact (+ form states), About, Blog, Shop, Community
+- [x] Home A (brand-led) and Home B (task-led)
+- [x] Hubs: Security, Upgrades, Styling
+- [x] Security services: Ghost immobiliser, Car trackers, Dash cams, Car alarms, Taxi cameras
+- [x] Upgrades services: CarPlay, Car audio, Remapping, Reverse cameras, Ambient lighting, Exhausts & performance parts
+- [x] Styling services: Car wrapping, PPF, Window tinting, Air suspension, Coilovers, Chrome delete, Bodykits, Wheel refurb, Interiors, Detailing, Number plates, Van signage
+- [x] Audience: Motorbikes, Business & fleet
+- [x] Brand and support: Builds, Contact (+ form states), About, Blog, Shop, Community
 - [ ] Shared states: open menu, 404 page
 
-That's 36 pages + states × 2 sizes. The Design canvas holds them as artboards grouped by section.
+First pass done 21 Nov: all 36 pages on the canvas, desktop + phone, linked so Play clicks through (videos show their poster). That's 36 pages + states × 2 sizes. The Design canvas holds them as artboards grouped by section.
 
 ## 3. Handoff (for building on Cloudflare)
 
