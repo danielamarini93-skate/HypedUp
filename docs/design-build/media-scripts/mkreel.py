@@ -9,14 +9,12 @@ XF = 0.3  # crossfade seconds
 SEGS = [(63, 2.4, .5, None),        # classic 911 under the HYPD sign
         (234, 2.0, .55, None),      # Evoque satin wrap, RANGE ROVER letters close
         (32, 1.9, .05, None),       # Hypa tinting, HYPD gilet
-        (190, 2.0, .5, None),       # Audi R8 outside the unit, lights on
+        (190, 2.0, .02, 2.8),       # Audi R8 outside the unit, lights on (car close, little floor)
         (182, 1.9, .5, None),       # R8 CarPlay screen working
         ('alloygator', 2.0, .5, None),  # AlloyGator on a clean Tesla wheel (photo push-in)
         (172, 2.0, .5, None),       # BMW M1000RR in the workshop
-        (65, 2.0, .5, None),        # R1 rides out of the unit
         (93, 1.9, .45, None),       # starlight headliner
         (223, 1.9, .45, None),      # Hypa fitting a screen, close
-        (257, 1.9, .5, None),       # Volvo wheel pinstripe
         (187, 1.9, .5, None),       # red Mini, black stripes, HYPD plate
         (202, 2.2, .5, None),       # Bentley Bentayga outside the unit
         (62, 2.4, .5, None)]        # 911 satin wrap pan, end
